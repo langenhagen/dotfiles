@@ -1,0 +1,25 @@
+# !   Run the command in the foreground with output shown.
+# @   Run the command in the background with no output.
+# ?   Prompt the user before executing the command.
+# <  Exit Tig after executing the command.
+# For example:
+# bind generic e !?/usr/local/bin/sublime
+
+bind generic D @?rm %(file)                          # remove a file
+
+bind generic Z @?git checkout HEAD %(file)           # checkout latest committed version of a file in status view
+bind generic X @?git checkout staging %(file)        # checkout staging version of a file in status view
+bind generic E !/usr/local/bin/sublime %(file)
+bind generic + !git commit --amend
+bind generic = !?<git commit
+bind generic T !git checkout --theirs %(file)
+bind generic T !git checkout --ours %(file)
+
+
+
+
+
+# Henrik uses also:
+# bind stash D !?git stash drop %(stash)
+# bind stash A !?git stash apply %(stash)
+# bind status S !?git stash save --keep-index %(prompt)

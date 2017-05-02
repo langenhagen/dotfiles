@@ -7,7 +7,6 @@ This folder cointains a bunch of .dotfiles and /.dotfolders to configure
 Your UNIX environment and applications.
 
 
-
 The dotfiles can be linked into Your system with ln, effectively keeping them up-to-date
 in this folder and thus enabling to keep them up-to date on each machine.
 Create a branch for each machine.

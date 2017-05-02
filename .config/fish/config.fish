@@ -59,6 +59,10 @@ abbr -a bkt bucket
 abbr -a favs cdfavs
 abbr -a opn open
 abbr -a 1lh olh
+abbr -a fnd find . -iname
+abbr -a fnd1 find . -maxdepth 1 -iname
+abbr -a t3 tree -L 3
+abbr -a t3d tree -L 3 -d
 
 ######### EDUCATIONAL AND ERRATIC ##################################################################
 
@@ -75,6 +79,14 @@ function testfishfunction
     echo 'All of the the argv: ' $argv
     echo $argv[1]  # no error - never (weird)
     echo '--- testfishfunction END'
+end
+
+function fff
+
+    # test fish function for experimental purposes
+    echo '--- fff START'
+   
+    echo '--- fff END'
 end
 
 ######### NICE FUNCTIONS ###########################################################################
@@ -125,6 +137,26 @@ end
 
 function mkfav
     ln -s (pwd) /Users/langenha/stuff/shortcuts/$argv[1]
+end
+
+function pbc
+    echo $argv | pbcopy
+end
+
+function pbce
+    # copies the output of the given statement into the clipboard.
+    # Better stick to the common way.
+    eval $argv | pbcopy
+end
+
+function vimh
+    # opens a vim tab for each line of output with all the outputs of the last statement.
+    # e.g. use in conjunction with `ls -1` or `find` or `grep -lr`
+    vim -p (eval $history[1])
+end
+
+function fnd2
+    find . -iname "*$argv*"
 end
 
 function hirni
@@ -295,6 +327,7 @@ function gtf
 end
 
 function bgt
+    # build run google test
     pushd .
     cd $ACS_BUILD_DIR;
 
@@ -308,6 +341,7 @@ function bgt
 end
 
 function bgtf
+    # build run google test, bail out on test fail
     pushd .
     cd $ACS_BUILD_DIR;
 

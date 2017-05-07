@@ -27,7 +27,6 @@ set ignorecase
 
 " highlight overlength strings in a red bg color
 highlight Overlength ctermbg=darkred ctermfg=white guibg=#101010
-
 let g:is_highlight_overlength = 1
 function! ToggleHighlightOverlength()
     if g:is_highlight_overlength == 0
@@ -41,16 +40,13 @@ function! ToggleHighlightOverlength()
     endif
 endfunction
 match Overlength /\%101v.\+/           " initial setting
-map <expr> <F3> ToggleHighlightOverlength()
-
 
 " key bindings =====================================================================================
-map <F2> :set hlsearch!<CR>
-map <F10> :q!<CR>
 
+map <F5> :edit<CR>  " refresh file
+map <F6> :set hlsearch!<CR>
 map <F7> gT      " toggle tab to the left
 map <F8> gt      " toggle tab to the right
-map <F5> :edit<CR>  " refresh file
-
-
-
+map <F10> :q!<CR>
+map <F11> :set number!<CR>
+map <expr> <F12> ToggleHighlightOverlength()

@@ -63,6 +63,7 @@ abbr -a fnd find . -iname
 abbr -a fnd1 find . -maxdepth 1 -iname
 abbr -a t3 tree -L 3
 abbr -a t3d tree -L 3 -d
+abbr -a cddotfiles cd /Users/langenha/personal/Dev/Zeugs/dotfiles
 
 ######### EDUCATIONAL AND ERRATIC ##################################################################
 

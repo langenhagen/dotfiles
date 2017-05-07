@@ -8,7 +8,7 @@
 bind generic D @?rm %(file)                          # remove a file
 bind generic Z @?git checkout HEAD %(file)           # checkout latest committed version of a file in status view
 bind generic X @?git checkout staging %(file)        # checkout staging version of a file in status view
-bind generic E !/usr/bin/vim "%(file)"
+bind generic E !/usr/bin/vim %(file)
 bind generic + !git commit --amend
 bind generic = !?git commit
 bind generic T !git checkout --theirs %(file)

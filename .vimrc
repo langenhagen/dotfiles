@@ -43,6 +43,8 @@ match Overlength /\%101v.\+/           " initial setting
 
 " key bindings =====================================================================================
 
+
+map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>   ' from: http://vim.wikia.com/wiki/Easily_switch_between_source_and_header_file
 map <F5> :edit<CR>  " refresh file
 map <F6> :set hlsearch!<CR>
 map <F7> gT      " toggle tab to the left

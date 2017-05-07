@@ -50,3 +50,4 @@ map <F8> gt      " toggle tab to the right
 map <F10> :q!<CR>
 map <F11> :set number!<CR>
 map <expr> <F12> ToggleHighlightOverlength()
+

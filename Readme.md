@@ -4,9 +4,9 @@ author: langenhagen
 version: 170429
 
 This folder cointains a bunch of .dotfiles and /.dotfolders to configure
-Your UNIX environment and applications.c
-The Dotfiles have might have been renamed to something like dot.XXX in order to make
-them syncable via Owncloud.
-# dotfiles
-# dotfiles
-# dotfiles
+Your UNIX environment and applications.
+For each new device, You can create a branch to manage diverging settings.
+
+The Dotfiles have might have been given the prefix "dot" (e.g. "dot.bashrc") in order to make
+these files visible for other  applications.
+

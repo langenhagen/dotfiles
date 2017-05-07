@@ -3,8 +3,7 @@
 	{
 		"completefunc": "ActualVimComplete"
 	},
-	"enabled": false,
-	"indent_priority": "sublime",
+	"enabled": true,
 	"large_file_disable":
 	{
 		"bytes": 52428800,

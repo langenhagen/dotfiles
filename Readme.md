@@ -1,12 +1,10 @@
 # Dotfiles
 
 author: langenhagen
-version: 1700721
+version: 18-01-21
 
 This folder cointains a bunch of .dotfiles and /.dotfolders to configure
 Your UNIX environment and applications. It may also contain exportable settings from other programs.
-
-
 
 
 ## Getting and Linking the Dotfiles into Your Machine
@@ -43,3 +41,4 @@ Create a branch for each machine you want to maintain. Submit to an existing bra
 
 First, checkout on a new branch on your own machine by doing `git checkout -b <branchname>`.
 Then do `git push origin <HEAD>:<branchname>`.
+

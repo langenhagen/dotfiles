@@ -18,6 +18,8 @@ bind generic <F10> quit
 
 
 
+set ignore-case            = no                     # Enum: no, yes, smart-case
+
 
 # Henrik uses also:
 # bind stash D !?git stash drop %(stash)

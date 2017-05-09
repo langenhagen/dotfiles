@@ -128,12 +128,12 @@ end
 
 function olh
     # greps for the given arguments on the one-line-help.txt file
-    grep -i --color=never "$argv" ~/stuff/one-line-help.txt
+    grep -i --color=never "$argv" ~/stuff/one-line-helps/one-line-help-(whoami)-(hostname -s).txt
 end
 
 function alh
     # adds a line to the one-line-help.txt file
-    echo $argv >> ~/stuff/one-line-help.txt
+    echo $argv >> ~/stuff/one-line-helps/one-line-help-(whoami)-(hostname -s).txt
 end
 
 function mkfav
@@ -156,7 +156,7 @@ function vimh
     vim -p (eval $history[1])
 end
 
-function fnd2
+function fn2
     find . -iname "*$argv*"
 end
 

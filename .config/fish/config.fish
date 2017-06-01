@@ -52,18 +52,20 @@ abbr -a gpl git pull origin staging
 abbr -a gpos git pull origin staging
 abbr -a gri git rebase --interactive HEAD~
 abbr -a gpr git pull --rebase origin staging
+abbr -a grhh git reset --hard HEAD
 abbr -a cdd cd ~/Desktop
 abbr -a tks tricks
 abbr -a jrn journal
 abbr -a bkt bucket
 abbr -a favs cdfavs
 abbr -a opn open
-abbr -a 1lh olh
 abbr -a fnd find . -iname
 abbr -a fnd1 find . -maxdepth 1 -iname
 abbr -a t3 tree -L 3
 abbr -a t3d tree -L 3 -d
 abbr -a cddotfiles cd /Users/langenha/personal/Dev/Zeugs/dotfiles
+abbr -a gitp gitup
+abbr -a vim vim -p
 
 ######### EDUCATIONAL AND ERRATIC ##################################################################
 
@@ -86,7 +88,7 @@ function fff
 
     # test fish function for experimental purposes
     echo '--- fff START'
-   
+
     echo '--- fff END'
 end
 
@@ -120,15 +122,20 @@ function bucket
 
     if test (count $argv) -eq 0
         # -R readonly
-        vim -R ~/stuff/BucketList.txt
+        vim -R "+normal G\$" ~/stuff/BucketList.txt      # \$ instead of $ is necessary bc of fish
     else if test (count $argv) -gt 0
         echo (date +%a' '%Y'-'%m'-'%d' '%H:%M) $argv >> ~/stuff/BucketList.txt
     end
 end
 
 function olh
-    # greps for the given arguments on the one-line-help.txt file
-    grep -i --color=never "$argv" ~/stuff/one-line-helps/one-line-help-(whoami)-(hostname -s).txt
+   if test (count $argv) -eq 0
+        # -R readonly
+        vim -R ~/stuff/one-line-helps/one-line-help-(whoami)-(hostname -s).txt
+    else if test (count $argv) -gt 0
+        # greps for the given arguments on the one-line-help.txt file
+        grep -i --color=never "$argv" ~/stuff/one-line-helps/one-line-help-(whoami)-(hostname -s).txt
+    end
 end
 
 function alh
@@ -142,6 +149,11 @@ end
 
 function pbc
     echo $argv | pbcopy
+end
+
+function gitup
+    echo (pwd)
+    cd (git rev-parse --show-toplevel)
 end
 
 function pbce

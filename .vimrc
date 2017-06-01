@@ -1,10 +1,33 @@
-" key to toggle opt ============================================================================
-"function MapToggle(key, opt)
-"  let cmd = ':set '.a:opt.'! \| set '.a:opt."?\<CR>"
-"  exec 'nnoremap '.a:key.' '.cmd
-"  exec 'inoremap '.a:key." \<C-O>".cmd
-"endfunction
-"command -nargs=+ MapToggle call MapToggle(<f-args>)
+" Vundle stuff  ====================================================================================
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
 
 " commands =========================================================================================
 
@@ -18,8 +41,11 @@ set shiftwidth=4
 set expandtab
 
 syntax on
+au BufNewFile,BufRead *.mm set filetype=cpp
+au BufNewFile,BufRead *.m set filetype=cpp
 set number
 set ruler
+set hlsearch
 set cursorline
 " set list    " shows tabs and newline characters
 set ignorecase
@@ -72,8 +98,9 @@ endfunction
 map <F2> :set hlsearch!<CR>
 map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>   " from: http://vim.wikia.com/wiki/Easily_switch_between_source_and_header_file
 map <F5> :edit<CR>  " refresh file
-map <F7> gT      " toggle tab to the left
-map <F8> gt      " toggle tab to the right
+map <F7> gT       " toggle tab to the left
+map <F8> gt         " toggle tab to the right
+map <S-F8> gT       " toggle tab to the left
 map <F10> :q!<CR>
 map <F11> :set number!<CR>
 map <expr> <F12> ToggleHighlightOverlength()         " <expr> necessary on functions

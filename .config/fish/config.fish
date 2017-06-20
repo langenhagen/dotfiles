@@ -53,6 +53,7 @@ abbr -a gpos git pull origin staging
 abbr -a gri git rebase --interactive HEAD~
 abbr -a gpr git pull --rebase origin staging
 abbr -a grhh git reset --hard HEAD
+abbr -a grsh git reset --soft HEAD~1
 abbr -a cdd cd ~/Desktop
 abbr -a tks tricks
 abbr -a jrn journal

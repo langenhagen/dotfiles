@@ -15,7 +15,7 @@ bind generic = !?<git commit
 bind generic T !git checkout --theirs %(file)
 bind generic T !git checkout --ours %(file)
 bind generic <F10> quit
-bind generic <F12> !?<git push origin HEAD:refs/for/staging   
+bind generic <F12> !?<git push origin HEAD:refs/for/staging
 
 
 

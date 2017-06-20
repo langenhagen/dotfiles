@@ -32,13 +32,10 @@ filetype plugin indent on    " required
 " commands =========================================================================================
 
 filetype plugin indent on
-set tabstop=4
-" show existing tab with 4 spaces width
-set tabstop=4
-" when indenting with '>', use 4 spaces width
-set shiftwidth=4
-" " On pressing tab, insert 4 spaces
-set expandtab
+set tabstop=4            " show existing tab with 4 spaces width
+set shiftwidth=4         " when indenting with '>', use 4 spaces width
+set expandtab            " On pressing tab, insert spaces
+set history=200          " set ex command history to 200
 
 syntax on
 au BufNewFile,BufRead *.mm set filetype=cpp
@@ -52,7 +49,7 @@ set ignorecase
 
 " highlight overlength strings and trailing spaces in a red bg color
 highlight Overlength ctermbg=darkred ctermfg=white guibg=#101010
-let g:is_highlight_overlength = 2
+let g:is_highlight_overlength = 0
 function ToggleHighlightOverlength()
     if g:is_highlight_overlength == 0
         let g:is_highlight_overlength = 2
@@ -68,7 +65,7 @@ function ToggleHighlightOverlength()
         echo "Highlight Overlength OFF and Trailing Spaces OFF"
     endif
 endfunction
-autocmd BufWinEnter * match Overlength /\%101v.\+\|\s\+$/           " initial setting    autocmd BufWinEnter * calls the command when a window is being entered
+" autocmd BufWinEnter * match Overlength /\%101v.\+\|\s\+$/           " initial setting    autocmd BufWinEnter * calls the command when a window is being entered
 
 " delete trailing spaces and tabs
 command Deltrail %s/\s\+$//e              " command for ex-mode. Must begin with uppercase letter if user-defined

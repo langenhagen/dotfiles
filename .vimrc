@@ -1,33 +1,35 @@
 " Vundle stuff  ====================================================================================
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
+" *** disabled for now ***
 "
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"set nocompatible              " be iMproved, required
+"filetype off                  " required
 "
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-
+"" set the runtime path to include Vundle and initialize
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+"" alternatively, pass a path where Vundle should install plugins
+""call vundle#begin('~/some/path/here')
+"
+"" let Vundle manage Vundle, required
+"Plugin 'VundleVim/Vundle.vim'
+"Plugin 'Valloric/YouCompleteMe'
+"
+"" All of your Plugins must be added before the following line
+"call vundle#end()            " required
+"filetype plugin indent on    " required
+"" To ignore plugin indent changes, instead use:
+""filetype plugin on
+""
+"" Brief help
+"" :PluginList       - lists configured plugins
+"" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+"" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+"" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+""
+"" see :h vundle for more details or wiki for FAQ
+"" Put your non-Plugin stuff after this line
+"
+"
 
 " commands =========================================================================================
 
@@ -49,7 +51,7 @@ set ignorecase
 
 " highlight overlength strings and trailing spaces in a red bg color
 highlight Overlength ctermbg=darkred ctermfg=white guibg=#101010
-let g:is_highlight_overlength = 0
+let g:is_highlight_overlength = 1
 function ToggleHighlightOverlength()
     if g:is_highlight_overlength == 0
         let g:is_highlight_overlength = 2
@@ -65,7 +67,7 @@ function ToggleHighlightOverlength()
         echo "Highlight Overlength OFF and Trailing Spaces OFF"
     endif
 endfunction
-" autocmd BufWinEnter * match Overlength /\%101v.\+\|\s\+$/           " initial setting    autocmd BufWinEnter * calls the command when a window is being entered
+autocmd BufWinEnter * match Overlength /\s\+$/          " initial setting    autocmd BufWinEnter * calls the command when a window is being entered
 
 " delete trailing spaces and tabs
 command Deltrail %s/\s\+$//e              " command for ex-mode. Must begin with uppercase letter if user-defined
@@ -102,4 +104,6 @@ map <F10> :q!<CR>
 map <F11> :set number!<CR>
 map <expr> <F12> ToggleHighlightOverlength()         " <expr> necessary on functions
 map <expr> <S-F12> HighlightMultipleSpaces()
-
+nmap ø o<ESC>
+nmap Ø O<ESC>
+nmap Ô kJ

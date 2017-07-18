@@ -10,7 +10,6 @@ set fish_greeting "" # deactivates the fish welcome message
 setenv CODE_DIR "/Users/langenha/code"
 setenv SCRIPTS_DIR "$CODE_DIR/scripts"
 
-
 setenv Z_SCRIPT_PATH /usr/local/etc/profile.d/z.sh
 setenv PATH $PATH $SCRIPTS_DIR /usr/local/sbin
 setenv PATH $PATH /Users/$USER/Library/Android/sdk/platform-tools/
@@ -39,16 +38,19 @@ setenv CMAKE_BUILD_ROOT "<will_be_set_by_function>"        # for apache ant for 
 ######### ABBREVIATIONS ############################################################################
 
 abbr -a gco git checkout
+abbr -a gcob git checkout -b
 abbr -a gbd git branch -D
 abbr -a gb  git branch
 abbr -a gs git status
 abbr -a gca git commit --amend
 abbr -a gcs git checkout staging
+abbr -a gcos git checkout staging
 abbr -a gcb git checkout -b
 abbr -a gbn git checkout -b
 abbr -a gnb git checkout -b
 abbr -a gp git push origin HEAD:refs/for/staging
 abbr -a gpl git pull origin staging
+abbr -a gplr git pull --rebase origin staging
 abbr -a gpos git pull origin staging
 abbr -a gri git rebase --interactive HEAD~
 abbr -a gpr git pull --rebase origin staging
@@ -67,6 +69,25 @@ abbr -a t3d tree -L 3 -d
 abbr -a cddotfiles cd /Users/langenha/personal/Dev/Zeugs/dotfiles
 abbr -a gitp gitup
 abbr -a vim vim -p
+abbr -a gss git stash
+abbr -a gsa git stash apply
+abbr -a cdcode cd $CODE_DIR
+abbr -a cdcde cd $CODE_DIR
+abbr -a cddocker cd $CODE_DIR/docker
+abbr -a cdscripts cd $SCRIPTS_DIR
+abbr -a cdstuff cd $HOME/stuff
+abbr -a cds cd $HOME/stuff
+abbr -a cdfavs eval "cd $HOME/stuff/shortcuts; and ls -1"
+abbr -a cdand cd $CODE_DIR/android
+abbr -a cdios cd $CODE_DIR/AMSDK-iOS
+abbr -a cdiosp cd $CODE_DIR/AmsDemo1
+abbr -a cdiosr cd $CODE_DIR/AmsDemo2
+abbr -a edl vim -p $HOME/stuff/
+abbr -a eds vim -p $HOME/stuff/
+
+######### IMMUTABLE GIT ALIASES ####################################################################
+
+alias gnb="git checkout staging; and git pull origin staging; and git checkout -b"
 
 ######### EDUCATIONAL AND ERRATIC ##################################################################
 
@@ -93,7 +114,36 @@ function fff
     echo '--- fff END'
 end
 
+######### HELPER FUNCTIONS #########################################################################
+
+function read_confirm_prompt
+    echo 'Do you want to continue? [yY/nN] '
+end
+
+function read_confirm
+  # performs a Yes/No confirmation check by the user via the keyboard.
+
+
+  while true
+    read -l -p read_confirm_prompt confirm
+
+    switch $confirm
+      case Y y
+        return 0
+      case '' N n
+        return 1
+    end
+  end
+end
+
+
+
 ######### NICE FUNCTIONS ###########################################################################
+
+function tagesausgaben
+    echo (date +'%d'.'%m')";$argv" >> /Users/langenha/personal/Administrative/tagesausgaben.csv
+end
+
 
 function tricks
     # shows the tricks file and enables grepping on it
@@ -115,6 +165,11 @@ function journal
     else if test (count $argv) -gt 0
         echo (date +%a' '%Y'-'%m'-'%d' '%H:%M) $argv >> ~/stuff/Journal.txt
     end
+end
+
+function editjournal
+    # opens the journal file in vim in order to edit it manually
+    vim -p ~/stuff/Journal.txt
 end
 
 function bucket
@@ -185,7 +240,7 @@ function hirn
 end
 
 function chirn
-    grep -Hirn --include \*.h --include \*.cpp --include \*.m --include \*.mm --include \*.pch --color $argv[1] .
+    grep -Hirn --include \*.h --include \*.cpp --include \*.m --include \*.mm --include \*.pch --include \*.swift --color $argv[1] .
 end
 
 function jhirn
@@ -217,7 +272,6 @@ function slirn
 end
 
 function replace
-
     if test (count $argv) -lt 3
         echo "Usage:  replace '*.h' '.cpp' [...] '<lookforthis>' '<replacewiththis>' "
         return
@@ -228,10 +282,19 @@ function replace
     set to_replace_with $argv[(count $argv)]
 
     for file in $argv[1..$n_files]
+        # show potential changes before actual replacement
         grep -Hrn --color --include $file $to_look_for .
+    end
+
+    if not read_confirm
+        return
+    end
+
+    for file in $argv[1..$n_files]
         # find will execute -exec and substitute {} with what it found
-        # whereas with + as many files as possible are given as parameters to sed at once
-        find . -name "$file" -exec sed -i '' "s@$to_look_for@$to_replace_with@g" '{}' +
+        # whereas with + as many files as possible are given as parameters to sed at once.
+        #find . -name "$file" -exec sed -i '' "s@$to_look_for@$to_replace_with@g" '{}' +  # Mac sed version
+        find . -name "$file" -exec sed -i "s@$to_look_for@$to_replace_with@g" '{}' +  # Gnu sed version
     end
 end
 
@@ -268,24 +331,6 @@ alias rmake="bash $SCRIPTS_DIR/the-cmake-script.sh"
 alias rats="bash $SCRIPTS_DIR/rats.sh"
 alias newtask="bash $SCRIPTS_DIR/new-task.sh"
 alias spo="bash $SCRIPTS_DIR/send_pushover.sh"
-
-######### IMMUTABLE CD ALIASES #####################################################################
-
-alias cdcode="cd $CODE_DIR"
-alias cdcde="cd $CODE_DIR"
-alias cddocker="cd $CODE_DIR/docker"
-alias cdscripts="cd $SCRIPTS_DIR"
-alias cdstuff="cd $HOME/stuff"
-alias cdfavs="cd $HOME/stuff/shortcuts; and ls -1"
-
-alias cdand="cd $CODE_DIR/android"
-alias cdios="cd $CODE_DIR/AMSDK-iOS"
-alias cdiosp="cd $CODE_DIR/AmsDemo1"
-alias cdiosr="cd $CODE_DIR/AmsDemo2"
-
-######### IMMUTABLE GIT ALIASES ####################################################################
-
-alias gnb="git checkout staging; and git pull origin staging; and git checkout -b"
 
 
 ######### OLYMPIA RELATED ALIASES ##################################################################

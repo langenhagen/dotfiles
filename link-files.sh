@@ -14,29 +14,29 @@ ln -s $DOTFILES_PATH/.vimrc ~/.vimrc
 
 
 rm ~/.config/fish/config.fish
-ln  -s $DOTFILES_PATH/.config/fish/config.fish ~/.config/fish/config.fish
+ln -s $DOTFILES_PATH/.config/fish/config.fish ~/.config/fish/config.fish
 
 
 rm ~/.tigrc
-ln  -s $DOTFILES_PATH/.tigrc ~/.tigrc
+ln -s $DOTFILES_PATH/.tigrc ~/.tigrc
 
 
 rm ~/.gitconfig
-ln  -s $DOTFILES_PATH/.gitconfig ~/.gitconfig
+ln -s $DOTFILES_PATH/.gitconfig ~/.gitconfig
 
 
 rm ~/.gitignore_global
-ln  -s $DOTFILES_PATH/.gitignore_global ~/.gitignore_global
+ln -s $DOTFILES_PATH/.gitignore_global ~/.gitignore_global
 
 
 rm ~/.config/bpython/config
 ln  -s $DOTFILES_PATH/.config/bpython/config ~/.config/bpython/config
 
-rm -rf ~/.config/filezilla/
-ln  -s $DOTFILES_PATH/.config/filezilla/config ~/.config/filezilla
-
 rm ~/.ccache/ccache.conf
-ln  -s $DOTFILES_PATH/.ccache/ccache.conf ~/.ccache/ccache.conf
+ln -s $DOTFILES_PATH/.ccache/ccache.conf ~/.ccache/ccache.conf
+
+rm -rf ~/.config/filezilla/
+ln -s $DOTFILES_PATH/.config/filezilla/config ~/.config/filezilla
 
 
 # set iterm2 config settings. The applicability has yet to be confirmed.

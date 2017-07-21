@@ -5,7 +5,9 @@
 #
 # author: langenhagen
 # version: 170721
-DOTFILES_PATH="/Users/langenha/personal/Dev/Zeugs/dotfiles"
+
+DIR_OF_THIS_SCRIPT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DOTFILES_PATH=$DIR_OF_THIS_SCRIPT
 
 rm ~/.vimrc
 ln -s $DOTFILES_PATH/.vimrc ~/.vimrc

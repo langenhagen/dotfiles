@@ -32,6 +32,8 @@ ln  -s $DOTFILES_PATH/.gitignore_global ~/.gitignore_global
 rm ~/.config/bpython/config
 ln  -s $DOTFILES_PATH/.config/bpython/config ~/.config/bpython/config
 
+rm -rf ~/.config/filezilla/
+ln  -s $DOTFILES_PATH/.config/filezilla/config ~/.config/filezilla
 
 rm ~/.ccache/ccache.conf
 ln  -s $DOTFILES_PATH/.ccache/ccache.conf ~/.ccache/ccache.conf

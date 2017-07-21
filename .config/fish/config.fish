@@ -11,8 +11,10 @@ setenv CODE_DIR "/Users/langenha/code"
 setenv SCRIPTS_DIR "$CODE_DIR/scripts"
 
 setenv Z_SCRIPT_PATH /usr/local/etc/profile.d/z.sh
-setenv PATH $PATH $SCRIPTS_DIR /usr/local/sbin
-setenv PATH $PATH /Users/$USER/Library/Android/sdk/platform-tools/
+set -gx PATH $PATH $SCRIPTS_DIR
+set -gx PATH $PATH /usr/local/sbin
+set -gx PATH $PATH /Users/$USER/Library/Android/sdk/platform-tools/
+set -gx PATH $PATH /usr/local/opt/icecream/libexec/icecc/bin
 
 setenv ANDROID_SERIAL CB5A286QVE            # that's my SONY XPeria Z5 Compact
 #setenv ANDROID_SERIAL 024475e094d2743e      # that's the LG Nexus with PTM #245
@@ -84,6 +86,7 @@ abbr -a cdiosp cd $CODE_DIR/AmsDemo1
 abbr -a cdiosr cd $CODE_DIR/AmsDemo2
 abbr -a edl vim -p $HOME/stuff/
 abbr -a eds vim -p $HOME/stuff/
+abbr -a chirna "grep -Hirn --include \*.h --include \*.cpp --include \*.m --include \*.mm --include \*.pch --include \*.swift --color"
 
 ######### IMMUTABLE GIT ALIASES ####################################################################
 
@@ -122,7 +125,6 @@ end
 
 function read_confirm
   # performs a Yes/No confirmation check by the user via the keyboard.
-
 
   while true
     read -l -p read_confirm_prompt confirm

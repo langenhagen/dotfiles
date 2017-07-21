@@ -1,26 +1,31 @@
 # Dotfiles
 
 author: langenhagen
-version: 170502
+version: 1700721
 
 This folder cointains a bunch of .dotfiles and /.dotfolders to configure
-Your UNIX environment and applications.
+Your UNIX environment and applications. It may also contain exportable settings from other programs.
 
 
 The dotfiles can be linked into Your system with ln, effectively keeping them up-to-date
 in this folder and thus enabling to keep them up-to date on each machine.
 Create a branch for each machine.
 
+Also check out the script `link-files.sh` which links the dotfiles and also sets application
+settings, when applicable.
+
+
 Caution: links created with ln will follow the old files when You do something like
 
-```
+```bash
 git checkout HEAD
 ```
 
 on a file. Thus, this won't undo changes to the linked files. You need to re-link them again.
 Linking can be done like in the following. Maybe it can be actually easier.
 
-```
+
+```bash
 rm ~/.vimrc;                    and ln ~/personal/Dev/Zeugs/dotfiles/.vimrc                     ~/.vimrc
 rm ~/.tigrc;                    and ln ~/personal/Dev/Zeugs/dotfiles/.tigrc                     ~/.tigrc
 rm ~/.tigr;                     and ln ~/personal/Dev/Zeugs/dotfiles/.tigrc                     ~/.tigrc

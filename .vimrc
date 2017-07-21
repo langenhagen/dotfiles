@@ -45,6 +45,7 @@ au BufNewFile,BufRead *.m set filetype=cpp
 set number
 set ruler
 set hlsearch
+set incsearch            " highlight the next match while typing
 set cursorline
 " set list    " shows tabs and newline characters
 set ignorecase
@@ -91,7 +92,6 @@ function HighlightMultipleSpaces()
 endfunction
 
 
-
 " key bindings =====================================================================================
 
 map <F2> :set hlsearch!<CR>
@@ -107,3 +107,9 @@ map <expr> <S-F12> HighlightMultipleSpaces()
 nmap ø o<ESC>
 nmap Ø O<ESC>
 nmap Ô kJ
+
+" commands ========================================================================================
+
+command Trenn norm o//<ESC>98a-<ESC>o
+
+

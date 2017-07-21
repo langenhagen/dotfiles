@@ -35,8 +35,17 @@ ln  -s $DOTFILES_PATH/.config/bpython/config ~/.config/bpython/config
 rm ~/.ccache/ccache.conf
 ln -s $DOTFILES_PATH/.ccache/ccache.conf ~/.ccache/ccache.conf
 
-rm ~/.config/filezilla
+rm ~/.config/filezilla   # symbolic link's sources would be removed if we provided `rm -rf`, so jut doing `rm` is sufficient
 ln -s $DOTFILES_PATH/.config/filezilla ~/.config/filezilla
+
+rm ~/.config/filezilla   # symbolic link's sources would be removed if we provided `rm -rf`, so jut doing `rm` is sufficient
+ln -s $DOTFILES_PATH/.config/filezilla ~/.config/filezilla
+
+
+rm ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
+ln -s $DOTFILES_PATH/sublimetext3-config/Installed\ Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
+rm ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+ln -s $DOTFILES_PATH/sublimetext3-config/Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
 
 
 # set iterm2 config settings. The applicability has yet to be confirmed.

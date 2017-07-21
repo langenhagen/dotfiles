@@ -35,17 +35,44 @@ ln  -s $DOTFILES_PATH/.config/bpython/config ~/.config/bpython/config
 rm ~/.ccache/ccache.conf
 ln -s $DOTFILES_PATH/.ccache/ccache.conf ~/.ccache/ccache.conf
 
-rm ~/.config/filezilla   # symbolic link's sources would be removed if we provided `rm -rf`, so jut doing `rm` is sufficient
-ln -s $DOTFILES_PATH/.config/filezilla ~/.config/filezilla
 
-rm ~/.config/filezilla   # symbolic link's sources would be removed if we provided `rm -rf`, so jut doing `rm` is sufficient
-ln -s $DOTFILES_PATH/.config/filezilla ~/.config/filezilla
+# filezilla. Can initially be a real folder, thus we rm `-rf` it.
+# Later it can be a symlink, there we need the `rm` statement without commands.
+
+FILEZILLA_CONFIG_DIR=~/.config/filezilla
+if [ ! -L "$"FILEZILLA_CONFIG_DIR ] && [ -d "$FILEZILLA_CONFIG_DIR" ]; then
+    # filezilla dir is a real directory
+    rm -rf "$FILEZILLA_CONFIG_DIR"
+elif [ -L "$FILEZILLA_CONFIG_DIR" ];  then
+	#  filezilla dir is a symlink
+    rm "$FILEZILLA_CONFIG_DIR"
+fi
+ln -s $DOTFILES_PATH/.config/filezilla "$FILEZILLA_CONFIG_DIR"
 
 
-rm ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
-ln -s $DOTFILES_PATH/sublimetext3-config/Installed\ Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
-rm ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
-ln -s $DOTFILES_PATH/sublimetext3-config/Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+# sublime text. The folders that we want to overwrite are either a real folder or,
+# if we linked the files before, we want to overwrite the symlinks.
+# For real folders we need `rm -rf`, for symlinks we need just `rm`
+
+SUBLIME_INSTALLED_PACKAGES_DIR=~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
+if [ ! -L "$SUBLIME_INSTALLED_PACKAGES_DIR" ] && [ -d "$SUBLIME_INSTALLED_PACKAGES_DIR" ]; then
+    # sublime installed packages dir is a real directory
+    rm -rf "$SUBLIME_INSTALLED_PACKAGES_DIR"
+elif [ -L "$SUBLIME_INSTALLED_PACKAGES_DIR" ];  then
+	# sublime installed packages dir is a symlink
+    rm "$SUBLIME_INSTALLED_PACKAGES_DIR"
+fi
+ln -s "$DOTFILES_PATH/sublimetext3-config/Installed Packages" "$SUBLIME_INSTALLED_PACKAGES_DIR"
+
+SUBLIME_PACKAGES_DIR=~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+if [ ! -L "$SUBLIME_PACKAGES_DIR" ] && [ -d "$SUBLIME_PACKAGES_DIR" ]; then
+	# sublime packages dir is a real directory
+    rm -rf "$SUBLIME_PACKAGES_DIR"
+elif [ -L "$SUBLIME_PACKAGES_DIR" ]; then
+	# sublime packages dir is a symlink
+    rm "$SUBLIME_PACKAGES_DIR"
+fi
+ln -s "$DOTFILES_PATH/sublimetext3-config/Packages" "$SUBLIME_PACKAGES_DIR"
 
 
 # set iterm2 config settings. The applicability has yet to be confirmed.

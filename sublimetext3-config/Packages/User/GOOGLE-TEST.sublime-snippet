@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[TEST( ${1:TestClass}, ${2:TestCase} )
+{
+    EXPECT_EQ( false ); // TODO
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>GTEST</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

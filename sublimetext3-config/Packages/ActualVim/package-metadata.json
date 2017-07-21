@@ -1,0 +1,1 @@
+{"url": "https://github.com/lunixbochs/ActualVim", "platforms": ["*"], "version": "0.9.11", "dependencies": [], "description": "Sublime Text 3 input mode using Neovim", "sublime_text": ">=3000"}

@@ -35,8 +35,8 @@ ln  -s $DOTFILES_PATH/.config/bpython/config ~/.config/bpython/config
 rm ~/.ccache/ccache.conf
 ln -s $DOTFILES_PATH/.ccache/ccache.conf ~/.ccache/ccache.conf
 
-rm -rf ~/.config/filezilla/
-ln -s $DOTFILES_PATH/.config/filezilla/config ~/.config/filezilla
+rm ~/.config/filezilla
+ln -s $DOTFILES_PATH/.config/filezilla ~/.config/filezilla
 
 
 # set iterm2 config settings. The applicability has yet to be confirmed.

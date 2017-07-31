@@ -16,26 +16,26 @@
 	<integer>1</integer>
 	<key>Coprocess MRU</key>
 	<array>
+		<string>echo vim "/Users/langenha/personal/Dev/Zeugs/one-line-helps/one-line-help-langenha-4demlangenha.ad.here.com-archive.txt" +</string>
+		<string>echo vim "/Users/langenha/code/scripts/backup-one-line-help.sh" +</string>
+		<string>echo vim "/Users/langenha/code/dita_docs/setup/macros/font-and-style-config.xml" +286</string>
+		<string>echo vim "/Users/langenha/code/dita_docs/common/dita-layouts/pdf/fonts/fop/default.xconf" +25</string>
+		<string>echo vim "/Users/langenha/code/dita_docs/auto_nav_system_maps_android/dev_guide/build/.ant-targets-build.xml" +31</string>
+		<string>echo vim "/Users/langenha/code/dita_docs/dita_ot/plugins/org.dita.pdf2.fop/build_fop.xml" +155</string>
+		<string>echo vim "/Users/langenha/code/dita_docs/setup/macros/dita-ot-invocation.xml" +147</string>
+		<string>echo vim "/Users/langenha/code/dita_docs/auto_nav_system_maps_android/dev_guide/build/build.xml" +50</string>
+		<string>echo vim "/Users/langenha/code/dita_docs/setup/create-document.xml" +197</string>
+		<string>echo vim "/Users/langenha/code/dita_docs/setup/macros/dita-ot-invocation.xml" +645</string>
+		<string>echo vim "/Users/langenha/code/AMSDK-iOS/Source/AMSDataManagement/Service/AMSDataServiceProtocol.h" +396</string>
+		<string>echo vim "/Users/langenha/code/AMSDK-iOS/Source/AMSDataManagement/Service/AMSDataServiceProtocol.h" +403</string>
+		<string>echo vim "/Users/langenha/code/AMSDK-iOS/Source/AMSRouteCalculation/Constants/AMSRouteConstants.h" +145</string>
+		<string>echo vim "/Users/langenha/code/dita_docs/auto_nav_system_maps_android/dev_guide/document.ditamap" +55</string>
+		<string>echo vim "/Users/langenha/code/dita_docs/auto_nav_system_maps_android/dev_guide/topics/key-concepts.dita" +68</string>
+		<string>echo vim "/Users/langenha/code/dita_docs/auto_nav_system_maps_android/dev_guide/topics/place-matching.dita" +3</string>
+		<string>echo vim "/Users/langenha/code/android/sdk/src/test/java/com/here/automotive/sdk/mobile/route/RouteTagTest.java" +75</string>
+		<string>echo vim "/Users/langenha/code/android/examples/src/main/java/com/here/automotive/sdk/examples/routing/FirstMileActivity.java" +130</string>
 		<string>echo vim "/Users/langenha/code/AMSDK-iOS/Tests/AMSDataManagementTests/Common/Models/Persistant_objects/AMSDataPlaceTests.m" +413</string>
 		<string>echo vim "/Users/langenha/code/AMSDK-iOS/Source/AMSDataManagement/Models/AMSDataPlace_Internal.h" +42</string>
-		<string>echo vim "/Users/langenha/code/AMSDK-iOS/External/Carthage/Build/Mac/OCMock.framework/Versions/A/Headers/OCMLocation.h" +17</string>
-		<string>echo vim "/Users/langenha/code/AMSDK-iOS/External/Carthage/Build/Mac/OCMock.framework/Headers/OCMLocation.h" +17</string>
-		<string>echo vim "/Users/langenha/code/android/sdk/src/androidTest/java/com/here/automotive/sdk/mobile/internal/repository/route/RouteLocalTest.java" +261</string>
-		<string>echo vim "/Users/langenha/code/android/sdk/src/test/java/com/here/automotive/sdk/mobile/routing/RouteCalculationOptionsTest.java" +105</string>
-		<string>echo vim "/Users/langenha/code/android/examples/src/main/java/com/here/automotive/sdk/examples/routing/FirstMileActivity.java" +53</string>
-		<string>echo vim "/Users/langenha/code/android/examples/build/intermediates/incremental/mergeOlympiaAudiDebugResources/merged.dir/values/values.xml" +639</string>
-		<string>echo vim "/Users/langenha/code/AMSDK-iOS/Frameworks/NMAKit.framework/Headers/NMAMapScheme.h" +233</string>
-		<string>echo vim "/Users/langenha/code/AmsDemo2/Frameworks/NMAKit.framework/Headers/NMAMapScheme.h" +52</string>
-		<string>echo vim "/Users/langenha/code/AMSDK-iOS/Frameworks/NMAKit.framework/Headers/NMACustomConfigurations.h" +71</string>
-		<string>echo vim "/Users/langenha/code/AmsDemo1/Frameworks/NMAKit.framework/Headers/NMAMapView.h" +753</string>
-		<string>echo vim "/Users/langenha/code/AmsDemo2/Frameworks/NMAKit.framework/Headers/NMACustomConfigurations.h" +97</string>
-		<string>echo vim "/Users/langenha/code/AmsDemo1/Frameworks/NMAKit.framework/Headers/NMACustomConfigurations.h" +93</string>
-		<string>echo vim "/Users/langenha/code/AMSDK-iOS/Frameworks/NMAKit.framework/Headers/NMACustomConfigurations.h" +103</string>
-		<string>echo vim "/Users/langenha/code/AmsDemo2/AMS\ Sample\ Routes/Login/MBBTokenHandler.swift" +100</string>
-		<string>echo vim "/Users/langenha/code/dita_docs/auto_nav_system_maps_android/release_notes/topics_auto-olympia/resolved-issues.dita" +63</string>
-		<string>echo vim "/Users/langenha/code/navcomp/e2e/features/steps/utils/environment_utils.py" +26</string>
-		<string>echo vim "/Users/langenha/code/navcomp/e2e/sut.py" +</string>
-		<string>echo vim "/Users/langenha/code/AMSDK-iOS/Frameworks/NMAKit.framework/Headers/NMANavigationManager.h" +16</string>
 	</array>
 	<key>Custom Color Presets</key>
 	<dict>
@@ -412,11 +412,13 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>2516 512 796 473 1920 150 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1922 155 1676 1017 1920 150 1680 1027 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
 	<string>3 772 570 402 0 0 1920 1177 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>2 773 570 402 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>3 763 570 402 0 0 1920 1177 </string>
+	<string>3 28 1914 1146 0 0 1920 1177 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>254 55 570 402 0 0 1920 1177 </string>
 	<key>NeverWarnAboutShortLivedSessions_07AADE1D-EEFE-4028-889E-AAEEF4918BFE</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_07AADE1D-EEFE-4028-889E-AAEEF4918BFE_selection</key>
@@ -2438,6 +2440,14 @@
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
+	<integer>0</integer>
+	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt_selection</key>
+	<integer>0</integer>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
@@ -2547,7 +2557,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/langenha/personal/Dev/Zeugs/dotfiles/iterm2-config</string>
+	<string>/Users/langenha/dotfiles/iterm2-config</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>SUEnableAutomaticChecks</key>
@@ -2559,7 +2569,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-07-21T09:01:16Z</date>
+	<date>2017-07-26T08:36:29Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>

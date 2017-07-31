@@ -34,6 +34,7 @@
 " commands =========================================================================================
 
 filetype plugin indent on
+set visualbell           " disable beep sound when a motion fails
 set tabstop=4            " show existing tab with 4 spaces width
 set shiftwidth=4         " when indenting with '>', use 4 spaces width
 set expandtab            " On pressing tab, insert spaces
@@ -43,12 +44,13 @@ syntax on
 au BufNewFile,BufRead *.mm set filetype=cpp
 au BufNewFile,BufRead *.m set filetype=cpp
 set number
-set ruler
+set ruler   " shows line and column numbers in the status bar
 set hlsearch
 set incsearch            " highlight the next match while typing
 set cursorline
 " set list    " shows tabs and newline characters
 set ignorecase
+set laststatus=2   " shows the current filename in the status bar
 
 " highlight overlength strings and trailing spaces in a red bg color
 highlight Overlength ctermbg=darkred ctermfg=white guibg=#101010
@@ -111,5 +113,6 @@ nmap Ô kJ
 " commands ========================================================================================
 
 command Trenn norm o//<ESC>98a-<ESC>o
+command Pytrenn norm o#<ESC>99a-<ESC>o
 
 

@@ -39,6 +39,10 @@ setenv CMAKE_BUILD_ROOT "<will_be_set_by_function>"        # for apache ant for 
 
 ######### ABBREVIATIONS ############################################################################
 
+abbr -a fishconfig vim ~/.config/fish/config.fish
+abbr -a sourcefish . ~/.config/fish/config.fish
+abbr -a . ~/.config/fish/config.fish
+abbr -a cd.. cd ..
 abbr -a gco git checkout
 abbr -a gcob git checkout -b
 abbr -a gbd git branch -D
@@ -71,6 +75,8 @@ abbr -a t3d tree -L 3 -d
 abbr -a cddotfiles cd /Users/langenha/personal/Dev/Zeugs/dotfiles
 abbr -a gitp gitup
 abbr -a vim vim -p
+abbr -a t tig
+abbr -a tg tig
 abbr -a gss git stash
 abbr -a gsa git stash apply
 abbr -a cdcode cd $CODE_DIR
@@ -82,11 +88,32 @@ abbr -a cds cd $HOME/stuff
 abbr -a cdfavs eval "cd $HOME/stuff/shortcuts; and ls -1"
 abbr -a cdand cd $CODE_DIR/android
 abbr -a cdios cd $CODE_DIR/AMSDK-iOS
+abbr -a cios cd $CODE_DIR/AMSDK-iOS
 abbr -a cdiosp cd $CODE_DIR/AmsDemo1
+abbr -a ciosp cd $CODE_DIR/AmsDemo1
 abbr -a cdiosr cd $CODE_DIR/AmsDemo2
+abbr -a ciosr cd $CODE_DIR/AmsDemo2
 abbr -a edl vim -p $HOME/stuff/
 abbr -a eds vim -p $HOME/stuff/
 abbr -a chirna "grep -Hirn --include \*.h --include \*.cpp --include \*.m --include \*.mm --include \*.pch --include \*.swift --color"
+abbr -a sb sublime
+abbr -a textmate open -a TextMate
+abbr -a tm open -a TextMate
+abbr -a xcode open -a Xcode
+abbr -a xc open -a Xcode
+abbr -a bpython '/usr/local/bin/python -m bpython' # makes my bpython point to my own python version      (160817: 2.7.11)
+abbr -a bp '/usr/local/bin/python -m bpython'      # makes my bpython point to my own python version      (160817: 2.7.11)
+abbr -a sbscbeterm 'sb /Users/langenha/code/ScbeTerminal/ScbeTerminal.py'
+abbr -a scbeterm 'python /Users/langenha/code/ScbeTerminal/ScbeTerminal.py'
+abbr -a sp 'sb /Users/langenha/personal/Barn/Text/Spanish.txt'
+
+
+# updated and download AMSDK-iOS Project from staging
+abbr -a updateios "cd $CODE_DIR/AMSDK-iOS ; git pull --rebase origin staging ; rm -rf ./Frameworks/*.framework ; bash ./scripts/ci/here-dependencies.sh; cd External/hcvd ; bash ./scripts/hcvd-xcode.sh ;"
+
+abbr -a updateiosp "cd $CODE_DIR/AmsDemo1 ; git stash ; git checkout staging ; git stash apply ; git pull --rebase origin staging ; rm -rf $CODE_DIR/AmsDemo1/Frameworks/*.framework ; cp -R $CODE_DIR/AMSDK-iOS/Frameworks/*.framework $CODE_DIR/AmsDemo1/Frameworks/ ;"
+abbr -a updateiosr "cd $CODE_DIR/AmsDemo2 ; git stash ; git checkout staging ; git stash apply ; git pull --rebase origin staging ; rm -rf $CODE_DIR/AmsDemo2/Frameworks/*.framework ; cp -R $CODE_DIR/AMSDK-iOS/Frameworks/*.framework $CODE_DIR/AmsDemo2/Frameworks/ ;"
+
 
 ######### IMMUTABLE GIT ALIASES ####################################################################
 
@@ -103,21 +130,22 @@ function testfishfunction
     #    $argv[0] : error index out of bounds
 
     echo '--- testfishfunction START'
-    echo argv-count: (count $argv)
-    echo 'All of the the argv: ' $argv
-    echo $argv[1]  # no error - never (weird)
-    echo '--- testfishfunction END'
+
+
+
+
+    echo '--- testfishfunction end'
 end
 
 function fff
 
     # test fish function for experimental purposes
-    echo '--- fff START'
+    echo '--- fff start'
 
-    echo '--- fff END'
+    echo '--- fff end'
 end
 
-######### HELPER FUNCTIONS #########################################################################
+######### helper functions #########################################################################
 
 function read_confirm_prompt
     echo 'Do you want to continue? [yY/nN] '
@@ -301,30 +329,6 @@ function replace
 end
 
 ######### IMMUTABLE GNERIC ALIASES #################################################################
-
-alias fishconfig="vim ~/.config/fish/config.fish"
-alias sourcefish=". ~/.config/fish/config.fish"
-
-alias cd..="cd .."
-
-alias sb="sublime"
-
-alias textmate="open -a TextMate"
-alias tm="open -a TextMate"
-
-alias t="tig"
-alias tg="tig"
-
-alias xcode="open -a Xcode"
-alias xc="open -a Xcode"
-
-alias bpython='/usr/local/bin/python -m bpython' # makes my bpython point to my own python version      (160817: 2.7.11)
-alias bp='/usr/local/bin/python -m bpython'      # makes my bpython point to my own python version      (160817: 2.7.11)
-
-alias sp='sb /Users/langenha/personal/Barn/Text/Spanish.txt'
-
-alias sbscbeterm='sb /Users/langenha/code/ScbeTerminal/ScbeTerminal.py'
-alias scbeterm='python /Users/langenha/code/ScbeTerminal/ScbeTerminal.py'
 
 
 ######### IMMUTATBLE SCRIPT INVOKING ALIASES #######################################################

@@ -99,16 +99,20 @@ endfunction
 map <F2> :set hlsearch!<CR>
 map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>   " from: http://vim.wikia.com/wiki/Easily_switch_between_source_and_header_file
 map <F5> :edit<CR>  " refresh file
-map <F7> gT       " toggle tab to the left
+map <F7> gT         " toggle tab to the left
 map <F8> gt         " toggle tab to the right
 map <S-F8> gT       " toggle tab to the left
 map <F10> :q!<CR>
+imap <F9> <ESC>:w!<CR>
+map <F9> :w!<CR>
 map <F11> :set number!<CR>
 map <expr> <F12> ToggleHighlightOverlength()         " <expr> necessary on functions
 map <expr> <S-F12> HighlightMultipleSpaces()
 nmap ø o<ESC>
 nmap Ø O<ESC>
 nmap Ô kJ
+vmap 1 "*y                                          " copy selection to system clipboard
+"nmap <TODO:lassdirwaseinfallen> "*y                " yank to system clipboard
 
 " commands ========================================================================================
 

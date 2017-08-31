@@ -16,26 +16,26 @@
 	<integer>1</integer>
 	<key>Coprocess MRU</key>
 	<array>
-		<string>echo vim "/Users/langenha/personal/Dev/Zeugs/one-line-helps/one-line-help-langenha-4demlangenha.ad.here.com-archive.txt" +</string>
-		<string>echo vim "/Users/langenha/code/scripts/backup-one-line-help.sh" +</string>
-		<string>echo vim "/Users/langenha/code/dita_docs/setup/macros/font-and-style-config.xml" +286</string>
-		<string>echo vim "/Users/langenha/code/dita_docs/common/dita-layouts/pdf/fonts/fop/default.xconf" +25</string>
-		<string>echo vim "/Users/langenha/code/dita_docs/auto_nav_system_maps_android/dev_guide/build/.ant-targets-build.xml" +31</string>
-		<string>echo vim "/Users/langenha/code/dita_docs/dita_ot/plugins/org.dita.pdf2.fop/build_fop.xml" +155</string>
-		<string>echo vim "/Users/langenha/code/dita_docs/setup/macros/dita-ot-invocation.xml" +147</string>
-		<string>echo vim "/Users/langenha/code/dita_docs/auto_nav_system_maps_android/dev_guide/build/build.xml" +50</string>
-		<string>echo vim "/Users/langenha/code/dita_docs/setup/create-document.xml" +197</string>
-		<string>echo vim "/Users/langenha/code/dita_docs/setup/macros/dita-ot-invocation.xml" +645</string>
-		<string>echo vim "/Users/langenha/code/AMSDK-iOS/Source/AMSDataManagement/Service/AMSDataServiceProtocol.h" +396</string>
-		<string>echo vim "/Users/langenha/code/AMSDK-iOS/Source/AMSDataManagement/Service/AMSDataServiceProtocol.h" +403</string>
-		<string>echo vim "/Users/langenha/code/AMSDK-iOS/Source/AMSRouteCalculation/Constants/AMSRouteConstants.h" +145</string>
-		<string>echo vim "/Users/langenha/code/dita_docs/auto_nav_system_maps_android/dev_guide/document.ditamap" +55</string>
-		<string>echo vim "/Users/langenha/code/dita_docs/auto_nav_system_maps_android/dev_guide/topics/key-concepts.dita" +68</string>
-		<string>echo vim "/Users/langenha/code/dita_docs/auto_nav_system_maps_android/dev_guide/topics/place-matching.dita" +3</string>
-		<string>echo vim "/Users/langenha/code/android/sdk/src/test/java/com/here/automotive/sdk/mobile/route/RouteTagTest.java" +75</string>
-		<string>echo vim "/Users/langenha/code/android/examples/src/main/java/com/here/automotive/sdk/examples/routing/FirstMileActivity.java" +130</string>
-		<string>echo vim "/Users/langenha/code/AMSDK-iOS/Tests/AMSDataManagementTests/Common/Models/Persistant_objects/AMSDataPlaceTests.m" +413</string>
-		<string>echo vim "/Users/langenha/code/AMSDK-iOS/Source/AMSDataManagement/Models/AMSDataPlace_Internal.h" +42</string>
+		<string>echo vim "/Users/langenha/code/AMSDK-iOS/External/hcvd/scripts/hcvd-xcode.sh" +</string>
+		<string>echo vim "/Users/langenha/code/api-prime/api-transpiler/transpiler/out/production/resources/franca/spec/BuiltIn.fidl" +</string>
+		<string>echo vim "/Users/langenha/code/api-prime/api-transpiler/transpiler/build/resources/test/swift/fidl/test/SwiftGeneratorTest.fidl" +</string>
+		<string>echo vim "/Users/langenha/code/api-prime/api-transpiler/transpiler/build/resources/main/franca/spec/BuiltIn.fidl" +</string>
+		<string>echo vim "/Users/langenha/code/api-prime/api-transpiler/transpiler/build/resources/main/franca/spec/BaseApiSpec.fdepl" +</string>
+		<string>echo vim "/Users/langenha/code/api-prime/projects/hello_world/libhello/fidl/hello/HelloWorld.fdepl" +</string>
+		<string>echo vim "/Users/langenha/code/api-prime/projects/hello_world/libhello/fidl/hello/HelloWorldBuiltinTypes.fdepl" +</string>
+		<string>echo vim "/Users/langenha/code/AMSDK-iOS/Tests/AMSRouteCalculationTests/AMSRouteAcceptAllChargingStationFilterTests.m" +</string>
+		<string>echo vim "/Users/langenha/code/olympia-prime/auto-core-sdk/sdk_extensions/tests/integration/utils/smoke/testcasesdl.py" +23</string>
+		<string>echo vim "/Users/langenha/code/olympia-prime/auto-core-sdk/sdk_extensions/tests/integration/utils/servers/testserver.py" +29</string>
+		<string>echo vim "/Users/langenha/personal/Media/Images/Fotos/DSLR/DSC_3967.JPG" +</string>
+		<string>echo vim "/Users/langenha/code/AMSDK-iOS/External/Carthage/Build/iOS/OCMock.framework/Headers/OCMLocation.h" +30</string>
+		<string>echo vim "/Users/langenha/code/AMSDK-iOS/AMSKitOlympiaTests/AMSDataServiceCarloOlympiaTests.mm" +40</string>
+		<string>echo vim "/Users/langenha/code/AMSDK-iOS/Source/AMSRouteCalculation/Optimizer/AMSRoutePlacesAPIChargingStationProvider.m" +155</string>
+		<string>echo vim "/Users/langenha/code/AmsDemo2/AMS\ Sample\ Routes/RouteDetail/RouteHelper.swift" +27</string>
+		<string>echo vim "/Users/langenha/code/AMSDK-iOS/Source/AMSRouteCalculation/Optimizer/AMSRouteCapacityModel.h" +</string>
+		<string>echo vim "/Users/langenha/code/olympia-prime/auto-core-sdk/sdk_extensions/tests/integration/smoke/utils/helper/kpi.py" +137</string>
+		<string>echo vim "/Users/langenha/code/AMSDK-iOS/Frameworks/NMAKit.framework/Headers/NMACLE2GeometryMultiPoint.h" +28</string>
+		<string>echo vim "/Users/langenha/code/olympia-prime/auto-core-sdk/tools/libsensorsim/include/sensorsim/client/ClientFileConnector.h" +13</string>
+		<string>echo vim "/Users/langenha/code/olympia-prime/auto-core-sdk/locationsdk/carlo/common/EvStationInfo.h" +50</string>
 	</array>
 	<key>Custom Color Presets</key>
 	<dict>
@@ -412,11 +412,11 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>2516 512 796 473 1920 150 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>3 772 570 402 0 0 1920 1177 </string>
+	<string>0 772 570 402 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>2 773 570 402 0 0 1920 1177 </string>
+	<string>122 727 549 402 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>3 28 1914 1146 0 0 1920 1177 </string>
+	<string>0 4 1680 1022 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>254 55 570 402 0 0 1920 1177 </string>
 	<key>NeverWarnAboutShortLivedSessions_07AADE1D-EEFE-4028-889E-AAEEF4918BFE</key>
@@ -2569,7 +2569,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-07-26T08:36:29Z</date>
+	<date>2017-08-30T07:51:12Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>

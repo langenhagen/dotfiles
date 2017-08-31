@@ -9,7 +9,7 @@ set fish_greeting "" # deactivates the fish welcome message
 
 setenv CODE_DIR "/Users/langenha/code"
 setenv SCRIPTS_DIR "$CODE_DIR/scripts"
-
+setenv JAVA_HOME "/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home"
 setenv Z_SCRIPT_PATH /usr/local/etc/profile.d/z.sh
 set -gx PATH $PATH $SCRIPTS_DIR
 set -gx PATH $PATH /usr/local/sbin
@@ -40,7 +40,9 @@ setenv CMAKE_BUILD_ROOT "<will_be_set_by_function>"        # for apache ant for 
 ######### ABBREVIATIONS ############################################################################
 
 abbr -a fishconfig vim ~/.config/fish/config.fish
+abbr -a fic vim ~/.config/fish/config.fish
 abbr -a sourcefish . ~/.config/fish/config.fish
+abbr -a srcf . ~/.config/fish/config.fish
 abbr -a . ~/.config/fish/config.fish
 abbr -a cd.. cd ..
 abbr -a gco git checkout
@@ -58,7 +60,8 @@ abbr -a gp git push origin HEAD:refs/for/staging
 abbr -a gpl git pull origin staging
 abbr -a gplr git pull --rebase origin staging
 abbr -a gpos git pull origin staging
-abbr -a gri git rebase --interactive HEAD~
+abbr -a gri git rebase --interactive HEAD~10
+abbr -a grc git rebase --continue
 abbr -a gpr git pull --rebase origin staging
 abbr -a grhh git reset --hard HEAD
 abbr -a grsh git reset --soft HEAD~1
@@ -67,7 +70,9 @@ abbr -a tks tricks
 abbr -a jrn journal
 abbr -a bkt bucket
 abbr -a favs cdfavs
-abbr -a opn open
+abbr -a opn open .
+abbr -a o open .
+abbr -a find find . -iname
 abbr -a fnd find . -iname
 abbr -a fnd1 find . -maxdepth 1 -iname
 abbr -a t3 tree -L 3
@@ -75,6 +80,7 @@ abbr -a t3d tree -L 3 -d
 abbr -a cddotfiles cd /Users/langenha/personal/Dev/Zeugs/dotfiles
 abbr -a gitp gitup
 abbr -a vim vim -p
+abbr -a v vim -p
 abbr -a t tig
 abbr -a tg tig
 abbr -a gss git stash
@@ -87,6 +93,7 @@ abbr -a cdstuff cd $HOME/stuff
 abbr -a cds cd $HOME/stuff
 abbr -a cdfavs eval "cd $HOME/stuff/shortcuts; and ls -1"
 abbr -a cdand cd $CODE_DIR/android
+abbr -a cand cd $CODE_DIR/android
 abbr -a cdios cd $CODE_DIR/AMSDK-iOS
 abbr -a cios cd $CODE_DIR/AMSDK-iOS
 abbr -a cdiosp cd $CODE_DIR/AmsDemo1
@@ -130,7 +137,6 @@ function testfishfunction
     #    $argv[0] : error index out of bounds
 
     echo '--- testfishfunction START'
-
 
 
 
@@ -327,6 +333,24 @@ function replace
         find . -name "$file" -exec sed -i "s@$to_look_for@$to_replace_with@g" '{}' +  # Gnu sed version
     end
 end
+
+function gitfileschanged
+    # given two commit numbers lists all the files that have been changed in the given commits
+    # in the manner from HEAD~n to HEAD~m
+
+    if test (count $argv) -lt 2
+        echo "Usage: gitfileschanged <firstcommitnumber> <secondcommitnumber>"
+        return
+    end
+
+    for n in (seq $argv[1] $argv[2])
+        set get_files_from_commit_n "git diff-tree --no-commit-id --name-only -r HEAD~$n"
+        set get_files_from_all_commits "$get_files_from_all_commits ; $get_files_from_commit_n"
+    end
+    eval "$get_files_from_all_commits" | sort -u
+
+end
+
 
 ######### IMMUTABLE GNERIC ALIASES #################################################################
 

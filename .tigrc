@@ -15,9 +15,10 @@ bind generic T !git checkout --theirs %(file)
 bind generic T !git checkout --ours %(file)
 bind generic π !git add --patch %(file)             # π is alt + p
 bind generic <F10> quit
-bind generic <F12> !?<git push origin HEAD:refs/for/staging
+bind generic <F11> !?<git push origin HEAD:refs/for/staging
+bind generic <F12> !?<git push origin HEAD:refs/for/master
 bind generic P @sh -c "open $(dirname $(realpath %(file)))"
-
+bind generic 1 !git rebase --interactive HEAD~10
 
 
 set ignore-case            = no                     # Enum: no, yes, smart-case

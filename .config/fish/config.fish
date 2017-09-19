@@ -11,13 +11,22 @@ setenv CODE_DIR "/Users/langenha/code"
 setenv SCRIPTS_DIR "$CODE_DIR/scripts"
 setenv JAVA_HOME "/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home"
 setenv Z_SCRIPT_PATH /usr/local/etc/profile.d/z.sh
+setenv ANDROID_HOME /Users/langenha/Library/Android/sdk
+setenv ANDROID_NDK_HOME /Users/langenha/Library/Android/sdk/ndk-bundle
+setenv SDK_ROOT $ANDROID_HOME
+setenv NDK_ROOT $ANDROID_NDK_HOME
+
+
 set -gx PATH $PATH $SCRIPTS_DIR
 set -gx PATH $PATH /usr/local/sbin
-set -gx PATH $PATH /Users/$USER/Library/Android/sdk/platform-tools/
 set -gx PATH $PATH /usr/local/opt/icecream/libexec/icecc/bin
+set -gx PATH $PATH $ANDROID_HOME/tools
+set -gx PATH $PATH $ANDROID_HOME/platform-tools
+
 
 setenv ANDROID_SERIAL CB5A286QVE            # that's my SONY XPeria Z5 Compact
 #setenv ANDROID_SERIAL 024475e094d2743e      # that's the LG Nexus with PTM #245
+
 
 
 export OPENSSL_ROOT_DIR="/usr/local/Cellar/openssl/1.0.2h_1/"
@@ -40,86 +49,18 @@ setenv CMAKE_BUILD_ROOT "<will_be_set_by_function>"        # for apache ant for 
 ######### ABBREVIATIONS ############################################################################
 
 abbr -a fishconfig vim ~/.config/fish/config.fish
+abbr -a fconf vim ~/.config/fish/config.fish
 abbr -a fic vim ~/.config/fish/config.fish
 abbr -a sourcefish . ~/.config/fish/config.fish
 abbr -a srcf . ~/.config/fish/config.fish
-abbr -a . ~/.config/fish/config.fish
-abbr -a cd.. cd ..
-abbr -a gco git checkout
-abbr -a gcob git checkout -b
-abbr -a gbd git branch -D
-abbr -a gb  git branch
-abbr -a gs git status
-abbr -a gca git commit --amend
-abbr -a gcs git checkout staging
-abbr -a gcos git checkout staging
-abbr -a gcb git checkout -b
-abbr -a gbn git checkout -b
-abbr -a gnb git checkout -b
-abbr -a gp git push origin HEAD:refs/for/staging
-abbr -a gpl git pull origin staging
-abbr -a gplr git pull --rebase origin staging
-abbr -a gpos git pull origin staging
-abbr -a gri git rebase --interactive HEAD~10
-abbr -a grc git rebase --continue
-abbr -a gpr git pull --rebase origin staging
-abbr -a grhh git reset --hard HEAD
-abbr -a grsh git reset --soft HEAD~1
-abbr -a cdd cd ~/Desktop
-abbr -a tks tricks
+
 abbr -a jrn journal
 abbr -a bkt bucket
-abbr -a favs cdfavs
-abbr -a opn open .
-abbr -a o open .
-abbr -a find find . -iname
-abbr -a fnd find . -iname
-abbr -a fnd1 find . -maxdepth 1 -iname
-abbr -a t3 tree -L 3
-abbr -a t3d tree -L 3 -d
-abbr -a cddotfiles cd /Users/langenha/personal/Dev/Zeugs/dotfiles
-abbr -a gitp gitup
-abbr -a vim vim -p
-abbr -a v vim -p
-abbr -a t tig
-abbr -a tg tig
-abbr -a gss git stash
-abbr -a gsa git stash apply
-abbr -a cdcode cd $CODE_DIR
-abbr -a cdcde cd $CODE_DIR
-abbr -a cddocker cd $CODE_DIR/docker
-abbr -a cdscripts cd $SCRIPTS_DIR
-abbr -a cdstuff cd $HOME/stuff
-abbr -a cds cd $HOME/stuff
-abbr -a cdfavs eval "cd $HOME/stuff/shortcuts; and ls -1"
-abbr -a cdand cd $CODE_DIR/android
-abbr -a cand cd $CODE_DIR/android
-abbr -a cdios cd $CODE_DIR/AMSDK-iOS
-abbr -a cios cd $CODE_DIR/AMSDK-iOS
-abbr -a cdiosp cd $CODE_DIR/AmsDemo1
-abbr -a ciosp cd $CODE_DIR/AmsDemo1
-abbr -a cdiosr cd $CODE_DIR/AmsDemo2
-abbr -a ciosr cd $CODE_DIR/AmsDemo2
-abbr -a edl vim -p $HOME/stuff/
-abbr -a eds vim -p $HOME/stuff/
-abbr -a chirna "grep -Hirn --include \*.h --include \*.cpp --include \*.m --include \*.mm --include \*.pch --include \*.swift --color"
-abbr -a sb sublime
-abbr -a textmate open -a TextMate
-abbr -a tm open -a TextMate
-abbr -a xcode open -a Xcode
-abbr -a xc open -a Xcode
-abbr -a bpython '/usr/local/bin/python -m bpython' # makes my bpython point to my own python version      (160817: 2.7.11)
-abbr -a bp '/usr/local/bin/python -m bpython'      # makes my bpython point to my own python version      (160817: 2.7.11)
-abbr -a sbscbeterm 'sb /Users/langenha/code/ScbeTerminal/ScbeTerminal.py'
-abbr -a scbeterm 'python /Users/langenha/code/ScbeTerminal/ScbeTerminal.py'
-abbr -a sp 'sb /Users/langenha/personal/Barn/Text/Spanish.txt'
+abbr -a tks tricks
 
 
-# updated and download AMSDK-iOS Project from staging
-abbr -a updateios "cd $CODE_DIR/AMSDK-iOS ; git pull --rebase origin staging ; rm -rf ./Frameworks/*.framework ; bash ./scripts/ci/here-dependencies.sh; cd External/hcvd ; bash ./scripts/hcvd-xcode.sh ;"
-
-abbr -a updateiosp "cd $CODE_DIR/AmsDemo1 ; git stash ; git checkout staging ; git stash apply ; git pull --rebase origin staging ; rm -rf $CODE_DIR/AmsDemo1/Frameworks/*.framework ; cp -R $CODE_DIR/AMSDK-iOS/Frameworks/*.framework $CODE_DIR/AmsDemo1/Frameworks/ ;"
-abbr -a updateiosr "cd $CODE_DIR/AmsDemo2 ; git stash ; git checkout staging ; git stash apply ; git pull --rebase origin staging ; rm -rf $CODE_DIR/AmsDemo2/Frameworks/*.framework ; cp -R $CODE_DIR/AMSDK-iOS/Frameworks/*.framework $CODE_DIR/AmsDemo2/Frameworks/ ;"
+# source more abbreviations
+source ~/.config/fish/my-abbreviations.fish
 
 
 ######### IMMUTABLE GIT ALIASES ####################################################################
@@ -235,6 +176,12 @@ function alh
     echo $argv >> ~/stuff/one-line-helps/one-line-help-(whoami)-(hostname -s).txt
 end
 
+function addabr
+    # adds a line to the abbreviations file and activates the abbreviation
+    echo "abbr -a $argv" >> ~/.config/fish/my-abbreviations.fish
+    abbr -a $argv
+end
+
 function mkfav
     ln -s (pwd) /Users/langenha/stuff/shortcuts/$argv[1]
 end
@@ -276,7 +223,7 @@ function hirn
 end
 
 function chirn
-    grep -Hirn --include \*.h --include \*.cpp --include \*.m --include \*.mm --include \*.pch --include \*.swift --color $argv[1] .
+    grep -Hirn --include \*.h --include \*.cpp --include \*.m --include \*.mm --include \*.pch --include \*.java --include \*.swift --color $argv[1] .
 end
 
 function jhirn
@@ -284,6 +231,8 @@ function jhirn
 end
 
 function clirn
+    # -l, --files-with-matches: Only the names of files containing selected lines are written to standard output.
+    #  grep will only search a file until a match has been found, making searches potentially less expensive. [...]
     grep -lirn --include \*.h --include \*.cpp --include \*.m --include \*.mm --include \*.pch --color $argv[1] .
 end
 

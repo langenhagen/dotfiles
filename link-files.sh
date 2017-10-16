@@ -16,6 +16,8 @@ ln -s $DOTFILES_PATH/.vimrc ~/.vimrc
 rm ~/.config/fish/config.fish
 ln -s $DOTFILES_PATH/.config/fish/config.fish ~/.config/fish/config.fish
 
+rm ~/.config/fish/my-abbreviations.fish
+ln -s $DOTFILES_PATH/.config/fish/my-abbreviations.fish ~/.config/fish/my-abbreviations.fish
 
 rm ~/.tigrc
 ln -s $DOTFILES_PATH/.tigrc ~/.tigrc

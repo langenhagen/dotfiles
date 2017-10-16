@@ -1,3 +1,7 @@
+# My personal fish config file for a mac machine
+# author: langenhagen
+# version: 17-10-16
+
 ### more sourcing ##################################################################################
 
 # iterm2 shell integration
@@ -10,12 +14,12 @@ set fish_greeting "" # deactivates the fish welcome message
 setenv CODE_DIR "/Users/langenha/code"
 setenv SCRIPTS_DIR "$CODE_DIR/scripts"
 setenv JAVA_HOME "/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home"
-setenv Z_SCRIPT_PATH /usr/local/etc/profile.d/z.sh
+ setenv Z_SCRIPT_PATH /usr/local/etc/profile.d/z.sh
 setenv ANDROID_HOME /Users/langenha/Library/Android/sdk
 setenv ANDROID_NDK_HOME /Users/langenha/Library/Android/sdk/ndk-bundle
 setenv SDK_ROOT $ANDROID_HOME
 setenv NDK_ROOT $ANDROID_NDK_HOME
-
+setenv OPENSSL_ROOT_DIR "/usr/local/Cellar/openssl/1.0.2h_1/"
 
 set -gx PATH $PATH $SCRIPTS_DIR
 set -gx PATH $PATH /usr/local/sbin
@@ -28,23 +32,11 @@ setenv ANDROID_SERIAL CB5A286QVE            # that's my SONY XPeria Z5 Compact
 #setenv ANDROID_SERIAL 024475e094d2743e      # that's the LG Nexus with PTM #245
 
 
-
-export OPENSSL_ROOT_DIR="/usr/local/Cellar/openssl/1.0.2h_1/"
-export MIGRANT_DIR="/Users/langenha/code/olympia-prime/auto-core-sdk/migrant/"
-export HCVD_MIGRATIONS_DIR="/Users/langenha/code/olympia-prime/auto-core-sdk/sdk_extensions/migrations"
-
-export AndisVariable="jojojo"
+setenv  AndisVariable "jojojo"
 
 
 ######### MUTABLE SYSTEM EXPORTS ###################################################################
 
-setenv ACS_ENVIRONMENT "<will_be_set_by_function>"
-
-setenv ACS_MAIN_DIR "<will_be_set_by_function>"
-setenv ACS_BUILD_DIR "<will_be_set_by_function>"
-
-setenv PYTHONPATH "<will_be_set_by_function>"
-setenv CMAKE_BUILD_ROOT "<will_be_set_by_function>"        # for apache ant for the jni tests or so
 
 ######### ABBREVIATIONS ############################################################################
 
@@ -57,15 +49,14 @@ abbr -a srcf . ~/.config/fish/config.fish
 abbr -a jrn journal
 abbr -a bkt bucket
 abbr -a tks tricks
+abbr -a editjournal 'vim -R "+normal G\$" -p ~/stuff/Journal.txt'
+abbr -a gitp gitup
 
 
-# source more abbreviations
+######### SOURCE MORE ABBREVIATIONS ################################################################
+
 source ~/.config/fish/my-abbreviations.fish
 
-
-######### IMMUTABLE GIT ALIASES ####################################################################
-
-alias gnb="git checkout staging; and git pull origin staging; and git checkout -b"
 
 ######### EDUCATIONAL AND ERRATIC ##################################################################
 
@@ -81,18 +72,11 @@ function testfishfunction
 
 
 
-    echo '--- testfishfunction end'
+    echo '--- testfishfunction END'
 end
 
-function fff
 
-    # test fish function for experimental purposes
-    echo '--- fff start'
-
-    echo '--- fff end'
-end
-
-######### helper functions #########################################################################
+######### HELPER FUNCTIONS #########################################################################
 
 function read_confirm_prompt
     echo 'Do you want to continue? [yY/nN] '
@@ -114,13 +98,7 @@ function read_confirm
 end
 
 
-
 ######### NICE FUNCTIONS ###########################################################################
-
-function tagesausgaben
-    echo (date +'%d'.'%m')";$argv" >> /Users/langenha/personal/Administrative/tagesausgaben.csv
-end
-
 
 function tricks
     # shows the tricks file and enables grepping on it
@@ -142,11 +120,6 @@ function journal
     else if test (count $argv) -gt 0
         echo (date +%a' '%Y'-'%m'-'%d' '%H:%M) $argv >> ~/stuff/Journal.txt
     end
-end
-
-function editjournal
-    # opens the journal file in vim in order to edit it manually
-    vim -p ~/stuff/Journal.txt
 end
 
 function bucket
@@ -187,7 +160,8 @@ function mkfav
 end
 
 function pbc
-    echo $argv | pbcopy
+    # copy given argument to system clipboard
+   echo $argv | pbcopy
 end
 
 function gitup
@@ -301,230 +275,19 @@ function gitfileschanged
 end
 
 
-######### IMMUTABLE GNERIC ALIASES #################################################################
-
-
 ######### IMMUTATBLE SCRIPT INVOKING ALIASES #######################################################
 
-alias rmake="bash $SCRIPTS_DIR/the-cmake-script.sh"
-alias rats="bash $SCRIPTS_DIR/rats.sh"
-alias newtask="bash $SCRIPTS_DIR/new-task.sh"
 alias spo="bash $SCRIPTS_DIR/send_pushover.sh"
 
 
-######### OLYMPIA RELATED ALIASES ##################################################################
-
-alias mockscbe=" \
-                 cd $CODE_DIR/olympia-prime/mib2plus-integration/tests/mock_scbe; and \
-                 python mock_scbe.py
-               "
-
-######### MUTABLE ALIASES ##########################################################################
-
-function set_aliases
-    #
-    # aliases are evaluated on sourcing, therefore they have to be set again when variables change
-    #
-
-    alias cdacs=" \
-                  clear; \
-                  cd $ACS_MAIN_DIR; and \
-                  echo '-----------------------------------------------'; \
-                  git branch; \
-                  echo '-----------------------------------------------' \
-                "
-
-    alias cdmib=" \
-                  clear; \
-                  cd $ACS_MAIN_DIR/../mib2plus-integration; and \
-                  echo '-----------------------------------------------'; \
-                  git branch; \
-                  echo '-----------------------------------------------' \
-                "
-
-    alias cdab="cd $ACS_BUILD_DIR"
-
-end
-
-######### TESTING FUNCTIONS ########################################################################
-
-function gt
-    pushd .
-    cd $ACS_BUILD_DIR ;
-    cd auto-core-sdk/sdk_extensions/tests/unit/
-    ./carlo_sdl_unit_tests -v $argv;
-    popd
-end
-
-function gtf
-    pushd .
-    cd $ACS_BUILD_DIR ;
-    cd auto-core-sdk/sdk_extensions/tests/unit/
-    ./carlo_sdl_unit_tests -v $argv > $ACS_BUILD_DIR/unit_tests_out.txt 2>&1;
-    popd
-end
-
-function bgt
-    # build run google test
-    pushd .
-    cd $ACS_BUILD_DIR;
-
-    ninja carlo_sdl_unit_tests ;
-    if test $status != 0
-        return
-    end
-
-    gt $argv;
-    popd
-end
-
-function bgtf
-    # build run google test, bail out on test fail
-    pushd .
-    cd $ACS_BUILD_DIR;
-
-    ninja carlo_sdl_unit_tests ;
-    if test $status != 0
-        return
-    end
-
-    gtf $argv;
-    popd
-end
-
-function uto
-    sb $ACS_BUILD_DIR/unit_tests_out.txt
-end
-
-#
-# for the smoke and integration tests, maybe a dylib must be linked into the cwd
-#
-# possible command line options for the integration/smoke tests (besides wildcards) are:
-#       --log-to-stdout
-
-function brit
-    if test (count $argv) -eq 0
-      set argv $argv "test*"
-    end
-
-    pushd .
-    cd $ACS_BUILD_DIR;
-
-    ninja carlo_sdl_integration_tests;
-
-    if test $status != 0
-      return
-    end
-
-    cd auto-core-sdk/sdk_extensions/tests/integration/runner
-    ./carlo_sdl_integration_tests \
-    $ACS_MAIN_DIR/sdk_extensions/tests/integration/test.py $argv ;
-    popd
-end
-
-function rit
-    if test (count $argv) -eq 0
-        set argv $argv "test*"
-    end
-
-    pushd .
-    cd $ACS_BUILD_DIR;
-    cd auto-core-sdk/sdk_extensions/tests/integration/runner
-    ./carlo_sdl_integration_tests \
-    $ACS_MAIN_DIR/sdk_extensions/tests/integration/test.py $argv[1] ;
-    popd
-end
-
-function brst
-    if test (count $argv) -eq 0
-        set argv $argv "test*"
-    end
-
-    pushd .
-    cd $ACS_BUILD_DIR;
-    ninja carlo_sdl_integration_tests;
-
-    if test $status != 0
-        return
-    end
-
-    auto-core-sdk/sdk_extensions/tests/integration/runner/carlo_sdl_integration_tests \
-    $ACS_MAIN_DIR/sdk_extensions/tests/integration/smoke/test.py $argv[1] ;
-    popd
-end
-
-function rst
-    if test (count $argv) -eq 0
-        set argv $argv "test*"
-    end
-
-    pushd .
-    cd $ACS_BUILD_DIR ;
-    auto-core-sdk/sdk_extensions/tests/integration/runner/carlo_sdl_integration_tests \
-    $ACS_MAIN_DIR/sdk_extensions/tests/integration/smoke/test.py $argv[1] ;
-    popd
-end
-
-function cmakeadds
-    # this is a rare function to do additional tasks that cmake doesn't do by itself
-    # cmake additionals
-    mkdir $ACS_BUILD_DIR
-    ln -sf $ACS_BUILD_DIR/auto-core-sdk/locationsdk/samples/positioning/glsempty/libgls.dylib $ACS_BUILD_DIR
-end
-
 ######### PRIVATE HELPER FUNCTIONS #################################################################
 
-function _setEnvironment_
-
-    setenv ACS_ENVIRONMENT $argv[1]
-
-    setenv ACS_MAIN_DIR $argv[2]
-    setenv ACS_BUILD_DIR $argv[3]
-
-    setenv PYTHONPATH "$ACS_BUILD_DIR/auto-core-sdk/sdk_extensions/build/sdl/python/"
-    setenv CMAKE_BUILD_ROOT $ACS_BUILD_DIR                  # for apache ant for the jni tests
-
-    set_aliases
-
-    cd $ACS_MAIN_DIR
-
-    clear
-    echo '-----------------------------------------------'
-    echo $ACS_ENVIRONMENT
-    echo 'ACS_MAIN_DIR: '  $ACS_MAIN_DIR
-    echo 'ACS_BUILD_DIR: ' $ACS_BUILD_DIR
-    echo '-----------------------------------------------'
-    git branch
-    echo '-----------------------------------------------'
-
-
-end
 
 ######### FUNCTIONS ################################################################################
 
-function setAcsOlympia
-
-    _setEnvironment_ "ACS Olympia Ninja" \
-                     "$CODE_DIR/olympia-prime/auto-core-sdk" \
-                     "$CODE_DIR/olympia-prime/build"
-end
-
-function setACSXCodeXCode
-
-    _setEnvironment_ "ACS Xcode Xcode" \
-                     "$CODE_DIR/AMSDK-iOS/External/hcvd/prime/auto-core-sdk" \
-                     "$CODE_DIR/AMSDK-iOS/External/hcvd/prime/build-xcode"
-end
-
-
-function setACSXCodeNinja
-
-    _setEnvironment_ "ACS Xcode Ninja" \
-                     "$CODE_DIR/AMSDK-iOS/External/hcvd/prime/auto-core-sdk" \
-                     "$CODE_DIR/AMSDK-iOS/External/hcvd/prime/build-ninja"
-end
 
 ######### THE INITIAL COMMANDS #####################################################################
 
-setAcsOlympia
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
+cd ~/code/api-prime/api-transpiler

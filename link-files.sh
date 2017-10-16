@@ -4,7 +4,7 @@
 # after removing existing files
 #
 # author: langenhagen
-# version: 170721
+# version: 171016
 
 DIR_OF_THIS_SCRIPT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DOTFILES_PATH=$DIR_OF_THIS_SCRIPT

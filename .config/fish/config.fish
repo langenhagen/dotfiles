@@ -45,6 +45,7 @@ abbr -a fconf vim ~/.config/fish/config.fish
 abbr -a fic vim ~/.config/fish/config.fish
 abbr -a sourcefish . ~/.config/fish/config.fish
 abbr -a srcf . ~/.config/fish/config.fish
+abbr -a editabbr vim -p ~/.config/fish/my-abbreviations.fish
 
 abbr -a jrn journal
 abbr -a bkt bucket

@@ -1,6 +1,6 @@
 # My personal fish config file for a mac machine
 # author: langenhagen
-# version: 17-10-16
+# version: 17-11-27
 
 ### more sourcing ##################################################################################
 
@@ -20,6 +20,8 @@ setenv ANDROID_NDK_HOME /Users/langenha/Library/Android/sdk/ndk-bundle
 setenv SDK_ROOT $ANDROID_HOME
 setenv NDK_ROOT $ANDROID_NDK_HOME
 setenv OPENSSL_ROOT_DIR "/usr/local/Cellar/openssl/1.0.2h_1/"
+setenv CCACHE_PREFIX icecc
+setenv WORKSPACE "/Users/langenha/code/sparta" # used for sparta CMake scripts to identify workspace
 
 set -gx PATH $PATH $SCRIPTS_DIR
 set -gx PATH $PATH /usr/local/sbin
@@ -50,7 +52,7 @@ abbr -a editabbr vim -p ~/.config/fish/my-abbreviations.fish
 abbr -a jrn journal
 abbr -a bkt bucket
 abbr -a tks tricks
-abbr -a editjournal 'vim -R "+normal G\$" -p ~/stuff/Journal.txt'
+abbr -a editjrn 'vim -R "+normal G\$" -p ~/stuff/Journal.txt'
 abbr -a gitp gitup
 
 
@@ -182,6 +184,22 @@ function vimh
     vim -p (eval $history[1])
 end
 
+function oh
+    # interprets the most recent line of output as a path and attempts to open it
+    # with the standard application.
+    # note: I tried to make it an alias, but $history[1] will, once evaluated in the abbreviation,
+    #       expandend and thus stay immutable within this abbreviation.
+    open (eval $history[1])
+end
+
+function ohf
+    # interprets the most recent line of output as a path and attempts to open it
+    # with the standard application.
+    # note: I tried to make it an alias, but $history[1] will, once evaluated in the abbreviation,
+    #       expandend and thus stay immutable within this abbreviation.
+    open -R (eval $history[1])
+end
+
 function fn2
     find . -iname "*$argv*"
 end
@@ -254,6 +272,7 @@ function replace
         # find will execute -exec and substitute {} with what it found
         # whereas with + as many files as possible are given as parameters to sed at once.
         #find . -name "$file" -exec sed -i '' "s@$to_look_for@$to_replace_with@g" '{}' +  # Mac sed version
+        # It cannot be on *.* bc then it gives me an error like 'sed cannot be applied on . '
         find . -name "$file" -exec sed -i "s@$to_look_for@$to_replace_with@g" '{}' +  # Gnu sed version
     end
 end
@@ -291,4 +310,4 @@ alias spo="bash $SCRIPTS_DIR/send_pushover.sh"
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
-cd ~/code/api-prime/api-transpiler
+cd ~/code/sparta

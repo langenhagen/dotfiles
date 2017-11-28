@@ -89,3 +89,15 @@ abbr -a cahw /Users/langenha/code/api-prime/projects/hello_world/
 
 
 
+abbr -a csp cd ~/code/sparta
+abbr -a crnvsdk cd ~/code/sparta/corenav/sdk/
+abbr -a cnvsdk cd ~/code/sparta/corenav/sdk/
+abbr -a cdsparta cd /Users/langenha/code/sparta/
+abbr -a csparta cd /Users/langenha/code/sparta/
+abbr -a grhh10 git reset --hard HEAD~10
+abbr -a tree tree -C
+abbr -a gl git log
+abbr -a gbr git branch -r
+abbr -a gbl git blame
+abbr -a rd repo diff
+

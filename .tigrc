@@ -10,7 +10,7 @@ bind generic Z @?git checkout HEAD %(file)           # checkout latest committed
 bind generic X @?git checkout staging %(file)        # checkout staging version of a file in status view
 bind generic E !/usr/bin/vim "%(file)"
 bind generic + !git commit --amend
-bind generic = !?<git commit
+bind generic = !?git commit
 bind generic T !git checkout --theirs %(file)
 bind generic T !git checkout --ours %(file)
 bind generic π !git add --patch %(file)             # π is alt + p

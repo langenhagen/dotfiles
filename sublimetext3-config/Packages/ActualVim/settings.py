@@ -1,3 +1,4 @@
+import platform
 import sublime
 import sublime_plugin
 
@@ -10,9 +11,10 @@ DEFAULT_SETTINGS = {
         "bytes": 52428800,
         "lines": 50000,
     },
+    'smooth_scroll': False,
     "neovim_path": "",
     "neovim_args": ["--cmd", "let g:actualvim = 1"],
-    "indent_priority": "sublime",
+    "settings_priority": "sublime",
     "settings": {
         "sublime": {
             "inverse_caret_state": False,
@@ -41,6 +43,14 @@ DEFAULT_SETTINGS = {
         }
     }
 }
+
+if platform.system() != 'Darwin':
+    keys = {
+        'av:ctrl+n': True,
+        'av:ctrl+s': True,
+        'av:ctrl+w': True,
+    }
+    DEFAULT_SETTINGS['settings']['vim']['modes']['normal'].update(keys)
 
 if not 'settings' in globals():
     settings = None

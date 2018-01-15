@@ -44,6 +44,10 @@ class ActualVim:
         self.keyq = queue.Queue()
 
         self.view = view
+        self.cmd_panel = None
+        self.cmd_text = None
+        self.cmd_lock = threading.Lock()
+
         self.last_sel = None
         self.buf = None
         self.sub_changes = None
@@ -54,15 +58,13 @@ class ActualVim:
         self.last_size = None
         self.block = False
         self.block_hit = False
-
-        # first scroll is buggy
-        self.first_scroll = True
+        self.nosync = False
 
         # settings are marked here when applying mode-specific settings, and erased after
         self.tmpsettings = []
 
         # track last settings we synced to vim, so we can update vim on change
-        self.last_settings = None
+        self.last_settings = {}
 
         # tracks our drag_select type
         self.drag_select = None
@@ -72,7 +74,7 @@ class ActualVim:
 
         en = settings.enabled()
         s = {
-            'actual_intercept': en,
+            'av_input': en,
             'actual_mode': en,
             # it's most likely a buffer will start in command mode
             'inverse_caret_state': en,
@@ -88,7 +90,7 @@ class ActualVim:
         if (0 < bytes < view.size()) or (0 < lines < len(view.lines(sublime.Region(0, view.size())))):
             fn = view.file_name() or view.name() or 'untitled'
             print('ActualVim: disabling input for "{}" as size exceeds "large_file_disable" setting'.format(fn))
-            view.settings().set('actual_intercept', False)
+            view.settings().set('av_input', False)
 
     @classmethod
     def get(cls, view, create=True, exact=True):
@@ -126,7 +128,7 @@ class ActualVim:
     def enable(cls, enable=True):
         for av in _views.values():
             s = av.view.settings()
-            s.set('actual_intercept', enable)
+            s.set('av_input', enable)
             s.set('actual_mode', enable)
 
         # TODO: cursor isn't adjusted here, not sure why
@@ -141,7 +143,7 @@ class ActualVim:
 
     @property
     def actual(self):
-        return neo._loaded and self.view and self.settings.get('actual_mode') and self.settings.get('actual_intercept')
+        return neo._loaded and self.view and self.settings.get('actual_mode') and self.settings.get('av_input')
 
     def sel_changed(self):
         new_sel = copy_sel(self.view)
@@ -194,8 +196,9 @@ class ActualVim:
             regions.append((a, b))
         elif name == 'visual block':
             # visual block mode
+            curswant = neo.vim.status()['wview']['curswant']
             left = min(sc, ec)
-            right = max(sc, ec) + 1
+            right = max(sc, ec, curswant) + 1
             top = min(sr, er)
             bot = max(sr, er)
             end = view.text_point(top, right)
@@ -249,9 +252,12 @@ class ActualVim:
             combined.update(modes.get(name, {}))
             if mode in neo.VISUAL_MODES:
                 combined.update(modes.get('all visual', {}))
+                combined['av:mode:visuals'] = True
             elif mode in neo.INSERT_MODES:
                 combined.update(modes.get('all insert', {}))
+                combined['av:mode:inserts'] = True
 
+            combined['av:mode:'+name.replace(' ', '_')] = True
             base['settings'] = combined
             base['bell'] = combined.pop('bell')
         return base
@@ -272,6 +278,8 @@ class ActualVim:
                 self.set_path(path)
 
         if neo.vim.activate(self):
+            self.sel_to_vim()
+            self.viewport_to_vim()
             self.status_from_vim()
             self.update_view()
             self.highlight()
@@ -285,35 +293,44 @@ class ActualVim:
         for k, v in combined.items():
             self.settings.set(k, v)
 
-        vp = self.view.viewport_extent()
-        width, height = vp[0] / self.view.em_width(), vp[1] / self.view.line_height()
+        view = self.view
+        vp = view.viewport_extent()
+        width, height = vp[0] / view.em_width(), vp[1] / view.line_height()
         if self.actual:
-            neo.vim.resize(width, height)
+            # TODO: don't hardcode bottom bar height as 2 (make setting? detect?)
+            neo.vim.resize(width, height + 2)
             # update_view is called all the time, and asking vim for things is expensive
             # so vim's tab priority comes automatically during sel_from_vim()
-            if settings.get('indent_priority') == 'sublime':
+            if settings.get('settings_priority') == 'sublime':
                 self.settings_to_vim()
 
     def settings_to_vim(self):
         # only send this to vim if something changes
-        tmp = {name: self.settings.get(name) for name in ('translate_tabs_to_spaces', 'tab_size')}
+        tmp = {name: self.settings.get(name) for name in ('translate_tabs_to_spaces', 'tab_size', 'word_wrap')}
         tmp['read_only'] = self.view.is_read_only()
         if tmp != self.last_settings:
-            self.last_settings = tmp
-            if tmp['translate_tabs_to_spaces']:
+            if tmp.get('translate_tabs_to_spaces'):
                 neo.vim.cmd('set expandtab ts={ts} shiftwidth={ts} softtabstop=0 smarttab'.format(ts=tmp['tab_size']))
-            else:
-                neo.vim.cmd('set noexpandtab softtabstop=0')
+            else: neo.vim.cmd('set noexpandtab softtabstop=0')
+
             if tmp['read_only']:
                 neo.vim.cmd('set noma')
-            else:
-                neo.vim.cmd('set ma')
-            neo.vim.status(force=True)
+            else: neo.vim.cmd('set ma')
 
-    def settings_from_vim(self, et, ts):
+            if tmp.get('word_wrap') != self.last_settings.get('word_wrap'):
+                if tmp.get('word_wrap'):
+                    neo.vim.cmd('set wrap')
+                else: neo.vim.cmd('set nowrap')
+                self.viewport_to_vim()
+
+            neo.vim.status(force=True)
+            self.last_settings = tmp
+
+    def settings_from_vim(self, et, ts, wrap):
         if et:
             self.settings.set('translate_tabs_to_spaces', et)
         self.settings.set('tab_size', ts)
+        self.settings.set('word_wrap', wrap)
 
     def sync_to_vim(self, force=False):
         if not neo._loaded: return
@@ -334,8 +351,9 @@ class ActualVim:
         self.vim_changes = neo.vim.status()['changedtick']
 
     def sync_from_vim(self, edit=None):
-        if not neo._loaded: return
         if not self.actual: return
+        if self.nosync:
+            return
 
         def update(view, edit):
             with self.busy:
@@ -356,6 +374,7 @@ class ActualVim:
 
                 self.mark_changed()
                 self.sel_from_vim(edit=edit)
+                self.viewport_from_vim(queue=True)
                 self.status_from_vim()
 
         if edit:
@@ -364,13 +383,12 @@ class ActualVim:
             Edit.defer(self.view, update)
 
     def sel_to_vim(self, force=False):
-        if not neo._loaded: return
         if not self.actual: return
-        if self.sel_changed() and not self.changed:
+        if self.sel_changed() and not self.changed or force:
             neo.vim.force_ready()
+
             # single selection for now...
-            # TODO: block
-            # TODO multiple select vim plugin integration
+            # TODO: multiple select vim plugin integration
             sel = self.view.sel()[0]
             vim = neo.vim
             b = self.vim_rowcol(sel.b)
@@ -409,19 +427,61 @@ class ActualVim:
                             b = (b[0] - 1, b[1])
                     vim.select(a, b, mode=mode)
 
+            self.viewport_to_vim()
             self.sel_from_vim()
             self.update_view()
 
+    def viewport_to_vim(self):
+        if not self.actual: return
+        view = self.view
+        row, col = view.rowcol(view.layout_to_text(view.viewport_position()))
+        # TODO: UTF8?
+        wview = {'topline': row + 1, 'leftcol': col + 1}
+        neo.vim.eval('winrestview({})'.format(wview))
+
+    def viewport_from_vim(self, queue=True):
+        if not self.actual: return
+        def update():
+            view = self.view
+            status = neo.vim.status()
+            wview = status['wview']
+            lineoff = wview['topline'] - wview['topfill'] - 1
+            coloff = wview['leftcol'] - wview['skipcol'] - 1
+            rowpoint = view.text_to_layout(self.vim_text_point(lineoff, 0))
+            colpoint = view.text_to_layout(self.vim_text_point(lineoff, coloff))
+            pos = colpoint[0], rowpoint[1]
+            left, top = view.viewport_position()
+            right, bot = view.viewport_extent()
+            right += left
+            bot += top
+            edge_check = False
+            for c in view.sel():
+                x, y = view.text_to_layout(c.b)
+                if (x < left or x + view.em_width() > right
+                        or y < top or y + view.line_height() > bot):
+                    edge_check = True
+
+            if coloff == 0 and left > 0:
+                edge_check = True
+
+            if (abs(left - pos[0]) >= view.em_width()
+                    or abs(top - pos[1]) >= view.line_height()
+                    or edge_check):
+                view.set_viewport_position(pos, bool(settings.get('smooth_scroll')))
+        if queue:
+            sublime.set_timeout(update, 0)
+        else:
+            update()
+
     def sel_from_vim(self, edit=None):
-        if not neo._loaded: return
         if not self.actual: return
 
         status = neo.vim.status()
         a = (status['vline'], status['vcol'])
         b = (status['cline'], status['ccol'])
 
-        if settings.get('indent_priority') == 'vim':
-            self.settings_from_vim(status['expandtab'], status['ts'])
+        if settings.get('settings_priority') == 'vim':
+            self.settings_from_vim(status['expandtab'], status['ts'], status['wrap'])
         new_sel = self.visual(status['mode'], a, b)
 
         def select(view, edit):
@@ -429,27 +489,6 @@ class ActualVim:
             sel.clear()
             sel.add_all(new_sel)
             self.sel_changed()
-
-            # defer first scroll: vis detection seems buggy during load
-            if self.first_scroll:
-                self.first_scroll = False
-                sublime.set_timeout(self.sel_from_vim, 50)
-                return
-
-            # make sure new selection is visible
-            vis = view.visible_region()
-            if len(sel) == 1:
-                b = sel[0].b
-                lines = view.lines(vis)
-                # single cursor might be at edge of screen, make sure line is fully on screen
-                if not vis.contains(b) or (lines[0].contains(b) or lines[-1].contains(b)):
-                    view.show(b, show_surrounds=False)
-            else:
-                for cur in sel:
-                    if vis.contains(cur.b):
-                        break
-                else:
-                    view.show(sel)
 
         if edit:
             select(self.view, edit)
@@ -469,6 +508,8 @@ class ActualVim:
                 self.update_needed = 0
                 self.sync_from_vim(edit=edit)
                 self.update_view()
+            else:
+                self.viewport_from_vim(queue=False)
 
     def press(self, key, edit=None):
         if not neo._loaded: return
@@ -484,6 +525,13 @@ class ActualVim:
                 self.update_needed += 1
             def onready():
                 sublime.set_timeout(self.update, 0)
+
+            # syncing the viewport to vim here fixes the case where the user scrolled the view in sublime between keypresses
+            if neo.vim.nvim_mode:
+                res = neo.vim.nv.request('nvim_get_mode') or {}
+                if not res.get('blocking', True):
+                    self.viewport_to_vim()
+
             _, ready = neo.vim.press(key, onready)
             if ready:
                 self.update(edit)
@@ -498,6 +546,7 @@ class ActualVim:
 
     def set_path(self, path):
         self.buf.name = path
+        neo.vim.cmd('filetype detect')
 
     # neovim event callbacks
     def on_bell(self):
@@ -565,12 +614,68 @@ class ActualVim:
                 self.popup['selected'] = args[0][0]
             render(update=True)
 
+    def on_cmdline(self, cmd, args):
+        with self.cmd_lock:
+            window = self.view.window()
+            if cmd == 'cmdline_show':
+                content, pos, firstc, prompt, indent, level = args[0]
+                text = content[0][1]
+
+                def on_done(s):
+                    self.nosync = False
+                    with self.update_lock:
+                        self.update_needed += 1
+                    def onready():
+                        sublime.set_timeout(self.update, 0)
+                    _, ready = neo.vim.press('<cr>', onready)
+                    if ready: self.update()
+
+                def on_cancel():
+                    if self.cmd_panel:
+                        self.press('<esc>')
+
+                text = firstc + text
+                panel = self.cmd_panel
+                if panel:
+                    if text != self.cmd_text:
+                        with Edit(panel) as edit:
+                            edit.replace(sublime.Region(0, panel.size()), text)
+                            edit.reselect(pos + 1)
+                    self.cmd_text = text
+                else:
+                    panel = window.show_input_panel(prompt, text, on_done, None, on_cancel)
+                    self.nosync = True
+                    s = panel.settings()
+                    s.set('av_input', True)
+                    s.set('actual_mode', True)
+                    _views[panel.id()] = self
+                    self.cmd_panel = panel
+                    with Edit(panel) as edit:
+                        edit.reselect(pos + 1)
+            elif cmd == 'cmdline_hide':
+                self.nosync = False
+                panel = self.cmd_panel
+                if panel:
+                    self.cmd_panel = None
+                    self.cmd_text = None
+                    _views.pop(panel.id(), None)
+                    if window.active_panel() == 'input':
+                        window.run_command('hide_panel', {'cancel': True})
+            elif cmd == 'cmdline_pos':
+                pos, level = args[0]
+                panel = self.cmd_panel
+                if panel:
+                    with Edit(panel) as edit:
+                        edit.reselect(pos + 1)
+
     def on_write(self):
         self.view.run_command('save')
 
     def on_complete(self, findstart, base):
         def cur():
-            modified, et, ts, a, b = neo.vim.status()
+            status = neo.vim.status()
+            a = (status['vline'], status['vcol'])
+            b = (status['cline'], status['ccol'])
             sel = self.visual(neo.vim.mode, a, b)
             return sel[0].b
 
@@ -615,7 +720,7 @@ class ActualVim:
 
         wview = status['wview']
         lineoff = wview['topline'] - wview['topfill'] - 1
-        coloff = wview['leftcol'] - wview['skipcol']
+        coloff = wview['leftcol'] - wview['skipcol'] - 1
         if highlights == self.last_highlights:
             return
         self.last_highlights = highlights
@@ -638,7 +743,7 @@ class ActualVim:
             regions.append(sublime.Region(a, b))
 
         if regions:
-            self.view.add_regions('actualvim_highlight', regions, 'error', '', sublime.DRAW_NO_OUTLINE)
+            self.view.add_regions('actualvim_highlight', regions, 'error', '', sublime.DRAW_NO_FILL)
         else:
             self.view.erase_regions('actualvim_highlight')
 
@@ -648,5 +753,10 @@ class ActualVim:
         self.screen_changes = screen.changes
         hl = screen.highlights()
         sublime.set_timeout(lambda: self.highlight(hl), 0)
+        self.status_from_vim()
+
+    def on_appcmd(self, cmd, args): sublime.run_command(cmd, args or {})
+    def on_wincmd(self, cmd, args): self.view.window().run_command(cmd, args or {})
+    def on_textcmd(self, cmd, args): self.view.run_command(cmd, args or {})
 
 ActualVim.reload_classes()

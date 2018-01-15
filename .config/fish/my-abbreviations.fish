@@ -101,3 +101,8 @@ abbr -a gbr git branch -r
 abbr -a gbl git blame
 abbr -a rd repo diff
 
+abbr -a rps repo sync -j8
+
+
+abbr -a mrc 'repo forall -c "printf \"\033[1;36m`git rev-parse --show-toplevel`\033[0m\t`git log -n1 --pretty=format:\"%an\t%s\"`\" | grep \"Langenhagen\"" # My Repo Changes : show lastest repo commits if they are mine'
+abbr -a rmf rm -rf

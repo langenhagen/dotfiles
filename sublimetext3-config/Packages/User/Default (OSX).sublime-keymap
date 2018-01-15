@@ -1,4 +1,5 @@
 [
     { "keys": ["f3"], "command": "find_next" },
-    { "keys": ["ctrl+shift+d"], "command": "run_macro_file", "args": {"file": "Packages/User/add_docstring.sublime-macro"} }
+    { "keys": ["ctrl+shift+d"], "command": "run_macro_file", "args": {"file": "Packages/User/add_docstring.sublime-macro"} },
+    { "keys": ["ctrl+shift+o"], "command": "open_dir", "args": {"dir": "$file_path", "file": "$file_name"} }
 ]

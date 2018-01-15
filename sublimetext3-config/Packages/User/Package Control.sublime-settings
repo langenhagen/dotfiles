@@ -6,10 +6,15 @@
 	"installed_packages":
 	[
 		"ActualVim",
+		"Clickable URLs",
+		"CMake",
 		"Compare Side-By-Side",
 		"DoxyDoc",
 		"FrancaIDL",
+		"Kotlin",
+		"LinkOpener",
 		"MarkdownHighlighting",
+		"Mustache",
 		"Package Control",
 		"PackageResourceViewer",
 		"Pretty JSON",

@@ -53,6 +53,7 @@ abbr -a jrn journal
 abbr -a bkt bucket
 abbr -a tks tricks
 abbr -a editjrn 'vim -R "+normal G\$" -p ~/stuff/Journal.txt'
+abbr -a ej 'vim -R "+normal G\$" -p ~/stuff/Journal.txt'
 abbr -a gitp gitup
 
 

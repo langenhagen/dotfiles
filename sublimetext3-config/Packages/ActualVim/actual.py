@@ -7,6 +7,7 @@ from .view import ActualVim
 from .edit import Edit
 from . import settings
 
+class ActualSkipCmd(sublime_plugin.TextCommand): pass
 
 class ActualEnable(sublime_plugin.ApplicationCommand):
     def is_enabled(self):
@@ -26,10 +27,10 @@ class ActualDisable(sublime_plugin.ApplicationCommand):
 
 class ActualEnableView(sublime_plugin.TextCommand):
     def is_enabled(self):
-        return settings.enabled() and not self.view.settings().get('actual_intercept')
+        return settings.enabled() and not self.view.settings().get('av_input')
 
     def run(self, edit):
-        self.view.settings().set('actual_intercept', True)
+        self.view.settings().set('av_input', True)
         v = ActualVim.get(self.view, exact=False, create=False)
         if v:
             v.update_view()
@@ -37,10 +38,10 @@ class ActualEnableView(sublime_plugin.TextCommand):
 
 class ActualDisableView(sublime_plugin.TextCommand):
     def is_enabled(self):
-        return settings.enabled() and self.view.settings().get('actual_intercept', False)
+        return settings.enabled() and self.view.settings().get('av_input', False)
 
     def run(self, edit):
-        self.view.settings().set('actual_intercept', False)
+        self.view.settings().set('av_input', False)
         v = ActualVim.get(self.view, exact=False, create=False)
         if v:
             v.update_view()
@@ -114,9 +115,19 @@ class ActualGlobalListener(sublime_plugin.EventListener):
     # to prevent inconsistent updates
     # then force a copy afterwards
     def on_text_command(self, view, name, args):
-        v = ActualVim.get(view, create=False)
+        v = ActualVim.get(view, exact=False, create=False)
         if not v:
             return
+
+        if name == 'paste' and view.window().active_panel() == 'input' and v.cmd_panel:
+            tmp = []
+            for c in sublime.get_clipboard():
+                if c == '\n':
+                    tmp.append('<cr>')
+                    break
+                tmp.append(c)
+            v.press(''.join(tmp))
+            return ('actual_skip_cmd', {})
 
         if name == 'drag_select':
             v.drag_select = args.get('by')
@@ -128,7 +139,7 @@ class ActualGlobalListener(sublime_plugin.EventListener):
         self.on_text_command(view, name, args)
 
     def on_post_text_command(self, view, name, args):
-        v = ActualVim.get(view, create=False)
+        v = ActualVim.get(view, exact=False, create=False)
         if not v:
             return
 

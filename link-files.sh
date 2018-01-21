@@ -19,6 +19,13 @@ ln -s $DOTFILES_PATH/.config/fish/config.fish ~/.config/fish/config.fish
 rm ~/.config/fish/my-abbreviations.fish
 ln -s $DOTFILES_PATH/.config/fish/my-abbreviations.fish ~/.config/fish/my-abbreviations.fish
 
+rm ~/.config/fish/my-environment-variables.fish
+ln -s $DOTFILES_PATH/.config/fish/my-environment-variables.fish ~/.config/fish/my-environment-variables.fish
+
+rm ~/.config/fish/my-functions.fish
+ln -s $DOTFILES_PATH/.config/fish/my-functions.fish ~/.config/fish/my-functions.fish
+
+
 rm ~/.tigrc
 ln -s $DOTFILES_PATH/.tigrc ~/.tigrc
 

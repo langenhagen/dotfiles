@@ -34,7 +34,6 @@
 " settings  =======================================================================================
 
 syntax on  " syntax highlighting. turn off if vim is too slow with :syntax off
-
 filetype plugin indent on
 
 set visualbell           " disable beep sound when a motion fails

@@ -4,24 +4,35 @@
 # version: 2017-10-16
 #
 
-## evergreen abbreviations
+abbr -a fishconfig vim ~/.config/fish/config.fish
+abbr -a fconf vim ~/.config/fish/config.fish
+abbr -a fic vim ~/.config/fish/config.fish
+abbr -a sourcefish . ~/.config/fish/config.fish
+abbr -a srcf . ~/.config/fish/config.fish
+abbr -a editabbr vim -p ~/.config/fish/my-abbreviations.fish
+
+abbr -a jrn journal
+abbr -a bkt bucket
+abbr -a tks tricks
+abbr -a editjrn 'vim -R "+normal G\$" -p $STUFF_DIR/Journal.txt'
+abbr -a ej 'vim -R "+normal G\$" -p $STUFF_DIR/Journal.txt'
+abbr -a gitp gitup
+
 
 abbr -a cd.. cd ..
 abbr -a c. cd ..
 abbr -a c cd ..
 abbr -a cdd cd ~/Desktop
-abbr -a cddotfiles cd /Users/langenha/dotfiles
+abbr -a cddotfiles cd ~/dotfiles
 
 abbr -a cdcode cd $CODE_DIR
 abbr -a ccode cd $CODE_DIR
 abbr -a cdcde cd $CODE_DIR
-abbr -a cddocker cd $CODE_DIR/docker
-abbr -a cdocker cd $CODE_DIR/docker
 abbr -a cdscripts cd $SCRIPTS_DIR
 abbr -a cscripts cd $SCRIPTS_DIR
-abbr -a cdstuff cd $HOME/stuff
-abbr -a cstuff cd $HOME/stuff
-abbr -a cds cd $HOME/stuff
+abbr -a cdstuff cd $STUFF_DIR
+abbr -a cstuff cd $STUFF_DIR
+abbr -a cds cd $STUFF_DIR
 
 abbr -a opn open .
 abbr -a o open .
@@ -30,6 +41,7 @@ abbr -a fnd find . -iname
 abbr -a fnd1 find . -iname -maxdepth 1
 abbr -a t3 tree -L 3
 abbr -a t3d tree -L 3 -d
+
 
 abbr -a vim vim -p
 abbr -a v vim -p
@@ -43,15 +55,12 @@ abbr -a bp '/usr/local/bin/python -m bpython'      # makes my bpython point to m
 abbr -a chrome open -a \"Google Chrome\"
 abbr -a crm open -a \"Google Chrome\"
 
-abbr -a cdapihw cd /Users/langenha/code/api-prime/projects/hello_world/
-abbr -a capihw cd /Users/langenha/code/api-prime/projects/hello_world/
-abbr -a cdapi cd /Users/langenha/code/api-prime/
-abbr -a capi cd /Users/langenha/code/api-prime/
-abbr -a cdtp cd /Users/langenha/code/api-prime/api-transpiler/
-abbr -a ctp cd /Users/langenha/code/api-prime/api-transpiler/
 
 abbr -a gs git status
+abbr -a gl git log
+abbr -a gbl git blame
 abbr -a gb git branch
+abbr -a gbr git branch -r
 abbr -a gca git commit --amend
 abbr -a gss git stash
 abbr -a gsa git stash apply
@@ -82,27 +91,25 @@ abbr -a gra git rebase --abort
 
 abbr -a grhh git reset --hard HEAD
 abbr -a grsh git reset --soft HEAD~1
+abbr -a grhh10 git reset --hard HEAD~10
 
-## later added abbreviations
+abbr -a rd repo diff
+abbr -a rps repo sync -j8
 
-abbr -a cahw /Users/langenha/code/api-prime/projects/hello_world/
+abbr -a mrc 'repo forall -c "printf \"\033[1;36m`git rev-parse --show-toplevel`\033[0m\t`git log -n1 --pretty=format:\"%an\t%s\"`\" | grep \"Langenhagen\"" # My Repo Changes : show lastest repo commits if they are mine'
 
 
+abbr -a cdapihw cd ~/code/api-prime/projects/hello_world/
+abbr -a capihw cd ~/code/api-prime/projects/hello_world/
+abbr -a cdapi cd ~/code/api-prime/
+abbr -a capi cd ~/code/api-prime/
+abbr -a cdtp cd ~/code/api-prime/api-transpiler/
+abbr -a ctp cd ~/code/api-prime/api-transpiler/
+
+abbr -a cahw cd ~/code/api-prime/projects/hello_world/
 
 abbr -a csp cd ~/code/sparta
 abbr -a crnvsdk cd ~/code/sparta/corenav/sdk/
 abbr -a cnvsdk cd ~/code/sparta/corenav/sdk/
-abbr -a cdsparta cd /Users/langenha/code/sparta/
-abbr -a csparta cd /Users/langenha/code/sparta/
-abbr -a grhh10 git reset --hard HEAD~10
-abbr -a tree tree -C
-abbr -a gl git log
-abbr -a gbr git branch -r
-abbr -a gbl git blame
-abbr -a rd repo diff
-
-abbr -a rps repo sync -j8
-
-
-abbr -a mrc 'repo forall -c "printf \"\033[1;36m`git rev-parse --show-toplevel`\033[0m\t`git log -n1 --pretty=format:\"%an\t%s\"`\" | grep \"Langenhagen\"" # My Repo Changes : show lastest repo commits if they are mine'
-abbr -a rmf rm -rf
+abbr -a cdsparta cd ~/code/sparta/
+abbr -a csparta cd ~/code/sparta/

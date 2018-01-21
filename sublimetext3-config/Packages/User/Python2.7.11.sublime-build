@@ -1,6 +1,0 @@
-{
-    "env": { "PYTHONPATH": "/Users/langenha/code/olympia-prime/build/auto-core-sdk/sdk_extensions/build/sdl/python/" },
-    "cmd": ["/usr/local/bin/python", "-u", "$file"],
-   "file_regex": "^ ]*File \"(...*?)\", line ([0-9]*)",
-   "selector": "source.python"
-}

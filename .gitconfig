@@ -1,8 +1,8 @@
 [color]
 	ui = auto
 [user]
-	email = andreas.langenhagen@here.com
-	name = 
+	email = andreas@langenhagen.cc
+	name = Andreas Langenhagen
 [rebase]
 	autostash = true
 [rerere]

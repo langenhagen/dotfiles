@@ -84,7 +84,7 @@ fi
 ln -s "$DOTFILES_PATH/sublimetext3-config/Packages" "$SUBLIME_PACKAGES_DIR"
 
 
-# set iterm2 config settings. The applicability has yet to be confirmed.
+# set iterm2 config settings.
 # Specify the preferences directory
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$DOTFILES_PATH/iterm2-config"
 # Tell iTerm2 to use the custom preferences in the directory

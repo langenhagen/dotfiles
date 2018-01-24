@@ -17,7 +17,7 @@ abbr -a tks tricks
 abbr -a editjrn 'vim -R "+normal G\$" -p $STUFF_DIR/Journal.txt'
 abbr -a ej 'vim -R "+normal G\$" -p $STUFF_DIR/Journal.txt'
 abbr -a gitp gitup
-
+abbr -a e 'vim -R "+normal :Explore\$" .'
 
 abbr -a cd.. cd ..
 abbr -a c. cd ..
@@ -108,8 +108,8 @@ abbr -a ctp cd ~/code/api-prime/api-transpiler/
 
 abbr -a cahw cd ~/code/api-prime/projects/hello_world/
 
-abbr -a csp cd ~/code/sparta
+abbr -a csp cd ~/code/sparta/
 abbr -a crnvsdk cd ~/code/sparta/corenav/sdk/
 abbr -a cnvsdk cd ~/code/sparta/corenav/sdk/
 abbr -a cdsparta cd ~/code/sparta/
-abbr -a csparta cd ~/code/sparta/
+abbr -a csparta cd ~/code/sparta/abbr -a cnv cd /Users/langenha/code/sparta/corenav/

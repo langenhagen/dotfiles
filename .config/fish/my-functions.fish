@@ -125,20 +125,27 @@ function fn2
     find . -iname "*$argv*"
 end
 
+function hirn
+    # grep -H: print filename headers,   -n: prinft line numbers,   -r: recursive
+    grep -Hirn --color $argv[1] .
+end
+
 function hirni
     # grep -H: print filename headers, -n: print line numbers,   -r: recursive
     #      -I: ignore binary files
     grep -HirnI --color $argv[1] .
 end
 
-function hirn
-    # grep -H: print filename headers,   -n: prinft line numbers,   -r: recursive
-    grep -Hirn --color $argv[1] .
+function chirn
+    grep -Hirn  --include \*.h --include \*.cpp --include \*.m --include \*.mm \
+                --include \*.pch --include \*.java --include \*.swift --include \*.cc \
+                --color $argv[1] .
 end
 
-function chirn
-    grep -Hirn --include \*.h --include \*.cpp --include \*.m --include \*.mm --include \*.pch --include \*.java --include \*.swift --color $argv[1] .
+function cmhirn
+    grep -Hirn --include \*.txt --include \*.cmake --color $argv[1] .
 end
+
 
 function jhirn
     grep -Hirn --include \*.java --color $argv[1] .
@@ -151,6 +158,7 @@ function clirn
 end
 
 function sclirn
+    # open the files found with clirn in sublime text.
     sb ( clirn $argv[1] .)
 end
 
@@ -163,6 +171,7 @@ function pylirn
 end
 
 function lirn
+    # -l, --files-with-matches: Only the names of files containing selected lines are written to standard output.
     grep -lirn $argv[1] .
 end
 

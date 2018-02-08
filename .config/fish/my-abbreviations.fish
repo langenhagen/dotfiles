@@ -97,7 +97,7 @@ abbr -a rd repo diff
 abbr -a rps repo sync -j8
 
 abbr -a mrc 'repo forall -c "printf \"\033[1;36m`git rev-parse --show-toplevel`\033[0m\t`git log -n1 --pretty=format:\"%an\t%s\"`\" | grep \"Langenhagen\"" # My Repo Changes : show lastest repo commits if they are mine'
-
+abbr -a sfr "git review master --reviewers (git log -n40 --pretty=format:'%ae' | sort | uniq -c | sort -nr | awk '{print \$2}' | head -8)"
 
 abbr -a cdapihw cd ~/code/api-prime/projects/hello_world/
 abbr -a capihw cd ~/code/api-prime/projects/hello_world/
@@ -113,3 +113,7 @@ abbr -a crnvsdk cd ~/code/sparta/corenav/sdk/
 abbr -a cnvsdk cd ~/code/sparta/corenav/sdk/
 abbr -a cdsparta cd ~/code/sparta/
 abbr -a csparta cd ~/code/sparta/abbr -a cnv cd /Users/langenha/code/sparta/corenav/
+abbr -a cmh cmhirn
+abbr -a cnc cd /Users/langenha/code/sparta/coresdk/carlo/locationsdk/src/navcore/
+abbr -a cnc cd /Users/langenha/code/sparta/coresdk/carlo/locationsdk/src/navcore/
+abbr -a s sublime

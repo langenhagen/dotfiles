@@ -3,8 +3,8 @@
 # links the essential  dotfiles for this specify device
 # after removing existing files
 #
-# author: langenhagen
-# version: 171016
+# author: andreasl
+# version: 180208
 
 DIR_OF_THIS_SCRIPT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DOTFILES_PATH=$DIR_OF_THIS_SCRIPT
@@ -43,21 +43,6 @@ ln  -s $DOTFILES_PATH/.config/bpython/config ~/.config/bpython/config
 
 rm ~/.ccache/ccache.conf
 ln -s $DOTFILES_PATH/.ccache/ccache.conf ~/.ccache/ccache.conf
-
-
-# filezilla. Can initially be a real folder, thus we rm `-rf` it.
-# Later it can be a symlink, there we need the `rm` statement without commands.
-
-FILEZILLA_CONFIG_DIR=~/.config/filezilla
-if [ ! -L "$"FILEZILLA_CONFIG_DIR ] && [ -d "$FILEZILLA_CONFIG_DIR" ]; then
-    # filezilla dir is a real directory
-    rm -rf "$FILEZILLA_CONFIG_DIR"
-elif [ -L "$FILEZILLA_CONFIG_DIR" ];  then
-	#  filezilla dir is a symlink
-    rm "$FILEZILLA_CONFIG_DIR"
-fi
-ln -s $DOTFILES_PATH/.config/filezilla "$FILEZILLA_CONFIG_DIR"
-
 
 # sublime text. The folders that we want to overwrite are either a real folder or,
 # if we linked the files before, we want to overwrite the symlinks.

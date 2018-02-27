@@ -49,6 +49,7 @@ set incsearch            " highlight the next match while typing
 set nocursorline  " underline current line, slows vim down, use `set nocursorline` then
 set ignorecase  " search ignores case
 set laststatus=2   " shows the current filename in the status bar
+set mouse=a             " enable mouse support
 " set list    " shows tabs and newline characters
 
 
@@ -99,7 +100,7 @@ endfunction
 
 " key bindings =====================================================================================
 
-map - :bdelete <bar> :Explore<CR>  " close file and open file exlporer mode (usually  ctrl + 6  when you come from netrw initially)
+map - :edit! <bar> :Explore<CR> " reset file to last saved state and show parent dir
 map <F2> :set hlsearch!<CR>
 map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>   " from: http://vim.wikia.com/wiki/Easily_switch_between_source_and_header_file
 map <F5> :edit<CR>  " refresh file

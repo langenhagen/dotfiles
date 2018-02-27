@@ -1,7 +1,7 @@
 # this file contains custom fish abbreviations
 #
 # author: langenhagen
-# version: 2017-10-16
+# version: 2018-02-17
 #
 
 abbr -a fishconfig vim ~/.config/fish/config.fish
@@ -11,12 +11,14 @@ abbr -a sourcefish . ~/.config/fish/config.fish
 abbr -a srcf . ~/.config/fish/config.fish
 abbr -a editabbr vim -p ~/.config/fish/my-abbreviations.fish
 
-abbr -a jrn journal
+abbr -a jrn 'journal "'
+abbr -a mnm 'minimerk "'
 abbr -a bkt bucket
 abbr -a tks tricks
 abbr -a editjrn 'vim -R "+normal G\$" -p $STUFF_DIR/Journal.txt'
 abbr -a ej 'vim -R "+normal G\$" -p $STUFF_DIR/Journal.txt'
-abbr -a gitp gitup
+abbr -a gitup 'pwd ; cd (git rev-parse --show-toplevel)'
+abbr -a gitp  'pwd ; cd (git rev-parse --show-toplevel)'
 abbr -a e 'vim -R "+normal :Explore\$" .'
 
 abbr -a cd.. cd ..
@@ -42,19 +44,16 @@ abbr -a fnd1 find . -iname -maxdepth 1
 abbr -a t3 tree -L 3
 abbr -a t3d tree -L 3 -d
 
-
 abbr -a vim vim -p
 abbr -a v vim -p
-abbr -a tg tig
 abbr -a t tig
-abbr -a sb sublime
+abbr -a s sublime
 abbr -a xcode open -a Xcode
 abbr -a xc open -a Xcode
 abbr -a bpython '/usr/local/bin/python -m bpython' # makes my bpython point to my own python version      (160817: 2.7.11)
 abbr -a bp '/usr/local/bin/python -m bpython'      # makes my bpython point to my own python version      (160817: 2.7.11)
 abbr -a chrome open -a \"Google Chrome\"
 abbr -a crm open -a \"Google Chrome\"
-
 
 abbr -a gs git status
 abbr -a gl git log
@@ -92,11 +91,11 @@ abbr -a gra git rebase --abort
 abbr -a grhh git reset --hard HEAD
 abbr -a grsh git reset --soft HEAD~1
 abbr -a grhh10 git reset --hard HEAD~10
+abbr -a gfm 'git commit -a -m "TODO Save my work, just in case"; git branch my-saved-work-(date "+%Y-%m-%d--%H-%M-%S") ; git fetch origin ; git reset --hard origin/master'
 
 abbr -a rd repo diff
-abbr -a rps repo sync -j8
-
-abbr -a mrc 'repo forall -c "printf \"\033[1;36m`git rev-parse --show-toplevel`\033[0m\t`git log -n1 --pretty=format:\"%an\t%s\"`\" | grep \"Langenhagen\"" # My Repo Changes : show lastest repo commits if they are mine'
+abbr -a rps repo sync -c -j8
+abbr -a rpc 'repo status ; repo diff ; repo forall -c "printf \"\033[1;36m`git rev-parse --show-toplevel`\033[0m\t`git log -n1 --pretty=format:\"%an\t%s\"`\" | grep \"Langenhagen\""'
 abbr -a sfr "git review master --reviewers (git log -n40 --pretty=format:'%ae' | sort | uniq -c | sort -nr | awk '{print \$2}' | head -8)"
 
 abbr -a cdapihw cd ~/code/api-prime/projects/hello_world/
@@ -109,11 +108,14 @@ abbr -a ctp cd ~/code/api-prime/api-transpiler/
 abbr -a cahw cd ~/code/api-prime/projects/hello_world/
 
 abbr -a csp cd ~/code/sparta/
-abbr -a crnvsdk cd ~/code/sparta/corenav/sdk/
 abbr -a cnvsdk cd ~/code/sparta/corenav/sdk/
 abbr -a cdsparta cd ~/code/sparta/
 abbr -a csparta cd ~/code/sparta/abbr -a cnv cd /Users/langenha/code/sparta/corenav/
 abbr -a cmh cmhirn
 abbr -a cnc cd /Users/langenha/code/sparta/coresdk/carlo/locationsdk/src/navcore/
-abbr -a cnc cd /Users/langenha/code/sparta/coresdk/carlo/locationsdk/src/navcore/
-abbr -a s sublime
+
+
+abbr -a i "echo (date +%a' '%Y'-'%m'-'%d' '%H:%M) $argv >> ~/stuff/_yellow_cards/sascha_p//times_sascha-interrupted-people.txt ; echo '.'"
+
+
+abbr -a ccarl cd /Users/langenha/code/sparta/coresdk/carlo/

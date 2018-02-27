@@ -1,6 +1,6 @@
 # My personal fish functions file
 # author: langenhagen
-# version: 18-01-21
+# version: 18-02-17
 
 # source this file into the config.fish
 
@@ -46,6 +46,17 @@ function journal
     end
 end
 
+function minimerk
+    # stores a simple text string into the minimerk.txt file with a timestamp
+    # can be used for minimal reminders that are stored into long term memory
+
+    if test (count $argv) -eq 0
+        tail -n20 ~/stuff/minimerk.txt
+    else if test (count $argv) -gt 0
+        echo (date +%a' '%Y'-'%m'-'%d' '%H:%M) $argv >> ~/stuff/minimerk.txt
+    end
+end
+
 function bucket
     # shows the bucket list file or appends given lines to it
     # there must be a trailing newline at the end of the file
@@ -88,11 +99,6 @@ function pbc
    echo $argv | pbcopy
 end
 
-function gitup
-    echo (pwd)
-    cd (git rev-parse --show-toplevel)
-end
-
 function pbce
     # copies the output of the given statement into the clipboard.
     # Better stick to the common way.
@@ -102,6 +108,9 @@ end
 function vimh
     # opens a vim tab for each line of output with all the outputs of the last statement.
     # e.g. use in conjunction with `ls -1` or `find` or `grep -lr`
+    # note: I tried to make it an alias, but $history[1] will, once evaluated in the abbreviation,
+    #       expandend and thus stay immutable within this abbreviation.
+
     vim -p (eval $history[1])
 end
 
@@ -145,7 +154,6 @@ end
 function cmhirn
     grep -Hirn --include \*.txt --include \*.cmake --color $argv[1] .
 end
-
 
 function jhirn
     grep -Hirn --include \*.java --color $argv[1] .

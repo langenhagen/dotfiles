@@ -1,10 +1,13 @@
 # My personal fish environment variables file for my Mac-workmachine
 # author: langenhagen
-# version: 18-01-21
+# version: 18-02-10
 
 # source this file into the config.fish
 
 setenv JAVA_HOME "/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home"
+# The following variable Z_SCRIPT_PATH must actually be set before sourcing .config/fish/conf.d/omf.fish
+# I set it directly inside the omf.fish file at the top. That seems to work :)
+# I still let it here for doc purposes for now.  Feel free to remove :)
 setenv Z_SCRIPT_PATH /usr/local/etc/profile.d/z.sh
 setenv ANDROID_HOME $HOME/Library/Android/sdk
 setenv ANDROID_NDK_HOME $HOME/Library/Android/sdk/ndk-bundle

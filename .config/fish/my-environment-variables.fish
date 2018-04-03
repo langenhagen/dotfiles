@@ -26,3 +26,4 @@ set -gx PATH $PATH $ANDROID_HOME/platform-tools
 setenv ANDROID_SERIAL CB5A286QVE            # that's my SONY XPeria Z5 Compact
 #setenv ANDROID_SERIAL 024475e094d2743e      # that's the LG Nexus with PTM #245
 
+set -gx CCACHE_MEMCACHED_CONF "--SERVER=apigen-memcached.ad.here.com"

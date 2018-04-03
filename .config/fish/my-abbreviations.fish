@@ -13,7 +13,7 @@ abbr -a editabbr vim -p ~/.config/fish/my-abbreviations.fish
 
 abbr -a jrn 'journal "'
 abbr -a mnm 'minimerk "'
-abbr -a bkt bucket
+abbr -a bkt 'bucket "'
 abbr -a tks tricks
 abbr -a editjrn 'vim -R "+normal G\$" -p $STUFF_DIR/Journal.txt'
 abbr -a ej 'vim -R "+normal G\$" -p $STUFF_DIR/Journal.txt'
@@ -50,8 +50,8 @@ abbr -a t tig
 abbr -a s sublime
 abbr -a xcode open -a Xcode
 abbr -a xc open -a Xcode
-abbr -a bpython '/usr/local/bin/python -m bpython' # makes my bpython point to my own python version      (160817: 2.7.11)
-abbr -a bp '/usr/local/bin/python -m bpython'      # makes my bpython point to my own python version      (160817: 2.7.11)
+abbr -a bpython '/usr/bin/python -m bpython' # makes my bpython point to my own python version      (160817: 2.7.11)
+abbr -a bp '/usr/bin/python -m bpython'      # makes my bpython point to my own python version      (160817: 2.7.11)
 abbr -a chrome open -a \"Google Chrome\"
 abbr -a crm open -a \"Google Chrome\"
 
@@ -119,3 +119,5 @@ abbr -a i "echo (date +%a' '%Y'-'%m'-'%d' '%H:%M) $argv >> ~/stuff/_yellow_cards
 
 
 abbr -a ccarl cd /Users/langenha/code/sparta/coresdk/carlo/
+
+abbr -a cfconf 'cd /Users/langenha/dotfiles/.config/fish/ ; ls'

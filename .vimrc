@@ -1,35 +1,8 @@
-" Vundle stuff  ====================================================================================
-" *** disabled for now ***
-"
-"set nocompatible              " be iMproved, required
-"filetype off                  " required
-"
-"" set the runtime path to include Vundle and initialize
-"set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin()
-"" alternatively, pass a path where Vundle should install plugins
-""call vundle#begin('~/some/path/here')
-"
-"" let Vundle manage Vundle, required
-"Plugin 'VundleVim/Vundle.vim'
-"Plugin 'Valloric/YouCompleteMe'
-"
-"" All of your Plugins must be added before the following line
-"call vundle#end()            " required
-"filetype plugin indent on    " required
-"" To ignore plugin indent changes, instead use:
-""filetype plugin on
-""
-"" Brief help
-"" :PluginList       - lists configured plugins
-"" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-"" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-"" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-""
-"" see :h vundle for more details or wiki for FAQ
-"" Put your non-Plugin stuff after this line
-"
-"
+" plugins =========================================================================================
+
+let g:rainbow_active = 1 " or 0 ; essential for :RainbowToggle of rainbow.vim
+
+
 
 " settings  =======================================================================================
 
@@ -41,7 +14,7 @@ set tabstop=4            " show existing tab with 4 spaces width
 set shiftwidth=4         " when indenting with '>', use 4 spaces width
 set expandtab            " On pressing tab, insert spaces
 set history=100          " set ex command history to given number
-set autochdir            " set the pwd to the current file automatically
+"set autochdir           " set the pwd to the current file automatically, might conflict with ctags
 set number  " show line numbers
 set ruler   " shows line and column numbers in the status bar
 set hlsearch  " highlight search
@@ -52,12 +25,10 @@ set laststatus=2   " shows the current filename in the status bar
 set mouse=a             " enable mouse support
 " set list    " shows tabs and newline characters
 
-
 " file types  =====================================================================================
 
-au BufNewFile,BufRead *.mm set filetype=cpp   " syntax for *.mm files like cpp files
-au BufNewFile,BufRead *.m set filetype=cpp    " syntax for *.m  files like cpp files
-
+au BufNewFile,BufRead *.mm set filetype=cpp     " syntax for *.mm files like cpp files
+au BufNewFile,BufRead *.m set filetype=cpp      " syntax for *.m  files like cpp files
 
 " highlighting rules  =============================================================================
 

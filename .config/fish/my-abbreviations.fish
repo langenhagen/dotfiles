@@ -5,7 +5,8 @@
 #
 
 abbr -a fishconfig vim ~/.config/fish/config.fish
-abbr -a fconf vim ~/.config/fish/config.fish
+abbr -a fconf 'cd /Users/langenha/dotfiles/.config/fish/ ; ls'
+abbr -a cfconf 'cd /Users/langenha/dotfiles/.config/fish/ ; ls'
 abbr -a fic vim ~/.config/fish/config.fish
 abbr -a sourcefish . ~/.config/fish/config.fish
 abbr -a srcf . ~/.config/fish/config.fish
@@ -119,5 +120,3 @@ abbr -a i "echo (date +%a' '%Y'-'%m'-'%d' '%H:%M) $argv >> ~/stuff/_yellow_cards
 
 
 abbr -a ccarl cd /Users/langenha/code/sparta/coresdk/carlo/
-
-abbr -a cfconf 'cd /Users/langenha/dotfiles/.config/fish/ ; ls'

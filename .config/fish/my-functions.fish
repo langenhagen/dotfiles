@@ -135,34 +135,34 @@ function fn2
 end
 
 function hirn
-    # grep -H: print filename headers,   -n: prinft line numbers,   -r: recursive
-    grep -Hirn --color $argv[1] .
+    # grep -H: print filename headers,   -n: prinft line numbers,   -r: recursive,      -s: suppress error messages
+    grep -Hirns --color $argv[1] .
 end
 
 function hirni
     # grep -H: print filename headers, -n: print line numbers,   -r: recursive
     #      -I: ignore binary files
-    grep -HirnI --color $argv[1] .
+    grep -HirnsI --color $argv[1] .
 end
 
 function chirn
-    grep -Hirn  --include \*.h --include \*.cpp --include \*.m --include \*.mm \
+    grep -Hirns  --include \*.h --include \*.cpp --include \*.m --include \*.mm \
                 --include \*.pch --include \*.java --include \*.swift --include \*.cc \
                 --color $argv[1] .
 end
 
 function cmhirn
-    grep -Hirn --include \*.txt --include \*.cmake --color $argv[1] .
+    grep -Hirns --include \*.txt --include \*.cmake --color $argv[1] .
 end
 
 function jhirn
-    grep -Hirn --include \*.java --color $argv[1] .
+    grep -Hirns --include \*.java --color $argv[1] .
 end
 
 function clirn
     # -l, --files-with-matches: Only the names of files containing selected lines are written to standard output.
     #  grep will only search a file until a match has been found, making searches potentially less expensive. [...]
-    grep -lirn --include \*.h --include \*.cpp --include \*.m --include \*.mm --include \*.pch --color $argv[1] .
+    grep -lirns --include \*.h --include \*.cpp --include \*.m --include \*.mm --include \*.pch --color $argv[1] .
 end
 
 function sclirn
@@ -171,16 +171,16 @@ function sclirn
 end
 
 function pyhirn
-    grep -Hirn --include \*.py --color $argv[1] .
+    grep -Hirns --include \*.py --color $argv[1] .
 end
 
 function pylirn
-    grep -lirn --include \*.py --color $argv[1] .
+    grep -lirns --include \*.py --color $argv[1] .
 end
 
 function lirn
     # -l, --files-with-matches: Only the names of files containing selected lines are written to standard output.
-    grep -lirn $argv[1] .
+    grep -lirns $argv[1] .
 end
 
 function slirn

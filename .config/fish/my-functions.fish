@@ -71,8 +71,7 @@ end
 
 function olh
    if test (count $argv) -eq 0
-        # -R readonly
-        vim -R ~/stuff/one-line-helps/one-line-help-(whoami)-(hostname -s).txt
+        vim -R ~/stuff/one-line-helps/one-line-help-(whoami)-(hostname -s).txt  # -R readonly
     else if test (count $argv) -gt 0
         # greps for the given arguments on the one-line-help.txt file
         grep -i --color=never "$argv" ~/stuff/one-line-helps/one-line-help-(whoami)-(hostname -s).txt
@@ -96,7 +95,7 @@ end
 
 function pbc
     # copy given argument to system clipboard
-   echo $argv | pbcopy
+    echo $argv | pbcopy
 end
 
 function pbce
@@ -110,7 +109,6 @@ function vimh
     # e.g. use in conjunction with `ls -1` or `find` or `grep -lr`
     # note: I tried to make it an alias, but $history[1] will, once evaluated in the abbreviation,
     #       expandend and thus stay immutable within this abbreviation.
-
     vim -p (eval $history[1])
 end
 
@@ -135,34 +133,36 @@ function fn2
 end
 
 function hirn
-    # grep -H: print filename headers,   -n: prinft line numbers,   -r: recursive,      -s: suppress error messages
-    grep -Hirns --color $argv[1] .
+    # grep -H: print filename headers,  -n: prinft line numbers,  -r: recursive,  -s: suppress error messages
+    grep -Hirns --exclude-dir=".git" --color $argv[1] .
 end
 
 function hirni
     # grep -H: print filename headers, -n: print line numbers,   -r: recursive
     #      -I: ignore binary files
-    grep -HirnsI --color $argv[1] .
+    grep -HirnsI --exclude-dir=".git" --color $argv[1] .
 end
 
 function chirn
-    grep -Hirns  --include \*.h --include \*.cpp --include \*.m --include \*.mm \
-                --include \*.pch --include \*.java --include \*.swift --include \*.cc \
+    grep -Hirns --exclude-dir=".git" \
+                --include \*.h --include \*.cpp --include \*.m --include \*.mm --include \*.pch \
+                --include \*.java --include \*.swift --include \*.cc --include \*.kt \
                 --color $argv[1] .
 end
 
 function cmhirn
-    grep -Hirns --include \*.txt --include \*.cmake --color $argv[1] .
+    grep -Hirns --exclude-dir=".git" --include \*.txt --include \*.cmake --color $argv[1] .
 end
 
 function jhirn
-    grep -Hirns --include \*.java --color $argv[1] .
+    grep -Hirns --exclude-dir=".git" --include \*.java --color $argv[1] .
 end
 
 function clirn
     # -l, --files-with-matches: Only the names of files containing selected lines are written to standard output.
     #  grep will only search a file until a match has been found, making searches potentially less expensive. [...]
-    grep -lirns --include \*.h --include \*.cpp --include \*.m --include \*.mm --include \*.pch --color $argv[1] .
+    grep -lirns --exclude-dir=".git" --include \*.h --include \*.cpp --include \*.m \
+                --include \*.mm --include \*.pch --color $argv[1] .
 end
 
 function sclirn
@@ -171,16 +171,16 @@ function sclirn
 end
 
 function pyhirn
-    grep -Hirns --include \*.py --color $argv[1] .
+    grep -Hirns --exclude-dir=".git" --include \*.py --color $argv[1] .
 end
 
 function pylirn
-    grep -lirns --include \*.py --color $argv[1] .
+    grep -lirns --exclude-dir=".git" --include \*.py --color $argv[1] .
 end
 
 function lirn
     # -l, --files-with-matches: Only the names of files containing selected lines are written to standard output.
-    grep -lirns $argv[1] .
+    grep -lirns --exclude-dir=".git" $argv[1] .
 end
 
 function slirn

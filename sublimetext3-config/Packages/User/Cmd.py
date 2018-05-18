@@ -13,4 +13,3 @@ class CmdCommand(sublime_plugin.TextCommand):
         path.pop()
         current_directory = os.sep.join(path)
         subprocess.call('open -a /Users/langenha/code/scripts/OpenIterm2.app ' + current_directory, shell=True)
-        

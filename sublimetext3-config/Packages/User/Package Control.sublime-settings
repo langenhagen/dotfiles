@@ -10,6 +10,7 @@
 		"CMake",
 		"Compare Side-By-Side",
 		"DoxyDoc",
+		"fish",
 		"FrancaIDL",
 		"Kotlin",
 		"LinkOpener",
@@ -19,7 +20,6 @@
 		"PackageResourceViewer",
 		"Pretty JSON",
 		"Swift",
-		"Terminal",
 		"TrailingSpaces"
 	]
 }

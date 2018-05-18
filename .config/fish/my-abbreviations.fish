@@ -1,7 +1,7 @@
 # this file contains custom fish abbreviations
 #
 # author: langenhagen
-# version: 2018-02-17
+# version: 2018-05-17
 #
 
 abbr -a fishconfig vim ~/.config/fish/config.fish
@@ -11,6 +11,7 @@ abbr -a fic vim ~/.config/fish/config.fish
 abbr -a sourcefish . ~/.config/fish/config.fish
 abbr -a srcf . ~/.config/fish/config.fish
 abbr -a editabbr vim -p ~/.config/fish/my-abbreviations.fish
+abbr -a ea vim -p ~/.config/fish/my-abbreviations.fish
 
 abbr -a jrn 'journal "'
 abbr -a mnm 'minimerk "'
@@ -99,24 +100,24 @@ abbr -a rps repo sync -c -j8
 abbr -a rpc 'repo status ; repo diff ; repo forall -c "printf \"\033[1;36m`git rev-parse --show-toplevel`\033[0m\t`git log -n1 --pretty=format:\"%an\t%s\"`\" | grep \"Langenhagen\""'
 abbr -a sfr "git review master --reviewers (git log -n40 --pretty=format:'%ae' | sort | uniq -c | sort -nr | awk '{print \$2}' | head -8)"
 
+abbr -a cmh cmhirn
+
+abbr -a proto 'cd /Users/langenha/personal/Dev/_Protofiles ; find /Users/langenha/personal/Dev/_Protofiles -name "*_proto.*"'
+abbr -a play 'cd /Users/langenha/personal/Dev/_playgrounds ; find /Users/langenha/personal/Dev/_Protofiles -type d -maxdepth 1 -not -path "*/\.*" -name "*"'
+abbr -a ply 'cd /Users/langenha/personal/Dev/_playgrounds ; find /Users/langenha/personal/Dev/_playgrounds -type d -maxdepth 1 -not -path "*/\.*" -name "*"'
+
 abbr -a cdapihw cd ~/code/api-prime/projects/hello_world/
 abbr -a capihw cd ~/code/api-prime/projects/hello_world/
 abbr -a cdapi cd ~/code/api-prime/
 abbr -a capi cd ~/code/api-prime/
 abbr -a cdtp cd ~/code/api-prime/api-transpiler/
 abbr -a ctp cd ~/code/api-prime/api-transpiler/
-
 abbr -a cahw cd ~/code/api-prime/projects/hello_world/
-
 abbr -a csp cd ~/code/sparta/
-abbr -a cnvsdk cd ~/code/sparta/corenav/sdk/
-abbr -a cdsparta cd ~/code/sparta/
-abbr -a csparta cd ~/code/sparta/abbr -a cnv cd /Users/langenha/code/sparta/corenav/
-abbr -a cmh cmhirn
+abbr -a cnv cd /Users/langenha/code/sparta/corenav/sdk/
+abbr -a caa cd /Users/langenha/code/sparta/apps/android-reference/
+abbr -a cai cd /Users/langenha/code/sparta/apps/ios-reference/
 abbr -a cnc cd /Users/langenha/code/sparta/coresdk/carlo/locationsdk/src/navcore/
-
+abbr -a ccarl cd /Users/langenha/code/sparta/coresdk/carlo/
 
 abbr -a i "echo (date +%a' '%Y'-'%m'-'%d' '%H:%M) $argv >> ~/stuff/_yellow_cards/sascha_p//times_sascha-interrupted-people.txt ; echo '.'"
-
-
-abbr -a ccarl cd /Users/langenha/code/sparta/coresdk/carlo/

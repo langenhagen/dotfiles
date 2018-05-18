@@ -8,7 +8,9 @@
 bind generic D @?rm %(file)                          # remove a file
 bind generic Z @?git checkout HEAD %(file)           # checkout latest committed version of a file in status view
 bind generic X @?git checkout staging %(file)        # checkout staging version of a file in status view
-bind generic E !/usr/bin/vim "%(file)"
+bind diff    E !sh -c "if [ -z \"%(file)\" ] ; then vim `git diff-tree --no-commit-id --name-only -r %(commit) | head -1` ; else vim %(file) ; fi"
+bind status  E !sh -c "vim \"%(file)\""
+bind stage   E !sh -c "vim \"%(file)\""
 bind generic + !git commit --amend
 bind generic = !?git commit
 bind generic T !git checkout --theirs %(file)
@@ -18,7 +20,7 @@ bind generic <F10> quit
 bind generic <F11> !?<git push origin HEAD:refs/for/staging
 bind generic <F12> !?<git push origin HEAD:refs/for/master
 bind generic P @sh -c "open $(dirname $(realpath %(file)))"
-bind generic 1 !git rebase --interactive HEAD~10
+bind generic 1 !git rebase --interactive HEAD~7
 
 
 set ignore-case            = no                     # Enum: no, yes, smart-case

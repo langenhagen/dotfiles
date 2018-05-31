@@ -27,11 +27,12 @@ abbr -a cd.. cd ..
 abbr -a c. cd ..
 abbr -a c cd ..
 abbr -a cdd cd ~/Desktop
-abbr -a cddotfiles cd ~/dotfiles
+abbr -a cdotfiles cd ~/dotfiles
 
 abbr -a cdcode cd $CODE_DIR
 abbr -a ccode cd $CODE_DIR
 abbr -a cdcde cd $CODE_DIR
+abbr -a ccd cd $CODE_DIR
 abbr -a cdscripts cd $SCRIPTS_DIR
 abbr -a cscripts cd $SCRIPTS_DIR
 abbr -a cdstuff cd $STUFF_DIR
@@ -46,7 +47,7 @@ abbr -a fnd1 find . -iname -maxdepth 1
 abbr -a t3 tree -L 3
 abbr -a t3d tree -L 3 -d
 
-abbr -a vim vim -p
+#abbr -a vim vim -p
 abbr -a v vim -p
 abbr -a t tig
 abbr -a s sublime

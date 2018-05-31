@@ -25,6 +25,8 @@ set laststatus=2   " shows the current filename in the status bar
 set mouse=a             " enable mouse support
 " set list    " shows tabs and newline characters
 
+set whichwrap+=<,>,h,l,[,] " causes left and right arrow keys and h and l to wrap when used at beginning or end of lines. < > are the cursor keys used in normal and visual mode, [ ] are the cursor keys in insert mode
+
 " file types  =====================================================================================
 
 au BufNewFile,BufRead *.mm set filetype=cpp     " syntax for *.mm files like cpp files

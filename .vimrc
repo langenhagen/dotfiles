@@ -27,6 +27,8 @@ set mouse=a             " enable mouse support
 
 set whichwrap+=<,>,h,l,[,] " causes left and right arrow keys and h and l to wrap when used at beginning or end of lines. < > are the cursor keys used in normal and visual mode, [ ] are the cursor keys in insert mode
 
+au CursorHoldI * stopinsert  " automatically leave insert mode after 'updatetime' milliseconds of inaction
+
 " file types  =====================================================================================
 
 au BufNewFile,BufRead *.mm set filetype=cpp     " syntax for *.mm files like cpp files
@@ -104,3 +106,9 @@ command Deltrail %s/\s\+$//e  " delete trailing spaces and tabs -- command for e
 let g:netrw_banner = 0   " disable netrw banner (toglle manually with I inside netrw)
 let g:netrw_liststyle=1  " show file size and time stamp (toggle manually with i inside netrw)
 
+
+" vimdiff settings ================================================================================
+if &diff
+    colorscheme apprentice " apprentice must be in ~/.vim/colors/ folder (https://github.com/romainl/Apprentice)
+
+endif

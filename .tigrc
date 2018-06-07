@@ -23,7 +23,7 @@ bind generic P @sh -c "open $(dirname $(realpath %(file)))"
 bind generic 1 !git rebase --interactive HEAD~7
 
 
-set ignore-case            = no                     # Enum: no, yes, smart-case
+set ignore-case            = yes                     # Enum: no, yes, smart-case
 
 
 # Henrik uses also:

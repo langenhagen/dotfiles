@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # links the essential  dotfiles for this specify device
-# after removing existing files
+# after removing existing files and folders
 #
 # author: andreasl
-# version: 180208
+# version: 180607
 
 DIR_OF_THIS_SCRIPT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DOTFILES_PATH=$DIR_OF_THIS_SCRIPT
@@ -12,6 +12,8 @@ DOTFILES_PATH=$DIR_OF_THIS_SCRIPT
 rm ~/.vimrc
 ln -s $DOTFILES_PATH/.vimrc ~/.vimrc
 
+rm -rf ~/.vim
+ln -s $PWD/.vim $HOME/.vim
 
 rm ~/.config/fish/config.fish
 ln -s $DOTFILES_PATH/.config/fish/config.fish ~/.config/fish/config.fish

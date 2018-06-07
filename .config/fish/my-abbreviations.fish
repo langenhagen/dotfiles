@@ -12,6 +12,7 @@ abbr -a sourcefish . ~/.config/fish/config.fish
 abbr -a srcf . ~/.config/fish/config.fish
 abbr -a editabbr vim -p ~/.config/fish/my-abbreviations.fish
 abbr -a ea vim -p ~/.config/fish/my-abbreviations.fish
+abbr -a vd vimdiff
 
 abbr -a jrn 'journal "'
 abbr -a mnm 'minimerk "'
@@ -122,3 +123,4 @@ abbr -a cnc cd /Users/langenha/code/sparta/coresdk/carlo/locationsdk/src/navcore
 abbr -a ccarl cd /Users/langenha/code/sparta/coresdk/carlo/
 
 abbr -a i "echo (date +%a' '%Y'-'%m'-'%d' '%H:%M) $argv >> ~/stuff/_yellow_cards/sascha_p//times_sascha-interrupted-people.txt ; echo '.'"
+abbr -a cpt cd /Users/langenha/code/sparta/scripts/build/

@@ -29,9 +29,9 @@ function tricks
 
     if test (count $argv) -eq 0
         # -R readonly
-        vim -R ~/stuff/tricks.md
+        vim -R ~/personal/Dev/Zeugs/tricks.md
     else if test (count $argv) -gt 0
-        grep -in --color=never "$argv" ~/stuff/tricks.md
+        grep -in --color=never "$argv" ~/personal/Dev/Zeugs/tricks.md
     end
 end
 
@@ -132,58 +132,59 @@ function fn2
     find . -iname "*$argv*"
 end
 
-function hirn
+function hrn
     # grep -H: print filename headers,  -n: prinft line numbers,  -r: recursive,  -s: suppress error messages
     grep -Hirns --exclude-dir=".git" --color $argv[1] .
 end
 
-function hirni
+function hrni
     # grep -H: print filename headers, -n: print line numbers,   -r: recursive
     #      -I: ignore binary files
     grep -HirnsI --exclude-dir=".git" --color $argv[1] .
 end
 
-function chirn
+function chrn
     grep -Hirns --exclude-dir=".git" \
-                --include \*.h --include \*.cpp --include \*.m --include \*.mm --include \*.pch \
-                --include \*.java --include \*.swift --include \*.cc --include \*.kt \
+                --include \*.h --include \*.hpp --include \*.cpp --include \*.m --include \*.mm \
+                --include \*.pch --include \*.java --include \*.swift --include \*.cc \
+                --include \*.kt \
                 --color $argv[1] .
 end
 
-function cmhirn
-    grep -Hirns --exclude-dir=".git" --include \*.txt --include \*.cmake --color $argv[1] .
+function cmhrn
+    grep -Hirns --exclude-dir=".git" --include CMakeCache.txt --include CmakeLists.txt --include \*.cmake --color $argv[1] .
 end
 
-function jhirn
+function jhrn
     grep -Hirns --exclude-dir=".git" --include \*.java --color $argv[1] .
 end
 
-function clirn
+function clrn
     # -l, --files-with-matches: Only the names of files containing selected lines are written to standard output.
     #  grep will only search a file until a match has been found, making searches potentially less expensive. [...]
     grep -lirns --exclude-dir=".git" --include \*.h --include \*.cpp --include \*.m \
                 --include \*.mm --include \*.pch --color $argv[1] .
 end
 
-function sclirn
+function sclrn
     # open the files found with clirn in sublime text.
     sb ( clirn $argv[1] .)
 end
 
-function pyhirn
+function pyhrn
     grep -Hirns --exclude-dir=".git" --include \*.py --color $argv[1] .
 end
 
-function pylirn
+function pylrn
     grep -lirns --exclude-dir=".git" --include \*.py --color $argv[1] .
 end
 
-function lirn
+function lrn
     # -l, --files-with-matches: Only the names of files containing selected lines are written to standard output.
     grep -lirns --exclude-dir=".git" $argv[1] .
 end
 
-function slirn
+function slrn
     sb ( lirn $argv[1] .)
 end
 

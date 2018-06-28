@@ -44,7 +44,7 @@ abbr -a opn open .
 abbr -a o open .
 abbr -a find find . -iname
 abbr -a fnd find . -iname
-abbr -a fnd1 find . -iname -maxdepth 1
+abbr -a fnd1 find . -maxdepth 1 -iname
 abbr -a t3 tree -L 3
 abbr -a t3d tree -L 3 -d
 
@@ -124,3 +124,4 @@ abbr -a ccarl cd /Users/langenha/code/sparta/coresdk/carlo/
 
 abbr -a i "echo (date +%a' '%Y'-'%m'-'%d' '%H:%M) $argv >> ~/stuff/_yellow_cards/sascha_p//times_sascha-interrupted-people.txt ; echo '.'"
 abbr -a cpt cd /Users/langenha/code/sparta/scripts/build/
+abbr -a cl colorize-output-lines.sh

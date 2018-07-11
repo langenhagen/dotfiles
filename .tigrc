@@ -7,24 +7,35 @@
 
 bind generic D @?rm %(file)                          # remove a file
 bind generic Z @?git checkout HEAD %(file)           # checkout latest committed version of a file in status view
-bind generic X @?git checkout staging %(file)        # checkout staging version of a file in status view
+
+# E open file in editor (actually, small tig's builtin small 'e' open file in editor does already a good job
 bind diff    E !sh -c "if [ -z \"%(file)\" ] ; then vim `git diff-tree --no-commit-id --name-only -r %(commit) | head -1` ; else vim \"%(file)\" +%(lineno); fi"
 bind status  E !sh -c "vim \"%(file)\" +%(lineno)"
 bind stage   E !sh -c "vim \"%(file)\" +%(lineno)"
+
 bind generic + !git commit --amend
 bind generic = !?git commit
+
 bind generic T !git checkout --theirs %(file)       # what is this?
 bind generic T !git checkout --ours %(file)         # what is this?
+
 bind generic π !git add --patch %(file)             # π is alt + p
+
 bind generic <F10> quit
 bind generic <F11> !?<git push origin HEAD:refs/for/staging
 bind generic <F12> !?<git push origin HEAD:refs/for/master
-bind generic P @sh -c "open $(dirname $(realpath %(file)))"
+
+bind generic P @sh -c "open $(dirname $(realpath %(file)))"  # open path in standard program
+
 bind generic 1 !git rebase --interactive HEAD~7
 
 
+# -------------------------------------------------------------------------------------------------
+
 set ignore-case            = yes                     # Enum: no, yes, smart-case
 
+
+# -------------------------------------------------------------------------------------------------
 
 # Henrik used also:
 # bind stash D !?git stash drop %(stash)
@@ -35,6 +46,7 @@ set ignore-case            = yes                     # Enum: no, yes, smart-case
 # nice tigrc variables:
 # %(file)
 # %(lineno)
-
+# %(blob)       Manual says: "The currently selected blob ID." but don't know what this means, its also often just... empty Oo
 
 # also look at https://jonas.github.io/tig/doc/manual.html
+

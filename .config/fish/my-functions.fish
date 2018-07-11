@@ -104,46 +104,22 @@ function pbce
     eval $argv | pbcopy
 end
 
-function vimh
-    # opens a vim tab for each line of output with all the outputs of the last statement.
-    # e.g. use in conjunction with `ls -1` or `find` or `grep -lr`
-    # note: I tried to make it an alias, but $history[1] will, once evaluated in the abbreviation,
-    #       expandend and thus stay immutable within this abbreviation.
-    vim -p (eval $history[1])
-end
-
-function oh
-    # interprets the most recent line of output as a path and attempts to open it
-    # with the standard application.
-    # note: I tried to make it an alias, but $history[1] will, once evaluated in the abbreviation,
-    #       expandend and thus stay immutable within this abbreviation.
-    open (eval $history[1])
-end
-
-function ohf
-    # interprets the most recent line of output as a path and attempts to open it
-    # with the standard application.
-    # note: I tried to make it an alias, but $history[1] will, once evaluated in the abbreviation,
-    #       expandend and thus stay immutable within this abbreviation.
-    open -R (eval $history[1])
-end
-
 function fn2
     find . -iname "*$argv*"
 end
 
-function hrn
+function hr
     # grep -H: print filename headers,  -n: prinft line numbers,  -r: recursive,  -s: suppress error messages
     grep -Hirns --exclude-dir=".git" --color $argv[1] .
 end
 
-function hrni
+function hri
     # grep -H: print filename headers, -n: print line numbers,   -r: recursive
     #      -I: ignore binary files
     grep -HirnsI --exclude-dir=".git" --color $argv[1] .
 end
 
-function chrn
+function chr
     grep -Hirns --exclude-dir=".git" \
                 --include \*.h --include \*.hpp --include \*.cpp --include \*.m --include \*.mm \
                 --include \*.pch --include \*.java --include \*.swift --include \*.cc \
@@ -151,40 +127,40 @@ function chrn
                 --color $argv[1] .
 end
 
-function cmhrn
-    grep -Hirns --exclude-dir=".git" --include CMakeCache.txt --include CmakeLists.txt --include \*.cmake --color $argv[1] .
+function cmhr
+    grep -Hirns --exclude-dir=".git" --include CMakeCache.txt --include CMakeLists.txt --include \*.cmake --color $argv[1] .
 end
 
-function jhrn
+function jhr
     grep -Hirns --exclude-dir=".git" --include \*.java --color $argv[1] .
 end
 
-function clrn
+function clr
     # -l, --files-with-matches: Only the names of files containing selected lines are written to standard output.
     #  grep will only search a file until a match has been found, making searches potentially less expensive. [...]
     grep -lirns --exclude-dir=".git" --include \*.h --include \*.cpp --include \*.m \
                 --include \*.mm --include \*.pch --color $argv[1] .
 end
 
-function sclrn
+function sclr
     # open the files found with clirn in sublime text.
     sb ( clirn $argv[1] .)
 end
 
-function pyhrn
+function pyhr
     grep -Hirns --exclude-dir=".git" --include \*.py --color $argv[1] .
 end
 
-function pylrn
+function pylr
     grep -lirns --exclude-dir=".git" --include \*.py --color $argv[1] .
 end
 
-function lrn
+function lr
     # -l, --files-with-matches: Only the names of files containing selected lines are written to standard output.
     grep -lirns --exclude-dir=".git" $argv[1] .
 end
 
-function slrn
+function slr
     sb ( lirn $argv[1] .)
 end
 

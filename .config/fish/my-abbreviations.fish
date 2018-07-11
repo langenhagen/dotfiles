@@ -13,6 +13,12 @@ abbr -a srcf . ~/.config/fish/config.fish
 abbr -a editabbr vim -p ~/.config/fish/my-abbreviations.fish
 abbr -a ea vim -p ~/.config/fish/my-abbreviations.fish
 abbr -a vd vimdiff
+abbr -a fns functions
+
+# maybe rather get output of last command instead of invoking the same command...
+abbr -a vimh "vim -p (eval $history[1])"
+abbr -a oh "open (eval $history[1])"
+abbr -a ohf "open -R (eval $history[1])"
 
 abbr -a jrn 'journal "'
 abbr -a mnm 'minimerk "'
@@ -47,6 +53,9 @@ abbr -a fnd find . -iname
 abbr -a fnd1 find . -maxdepth 1 -iname
 abbr -a t3 tree -L 3
 abbr -a t3d tree -L 3 -d
+
+# chrn - like abbreviations
+abbr -a chra "grep -Hirns --exclude-dir=.git --include \*.h --include \*.hpp --include \*.cpp --include \*.m --include \*.mm --include \*.pch --include \*.java --include \*.swift --include \*.cc --include \*.kt --color"
 
 #abbr -a vim vim -p
 abbr -a v vim -p
@@ -94,7 +103,7 @@ abbr -a gra git rebase --abort
 
 abbr -a grhh git reset --hard HEAD
 abbr -a grsh git reset --soft HEAD~1
-abbr -a grhh10 git reset --hard HEAD~10
+abbr -a grhh9 git reset --hard HEAD~9
 abbr -a gfm 'git commit -a -m "TODO Save my work, just in case"; git branch my-saved-work-(date "+%Y-%m-%d--%H-%M-%S") ; git fetch origin ; git reset --hard origin/master'
 
 abbr -a rd repo diff
@@ -102,7 +111,7 @@ abbr -a rps repo sync -c -j8
 abbr -a rpc 'repo status ; repo diff ; repo forall -c "printf \"\033[1;36m`git rev-parse --show-toplevel`\033[0m\t`git log -n1 --pretty=format:\"%an\t%s\"`\" | grep \"Langenhagen\""'
 abbr -a sfr "git review master --reviewers (git log -n40 --pretty=format:'%ae' | sort | uniq -c | sort -nr | awk '{print \$2}' | head -8)"
 
-abbr -a cmh cmhirn
+abbr -a cmh cmhr
 
 abbr -a proto 'cd /Users/langenha/personal/Dev/_Protofiles ; find /Users/langenha/personal/Dev/_Protofiles -name "*_proto.*"'
 abbr -a play 'cd /Users/langenha/personal/Dev/_playgrounds ; find /Users/langenha/personal/Dev/_Protofiles -type d -maxdepth 1 -not -path "*/\.*" -name "*"'
@@ -119,8 +128,6 @@ abbr -a csp cd ~/code/sparta/
 abbr -a cnv cd /Users/langenha/code/sparta/corenav/sdk/
 abbr -a caa cd /Users/langenha/code/sparta/apps/android-reference/
 abbr -a cai cd /Users/langenha/code/sparta/apps/ios-reference/
-abbr -a cnc cd /Users/langenha/code/sparta/coresdk/carlo/locationsdk/src/navcore/
-abbr -a ccarl cd /Users/langenha/code/sparta/coresdk/carlo/
 
 abbr -a i "echo (date +%a' '%Y'-'%m'-'%d' '%H:%M) $argv >> ~/stuff/_yellow_cards/sascha_p//times_sascha-interrupted-people.txt ; echo '.'"
 abbr -a cpt cd /Users/langenha/code/sparta/scripts/build/

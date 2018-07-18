@@ -27,6 +27,7 @@ abbr -a gitp  'pwd ; cd (git rev-parse --show-toplevel)'
 abbr -a e 'vim -R "+normal :Explore\$" .'
 abbr -a cl 'colorize-output-lines.sh'
 abbr -a ccat 'pygmentize -O style=native -f console256 -g'
+abbr -a cct 'pygmentize -O style=native -f console256 -g'
 abbr -a cmh 'cmhr'
 
 abbr -a cd.. 'cd ..'
@@ -34,6 +35,7 @@ abbr -a c. 'cd ..'
 abbr -a c 'cd ..'
 abbr -a cdd 'cd ~/Desktop'
 abbr -a cdotfiles 'cd ~/dotfiles'
+abbr -a cdtf 'cd ~/dotfiles'
 
 abbr -a cdcode "cd $CODE_DIR"
 abbr -a ccode "cd $CODE_DIR"

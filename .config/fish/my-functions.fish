@@ -31,7 +31,7 @@ function tricks
         # -R readonly
         vim -R ~/personal/Dev/Zeugs/tricks.md
     else if test (count $argv) -gt 0
-        grep -in --color=never "$argv" ~/personal/Dev/Zeugs/tricks.md
+        grep -in --color "$argv" ~/personal/Dev/Zeugs/tricks.md
     end
 end
 

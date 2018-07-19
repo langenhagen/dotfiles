@@ -32,9 +32,9 @@ abbr -a cmh 'cmhr'
 
 abbr -a cd.. 'cd ..'
 abbr -a c. 'cd ..'
-abbr -a c 'cd ..'
 abbr -a cdd 'cd ~/Desktop'
 abbr -a cdotfiles 'cd ~/dotfiles'
+abbr -a cdt 'cd ~/dotfiles'
 abbr -a cdtf 'cd ~/dotfiles'
 
 abbr -a cdcode "cd $CODE_DIR"
@@ -54,11 +54,14 @@ abbr -a fnd1 'find . -maxdepth 1 -iname'
 abbr -a t3 'tree -L 3'
 abbr -a t3d 'tree -L 3 -d'
 
-# chr - like abbreviations
-abbr -a chra "grep -Hirns --exclude-dir=.git --include \*.h --include \*.hpp --include \*.cpp --include \*.m --include \*.mm --include \*.pch --include \*.java --include \*.swift --include \*.cc --include \*.kt --color"
+# hr - like abbreviations
+abbr -a h 'hr'
+abbr -a c 'chr'
+abbr -a chr 'grep -Hirns --exclude-dir=.git --include \*.h --include \*.hpp --include \*.cpp --include \*.m --include \*.mm --include \*.pch --include \*.java --include \*.swift --include \*.cc --include \*.kt --color'
 
 abbr -a v 'vim -p'
 abbr -a t 'tig'
+abbr -a r 'ranger'
 abbr -a s 'sublime'
 abbr -a xcode 'open -a Xcode'
 abbr -a xc 'open -a Xcode'

@@ -17,18 +17,23 @@ abbr -a vimh "vim -p (eval $history[1])"
 abbr -a oh "open (eval $history[1])"
 abbr -a ohf "open -R (eval $history[1])"
 
-abbr -a jrn 'journal "'
-abbr -a mnm 'minimerk "'
-abbr -a bkt 'bucket "'
+abbr -a jrn 'journal \''
+abbr -a j 'journal \''
+abbr -a mnm 'minimerk \''
+abbr -a m 'minimerk \''
+abbr -a bkt 'bucket \''
+abbr -a b 'bucket \''
 abbr -a tks 'tricks'
 abbr -a editjrn "vim -R \"+normal G\\\$\" -p $STUFF_DIR/Journal.txt"
+abbr -a olh 'one-line-help'
+abbr -a alh 'add-to-one-line-help'
+
 abbr -a gitup 'pwd ; cd (git rev-parse --show-toplevel)'
 abbr -a gitp  'pwd ; cd (git rev-parse --show-toplevel)'
 abbr -a e 'vim -R "+normal :Explore\$" .'
 abbr -a cl 'colorize-output-lines.sh'
 abbr -a ccat 'pygmentize -O style=native -f console256 -g'
 abbr -a cct 'pygmentize -O style=native -f console256 -g'
-abbr -a cmh 'cmhr'
 
 abbr -a cd.. 'cd ..'
 abbr -a c. 'cd ..'
@@ -54,10 +59,14 @@ abbr -a fnd1 'find . -maxdepth 1 -iname'
 abbr -a t3 'tree -L 3'
 abbr -a t3d 'tree -L 3 -d'
 
-# hr - like abbreviations
-abbr -a h 'hr'
-abbr -a c 'chr'
-abbr -a chr 'grep -Hirns --exclude-dir=.git --include \*.h --include \*.hpp --include \*.cpp --include \*.m --include \*.mm --include \*.pch --include \*.java --include \*.swift --include \*.cc --include \*.kt --color'
+# grep -Hirns - like abbreviations
+abbr -a h 'grep-hirns'
+abbr -a hI 'grep-HirnsI'
+abbr -a c 'grep-hirns-for-cstyle-files'
+abbr -a ca 'grep -Hirns --exclude-dir=.git --include \*.h --include \*.hpp --include \*.cpp --include \*.m --include \*.mm --include \*.pch --include \*.java --include \*.swift --include \*.cc --include \*.kt --color'
+abbr -a cmh 'grep-hirns-for-cmake-files'
+abbr -a jh 'grep-hirns-for-java-kotlin-files'
+abbr -a ph 'grep-hirns-for-python-files'
 
 abbr -a v 'vim -p'
 abbr -a t 'tig'

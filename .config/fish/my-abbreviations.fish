@@ -124,13 +124,12 @@ abbr -a rps 'repo sync -c -j8'
 abbr -a rpc 'repo status ; repo diff ; repo forall -c "printf \"\033[1;36m`git rev-parse --show-toplevel`\033[0m\t`git log -n1 --pretty=format:\"%an\t%s\"`\" | grep \"Langenhagen\""'
 abbr -a sfr "git review master --reviewers (git log -n40 --pretty=format:'%ae' | sort | uniq -c | sort -nr | awk '{print \$2}' | head -8)"
 
+abbr -a rmlines 'sed -i \'/ \/rm/d\' (git diff --name-only HEAD)'
+
 abbr -a proto 'cd /Users/langenha/personal/Dev/_Protofiles ; find /Users/langenha/personal/Dev/_Protofiles -name "*_proto.*"'
 abbr -a play 'cd /Users/langenha/personal/Dev/_playgrounds ; find /Users/langenha/personal/Dev/_Protofiles -type d -maxdepth 1 -not -path "*/\.*" -name "*"'
 abbr -a ply 'cd /Users/langenha/personal/Dev/_playgrounds ; find /Users/langenha/personal/Dev/_playgrounds -type d -maxdepth 1 -not -path "*/\.*" -name "*"'
 
-abbr -a cdapihw 'cd ~/code/api-prime/projects/hello_world/'
-abbr -a capihw 'cd ~/code/api-prime/projects/hello_world/'
-abbr -a cdapi 'cd ~/code/api-prime/'
 abbr -a capi 'cd ~/code/api-prime/'
 abbr -a cdtp 'cd ~/code/api-prime/api-transpiler/'
 abbr -a ctp 'cd ~/code/api-prime/api-transpiler/'
@@ -139,4 +138,4 @@ abbr -a csp 'cd ~/code/sparta/'
 abbr -a cnv 'cd ~/code/sparta/corenav/sdk/'
 abbr -a caa 'cd ~/code/sparta/apps/android-reference/'
 abbr -a cai 'cd ~/code/sparta/apps/ios-reference/'
-abbr -a cpt cd '/Users/langenha/code/sparta/scripts/build/'
+abbr -a csb 'cd ~/code/sparta/scripts/build/'

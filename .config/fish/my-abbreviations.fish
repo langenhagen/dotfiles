@@ -1,14 +1,12 @@
 # this file contains custom fish abbreviations
 #
 # author: langenhagen
-# version: 2018-07-13
+# version: 2018-07-24
 #
 
 abbr -a fconf 'cd ~/dotfiles/.config/fish/ ; ls'
-abbr -a fic 'vim ~/.config/fish/config.fish'     # kann weg?
 abbr -a sourcefish '. ~/.config/fish/config.fish'
-abbr -a srcf '. ~/.config/fish/config.fish'     # kann weg?
-abbr -a editabbr 'vim -p ~/.config/fish/my-abbreviations.fish'
+abbr -a editabbr 'vim -p ~/.config/fish/my-abbreviations.fish; source ~/.config/fish/my-abbreviations.fish'
 abbr -a vd 'vimdiff'
 abbr -a fn 'functions'
 abbr -a fns 'functions'
@@ -126,9 +124,10 @@ abbr -a sfr "git review master --reviewers (git log -n40 --pretty=format:'%ae' |
 
 abbr -a rmlines 'sed -i \'/ \/rm/d\' (git diff --name-only HEAD)'
 
-abbr -a proto 'cd /Users/langenha/personal/Dev/_Protofiles ; find /Users/langenha/personal/Dev/_Protofiles -name "*_proto.*"'
-abbr -a play 'cd /Users/langenha/personal/Dev/_playgrounds ; find /Users/langenha/personal/Dev/_Protofiles -type d -maxdepth 1 -not -path "*/\.*" -name "*"'
-abbr -a ply 'cd /Users/langenha/personal/Dev/_playgrounds ; find /Users/langenha/personal/Dev/_playgrounds -type d -maxdepth 1 -not -path "*/\.*" -name "*"'
+abbr -a proto 'cd ~/personal/Dev/_Protofiles ; find ~/personal/Dev/_Protofiles -name "*_proto.*"'
+abbr -a prt 'cd ~/personal/Dev/_Protofiles ; find ~/personal/Dev/_Protofiles -name "*_proto.*"'
+abbr -a play 'cd ~/personal/Dev/_playgrounds ; find ~/personal/Dev/_Protofiles -type d -maxdepth 1 -not -path "*/\.*" -name "*"'
+abbr -a ply 'cd ~/personal/Dev/_playgrounds ; find ~/personal/Dev/_playgrounds -type d -maxdepth 1 -not -path "*/\.*" -name "*"'
 
 abbr -a capi 'cd ~/code/api-prime/'
 abbr -a cdtp 'cd ~/code/api-prime/api-transpiler/'

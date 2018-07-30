@@ -24,7 +24,7 @@ abbr -a b 'bucket \''
 abbr -a tks 'tricks'
 abbr -a editjrn "vim -R \"+normal G\\\$\" -p $STUFF_DIR/Journal.txt"
 abbr -a olh 'one-line-help'
-abbr -a alh 'add-to-one-line-help'
+abbr -a alh 'add-to-one-line-help \''
 
 abbr -a gitup 'pwd ; cd (git rev-parse --show-toplevel)'
 abbr -a gitp  'pwd ; cd (git rev-parse --show-toplevel)'
@@ -121,6 +121,7 @@ abbr -a rd 'repo diff'
 abbr -a rps 'repo sync -c -j8'
 abbr -a rpc 'repo status ; repo diff ; repo forall -c "printf \"\033[1;36m`git rev-parse --show-toplevel`\033[0m\t`git log -n1 --pretty=format:\"%an\t%s\"`\" | grep \"Langenhagen\""'
 abbr -a sfr "git review master --reviewers (git log -n40 --pretty=format:'%ae' | sort | uniq -c | sort -nr | awk '{print \$2}' | head -8)"
+abbr -a foldmsg 'grep -v "^#" (git rev-parse --show-toplevel)/.git/COMMIT_EDITMSG | fold -s -w 72 | sed \'s/[ \t]*$//\' > (git rev-parse --show-toplevel)/.git/COMMIT_EDITMSG;'
 
 abbr -a rmlines 'sed -i \'/ \/rm/d\' (git diff --name-only HEAD)'
 

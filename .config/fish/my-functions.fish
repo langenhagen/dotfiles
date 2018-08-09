@@ -127,6 +127,12 @@ function grep-hirns-for-cstyle-files
                 --color $argv[1] .
 end
 
+function grep-hirns-for-franca-files
+    grep -Hirns --exclude-dir=".git" \
+                --include \*.fdepl --include \*.fidl \
+                --color $argv[1] .
+end
+
 function grep-hirns-for-cmake-files
     grep -Hirns --exclude-dir=".git" --include CMakeCache.txt --include CMakeLists.txt --include \*.cmake --color $argv[1] .
 end

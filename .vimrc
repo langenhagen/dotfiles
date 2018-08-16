@@ -2,8 +2,6 @@
 
 let g:rainbow_active = 1 " or 0 ; essential for :RainbowToggle of rainbow.vim
 
-
-
 " settings  =======================================================================================
 
 syntax on  " syntax highlighting. turn off if vim is too slow with :syntax off
@@ -56,7 +54,6 @@ function ToggleHighlightOverlength()
 endfunction
 autocmd BufWinEnter * match Overlength /\s\+$/ " initial setting  autocmd BufWinEnter * calls  the command when a window is being entered
 
-
 " HIGHLIGHT MULTIPLE SPACES AND TABS
 highlight MultipleSpaces ctermbg=darkred guibg=darkred
 let g:is_highlight_multiple_spaces = 0
@@ -72,13 +69,12 @@ function HighlightMultipleSpaces()
     endif
 endfunction
 
-
 " key bindings =====================================================================================
 
-map - :edit! <bar> :Explore<CR> " reset file to last saved state and show parent dir
 map <F2> :set hlsearch!<CR>
 map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>   " from: http://vim.wikia.com/wiki/Easily_switch_between_source_and_header_file
 map <F5> :edit<CR>  " refresh file
+map <S-F5> :sort<CR>  " sort
 map <F7> gT         " toggle tab to the left
 map <F8> gt         " toggle tab to the right
 map <S-F8> gT       " toggle tab to the left
@@ -90,9 +86,9 @@ map <expr> <S-F12> HighlightMultipleSpaces()
 nmap ø o<ESC>  " create new line below, set cursor there and go back to normal mode
 nmap Ø O<ESC>  " create new line above, set cursor there and go back to normal mode
 nmap Ô kJ
-vmap 1 "*y                                          " copy visual selection to system clipboard
-"nmap <TODO:lassdirwaseinfallen> "*y                " yank to system clipboard
-
+map <C-s> vip:sort<CR>  " sort paragraph on which the cursor hovers
+vmap 1 "*y  " yanks the contents of the visual selection to the system clipboard
+vmap 2 y/<C-R>"<CR>   " search for selected text
 
 " commands ========================================================================================
 
@@ -100,12 +96,10 @@ command Trenn norm o//<ESC>98a-<ESC>o  " C-style delimeter line
 command Pytrenn norm o#<ESC>99a-<ESC>o  " Python-style delimeter line
 command Deltrail %s/\s\+$//e  " delete trailing spaces and tabs -- command for ex-mode. Must begin with uppercase letter if user-defined
 
-
 " netrw settings ==================================================================================
 
 let g:netrw_banner = 0   " disable netrw banner (toglle manually with I inside netrw)
 let g:netrw_liststyle=1  " show file size and time stamp (toggle manually with i inside netrw)
-
 
 " vimdiff settings ================================================================================
 if &diff

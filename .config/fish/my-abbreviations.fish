@@ -4,6 +4,10 @@
 # version: 2018-07-24
 #
 
+abbr -a xo 'xargs open'
+abbr -a xv 'xargs -o vim'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
+abbr -a !! 'eval $history[1]'
+
 abbr -a fconf 'cd ~/dotfiles/.config/fish/ ; ls'
 abbr -a sourcefish '. ~/.config/fish/config.fish'
 abbr -a editabbr 'vim -p ~/.config/fish/my-abbreviations.fish; source ~/.config/fish/my-abbreviations.fish'
@@ -63,6 +67,7 @@ abbr -a t3d 'tree -L 3 -d'
 
 # grep -Hirns - like abbreviations
 abbr -a h 'grep-hirns'
+abbr -a g 'grep-hirns'
 abbr -a hI 'grep-HirnsI'
 abbr -a c 'grep-hirns-for-cstyle-files'
 abbr -a fh 'grep-hirns-for-franca-files'

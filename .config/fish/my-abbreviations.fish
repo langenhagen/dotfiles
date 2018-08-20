@@ -5,7 +5,8 @@
 #
 
 abbr -a xo 'xargs open'
-abbr -a xv 'xargs -o vim'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
+abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
+abbr -a xx 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
 abbr -a !! 'eval $history[1]'
 
 abbr -a fconf 'cd ~/dotfiles/.config/fish/ ; ls'
@@ -149,3 +150,5 @@ abbr -a cnv 'cd ~/code/sparta/corenav/sdk/'
 abbr -a caa 'cd ~/code/sparta/apps/android-reference/'
 abbr -a cai 'cd ~/code/sparta/apps/ios-reference/'
 abbr -a csb 'cd ~/code/sparta/scripts/build/'
+
+abbr -a bta 'cd ~/code/sparta/ ; and ./scripts/build/android --cmake-build-prefix build --android-abi arm64-v8a ; and ./scripts/build/swift --xcode-sdk iphoneos --cmake-build-prefix build --xcode-simulator ; and cd build/build-swift-iphoneos_x86/ ; and xcodebuild -target ivi_mobile_sdk_test_cpp ; and cd ~/code/sparta/corenav/sdk/ ; and ./gradlew testDebug'  # build test all or bitch test all

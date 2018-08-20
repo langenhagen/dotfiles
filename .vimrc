@@ -89,6 +89,7 @@ nmap Ô kJ
 map <C-s> vip:sort<CR>  " sort paragraph on which the cursor hovers
 vmap 1 "*y  " yanks the contents of the visual selection to the system clipboard
 vmap 2 y/<C-R>"<CR>   " search for selected text (characters . and * can cause problems!)
+vmap <C-s> :sort<CR>  " sort in visual selection
 
 " commands ========================================================================================
 

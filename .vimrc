@@ -74,7 +74,8 @@ endfunction
 map <F2> :set hlsearch!<CR>
 map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>   " from: http://vim.wikia.com/wiki/Easily_switch_between_source_and_header_file
 map <F5> :edit<CR>  " refresh file
-map <S-F5> :sort<CR>  " sort
+map <S-F5> vip:sort<CR>  " sort paragraph on which the cursor hovers
+vmap <S-F5> :sort<CR>  " sort in visual selection
 map <F7> gT         " toggle tab to the left
 map <F8> gt         " toggle tab to the right
 map <S-F8> gT       " toggle tab to the left
@@ -87,9 +88,9 @@ nmap ø o<ESC>  " create new line below, set cursor there and go back to normal 
 nmap Ø O<ESC>  " create new line above, set cursor there and go back to normal mode
 nmap Ô kJ
 map <C-s> vip:sort<CR>  " sort paragraph on which the cursor hovers
+vmap <C-s> :sort<CR>  " sort in visual selection
 vmap 1 "*y  " yanks the contents of the visual selection to the system clipboard
 vmap 2 y/<C-R>"<CR>   " search for selected text (characters . and * can cause problems!)
-vmap <C-s> :sort<CR>  " sort in visual selection
 
 " commands ========================================================================================
 

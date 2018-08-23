@@ -69,7 +69,7 @@ abbr -a t3d 'tree -L 3 -d'
 
 # grep -Hirns - like abbreviations
 abbr -a h 'grep-hirns'
-abbr -a g 'grep-hirns'
+abbr -a g 'grep'
 abbr -a hI 'grep-HirnsI'
 abbr -a c 'grep-hirns-for-cstyle-files'
 abbr -a fh 'grep-hirns-for-franca-files'

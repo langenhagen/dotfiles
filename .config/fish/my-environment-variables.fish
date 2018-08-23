@@ -19,8 +19,9 @@ setenv NDK_ROOT $ANDROID_NDK_HOME
 set -gx PATH $PATH $ANDROID_HOME/tools
 set -gx PATH $PATH $ANDROID_HOME/platform-tools
 set -gx PATH $PATH "/Users/langenha/code/scripts"
-setenv ANDROID_SERIAL CB5A286QVE            # that's my SONY XPeria Z5 Compact
 #setenv ANDROID_SERIAL 024475e094d2743e      # that's the LG Nexus with PTM #245
+setenv ANDROID_SERIAL H6AKCV0015736RJ      # that's the ASUS Tango
+
 
 setenv OPENSSL_ROOT_DIR "/usr/local/Cellar/openssl/1.0.2h_1/"
 setenv WORKSPACE "$HOME/code/sparta" # used for sparta CMake scripts to identify workspace

@@ -25,7 +25,8 @@ set mouse=a             " enable mouse support
 
 set whichwrap+=<,>,h,l,[,] " causes left and right arrow keys and h and l to wrap when used at beginning or end of lines. < > are the cursor keys used in normal and visual mode, [ ] are the cursor keys in insert mode
 
-au CursorHoldI * stopinsert  " automatically leave insert mode after 'updatetime' milliseconds of inaction
+autocmd CursorHoldI * stopinsert  " automatically leave insert mode after 'updatetime' milliseconds of inaction
+" autocmd BufWritePost .vimrc source $MYVIMRC  " automatically source my vimrc after writing it to disk -- causes errors bc of duplicate sourcing
 
 " file types  =====================================================================================
 
@@ -106,5 +107,4 @@ let g:netrw_liststyle=1  " show file size and time stamp (toggle manually with i
 " vimdiff settings ================================================================================
 if &diff
     colorscheme apprentice " apprentice must be in ~/.vim/colors/ folder (https://github.com/romainl/Apprentice)
-
 endif

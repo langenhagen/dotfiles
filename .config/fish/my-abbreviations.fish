@@ -16,46 +16,6 @@ abbr -a vd 'vimdiff'
 abbr -a fn 'functions'
 abbr -a fns 'functions'
 
-abbr -a vimh "vim -p (eval $history[1])"
-abbr -a oh "open (eval $history[1])"
-abbr -a ohf "open -R (eval $history[1])"
-
-abbr -a jrn 'journal \''
-abbr -a j 'journal \''
-abbr -a mnm 'minimerk \''
-abbr -a m 'minimerk \''
-abbr -a bkt 'bucket \''
-abbr -a b 'bucket \''
-abbr -a tks 'tricks'
-abbr -a editjrn "vim -R \"+normal G\\\$\" -p $STUFF_DIR/Journal.txt"
-abbr -a olh 'one-line-help'
-abbr -a alh 'add-to-one-line-help \''
-
-abbr -a gitup 'pwd ; cd (git rev-parse --show-toplevel)'
-abbr -a gitp  'pwd ; cd (git rev-parse --show-toplevel)'
-abbr -a e 'vim -R "+normal :Explore\$" .'
-abbr -a cl 'colorize-output-lines.sh'
-abbr -a ccat 'pygmentize -O style=native -f console256 -g'
-abbr -a cct 'pygmentize -O style=native -f console256 -g'
-
-abbr -a cd.. 'cd ..'
-abbr -a c. 'cd ..'
-abbr -a cd. 'cd ..'
-abbr -a cdd 'cd ~/Desktop'
-abbr -a cdotfiles 'cd ~/dotfiles'
-abbr -a cdt 'cd ~/dotfiles'
-abbr -a cdtf 'cd ~/dotfiles'
-
-abbr -a cdcode "cd $CODE_DIR"
-abbr -a ccode "cd $CODE_DIR"
-abbr -a cdcde "cd $CODE_DIR"
-abbr -a ccd "cd $CODE_DIR"
-abbr -a cdscripts "cd $SCRIPTS_DIR"
-abbr -a cscripts "cd $SCRIPTS_DIR"
-abbr -a cdstuff "cd $STUFF_DIR"
-abbr -a cstuff "cd $STUFF_DIR"
-abbr -a cds "cd $STUFF_DIR"
-
 abbr -a o 'open .'
 abbr -a find 'find . -iname'
 abbr -a fnd 'find . -iname'
@@ -66,6 +26,59 @@ abbr -a tree 'tree -C'
 abbr -a tre 'tree -C'
 abbr -a t3 'tree -L 3'
 abbr -a t3d 'tree -L 3 -d'
+abbr -a v 'vim -p'
+abbr -a t 'tig'
+abbr -a r 'ranger'
+abbr -a s 'sublime'
+abbr -a e 'vim -R "+normal :Explore\$" .'
+abbr -a gitup 'pwd ; cd (git rev-parse --show-toplevel)'
+abbr -a gitp  'pwd ; cd (git rev-parse --show-toplevel)'
+abbr -a ccat 'pygmentize -O style=native -f console256 -g'
+abbr -a cct 'pygmentize -O style=native -f console256 -g'
+abbr -a xcode 'open -a Xcode'
+abbr -a xc 'open -a Xcode'
+abbr -a bpython '/usr/bin/python -m bpython' # makes my bpython point to my own python version      (160817: 2.7.11)
+abbr -a bp '/usr/bin/python -m bpython'      # makes my bpython point to my own python version      (160817: 2.7.11)
+abbr -a chrome 'open -a "Google Chrome"'
+abbr -a crm 'open -a "Google Chrome"'
+
+abbr -a vimh "vim -p (eval $history[1])"
+abbr -a oh "open (eval $history[1])"
+abbr -a ohf "open -R (eval $history[1])"
+
+abbr -a jrn 'journal \''
+abbr -a j 'journal \''
+abbr -a mnm 'minimerk \''
+#abbr -a m 'minimerk \''
+abbr -a bkt 'bucket \''
+abbr -a b 'bucket \''
+abbr -a tks 'tricks'
+abbr -a editjrn "vim -R \"+normal G\\\$\" -p $STUFF_DIR/Journal.txt"
+abbr -a olh 'one-line-help'
+abbr -a alh 'add-to-one-line-help \''
+
+abbr -a cd.. 'cd ..'
+abbr -a c. 'cd ..'
+abbr -a cd. 'cd ..'
+abbr -a cdd 'cd ~/Desktop'
+abbr -a cdotfiles 'cd ~/dotfiles'
+abbr -a cdt 'cd ~/dotfiles'
+
+abbr -a ccode "cd $CODE_DIR"
+abbr -a cdcde "cd $CODE_DIR"
+abbr -a ccd "cd $CODE_DIR"
+abbr -a cscripts "cd $SCRIPTS_DIR"
+abbr -a cstuff "cd $STUFF_DIR"
+abbr -a cds "cd $STUFF_DIR"
+
+# abbr -a '\'\'' 'abbr --show | grep \\\\\'.* \\\'cd\' | awk \'{printf substr($2,2); for(i=3;i<=NF;i++){printf \" %s\", $i}; printf \"\\\n\"}\'  # show all bookmarks'  # TODO make work should show all the '<char> abbrs
+# abbr -a '\'d' 'cd ~/Desktop/'
+# abbr -a '\'s' 'cd ~/code/sparta/'
+# abbr -a '\'c' 'cd ~/code/sparta/corenav/sdk/'
+# abbr -a '\'a' 'cd ~/code/sparta/apps/android-reference/'
+# abbr -a '\'i' 'cd ~/code/sparta/apps/ios-reference/'
+# abbr -a '\'b' 'cd ~/code/sparta/build/build-android-21-arm64-v8a'
+# abbr -a '\'b' 'cd ~/code/sparta/build/build-android-21-arm64-v8a'
 
 # grep -Hirns - like abbreviations
 abbr -a h 'grep-hirns'
@@ -77,17 +90,6 @@ abbr -a ca 'grep -Hirns --exclude-dir=.git --include \*.h --include \*.hpp --inc
 abbr -a cmh 'grep-hirns-for-cmake-files'
 abbr -a jh 'grep-hirns-for-java-kotlin-files'
 abbr -a ph 'grep-hirns-for-python-files'
-
-abbr -a v 'vim -p'
-abbr -a t 'tig'
-abbr -a r 'ranger'
-abbr -a s 'sublime'
-abbr -a xcode 'open -a Xcode'
-abbr -a xc 'open -a Xcode'
-abbr -a bpython '/usr/bin/python -m bpython' # makes my bpython point to my own python version      (160817: 2.7.11)
-abbr -a bp '/usr/bin/python -m bpython'      # makes my bpython point to my own python version      (160817: 2.7.11)
-abbr -a chrome 'open -a "Google Chrome"'
-abbr -a crm 'open -a "Google Chrome"'
 
 abbr -a gs 'git status'
 abbr -a gl 'git log'
@@ -105,7 +107,6 @@ abbr -a gcm 'git checkout master'
 abbr -a gcom 'git checkout master'
 
 abbr -a gcb 'git checkout -b'
-abbr -a gcob 'git checkout -b'
 abbr -a gbn 'git checkout -b'
 abbr -a gnb 'git checkout -b'
 
@@ -122,8 +123,9 @@ abbr -a gri 'git rebase --interactive HEAD~10'
 abbr -a grc 'git rebase --continue'
 abbr -a gra 'git rebase --abort'
 
-abbr -a grhh 'git reset --hard HEAD'
 abbr -a grsh 'git reset --soft HEAD~1'
+abbr -a grhh 'git reset --hard HEAD'
+abbr -a grhh1 'git reset --hard HEAD~1'
 abbr -a grhh9 'git reset --hard HEAD~9'
 abbr -a gfm 'git commit -a -m "TODO Save my work, just in case"; git branch my-saved-work-(date "+%Y-%m-%d--%H-%M-%S") ; git fetch origin ; git reset --hard origin/master'
 
@@ -143,9 +145,6 @@ abbr -a play 'cd ~/personal/Dev/_playgrounds ; find ~/personal/Dev/_Protofiles -
 abbr -a ply 'cd ~/personal/Dev/_playgrounds ; find ~/personal/Dev/_playgrounds -type d -maxdepth 1 -not -path "*/\.*" -name "*"'
 
 abbr -a capi 'cd ~/code/api-prime/'
-abbr -a cdtp 'cd ~/code/api-prime/api-transpiler/'
-abbr -a ctp 'cd ~/code/api-prime/api-transpiler/'
-abbr -a cahw 'cd ~/code/api-prime/projects/hello_world/'
 abbr -a csp 'cd ~/code/sparta/'
 abbr -a cnv 'cd ~/code/sparta/corenav/sdk/'
 abbr -a caa 'cd ~/code/sparta/apps/android-reference/'
@@ -153,3 +152,5 @@ abbr -a cai 'cd ~/code/sparta/apps/ios-reference/'
 abbr -a csb 'cd ~/code/sparta/scripts/build/'
 
 abbr -a bta 'cd ~/code/sparta/ ; and ./scripts/build/android --cmake-build-prefix build --android-abi arm64-v8a ; and ./scripts/build/swift --xcode-sdk iphoneos --cmake-build-prefix build --xcode-simulator ; and cd build/build-swift-iphoneos_x86/ ; and xcodebuild -target ivi_mobile_sdk_test_cpp ; and cd ~/code/sparta/corenav/sdk/ ; and ./gradlew testDebug'  # build test all or bitch test all
+abbr -a bra 'cd ~/code/sparta/apps/android-reference/ ; ./gradlew :mobile:installDebug ; and adb shell am start -n com.here.ivi.reference.debug/com.here.ivi.reference.overview.OverviewActivity'  # build run android application
+

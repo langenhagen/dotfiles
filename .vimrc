@@ -22,8 +22,11 @@ set ignorecase  " search ignores case
 set laststatus=2   " shows the current filename in the status bar
 set mouse=a             " enable mouse support
 " set list    " shows tabs and newline characters
-
 set whichwrap+=<,>,h,l,[,] " causes left and right arrow keys and h and l to wrap when used at beginning or end of lines. < > are the cursor keys used in normal and visual mode, [ ] are the cursor keys in insert mode
+set linebreak " break long lines between words, not in the middle of a word
+set showbreak=…  " shows this symbol at the beginning of a broken line
+set formatoptions+=a " automatically formats paragraphs when they are changed; doesn't seem to affect vimrc file
+set formatprg=par " use the given program to process selected text and put the output back when pressing gq<SELECTION>, e.g. gqip. It the programm is not available, gwip still does work with vim's internal formatter
 
 autocmd CursorHoldI * stopinsert  " automatically leave insert mode after 'updatetime' milliseconds of inaction
 " autocmd BufWritePost .vimrc source $MYVIMRC  " automatically source my vimrc after writing it to disk -- causes errors bc of duplicate sourcing

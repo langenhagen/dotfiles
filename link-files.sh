@@ -4,7 +4,7 @@
 # after removing existing files and folders
 #
 # author: andreasl
-# version: 180829
+# version: 18-08-29
 
 dir_of_this_script="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 dotfiles_path=$dir_of_this_script
@@ -51,8 +51,8 @@ ranger_dir="$HOME/.config/ranger"
 rm -rf "$ranger_dir"
 ln -s  "$dotfiles_path/.config/ranger" "$ranger_dir"
 
-# set iterm2 config settings.
-# Specify the preferences directory
+# set iterm2 config settings
+# specify the preferences directory
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$dotfiles_path/iterm2-config"
-# Tell iTerm2 to use the custom preferences in the directory
+# tell iTerm2 to use the custom preferences in the directory
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true

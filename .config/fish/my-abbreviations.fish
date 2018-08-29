@@ -7,6 +7,7 @@
 abbr -a xo 'xargs open'
 abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
 abbr -a xx 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
+abbr -a xs 'xargs sublime'
 abbr -a !! 'eval $history[1]'
 
 abbr -a fconf 'cd ~/dotfiles/.config/fish/ ; ls'

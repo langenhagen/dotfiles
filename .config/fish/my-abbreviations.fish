@@ -1,6 +1,6 @@
 # this file contains custom fish abbreviations
 #
-# author: langenhagen
+# author: andreasl
 # version: 2018-07-24
 #
 

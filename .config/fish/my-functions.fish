@@ -1,5 +1,5 @@
 # My personal fish functions file
-# author: langenhagen
+# author: andreasl
 # version: 18-02-17
 
 # source this file into the config.fish

@@ -1,6 +1,6 @@
 # Dotfiles
 
-author: langenhagen
+author: andreasl
 version: 18-08-29
 
 This folder cointains a bunch of .dotfiles and /.dotfolders to configure Your UNIX environment and

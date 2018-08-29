@@ -2,7 +2,6 @@
 #
 # author: andreasl
 # version: 2018-07-24
-#
 
 abbr -a xo 'xargs open'
 abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
@@ -71,15 +70,6 @@ abbr -a ccd "cd $CODE_DIR"
 abbr -a cscripts "cd $SCRIPTS_DIR"
 abbr -a cstuff "cd $STUFF_DIR"
 abbr -a cds "cd $STUFF_DIR"
-
-# abbr -a '\'\'' 'abbr --show | grep \\\\\'.* \\\'cd\' | awk \'{printf substr($2,2); for(i=3;i<=NF;i++){printf \" %s\", $i}; printf \"\\\n\"}\'  # show all bookmarks'  # TODO make work should show all the '<char> abbrs
-# abbr -a '\'d' 'cd ~/Desktop/'
-# abbr -a '\'s' 'cd ~/code/sparta/'
-# abbr -a '\'c' 'cd ~/code/sparta/corenav/sdk/'
-# abbr -a '\'a' 'cd ~/code/sparta/apps/android-reference/'
-# abbr -a '\'i' 'cd ~/code/sparta/apps/ios-reference/'
-# abbr -a '\'b' 'cd ~/code/sparta/build/build-android-21-arm64-v8a'
-# abbr -a '\'b' 'cd ~/code/sparta/build/build-android-21-arm64-v8a'
 
 # grep -Hirns - like abbreviations
 abbr -a h 'grep-hirns'

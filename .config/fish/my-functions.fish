@@ -147,7 +147,7 @@ end
 
 function replace
     if test (count $argv) -lt 3
-        echo "Usage:  replace '*.h' '.cpp' [...] '<lookforthis>' '<replacewiththis>' "
+        echo "Usage:  replace '*.cpp' [...] '<lookforthis>' '<replacewiththis>' "
         return
     end
 

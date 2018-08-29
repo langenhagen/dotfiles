@@ -27,6 +27,8 @@ set textwidth=100
 set linebreak " break long lines between words, not in the middle of a word
 set showbreak=…  " shows this symbol at the beginning of a broken line
 set formatprg=par " use the given program to process selected text and put the output back when pressing gq<SELECTION>, e.g. gqip. It the programm is not available, gwip still does work with vim's internal formatter
+set formatoptions-=t " make text not wrap at textwidth initially
+set formatoptions-=a " make text not autoformat initially
 
 autocmd CursorHoldI * stopinsert  " automatically leave insert mode after 'updatetime' milliseconds of inaction
 " autocmd BufWritePost .vimrc source $MYVIMRC  " automatically source my vimrc after writing it to disk -- causes errors bc of duplicate sourcing

@@ -1,78 +1,58 @@
 #!/bin/sh
 
-# links the essential  dotfiles for this specify device
+# links the essential dotfiles for this specific device
 # after removing existing files and folders
 #
 # author: andreasl
-# version: 180828
+# version: 180829
 
-DIR_OF_THIS_SCRIPT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-DOTFILES_PATH=$DIR_OF_THIS_SCRIPT
+dir_of_this_script="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+dotfiles_path=$dir_of_this_script
 
-rm '~/.vimrc'
-ln -s "$DOTFILES_PATH/.vimrc" '~/.vimrc'
+rm "$HOME/.vimrc"
+ln -s "$dotfiles_path/.vimrc" "$HOME/.vimrc"
 
-rm -rf '~/.vim'
+rm -rf "$HOME/.vim"
 ln -s "$PWD/.vim" "$HOME/.vim"
 
-rm ~/.config/fish/config.fish
-ln -s $DOTFILES_PATH/.config/fish/config.fish ~/.config/fish/config.fish
+rm "$HOME/.config/fish/config.fish"
+ln -s "$dotfiles_path/.config/fish/config.fish" "$HOME/.config/fish/config.fish"
+rm "$HOME/.config/fish/my-abbreviations.fish"
+ln -s "$dotfiles_path/.config/fish/my-abbreviations.fish" "$HOME/.config/fish/my-abbreviations.fish"
+rm "$HOME/.config/fish/my-environment-variables.fish"
+ln -s "$dotfiles_path/.config/fish/my-environment-variables.fish" "$HOME/.config/fish/my-environment-variables.fish"
+rm "$HOME/.config/fish/my-functions.fish"
+ln -s "$dotfiles_path/.config/fish/my-functions.fish" "$HOME/.config/fish/my-functions.fish"
 
-rm ~/.config/fish/my-abbreviations.fish
-ln -s $DOTFILES_PATH/.config/fish/my-abbreviations.fish ~/.config/fish/my-abbreviations.fish
+rm "$HOME/.tigrc"
+ln -s "$dotfiles_path/.tigrc" "$HOME/.tigrc"
 
-rm ~/.config/fish/my-environment-variables.fish
-ln -s $DOTFILES_PATH/.config/fish/my-environment-variables.fish ~/.config/fish/my-environment-variables.fish
+rm "$HOME/.gitconfig"
+ln -s "$dotfiles_path/.gitconfig" "$HOME/.gitconfig"
 
-rm ~/.config/fish/my-functions.fish
-ln -s $DOTFILES_PATH/.config/fish/my-functions.fish ~/.config/fish/my-functions.fish
+rm "$HOME/.gitignore_global"
+ln -s "$dotfiles_path/.gitignore_global" "$HOME/.gitignore_global"
 
+rm "$HOME/.config/bpython/config"
+ln  -s "$dotfiles_path/.config/bpython/config" "$HOME/.config/bpython/config"
 
-rm ~/.tigrc
-ln -s $DOTFILES_PATH/.tigrc ~/.tigrc
+rm "$HOME/.ccache/ccache.conf"
+ln -s "$dotfiles_path/.ccache/ccache.conf" "$HOME/.ccache/ccache.conf"
 
+sublime_installed_packages_dir="$HOME/Library/Application Support/Sublime Text 3/Installed Packages"
+rm -rf "$sublime_installed_packages_dir"
+ln -s "$dotfiles_path/sublimetext3-config/Installed Packages" "$sublime_installed_packages_dir"
 
-rm ~/.gitconfig
-ln -s $DOTFILES_PATH/.gitconfig ~/.gitconfig
+sublime_packages_dir="$HOME/Library/Application Support/Sublime Text 3/Packages"
+rm -rf "$sublime_packages_dir"
+ln -s "$dotfiles_path/sublimetext3-config/Packages" "$sublime_packages_dir"
 
-
-rm ~/.gitignore_global
-ln -s $DOTFILES_PATH/.gitignore_global ~/.gitignore_global
-
-
-rm ~/.config/bpython/config
-ln  -s $DOTFILES_PATH/.config/bpython/config ~/.config/bpython/config
-
-rm ~/.ccache/ccache.conf
-ln -s $DOTFILES_PATH/.ccache/ccache.conf ~/.ccache/ccache.conf
-
-# sublime text. The folders that we want to overwrite are either a real folder or,
-# if we linked the files before, we want to overwrite the symlinks.
-# For real folders we need `rm -rf`, for symlinks we need just `rm`
-
-SUBLIME_INSTALLED_PACKAGES_DIR=~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
-if [ ! -L "$SUBLIME_INSTALLED_PACKAGES_DIR" ] && [ -d "$SUBLIME_INSTALLED_PACKAGES_DIR" ]; then
-    # sublime installed packages dir is a real directory
-    rm -rf "$SUBLIME_INSTALLED_PACKAGES_DIR"
-elif [ -L "$SUBLIME_INSTALLED_PACKAGES_DIR" ];  then
-	# sublime installed packages dir is a symlink
-    rm "$SUBLIME_INSTALLED_PACKAGES_DIR"
-fi
-ln -s "$DOTFILES_PATH/sublimetext3-config/Installed Packages" "$SUBLIME_INSTALLED_PACKAGES_DIR"
-
-SUBLIME_PACKAGES_DIR=~/Library/Application\ Support/Sublime\ Text\ 3/Packages
-if [ ! -L "$SUBLIME_PACKAGES_DIR" ] && [ -d "$SUBLIME_PACKAGES_DIR" ]; then
-	# sublime packages dir is a real directory
-    rm -rf "$SUBLIME_PACKAGES_DIR"
-elif [ -L "$SUBLIME_PACKAGES_DIR" ]; then
-	# sublime packages dir is a symlink
-    rm "$SUBLIME_PACKAGES_DIR"
-fi
-ln -s "$DOTFILES_PATH/sublimetext3-config/Packages" "$SUBLIME_PACKAGES_DIR"
-
+ranger_dir="$HOME/.config/ranger"
+rm -rf "$ranger_dir"
+ln -s  "$dotfiles_path/.config/ranger" "$ranger_dir"
 
 # set iterm2 config settings.
 # Specify the preferences directory
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$DOTFILES_PATH/iterm2-config"
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$dotfiles_path/iterm2-config"
 # Tell iTerm2 to use the custom preferences in the directory
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true

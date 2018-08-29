@@ -1,7 +1,7 @@
 # this file contains custom fish abbreviations
 #
 # author: andreasl
-# version: 2018-07-24
+# version: 2018-08-29
 
 abbr -a xo 'xargs open'
 abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
@@ -60,16 +60,6 @@ abbr -a alh 'add-to-one-line-help \''
 abbr -a cd.. 'cd ..'
 abbr -a c. 'cd ..'
 abbr -a cd. 'cd ..'
-abbr -a cdd 'cd ~/Desktop'
-abbr -a cdotfiles 'cd ~/dotfiles'
-abbr -a cdt 'cd ~/dotfiles'
-
-abbr -a ccode "cd $CODE_DIR"
-abbr -a cdcde "cd $CODE_DIR"
-abbr -a ccd "cd $CODE_DIR"
-abbr -a cscripts "cd $SCRIPTS_DIR"
-abbr -a cstuff "cd $STUFF_DIR"
-abbr -a cds "cd $STUFF_DIR"
 
 # grep -Hirns - like abbreviations
 abbr -a h 'grep-hirns'
@@ -134,13 +124,6 @@ abbr -a proto 'cd ~/personal/Dev/_Protofiles ; find ~/personal/Dev/_Protofiles -
 abbr -a prt 'cd ~/personal/Dev/_Protofiles ; find ~/personal/Dev/_Protofiles -name "*_proto.*"'
 abbr -a play 'cd ~/personal/Dev/_playgrounds ; find ~/personal/Dev/_Protofiles -type d -maxdepth 1 -not -path "*/\.*" -name "*"'
 abbr -a ply 'cd ~/personal/Dev/_playgrounds ; find ~/personal/Dev/_playgrounds -type d -maxdepth 1 -not -path "*/\.*" -name "*"'
-
-abbr -a capi 'cd ~/code/api-prime/'
-abbr -a csp 'cd ~/code/sparta/'
-abbr -a cnv 'cd ~/code/sparta/corenav/sdk/'
-abbr -a caa 'cd ~/code/sparta/apps/android-reference/'
-abbr -a cai 'cd ~/code/sparta/apps/ios-reference/'
-abbr -a csb 'cd ~/code/sparta/scripts/build/'
 
 abbr -a bta 'cd ~/code/sparta/ ; and ./scripts/build/android --cmake-build-prefix build --android-abi arm64-v8a ; and ./scripts/build/swift --xcode-sdk iphoneos --cmake-build-prefix build --xcode-simulator ; and cd build/build-swift-iphoneos_x86/ ; and xcodebuild -target ivi_mobile_sdk_test_cpp ; and cd ~/code/sparta/corenav/sdk/ ; and ./gradlew testDebug'  # build test all or bitch test all
 abbr -a bra 'cd ~/code/sparta/apps/android-reference/ ; ./gradlew :mobile:installDebug ; and adb shell am start -n com.here.ivi.reference.debug/com.here.ivi.reference.overview.OverviewActivity'  # build run android application

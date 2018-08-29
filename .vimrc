@@ -25,7 +25,6 @@ set mouse=a             " enable mouse support
 set whichwrap+=<,>,h,l,[,] " causes left and right arrow keys and h and l to wrap when used at beginning or end of lines. < > are the cursor keys used in normal and visual mode, [ ] are the cursor keys in insert mode
 set linebreak " break long lines between words, not in the middle of a word
 set showbreak=…  " shows this symbol at the beginning of a broken line
-"set formatoptions+=a " automatically formats paragraphs when they are changed; doesn't seem to affect vimrc file; is atm disturbing with source files
 set formatprg=par " use the given program to process selected text and put the output back when pressing gq<SELECTION>, e.g. gqip. It the programm is not available, gwip still does work with vim's internal formatter
 
 autocmd CursorHoldI * stopinsert  " automatically leave insert mode after 'updatetime' milliseconds of inaction
@@ -73,6 +72,13 @@ function HighlightMultipleSpaces()
     endif
 endfunction
 
+" commands ========================================================================================
+
+command Trenn norm o//<ESC>98a-<ESC>o  " C-style delimeter line
+command Pytrenn norm o#<ESC>99a-<ESC>o  " Python-style delimeter line
+command Deltrail %s/\s\+$//e  " delete trailing spaces and tabs -- command for ex-mode. Must begin with uppercase letter if user-defined
+command AutoformatToggle if &formatoptions =~ 'a' | set formatoptions-=a | else | set formatoptions+=a | endif
+
 " key bindings =====================================================================================
 
 map <F2> :set hlsearch!<CR>
@@ -95,12 +101,7 @@ map <C-s> vip:sort<CR>  " sort paragraph on which the cursor hovers
 vmap <C-s> :sort<CR>  " sort in visual selection
 vmap 1 "*y  " yanks the contents of the visual selection to the system clipboard
 vmap 2 y/<C-R>"<CR>   " search for selected text (characters . and * can cause problems!)
-
-" commands ========================================================================================
-
-command Trenn norm o//<ESC>98a-<ESC>o  " C-style delimeter line
-command Pytrenn norm o#<ESC>99a-<ESC>o  " Python-style delimeter line
-command Deltrail %s/\s\+$//e  " delete trailing spaces and tabs -- command for ex-mode. Must begin with uppercase letter if user-defined
+nmap 1 :AutoformatToggle<CR>
 
 " netrw settings ==================================================================================
 

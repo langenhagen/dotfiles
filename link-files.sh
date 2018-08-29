@@ -23,6 +23,8 @@ rm "$HOME/.config/fish/my-environment-variables.fish"
 ln -s "$dotfiles_path/.config/fish/my-environment-variables.fish" "$HOME/.config/fish/my-environment-variables.fish"
 rm "$HOME/.config/fish/my-functions.fish"
 ln -s "$dotfiles_path/.config/fish/my-functions.fish" "$HOME/.config/fish/my-functions.fish"
+rm "$HOME/.config/fish/vimlike-bookmarks.fish"
+ln -s "$dotfiles_path/.config/fish/vimlike-bookmarks.fish" "$HOME/.config/fish/vimlike-bookmarks.fish"
 
 rm "$HOME/.tigrc"
 ln -s "$dotfiles_path/.tigrc" "$HOME/.tigrc"

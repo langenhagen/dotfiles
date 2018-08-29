@@ -13,7 +13,7 @@ rm "$HOME/.vimrc"
 ln -s "$dotfiles_path/.vimrc" "$HOME/.vimrc"
 
 rm -rf "$HOME/.vim"
-ln -s "$PWD/.vim" "$HOME/.vim"
+ln -s "$dotfiles_path/.vim" "$HOME/.vim"
 
 rm "$HOME/.config/fish/config.fish"
 ln -s "$dotfiles_path/.config/fish/config.fish" "$HOME/.config/fish/config.fish"

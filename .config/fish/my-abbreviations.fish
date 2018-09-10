@@ -108,6 +108,7 @@ abbr -a grsh 'git reset --soft HEAD~1'
 abbr -a grhh 'git reset --hard HEAD'
 abbr -a grhh1 'git reset --hard HEAD~1'
 abbr -a grhh9 'git reset --hard HEAD~9'
+abbr -a grh9 'git reset --hard HEAD~9'
 abbr -a gfm 'git commit -a -m "TODO Save my work, just in case"; git branch my-saved-work-(date "+%Y-%m-%d--%H-%M-%S") ; git fetch origin ; git reset --hard origin/master'
 
 abbr -a gitgrep 'git log -p --color-words -S'

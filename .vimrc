@@ -25,7 +25,7 @@ set mouse=a             " enable mouse support
 set whichwrap+=<,>,h,l,[,] " causes left and right arrow keys and h and l to wrap when used at beginning or end of lines. < > are the cursor keys used in normal and visual mode, [ ] are the cursor keys in insert mode
 set textwidth=100
 set linebreak " break long lines between words, not in the middle of a word
-set showbreak=…  " shows this symbol at the beginning of a broken line
+let &showbreak="\u2026 "  " shows this symbol at the beginning of a broken line
 set formatprg=par " use the given program to process selected text and put the output back when pressing gq<SELECTION>, e.g. gqip. It the programm is not available, gwip still does work with vim's internal formatter
 set formatoptions-=t " make text not wrap at textwidth initially
 set formatoptions-=a " make text not autoformat initially

@@ -39,6 +39,7 @@ rm "$HOME/.config/bpython/config"
 ln  -s "$dotfiles_path/.config/bpython/config" "$HOME/.config/bpython/config"
 
 rm "$HOME/.ccache/ccache.conf"
+mkdir -p "$HOME/.ccache"
 ln -s "$dotfiles_path/.ccache/ccache.conf" "$HOME/.ccache/ccache.conf"
 
 sublime_installed_packages_dir="$HOME/Library/Application Support/Sublime Text 3/Installed Packages"

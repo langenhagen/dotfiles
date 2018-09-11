@@ -5,7 +5,7 @@
 # exist in vim, but for fish, the friendly interactive shell.
 #
 # author: andreasl
-# version: 18-08-29
+# version: 18-09-11
 
 function m
     # Sets abbreviations for `<char> and '<char> for cd-ing into the current directory.
@@ -28,16 +28,16 @@ function marks
      # or the ones that belong to the given characters.
 
     set awkcommand '{
-        printf substr($2,3) "    ";
-        for(i=4 ; i<NF ; ++i) {
+        printf substr($2,2) "    "; # show the bookmark without preceeding space and '`'
+        for(i=4 ; i<NF ; ++i) { # print the parts of the path the bookmark is related to
             printf "%s"
         };
-        printf substr($NF, 1, length($NF)-1) "\n"; }
+        printf substr($NF, 1, length($NF)-1) "\n"; } # print the last part of the path
     '
     if test (count $argv) -eq 0
-        abbr --show | grep "\'.*'cd " | awk "$awkcommand"
+        abbr --show | grep "`.*'cd " | awk "$awkcommand"
     else
-        abbr --show | grep "\'[$argv].*'cd " | awk "$awkcommand"
+        abbr --show | grep "`[$argv].*'cd " | awk "$awkcommand"
     end
 end
 

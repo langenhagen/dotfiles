@@ -29,9 +29,9 @@ function tricks
 
     if test (count $argv) -eq 0
         # -R readonly
-        vim -R ~/personal/Dev/Zeugs/tricks.md
+        vim -R $TRICKS_FILE_PATH
     else if test (count $argv) -gt 0
-        grep -in --color "$argv" ~/personal/Dev/Zeugs/tricks.md
+        grep -in --color "$argv" $TRICKS_FILE_PATH
     end
 end
 

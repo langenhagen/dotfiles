@@ -7,9 +7,9 @@
 set -gx PATH $PATH /usr/local/sbin
 
 setenv TRICKS_FILE_PATH "$HOME/personal/Dev/Zeugs/tricks.txt"
-setenv ONE_LINE_HELPS_PATH "TODO"
-setenv BUCKET_LIST_PATH "TODO"
-setenv JOURNAL_DIRECTORY_PATH "TODO"
+setenv ONE_LINE_HELP_FILE_PATH "$HOME/personal/Dev/Zeugs/one-line-help.txt"
+setenv BUCKET_LIST_FILE_PATH "$HOME/personal/Barn/Notes/bucket-list.txt"
+setenv JOURNAL_FILE_PATH "$HOME/personal/Barn/Notes/Journal.txt"
 
 setenv JAVA_HOME '/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home'
 # The following variable Z_SCRIPT_PATH must actually be set before sourcing .config/fish/conf.d/omf.fish
@@ -23,7 +23,7 @@ setenv SDK_ROOT $ANDROID_HOME
 setenv NDK_ROOT $ANDROID_NDK_HOME
 set -gx PATH $PATH $ANDROID_HOME/tools
 set -gx PATH $PATH $ANDROID_HOME/platform-tools
-set -gx PATH $PATH '/Users/langenha/code/scripts'
+set -gx PATH $PATH '/Users/langenha/personal/Dev/scripts'
 #setenv ANDROID_SERIAL 024475e094d2743e      # that's the LG Nexus with PTM #245
 setenv ANDROID_SERIAL H6AKCV0015736RJ      # that's the ASUS Tango
 

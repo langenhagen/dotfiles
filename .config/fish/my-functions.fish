@@ -40,20 +40,20 @@ function journal
     # there must be a trailing newline at the end of the file
 
     if test (count $argv) -eq 0
-        tail -n20 ~/stuff/Journal.txt
+        tail -n20 "$JOURNAL_FILE_PATH"
     else if test (count $argv) -gt 0
-        echo (date +%a' '%Y'-'%m'-'%d' '%H:%M) $argv >> ~/stuff/Journal.txt
+        echo (date +%a' '%Y'-'%m'-'%d' '%H:%M) $argv >> "$JOURNAL_FILE_PATH"
     end
 end
 
 function minimerk
     # stores a simple text string into the minimerk.txt file with a timestamp
-    # can be used for minimal reminders that are stored into long term memory
+    # can be used for minimal reminders that are stored into persistent memory
 
     if test (count $argv) -eq 0
-        tail -n20 ~/stuff/minimerk.txt
+        tail -n20 "$HOME/.minimerk.txt"
     else if test (count $argv) -gt 0
-        echo (date +%a' '%Y'-'%m'-'%d' '%H:%M) $argv >> ~/stuff/minimerk.txt
+        echo (date +%a' '%Y'-'%m'-'%d' '%H:%M) $argv >> "$HOME/.minimerk.txt"
     end
 end
 
@@ -63,34 +63,30 @@ function bucket
 
     if test (count $argv) -eq 0
         # -R readonly
-        vim -R "+normal G\$" ~/stuff/BucketList.txt      # \$ instead of $ is necessary bc of fish
+        vim -R "+normal G\$" "$BUCKET_LIST_FILE_PATH"    # \$ instead of $ is necessary bc of fish
     else if test (count $argv) -gt 0
-        echo (date +%a' '%Y'-'%m'-'%d' '%H:%M) $argv >> ~/stuff/BucketList.txt
+        echo (date +%a' '%Y'-'%m'-'%d' '%H:%M) $argv >> "$BUCKET_LIST_FILE_PATH"
     end
 end
 
 function one-line-help
     if test (count $argv) -eq 0
-        vim -R ~/stuff/one-line-helps/one-line-help-(whoami)-(hostname -s).txt  # -R readonly
+        vim -R "$ONE_LINE_HELP_FILE_PATH"  # -R readonly
     else if test (count $argv) -gt 0
         # greps for the given arguments on the one-line-help.txt file
-        grep -i --color=never "$argv" ~/stuff/one-line-helps/one-line-help-(whoami)-(hostname -s).txt
+        grep -i --color=never "$argv" "$ONE_LINE_HELP_FILE_PATH"
     end
 end
 
 function add-to-one-line-help
     # adds a line to the one-line-help.txt file
-    echo $argv >> ~/stuff/one-line-helps/one-line-help-(whoami)-(hostname -s).txt
+    echo $argv >> "$ONE_LINE_HELP_FILE_PATH"
 end
 
 function addabr
     # adds a line to the abbreviations file and activates the abbreviation
     echo "abbr -a $argv" >> ~/.config/fish/my-abbreviations.fish
     abbr -a $argv
-end
-
-function mkfav
-    ln -s (pwd) /Users/langenha/stuff/shortcuts/$argv[1]
 end
 
 function pbc

@@ -6,9 +6,7 @@ set fish_greeting "" # deactivates the fish welcome message
 
 ### my common environment variables ################################################################
 
-setenv CODE_DIR ~/code
-setenv SCRIPTS_DIR $CODE_DIR/scripts
-setenv STUFF_DIR ~/stuff
+setenv STUFF_DIR ~/stuff  # necessary only for journal, apparently
 
 ### sourcing #######################################################################################
 

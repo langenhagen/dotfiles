@@ -81,7 +81,7 @@ endfunction
 command Trenn norm o//<ESC>98a-<ESC>o  " C-style delimeter line
 command Pytrenn norm o#<ESC>99a-<ESC>o  " Python-style delimeter line
 command Deltrail %s/\s\+$//e  " delete trailing spaces and tabs -- command for ex-mode. Must begin with uppercase letter if user-defined
-command AutoformatToggle if &formatoptions =~ 'a' | set formatoptions-=t | set formatoptions-=a | else | set formatoptions+=t | set formatoptions+=a | endif
+command AutoformatToggle if &formatoptions =~ 'a' | set formatoptions-=t | set formatoptions-=a | set formatoptions? | else | set formatoptions+=t | set formatoptions+=a | set formatoptions? | endif
 
 " key bindings =====================================================================================
 

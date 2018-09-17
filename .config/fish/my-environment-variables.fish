@@ -10,6 +10,8 @@ setenv TRICKS_FILE_PATH "$HOME/personal/Dev/Zeugs/tricks.txt"
 setenv ONE_LINE_HELP_FILE_PATH "$HOME/personal/Dev/Zeugs/one-line-help.txt"
 setenv BUCKET_LIST_FILE_PATH "$HOME/personal/Barn/Notes/bucket-list.txt"
 setenv JOURNAL_FILE_PATH "$HOME/personal/Barn/Notes/Journal.txt"
+setenv PROTOFILES_DIR_PATH "$HOME/personal/Dev/_Protofiles"
+setenv PLAYGROUND_DIR_PATH "$HOME/personal/Dev/_playgrounds"
 
 setenv JAVA_HOME '/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home'
 # The following variable Z_SCRIPT_PATH must actually be set before sourcing .config/fish/conf.d/omf.fish

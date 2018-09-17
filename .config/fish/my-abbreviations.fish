@@ -121,10 +121,10 @@ abbr -a foldmsg 'grep -v "^#" (git rev-parse --show-toplevel)/.git/COMMIT_EDITMS
 
 abbr -a rmlines 'sed -i \'/ \/rm/d\' (git diff --name-only HEAD)'
 
-abbr -a proto 'cd ~/personal/Dev/_Protofiles ; find ~/personal/Dev/_Protofiles -name "*_proto.*"'
-abbr -a prt 'cd ~/personal/Dev/_Protofiles ; find ~/personal/Dev/_Protofiles -name "*_proto.*"'
-abbr -a play 'cd ~/personal/Dev/_playgrounds ; find ~/personal/Dev/_Protofiles -type d -maxdepth 1 -not -path "*/\.*" -name "*"'
-abbr -a ply 'cd ~/personal/Dev/_playgrounds ; find ~/personal/Dev/_playgrounds -type d -maxdepth 1 -not -path "*/\.*" -name "*"'
+abbr -a proto 'cd "$PROTOFILES_DIR_PATH" ; find "$PROTOFILES_DIR_PATH" -name "*_proto.*"'
+abbr -a prt 'cd "$PROTOFILES_DIR_PATH" ; find "$PROTOFILES_DIR_PATH" -name "*_proto.*"'
+abbr -a play 'cd "$PLAYGROUND_DIR_PATH" ; find "$PLAYGROUND_DIR_PATH" -type d -maxdepth 1 -not -path "*/\.*" -name "*"'
+abbr -a ply 'cd "$PLAYGROUND_DIR_PATH" ; find "$PLAYGROUND_DIR_PATH" -type d -maxdepth 1 -not -path "*/\.*" -name "*"'
 
 abbr -a bta 'cd ~/code/sparta/ ; and ./scripts/build/android --cmake-build-prefix build --android-abi arm64-v8a ; and ./scripts/build/swift --xcode-sdk iphoneos --cmake-build-prefix build --xcode-simulator ; and cd build/build-swift-iphoneos_x86/ ; and xcodebuild -target ivi_mobile_sdk_test_cpp ; and cd ~/code/sparta/corenav/sdk/ ; and ./gradlew testDebug'  # build test all or bitch test all
 abbr -a bra 'cd ~/code/sparta/apps/android-reference/ ; ./gradlew :mobile:installDebug ; and adb shell am start -n com.here.ivi.reference.debug/com.here.ivi.reference.overview.OverviewActivity'  # build run android application

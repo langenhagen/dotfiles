@@ -12,4 +12,8 @@ class CmdCommand(sublime_plugin.TextCommand):
         path = file_name.split(os.sep)
         path.pop()
         current_directory = os.sep.join(path)
-        subprocess.call('open -a /Users/langenha/code/scripts/OpenIterm2.app ' + current_directory, shell=True)
+        # TODO somehow make the hard coded path not hardcoded
+        # options:
+        #  use environment variable
+        #  put the OpenIterm2.app into a relative dir
+        subprocess.call('open -a "/Users/langenha/personal/Dev/scripts/OpenIterm2.app" ' + current_directory, shell=True)

@@ -1,9 +1,23 @@
-# this file contains custom fish abbreviations
+# This file contains custom fish abbreviations.
 #
 # author: andreasl
-# version: 2018-08-29
+# version: 2018-09-26
 
-abbr -a xo 'xargs open'
+if [ (uname) = "Darwin" ]
+    abbr -a xcode 'open -a Xcode'
+    abbr -a xc 'open -a Xcode'
+    abbr -a xo 'xargs open'
+    abbr -a o 'open .'
+    abbr -a ohf "open -R (eval $history[1])"
+    abbr -a oh "open (eval $history[1])"
+else
+    abbr -a open 'xdg-open'
+    abbr -a xo 'xargs xdg-open'
+    abbr -a o 'xdg-open .'
+    abbr -a ohf "xdg-open (eval $history[1])"
+    abbr -a oh "xdg-open (eval $history[1])"
+end
+
 abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
 abbr -a xx 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
 abbr -a xs 'xargs sublime'
@@ -16,7 +30,6 @@ abbr -a vd 'vimdiff'
 abbr -a fn 'functions'
 abbr -a fns 'functions'
 
-abbr -a o 'open .'
 abbr -a find 'find . -iname'
 abbr -a fnd 'find . -iname'
 abbr -a f 'find . -iname'
@@ -35,16 +48,10 @@ abbr -a gitup 'pwd ; cd (git rev-parse --show-toplevel)'
 abbr -a gitp  'pwd ; cd (git rev-parse --show-toplevel)'
 abbr -a ccat 'pygmentize -O style=native -f console256 -g'
 abbr -a cct 'pygmentize -O style=native -f console256 -g'
-abbr -a xcode 'open -a Xcode'
-abbr -a xc 'open -a Xcode'
-abbr -a bpython '/usr/bin/python -m bpython' # makes my bpython point to my own python version      (160817: 2.7.11)
-abbr -a bp '/usr/bin/python -m bpython'      # makes my bpython point to my own python version      (160817: 2.7.11)
-abbr -a chrome 'open -a "Google Chrome"'
-abbr -a crm 'open -a "Google Chrome"'
+abbr -a bpython 'python -m bpython'
+abbr -a bp 'python -m bpython'
 
 abbr -a vimh "vim -p (eval $history[1])"
-abbr -a oh "open (eval $history[1])"
-abbr -a ohf "open -R (eval $history[1])"
 
 abbr -a jrn 'journal \''
 abbr -a j 'journal \''
@@ -109,23 +116,19 @@ abbr -a grhh 'git reset --hard HEAD'
 abbr -a grhh1 'git reset --hard HEAD~1'
 abbr -a grhh9 'git reset --hard HEAD~9'
 abbr -a grh9 'git reset --hard HEAD~9'
-abbr -a gfm 'git commit -a -m "TODO Save my work, just in case"; git branch my-saved-work-(date "+%Y-%m-%d--%H-%M-%S") ; git fetch origin ; git reset --hard origin/master'
 
 abbr -a gitgrep 'git log -p --color-words -S'
 
 abbr -a rd 'repo diff'
 abbr -a rps 'repo sync -c -j8'
 abbr -a rpc 'repo status ; repo diff ; repo forall -c "printf \"\033[1;36m`git rev-parse --show-toplevel`\033[0m\t`git log -n1 --pretty=format:\"%an\t%s\"`\" | grep \"Langenhagen\""'
-abbr -a sfr "git review master --reviewers (git log -n40 --pretty=format:'%ae' | sort | uniq -c | sort -nr | awk '{print \$2}' | head -8)"
-abbr -a foldmsg 'grep -v "^#" (git rev-parse --show-toplevel)/.git/COMMIT_EDITMSG | fold -s -w 72 | sed \'s/[ \t]*$//\' > (git rev-parse --show-toplevel)/.git/COMMIT_EDITMSG;'
 
-abbr -a rmlines 'sed -i \'/ \/rm/d\' (git diff --name-only HEAD)'
+abbr -a sfr "git review master --reviewers (git log -n40 --pretty=format:'%ae' | sort | uniq -c | sort -nr | awk '{print \$2}' | head -8)"
+
+abbr -a foldmsg 'grep -v "^#" (git rev-parse --show-toplevel)/.git/COMMIT_EDITMSG | fold -s -w 72   | sed \'s/[ \t]*$//\' > (git rev-parse --show-toplevel)/.git/COMMIT_EDITMSG;'
+abbr -a rmlines 'sed -i \'/ \/rm/d\' (git diff --name-only HEAD)  # remove lines that contain the string \'/rm\''
 
 abbr -a proto 'cd "$PROTOFILES_DIR_PATH" ; find "$PROTOFILES_DIR_PATH" -name "*_proto.*"'
 abbr -a prt 'cd "$PROTOFILES_DIR_PATH" ; find "$PROTOFILES_DIR_PATH" -name "*_proto.*"'
 abbr -a play 'cd "$PLAYGROUND_DIR_PATH" ; find "$PLAYGROUND_DIR_PATH" -type d -maxdepth 1 -not -path "*/\.*" -name "*"'
 abbr -a ply 'cd "$PLAYGROUND_DIR_PATH" ; find "$PLAYGROUND_DIR_PATH" -type d -maxdepth 1 -not -path "*/\.*" -name "*"'
-
-abbr -a bta 'cd ~/code/sparta/ ; and ./scripts/build/android --cmake-build-prefix build --android-abi arm64-v8a ; and ./scripts/build/swift --xcode-sdk iphoneos --cmake-build-prefix build --xcode-simulator ; and cd build/build-swift-iphoneos_x86/ ; and xcodebuild -target ivi_mobile_sdk_test_cpp ; and cd ~/code/sparta/corenav/sdk/ ; and ./gradlew testDebug'  # build test all or bitch test all
-abbr -a bra 'cd ~/code/sparta/apps/android-reference/ ; ./gradlew :mobile:installDebug ; and adb shell am start -n com.here.ivi.reference.debug/com.here.ivi.reference.overview.OverviewActivity'  # build run android application
-

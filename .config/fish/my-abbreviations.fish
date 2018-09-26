@@ -16,6 +16,9 @@ else
     abbr -a o 'xdg-open .'
     abbr -a ohf "xdg-open (eval $history[1])"
     abbr -a oh "xdg-open (eval $history[1])"
+
+    abbr -a pbcopy 'xclip -selection clipboard'
+    abbr -a pbpaste 'xclip -selection clipboard -o'
 end
 
 abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command

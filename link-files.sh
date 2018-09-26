@@ -42,6 +42,10 @@ rm "$HOME/.ccache/ccache.conf"
 mkdir -p "$HOME/.ccache"
 ln -s "$dotfiles_path/.ccache/ccache.conf" "$HOME/.ccache/ccache.conf"
 
+mkdir -p "$HOME/.config/ranger"
+rm "$HOME/.config/ranger/rc.conf"
+ln -s "$dotfiles_path/.config/ranger/rc.conf" "$HOME/.config/ranger/rc.conf"
+
 sublime_installed_packages_dir="$HOME/Library/Application Support/Sublime Text 3/Installed Packages"
 rm -rf "$sublime_installed_packages_dir"
 ln -s "$dotfiles_path/sublimetext3-config/Installed Packages" "$sublime_installed_packages_dir"
@@ -49,11 +53,6 @@ ln -s "$dotfiles_path/sublimetext3-config/Installed Packages" "$sublime_installe
 sublime_packages_dir="$HOME/Library/Application Support/Sublime Text 3/Packages"
 rm -rf "$sublime_packages_dir"
 ln -s "$dotfiles_path/sublimetext3-config/Packages" "$sublime_packages_dir"
-
-ranger_dir="$HOME/.config/ranger"
-mkdir -p "$ranger_dir"
-rm "$ranger_dir/rc.conf"
-ln -s "$dotfiles_path/.config/ranger/rc.conf" "$HOME/.config/ranger/rc.conf"
 
 # set iterm2 config settings
 # specify the preferences directory

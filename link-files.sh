@@ -51,8 +51,9 @@ rm -rf "$sublime_packages_dir"
 ln -s "$dotfiles_path/sublimetext3-config/Packages" "$sublime_packages_dir"
 
 ranger_dir="$HOME/.config/ranger"
-rm -rf "$ranger_dir"
-ln -s  "$dotfiles_path/.config/ranger" "$ranger_dir"
+mkdir -p "$ranger_dir"
+rm "$ranger_dir/rc.conf"
+ln -s "$dotfiles_path/.config/ranger/rc.conf" "$HOME/.config/ranger/rc.conf"
 
 # set iterm2 config settings
 # specify the preferences directory

@@ -15,6 +15,8 @@ if [ (uname -n) = "4demlangenha.ad.here.com" ]
     setenv PROTOFILES_DIR_PATH "$HOME/personal/Dev/_Protofiles"
     setenv PLAYGROUND_DIR_PATH "$HOME/personal/Dev/_playgrounds"
 
+    setenv SCRIPTS_DIR_PATH "$HOME/personal/Dev/scripts"  # used e.g. by my Sublime Text's CMD command
+
     setenv JAVA_HOME '/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home'
 
     # The following variable Z_SCRIPT_PATH must actually be set before sourcing .config/fish/conf.d/omf.fish
@@ -43,6 +45,8 @@ else if [ (uname -n) = "barn-ultra" ]
     setenv JOURNAL_FILE_PATH "$HOME/Barn/Notes/Journal.txt"
     setenv PROTOFILES_DIR_PATH "$HOME/Dev/_Protofiles"
     setenv PLAYGROUND_DIR_PATH "$HOME/Dev/_playgrounds"
+
+    setenv SCRIPTS_DIR_PATH "$HOME/Dev/scripts"
 
 end
 

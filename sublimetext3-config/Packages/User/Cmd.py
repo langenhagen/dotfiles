@@ -16,4 +16,4 @@ class CmdCommand(sublime_plugin.TextCommand):
         # options:
         #  use environment variable
         #  put the OpenIterm2.app into a relative dir
-        subprocess.call('open -a "/Users/langenha/personal/Dev/scripts/OpenIterm2.app" ' + current_directory, shell=True)
+        subprocess.call('open -a "$SCRIPTS_DIR_PATH/OpenIterm2.app" ' + current_directory, shell=True)

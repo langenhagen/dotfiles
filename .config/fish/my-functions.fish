@@ -89,17 +89,6 @@ function addabr
     abbr -a $argv
 end
 
-function pbc
-    # copy given argument to system clipboard
-    echo $argv | pbcopy
-end
-
-function pbce
-    # copies the output of the given statement into the clipboard.
-    # Better stick to the common way.
-    eval $argv | pbcopy
-end
-
 function fn2
     find . -iname "*$argv*"
 end
@@ -198,4 +187,32 @@ function pushover
          --form-string "user=$pushover_user_token" \
          --form-string "message=$argv" \
          https://api.pushover.net/1/messages.json
+end
+
+if [ (uname) = "Darwin" ]
+
+    function pbc
+        # Copy a given argument to system clipboard.
+        echo $argv | pbcopy
+    end
+
+    function pbce
+        # copies the output of the given statement into the clipboard.
+        # Better stick to the common way.
+        eval $argv | pbcopy
+    end
+
+else
+
+    function pbc
+        # Copy a given argument to system clipboard.
+        echo $argv | xclip -selection clipboard
+    end
+
+    function pbce
+        # copies the output of the given statement into the clipboard.
+        # Better stick to the common way.
+        eval $argv | xclip -selection clipboard
+    end
+
 end

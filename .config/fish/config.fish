@@ -4,10 +4,6 @@
 
 set fish_greeting "" # deactivates the fish welcome message
 
-### my common environment variables ################################################################
-
-setenv STUFF_DIR ~/stuff  # necessary only for journal, apparently
-
 ### sourcing #######################################################################################
 
 source ~/.iterm2_shell_integration.fish  # iterm2 shell integration
@@ -22,4 +18,4 @@ source ~/.config/fish/vimlike-bookmarks.fish
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
-cd ~/code/sparta
+cd ~

@@ -1,10 +1,10 @@
 #!/bin/sh
 
-# links the essential dotfiles for this specific device
+# links dotfiles into the system
 # after removing existing files and folders
 #
 # author: andreasl
-# version: 18-08-29
+# version: 18-09-27
 
 dir_of_this_script="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 dotfiles_path=$dir_of_this_script
@@ -46,16 +46,18 @@ mkdir -p "$HOME/.config/ranger"
 rm "$HOME/.config/ranger/rc.conf"
 ln -s "$dotfiles_path/.config/ranger/rc.conf" "$HOME/.config/ranger/rc.conf"
 
-sublime_installed_packages_dir="$HOME/Library/Application Support/Sublime Text 3/Installed Packages"
-rm -rf "$sublime_installed_packages_dir"
-ln -s "$dotfiles_path/sublimetext3-config/Installed Packages" "$sublime_installed_packages_dir"
+if [ "$(uname)" == 'Darwin' ]; then
+    sublime_installed_packages_dir="$HOME/Library/Application Support/Sublime Text 3/Installed Packages"
+    rm -rf "$sublime_installed_packages_dir"
+    ln -s "$dotfiles_path/sublimetext3-config/Installed Packages" "$sublime_installed_packages_dir"
 
-sublime_packages_dir="$HOME/Library/Application Support/Sublime Text 3/Packages"
-rm -rf "$sublime_packages_dir"
-ln -s "$dotfiles_path/sublimetext3-config/Packages" "$sublime_packages_dir"
+    sublime_packages_dir="$HOME/Library/Application Support/Sublime Text 3/Packages"
+    rm -rf "$sublime_packages_dir"
+    ln -s "$dotfiles_path/sublimetext3-config/Packages" "$sublime_packages_dir"
 
-# set iterm2 config settings
-# specify the preferences directory
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$dotfiles_path/iterm2-config"
-# tell iTerm2 to use the custom preferences in the directory
-defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+    # set iterm2 config settings
+    # specify the preferences directory
+    defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$dotfiles_path/iterm2-config"
+    # tell iTerm2 to use the custom preferences in the directory
+    defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+fi

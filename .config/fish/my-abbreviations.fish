@@ -26,7 +26,7 @@ abbr -a xx 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child 
 abbr -a xs 'xargs sublime'
 abbr -a !! 'eval $history[1]'
 
-abbr -a fconf 'cd ~/dotfiles/.config/fish/ ; ls'
+abbr -a fconf 'cd ~/.config/fish/ ; ls'
 abbr -a sourcefish '. ~/.config/fish/config.fish'
 abbr -a editabbr 'vim -p ~/.config/fish/my-abbreviations.fish; source ~/.config/fish/my-abbreviations.fish'
 abbr -a vd 'vimdiff'

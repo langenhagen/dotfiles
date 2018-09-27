@@ -1,40 +1,50 @@
 # Dotfiles
-
 author: andreasl
-version: 18-08-29
+version: 18-09-27
 
-This folder cointains a bunch of .dotfiles and /.dotfolders to configure Your UNIX environment and
-applications. It may also contain exportable settings from other programs.
+This project contains a bunch of .dotfiles and /.dotfolders to configure your UNIX environment.
+It may also contain exported settings from other programs.
+
+The project is structured as follows:
+
+.
+├── README.md               You are here now.
+├── link-files.sh           Utility to link the dotfiles.
+└── ...                     Dotfiles...
 
 
-## Getting and Linking the Dotfiles into Your Machine
+## Installation
+Clone the git repository and then call the script `link-files.sh` to link the dotfiles
+into your system with `ln -s`:
 
 ```bash
-cd ~
 git clone https://github.com/langenhagen/dotfiles.git
 cd dotfiles
-git pull origin Mac-Workmachine
-git checkout -b Mac-Workmachine
-bash link-files.sh
+git pull origin master
+./link-files.sh
 ```
 
-The script `link-files.sh` links the dotfiles into Your system with `ln -s`, effectively keeping
-them up-to-date in this folder and thus enabling to keep them up-to date on each machine.
 
-**Caution**: When you do something like `git checkout HEAD`, links to the dotfiles created with
-`ln -s` will follow the old file versions. Thus, this won't undo changes to the linked files. You
-need to re-link them again.
-
-
-## Submitting changes
-
-### Submit to existing branch
-
-Create a branch for each machine you want to maintain. Submit to an existing branch by doing
-`git add .` and then `git commit`. Then do `git push origin <HEAD>:<branchname>`.
+## Making changes
+You can configure the dotfiles simply via the paths symlinked into your home directory.
+When you add new files or want to remove dotfiles, please don't add them directly into
+your system, but into the `dotfiles` folder, change the `link-files.sh` accordingly and
+then run `link-files.sh`. Start a terminal session to see the changes taking effect.
 
 
-### Submit to new branch.
+## Checking out other versions
+When you do something like `git checkout HEAD`, links to the dotfiles created with `ln -s`,
+especially links created by calling `link-files.sh` will follow the old file versions that
+were in place before the checkout. Call `link-files.sh` again to make changes due to git
+checkouts take effect.
 
-First, checkout on a new branch on your own machine by doing `git checkout -b <branchname>`. Then
-do `git push origin <HEAD>:<branchname>`.
+
+## Contributing
+Work on your stuff locally, branch, commit and modify to your heart's content.
+As soon as you are ready, do:
+
+```bash
+git push origin HEAD:master
+```
+
+Happy coding!

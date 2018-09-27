@@ -189,7 +189,7 @@ function pushover
          https://api.pushover.net/1/messages.json
 end
 
-if [ (uname) = "Darwin" ]
+if [ (uname) = 'Darwin' ]
 
     function pbc
         # Copy a given argument to system clipboard.

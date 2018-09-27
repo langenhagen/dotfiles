@@ -3,7 +3,7 @@
 # author: andreasl
 # version: 2018-09-26
 
-if [ (uname) = "Darwin" ]
+if [ (uname) = 'Darwin' ]
     abbr -a xcode 'open -a Xcode'
     abbr -a xc 'open -a Xcode'
     abbr -a xo 'xargs open'

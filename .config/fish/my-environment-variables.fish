@@ -6,7 +6,7 @@
 
 set -gx PATH $PATH /usr/local/sbin
 
-if [ (uname -n) = "4demlangenha.ad.here.com" ]
+if [ (uname -n) = '4demlangenha.ad.here.com' ]
 
     setenv TRICKS_FILE_PATH "$HOME/personal/Dev/Zeugs/tricks.txt"
     setenv ONE_LINE_HELP_FILE_PATH "$HOME/personal/Dev/Zeugs/one-line-help.txt"
@@ -37,7 +37,7 @@ if [ (uname -n) = "4demlangenha.ad.here.com" ]
     #setenv CCACHE_PREFIX icecc
     #set -gx PATH /usr/local/opt/icecream/libexec/icecc/bin $PATH
 
-else if [ (uname -n) = "barn-ultra" ]
+else if [ (uname -n) = 'barn-ultra' ]
 
     setenv TRICKS_FILE_PATH "$HOME/Dev/Zeugs/tricks.txt"
     setenv ONE_LINE_HELP_FILE_PATH "$HOME/Dev/Zeugs/one-line-help.txt"

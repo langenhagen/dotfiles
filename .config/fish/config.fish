@@ -1,7 +1,7 @@
 # My personal fish config file.
 # Should work on all platforms, including Mac OS with iterm2.
 # author: andreasl
-# version: 18-09-26
+# version: 18-09-27
 
 set fish_greeting "" # deactivates the fish welcome message
 
@@ -15,6 +15,6 @@ source ~/.config/fish/vimlike-bookmarks.fish
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish # iterm2 shell integration
 
-######### THE INITIAL COMMANDS #####################################################################
+######### the initial commands #####################################################################
 
 cd ~

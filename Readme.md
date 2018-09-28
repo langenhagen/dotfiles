@@ -6,12 +6,12 @@ This project contains a bunch of .dotfiles and /.dotfolders to configure your UN
 It may also contain exported settings from other programs.
 
 The project is structured as follows:
-
+```
 .
 ├── README.md               You are here now.
 ├── link-files.sh           Utility to link the dotfiles.
 └── ...                     Dotfiles...
-
+```
 
 ## Installation
 Clone the git repository and then call the script `link-files.sh` to link the dotfiles

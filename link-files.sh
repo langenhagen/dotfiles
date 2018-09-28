@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # links dotfiles into the system
 # after removing existing files and folders
@@ -41,6 +41,7 @@ rm "$HOME/.gitignore_global"
 ln -s "$dotfiles_path/.gitignore_global" "$HOME/.gitignore_global"
 
 rm "$HOME/.config/bpython/config"
+mkdir -p "$HOME/.config/bpython"
 ln  -s "$dotfiles_path/.config/bpython/config" "$HOME/.config/bpython/config"
 
 rm "$HOME/.ccache/ccache.conf"

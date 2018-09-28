@@ -24,6 +24,10 @@ git pull origin master
 ./link-files.sh
 ```
 
+Beware, that executing `link-files.sh` eventually deletes existing files before it symlinks the
+dotfiles. Also, you might see some error messages like `rm: $HOME/ranger/rc.conf: No such file or
+directory` at first installation because the script will attempt to delete files may not exist.
+This is fine however.
 
 ## Making changes
 You can configure the dotfiles simply via the paths symlinked into your home directory.

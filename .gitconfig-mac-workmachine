@@ -1,0 +1,28 @@
+[color]
+	ui = auto
+[user]
+	email = andreas.langenhagen@here.com
+	name = Andreas Langenhagen
+[rebase]
+	autostash = true
+[rerere]
+	enabled = true
+[core]
+	excludesfile = /Users/langenha/.gitignore_global
+	editor = vim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/langenha/.stCommitMsg
+[gitreview]
+	remote = origin
+	username = langenha
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

@@ -29,8 +29,13 @@ ln -s "$dotfiles_path/.config/fish/vimlike-bookmarks.fish" "$HOME/.config/fish/v
 rm "$HOME/.tigrc"
 ln -s "$dotfiles_path/.tigrc" "$HOME/.tigrc"
 
-rm "$HOME/.gitconfig"
-ln -s "$dotfiles_path/.gitconfig" "$HOME/.gitconfig"
+if [[ $(uname -n) == *'4demlangenha'* ]]; then
+    rm "$HOME/.gitconfig"
+    ln -s "$dotfiles_path/.gitconfig-mac-workmachine" "$HOME/.gitconfig"
+elif [[ "$(uname -n)" =~ ('barn-ultra'|'bee') ]]; then
+    rm "$HOME/.gitconfig"
+    ln -s "$dotfiles_path/.gitconfig-barn" "$HOME/.gitconfig"
+fi
 
 rm "$HOME/.gitignore_global"
 ln -s "$dotfiles_path/.gitignore_global" "$HOME/.gitignore_global"

@@ -31,7 +31,6 @@ switch (uname -n)
         setenv NDK_ROOT $ANDROID_NDK_HOME
         set -gx PATH $PATH $ANDROID_HOME/tools
         set -gx PATH $PATH $ANDROID_HOME/platform-tools
-        set -gx PATH $PATH '$HOME/personal/Dev/scripts'
 
         setenv OPENSSL_ROOT_DIR '/usr/local/Cellar/openssl/1.0.2h_1/'
 
@@ -50,7 +49,7 @@ switch (uname -n)
         setenv SCRIPTS_DIR_PATH "$HOME/Dev/scripts"
 end
 
-
+set -gx PATH $PATH "$SCRIPTS_DIR_PATH"
 
 
 

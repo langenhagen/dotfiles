@@ -1,6 +1,6 @@
 # My personal fish functions file
 # author: andreasl
-# version: 18-02-17
+# version: 18-09-29
 
 # source this file into the config.fish
 
@@ -95,17 +95,17 @@ end
 
 function grep-hirns
     # grep -H: print filename headers,  -n: prinft line numbers,  -r: recursive,  -s: suppress error messages
-    grep -Hirns --exclude-dir=".git" --color $argv[1] .
+    grep -HiRns --exclude-dir=".git" --color $argv[1] .
 end
 
 function grep-HirnsI
     # grep -H: print filename headers, -n: print line numbers,   -r: recursive
     #      -I: ignore binary files
-    grep -HirnsI --exclude-dir=".git" --color $argv[1] .
+    grep -HiRnsI --exclude-dir=".git" --color $argv[1] .
 end
 
 function grep-hirns-for-cstyle-files
-    grep -Hirns --exclude-dir=".git" \
+    grep -HiRns --exclude-dir=".git" \
                 --include \*.h --include \*.hpp --include \*.cpp --include \*.m --include \*.mm \
                 --include \*.pch --include \*.java --include \*.swift --include \*.cc \
                 --include \*.kt \
@@ -113,21 +113,21 @@ function grep-hirns-for-cstyle-files
 end
 
 function grep-hirns-for-franca-files
-    grep -Hirns --exclude-dir=".git" \
+    grep -HiRns --exclude-dir=".git" \
                 --include \*.fdepl --include \*.fidl \
                 --color $argv[1] .
 end
 
 function grep-hirns-for-cmake-files
-    grep -Hirns --exclude-dir=".git" --include CMakeCache.txt --include CMakeLists.txt --include \*.cmake --color $argv[1] .
+    grep -HiRns --exclude-dir=".git" --include CMakeCache.txt --include CMakeLists.txt --include \*.cmake --color $argv[1] .
 end
 
 function grep-hirns-for-java-kotlin-files
-    grep -Hirns --exclude-dir=".git" --include \*.java --include \*.kt --color $argv[1] .
+    grep -HiRns --exclude-dir=".git" --include \*.java --include \*.kt --color $argv[1] .
 end
 
 function grep-hirns-for-python-files
-    grep -Hirns --exclude-dir=".git" --include \*.py --color $argv[1] .
+    grep -HiRns --exclude-dir=".git" --include \*.py --color $argv[1] .
 end
 
 function replace

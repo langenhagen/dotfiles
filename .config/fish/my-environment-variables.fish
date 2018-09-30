@@ -49,6 +49,8 @@ switch (uname -n)
         setenv SCRIPTS_DIR_PATH "$HOME/Dev/scripts"
 end
 
+setenv LANG "en_US.UTF-8"
+
 set -gx PATH $PATH "$SCRIPTS_DIR_PATH"
 
 

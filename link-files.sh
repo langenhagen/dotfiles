@@ -1,16 +1,19 @@
 #!/bin/bash
 
 # links dotfiles into the system
-# after removing existing files and folders
+# after removing existing files and folders.
 #
 # author: andreasl
-# version: 18-09-27
+# version: 18-10-16
 
 dir_of_this_script="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 dotfiles_path=$dir_of_this_script
 
 rm "$HOME/.vimrc"
 ln -s "$dotfiles_path/.vimrc" "$HOME/.vimrc"
+
+rm "$HOME/.tmux.conf"
+ln -s "$dotfiles_path/.tmux.conf" "$HOME/.tmux.conf"
 
 rm -rf "$HOME/.vim"
 ln -s "$dotfiles_path/.vim" "$HOME/.vim"

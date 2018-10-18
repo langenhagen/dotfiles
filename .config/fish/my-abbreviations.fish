@@ -18,14 +18,14 @@ elif [ (uname) = 'Linux' ]
     abbr -a open 'xdg-open'
     abbr -a xo 'xargs xdg-open'
     abbr -a o 'xdg-open .'
-    abbr -a xs 'xargs /snap/sublime-text/current/opt/sublime_text/sublime_text'
+    abbr -a xs 'xargs subl'
     abbr -a ohf "xdg-open (eval $history[1])"
     abbr -a oh "xdg-open (eval $history[1])"
 
     abbr -a pbcopy 'xclip -selection clipboard'
     abbr -a pbpaste 'xclip -selection clipboard -o'
 
-    abbr -a s '/snap/sublime-text/current/opt/sublime_text/sublime_text'
+    abbr -a s 'subl'
 
 end
 

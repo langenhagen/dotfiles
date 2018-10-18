@@ -1,29 +1,36 @@
 # This file contains custom fish abbreviations.
 #
 # author: andreasl
-# version: 2018-09-26
+# version: 2018-10-18
 
 if [ (uname) = 'Darwin' ]
     abbr -a xcode 'open -a Xcode'
     abbr -a xc 'open -a Xcode'
     abbr -a xo 'xargs open'
+    abbr -a xs 'xargs sublime'
     abbr -a o 'open .'
     abbr -a ohf "open -R (eval $history[1])"
     abbr -a oh "open (eval $history[1])"
-else
+
+    abbr -a s 'sublime'
+
+elif [ (uname) = 'Linux' ]
     abbr -a open 'xdg-open'
     abbr -a xo 'xargs xdg-open'
     abbr -a o 'xdg-open .'
+    abbr -a xs 'xargs /snap/sublime-text/38/opt/sublime_text/sublime_text'
     abbr -a ohf "xdg-open (eval $history[1])"
     abbr -a oh "xdg-open (eval $history[1])"
 
     abbr -a pbcopy 'xclip -selection clipboard'
     abbr -a pbpaste 'xclip -selection clipboard -o'
+
+    abbr -a s '/snap/sublime-text/38/opt/sublime_text/sublime_text'
+
 end
 
 abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
 abbr -a xx 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
-abbr -a xs 'xargs sublime'
 abbr -a !! 'eval $history[1]'
 
 abbr -a fconf 'cd ~/.config/fish/ ; ls'
@@ -45,7 +52,6 @@ abbr -a t3d 'tree -C -a -L 3 -d'
 abbr -a v 'vim -p'
 abbr -a t 'tig'
 abbr -a r 'ranger'
-abbr -a s 'sublime'
 abbr -a e 'vim -R "+normal :Explore\$" .'
 abbr -a gitup 'pwd ; cd (git rev-parse --show-toplevel)'
 abbr -a gitp  'pwd ; cd (git rev-parse --show-toplevel)'
@@ -59,7 +65,6 @@ abbr -a vimh "vim -p (eval $history[1])"
 abbr -a jrn 'journal \''
 abbr -a j 'journal \''
 abbr -a mnm 'minimerk \''
-#abbr -a m 'minimerk \''
 abbr -a bkt 'bucket \''
 abbr -a b 'bucket \''
 abbr -a tks 'tricks'

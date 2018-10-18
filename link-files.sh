@@ -60,14 +60,14 @@ mkdir -p "$HOME/.urserver/remotes"
 ln -s "$dotfiles_path/.urserver/remotes/custom" "$HOME/.urserver/remotes/"
 
 if [ "$(uname)" == 'Linux' ]; then
-    sublime_packages_dir="$HOME/.config/sublime-text-3/Packages"
-    rm -rf "$sublime_packages_dir"
+    rm -rf "$HOME/.config/sublime-text-3/Packages"
+    mkdir -p "$HOME/.config/sublime-text-3"
     ln -s "$dotfiles_path/.config/sublime-text-3/Packages" "$HOME/.config/sublime-text-3/"
 
 elif [ "$(uname)" == 'Darwin' ]; then
-    sublime_packages_dir="$HOME/Library/Application Support/Sublime Text 3/Packages"
-    rm -rf "$sublime_packages_dir"
-    ln -s "$dotfiles_path/.config/sublime-text-3/Packages" "$sublime_packages_dir"
+    rm -rf "$HOME/Library/Application Support/Sublime Text 3/Packages"
+    mkdir -p "$HOME/.config/sublime-text-3"
+    ln -s "$dotfiles_path/.config/sublime-text-3/Packages" "$HOME/Library/Application Support/Sublime Text 3/"
 
     # set iterm2 config settings
     # specify the preferences directory

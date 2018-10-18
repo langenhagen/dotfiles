@@ -3,10 +3,10 @@
 *.merged-ca-bundle
 *.sublime-package
 
-sublimetext3-config/Packages/User/Package Control.cache/
-sublimetext3-config/Packages/User/Package Control.last-run
-sublimetext3-config/Packages/User/Package Control.merged-ca-bundle
-iterm2-config/com.googlecode.iterm2.plist
-.vim/.netrwhist
+.config/sublime-text-3/Packages/User/Package Control.cache/
+.config/sublime-text-3/Packages/User/Package Control.last-run
+.config/sublime-text-3/Packages/User/Package Control.merged-ca-bundle
 
-sublimetext3-config/Packages/ActualVim/
+iterm2-config/com.googlecode.iterm2.plist
+
+.vim/.netrwhist

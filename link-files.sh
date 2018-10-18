@@ -4,7 +4,7 @@
 # after removing existing files and folders.
 #
 # author: andreasl
-# version: 18-10-16
+# version: 18-10-18
 
 dir_of_this_script="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 dotfiles_path=$dir_of_this_script
@@ -55,14 +55,15 @@ mkdir -p "$HOME/.config/ranger"
 rm "$HOME/.config/ranger/rc.conf"
 ln -s "$dotfiles_path/.config/ranger/rc.conf" "$HOME/.config/ranger/rc.conf"
 
-if [ "$(uname)" == 'Darwin' ]; then
-    sublime_installed_packages_dir="$HOME/Library/Application Support/Sublime Text 3/Installed Packages"
-    rm -rf "$sublime_installed_packages_dir"
-    ln -s "$dotfiles_path/sublimetext3-config/Installed Packages" "$sublime_installed_packages_dir"
+if [ "$(uname)" == 'Linux' ]; then
+    sublime_packages_dir="$HOME/.config/sublime-text-3/Packages"
+    rm -rf "$sublime_packages_dir"
+    ln -s "$dotfiles_path/.config/sublime-text-3/Packages" "$HOME/.config/sublime-text-3/"
 
+elif [ "$(uname)" == 'Darwin' ]; then
     sublime_packages_dir="$HOME/Library/Application Support/Sublime Text 3/Packages"
     rm -rf "$sublime_packages_dir"
-    ln -s "$dotfiles_path/sublimetext3-config/Packages" "$sublime_packages_dir"
+    ln -s "$dotfiles_path/.config/sublime-text-3/Packages" "$sublime_packages_dir"
 
     # set iterm2 config settings
     # specify the preferences directory

@@ -5,10 +5,10 @@
     {
         "command": "open_dir",
         "args": {"dir": "$file_path", "file": "$file_name"},
-        "caption": "Open Containing Folder… :)"
+        "caption": "Open Containing Folder…"
     },
     {
         "command": "cmd",
-        "caption": "Open Terminal at directory… :)"
+        "caption": "Open Terminal at directory…"
     }
 ]

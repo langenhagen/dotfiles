@@ -12,7 +12,14 @@ class CmdCommand(sublime_plugin.TextCommand):
         path = file_name.split(os.sep)
         path.pop()
         current_directory = os.sep.join(path)
-        # TODO somehow make the hard coded path not hardcoded
+
+        # TODO make it work on Linux as well:
+        # e.g. check platform.
+        #   if platform is OSX go normal path,
+        #   else if platform is Linux open preferrred terminal in some way
+        #   else do nothing
+
+        # TODO somehow make the path ot OpenIterm2.app not hard coded
         # options:
         #  use environment variable
         #  put the OpenIterm2.app into a relative dir

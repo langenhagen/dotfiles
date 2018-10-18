@@ -14,7 +14,7 @@ if [ (uname) = 'Darwin' ]
 
     abbr -a s 'sublime'
 
-elif [ (uname) = 'Linux' ]
+else if [ (uname) = 'Linux' ]
     abbr -a open 'xdg-open'
     abbr -a xo 'xargs xdg-open'
     abbr -a o 'xdg-open .'

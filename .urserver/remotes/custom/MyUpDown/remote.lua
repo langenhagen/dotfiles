@@ -11,11 +11,19 @@ local kb = libs.keyboard;
 --@help Up Arrow Key
 actions.upcommand = function ()
 	kb.stroke("up");
+	kb.stroke("up");
+	kb.stroke("up");
+	kb.stroke("up");
+	kb.stroke("up");
 end
 
 
 --@help Down Arrow Key
 actions.downcommand = function ()
+	kb.stroke("down");
+	kb.stroke("down");
+	kb.stroke("down");
+	kb.stroke("down");
 	kb.stroke("down");
 end
 

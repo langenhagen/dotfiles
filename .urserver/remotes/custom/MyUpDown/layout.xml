@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<row>
+		<button icon="arrowup" ontap="upcommand" />
+	</row>
+	<row>
+		<button icon="arrowdown" ontap="downcommand" />
+	</row>
+
+</layout>

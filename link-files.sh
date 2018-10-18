@@ -55,6 +55,10 @@ mkdir -p "$HOME/.config/ranger"
 rm "$HOME/.config/ranger/rc.conf"
 ln -s "$dotfiles_path/.config/ranger/rc.conf" "$HOME/.config/ranger/rc.conf"
 
+rm -rf "$HOME/.urserver/remotes/custom"
+mkdir -p "$HOME/.urserver/remotes"
+ln -s "$dotfiles_path/.urserver/remotes/custom" "$HOME/.urserver/remotes/"
+
 if [ "$(uname)" == 'Linux' ]; then
     sublime_packages_dir="$HOME/.config/sublime-text-3/Packages"
     rm -rf "$sublime_packages_dir"

@@ -7,6 +7,10 @@
 .config/sublime-text-3/Packages/User/Package Control.last-run
 .config/sublime-text-3/Packages/User/Package Control.merged-ca-bundle
 
+# the compare side-by-side theme changes all the time when you compare something
+.config/sublime-text-3/Packages/User/SBSCompareTheme.tmTheme
+
 iterm2-config/com.googlecode.iterm2.plist
 
 .vim/.netrwhist
+

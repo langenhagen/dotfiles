@@ -18,4 +18,3 @@ test -e {$HOME}/miniconda3/etc/fish/conf.d/conda.fish ; and source {$HOME}/minic
 
 ######### the initial commands #####################################################################
 
-cd ~

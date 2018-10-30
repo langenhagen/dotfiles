@@ -2,6 +2,7 @@ import os
 import sublime
 import sublime_plugin
 import subprocess
+import sys
 
 class CmdCommand(sublime_plugin.TextCommand):
     def run(self, edit):
@@ -14,9 +15,9 @@ class CmdCommand(sublime_plugin.TextCommand):
         path.pop()
         current_directory = os.sep.join(path)
 
-        # TODO if Linux
-        subprocess.call('konsole --workdir ' + current_directory, shell=True)
-        #elif MAC
-        # subprocess.call('open -a "$SCRIPTS_DIR_PATH/OpenIterm2.app" ' + current_directory, shell=True)
-        # else
-        #     pass
+        if sys.platform == 'linux':
+            subprocess.call('konsole --workdir ' + current_directory, shell=True)
+        elif sys.platform == 'darwin':
+            subprocess.call('open -a "$SCRIPTS_DIR_PATH/OpenIterm2.app" ' + current_directory, shell=True)
+        else:
+            pass

@@ -40,6 +40,9 @@ elif [[ "$(uname -n)" =~ ('barn-ultra'|'bee') ]]; then
     ln -s "$dotfiles_path/.gitconfig-barn" "$HOME/.gitconfig"
 fi
 
+rm "$HOME/.edmrc"
+ln -s "$dotfiles_path/.edmrc" "$HOME/.edmrc"
+
 rm "$HOME/.gitignore_global"
 ln -s "$dotfiles_path/.gitignore_global" "$HOME/.gitignore_global"
 

@@ -16,7 +16,7 @@ class CmdCommand(sublime_plugin.TextCommand):
         current_directory = os.sep.join(path)
 
         if sys.platform == 'linux':
-            subprocess.call('konsole --workdir ' + current_directory, shell=True)
+            subprocess.call('konsole --workdir ' + current_directory + '&', shell=True)
         elif sys.platform == 'darwin':
             subprocess.call('open -a "$SCRIPTS_DIR_PATH/OpenIterm2.app" ' + current_directory, shell=True)
         else:

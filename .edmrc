@@ -3,6 +3,7 @@
 choices=(
     'Dropbox'
     'Administrative'
+    'Administrative/user-names.txt'
     'Barn'
     'Dev'
     'Media'

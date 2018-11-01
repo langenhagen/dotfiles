@@ -25,7 +25,12 @@ else if [ (uname) = 'Linux' ]
     abbr -a pbcopy 'xclip -selection clipboard'
     abbr -a pbpaste 'xclip -selection clipboard -o'
 
-    abbr -a s 'subl'
+    if command -v subl >/dev/null
+        abbr -a s 'subl'
+    else
+        abbr -a s 'vim -p'
+    end
+
 
 end
 

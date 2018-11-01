@@ -1,0 +1,26 @@
+[color]
+    ui = auto
+[user]
+    email = andreas.langenhagen@celeraone.com
+    name = Andreas Langenhagen
+[rebase]
+    autostash = true
+[rerere]
+    enabled = true
+[core]
+    excludesfile = /home/andreasl/.gitignore_global
+    editor = vim
+[commit]
+[gitreview]
+    remote = origin
+    username = andreasl
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+[mergetool]
+    prompt = false

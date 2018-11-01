@@ -38,6 +38,9 @@ if [[ $(uname -n) == *'4demlangenha'* ]]; then
 elif [[ "$(uname -n)" =~ ('barn-ultra'|'bee') ]]; then
     rm "$HOME/.gitconfig"
     ln -s "$dotfiles_path/.gitconfig-barn" "$HOME/.gitconfig"
+elif [[ "$(uname -n)" =~ 'celeraone' ]]; then
+    rm "$HOME/.gitconfig"
+    ln -s "$dotfiles_path/.gitconfig-celeraone" "$HOME/.gitconfig"
 fi
 
 rm "$HOME/.edmrc"

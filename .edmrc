@@ -5,6 +5,7 @@ choices=(
     'Administrative'
     'Administrative/user-names.txt'
     'Barn'
+    'c1'
     'Dev'
     'Media'
     'Media/Images/Fotos/Cam'

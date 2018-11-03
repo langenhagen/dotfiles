@@ -63,6 +63,10 @@ rm -rf "$HOME/.urserver/remotes/custom"
 mkdir -p "$HOME/.urserver/remotes"
 ln -s "$dotfiles_path/.urserver/remotes/custom" "$HOME/.urserver/remotes/"
 
+rm -rf "$HOME/.config/xpad/default-style"
+mkdir -p "$HOME/.config/xpad"
+ln -s "$dotfiles_path/.config/xpad/default-style" "$HOME/.config/xpad/default-style"
+
 if [ "$(uname)" == 'Linux' ]; then
     rm -rf "$HOME/.config/sublime-text-3/Packages"
     mkdir -p "$HOME/.config/sublime-text-3"

@@ -55,8 +55,8 @@ rm "$HOME/.ccache/ccache.conf"
 mkdir -p "$HOME/.ccache"
 ln -s "$dotfiles_path/.ccache/ccache.conf" "$HOME/.ccache/ccache.conf"
 
-mkdir -p "$HOME/.config/ranger"
 rm "$HOME/.config/ranger/rc.conf"
+mkdir -p "$HOME/.config/ranger"
 ln -s "$dotfiles_path/.config/ranger/rc.conf" "$HOME/.config/ranger/rc.conf"
 
 rm -rf "$HOME/.urserver/remotes/custom"

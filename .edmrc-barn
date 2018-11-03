@@ -11,3 +11,5 @@ choices=(
     'Media/Audio'
     'Work'
     )
+
+open_terminal_command='konsole --workdir'

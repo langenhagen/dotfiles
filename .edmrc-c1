@@ -16,3 +16,5 @@ choices=(
     'Work/2018-CeleraOne/current-todos.md'
     'Work/2018-CeleraOne/day-notes.md'
     )
+
+open_terminal_command='konsole --workdir'

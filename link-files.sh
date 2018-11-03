@@ -4,7 +4,7 @@
 # after removing existing files and folders.
 #
 # author: andreasl
-# version: 18-10-18
+# version: 18-11-03
 
 dir_of_this_script="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 dotfiles_path=$dir_of_this_script
@@ -35,13 +35,14 @@ ln -s "$dotfiles_path/.tigrc" "$HOME/.tigrc"
 if [[ "$(uname -n)" =~ ('barn-ultra'|'bee') ]]; then
     rm "$HOME/.gitconfig"
     ln -s "$dotfiles_path/.gitconfig-barn" "$HOME/.gitconfig"
+    rm "$HOME/.edmrc"
+    ln -s "$dotfiles_path/.edmrc-barn" "$HOME/.edmrc"
 elif [[ "$(uname -n)" =~ 'celeraone' ]]; then
     rm "$HOME/.gitconfig"
     ln -s "$dotfiles_path/.gitconfig-c1" "$HOME/.gitconfig"
+    rm "$HOME/.edmrc"
+    ln -s "$dotfiles_path/.edmrc-c1" "$HOME/.edmrc"
 fi
-
-rm "$HOME/.edmrc"
-ln -s "$dotfiles_path/.edmrc" "$HOME/.edmrc"
 
 rm "$HOME/.gitignore_global"
 ln -s "$dotfiles_path/.gitignore_global" "$HOME/.gitignore_global"

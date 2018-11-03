@@ -1,0 +1,13 @@
+# rc file for explore-with-dmenu.sh
+
+choices=(
+    'Dropbox'
+    'Administrative'
+    'Administrative/user-names.txt'
+    'Barn'
+    'Dev'
+    'Media'
+    'Media/Images/Fotos/Cam'
+    'Media/Audio'
+    'Work'
+    )

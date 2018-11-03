@@ -18,6 +18,13 @@ ln -s "$dotfiles_path/.tmux.conf" "$HOME/.tmux.conf"
 rm -rf "$HOME/.vim"
 ln -s "$dotfiles_path/.vim" "$HOME/.vim"
 
+rm "$HOME/.config/konsolerc"
+mkdir -p "$HOME/.config"
+ln -s "$dotfiles_path/.config/konsolerc" "$HOME/.config/konsolerc"
+rm "$HOME/.local/share/konsole/My-Konsole-Profile.profile"
+mkdir -p "$HOME/.local/share/konsole"
+ln -s "$dotfiles_path/.local/share/konsole/My-Konsole-Profile.profile" "$HOME/.local/share/konsole/My-Konsole-Profile.profile"
+
 rm "$HOME/.config/fish/config.fish"
 ln -s "$dotfiles_path/.config/fish/config.fish" "$HOME/.config/fish/config.fish"
 rm "$HOME/.config/fish/my-abbreviations.fish"

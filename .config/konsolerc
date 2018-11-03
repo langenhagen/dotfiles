@@ -1,0 +1,21 @@
+[Desktop Entry]
+DefaultProfile=My-Konsole-Profile.profile
+
+[Favorite Profiles]
+Favorites=
+
+[KonsoleWindow]
+ShowMenuBarByDefault=false
+
+[MainWindow]
+Height 1080=1023
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAA8AAAAP/AAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+Width 1920=960
+
+[TabBar]
+ExpandTabWidth=true
+ShowQuickButtons=true
+TabBarPosition=Top
+TabBarVisibility=ShowTabBarWhenNeeded

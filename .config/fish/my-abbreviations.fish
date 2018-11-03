@@ -30,8 +30,6 @@ else if [ (uname) = 'Linux' ]
     else
         abbr -a s 'vim -p'
     end
-
-
 end
 
 abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command

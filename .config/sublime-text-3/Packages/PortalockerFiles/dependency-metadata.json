@@ -1,1 +1,1 @@
-{"sublime_text": ">=3114", "platforms": ["*"], "url": "https://github.com/evandroforks/PortalockerFiles/issues", "version": "2.0.2", "description": "An extended version of PortalockerFiles to lock files in Python using the with statement"}
+{"platforms": ["*"], "url": "https://github.com/evandroforks/PortalockerFiles/issues", "version": "2.0.2", "description": "An extended version of PortalockerFiles to lock files in Python using the with statement", "sublime_text": ">=3114"}

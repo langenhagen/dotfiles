@@ -1,1 +1,1 @@
-{"sublime_text": ">=3114", "platforms": ["*"], "url": "https://github.com/evandrocoan/PlantUmlConnection/issues", "version": "1.1.1", "description": "Python interface to a plantuml web service instead of having to run Java locally"}
+{"platforms": ["*"], "url": "https://github.com/evandrocoan/PlantUmlConnection/issues", "version": "1.1.1", "description": "Python interface to a plantuml web service instead of having to run Java locally", "sublime_text": ">=3114"}

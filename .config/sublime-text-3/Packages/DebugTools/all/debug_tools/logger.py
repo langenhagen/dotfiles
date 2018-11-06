@@ -84,11 +84,11 @@ except( ImportError, ValueError ):
             super( ConcurrentRotatingFileHandler, self ).__init__( output_file )
 
 
-from .stream_replacement_model import stderr_replament
-from .stream_replacement_model_stdout import stdout_replament
+from .stderr_replacement import stderr_replacement
+from .stdout_replacement import stdout_replacement
 
-# Uncoment this temporarily to create update the `stream_replacement_model_stdout.py` after changes
-# on `stream_replacement_model.py`
+# Uncoment this temporarily to create update the `stdout_replacement.py` after changes
+# on `stderr_replacement.py`
 #
 # While developing, you can reload/test your changes to ``create_stdout_handler with:
 #     import imp; imp.reload( debug_tools.logger );
@@ -231,7 +231,7 @@ class Debugger(Logger):
         set_level( active )
         active.fix_children( set_level )
 
-    def __call__(self, debug_level, msg, *args, **kwargs):
+    def __call__(self, debug_level=1, msg="", *args, **kwargs):
         """
             Log to the current active handlers its message based on the bitwise `self._debugger_level`
             value. Note, differently from the standard logging level, each logger object has its own
@@ -245,8 +245,10 @@ class Debugger(Logger):
                 self._log( DEBUG, msg, args, **kwargs )
 
         else:
-            kwargs['debug_level'] = 1
-            self._log( DEBUG, debug_level, (msg,) + args, **kwargs )
+
+            if self._debugger_level & 1 != 0:
+                kwargs['debug_level'] = 1
+                self._log( DEBUG, debug_level, (msg,) + args, **kwargs )
 
     def traceback(self, **kwargs):
         """
@@ -408,6 +410,8 @@ class Debugger(Logger):
         try:
 
             if stderr or stdout:
+                # print( "stderr: %s, stdout: %s" % ( stderr, stdout ) )
+                # print( "sys.stderr: %s, sys.stdout: %s" % ( sys.stderr, sys.stdout ) )
                 # print( "name: %s, hasStreamHandlers: %s" % ( self.name, self.hasStreamHandlers() ) )
 
                 if self.hasStreamHandlers():
@@ -417,17 +421,17 @@ class Debugger(Logger):
 
                 else:
                     if stderr:
-                        stderr_replament.lock( self )
+                        stderr_replacement.lock( self )
 
                     if stdout:
-                        stdout_replament.lock( self )
+                        stdout_replacement.lock( self )
 
             else:
                 if not stderr:
-                    stderr_replament.unlock()
+                    stderr_replacement.unlock()
 
                 if not stdout:
-                    stdout_replament.unlock()
+                    stdout_replacement.unlock()
 
         except Exception:
             self.exception( "Could not register the sys.stderr stream handler" )
@@ -767,7 +771,7 @@ class Debugger(Logger):
 
         if "StreamHandler" in str( type( handler ) ):
 
-            if stderr_replament.is_active or stdout_replament.is_active:
+            if stderr_replacement.is_active or stdout_replacement.is_active:
                 sys.stderr.write( "Warning on Debugger::addHandler for %s\n" % self.name )
                 sys.stderr.write( "You cannot add a StreamHandler while the `sys.stderr` handling is enabled.\n" )
                 sys.stderr.write( "Therefore, your stream handler `%s` is not being added.\n" % handler )
@@ -1025,30 +1029,46 @@ class SmartLogRecord(LogRecord):
         Creates a LogRecord which concatenates trailing arguments instead of raising an exception.
     """
 
-    def _getMessage(self, remaing_arguments):
+    def _getMessage(self, remaining_arguments):
         """
-            https://stackoverflow.com/questions/38127563/handle-an-exception-in-a-while-loop
+            Use a function to force exception handling not break the while loop where this is used.
         """
 
         try:
+            args = self.args
 
-            if self.args:
-                remaing_arguments.append( self.msg % self.args )
+            if args:
+
+                # https://stackoverflow.com/questions/53002709/why-var-1-variable-prints-var-instead-of-raising-the-exception-typeer
+                if isinstance( args, dict ):
+                    new_msg = self.msg % args
+
+                    if new_msg == self.msg:
+                        remaining_arguments.append( str( args ) )
+                        remaining_arguments.append( new_msg )
+
+                    else:
+                        remaining_arguments.append( new_msg )
+
+                else:
+                    remaining_arguments.append( self.msg % args )
 
             else:
-                remaing_arguments.append( self.msg )
+                remaining_arguments.append( self.msg )
 
             return False
 
-        except TypeError:
-            remaing_arguments.append( str( self.args[-1] ) )
-            self.args = self.args[:-1]
+        except TypeError as error:
+            self.args = args[:-1]
 
-            if len( self.args ):
+            # print('error', error)
+            remaining_arguments.append( str( args[-1] ) )
+
+            if len( args ) - 1 > 0:
                 return True
 
             else:
-                remaing_arguments.append( self.msg )
+                remaining_arguments.append( self.msg )
                 return False
 
     def getMessage(self):
@@ -1058,11 +1078,13 @@ class SmartLogRecord(LogRecord):
         Return the message for this LogRecord after merging any user-supplied
         arguments with the message.
         """
-        remaing_arguments = []
+        # print('self.msg', self.msg, ', self.args', self.args)
+        remaining_arguments = []
         self.msg = str( self.msg )
 
-        while self._getMessage( remaing_arguments ): pass
-        return " ".join( reversed( remaing_arguments ) )
+        # https://stackoverflow.com/questions/38127563/handle-an-exception-in-a-while-loop
+        while self._getMessage( remaining_arguments ): pass
+        return " ".join( reversed( remaining_arguments ) )
 
 
 class CleanLogRecord(object):

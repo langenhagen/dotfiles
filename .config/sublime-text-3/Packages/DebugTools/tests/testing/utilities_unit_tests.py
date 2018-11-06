@@ -37,6 +37,7 @@
 #
 
 import os
+import io
 import sys
 
 import unittest
@@ -82,7 +83,7 @@ class UtilitiesUnitTests(testing_utilities.TestingUtilities):
                  "  text_chunk_end  source.sma" \
 
         with self.assertRaises( AssertionError ) as error:
-            self.myAssertEqual( expected, actual )
+            self.assertEqual( expected, actual )
 
         self.assertEqual(
             "The strings does not match...\n"
@@ -113,7 +114,7 @@ class UtilitiesUnitTests(testing_utilities.TestingUtilities):
                  "  text_chunk_end  source.sma" \
 
         with self.assertRaises( AssertionError ) as error:
-            self.myAssertEqual( expected, actual )
+            self.assertEqual( expected, actual )
 
         self.assertEqual(
             "The strings does not match...\n"
@@ -142,7 +143,7 @@ class UtilitiesUnitTests(testing_utilities.TestingUtilities):
                  "Forth\n" \
 
         with self.assertRaises( AssertionError ) as error:
-            self.myAssertEqual( expected, actual )
+            self.assertEqual( expected, actual )
 
         self.assertEqual(
             ""
@@ -162,7 +163,7 @@ class UtilitiesUnitTests(testing_utilities.TestingUtilities):
                  "Forth\n" \
 
         with self.assertRaises( AssertionError ) as error:
-            self.myAssertEqual( expected, actual )
+            self.assertEqual( expected, actual )
 
         self.assertEqual(
             ""
@@ -180,7 +181,7 @@ class UtilitiesUnitTests(testing_utilities.TestingUtilities):
                  "  text_chunk_end  source.sma" \
 
         with self.assertRaises( AssertionError ) as error:
-            self.myAssertEqual( expected, actual )
+            self.assertEqual( expected, actual )
 
         self.assertEqual(
             "The strings does not match...\n"
@@ -194,18 +195,18 @@ class UtilitiesUnitTests(testing_utilities.TestingUtilities):
             , str(error.exception) )
 
     def test_createStdoutHandler(self):
-        stream_replacement_model_path = utilities.get_relative_path('stream_replacement_model_stdout.py', utilities.__file__)
+        std_replacement_path = utilities.get_relative_path('stdout_replacement.py', utilities.__file__)
 
-        with open( stream_replacement_model_path, "r" ) as model_file:
+        with io.open( std_replacement_path, "r" ) as model_file:
             model_text = model_file.read()
 
         utilities._create_stdout_handler()
 
-        with open( stream_replacement_model_path, "r" ) as model_file:
+        with io.open( std_replacement_path, "r" ) as model_file:
             updated_model_text = model_file.read()
 
-        self.myAssertEqual( updated_model_text, model_text )
+        self.assertEqual( updated_model_text, model_text )
 
-        with open( stream_replacement_model_path, "w" ) as model_file:
+        with io.open( std_replacement_path, "w", newline='\n' ) as model_file:
             model_file.write( model_text )
 

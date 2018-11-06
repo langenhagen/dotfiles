@@ -48,6 +48,12 @@ switch (uname -n)
 
         # Path where engine binaries are stored.
         setenv C1_CRED_PREFIX /opt/c1/engine
+
+        # Unit Testing, at least for Entitlement
+        # =====================================
+        setenv SERVERLAYERS false
+        setenv ENGINE_MOCK true
+
 end
 
 setenv LANG "en_US.UTF-8"

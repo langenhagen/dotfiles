@@ -10,3 +10,4 @@ Thumbs.db
 .vscode
 plantuml_output.txt
 patch.diff
+*.swp

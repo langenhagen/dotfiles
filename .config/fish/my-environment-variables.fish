@@ -47,10 +47,12 @@ switch (uname -n)
         # =================
 
         # Path where engine binaries are stored.
+        # The engine is stored or linked there deliberately.
         setenv C1_CRED_PREFIX /opt/c1/engine
 
         # Unit Testing, at least for Entitlement
-        # =====================================
+        # ======================================
+
         setenv SERVERLAYERS false
         setenv ENGINE_MOCK true
 

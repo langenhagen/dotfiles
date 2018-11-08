@@ -50,6 +50,9 @@ switch (uname -n)
         # The engine is stored or linked there deliberately.
         setenv C1_CRED_PREFIX /opt/c1/engine
 
+        # Necessary for some of the c1-cre-api integration tests.
+        setenv SETTING_OVERRIDES_MODE REDIS
+
         # Unit Testing, at least for Entitlement
         # ======================================
 

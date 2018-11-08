@@ -43,6 +43,9 @@ abbr -a vd 'vimdiff'
 abbr -a fn 'functions'
 abbr -a fns 'functions'
 
+abbr -a tmls 'tmux ls'
+abbr -a tmk 'tmux kill-session -t'
+
 abbr -a find 'find . -iname'
 abbr -a fnd 'find . -iname'
 abbr -a f 'find . -iname'

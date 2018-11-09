@@ -2,5 +2,6 @@
     { "keys": ["super+shift+o"], "command": "open_dir", "args": {"dir": "$file_path", "file": "$file_name"}},
     { "keys": ["super+alt+shift+o"], "command": "cmd"},
     { "keys": ["ctrl+shift+,"], "command": "add_date" },
-    { "keys": ["ctrl+shift+."], "command": "add_time" }
+    { "keys": ["ctrl+shift+."], "command": "add_time" },
+    { "keys": ["ctrl+shift+1"], "command": "add_author_and_version" },
 ]

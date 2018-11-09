@@ -74,6 +74,10 @@ rm -rf "$HOME/.config/xpad/default-style"
 mkdir -p "$HOME/.config/xpad"
 ln -s "$dotfiles_path/.config/xpad/default-style" "$HOME/.config/xpad/default-style"
 
+rm "$HOME/.buildout/default.cfg"
+mkdir -p "$HOME/.buildout"
+ln -s "$dotfiles_path/.buildout/default.cfg" "$HOME/.buildout/default.cfg"
+
 if [ "$(uname)" == 'Linux' ]; then
     rm -rf "$HOME/.config/sublime-text-3/Packages"
     mkdir -p "$HOME/.config/sublime-text-3"

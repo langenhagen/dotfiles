@@ -189,6 +189,22 @@ function pushover
          https://api.pushover.net/1/messages.json
 end
 
+function workon
+    # Given a c1 repository name (without leading 'c1-',
+    # changes the directory to the repository,
+    # deactivates all conda environments and
+    # activates the according conda environment.
+    cd "$HOME/c1/c1-$argv[1]"
+    if test $status != 0
+        return
+    end
+
+    while test (conda info --envs | grep '*' | awk '{print $1}') != 'base'
+        conda deactivate
+    end
+    conda activate $argv[1]
+end
+
 if [ (uname) = 'Darwin' ]
 
     function pbc

@@ -135,6 +135,8 @@ abbr -a grhh1 'git reset --hard HEAD~1'
 abbr -a grhh9 'git reset --hard HEAD~9'
 abbr -a grh9 'git reset --hard HEAD~9'
 
+abbr -a workoff 'conda deactivate'
+
 abbr -a gitgrep 'git log -p --color-words -S'
 
 abbr -a rd 'repo diff'

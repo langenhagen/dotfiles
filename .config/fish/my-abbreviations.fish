@@ -126,7 +126,7 @@ abbr -a gri 'git rebase --interactive HEAD~10'
 abbr -a grc 'git rebase --continue'
 abbr -a gra 'git rebase --abort'
 
-abbr -a gpa 'find . -type d -iname "*.git" -execdir bash -c \'printf "\033[1m${PWD}\033[0m\n"; git pull --rebase;\' \;'
+abbr -a gpa 'find $HOME/c1 -type d -iname "*.git" -execdir bash -c \'printf "\033[1m${PWD}\033[0m\n"; git pull --rebase;\' \;'
 abbr -a sco 'cd ~/c1; find . -type d -iname "*.git" -execdir bash -c \'printf "\033[1m${PWD}\033[0m\n"; git pull --rebase;\' \;'
 
 abbr -a grsh 'git reset --soft HEAD~1'

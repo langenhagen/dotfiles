@@ -130,6 +130,10 @@ function grep-hirns-for-python-files
     grep -HiRns --exclude-dir=".git" --include \*.py --color $argv[1] .
 end
 
+function grep-hirns-for-lua-files
+    grep -HiRns --exclude-dir=".git" --include \*.lua --color $argv[1] .
+end
+
 function replace
     if test (count $argv) -lt 3
         echo "Usage:  replace '*.cpp' [...] '<lookforthis>' '<replacewiththis>' "

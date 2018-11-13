@@ -27,12 +27,12 @@ ln -s "$dotfiles_path/.local/share/konsole/My-Konsole-Profile.profile" "$HOME/.l
 
 rm "$HOME/.config/fish/config.fish"
 ln -s "$dotfiles_path/.config/fish/config.fish" "$HOME/.config/fish/config.fish"
-rm "$HOME/.config/fish/my-abbreviations.fish"
-ln -s "$dotfiles_path/.config/fish/my-abbreviations.fish" "$HOME/.config/fish/my-abbreviations.fish"
-rm "$HOME/.config/fish/my-environment-variables.fish"
-ln -s "$dotfiles_path/.config/fish/my-environment-variables.fish" "$HOME/.config/fish/my-environment-variables.fish"
-rm "$HOME/.config/fish/my-functions.fish"
-ln -s "$dotfiles_path/.config/fish/my-functions.fish" "$HOME/.config/fish/my-functions.fish"
+rm "$HOME/.config/fish/abbreviations.fish"
+ln -s "$dotfiles_path/.config/fish/abbreviations.fish" "$HOME/.config/fish/abbreviations.fish"
+rm "$HOME/.config/fish/environment-variables.fish"
+ln -s "$dotfiles_path/.config/fish/environment-variables.fish" "$HOME/.config/fish/environment-variables.fish"
+rm "$HOME/.config/fish/functions.fish"
+ln -s "$dotfiles_path/.config/fish/functions.fish" "$HOME/.config/fish/functions.fish"
 rm "$HOME/.config/fish/vimlike-bookmarks.fish"
 ln -s "$dotfiles_path/.config/fish/vimlike-bookmarks.fish" "$HOME/.config/fish/vimlike-bookmarks.fish"
 

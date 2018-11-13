@@ -38,7 +38,7 @@ abbr -a !! 'eval $history[1]'
 
 abbr -a fconf 'cd ~/.config/fish/ ; ls'
 abbr -a sourcefish '. ~/.config/fish/config.fish'
-abbr -a editabbr 'vim -p ~/.config/fish/my-abbreviations.fish; source ~/.config/fish/my-abbreviations.fish'
+abbr -a editabbr 'vim -p ~/.config/fish/abbreviations.fish; source ~/.config/fish/abbreviations.fish'
 abbr -a vd 'vimdiff'
 abbr -a fn 'functions'
 abbr -a fns 'functions'

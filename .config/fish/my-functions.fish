@@ -85,7 +85,7 @@ end
 
 function addabr
     # adds a line to the abbreviations file and activates the abbreviation
-    echo "abbr -a $argv" >> ~/.config/fish/my-abbreviations.fish
+    echo "abbr -a $argv" >> ~/.config/fish/abbreviations.fish
     abbr -a $argv
 end
 

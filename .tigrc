@@ -32,7 +32,7 @@ bind generic 1 !git rebase --interactive HEAD~7
 
 # -------------------------------------------------------------------------------------------------
 
-set ignore-case            = yes                     # Enum: no, yes, smart-case
+set ignore-case            = yes                     # Enum consisting of the values: no, yes, smart-case
 
 
 # -------------------------------------------------------------------------------------------------

@@ -1,7 +1,7 @@
 # rc file for explore-with-dmenu.sh
 
 choices=(
-    'Dropbox'
+    'Desktop/Dropbox'
     'Administrative'
     'Administrative/user-names.txt'
     'Administrative/computer/setup-barn-ultra-ubuntu.sh'

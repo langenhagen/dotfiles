@@ -4,6 +4,8 @@ choices=(
     'Dropbox'
     'Administrative'
     'Administrative/user-names.txt'
+    'Administrative/computer/setup-barn-ultra-ubuntu.sh'
+    'Administrative/computer/setup-andreasl-c1-workmachine-ubuntu.sh'
     'Barn'
     'c1'
     'c1/scripts'

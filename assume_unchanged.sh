@@ -13,7 +13,6 @@ files=(
     ".config/konsolerc"
     )
 
-
 if [ "$1" == '-no' ]; then
     for file in ${files[@]} ; do
         git update-index --no-assume-unchanged ${file}
@@ -23,6 +22,3 @@ else
         git update-index --assume-unchanged ${file}  # ignore further changes to a file
     done
 fi
-
-
-

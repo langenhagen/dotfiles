@@ -3,6 +3,8 @@
 # author: andreasl
 # version: 2018-10-18
 
+alias fuckoff='for i in (seq 7); tput ll; openssl rand 32;  sleep 0.1; end; printf \'\\nBye :)\\n\'; shutdown 0'
+
 if [ (uname) = 'Darwin' ]
     abbr -a xcode 'open -a Xcode'
     abbr -a xc 'open -a Xcode'

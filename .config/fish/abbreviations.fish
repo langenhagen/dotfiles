@@ -96,6 +96,7 @@ abbr -a cmh 'grep-hirns-for-cmake-files'
 abbr -a jh 'grep-hirns-for-java-kotlin-files'
 abbr -a ph 'grep-hirns-for-python-files'
 abbr -a lh 'grep-hirns-for-lua-files'
+abbr -a hr 'grep -HiRns --exclude-dir=\'.git\' --include="*.robot"'
 
 abbr -a gs 'git status'
 abbr -a gl 'git log'

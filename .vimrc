@@ -109,6 +109,12 @@ vmap 1 "+y  " yanks the contents of the visual selection to the system clipboard
 vmap 2 y/<C-R>"<CR>   " search for selected text (characters . and * can cause problems!)
 map = :AutoformatToggle<CR>
 
+
+imap <up> <nop>  " disable arrow keys in insert mode to force using normal mode as a habit
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
 " netrw settings ==================================================================================
 
 let g:netrw_banner = 0   " disable netrw banner (toglle manually with I inside netrw)

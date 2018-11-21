@@ -54,6 +54,9 @@ fi
 rm "$HOME/.gitignore_global"
 ln -s "$dotfiles_path/.gitignore_global" "$HOME/.gitignore_global"
 
+rm "$HOME/.multitailrc"
+ln -s "$dotfiles_path/.multitailrc" "$HOME/.multitailrc"
+
 rm "$HOME/.config/bpython/config"
 mkdir -p "$HOME/.config/bpython"
 ln  -s "$dotfiles_path/.config/bpython/config" "$HOME/.config/bpython/config"

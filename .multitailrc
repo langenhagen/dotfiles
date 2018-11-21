@@ -1,11 +1,18 @@
-defaultcscheme:my
 
 colorscheme:my
 cs_re:red:\[error\]
 cs_re:yellow:\[warn\]
 cs_re:white,magenta,bold:mymy
-#cs_re:white,magenta:(?<=mymy).*   # i think the engine, supposedly sed's engine, does not support lookaround
 
+# defaultcscheme does not work on my CeleraOne ThinkPad x240 atm
+defaultcscheme:my
+
+
+####################################################################################################
+# The following comes from the internet or is for show and might be interesting for further
+# investigation
+
+#cs_re:white,magenta:(?<=mymy).*   # i think the engine, supposedly sed's engine, does not support lookaround
 
 
 #cs_re:<color>:<regular expression>
@@ -18,7 +25,6 @@ cs_re:white,magenta,bold:mymy
 #Possible colors: red, green, yellow, blue, magenta, cyan and white.
 
 
-# The following comes from the internet and might be interesting for further investigation
 
 # Pick default screen
 #defaultcscheme:syslog

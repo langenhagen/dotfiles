@@ -109,8 +109,8 @@ vmap 1 "+y  " yanks the contents of the visual selection to the system clipboard
 vmap 2 y/<C-R>"<CR>   " search for selected text (characters . and * can cause problems!)
 map = :AutoformatToggle<CR>
 
-
-imap <up> <nop>  " disable arrow keys in insert mode to force using normal mode as a habit
+" disable arrow keys in insert mode to force using normal mode as a habit
+imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>

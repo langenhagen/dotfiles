@@ -1,11 +1,21 @@
+# defaultcscheme does not work on my CeleraOne ThinkPad x240 atm
+defaultcscheme:my
 
 colorscheme:my
 cs_re:red:\[error\]
 cs_re:yellow:\[warn\]
-cs_re:white,magenta,bold:mymy
+cs_re:cyan,,bold:mymy
+cs_re:cyan:mymy.*
 
-# defaultcscheme does not work on my CeleraOne ThinkPad x240 atm
-defaultcscheme:my
+markerline_color:red,black
+markerline_timestamp:on
+markerline_char:=
+
+statusline_ts_format:%Y/%m/%d %H:%M:%S
+statusline_above_data:yes
+statusline_attrs:black,green
+
+searches_case_insensitive:yes
 
 
 ####################################################################################################
@@ -14,6 +24,7 @@ defaultcscheme:my
 
 #cs_re:white,magenta:(?<=mymy).*   # i think the engine, supposedly sed's engine, does not support lookaround
 
+# check_mail:0  # setting this to 0 disables mail checks
 
 #cs_re:<color>:<regular expression>
 #   16 #             This defines a regular expression to find a particular string.
@@ -23,8 +34,6 @@ defaultcscheme:my
 #   20 # Possible colors: red, green, yellow, blue, magenta, cyan and white.
 
 #Possible colors: red, green, yellow, blue, magenta, cyan and white.
-
-
 
 # Pick default screen
 #defaultcscheme:syslog

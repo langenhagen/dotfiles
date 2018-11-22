@@ -1,11 +1,21 @@
 # defaultcscheme does not work on my CeleraOne ThinkPad x240 atm
 defaultcscheme:my
 
+# my own colorscheme for debugging purposes
 colorscheme:my
+
+cs_re:blue,,bold:header
+
 cs_re:red:\[error\]
 cs_re:yellow:\[warn\]
-cs_re:cyan,,bold:mymy
-cs_re:cyan:mymy.*
+cs_re:cyan,,bold:my 
+cs_re:cyan:my .*
+cs_re:green: [^ /"']+\.[a-zA-Z0-9]+
+cs_re:red:^==========+
+
+
+
+
 
 markerline_color:red,black
 markerline_timestamp:on

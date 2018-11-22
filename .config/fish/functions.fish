@@ -209,6 +209,14 @@ function workon
     conda activate $argv[1]
 end
 
+function printn
+    # Prints a given string a given number of times.
+    for i in (seq $argv[2])
+        printf $argv[1]
+    end
+    printf $argv[3]
+end
+
 if [ (uname) = 'Darwin' ]
 
     function pbc

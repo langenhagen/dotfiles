@@ -1,6 +1,7 @@
 [Appearance]
 AntiAliasFonts=true
-Font=monospace,11,-1,2,50,0,0,0,0,0
+ColorScheme=Linux
+Font=Courier 10 Pitch,11,-1,5,50,0,0,0,0,0
 
 [General]
 Name=My-Konsole-Profile

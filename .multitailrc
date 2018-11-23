@@ -4,14 +4,17 @@ defaultcscheme:my
 # my own colorscheme for debugging purposes
 colorscheme:my
 
-cs_re:blue,,bold:header
+# this one can be used for quick changes, i.e. if you want to highlight
+# something special in your current work
+#
+#cs_re:blue,,bold:header
 
 cs_re:red:\[error\]
 cs_re:yellow:\[warn\]
 cs_re:cyan,,bold:my 
 cs_re:cyan:my .*
 cs_re:green: [^ /"']+\.[a-zA-Z0-9]+
-cs_re:red:^==========+
+cs_re:red,,bold:^=+$
 
 
 

@@ -81,6 +81,11 @@ end
 function add-to-one-line-help
     # adds a line to the one-line-help.txt file
     echo $argv >> "$ONE_LINE_HELP_FILE_PATH"
+
+    set tmp_olh_bak_path (mktemp /tmp/one-line-help-backup.XXXXXXXX)
+    cat $ONE_LINE_HELP_FILE_PATH >> $tmp_olh_bak_path
+    sort -u -o $ONE_LINE_HELP_FILE_PATH $tmp_olh_bak_path
+    rm $tmp_olh_bak_path
 end
 
 function addabr

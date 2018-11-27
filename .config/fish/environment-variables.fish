@@ -59,6 +59,7 @@ switch (uname -n)
         setenv SERVERLAYERS false
         setenv ENGINE_MOCK true
 
+        set -gx PATH $PATH "$HOME/Dev/celeraone/scripts"
 end
 
 setenv LANG "en_US.UTF-8"

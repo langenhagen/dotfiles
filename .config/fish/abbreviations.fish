@@ -11,7 +11,6 @@ if [ (uname) = 'Darwin' ]
     abbr -a xo 'xargs open'
     abbr -a xs 'xargs sublime'
     abbr -a o 'open .'
-    abbr -a ohf "open -R (eval $history[1])"
     abbr -a oh "open (eval $history[1])"
 
     abbr -a s 'sublime'
@@ -21,7 +20,6 @@ else if [ (uname) = 'Linux' ]
     abbr -a xo 'xargs xdg-open'
     abbr -a o 'xdg-open .'
     abbr -a xs 'xargs subl'
-    abbr -a ohf "xdg-open (eval \$history[1])"
     abbr -a oh "xdg-open (eval \$history[1])"
 
     abbr -a pbcopy 'xclip -selection clipboard'

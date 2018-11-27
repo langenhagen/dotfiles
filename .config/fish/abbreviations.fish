@@ -20,7 +20,7 @@ else if [ (uname) = 'Linux' ]
     abbr -a xo 'xargs xdg-open'
     abbr -a o 'xdg-open .'
     abbr -a xs 'xargs subl'
-    abbr -a oh "xdg-open (eval \$history[1])"
+    abbr -a oh "for f in (eval \$history[1]); xdg-open \"\$f\"; end"
 
     abbr -a pbcopy 'xclip -selection clipboard'
     abbr -a pbpaste 'xclip -selection clipboard -o'

@@ -14,7 +14,7 @@ cs_re:yellow:\[warn\]
 cs_re:cyan,,bold:my 
 cs_re:cyan:my .*
 cs_re:green: [^ /"']+\.[a-zA-Z0-9]+
-cs_re:red,,bold:^=+$
+cs_re:red,:^=+$
 
 
 

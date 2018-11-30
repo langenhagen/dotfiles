@@ -29,8 +29,8 @@ bind generic P @sh -c "open $(dirname $(realpath %(file)))"  # open path in stan
 
 bind generic 1 !git rebase --interactive HEAD~7
 
-bind generic 0 !git push origin HEAD:master
-bind generic 9 !git push origin HEAD:refs/for/master
+bind generic 0 !?git push origin HEAD:master
+bind generic 9 !?git push origin HEAD:refs/for/master
 
 # -------------------------------------------------------------------------------------------------
 

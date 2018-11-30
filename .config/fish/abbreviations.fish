@@ -111,6 +111,7 @@ abbr -a gcs 'git checkout staging'
 abbr -a gcos 'git checkout staging'
 abbr -a gcm 'git checkout master'
 abbr -a gcom 'git checkout master'
+abbr -a gm 'git checkout master'
 
 abbr -a gcb 'git checkout -b'
 abbr -a gbn 'git checkout -b'

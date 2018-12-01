@@ -22,15 +22,12 @@ bind generic T !git checkout --ours %(file)         # what is this?
 bind generic π !git add --patch %(file)             # π is alt + p
 
 bind generic <F10> quit
-bind generic <F11> !?<git push origin HEAD:refs/for/staging
+bind generic <F11> !?<git push origin HEAD:master
 bind generic <F12> !?<git push origin HEAD:refs/for/master
 
 bind generic P @sh -c "open $(dirname $(realpath %(file)))"  # open path in standard program, might need adjustment on Linux
 
 bind generic 1 !git rebase --interactive HEAD~7
-
-bind generic 0 !?<git push origin HEAD:master
-bind generic 9 !?<git push origin HEAD:refs/for/master
 
 # -------------------------------------------------------------------------------------------------
 

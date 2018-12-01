@@ -9,6 +9,7 @@ Parent=FALLBACK/
 
 [Interaction Options]
 AutoCopySelectedText=true
+MiddleClickPasteMode=1
 OpenLinksByDirectClickEnabled=true
 TrimTrailingSpacesInSelectedText=true
 UnderlineFilesEnabled=true

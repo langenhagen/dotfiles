@@ -14,7 +14,7 @@ bind status  E !sh -c "vim \"%(file)\" +%(lineno)"
 bind stage   E !sh -c "vim \"%(file)\" +%(lineno)"
 
 bind generic + !git commit --amend
-bind generic = !?git commit
+bind generic = !git commit
 
 bind generic T !git checkout --theirs %(file)       # what is this?
 bind generic T !git checkout --ours %(file)         # what is this?

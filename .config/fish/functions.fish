@@ -222,6 +222,10 @@ function printn
     printf $argv[3]
 end
 
+function fd
+    find -L . -iname "*$argv*"
+end 
+
 if [ (uname) = 'Darwin' ]
 
     function pbc

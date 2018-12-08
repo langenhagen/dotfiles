@@ -7,7 +7,7 @@
 # version: 18-11-03
 
 dir_of_this_script="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-dotfiles_path=$dir_of_this_script
+dotfiles_path="${dir_of_this_script}"
 
 rm "$HOME/.vimrc"
 ln -s "$dotfiles_path/.vimrc" "$HOME/.vimrc"

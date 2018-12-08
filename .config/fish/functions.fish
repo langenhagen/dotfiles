@@ -161,9 +161,9 @@ function replace
     for file in $argv[1..$n_files]
         # find will execute -exec and substitute {} with what it found
         # whereas with + as many files as possible are given as parameters to sed at once.
-        #find . -name "$file" -exec sed -i '' "s@$to_look_for@$to_replace_with@g" '{}' +  # Mac sed version
+        #find . -name "$file" -exec sed -i '' "s@$to_look_for@$to_replace_with@g" '{}' \;  # Mac sed version
         # It cannot be on *.* bc then it gives me an error like 'sed cannot be applied on . '
-        find . -name "$file" -exec sed -i "s@$to_look_for@$to_replace_with@g" '{}' +  # Gnu sed version
+        find . -name "$file" -exec sed -i "s@$to_look_for@$to_replace_with@g" '{}' \;  # Gnu sed version
     end
 end
 

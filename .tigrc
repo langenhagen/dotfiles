@@ -5,6 +5,8 @@
 # For example:
 # bind generic e !?/usr/local/bin/sublime
 
+set mouse = true
+
 bind generic D @?rm %(file)                          # remove a file
 bind generic Z @?git checkout HEAD %(file)           # checkout latest committed version of a file in status view
 
@@ -46,7 +48,7 @@ set ignore-case            = yes                     # Enum consisting of the va
 # nice tigrc variables:
 # %(file)
 # %(lineno)
-# %(blob)       Manual says: "The currently selected blob ID." but don't know what this means, its also often just... empty Oo
+# %(blob)       Manual says: "The currently selected blob ID.", I think it is the currently selected patch
 
 # also look at https://jonas.github.io/tig/doc/manual.html
 

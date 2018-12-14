@@ -208,6 +208,10 @@ function workon
         return
     end
 
+    if test (conda info --envs | grep '*' | awk '{print $1}') = "$argv[1]"
+        return
+    end
+
     while test (conda info --envs | grep '*' | awk '{print $1}') != 'base'
         conda deactivate
     end

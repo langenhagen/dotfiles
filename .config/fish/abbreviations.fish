@@ -101,7 +101,7 @@ abbr -a rh 'grep -HiRns --exclude-dir=\'.git\' --include="*.robot"'
 
 abbr -a gs 'git status'
 abbr -a gl 'git log'
-abbr -a gbl 'git blame'
+abbr -a gbl 'git blame -n'
 abbr -a gb 'git branch'
 abbr -a gbr 'git branch -r'
 abbr -a gca 'git commit --amend'

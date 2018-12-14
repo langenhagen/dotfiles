@@ -24,7 +24,6 @@ else if [ (uname) = 'Linux' ]
     abbr -a vh "vim -p (eval \$history[1])"
     abbr -a xh "eval \$history[1] | xclip -i -f -selection primary | xclip -i -selection clipboard"
 
-
     abbr -a pbcopy 'xclip -selection clipboard'
     abbr -a pbpaste 'xclip -selection clipboard -o'
 

@@ -19,4 +19,5 @@ HistoryMode=2
 ScrollBarPosition=2
 
 [Terminal Features]
+BlinkingCursorEnabled=true
 UrlHintsModifiers=134217728

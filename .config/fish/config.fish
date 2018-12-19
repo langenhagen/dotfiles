@@ -15,6 +15,7 @@ source ~/.config/fish/vimlike-bookmarks.fish
 
 test -e $HOME/.iterm2_shell_integration.fish ; and source $HOME/.iterm2_shell_integration.fish
 test -e $HOME/miniconda3/etc/fish/conf.d/conda.fish ; and source $HOME/miniconda3/etc/fish/conf.d/conda.fish
+test -e $HOME/.nvm/nvm.sh ; and source $HOME/.nvm/nvm.sh
 
 ######### the initial commands #####################################################################
 

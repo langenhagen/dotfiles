@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=sh -c "\$HOME/thunderbird/thunderbird"
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Thunderbird
+Name=Thunderbird
+Comment[en_US]=Start the email client Thunderbird
+Comment=Start the email client Thunderbird

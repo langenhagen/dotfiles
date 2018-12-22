@@ -19,6 +19,12 @@ ln -sf "$dotfiles_path/.config/konsolerc" "$HOME/.config/konsolerc"
 mkdir -p "$HOME/.local/share/konsole"
 ln -sf "$dotfiles_path/.local/share/konsole/My-Konsole-Profile.profile" "$HOME/.local/share/konsole/My-Konsole-Profile.profile"
 
+mkdir -p "$HOME/.config/autostart"
+ln -sf "$dotfiles_path/.config/autostart/dropbox.desktop" "$HOME/.config/autostart/dropbox.desktop"
+ln -sf "$dotfiles_path/.config/autostart/nextcloud-client.desktop" "$HOME/.config/autostart/nextcloud-client.desktop"
+ln -sf "$dotfiles_path/.config/autostart/thunderbird.desktop" "$HOME/.config/autostart/thunderbird.desktop"
+ln -sf "$dotfiles_path/.config/autostart/urserver.desktop" "$HOME/.config/autostart/urserver.desktop"
+
 mkdir -p "$HOME/.config/fish/"
 ln -sf "$dotfiles_path/.config/fish/config.fish" "$HOME/.config/fish/config.fish"
 ln -sf "$dotfiles_path/.config/fish/abbreviations.fish" "$HOME/.config/fish/abbreviations.fish"

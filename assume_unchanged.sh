@@ -3,10 +3,10 @@
 # Sets git to assume files in an array to be unchanged, or
 # if the flag `-no` is passed, sets git not to assume that files in an array are unchanged.
 #
-# Chhange the array to your likings.
+# Change the array to your likings.
 #
 # author: andreasl
-# version: 18-11-15
+# version: 18-12-23
 
 files=(
     ".config/sublime-text-3/Packages/User/Preferences.sublime-settings"

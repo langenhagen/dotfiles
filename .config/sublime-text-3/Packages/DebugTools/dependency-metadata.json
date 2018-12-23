@@ -1,1 +1,1 @@
-{"description": "Alternate simplified logging support and general utilities functions", "sublime_text": ">=3114", "url": "https://github.com/evandrocoan/DebugTools/issues", "platforms": ["*"], "version": "2.5.9"}
+{"description": "Alternate simplified logging support and general utilities functions", "version": "2.5.10", "platforms": ["*"], "url": "https://github.com/evandrocoan/DebugTools/issues", "sublime_text": ">=3114"}

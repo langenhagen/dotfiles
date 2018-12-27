@@ -76,6 +76,23 @@ function HighlightMultipleSpaces()
     endif
 endfunction
 
+" functions =======================================================================================
+
+function AutoformatToggle()
+
+if &formatoptions =~ 'a'
+    set formatoptions-=t
+    set formatoptions-=a
+    set formatoptions?
+    echo "Autoformat deactivated"
+else
+    set formatoptions+=t
+    set formatoptions+=a
+    set formatoptions?
+    echo "Autoformat activated"
+endif
+
+endfunction
 " commands ========================================================================================
 
 " C-style delimeter line
@@ -83,7 +100,7 @@ command Trenn norm o//<ESC>98a-<ESC>o
 " Python-style delimeter line
 command Pytrenn norm o#<ESC>99a-<ESC>o
 command Deltrail %s/\s\+$//e  " delete trailing spaces and tabs -- command for ex-mode. Must begin with uppercase letter if user-defined
-command AutoformatToggle if &formatoptions =~ 'a' | set formatoptions-=t | set formatoptions-=a | set formatoptions? | else | set formatoptions+=t | set formatoptions+=a | set formatoptions? | endif
+command AutoformatToggle if &formatoptions =~ 'a' | set formatoptions-=t | set formatoptions-=a | set formatoptions? | echo "Autoformat deactivated" | else | set formatoptions+=t | set formatoptions+=a | echo "Autoformat activated" | set formatoptions? | endif
 
 " key bindings =====================================================================================
 
@@ -100,7 +117,7 @@ map <S-F5> vip:sort<CR>  " sort paragraph on which the cursor hovers
 map <S-F8> gT       " toggle tab to the left
 map <expr> <F12> ToggleHighlightOverlength()         " <expr> necessary on functions
 map <expr> <S-F12> HighlightMultipleSpaces()
-map = :AutoformatToggle<CR>
+map <expr> = AutoformatToggle()
 nmap Ô kJ
 nmap Ø O<ESC>  " create new line above, set cursor there and go back to normal mode
 nmap ø o<ESC>  " create new line below, set cursor there and go back to normal mode

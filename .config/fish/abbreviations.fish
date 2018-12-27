@@ -101,7 +101,7 @@ abbr -a lh 'grep-hirns-for-lua-files'
 abbr -a rh 'grep -HiRns --exclude-dir=\'.git\' --include="*.robot"'
 
 abbr -a gs 'git status'
-abbr -a gl 'git log'
+abbr -a gl 'git log --stat'
 abbr -a gbl 'git blame -n'
 abbr -a gb 'git branch'
 abbr -a gbr 'git branch -r'

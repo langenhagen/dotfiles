@@ -11,7 +11,7 @@ choices=(
     'c1'
     'c1/scripts'
     'Dev'
-    'Dev/celeraone/setup-middleware-workmachine-ubuntu-18'
+    'Dev/setup-ubuntu-18'
     'Media'
     'Media/Images/Fotos/Cam'
     'Media/Audio'

@@ -9,7 +9,7 @@ set -gx PATH $PATH /usr/local/sbin
 switch (uname -n)
     case "*barn-ultra*"
 
-        setenv TRICKS_FILE_PATH "$HOME/Dev/Zeugs/tricks.txt"
+        setenv TRICKS_FILE_PATH "$HOME/Dev/Zeugs/tricks.sh"
         setenv ONE_LINE_HELP_FILE_PATH "$HOME/Dev/Zeugs/one-line-help.txt"
         setenv BUCKET_LIST_FILE_PATH "$HOME/Barn/Notes/bucket-list.txt"
         setenv JOURNAL_FILE_PATH "$HOME/Barn/Notes/Journal.txt"
@@ -20,7 +20,7 @@ switch (uname -n)
 
     case  "*celeraone*"
 
-        setenv TRICKS_FILE_PATH "$HOME/Dev/Zeugs/tricks.txt"
+        setenv TRICKS_FILE_PATH "$HOME/Dev/Zeugs/tricks.sh"
         setenv ONE_LINE_HELP_FILE_PATH "$HOME/Dev/Zeugs/one-line-help.txt"
         setenv BUCKET_LIST_FILE_PATH "$HOME/Barn/Notes/bucket-list.txt"
         setenv JOURNAL_FILE_PATH "$HOME/Barn/Notes/Journal.txt"

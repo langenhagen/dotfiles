@@ -79,7 +79,7 @@ abbr -a mnm 'minimerk \''
 abbr -a bkt 'bucket \''
 abbr -a b 'bucket \''
 abbr -a tks 'tricks'
-abbr -a editjrn "vim -R \"+normal G\\\$\" -p $JOURNAL_FILE_PATH"
+abbr -a editjrn "vim -R '+normal G\$' -p $JOURNAL_FILE_PATH"
 abbr -a olh 'one-line-help'
 abbr -a alh 'add-to-one-line-help \''
 

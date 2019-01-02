@@ -63,7 +63,7 @@ function bucket
 
     if test (count $argv) -eq 0
         # -R readonly
-        vim -R "+normal G\$" "$BUCKET_LIST_FILE_PATH"    # \$ instead of $ is necessary bc of fish
+        vim -R '+normal G\$' "$BUCKET_LIST_FILE_PATH"
     else if test (count $argv) -gt 0
         echo (date +%a' '%Y'-'%m'-'%d' '%H:%M) $argv >> "$BUCKET_LIST_FILE_PATH"
     end

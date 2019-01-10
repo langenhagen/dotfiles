@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=sh -c "xdg-open \$HOME/Work/2018-CeleraOne/current-todos.md"
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Open Current TODOs
+Name=Open Current TODOs
+Comment[en_US]=opens my current todos
+Comment=opens my current todos

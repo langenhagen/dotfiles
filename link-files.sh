@@ -3,7 +3,7 @@
 # Forcefully links dotfiles into the system.
 #
 # author: andreasl
-# version: 18-12-08
+# version: 19-01-10
 
 dir_of_this_script="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
 dotfiles_path="${dir_of_this_script}";
@@ -24,7 +24,14 @@ ln -sf "$dotfiles_path/.config/autostart/caffeine-indicator.desktop" "$HOME/.con
 ln -sf "$dotfiles_path/.config/autostart/dropbox.desktop" "$HOME/.config/autostart/dropbox.desktop";
 ln -sf "$dotfiles_path/.config/autostart/nextcloud-client.desktop" "$HOME/.config/autostart/nextcloud-client.desktop";
 ln -sf "$dotfiles_path/.config/autostart/thunderbird.desktop" "$HOME/.config/autostart/thunderbird.desktop";
+ln -sf "$dotfiles_path/.config/autostart/ukuu.desktop" "$HOME/.config/autostart/ukuu.desktop";
 ln -sf "$dotfiles_path/.config/autostart/urserver.desktop" "$HOME/.config/autostart/urserver.desktop";
+
+if [[ "$(uname -n)" =~ 'celeraone' ]]; then
+    ln -sf "$dotfiles_path/.config/autostart/hipchat4.desktop" "$HOME/.config/autostart/hipchat4.desktop";
+    ln -sf "$dotfiles_path/.config/autostart/open-TODOs-file.desktop" "$HOME/.config/autostart/open-TODOs-file.desktop";
+    ln -sf "$dotfiles_path/.config/autostart/open-day-notes-file.desktop" "$HOME/.config/autostart/open-day-notes-file.desktop";
+fi
 
 mkdir -p "$HOME/.config/fish/";
 ln -sf "$dotfiles_path/.config/fish/config.fish" "$HOME/.config/fish/config.fish";

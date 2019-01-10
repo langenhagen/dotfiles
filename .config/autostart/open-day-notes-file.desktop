@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=sh -c "xdg-open \$HOME/Work/2018-CeleraOne/day-notes.md"
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Open Day-Notes
+Name=Open Day-Notes
+Comment[en_US]=opens my day-notes
+Comment=opens my day-notes

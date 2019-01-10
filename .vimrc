@@ -122,6 +122,7 @@ nmap Ô kJ
 nmap Ø O<ESC>  " create new line above, set cursor there and go back to normal mode
 nmap ø o<ESC>  " create new line below, set cursor there and go back to normal mode
 vmap 1 "+y  " yanks the contents of the visual selection to the system clipboard
+vmap <ENTER> "+y  " yanks the contents of the visual selection to the system clipboard
 vmap 2 y/<C-R>"<CR>   " search for selected text (characters . and * can cause problems!)
 vmap <C-s> :sort<CR>  " sort in visual selection
 vmap <S-F5> :sort<CR>  " sort in visual selection

@@ -100,7 +100,7 @@ abbr -a ph 'grep-hirns-for-python-files'
 abbr -a lh 'grep-hirns-for-lua-files'
 abbr -a rh 'grep -HiRns --exclude-dir=\'.git\' --include="*.robot"'
 
-abbr -a gs 'git status'
+abbr -a gs 'git status --short --branch --untracked-files'
 abbr -a gl 'git log --stat'
 abbr -a gbl 'git blame -n'
 abbr -a gb 'git branch'

@@ -47,6 +47,7 @@ abbr -a fns 'functions'
 
 abbr -a tmls 'tmux ls'
 abbr -a tmk 'tmux kill-session -t'
+abbr -a tmw 'tmux kill-window -t'
 
 abbr -a find 'find -L . -iname'
 abbr -a fnd 'find -L . -iname'

@@ -9,6 +9,7 @@ colorscheme:my
 #
 #cs_re:blue,,bold:header
 
+cs_re:red:.*[Ee]rror.*
 cs_re:red:\[error\]
 cs_re:yellow:\[warn\]
 cs_re:cyan,,bold:my 
@@ -46,6 +47,9 @@ searches_case_insensitive:yes
 #   19 #             e.g.: red,,bold|red would give bold red for line 1 and just red for line 2, etc.
 #   20 # Possible colors: red, green, yellow, blue, magenta, cyan and white.
 
+# if two color matches would both match a certain string color scheme that is defined first is being
+# used, a later definition does not overwrite it.
+
 #Possible colors: red, green, yellow, blue, magenta, cyan and white.
 
 # Pick default screen
@@ -66,7 +70,6 @@ searches_case_insensitive:yes
 # cs_re:green:.*last message repeated.*
 # cs_re:green:.*logger.*
 # cs_re:blue:.*ntpd.*
-
 
 # # Default colorschemes
 # scheme:postfix:/var/log/maillog

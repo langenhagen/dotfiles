@@ -68,8 +68,7 @@ abbr -a gitup 'pwd ; cd (git rev-parse --show-toplevel)'
 abbr -a gitp  'pwd ; cd (git rev-parse --show-toplevel)'
 abbr -a ccat 'pygmentize -O style=native -f console256 -g'
 abbr -a cct 'pygmentize -O style=native -f console256 -g'
-abbr -a bpython 'python -m bpython'
-abbr -a bp 'python -m bpython'
+abbr -a bp 'bpython'
 abbr -a 'trenn' 'for i in (seq (tput cols)); printf \'=\'; end; printf \'\n\''
 
 abbr -a vimh "vim -p (eval $history[1])"

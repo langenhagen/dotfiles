@@ -1,7 +1,6 @@
 # This file contains custom fish abbreviations.
 #
 # author: andreasl
-# version: 2018-10-18
 
 alias fuckoff='for i in (seq 6); tput ll; openssl rand 32;  sleep 0.1; end; printf \'\\nBye :)\\n\'; shutdown 0'
 
@@ -146,6 +145,7 @@ abbr -a grh9 'git reset --hard HEAD~9'
 abbr -a ccr 'conda create --name tmp python=3.7 pip'
 abbr -a cr 'conda remove -y --all --name'
 
+abbr -a q 'cd-into-c1-project'
 abbr -a w 'workon'
 abbr -a workoff 'conda deactivate'
 

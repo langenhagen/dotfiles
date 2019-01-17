@@ -228,7 +228,7 @@ end
 
 function fd
     find -L . -iname "*$argv*"
-end 
+end
 
 if [ (uname) = 'Darwin' ]
 

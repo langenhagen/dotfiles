@@ -94,51 +94,6 @@ function addabr
     abbr -a $argv
 end
 
-function fn2
-    find . -iname "*$argv*"
-end
-
-function grep-hirns
-    # grep -H: print filename headers,  -n: prinft line numbers,  -r: recursive,  -s: suppress error messages
-    grep -HiRns --exclude-dir=".git" --color $argv[1] .
-end
-
-function grep-HirnsI
-    # grep -H: print filename headers, -n: print line numbers,   -r: recursive
-    #      -I: ignore binary files
-    grep -HiRnsI --exclude-dir=".git" --color $argv[1] .
-end
-
-function grep-hirns-for-cstyle-files
-    grep -HiRns --exclude-dir=".git" \
-                --include \*.h --include \*.hpp --include \*.cpp --include \*.m --include \*.mm \
-                --include \*.pch --include \*.java --include \*.swift --include \*.cc \
-                --include \*.kt \
-                --color $argv[1] .
-end
-
-function grep-hirns-for-franca-files
-    grep -HiRns --exclude-dir=".git" \
-                --include \*.fdepl --include \*.fidl \
-                --color $argv[1] .
-end
-
-function grep-hirns-for-cmake-files
-    grep -HiRns --exclude-dir=".git" --include CMakeCache.txt --include CMakeLists.txt --include \*.cmake --color $argv[1] .
-end
-
-function grep-hirns-for-java-kotlin-files
-    grep -HiRns --exclude-dir=".git" --include \*.java --include \*.kt --color $argv[1] .
-end
-
-function grep-hirns-for-python-files
-    grep -HiRns --exclude-dir=".git" --include \*.py --color $argv[1] .
-end
-
-function grep-hirns-for-lua-files
-    grep -HiRns --exclude-dir=".git" --include \*.lua --color $argv[1] .
-end
-
 function replace
     if test (count $argv) -lt 3
         echo "Usage:  replace '*.cpp' [...] '<lookforthis>' '<replacewiththis>' "

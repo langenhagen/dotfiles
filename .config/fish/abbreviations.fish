@@ -95,7 +95,7 @@ abbr -a cmh 'grep -HiRns --exclude-dir=".git" --include={CMakeCache.txt,CMakeLis
 abbr -a ph 'grep -HiRns --exclude-dir=".git" --include=\*.py --color'
 abbr -a lh 'grep -HiRns --exclude-dir=".git" --include=\*.lua --color'
 abbr -a rh 'grep -HiRns --exclude-dir=".git" --include=\*.robot --color'
-abbr -a cfh 'grep -HiRns --exclude-dir=".git" --include={\*.cfg,setup.py,requirements.txt} --color'
+abbr -a cfh 'grep -HiRns --exclude-dir=".git" --include={\*.cfg,setup.py,requirements.txt,Makefile} --color'
 
 abbr -a gs 'git status --short --branch --untracked-files'
 abbr -a gl 'git log --stat'

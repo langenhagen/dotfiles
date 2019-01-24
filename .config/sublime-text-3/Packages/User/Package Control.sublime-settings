@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"ApplySyntax",
 		"Clickable URLs",
 		"CMake",
 		"Compare Side-By-Side",

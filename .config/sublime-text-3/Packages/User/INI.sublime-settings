@@ -1,7 +1,9 @@
-// These settings override both User and Default settings for the INI syntax
 {
-    "extensions":
-    [
-        "ini", "cfg"
-    ],
+	"extensions":
+	[
+		"ini.dist",
+		"ini",
+		".npmrc",
+		"cfg"
+	]
 }

@@ -36,6 +36,9 @@ end
 abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
 abbr -a xx 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
 abbr -a !! 'eval $history[1]'
+abbr -a ho "eval \$history[1] > ~/.histout"
+abbr -a go "eval \$history[1] | sed 's|\(.+*\):[0-9]*:.*|\1|' | sort | uniq | tee ~/.histout"
+abbr -a hi 'cat ~/.histout'
 
 abbr -a fconf 'cd ~/.config/fish/ ; ls'
 abbr -a sourcefish '. ~/.config/fish/config.fish'

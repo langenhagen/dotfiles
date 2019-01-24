@@ -36,8 +36,9 @@ autocmd CursorHoldI * stopinsert  " automatically leave insert mode after 'updat
 
 " file types  =====================================================================================
 
-au BufNewFile,BufRead *.mm set filetype=cpp     " syntax for *.mm files like cpp files
-au BufNewFile,BufRead *.m set filetype=cpp      " syntax for *.m  files like cpp files
+au BufNewFile,BufRead *.mm set filetype=cpp        " syntax for *.mm files like cpp files
+au BufNewFile,BufRead *.m set filetype=cpp         " syntax for *.m  files like cpp files
+au BufNewFile,BufRead *.plantuml set filetype=dot  " syntax for *.plantuml files like .dot files
 
 " highlighting rules  =============================================================================
 
@@ -128,10 +129,10 @@ vmap <C-s> :sort<CR>  " sort in visual selection
 vmap <S-F5> :sort<CR>  " sort in visual selection
 
 " disable arrow keys in insert mode to force using normal mode as a habit
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
+"imap <up> <nop>
+"imap <down> <nop>
+"imap <left> <nop>
+"imap <right> <nop>
 
 " netrw settings ==================================================================================
 

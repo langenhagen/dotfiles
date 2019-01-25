@@ -13,7 +13,7 @@ if [ (uname) = 'Darwin' ]
     abbr -a xo 'xargs open'
     abbr -a xs 'xargs sublime'
     abbr -a o 'open .'
-    abbr -a oh "open (eval $history[1])"
+    abbr -a oh "open (eval \$history[1])"
 
     abbr -a s 'sublime'
 
@@ -24,7 +24,9 @@ else if [ (uname) = 'Linux' ]
     abbr -a xs 'xargs subl'
     abbr -a oh "for f in (eval \$history[1]); xdg-open \"\$f\"; end"
     abbr -a vh "vim -p (eval \$history[1])"
-    abbr -a xh "eval \$history[1] | xclip -i -f -selection primary | xclip -i -selection clipboard"
+    abbr -a xh "eval \$history[1] | xclip -fi -selection primary | xclip -fi -selection clipboard > ~/.histout"
+    abbr -a ho "eval \$history[1] | xclip -fi -selection primary | xclip -fi -selection clipboard > ~/.histout"
+    abbr -a go "eval \$history[1] | sed 's|\(.+*\):[0-9]*:.*|\1|' | sort | uniq | xclip -fi -selection primary | xclip -fi -selection clipboard | tee ~/.histout"
 
     abbr -a pbcopy 'xclip -selection clipboard'
     abbr -a pbpaste 'xclip -selection clipboard -o'
@@ -38,9 +40,8 @@ end
 
 abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
 abbr -a xx 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
-abbr -a !! 'eval $history[1]'
-abbr -a ho "eval \$history[1] > ~/.histout"
-abbr -a go "eval \$history[1] | sed 's|\(.+*\):[0-9]*:.*|\1|' | sort | uniq | tee ~/.histout"
+abbr -a !! 'eval \$history[1]'
+abbr -a xi 'cat ~/.histout'
 abbr -a hi 'cat ~/.histout'
 
 abbr -a fconf 'cd ~/.config/fish/ ; ls'
@@ -75,8 +76,6 @@ abbr -a ccat 'pygmentize -O style=native -f console256 -g'
 abbr -a cct 'pygmentize -O style=native -f console256 -g'
 abbr -a bp 'bpython'
 abbr -a 'trenn' 'for i in (seq (tput cols)); printf \'\\e[31m=\'; end; printf \'\\e[m\n\''
-
-abbr -a vimh "vim -p (eval $history[1])"
 
 abbr -a jrn 'journal \''
 abbr -a j 'journal \''

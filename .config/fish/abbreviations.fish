@@ -1,5 +1,8 @@
 # This file contains custom fish abbreviations.
 #
+# Apparently, fish does not support transitive abbreviations, i.e. abbreviations used within
+# abbreviations will not be expandend.
+#
 # author: andreasl
 
 alias fuckoff='for i in (seq 6); tput ll; openssl rand 32;  sleep 0.1; end; printf \'\\nBye :)\\n\'; shutdown 0'

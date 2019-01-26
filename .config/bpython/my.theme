@@ -1,0 +1,36 @@
+# This is my bpython color scheme based on the default theme found here:
+# https://docs.bpython-interpreter.org/themes.html
+#
+# I changed the comment color to make it more visible and thus more readble.
+#
+# author: andreasl
+
+# Each letter represents a colour marker:
+#   k, r, g, y, b, m, c, w, d
+# which stands for:
+#   blacK, Red, Green, Yellow, Blue, Magenta, Cyan, White, Default
+# Capital letters represent bold
+# Copy to $XDG_CONFIG_HOME/bpython/foo.theme and set "color_scheme = foo" in
+# $XDG_CONFIG_HOME/bpython/config ($XDG_CONFIG_HOME defaults to ~/.config)
+
+[syntax]
+keyword = y
+name = c
+comment = g
+string = m
+error = r
+number = G
+operator = Y
+punctuation = y
+token = C
+paren = R
+
+[interface]
+# XXX: gnome-terminal appears to be braindead. The cursor will disappear unless
+# you set the background colour to "d".
+background = k
+output = w
+main = c
+prompt = c
+prompt_more = g
+right_arrow_suggestion = K

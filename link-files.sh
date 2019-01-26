@@ -56,6 +56,7 @@ ln -sf "$dotfiles_path/.multitailrc" "$HOME/.multitailrc";
 
 mkdir -p "$HOME/.config/bpython";
 ln  -sf "$dotfiles_path/.config/bpython/config" "$HOME/.config/bpython/config";
+ln  -sf "$dotfiles_path/.config/bpython/my.theme" "$HOME/.config/bpython/my.theme";
 
 mkdir -p "$HOME/.ccache";
 ln -sf "$dotfiles_path/.ccache/ccache.conf" "$HOME/.ccache/ccache.conf";

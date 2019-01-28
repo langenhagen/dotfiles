@@ -28,7 +28,6 @@ ln -sf "$dotfiles_path/.config/autostart/ukuu.desktop" "$HOME/.config/autostart/
 ln -sf "$dotfiles_path/.config/autostart/urserver.desktop" "$HOME/.config/autostart/urserver.desktop";
 
 if [[ "$(uname -n)" =~ 'celeraone' ]]; then
-    ln -sf "$dotfiles_path/.config/autostart/hipchat4.desktop" "$HOME/.config/autostart/hipchat4.desktop";
     ln -sf "$dotfiles_path/.config/autostart/open-TODOs-file.desktop" "$HOME/.config/autostart/open-TODOs-file.desktop";
     ln -sf "$dotfiles_path/.config/autostart/open-day-notes-file.desktop" "$HOME/.config/autostart/open-day-notes-file.desktop";
 fi

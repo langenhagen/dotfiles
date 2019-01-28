@@ -141,8 +141,7 @@ abbr -a sco 'cd ~/c1; find . -type d -iname "*.git" -execdir bash -c \'printf "\
 
 abbr -a grsh 'git reset --soft HEAD~1'
 abbr -a grhh 'git reset --hard HEAD'
-abbr -a grhh1 'git reset --hard HEAD~1'
-abbr -a grhh9 'git reset --hard HEAD~9'
+abbr -a grh1 'git reset --hard HEAD~1'
 abbr -a grh9 'git reset --hard HEAD~9'
 
 abbr -a ccr 'conda create --name tmp python=3.7 pip'

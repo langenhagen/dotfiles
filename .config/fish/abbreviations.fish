@@ -139,7 +139,7 @@ abbr -a gra 'git rebase --abort'
 abbr -a gpa 'find $HOME/c1 -type d -iname "*.git" -execdir bash -c \'printf "\033[1m${PWD}\033[0m\n"; git pull --rebase;\' \;'
 abbr -a sco 'cd ~/c1; find . -type d -iname "*.git" -execdir bash -c \'printf "\033[1m${PWD}\033[0m\n"; git pull --rebase;\' \;'
 abbr -a fap 'pull-rebase-all-repos.sh'
-abbr -a fas 'cd; ~/c1; forall-git-dirs.sh -q -d 2 -- \'printf "$PWD"; printf "%0.s~" $(seq ${#PWD} 45); git status -sbui\''
+abbr -a fas 'cd; ~/c1; forall-git-dirs.sh -q -d 2 -- \'printf "$PWD"; printf "%0.s~" $(seq ${#PWD} 45); git status -sbu\''
 
 abbr -a grsh 'git reset --soft HEAD~1'
 abbr -a grhh 'git reset --hard HEAD'

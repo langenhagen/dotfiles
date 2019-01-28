@@ -3,7 +3,6 @@
 # Forcefully links dotfiles into the system.
 #
 # author: andreasl
-# version: 19-01-10
 
 dir_of_this_script="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
 dotfiles_path="${dir_of_this_script}";

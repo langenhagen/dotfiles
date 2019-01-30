@@ -23,6 +23,7 @@ bind generic T !git checkout --ours %(file)         # what is this?
 
 bind generic π !git add --patch %(file)             # π is alt + p
 
+bind generic 1 !?git pull --rebase
 bind generic 9 !?<git push origin HEAD:master
 bind generic 0 !?<git push origin HEAD:refs/for/master
 

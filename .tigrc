@@ -30,7 +30,7 @@ bind generic <F10> quit
 
 bind generic P @sh -c "open $(dirname $(realpath %(file)))"  # open path in standard program, might need adjustment on Linux
 
-bind generic 1 !git rebase --interactive HEAD~7
+bind generic ` !git rebase --interactive HEAD~7
 
 # -------------------------------------------------------------------------------------------------
 

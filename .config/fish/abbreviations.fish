@@ -33,8 +33,10 @@ else if [ (uname) = 'Linux' ]
 
     if command -v subl >/dev/null
         abbr -a s 'subl'
+        abbr -a sh "subl (eval \$history[1])"
     else
         abbr -a s 'vim -p'
+        abbr -a sh "vim -p (eval \$history[1])"
     end
 end
 

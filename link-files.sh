@@ -29,6 +29,7 @@ ln -sf "$dotfiles_path/.config/autostart/urserver.desktop" "$HOME/.config/autost
 if [[ "$(uname -n)" =~ 'celeraone' ]]; then
     ln -sf "$dotfiles_path/.config/autostart/open-TODOs-file.desktop" "$HOME/.config/autostart/open-TODOs-file.desktop";
     ln -sf "$dotfiles_path/.config/autostart/open-day-notes-file.desktop" "$HOME/.config/autostart/open-day-notes-file.desktop";
+    ln -sf "$dotfiles_path/.config/autostart/slack.desktop" "$HOME/.config/autostart/slack.desktop";
 fi
 
 mkdir -p "$HOME/.config/fish/";

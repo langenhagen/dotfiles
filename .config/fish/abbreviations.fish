@@ -26,7 +26,7 @@ else if [ (uname) = 'Linux' ]
     abbr -a vh "vim -p (eval \$history[1])"
     abbr -a xh "eval \$history[1] | xclip -fi -selection primary | xclip -fi -selection clipboard > ~/.histout"
     abbr -a ho "eval \$history[1] | xclip -fi -selection primary | xclip -fi -selection clipboard > ~/.histout"
-    abbr -a go "eval \$history[1] | sed 's|\(.+*\):[0-9]*:.*|\1|' | sort | uniq | xclip -fi -selection primary | xclip -fi -selection clipboard | tee ~/.histout"
+    abbr -a go "eval \$history[1] | sed 's|\(.+*\):[0-9]*:.*|\1|' | sed '/^Binary file.*matches\$/d' | sort | uniq | xclip -fi -selection primary | xclip -fi -selection clipboard | tee ~/.histout"
 
     abbr -a pbcopy 'xclip -selection clipboard'
     abbr -a pbpaste 'xclip -selection clipboard -o'

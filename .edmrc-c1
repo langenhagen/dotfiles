@@ -9,6 +9,8 @@ choices=(
     'Barn/Kaufen-Verkaufen'
     'Barn/Notes'
     'c1'
+    'c1/stuff'
+    'c1/stuff/scribbles'
     'c1/scripts'
     'Dev'
     'Dev/setup-ubuntu-18'

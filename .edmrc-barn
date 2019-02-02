@@ -9,6 +9,7 @@ choices=(
     'Barn/Kaufen-Verkaufen'
     'Barn/Notes'
     'Dev'
+    'Dev/Jupyter/My-Finance-Strategy'
     'Media'
     'Media/Images/Fotos/Cam'
     'Media/Audio'

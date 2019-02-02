@@ -10,38 +10,34 @@ alias fuckoff='for i in (seq 6); tput ll; openssl rand 32;  sleep 0.1; end; prin
 if [ (uname) = 'Darwin' ]
     abbr -a xcode 'open -a Xcode'
     abbr -a xc 'open -a Xcode'
-    abbr -a xo 'xargs open'
-    abbr -a xs 'xargs sublime'
     abbr -a o 'open .'
     abbr -a oh "open (eval \$history[1])"
-
-    abbr -a s 'sublime'
 
 else if [ (uname) = 'Linux' ]
     abbr -a open 'xdg-open'
     abbr -a xo 'xargs xdg-open'
     abbr -a o 'xdg-open .'
-    abbr -a xs 'xargs subl'
     abbr -a oh "for f in (eval \$history[1]); xdg-open \"\$f\"; end"
-    abbr -a vh "vim -p (eval \$history[1])"
     abbr -a xh "eval \$history[1] | xclip -fi -selection primary | xclip -fi -selection clipboard > ~/.histout"
     abbr -a ho "eval \$history[1] | xclip -fi -selection primary | xclip -fi -selection clipboard > ~/.histout"
     abbr -a go "eval \$history[1] | sed 's|\(.+*\):[0-9]*:.*|\1|' | sed '/^Binary file.*matches\$/d' | sort | uniq | xclip -fi -selection primary | xclip -fi -selection clipboard | tee ~/.histout"
 
     abbr -a pbcopy 'xclip -selection clipboard'
     abbr -a pbpaste 'xclip -selection clipboard -o'
-
-    if command -v subl >/dev/null
-        abbr -a s 'subl'
-        abbr -a sh "subl (eval \$history[1])"
-    else
-        abbr -a s 'vim -p'
-        abbr -a sh "vim -p (eval \$history[1])"
-    end
 end
 
+abbr -a vh "vim -p (eval \$history[1])"
+
+abbr -a xo 'xargs open'
 abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
 abbr -a xx 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
+
+if command -v subl >/dev/null
+    abbr -a s 'subl'
+    abbr -a xs 'xargs subl'
+    abbr -a sh "subl (eval \$history[1])"
+end
+
 abbr -a !! 'eval \$history[1]'
 abbr -a xi 'cat ~/.histout'
 abbr -a hi 'cat ~/.histout'

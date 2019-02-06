@@ -150,6 +150,10 @@ abbr -a ccr 'conda create --name tmp python=3.7 pip'
 abbr -a cr 'conda remove -y --all --name'
 
 abbr -a q 'cd-into-c1-project'
+abbr -a qp 'cd-into-c1-project pueblo'
+abbr -a qc 'cd-into-c1-project cre-api'
+abbr -a qe 'cd-into-c1-project entitlement'
+abbr -a qm 'cd-into-c1-project metrics'
 abbr -a w 'workon'
 abbr -a workoff 'conda deactivate'
 

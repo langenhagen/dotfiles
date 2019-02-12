@@ -34,6 +34,11 @@ set formatoptions-=a " make text not autoformat initially
 autocmd CursorHoldI * stopinsert  " automatically leave insert mode after 'updatetime' milliseconds of inaction
 " autocmd BufWritePost .vimrc source $MYVIMRC  " automatically source my vimrc after writing it to disk -- causes errors bc of duplicate sourcing
 
+highlight statusline ctermfg=233 ctermbg=255
+autocmd InsertEnter * hi statusline ctermfg=52 ctermbg=255
+autocmd InsertLeave * hi statusline ctermfg=233 ctermbg=255
+
+
 " file types  =====================================================================================
 
 au BufNewFile,BufRead *.mm set filetype=cpp        " syntax for *.mm files like cpp files
@@ -143,3 +148,4 @@ let g:netrw_liststyle=1  " show file size and time stamp (toggle manually with i
 if &diff
     colorscheme apprentice " apprentice must be in ~/.vim/colors/ folder (https://github.com/romainl/Apprentice)
 endif
+

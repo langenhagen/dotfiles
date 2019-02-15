@@ -180,3 +180,4 @@ abbr -a fap 'pull-rebase-all-repos.sh'
 abbr -a fas 'cd; ~/c1; forall-git-dirs.sh -q -d 2 -- \'printf "$PWD"; printf "%0.s~" $(seq ${#PWD} 45); git status -sbu\''
 abbr -a fa 'cd ~/c1; forall-git-dirs.sh -d 2 --'
 
+abbr -a cre 'http --auth-type c1-auth -a'

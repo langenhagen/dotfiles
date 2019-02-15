@@ -134,13 +134,6 @@ abbr -a gri 'git rebase --interactive HEAD~10'
 abbr -a grc 'git rebase --continue'
 abbr -a gra 'git rebase --abort'
 
-abbr -a gpa 'find $HOME/c1 -type d -iname "*.git" -execdir bash -c \'printf "\033[1m${PWD}\033[0m\n"; git pull --rebase;\' \;'
-abbr -a sco 'cd ~/c1; find . -type d -iname "*.git" -execdir bash -c \'printf "\033[1m${PWD}\033[0m\n"; git pull --rebase;\' \;'
-abbr -a fap 'pull-rebase-all-repos.sh'
-abbr -a fas 'cd; ~/c1; forall-git-dirs.sh -q -d 2 -- \'printf "$PWD"; printf "%0.s~" $(seq ${#PWD} 45); git status -sbu\''
-abbr -a fa 'cd ~/c1; forall-git-dirs.sh -d 2 --'
-
-
 abbr -a grsh 'git reset --soft HEAD~1'
 abbr -a grhh 'git reset --hard HEAD'
 abbr -a grh1 'git reset --hard HEAD~1'
@@ -149,15 +142,6 @@ abbr -a grh9 'git reset --hard HEAD~9'
 abbr -a ccr 'conda create --name tmp python=3.7 pip'
 abbr -a cr 'conda remove -y --all --name'
 
-abbr -a qq 'cd ~/c1'
-abbr -a q 'cd-into-c1-project'
-abbr -a qa 'cd-into-c1-project authservice'
-abbr -a qc 'cd-into-c1-project cre-api'
-abbr -a qe 'cd-into-c1-project entitlement'
-abbr -a ql 'cd-into-c1-project lua'
-abbr -a qm 'cd-into-c1-project metrics'
-abbr -a qo 'cd-into-c1-project openid'
-abbr -a qp 'cd-into-c1-project pueblo'
 abbr -a w 'workon'
 abbr -a workoff 'conda deactivate'
 
@@ -177,3 +161,22 @@ abbr -a proto 'cd "$PROTOFILES_DIR_PATH" ; find "$PROTOFILES_DIR_PATH" -name "*_
 abbr -a prt 'cd "$PROTOFILES_DIR_PATH" ; find "$PROTOFILES_DIR_PATH" -name "*_proto.*"'
 abbr -a play 'cd "$PLAYGROUND_DIR_PATH" ; find "$PLAYGROUND_DIR_PATH" -maxdepth 1 -type d -not -path "*/\.*" -name "*"'
 abbr -a ply 'cd "$PLAYGROUND_DIR_PATH" ; find "$PLAYGROUND_DIR_PATH" -maxdepth 1 -type d -not -path "*/\.*" -name "*"'
+
+# C1 related abbrs
+abbr -a qq 'cd ~/c1'
+abbr -a q 'cd-into-c1-project'
+abbr -a qa 'cd-into-c1-project authservice'
+abbr -a qc 'cd-into-c1-project cre-api'
+abbr -a qe 'cd-into-c1-project entitlement'
+abbr -a ql 'cd-into-c1-project lua'
+abbr -a qm 'cd-into-c1-project metrics'
+abbr -a qo 'cd-into-c1-project openid'
+abbr -a qp 'cd-into-c1-project pueblo'
+http --auth-type c1-auth -a
+
+abbr -a gpa 'find $HOME/c1 -type d -iname "*.git" -execdir bash -c \'printf "\033[1m${PWD}\033[0m\n"; git pull --rebase;\' \;'
+abbr -a sco 'cd ~/c1; find . -type d -iname "*.git" -execdir bash -c \'printf "\033[1m${PWD}\033[0m\n"; git pull --rebase;\' \;'
+abbr -a fap 'pull-rebase-all-repos.sh'
+abbr -a fas 'cd; ~/c1; forall-git-dirs.sh -q -d 2 -- \'printf "$PWD"; printf "%0.s~" $(seq ${#PWD} 45); git status -sbu\''
+abbr -a fa 'cd ~/c1; forall-git-dirs.sh -d 2 --'
+

@@ -2,7 +2,6 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
-		"MarkdownHighlighting"
 	],
 	"installed_packages":
 	[
@@ -24,6 +23,7 @@
 		"Pretty JSON",
 		"RobotFrameworkAssistant",
 		"Swift",
+		"Tmux Syntax Highlight",
 		"TrailingSpaces",
 		"Wrap Plus"
 	]

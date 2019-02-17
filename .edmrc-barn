@@ -9,6 +9,7 @@ choices=(
     'Barn/Kaufen-Verkaufen'
     'Barn/Notes'
     'Dev'
+    'Dev/_Protofiles/bash_proto.sh'
     'Dev/Jupyter/My-Finance-Analysis'
     'Media'
     'Media/Images/Fotos/Cam'

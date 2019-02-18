@@ -7,37 +7,36 @@
 
 set mouse = true
 
-bind generic D @?rm %(file)                          # remove a file
 bind generic Z @?git checkout HEAD %(file)           # checkout latest committed version of a file in status view
 
 # E open file in editor (actually, tig's builtin small 'e' open file in editor does already a good job
 bind diff    E !sh -c "if [ -z \"%(file)\" ] ; then vim `git diff-tree --no-commit-id --name-only -r %(commit) | head -1` ; else vim \"%(file)\" +%(lineno); fi"
-bind status  E !sh -c "vim \"%(file)\" +%(lineno)"
 bind stage   E !sh -c "vim \"%(file)\" +%(lineno)"
+bind status  E !sh -c "vim \"%(file)\" +%(lineno)"
+
+bind stage  D @?rm %(file)  # remove a file
+bind status D @?rm %(file)  # remove a file
 
 bind generic + !git commit --amend
 bind generic = !git commit
 
-bind generic T !git checkout --theirs %(file)       # what is this?
-bind generic T !git checkout --ours %(file)         # what is this?
-
 bind generic π !git add --patch %(file)             # π is alt + p
 
+bind generic ` !git rebase --interactive HEAD~7
+
 bind generic 1 !git pull --rebase
+
 bind generic 8 !<git push
 bind generic 9 !<git push origin HEAD:master
 bind generic 0 !<git push origin HEAD:refs/for/master
 
 bind generic <F10> quit
 
-bind generic P @sh -c "open $(dirname $(realpath %(file)))"  # open path in standard program, might need adjustment on Linux
-
-bind generic ` !git rebase --interactive HEAD~7
+bind generic P @sh -c "xdg-open \"$(dirname $(realpath %(file)))\""  # open path in standard program, linux only
 
 # -------------------------------------------------------------------------------------------------
 
 set ignore-case            = yes                     # Enum consisting of the values: no, yes, smart-case
-
 
 # -------------------------------------------------------------------------------------------------
 
@@ -51,6 +50,10 @@ set ignore-case            = yes                     # Enum consisting of the va
 # %(file)
 # %(lineno)
 # %(blob)       Manual says: "The currently selected blob ID.", I think it is the currently selected patch
+
+# 2019-02-18: leftover that looks wrong and may be deleted
+# bind generic T !git checkout --theirs %(file)       # what is this?
+# bind generic T !git checkout --ours %(file)         # what is this?
 
 # also look at https://jonas.github.io/tig/doc/manual.html
 

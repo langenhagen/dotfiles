@@ -126,7 +126,8 @@ abbr -a gps 'git push origin HEAD:refs/for/staging'
 abbr -a gpm 'git push origin HEAD:master'
 abbr -a gprm 'git push origin HEAD:refs/for/master'
 
-abbr -a gpl 'git pull --rebase origin'
+abbr -a gp 'git pull --rebase'
+abbr -a gpl 'git pull --rebase'
 abbr -a gpls 'git pull --rebase origin staging'
 abbr -a gplm 'git pull --rebase origin master'
 

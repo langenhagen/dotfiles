@@ -181,3 +181,7 @@ abbr -a fas 'cd; ~/c1; forall-git-dirs.sh -q -d 2 -- \'printf "$PWD"; printf "%0
 abbr -a fa 'cd ~/c1; forall-git-dirs.sh -d 2 --'
 
 abbr -a cre 'http --auth-type c1-auth -a'
+abbr -a og 'xdg-open "https://codereview.celeraone.com/dashboard/self"' # open gerrit
+abbr -a oj 'xdg-open "https://jira.celeraone.com/secure/Dashboard.jspa?selectPageId=11405"'  # open jira
+abbr -a cj 'xdg-open "https://jira.celeraone.com/secure/CreateIssue!default.jspa"'  # create jira ticket
+abbr -a rl 'xdg-open \'var/log/testreports/log.html\''  # robot log

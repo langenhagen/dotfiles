@@ -67,5 +67,5 @@ setenv LANG "en_US.UTF-8"
 set -gx PATH $PATH "$SCRIPTS_DIR_PATH"
 
 setenv VISUAL vim
-setenv EDITOR vim;
+setenv EDITOR vim
 

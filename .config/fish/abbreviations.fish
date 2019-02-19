@@ -122,6 +122,10 @@ abbr -a gnb 'git checkout -b'
 
 abbr -a gbd 'git branch -D'
 
+abbr -a gbt 'git checkout -b tmp; or git checkout tmp; git branch'  # git branch tmp
+abbr -a gct 'git checkout -b tmp; or git checkout tmp; git branch'  # git checkout tmp
+abbr -a gdt 'git checkout master; git branch -D tmp; git branch'   # git delete tmp
+
 abbr -a gps 'git push origin HEAD:refs/for/staging'
 abbr -a gpm 'git push origin HEAD:master'
 abbr -a gprm 'git push origin HEAD:refs/for/master'

@@ -179,6 +179,11 @@ function workon
     conda activate $argv[1]
 end
 
+function rem
+    # print a string in bold on the console in order to remember things.
+    printf "\n\e[1m$argv\e[0m\n"\n
+end
+
 function printn
     # Prints a given string a given number of times.
     for i in (seq $argv[2])

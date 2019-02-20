@@ -181,6 +181,7 @@ abbr -a ql 'cd-into-c1-project lua'
 abbr -a qm 'cd-into-c1-project metrics'
 abbr -a qo 'cd-into-c1-project openid'
 abbr -a qp 'cd-into-c1-project pueblo'
+abbr -a qs 'cd-into-c1-project scheduler'
 
 abbr -a gpa 'find $HOME/c1 -type d -iname "*.git" -execdir bash -c \'printf "\033[1m${PWD}\033[0m\n"; git pull --rebase;\' \;'
 abbr -a sco 'cd ~/c1; find . -type d -iname "*.git" -execdir bash -c \'printf "\033[1m${PWD}\033[0m\n"; git pull --rebase;\' \;'

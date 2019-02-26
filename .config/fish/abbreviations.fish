@@ -26,6 +26,8 @@ else if [ (uname) = 'Linux' ]
     abbr -a pbpaste 'xclip -selection clipboard -o'
 end
 
+abbr -a now 'date \'+%s\' | xclip -fi -selection clipboard'  # the current timestamp since epoch in seconds
+
 abbr -a vh "vim -p (eval \$history[1])"
 
 abbr -a xo 'xargs open'

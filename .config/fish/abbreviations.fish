@@ -5,13 +5,14 @@
 #
 # author: andreasl
 
-if [ (uname) = 'Darwin' ]
+switch (uname)
+case  'Darwin'
     abbr -a xcode 'open -a Xcode'
     abbr -a xc 'open -a Xcode'
     abbr -a o 'open .'
     abbr -a oh "open (eval \$history[1])"
 
-else if [ (uname) = 'Linux' ]
+case  'Linux'
     abbr -a open 'xdg-open'
     abbr -a xo 'xargs xdg-open'
     abbr -a o 'xdg-open .'
@@ -159,27 +160,30 @@ abbr -a prt 'cd "$PROTOFILES_DIR_PATH" ; find "$PROTOFILES_DIR_PATH" -name "*_pr
 abbr -a play 'cd "$PLAYGROUND_DIR_PATH" ; find "$PLAYGROUND_DIR_PATH" -maxdepth 1 -type d -not -path "*/\.*" -name "*"'
 abbr -a ply 'cd "$PLAYGROUND_DIR_PATH" ; find "$PLAYGROUND_DIR_PATH" -maxdepth 1 -type d -not -path "*/\.*" -name "*"'
 
-# C1 related abbrs
-abbr -a qq 'cd ~/c1'
-abbr -a q 'cd-into-c1-project'
-abbr -a qa 'cd-into-c1-project authservice'
-abbr -a qc 'cd-into-c1-project cre-api'
-abbr -a qe 'cd-into-c1-project entitlement'
-abbr -a qf 'cd-into-c1-project frontend'
-abbr -a ql 'cd-into-c1-project lua'
-abbr -a qm 'cd-into-c1-project metrics'
-abbr -a qo 'cd-into-c1-project openid'
-abbr -a qp 'cd-into-c1-project pueblo'
-abbr -a qs 'cd-into-c1-project scheduler'
+switch (uname -n)
+case  "*celeraone*"
+    # C1 related abbrs
+    abbr -a qq 'cd ~/c1'
+    abbr -a q 'cd-into-c1-project'
+    abbr -a qa 'cd-into-c1-project authservice'
+    abbr -a qc 'cd-into-c1-project cre-api'
+    abbr -a qe 'cd-into-c1-project entitlement'
+    abbr -a qf 'cd-into-c1-project frontend'
+    abbr -a ql 'cd-into-c1-project lua'
+    abbr -a qm 'cd-into-c1-project metrics'
+    abbr -a qo 'cd-into-c1-project openid'
+    abbr -a qp 'cd-into-c1-project pueblo'
+    abbr -a qs 'cd-into-c1-project scheduler'
 
-abbr -a gpa 'find $HOME/c1 -type d -iname "*.git" -execdir bash -c \'printf "\033[1m${PWD}\033[0m\n"; git pull --rebase;\' \;'
-abbr -a sco 'cd ~/c1; find . -type d -iname "*.git" -execdir bash -c \'printf "\033[1m${PWD}\033[0m\n"; git pull --rebase;\' \;'
-abbr -a fap 'pull-rebase-all-repos.sh'
-abbr -a fas 'cd; ~/c1; forall-git-dirs.sh -q -d 2 -- \'printf "$PWD"; printf "%0.s~" $(seq ${#PWD} 45); git status -sbu\''
-abbr -a fa 'cd ~/c1; forall-git-dirs.sh -d 2 --'
+    abbr -a gpa 'find $HOME/c1 -type d -iname "*.git" -execdir bash -c \'printf "\033[1m${PWD}\033[0m\n"; git pull --rebase;\' \;'
+    abbr -a sco 'cd ~/c1; find . -type d -iname "*.git" -execdir bash -c \'printf "\033[1m${PWD}\033[0m\n"; git pull --rebase;\' \;'
+    abbr -a fap 'pull-rebase-all-repos.sh'
+    abbr -a fas 'cd; ~/c1; forall-git-dirs.sh -q -d 2 -- \'printf "$PWD"; printf "%0.s~" $(seq ${#PWD} 45); git status -sbu\''
+    abbr -a fa 'cd ~/c1; forall-git-dirs.sh -d 2 --'
 
-abbr -a cre 'http --auth-type c1-auth -a'
-abbr -a og 'xdg-open "https://codereview.celeraone.com/dashboard/self"' # open gerrit
-abbr -a oj 'xdg-open "https://jira.celeraone.com/secure/Dashboard.jspa?selectPageId=11405"'  # open jira
-abbr -a cj 'xdg-open "https://jira.celeraone.com/secure/CreateIssue!default.jspa"'  # create jira ticket
-abbr -a rl 'xdg-open \'var/log/testreports/log.html\''  # robot log
+    abbr -a cre 'http --auth-type c1-auth -a'
+    abbr -a og 'xdg-open "https://codereview.celeraone.com/dashboard/self"' # open gerrit
+    abbr -a oj 'xdg-open "https://jira.celeraone.com/secure/Dashboard.jspa?selectPageId=11405"'  # open jira
+    abbr -a cj 'xdg-open "https://jira.celeraone.com/secure/CreateIssue!default.jspa"'  # create jira ticket
+    abbr -a rl 'xdg-open "var/log/testreports/log.html"'  # robot log
+end

@@ -112,7 +112,7 @@ command AutoformatToggle if &formatoptions =~ 'a' | set formatoptions-=t | set f
 
 map <C-s> vip:sort<CR>  " sort paragraph on which the cursor hovers
 map <F10> :q!<CR>                                               " force quit file
-map <F11> :set number!<CR>                           " toggle show line numbers
+map <S-F11> :set number!<CR>                           " toggle show line numbers
 map <F2> :set hlsearch!<CR>
 map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>   " from: http://vim.wikia.com/wiki/Easily_switch_between_source_and_header_file
 map <F5> :edit<CR>  " refresh file

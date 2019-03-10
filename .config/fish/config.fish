@@ -1,7 +1,7 @@
 # My personal fish config file.
 # Should work on all platforms, including Mac OS with iterm2.
+#
 # author: andreasl
-# version: 18-10-19
 
 set fish_greeting "" # deactivates the fish welcome message
 
@@ -9,6 +9,7 @@ set fish_greeting "" # deactivates the fish welcome message
 
 source ~/.config/fish/environment-variables.fish
 source ~/.config/fish/functions.fish
+source ~/.config/fish/aliases.fish
 source ~/.config/fish/abbreviations.fish
 
 source ~/.config/fish/vimlike-bookmarks.fish

@@ -5,54 +5,79 @@
 #
 # author: andreasl
 
-switch (uname)
-case  'Darwin'
-    abbr -a xcode 'open -a Xcode'
-    abbr -a xc 'open -a Xcode'
-    abbr -a o 'open .'
-    abbr -a oh "open (eval \$history[1])"
+switch (uname -n)
+case "barn-ultra" "*celeraone*"
+    # Desktop Machine Related abbrs
 
-case  'Linux'
-    abbr -a open 'xdg-open'
-    abbr -a xo 'xargs xdg-open'
-    abbr -a o 'xdg-open .'
-    abbr -a oh "for f in (eval \$history[1]); xdg-open \"\$f\"; end"
-    abbr -a xh "eval \$history[1] | xclip -fi -selection primary | xclip -fi -selection clipboard > ~/.histout"
-    abbr -a ho "eval \$history[1] | xclip -fi -selection primary | xclip -fi -selection clipboard > ~/.histout"
-    abbr -a go "eval \$history[1] | sed 's|\(.+*\):[0-9]*:.*|\1|' | sed '/^Binary file.*matches\$/d' | sort | uniq | xclip -fi -selection primary | xclip -fi -selection clipboard | tee ~/.histout"
+    abbr -a now 'date \'+%s\' | xclip -fi -selection clipboard'  # the current timestamp since epoch in seconds
 
-    abbr -a pbcopy 'xclip -selection clipboard'
-    abbr -a pbpaste 'xclip -selection clipboard -o'
-end
+    abbr -a proto 'cd "$PROTOFILES_DIR_PATH" ; find "$PROTOFILES_DIR_PATH" -name "*_proto.*"'
+    abbr -a prt 'cd "$PROTOFILES_DIR_PATH" ; find "$PROTOFILES_DIR_PATH" -name "*_proto.*"'
+    abbr -a play 'cd "$PLAYGROUND_DIR_PATH" ; find "$PLAYGROUND_DIR_PATH" -maxdepth 1 -type d -not -path "*/\.*" -name "*"'
+    abbr -a ply 'cd "$PLAYGROUND_DIR_PATH" ; find "$PLAYGROUND_DIR_PATH" -maxdepth 1 -type d -not -path "*/\.*" -name "*"'
 
-abbr -a now 'date \'+%s\' | xclip -fi -selection clipboard'  # the current timestamp since epoch in seconds
+    abbr -a jrn 'journal \''
+    abbr -a j 'journal \''
+    abbr -a editjrn "vim -R '+normal G\$' -p $JOURNAL_FILE_PATH"
+    abbr -a bkt 'bucket \''
+    abbr -a b 'bucket \''
+    abbr -a tks 'tricks'
+    abbr -a olh 'one-line-help'
+    abbr -a alh 'add-to-one-line-help \''
 
-abbr -a vh "vim -p (eval \$history[1])"
-
-abbr -a xo 'xargs open'
-abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
-abbr -a xx 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
-
-if command -v subl >/dev/null
     abbr -a s 'subl'
     abbr -a xs 'xargs subl'
     abbr -a sh "subl (eval \$history[1])"
-end
 
-abbr -a !! 'eval \$history[1]'
-abbr -a xi 'cat ~/.histout'
-abbr -a hi 'cat ~/.histout'
+    switch (uname)
+    # OS dependent abbrs
+    case  'Darwin'
+        abbr -a xcode 'open -a Xcode'
+        abbr -a xc 'open -a Xcode'
+        abbr -a o 'open .'
+        abbr -a oh "open (eval \$history[1])"
+
+    case  'Linux'
+        abbr -a open 'xdg-open'
+        abbr -a xo 'xargs xdg-open'
+        abbr -a o 'xdg-open .'
+        abbr -a oh "for f in (eval \$history[1]); xdg-open \"\$f\"; end"
+        abbr -a xh "eval \$history[1] | xclip -fi -selection primary | xclip -fi -selection clipboard > ~/.histout"
+        abbr -a ho "eval \$history[1] | xclip -fi -selection primary | xclip -fi -selection clipboard > ~/.histout"
+        abbr -a go "eval \$history[1] | sed 's|\(.+*\):[0-9]*:.*|\1|' | sed '/^Binary file.*matches\$/d' | sort | uniq | xclip -fi -selection primary | xclip -fi -selection clipboard | tee ~/.histout"
+
+        abbr -a pbcopy 'xclip -selection clipboard'
+        abbr -a pbpaste 'xclip -selection clipboard -o'
+    end
+end
 
 abbr -a fconf 'cd ~/.config/fish/ ; ls'
 abbr -a sourcefish '. ~/.config/fish/config.fish'
 abbr -a editabbr 'vim -p ~/.config/fish/abbreviations.fish; source ~/.config/fish/abbreviations.fish'
-abbr -a vd 'vimdiff'
 abbr -a fn 'functions'
 abbr -a fns 'functions'
 
 abbr -a tmls 'tmux ls'
 abbr -a tmk 'tmux kill-session -t'
 abbr -a tmw 'tmux kill-window -t'
+
+abbr -a cd.. 'cd ..'
+abbr -a c. 'cd ..'
+abbr -a cd. 'cd ..'
+
+abbr -a !! 'eval \$history[1]'
+abbr -a xi 'cat ~/.histout'
+abbr -a hi 'cat ~/.histout'
+
+abbr -a 'trenn' 'for i in (seq (tput cols)); printf \'\\e[31m=\'; end; printf \'\\e[m\n\''
+abbr -a mnm 'minimerk \''
+
+abbr -a vh "vim -p (eval \$history[1])"
+abbr -a vd 'vimdiff'
+
+abbr -a xo 'xargs open'
+abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
+abbr -a xx 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
 
 abbr -a f 'find -L . -iname'
 abbr -a fr 'find -L -E . -iregex'
@@ -63,31 +88,15 @@ abbr -a t3 'tree -C -a -L 3'
 abbr -a t3d 'tree -C -a -L 3 -d'
 abbr -a v 'vim -p'
 abbr -a t 'tig'
+abbr -a tb 'tig blame'
 abbr -a ts 'tig show'
 abbr -a r 'ranger'
 abbr -a e 'vim -R "+normal :Explore\$" .'
-abbr -a gitup 'pwd ; cd (git rev-parse --show-toplevel)'
-abbr -a gitp  'pwd ; cd (git rev-parse --show-toplevel)'
+abbr -a gitp  'pwd ; cd (git rev-parse --show-toplevel)'  # abbreviation for GituP
 abbr -a cct 'pygmentize -O style=native -f console256 -g'
 abbr -a bp 'bpython'
 abbr -a json 'json_pp'  # pretty-print json output
-abbr -a 'trenn' 'for i in (seq (tput cols)); printf \'\\e[31m=\'; end; printf \'\\e[m\n\''
 
-abbr -a jrn 'journal \''
-abbr -a j 'journal \''
-abbr -a mnm 'minimerk \''
-abbr -a bkt 'bucket \''
-abbr -a b 'bucket \''
-abbr -a tks 'tricks'
-abbr -a editjrn "vim -R '+normal G\$' -p $JOURNAL_FILE_PATH"
-abbr -a olh 'one-line-help'
-abbr -a alh 'add-to-one-line-help \''
-
-abbr -a cd.. 'cd ..'
-abbr -a c. 'cd ..'
-abbr -a cd. 'cd ..'
-
-# grep -Hirns - like abbreviations
 abbr -a g 'grep'
 abbr -a h 'grep -HiRns'
 abbr -a ch 'grep -HiRns --include={\*.h,\*.hpp,\*.c,\*.cpp,\*.cc,\*.m,\*.mm,\*.pch,\*.java,\*.swift,\*.kt}'
@@ -154,17 +163,13 @@ abbr -a rpc 'repo status ; repo diff ; repo forall -c "printf \"\033[1;36m`git r
 abbr -a gr 'git review -d'
 abbr -a sfr "git review master --reviewers (git log -n40 --pretty=format:'%ae' | sort | uniq -c | sort -nr | awk '{print \$2}' | head -8)"
 
-abbr -a proto 'cd "$PROTOFILES_DIR_PATH" ; find "$PROTOFILES_DIR_PATH" -name "*_proto.*"'
-abbr -a prt 'cd "$PROTOFILES_DIR_PATH" ; find "$PROTOFILES_DIR_PATH" -name "*_proto.*"'
-abbr -a play 'cd "$PLAYGROUND_DIR_PATH" ; find "$PLAYGROUND_DIR_PATH" -maxdepth 1 -type d -not -path "*/\.*" -name "*"'
-abbr -a ply 'cd "$PLAYGROUND_DIR_PATH" ; find "$PLAYGROUND_DIR_PATH" -maxdepth 1 -type d -not -path "*/\.*" -name "*"'
-
 switch (uname -n)
 case  "*celeraone*"
     # C1 related abbrs
     abbr -a qq 'cd ~/c1'
     abbr -a q 'cd-into-c1-project'
     abbr -a qa 'cd-into-c1-project authservice'
+    abbr -a qap 'cd-into-c1-project authproxy'
     abbr -a qc 'cd-into-c1-project cre-api'
     abbr -a qe 'cd-into-c1-project entitlement'
     abbr -a qf 'cd-into-c1-project frontend'

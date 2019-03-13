@@ -1,0 +1,37 @@
+#!/bin/bash
+#
+# Contains a mapping of a git repo path and branch names.
+# Mapping contains repos that may be worked with together.
+
+declare -A repo_paths2default_branch_names=(
+    ["${HOME}/c1/ansible-playbooks"]='master'
+    ["${HOME}/c1/c1-authproxy"]='master'
+    ["${HOME}/c1/c1-authservice"]='master'
+    ["${HOME}/c1/c1-buildout"]='master'
+    ["${HOME}/c1/c1-cds"]='master'
+    ["${HOME}/c1/c1-cip"]='master'
+    ["${HOME}/c1/c1-cockpitserver"]='master'
+    ["${HOME}/c1/c1-config-files-authproxy"]='master'
+    ["${HOME}/c1/c1-config-files-cip-mw"]='master'
+    ["${HOME}/c1/c1-cre-api"]='master'
+    ["${HOME}/c1/c1-custom-dumont"]='master'
+    ["${HOME}/c1/c1-documentation"]='master'
+    ["${HOME}/c1/c1-engine"]='develop'
+    ["${HOME}/c1/c1-entitlement"]='master'
+    ["${HOME}/c1/c1-exceptions"]='master'
+    ["${HOME}/c1/c1-fixtures"]='master'
+    ["${HOME}/c1/c1-frontend"]='develop'
+    ["${HOME}/c1/c1-lua"]='master'
+    ["${HOME}/c1/c1-ocb-integrator"]='master'
+    ["${HOME}/c1/c1-metrics"]='master'
+    ["${HOME}/c1/c1-metrics-aggregator"]='master'
+    ["${HOME}/c1/c1-mock"]='master'
+    ["${HOME}/c1/c1-openid"]='master'
+    ["${HOME}/c1/c1-pueblo"]='master'
+    ["${HOME}/c1/c1-robotframework"]='master'
+    ["${HOME}/c1/c1-scheduler"]='master'
+    ["${HOME}/c1/c1-templates-bundle"]='master'
+    ["${HOME}/c1/docker-bulidscripts"]='master'
+    ["${HOME}/c1/dockerfiles"]='master'
+    ["${HOME}/c1/presentations"]='master'
+)

@@ -74,6 +74,7 @@ abbr -a mnm 'minimerk \''
 
 abbr -a vh "vim -p (eval \$history[1])"
 abbr -a vd 'vimdiff'
+abbr -a wcl 'wc -l'
 
 abbr -a xo 'xargs open'
 abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command

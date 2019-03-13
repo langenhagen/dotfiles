@@ -8,10 +8,31 @@ dir_of_this_script="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
 dotfiles_path="${dir_of_this_script}";
 
 ln -sf "$dotfiles_path/.vimrc" "$HOME/.vimrc";
+ln -sf "$dotfiles_path/.vim" "$HOME";
 
+ln -sf "$dotfiles_path/.gitignore_global" "$HOME/.gitignore_global";
+ln -sf "$dotfiles_path/.multitailrc" "$HOME/.multitailrc";
+ln -sf "$dotfiles_path/.tigrc" "$HOME/.tigrc";
 ln -sf "$dotfiles_path/.tmux.conf" "$HOME/.tmux.conf";
 
-ln -sf "$dotfiles_path/.vim" "$HOME";
+if [[ "$(uname -n)" =~ ('barn-ultra'|'bee') ]]; then
+    ln -sf "$dotfiles_path/.gitconfig-barn" "$HOME/.gitconfig";
+    ln -sf "$dotfiles_path/.edmrc-barn" "$HOME/.edmrc";
+
+elif [[ "$(uname -n)" =~ 'celeraone' ]]; then
+    ln -sf "$dotfiles_path/.gitconfig-c1" "$HOME/.gitconfig";
+    ln -sf "$dotfiles_path/.edmrc-c1" "$HOME/.edmrc";
+
+    ln -sf "$dotfiles_path/.config/autostart/open-TODOs-file.desktop" "$HOME/.config/autostart/open-TODOs-file.desktop";
+    ln -sf "$dotfiles_path/.config/autostart/open-day-notes-file.desktop" "$HOME/.config/autostart/open-day-notes-file.desktop";
+    ln -sf "$dotfiles_path/.config/autostart/slack.desktop" "$HOME/.config/autostart/slack.desktop";
+fi
+
+mkdir -p "$HOME/.buildout";
+ln -sf "$dotfiles_path/.buildout/default.cfg" "$HOME/.buildout/default.cfg";
+
+mkdir -p "$HOME/.ccache";
+ln -sf "$dotfiles_path/.ccache/ccache.conf" "$HOME/.ccache/ccache.conf";
 
 mkdir -p "$HOME/.config";
 ln -sf "$dotfiles_path/.config/konsolerc" "$HOME/.config/konsolerc";
@@ -26,11 +47,9 @@ ln -sf "$dotfiles_path/.config/autostart/thunderbird.desktop" "$HOME/.config/aut
 ln -sf "$dotfiles_path/.config/autostart/ukuu.desktop" "$HOME/.config/autostart/ukuu.desktop";
 ln -sf "$dotfiles_path/.config/autostart/urserver.desktop" "$HOME/.config/autostart/urserver.desktop";
 
-if [[ "$(uname -n)" =~ 'celeraone' ]]; then
-    ln -sf "$dotfiles_path/.config/autostart/open-TODOs-file.desktop" "$HOME/.config/autostart/open-TODOs-file.desktop";
-    ln -sf "$dotfiles_path/.config/autostart/open-day-notes-file.desktop" "$HOME/.config/autostart/open-day-notes-file.desktop";
-    ln -sf "$dotfiles_path/.config/autostart/slack.desktop" "$HOME/.config/autostart/slack.desktop";
-fi
+mkdir -p "$HOME/.config/bpython";
+ln  -sf "$dotfiles_path/.config/bpython/config" "$HOME/.config/bpython/config";
+ln  -sf "$dotfiles_path/.config/bpython/my.theme" "$HOME/.config/bpython/my.theme";
 
 mkdir -p "$HOME/.config/fish/";
 ln -sf "$dotfiles_path/.config/fish/config.fish" "$HOME/.config/fish/config.fish";
@@ -40,38 +59,14 @@ ln -sf "$dotfiles_path/.config/fish/environment-variables.fish" "$HOME/.config/f
 ln -sf "$dotfiles_path/.config/fish/functions.fish" "$HOME/.config/fish/functions.fish";
 ln -sf "$dotfiles_path/.config/fish/vimlike-bookmarks.fish" "$HOME/.config/fish/vimlike-bookmarks.fish";
 
-ln -sf "$dotfiles_path/.tigrc" "$HOME/.tigrc";
-
-if [[ "$(uname -n)" =~ ('barn-ultra'|'bee') ]]; then
-    ln -sf "$dotfiles_path/.gitconfig-barn" "$HOME/.gitconfig";
-    ln -sf "$dotfiles_path/.edmrc-barn" "$HOME/.edmrc";
-elif [[ "$(uname -n)" =~ 'celeraone' ]]; then
-    ln -sf "$dotfiles_path/.gitconfig-c1" "$HOME/.gitconfig";
-    ln -sf "$dotfiles_path/.edmrc-c1" "$HOME/.edmrc";
-fi
-
-ln -sf "$dotfiles_path/.gitignore_global" "$HOME/.gitignore_global";
-
-ln -sf "$dotfiles_path/.multitailrc" "$HOME/.multitailrc";
-
-mkdir -p "$HOME/.config/bpython";
-ln  -sf "$dotfiles_path/.config/bpython/config" "$HOME/.config/bpython/config";
-ln  -sf "$dotfiles_path/.config/bpython/my.theme" "$HOME/.config/bpython/my.theme";
-
-mkdir -p "$HOME/.ccache";
-ln -sf "$dotfiles_path/.ccache/ccache.conf" "$HOME/.ccache/ccache.conf";
-
 mkdir -p "$HOME/.config/ranger";
 ln -sf "$dotfiles_path/.config/ranger/rc.conf" "$HOME/.config/ranger/rc.conf";
-
-mkdir -p "$HOME/.urserver/remotes";
-ln -sf "$dotfiles_path/.urserver/remotes/custom" "$HOME/.urserver/remotes/";
 
 mkdir -p "$HOME/.config/xpad";
 ln -sf "$dotfiles_path/.config/xpad/default-style" "$HOME/.config/xpad/default-style";
 
-mkdir -p "$HOME/.buildout";
-ln -sf "$dotfiles_path/.buildout/default.cfg" "$HOME/.buildout/default.cfg";
+mkdir -p "$HOME/.urserver/remotes";
+ln -sf "$dotfiles_path/.urserver/remotes/custom" "$HOME/.urserver/remotes/";
 
 if [ "$(uname)" == 'Linux' ]; then
     mkdir -p "$HOME/.config/sublime-text-3";

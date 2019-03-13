@@ -172,6 +172,7 @@ case  "*celeraone*"
     abbr -a qap 'cd-into-c1-project authproxy'
     abbr -a qc 'cd-into-c1-project cre-api'
     abbr -a qe 'cd-into-c1-project entitlement'
+    abbr -a qex 'cd-into-c1-project exceptions'
     abbr -a qf 'cd-into-c1-project frontend'
     abbr -a ql 'cd-into-c1-project lua'
     abbr -a qm 'cd-into-c1-project metrics'

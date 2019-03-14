@@ -72,10 +72,6 @@ abbr -a hi 'cat ~/.histout'
 abbr -a 'trenn' 'for i in (seq (tput cols)); printf \'\\e[31m=\'; end; printf \'\\e[m\n\''
 abbr -a mnm 'minimerk \''
 
-abbr -a vh "vim -p (eval \$history[1])"
-abbr -a vd 'vimdiff'
-abbr -a wcl 'wc -l'
-
 abbr -a xo 'xargs open'
 abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
 abbr -a xx 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
@@ -88,6 +84,8 @@ abbr -a tre 'tree -C -a'
 abbr -a t3 'tree -C -a -L 3'
 abbr -a t3d 'tree -C -a -L 3 -d'
 abbr -a v 'vim -p'
+abbr -a vh "vim -p (eval \$history[1])"
+abbr -a vd 'vimdiff'
 abbr -a t 'tig'
 abbr -a tb 'tig blame'
 abbr -a ts 'tig show'
@@ -97,6 +95,7 @@ abbr -a gitp  'pwd ; cd (git rev-parse --show-toplevel)'  # abbreviation for Git
 abbr -a cct 'pygmentize -O style=native -f console256 -g'
 abbr -a bp 'bpython'
 abbr -a json 'json_pp'  # pretty-print json output
+abbr -a wcl 'wc -l'
 
 abbr -a g 'grep'
 abbr -a h 'grep -HiRns'

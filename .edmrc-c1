@@ -16,7 +16,7 @@ choices=(
     'Dev/_Protofiles/bash_proto.sh'
     'Dev/setup-ubuntu-18'
     'Media'
-    'Media/Images/Fotos/Cam'
+    'Media/Cam'
     'Media/Audio'
     'Work'
     'Work/2018-CeleraOne'

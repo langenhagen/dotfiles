@@ -7,7 +7,7 @@
 
 switch (uname -n)
 case "barn-ultra" "*celeraone*"
-    # Desktop Machine Related abbrs
+    # Desktop machine related abbrs
 
     abbr -a now 'date \'+%s\' | xclip -fi -selection clipboard'  # the current timestamp since epoch in seconds
 
@@ -72,30 +72,34 @@ abbr -a hi 'cat ~/.histout'
 abbr -a 'trenn' 'for i in (seq (tput cols)); printf \'\\e[31m=\'; end; printf \'\\e[m\n\''
 abbr -a mnm 'minimerk \''
 
-abbr -a xo 'xargs open'
-abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
-abbr -a xx 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
+abbr -a gitp  'pwd ; cd (git rev-parse --show-toplevel)'  # abbreviation for GituP
+abbr -a bp 'bpython'
+abbr -a json 'json_pp'  # pretty-print json output
+abbr -a cct 'pygmentize -O style=native -f console256 -g'
+abbr -a r 'ranger'
+abbr -a vd 'vimdiff'
+abbr -a wcl 'wc -l'
 
 abbr -a f 'find -L . -iname'
 abbr -a fr 'find -L -E . -iregex'
 abbr -a f1 'find -L . -maxdepth 1 -iname'
+
+abbr -a t 'tig'
+abbr -a tb 'tig blame'
+abbr -a ts 'tig show'
+
 abbr -a tree 'tree -C -a'
 abbr -a tre 'tree -C -a'
 abbr -a t3 'tree -C -a -L 3'
 abbr -a t3d 'tree -C -a -L 3 -d'
+
 abbr -a v 'vim -p'
 abbr -a vh "vim -p (eval \$history[1])"
-abbr -a vd 'vimdiff'
-abbr -a t 'tig'
-abbr -a tb 'tig blame'
-abbr -a ts 'tig show'
-abbr -a r 'ranger'
 abbr -a e 'vim -R "+normal :Explore\$" .'
-abbr -a gitp  'pwd ; cd (git rev-parse --show-toplevel)'  # abbreviation for GituP
-abbr -a cct 'pygmentize -O style=native -f console256 -g'
-abbr -a bp 'bpython'
-abbr -a json 'json_pp'  # pretty-print json output
-abbr -a wcl 'wc -l'
+
+abbr -a xo 'xargs open'
+abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
+abbr -a xx 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
 
 abbr -a g 'grep'
 abbr -a h 'grep -HiRns'
@@ -149,19 +153,19 @@ abbr -a grh4 'git reset --hard HEAD~4'
 abbr -a grh5 'git reset --hard HEAD~5'
 abbr -a grh9 'git reset --hard HEAD~9'
 
+abbr -a gitgrep 'git log -p --color-words -S'
+
+abbr -a rps 'repo sync -c -j8'
+abbr -a rpc 'repo status ; repo diff ; repo forall -c "printf \"\e[1;36m`git rev-parse --show-toplevel`\e[0m\t`git log -n1 --pretty=format:\"%an\t%s\"`\" | grep \"Langenhagen\""'
+
+abbr -a gr 'git review -d'
+abbr -a sfr "git review master --reviewers (git log -n40 --pretty=format:'%ae' | sort | uniq -c | sort -nr | awk '{print \$2}' | head -8)"
+
 abbr -a ccr 'conda create --name tmp python=3.7 pip'
 abbr -a cr 'conda remove -y --all --name'
 
 abbr -a w 'workon'
 abbr -a workoff 'conda deactivate'
-
-abbr -a gitgrep 'git log -p --color-words -S'
-
-abbr -a rps 'repo sync -c -j8'
-abbr -a rpc 'repo status ; repo diff ; repo forall -c "printf \"\033[1;36m`git rev-parse --show-toplevel`\033[0m\t`git log -n1 --pretty=format:\"%an\t%s\"`\" | grep \"Langenhagen\""'
-
-abbr -a gr 'git review -d'
-abbr -a sfr "git review master --reviewers (git log -n40 --pretty=format:'%ae' | sort | uniq -c | sort -nr | awk '{print \$2}' | head -8)"
 
 switch (uname -n)
 case  "*celeraone*"
@@ -181,8 +185,8 @@ case  "*celeraone*"
     abbr -a qp 'cd-into-c1-project pueblo'
     abbr -a qs 'cd-into-c1-project scheduler'
 
-    abbr -a gpa 'find $HOME/c1 -type d -iname "*.git" -execdir bash -c \'printf "\033[1m${PWD}\033[0m\n"; git pull --rebase;\' \;'
-    abbr -a sco 'cd ~/c1; find . -type d -iname "*.git" -execdir bash -c \'printf "\033[1m${PWD}\033[0m\n"; git pull --rebase;\' \;'
+    abbr -a gpa 'find $HOME/c1 -type d -iname "*.git" -execdir bash -c \'printf "\e[1m${PWD}\e[0m\n"; git pull --rebase;\' \;'
+    abbr -a sco 'cd ~/c1; find . -type d -iname "*.git" -execdir bash -c \'printf "\e[1m${PWD}\e[0m\n"; git pull --rebase;\' \;'
     abbr -a fap 'pull-rebase-all-repos.sh'
     abbr -a fas 'cd; ~/c1; forall-git-dirs.sh -q -d 2 -- \'printf "$PWD"; printf "%0.s~" $(seq ${#PWD} 45); git status -sbu\''
     abbr -a fa 'cd ~/c1; forall-git-dirs.sh -d 2 --'

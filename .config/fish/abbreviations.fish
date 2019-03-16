@@ -16,14 +16,14 @@ case "barn-ultra" "*celeraone*"
     abbr -a play 'cd "$PLAYGROUND_DIR_PATH" ; find "$PLAYGROUND_DIR_PATH" -maxdepth 1 -type d -not -path "*/\.*" -name "*"'
     abbr -a ply 'cd "$PLAYGROUND_DIR_PATH" ; find "$PLAYGROUND_DIR_PATH" -maxdepth 1 -type d -not -path "*/\.*" -name "*"'
 
-    abbr -a jrn 'journal \''
     abbr -a j 'journal \''
+    abbr -a jrn 'journal \''
     abbr -a editjrn "vim -R '+normal G\$' -p $JOURNAL_FILE_PATH"
-    abbr -a bkt 'bucket \''
     abbr -a b 'bucket \''
+    abbr -a bkt 'bucket \''
     abbr -a tks 'tricks'
-    abbr -a olh 'one-line-help'
     abbr -a alh 'add-to-one-line-help \''
+    abbr -a olh 'one-line-help'
 
     abbr -a s 'subl'
     abbr -a xs 'xargs subl'
@@ -32,8 +32,8 @@ case "barn-ultra" "*celeraone*"
     switch (uname)
     # OS dependent abbrs
     case  'Darwin'
-        abbr -a xcode 'open -a Xcode'
         abbr -a xc 'open -a Xcode'
+        abbr -a xcode 'open -a Xcode'
         abbr -a o 'open .'
         abbr -a oh "open (eval \$history[1])"
 
@@ -42,8 +42,8 @@ case "barn-ultra" "*celeraone*"
         abbr -a xo 'xargs xdg-open'
         abbr -a o 'xdg-open .'
         abbr -a oh "for f in (eval \$history[1]); xdg-open \"\$f\"; end"
-        abbr -a xh "eval \$history[1] | xclip -fi -selection primary | xclip -fi -selection clipboard > ~/.histout"
         abbr -a ho "eval \$history[1] | xclip -fi -selection primary | xclip -fi -selection clipboard > ~/.histout"
+        abbr -a xh "eval \$history[1] | xclip -fi -selection primary | xclip -fi -selection clipboard > ~/.histout"
         abbr -a go "eval \$history[1] | sed 's|\(.+*\):[0-9]*:.*|\1|' | sed '/^Binary file.*matches\$/d' | sort | uniq | xclip -fi -selection primary | xclip -fi -selection clipboard | tee ~/.histout"
 
         abbr -a pbcopy 'xclip -selection clipboard'
@@ -72,17 +72,17 @@ abbr -a hi 'cat ~/.histout'
 abbr -a 'trenn' 'for i in (seq (tput cols)); printf \'\\e[31m=\'; end; printf \'\\e[m\n\''
 abbr -a mnm 'minimerk \''
 
-abbr -a gitp  'pwd ; cd (git rev-parse --show-toplevel)'  # abbreviation for GituP
 abbr -a bp 'bpython'
-abbr -a json 'json_pp'  # pretty-print json output
 abbr -a cct 'pygmentize -O style=native -f console256 -g'
+abbr -a gitp  'pwd ; cd (git rev-parse --show-toplevel)'  # abbreviation for GituP
+abbr -a json 'json_pp'  # pretty-print json output
 abbr -a r 'ranger'
 abbr -a vd 'vimdiff'
 abbr -a wcl 'wc -l'
 
 abbr -a f 'find -L . -iname'
-abbr -a fr 'find -L -E . -iregex'
 abbr -a f1 'find -L . -maxdepth 1 -iname'
+abbr -a fr 'find -L -E . -iregex'
 
 abbr -a t 'tig'
 abbr -a tb 'tig blame'
@@ -131,7 +131,7 @@ abbr -a gbd 'git branch -D'
 
 abbr -a gbt 'git checkout -b tmp; or git checkout tmp; git branch'  # git branch tmp
 abbr -a gct 'git checkout -b tmp; or git checkout tmp; git branch'  # git checkout tmp
-abbr -a gdt 'git checkout master; git branch -D tmp; git branch'   # git delete tmp
+abbr -a gdt 'git checkout master; git branch -D tmp; git branch'  # git delete tmp
 
 abbr -a gpm 'git push origin HEAD:master'
 abbr -a gprm 'git push origin HEAD:refs/for/master'
@@ -144,14 +144,14 @@ abbr -a gri 'git rebase --interactive HEAD~10'
 abbr -a grc 'git rebase --continue'
 abbr -a gra 'git rebase --abort'
 
-abbr -a grsh 'git reset --soft HEAD~1'
-abbr -a grhh 'git reset --hard HEAD'
 abbr -a grh1 'git reset --hard HEAD~1'
 abbr -a grh2 'git reset --hard HEAD~2'
 abbr -a grh3 'git reset --hard HEAD~3'
 abbr -a grh4 'git reset --hard HEAD~4'
 abbr -a grh5 'git reset --hard HEAD~5'
 abbr -a grh9 'git reset --hard HEAD~9'
+abbr -a grhh 'git reset --hard HEAD'
+abbr -a grsh 'git reset --soft HEAD~1'
 
 abbr -a gitgrep 'git log -p --color-words -S'
 
@@ -165,7 +165,6 @@ abbr -a ccr 'conda create --name tmp python=3.7 pip'
 abbr -a cr 'conda remove -y --all --name'
 
 abbr -a w 'workon'
-abbr -a workoff 'conda deactivate'
 
 switch (uname -n)
 case  "*celeraone*"
@@ -185,15 +184,15 @@ case  "*celeraone*"
     abbr -a qp 'cd-into-c1-project pueblo'
     abbr -a qs 'cd-into-c1-project scheduler'
 
-    abbr -a gpa 'find $HOME/c1 -type d -iname "*.git" -execdir bash -c \'printf "\e[1m${PWD}\e[0m\n"; git pull --rebase;\' \;'
-    abbr -a sco 'cd ~/c1; find . -type d -iname "*.git" -execdir bash -c \'printf "\e[1m${PWD}\e[0m\n"; git pull --rebase;\' \;'
-    abbr -a fap 'pull-rebase-all-repos.sh'
-    abbr -a fas 'cd; ~/c1; forall-git-dirs.sh -q -d 2 -- \'printf "$PWD"; printf "%0.s~" $(seq ${#PWD} 45); git status -sbu\''
     abbr -a fa 'cd ~/c1; forall-git-dirs.sh -d 2 --'
+    abbr -a fap 'pull-rebase-all-repos.sh'
+    abbr -a faps 'push-all-repos.sh'
+    abbr -a fas 'cd; ~/c1; forall-git-dirs.sh -q -d 2 -- \'printf "$PWD"; printf "%0.s~" $(seq ${#PWD} 45); git status -sbu\''
+    abbr -a gpa 'pull-rebase-all-repos.sh'
 
+    abbr -a cj 'xdg-open "https://jira.celeraone.com/secure/CreateIssue!default.jspa"'  # create jira ticket
     abbr -a cre 'http --auth-type c1-auth -a'
     abbr -a og 'xdg-open "https://codereview.celeraone.com/dashboard/self"' # open gerrit
     abbr -a oj 'xdg-open "https://jira.celeraone.com/secure/Dashboard.jspa?selectPageId=11405"'  # open jira
-    abbr -a cj 'xdg-open "https://jira.celeraone.com/secure/CreateIssue!default.jspa"'  # create jira ticket
     abbr -a rl 'xdg-open "var/log/testreports/log.html"'  # robot log
 end

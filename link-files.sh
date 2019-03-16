@@ -18,6 +18,7 @@ ln -sf "$dotfiles_path/.tmux.conf" "$HOME/.tmux.conf";
 if [[ "$(uname -n)" =~ ('barn-ultra'|'bee') ]]; then
     ln -sf "$dotfiles_path/.gitconfig-barn" "$HOME/.gitconfig";
     ln -sf "$dotfiles_path/.edmrc-barn" "$HOME/.edmrc";
+    ln -sf "$dotfiles_path/.gitprojectsrc-barn" "$HOME/.gitprojectsrc";
 
 elif [[ "$(uname -n)" =~ 'celeraone' ]]; then
     ln -sf "$dotfiles_path/.edmrc-c1" "$HOME/.edmrc";

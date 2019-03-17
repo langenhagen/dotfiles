@@ -15,10 +15,14 @@ ln -sf "$dotfiles_path/.multitailrc" "$HOME/.multitailrc";
 ln -sf "$dotfiles_path/.tigrc" "$HOME/.tigrc";
 ln -sf "$dotfiles_path/.tmux.conf" "$HOME/.tmux.conf";
 
-if [[ "$(uname -n)" =~ ('barn-ultra'|'bee') ]]; then
+if [[ "$(uname -n)" =~ 'barn-ultra' ]]; then
     ln -sf "$dotfiles_path/.gitconfig-barn" "$HOME/.gitconfig";
     ln -sf "$dotfiles_path/.edmrc-barn" "$HOME/.edmrc";
     ln -sf "$dotfiles_path/.gitprojectsrc-barn" "$HOME/.gitprojectsrc";
+
+elif [[ "$(uname -n)" =~ 'bee' ]]; then
+    ln -sf "$dotfiles_path/.gitconfig-barn" "$HOME/.gitconfig";
+    ln -sf "$dotfiles_path/.gitprojectsrc-bee" "$HOME/.gitprojectsrc";
 
 elif [[ "$(uname -n)" =~ 'celeraone' ]]; then
     ln -sf "$dotfiles_path/.edmrc-c1" "$HOME/.edmrc";

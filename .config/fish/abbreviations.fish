@@ -153,13 +153,17 @@ abbr -a grh9 'git reset --hard HEAD~9'
 abbr -a grhh 'git reset --hard HEAD'
 abbr -a grsh 'git reset --soft HEAD~1'
 
-abbr -a gitgrep 'git log -p --color-words -S'
+abbr -a fa 'apply-to-all-repos.sh -d 2 --'
+abbr -a fap 'pull-rebase-all-repos.sh'
+abbr -a faps 'push-all-repos.sh'
+abbr -a fas 'apply-to-all-repos.sh -q -d 2 -- \'printf "$PWD"; printf "%0.s~" $(seq ${#PWD} 45); git status -sbu\''
 
-abbr -a rps 'repo sync -c -j8'
-abbr -a rpc 'repo status ; repo diff ; repo forall -c "printf \"\e[1;36m`git rev-parse --show-toplevel`\e[0m\t`git log -n1 --pretty=format:\"%an\t%s\"`\" | grep \"Langenhagen\""'
+#abbr -a rps 'repo sync -c -j8'
+#abbr -a rpc 'repo status ; repo diff ; repo forall -c "printf \"\e[1;36m`git rev-parse --show-toplevel`\e[0m\t`git log -n1 --pretty=format:\"%an\t%s\"`\" | grep \"Langenhagen\""'
 
 abbr -a gr 'git review -d'
 abbr -a sfr "git review master --reviewers (git log -n40 --pretty=format:'%ae' | sort | uniq -c | sort -nr | awk '{print \$2}' | head -8)"
+abbr -a gitgrep 'git log -p --color-words -S'
 
 abbr -a ccr 'conda create --name tmp python=3.7 pip'
 abbr -a cr 'conda remove -y --all --name'
@@ -183,12 +187,6 @@ case  "*celeraone*"
     abbr -a qo 'cd-into-c1-project openid'
     abbr -a qp 'cd-into-c1-project pueblo'
     abbr -a qs 'cd-into-c1-project scheduler'
-
-    abbr -a fa 'cd ~/c1; forall-git-dirs.sh -d 2 --'
-    abbr -a fap 'pull-rebase-all-repos.sh'
-    abbr -a faps 'push-all-repos.sh'
-    abbr -a fas 'cd; ~/c1; forall-git-dirs.sh -q -d 2 -- \'printf "$PWD"; printf "%0.s~" $(seq ${#PWD} 45); git status -sbu\''
-    abbr -a gpa 'pull-rebase-all-repos.sh'
 
     abbr -a cj 'xdg-open "https://jira.celeraone.com/secure/CreateIssue!default.jspa"'  # create jira ticket
     abbr -a cre 'http --auth-type c1-auth -a'

@@ -13,6 +13,7 @@ choices=(
     'c1/stuff/scribbles'
     'c1/scripts'
     'Dev'
+    'Dev/_Protofiles'
     'Dev/_Protofiles/bash_proto.sh'
     'Dev/setup-ubuntu-18'
     'Media'

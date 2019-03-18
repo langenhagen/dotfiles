@@ -35,12 +35,13 @@ case "barn-ultra" "*celeraone*"
         abbr -a xc 'open -a Xcode'
         abbr -a xcode 'open -a Xcode'
         abbr -a o 'open .'
+        abbr -a xo 'xargs xdg-open'
         abbr -a oh "open (eval \$history[1])"
 
     case  'Linux'
         abbr -a open 'xdg-open'
-        abbr -a xo 'xargs xdg-open'
         abbr -a o 'xdg-open .'
+        abbr -a xo 'xargs xdg-open'
         abbr -a oh "for f in (eval \$history[1]); xdg-open \"\$f\"; end"
         abbr -a ho "eval \$history[1] | xclip -fi -selection primary | xclip -fi -selection clipboard > ~/.histout"
         abbr -a xh "eval \$history[1] | xclip -fi -selection primary | xclip -fi -selection clipboard > ~/.histout"
@@ -97,7 +98,6 @@ abbr -a v 'vim -p'
 abbr -a vh "vim -p (eval \$history[1])"
 abbr -a e 'vim -R "+normal :Explore\$" .'
 
-abbr -a xo 'xargs open'
 abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
 abbr -a xx 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
 
@@ -161,8 +161,8 @@ abbr -a fas 'apply-to-all-repos.sh -q -d 2 -- \'printf "$PWD"; printf "%0.s~" $(
 #abbr -a rps 'repo sync -c -j8'
 #abbr -a rpc 'repo status ; repo diff ; repo forall -c "printf \"\e[1;36m`git rev-parse --show-toplevel`\e[0m\t`git log -n1 --pretty=format:\"%an\t%s\"`\" | grep \"Langenhagen\""'
 
-abbr -a gr 'git review -d'
-abbr -a sfr "git review master --reviewers (git log -n40 --pretty=format:'%ae' | sort | uniq -c | sort -nr | awk '{print \$2}' | head -8)"
+# abbr -a gr 'git review -d'
+#abbr -a sfr "git review master --reviewers (git log -n40 --pretty=format:'%ae' | sort | uniq -c | sort -nr | awk '{print \$2}' | head -8)"
 abbr -a gitgrep 'git log -p --color-words -S'
 
 abbr -a ccr 'conda create --name tmp python=3.7 pip'

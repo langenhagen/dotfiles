@@ -1,9 +1,8 @@
 # My personal fish functions file
+#
+# Source this file into the config.fish.
+#
 # author: andreasl
-# version: 18-09-29
-
-# source this file into the config.fish
-
 
 function read_confirm_prompt
     echo 'Do you want to continue? [yY/nN] '

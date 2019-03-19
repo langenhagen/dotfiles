@@ -5,7 +5,6 @@
 # exist in vim, but for fish, the friendly interactive shell.
 #
 # author: andreasl
-# version: 18-09-11
 
 function m
     # Sets abbreviations for `<char> and '<char> for cd-ing into the current directory.

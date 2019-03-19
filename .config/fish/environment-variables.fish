@@ -1,9 +1,8 @@
 # My personal fish environment variables
 #
-# Source this file into the config.fish
+# Source this file into the config.fish.
 #
 # author: andreasl
-# version: 18-09-26
 
 switch (uname -n)
     case "*barn-ultra*"

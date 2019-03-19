@@ -1,4 +1,5 @@
 # My personal fish config file.
+#
 # Should work on all platforms, including Mac OS with iterm2.
 #
 # author: andreasl

@@ -1,10 +1,9 @@
 # My personal fish environment variables
+#
+# Source this file into the config.fish
+#
 # author: andreasl
 # version: 18-09-26
-
-# source this file into the config.fish
-
-set -gx PATH $PATH /usr/local/sbin
 
 switch (uname -n)
     case "*barn-ultra*"
@@ -62,10 +61,10 @@ switch (uname -n)
         set -gx PATH $PATH "$HOME/Dev/celeraone/scripts"
 end
 
-setenv LANG "en_US.UTF-8"
-
+set -gx PATH $PATH /usr/local/sbin
 set -gx PATH $PATH "$SCRIPTS_DIR_PATH"
 
-setenv VISUAL vim
+setenv LANG "en_US.UTF-8"
 setenv EDITOR vim
+setenv VISUAL vim
 

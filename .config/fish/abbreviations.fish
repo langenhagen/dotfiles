@@ -82,8 +82,8 @@ abbr -a vd 'vimdiff'
 abbr -a wcl 'wc -l'
 
 abbr -a f 'find -L . -iname'
-abbr -a f1 'find -L . -maxdepth 1 -iname'
-abbr -a fr 'find -L -E . -iregex'
+#abbr -a f1 'find -L . -maxdepth 1 -iname'
+#abbr -a fr 'find -L -E . -iregex'
 
 abbr -a t 'tig'
 abbr -a tb 'tig blame'
@@ -165,8 +165,8 @@ abbr -a fas 'apply-to-all-repos.sh -q -- \'printf "$PWD"; printf "%0.s~" $(seq $
 #abbr -a sfr "git review master --reviewers (git log -n40 --pretty=format:'%ae' | sort | uniq -c | sort -nr | awk '{print \$2}' | head -8)"
 abbr -a gitgrep 'git log -p --color-words -S'
 
-abbr -a ccr 'conda create --name tmp python=3.7 pip'
-abbr -a cr 'conda remove -y --all --name'
+#abbr -a ccr 'conda create --name tmp python=3.7 pip'
+#abbr -a cr 'conda remove -y --all --name'
 
 abbr -a w 'workon'
 

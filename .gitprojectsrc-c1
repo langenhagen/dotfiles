@@ -18,7 +18,6 @@ declare -A repo_paths2default_branch_names=(
     ["${HOME}/c1/c1-config-files-authproxy"]='master,master,master'
     ["${HOME}/c1/c1-config-files-cip-mw"]='master,master,master'
     ["${HOME}/c1/c1-cre-api"]='master,master,refs/for/master'
-    ["${HOME}/c1/c1-custom-dumont"]='master,master,refs/for/master'
     ["${HOME}/c1/c1-documentation"]='master,master,master'
     ["${HOME}/c1/c1-engine"]='develop,develop,refs/for/develop'
     ["${HOME}/c1/c1-entitlement"]='master,master,refs/for/master'

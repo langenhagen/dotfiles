@@ -28,7 +28,7 @@ bind generic 1 !git pull --rebase
 
 bind generic 8 !<git push
 bind generic 9 !<git push origin HEAD:master
-bind generic 0 !<sh -c "git push origin HEAD:refs/for/master 2>&1 | tee /dev/stderr |  grep -o 'https://.*' | awk '{print $1}' | xargs xdg-open"
+bind generic 0 !<sh -c "git push origin HEAD:refs/for/master 2>&1 | tee /dev/stderr |  grep -m 1 -o 'https://.*' | awk '{print $1}' | xargs xdg-open"
 
 bind generic <F10> quit
 

@@ -186,6 +186,7 @@ case  "*celeraone*"
     abbr -a qm 'cd-into-c1-project metrics'
     abbr -a qo 'cd-into-c1-project openid'
     abbr -a qp 'cd-into-c1-project pueblo'
+    abbr -a qp 'cd-into-c1-project robotframework'
     abbr -a qs 'cd-into-c1-project scheduler'
 
     abbr -a cj 'xdg-open "https://jira.celeraone.com/secure/CreateIssue!default.jspa"'  # create jira ticket

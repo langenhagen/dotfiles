@@ -78,6 +78,7 @@ abbr -a cct 'pygmentize -O style=native -f console256 -g'
 abbr -a gitp  'pwd ; cd (git rev-parse --show-toplevel)'  # abbreviation for GituP
 abbr -a json 'json_pp'  # pretty-print json output
 abbr -a r 'ranger'
+abbr -a shch 'shellcheck'
 abbr -a vd 'vimdiff'
 abbr -a wcl 'wc -l'
 

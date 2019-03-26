@@ -118,7 +118,7 @@ abbr -a gb 'git branch'
 abbr -a gbr 'git branch -r'
 abbr -a gca 'git commit --amend'
 abbr -a gss 'git stash'
-abbr -a gsa 'git stash apply'
+abbr -a gsp 'git stash pop'
 
 abbr -a gco 'git checkout'
 abbr -a gcm 'git checkout master'

@@ -3,6 +3,10 @@
 # Apparently, fish does not support transitive abbreviations, i.e. abbreviations used within
 # abbreviations will not be expandend.
 #
+# Adding more abbreviations may increase the fish loading time on slow machines considerably.
+# Therefore, some less used abbreviations are commented out. I plan to remove them after 1 year
+# without need of use.
+#
 # author: andreasl
 
 switch (uname -n)
@@ -83,8 +87,8 @@ abbr -a vd 'vimdiff'
 abbr -a wcl 'wc -l'
 
 abbr -a f 'find -L . -iname'
-#abbr -a f1 'find -L . -maxdepth 1 -iname'
-#abbr -a fr 'find -L -E . -iregex'
+#abbr -a f1 'find -L . -maxdepth 1 -iname'    # commented out before Tuesday, 26 March 2019
+#abbr -a fr 'find -L -E . -iregex'    # commented out before Tuesday, 26 March 2019
 
 abbr -a t 'tig'
 abbr -a tb 'tig blame'
@@ -159,15 +163,15 @@ abbr -a fap 'pull-rebase-all-repos.sh'
 abbr -a faps 'push-all-repos.sh'
 abbr -a fas 'apply-to-all-repos.sh -q -- \'printf "$PWD"; printf "%0.s~" $(seq ${#PWD} 45); git status -sbu\''
 
-#abbr -a rps 'repo sync -c -j8'
-#abbr -a rpc 'repo status ; repo diff ; repo forall -c "printf \"\e[1;36m`git rev-parse --show-toplevel`\e[0m\t`git log -n1 --pretty=format:\"%an\t%s\"`\" | grep \"Langenhagen\""'
+#abbr -a rps 'repo sync -c -j8'  # commented out before Tuesday, 26 March 2019
+#abbr -a rpc 'repo status ; repo diff ; repo forall -c "printf \"\e[1;36m`git rev-parse --show-toplevel`\e[0m\t`git log -n1 --pretty=format:\"%an\t%s\"`\" | grep \"Langenhagen\""'  # commented out on Tuesday, 26 March 2019
 
-# abbr -a gr 'git review -d'
-#abbr -a sfr "git review master --reviewers (git log -n40 --pretty=format:'%ae' | sort | uniq -c | sort -nr | awk '{print \$2}' | head -8)"
-abbr -a gitgrep 'git log -p --color-words -S'
+# abbr -a gr 'git review -d'  # commented out before Tuesday, 26 March 2019
+#abbr -a sfr "git review master --reviewers (git log -n40 --pretty=format:'%ae' | sort | uniq -c | sort -nr | awk '{print \$2}' | head -8)"  # commented out before Tuesday, 26 March 2019
+#abbr -a gitgrep 'git log -p --color-words -S'  # commented out on Tuesday, 26 March 2019
 
-#abbr -a ccr 'conda create --name tmp python=3.7 pip'
-#abbr -a cr 'conda remove -y --all --name'
+#abbr -a ccr 'conda create --name tmp python=3.7 pip'  # commented out before Tuesday, 26 March 2019
+#abbr -a cr 'conda remove -y --all --name'  # commented out before Tuesday, 26 March 2019
 
 abbr -a w 'workon'
 

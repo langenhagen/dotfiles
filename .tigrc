@@ -5,53 +5,73 @@
 # For example:
 # bind generic e !?/usr/local/bin/sublime
 
+#---------------------------------------------------------------------------------------------------
+
+set ignore-case            = yes                     # Enum consisting of the values: no, yes, smart-case
 set mouse = true
 
-bind generic Z @?git checkout HEAD %(file)           # checkout latest committed version of a file in status view
+#---------------------------------------------------------------------------------------------------
+
+bind main   B !git rebase -i %(commit)
+bind generic P @sh -c "xdg-open \"$(dirname $(realpath %(file)))\""  # open path in standard program, linux only
+bind generic Z @?git checkout HEAD %(file)  # checkout latest committed version of a file in status view
+
+bind stage  D @?rm %(file)  # remove a file
+bind status D @?rm %(file)  # remove a file
 
 # E open file in editor (actually, tig's builtin small 'e' open file in editor does already a good job
 bind diff    E !sh -c "if [ -z \"%(file)\" ] ; then vim `git diff-tree --no-commit-id --name-only -r %(commit) | head -1` ; else vim \"%(file)\" +%(lineno); fi"
 bind stage   E !sh -c "vim \"%(file)\" +%(lineno)"
 bind status  E !sh -c "vim \"%(file)\" +%(lineno)"
 
-bind stage  D @?rm %(file)  # remove a file
-bind status D @?rm %(file)  # remove a file
-
 bind generic + !git commit --amend
 bind generic = !git commit
 
-bind generic π !git add --patch %(file)             # π is alt + p
+bind generic π !git add --patch %(file)             # π is alt + p on Mac
 
 bind generic ` !git rebase --interactive HEAD~7
 
-bind generic 1 !git pull --rebase
+bind generic <F1> !git pull --rebase
+bind generic <F2> !git pull --rebase origin master
+bind generic <F3> !git pull --rebase c1 master
 
-bind generic 8 !<git push
-bind generic 9 !<git push origin HEAD:master
-bind generic 0 !<sh -c "git push origin HEAD:refs/for/master 2>&1 | tee /dev/stderr |  grep -m 1 -o 'https://.*' | awk '{print $1}' | xargs xdg-open"
+bind generic <F6> !<git push
+bind generic <F7> !<git push origin HEAD:master
+bind generic <F8> !<sh -c "git push origin HEAD:refs/for/master 2>&1 | tee /dev/stderr |  grep -m 1 -o 'https://.*' | awk '{print $1}' | xargs xdg-open"
 
 bind generic <F10> quit
 
-bind generic P @sh -c "xdg-open \"$(dirname $(realpath %(file)))\""  # open path in standard program, linux only
+bind generic 1 @git reset --hard HEAD~1
+bind generic 2 @git reset --hard HEAD~2
+bind generic 3 @git reset --hard HEAD~3
+bind generic 4 @git reset --hard HEAD~4
+bind generic 5 @git reset --hard HEAD~5
+bind generic 6 @git reset --hard HEAD~6
+bind generic 7 @git reset --hard HEAD~7
+bind generic 8 @git reset --hard HEAD~8
+bind generic 9 @git reset --hard HEAD~9
+bind generic 0 @git reset --hard HEAD
+bind generic ) @git reset --soft HEAD~1
 
 # -------------------------------------------------------------------------------------------------
 
-set ignore-case            = yes                     # Enum consisting of the values: no, yes, smart-case
-
-# -------------------------------------------------------------------------------------------------
+# Think of making these available via shortcuts, too
+#git stash --include-untracked --quiet
+#git stash pop
+#git stash list
+#git stash drop
 
 # Henrik used also:
 # bind stash D !?git stash drop %(stash)
 # bind stash A !?git stash apply %(stash)
 # bind status S !?git stash save --keep-index %(prompt)
 
-
 # nice tigrc variables:
 # %(file)
 # %(lineno)
 # %(blob)       Manual says: "The currently selected blob ID.", I think it is the currently selected patch
 
-# 2019-02-18: leftover that looks wrong and may be deleted
+# 2019-02-18: leftover that looks wrong and may be deleted, maybe for merging?
 # bind generic T !git checkout --theirs %(file)       # what is this?
 # bind generic T !git checkout --ours %(file)         # what is this?
 

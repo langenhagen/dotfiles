@@ -10,6 +10,7 @@
 declare -A repo_paths2default_branch_names=(
     ["${HOME}/dotfiles"]='master,master,master'
     ["${HOME}/scripts"]='master,master,master'
+    ["${HOME}/my-scripts"]='master,master,master'
 )
 
 # sanity check

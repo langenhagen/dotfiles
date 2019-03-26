@@ -38,6 +38,7 @@ bind main <F3> !git pull --rebase c1 master
 bind main <F6> !<git push
 bind main <F7> !<git push origin HEAD:master
 bind main <F8> !<sh -c "git push origin HEAD:refs/for/master 2>&1 | tee /dev/stderr |  grep -m 1 -o 'https://.*' | awk '{print $1}' | xargs xdg-open"
+bind main <F9> !<git push c1 HEAD:master
 
 bind generic <F10> quit
 

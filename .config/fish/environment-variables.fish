@@ -13,6 +13,9 @@ switch (uname -n)
         setenv PROTOFILES_DIR_PATH "$HOME/Dev/_Protofiles"
         setenv SCRIPTS_DIR_PATH "$HOME/Dev/scripts"
         setenv TRICKS_FILE_PATH "$HOME/Dev/Zeugs/tricks.sh"
+
+    case "bee"
+        setenv SCRIPTS_DIR_PATH "$HOME/my-scripts"
 end
 
 switch (uname -n)

@@ -149,3 +149,18 @@ if &diff
     colorscheme apprentice " apprentice must be in ~/.vim/colors/ folder (https://github.com/romainl/Apprentice)
 endif
 
+
+
+" experimentally remap autocompletion to TAB unless you the cursor is after a whitespace
+" found here:
+" https://news.ycombinator.com/item?id=13960147
+function! InsertTabWrapper()
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-p>"
+  endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+

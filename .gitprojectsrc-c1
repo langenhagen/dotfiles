@@ -8,7 +8,6 @@
 
 # This is the mapping of repo paths to branch names. Adjust to your needs.
 declare -A repo_paths2default_branch_names=(
-    ["${HOME}/c1/ansible-playbooks"]='master,master,refs/for/master'
     ["${HOME}/c1/c1-authproxy"]='master,master,refs/for/master'
     ["${HOME}/c1/c1-authservice"]='master,master,refs/for/master'
     ["${HOME}/c1/c1-buildout"]='master,master,refs/for/master'
@@ -36,7 +35,6 @@ declare -A repo_paths2default_branch_names=(
     ["${HOME}/c1/c1-templates-bundle"]='master,master,refs/for/master'
     ["${HOME}/c1/docker-bulidscripts"]='master,master,master'
     ["${HOME}/c1/dockerfiles"]='master,master,master'
-    ["${HOME}/c1/jenkins-packaging-buildscripts"]='master,master,refs/for/master'
     ["${HOME}/c1/presentations"]='master,master,master'
 )
 

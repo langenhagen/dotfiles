@@ -31,13 +31,14 @@ set formatprg=par " use the given program to process selected text and put the o
 set formatoptions-=t " make text not wrap at textwidth initially
 set formatoptions-=a " make text not autoformat initially
 
+autocmd VimLeave * call system("xsel -ib", getreg('+'))  " keep the clipboard populated after closing vim
 autocmd CursorHoldI * stopinsert  " automatically leave insert mode after 'updatetime' milliseconds of inaction
 " autocmd BufWritePost .vimrc source $MYVIMRC  " automatically source my vimrc after writing it to disk -- causes errors bc of duplicate sourcing
 
+" color the status line when in Insert Mode
 highlight statusline ctermfg=0 ctermbg=255
 autocmd InsertEnter * hi statusline ctermfg=52 ctermbg=255
 autocmd InsertLeave * hi statusline ctermfg=0 ctermbg=255
-
 
 " file types  =====================================================================================
 

@@ -8,7 +8,7 @@
 #---------------------------------------------------------------------------------------------------
 
 set ignore-case = yes  # Enum consisting of the values: no, yes, smart-case
-set mouse = true
+set mouse = false
 
 #---------------------------------------------------------------------------------------------------
 
@@ -19,11 +19,6 @@ bind generic U @git add -A
 
 bind stage  D @?rm %(file)  # remove a file
 bind status D @?rm %(file)  # remove a file
-
-# E open file in editor (actually, tig's builtin small 'e' open file in editor does already a good job
-bind diff    E !sh -c "if [ -z \"%(file)\" ] ; then vim `git diff-tree --no-commit-id --name-only -r %(commit) | head -1` ; else vim \"%(file)\" +%(lineno); fi"
-bind stage   E !sh -c "vim \"%(file)\" +%(lineno)"
-bind status  E !sh -c "vim \"%(file)\" +%(lineno)"
 
 bind generic + !git commit --amend
 bind generic = !git commit
@@ -43,17 +38,17 @@ bind generic <F9> !git push c1 HEAD:master
 
 bind generic <F10> quit
 
-bind generic 1 @git reset --hard HEAD~1
-bind generic 2 @git reset --hard HEAD~2
-bind generic 3 @git reset --hard HEAD~3
-bind generic 4 @git reset --hard HEAD~4
-bind generic 5 @git reset --hard HEAD~5
-bind generic 6 @git reset --hard HEAD~6
-bind generic 7 @git reset --hard HEAD~7
-bind generic 8 @git reset --hard HEAD~8
-bind generic 9 @git reset --hard HEAD~9
-bind generic 0 @git reset --hard HEAD
-bind generic ) @git reset --soft HEAD~1
+bind generic 1 ?@git reset --hard HEAD~1
+bind generic 2 ?@git reset --hard HEAD~2
+bind generic 3 ?@git reset --hard HEAD~3
+bind generic 4 ?@git reset --hard HEAD~4
+bind generic 5 ?@git reset --hard HEAD~5
+bind generic 6 ?@git reset --hard HEAD~6
+bind generic 7 ?@git reset --hard HEAD~7
+bind generic 8 ?@git reset --hard HEAD~8
+bind generic 9 ?@git reset --hard HEAD~9
+bind generic 0 ?@git reset --hard HEAD
+bind generic ) ?@git reset --soft HEAD~1
 
 # -------------------------------------------------------------------------------------------------
 

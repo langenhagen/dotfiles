@@ -28,6 +28,8 @@ elif [[ "$(uname -n)" =~ 'celeraone' ]]; then
     ln -sf "$dotfiles_path/.edmrc-c1" "$HOME/.edmrc";
     ln -sf "$dotfiles_path/.gitconfig-c1" "$HOME/.gitconfig";
     ln -sf "$dotfiles_path/.gitprojectsrc-c1" "$HOME/.gitprojectsrc";
+    ln -sf "$dotfiles_path/.gitprojectsrc-c1-all" "$HOME/.gitprojectsrc-all";
+    ln -sf "$dotfiles_path/.gitprojectsrc-barn" "$HOME/.gitprojectsrc-my";
 
     ln -sf "$dotfiles_path/.config/autostart/open-TODOs-file.desktop" "$HOME/.config/autostart/open-TODOs-file.desktop";
     ln -sf "$dotfiles_path/.config/autostart/open-day-notes-file.desktop" "$HOME/.config/autostart/open-day-notes-file.desktop";

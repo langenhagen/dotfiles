@@ -69,6 +69,8 @@ ln -sf "$dotfiles_path/.config/fish/vimlike-bookmarks.fish" "$HOME/.config/fish/
 
 mkdir -p "$HOME/.config/ranger";
 ln -sf "$dotfiles_path/.config/ranger/rc.conf" "$HOME/.config/ranger/rc.conf";
+mkdir -p "$HOME/.config/ranger/colorschemes";
+ln -sf "$dotfiles_path/.config/ranger/colorschemes/mydefault.py" "$HOME/.config/ranger/colorschemes/mydefault.py";
 
 mkdir -p "$HOME/.config/xpad";
 ln -sf "$dotfiles_path/.config/xpad/default-style" "$HOME/.config/xpad/default-style";

@@ -47,9 +47,9 @@ case "barn-ultra" "*celeraone*"
         abbr -a o 'xdg-open .'
         abbr -a xo 'xargs xdg-open'
         abbr -a oh "for f in (eval \$history[1]); xdg-open \"\$f\"; end"
-        abbr -a ho "eval \$history[1] | xclip -fi -selection primary | xclip -fi -selection clipboard > ~/.histout"
-        abbr -a xh "eval \$history[1] | xclip -fi -selection primary | xclip -fi -selection clipboard > ~/.histout"
-        abbr -a go "eval \$history[1] | sed 's|\(.+*\):[0-9]*:.*|\1|' | sed '/^Binary file.*matches\$/d' | sort | uniq | xclip -fi -selection primary | xclip -fi -selection clipboard | tee ~/.histout"
+        abbr -a ho "eval \$history[1] | xclip -fi -selection clipboard > ~/.histout"
+        abbr -a xh "eval \$history[1] | xclip -fi -selection clipboard > ~/.histout"
+        abbr -a go "eval \$history[1] | sed 's|\(.+*\):[0-9]*:.*|\1|' | sed '/^Binary file.*matches\$/d' | sort | uniq | xclip -fi -selection clipboard | tee ~/.histout"
 
         abbr -a pbcopy 'xclip -selection clipboard'
         abbr -a pbpaste 'xclip -selection clipboard -o'

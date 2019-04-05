@@ -1,4 +1,7 @@
-"==============================================================================
+" andreasl: I got this from:
+" https://github.com/luochen1990/rainbow.git
+"
+""==============================================================================
 "Script Title: rainbow parentheses improved
 "Script Version: 3.4.1
 "Author: luochen1990

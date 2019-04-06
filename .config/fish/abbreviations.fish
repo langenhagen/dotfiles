@@ -49,7 +49,7 @@ case "barn-ultra" "*celeraone*"
         abbr -a oh "for f in (eval \$history[1]); xdg-open \"\$f\"; end"
         abbr -a ho "eval \$history[1] | xclip -fi -selection clipboard > ~/.histout"
         abbr -a xh "eval \$history[1] | xclip -fi -selection clipboard > ~/.histout"
-        abbr -a go "eval \$history[1] | sed 's|\(.+*\):[0-9]*:.*|\1|' | sed '/^Binary file.*matches\$/d' | sort | uniq | xclip -fi -selection clipboard | tee ~/.histout"
+        abbr -a go "eval \$history[1] | sed 's|\(.+*\):[0-9]*:.*|\1|' | sed '/^Binary file.*matches\$/d' | sort -u | xclip -fi -selection clipboard | tee ~/.histout"
 
         abbr -a pbcopy 'xclip -selection clipboard'
         abbr -a pbpaste 'xclip -selection clipboard -o'
@@ -66,12 +66,11 @@ abbr -a tmls 'tmux ls'
 abbr -a tmk 'tmux kill-session -t'
 abbr -a tmw 'tmux kill-window -t'
 
-abbr -a cd.. 'cd ..'
 abbr -a c. 'cd ..'
 abbr -a cd. 'cd ..'
+abbr -a cd.. 'cd ..'
 
 abbr -a !! 'eval \$history[1]'
-abbr -a xi 'cat ~/.histout'
 abbr -a hi 'cat ~/.histout'
 
 abbr -a 'trenn' 'for i in (seq (tput cols)); printf \'\\e[31m=\'; end; printf \'\\e[m\n\''
@@ -115,14 +114,14 @@ abbr -a lh 'grep -HiRns --include=\*.lua'
 abbr -a rh 'grep -HiRns --include=\*.robot'
 abbr -a cfh 'grep -HiRns --include={\*.cfg,setup.py,requirements.txt,Makefile}'
 
-abbr -a gs 'git status --short --branch --untracked-files'
-abbr -a gl 'git log --stat'
-abbr -a gbl 'git blame -n'
 abbr -a gb 'git branch'
+abbr -a gbl 'git blame -n'
 abbr -a gbr 'git branch -r'
-abbr -a gca 'git commit --amend'
-abbr -a gss 'git stash'
+#abbr -a gca 'git commit --amend' Commented out on Sunday, April 7, 2019
+abbr -a gl 'git log --stat'
+abbr -a gs 'git status --short --branch --untracked-files'
 abbr -a gsp 'git stash pop'
+abbr -a gss 'git stash'
 
 abbr -a gco 'git checkout'
 abbr -a gcm 'git checkout master'
@@ -145,9 +144,9 @@ abbr -a gp 'git pull --rebase'
 abbr -a gpl 'git pull --rebase'
 abbr -a gplm 'git pull --rebase origin master'
 
-abbr -a gri 'git rebase --interactive HEAD~10'
-abbr -a grc 'git rebase --continue'
 abbr -a gra 'git rebase --abort'
+abbr -a grc 'git rebase --continue'
+abbr -a gri 'git rebase --interactive HEAD~10'
 
 abbr -a grh1 'git reset --hard HEAD~1'
 abbr -a grh2 'git reset --hard HEAD~2'

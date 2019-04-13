@@ -77,7 +77,7 @@ abbr -a 'trenn' 'for i in (seq (tput cols)); printf \'\\e[31m=\'; end; printf \'
 abbr -a mnm 'minimerk \''
 
 abbr -a bp 'bpython'
-abbr -a cct 'pygmentize -O style=native -f console256 -g'
+abbr -a cct 'vim --cmd \'set t_ti= t_te=\' +redraw +q'
 abbr -a gitp  'pwd ; cd (git rev-parse --show-toplevel)'  # abbreviation for GituP
 abbr -a json 'json_pp'  # pretty-print json output
 abbr -a r 'ranger'

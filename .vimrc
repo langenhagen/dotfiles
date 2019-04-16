@@ -32,6 +32,7 @@ set formatoptions-=t " make text not wrap at textwidth initially
 set formatoptions-=a " make text not autoformat initially
 
 set iskeyword+=-  " treat minus as part of a word, esp for autocompletion
+set iskeyword+=.  " treat dot as part of a word, esp for autocompleution
 
 autocmd VimLeave * call system("xsel -ib", getreg('+'))  " keep the clipboard populated after closing vim
 autocmd CursorHoldI * stopinsert  " automatically leave insert mode after 'updatetime' milliseconds of inaction

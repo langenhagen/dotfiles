@@ -31,6 +31,8 @@ set formatprg=par " use the given program to process selected text and put the o
 set formatoptions-=t " make text not wrap at textwidth initially
 set formatoptions-=a " make text not autoformat initially
 
+set iskeyword+=-  " treat minus as part of a word, esp for autocompletion
+
 autocmd VimLeave * call system("xsel -ib", getreg('+'))  " keep the clipboard populated after closing vim
 autocmd CursorHoldI * stopinsert  " automatically leave insert mode after 'updatetime' milliseconds of inaction
 " autocmd BufWritePost .vimrc source $MYVIMRC  " automatically source my vimrc after writing it to disk -- causes errors bc of duplicate sourcing

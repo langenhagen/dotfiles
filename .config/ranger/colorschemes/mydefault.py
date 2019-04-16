@@ -19,8 +19,7 @@ class Scheme(Default):
     def use(self, context):
         fg, bg, attr = Default.use(self, context)
 
-        if context.directory and not context.marked and not context.link \
-                and not context.inactive_pane:
+        if context.directory and not context.marked and not context.link:
             fg = green
 
         if context.in_titlebar and context.hostname:

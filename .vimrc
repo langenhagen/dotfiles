@@ -86,6 +86,32 @@ function HighlightMultipleSpaces()
     endif
 endfunction
 
+" autocompletion ==================================================================================
+
+" remap autocompletion to TAB unless the cursor is after a whitespace
+" found here:
+" https://news.ycombinator.com/item?id=13960147
+" TODO: would also be nice with shift + TAB
+function! InsertTabWrapper()
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-p>"
+  endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+
+" open autocompletion as you type
+" this simple solution might bring some caveats and may crash things
+"function! OpenCompletion()
+"    if !pumvisible() && ((v:char >= 'a' && v:char <= 'z') || (v:char >= 'A' && v:char <= 'Z'))
+"        "call feedkeys("\<C-x>\<C-o>", "n")
+"        call feedkeys("\<C-p>\<C-n>", "t")
+"    endif
+"endfunction
+"autocmd InsertCharPre * call OpenCompletion()
+
 " functions =======================================================================================
 
 function AutoformatToggle()
@@ -103,6 +129,7 @@ else
 endif
 
 endfunction
+
 " commands ========================================================================================
 
 " C-style delimeter line
@@ -152,19 +179,3 @@ let g:netrw_liststyle=1  " show file size and time stamp (toggle manually with i
 if &diff
     colorscheme apprentice " apprentice must be in ~/.vim/colors/ folder (https://github.com/romainl/Apprentice)
 endif
-
-
-
-" experimentally remap autocompletion to TAB unless you the cursor is after a whitespace
-" found here:
-" https://news.ycombinator.com/item?id=13960147
-function! InsertTabWrapper()
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
-    return "\<tab>"
-  else
-    return "\<c-p>"
-  endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-

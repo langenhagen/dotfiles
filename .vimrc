@@ -142,16 +142,17 @@ command AutoformatToggle if &formatoptions =~ 'a' | set formatoptions-=t | set f
 " key bindings =====================================================================================
 
 map <C-s> vip:sort<CR>  " sort paragraph on which the cursor hovers
-map <F10> :q!<CR>                                               " force quit file
 map <S-F11> :set number!<CR>                           " toggle show line numbers
 map <F2> :set hlsearch!<CR>
 map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>   " from: http://vim.wikia.com/wiki/Easily_switch_between_source_and_header_file
 map <F5> :edit<CR>  " refresh file
+map <S-F5> vip:sort<CR>  " sort paragraph on which the cursor hovers
 map <F7> gT         " toggle tab to the left
 map <F8> gt         " toggle tab to the right
-map <F9> :w!<CR>    " force write file
-map <S-F5> vip:sort<CR>  " sort paragraph on which the cursor hovers
 map <S-F8> gT       " toggle tab to the left
+map <F9> :w!<CR>    " force write file
+map <F10> :q!<CR>       " force quit file
+map <S-F10> :wq!<CR>    " force write quit file
 map <expr> <F12> ToggleHighlightOverlength()         " <expr> necessary on functions
 map <expr> <S-F12> HighlightMultipleSpaces()
 map <expr> = AutoformatToggle()

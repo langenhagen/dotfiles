@@ -141,6 +141,9 @@ command AutoformatToggle if &formatoptions =~ 'a' | set formatoptions-=t | set f
 
 " key bindings =====================================================================================
 
+imap <F9> <ESC>:w!<CR>    " force write file
+imap <F10> <ESC>:q!<CR>       " force quit file
+imap <S-F10> <ESC>:wq!<CR>    " force write quit file
 map <C-s> vip:sort<CR>  " sort paragraph on which the cursor hovers
 map <S-F11> :set number!<CR>                           " toggle show line numbers
 map <F2> :set hlsearch!<CR>

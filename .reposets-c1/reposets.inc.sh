@@ -31,7 +31,7 @@ for repo in "${!repo_paths2default_branch_names[@]}"; do
 
         if [ ${#branch_names[@]} != 3 ] ; then
             output="Error in ${BASH_SOURCE[0]} sourced by ${0}: Repo ${repo}'s branch names array"
-            output="${output} is malformed: ${branch_names[@]}. It should contain 3 exactly"
+            output="${output} is malformed: ${branch_names[*]}. It should contain exactly 3"
             output="${output} branches in the form (local,remote pull, remote push), but does not."
             >&2 printf "${output}\n"
             n_errors=$((n_errors + 1))

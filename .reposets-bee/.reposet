@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+# Contains a mapping of a git repo paths to a comma-separated list of the according local
+# branch name and remote branch names to pull from and push to.
+#
+# The mapping contains repos that may be worked with together.
+#
+# author: andreasl
+
+# This is the mapping of repo paths to branch names.
+declare -A repo_paths2default_branch_names=(
+    ["${HOME}/dotfiles"]='master,master,master'
+    ["${HOME}/scripts"]='master,master,master'
+    ["${HOME}/scripts/generic-scripts"]='master,master,master'
+)

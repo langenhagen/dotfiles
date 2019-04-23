@@ -42,6 +42,7 @@ declare -A repo_paths2default_branch_names=(
     ["${HOME}/c1/c1-metrics-aggregator"]='master,master,refs/for/master'
     ["${HOME}/c1/c1-mock"]='master,master,master'
     ["${HOME}/c1/c1-ocb-integrator"]='master,master,refs/for/master'
+    ["${HOME}/c1/c1-ocb-integrator-egg"]='master,master,refs/for/master'
     ["${HOME}/c1/c1-openid"]='master,master,refs/for/master'
     ["${HOME}/c1/c1-pueblo"]='master,master,refs/for/master'
     ["${HOME}/c1/c1-robotframework"]='master,master,refs/for/master'

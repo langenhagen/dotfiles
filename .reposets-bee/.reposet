@@ -12,4 +12,5 @@ declare -A repo_paths2default_branch_names=(
     ["${HOME}/dotfiles"]='master,master,master'
     ["${HOME}/scripts"]='master,master,master'
     ["${HOME}/scripts/generic-scripts"]='master,master,master'
+    ["${HOME}/scripts/nextcloud-server-playground"]='master,master,master'
 )

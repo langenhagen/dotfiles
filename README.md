@@ -12,6 +12,7 @@ The project is structured as follows:
 └── ...                     Dotfiles...
 ```
 
+
 ## Installation
 Clone the git repository and then call the script `link-files.sh` to link the dotfiles
 into your system with `ln -s`:
@@ -27,6 +28,7 @@ Beware that executing `link-files.sh` eventually deletes existing files before i
 dotfiles. Also, you might see some error messages like `rm: $HOME/ranger/rc.conf: No such file or
 directory` at first installation because the script will attempt to delete files may not exist.
 This is fine however.
+
 
 ## Making changes
 You can configure the dotfiles simply via the paths symlinked into your home directory.

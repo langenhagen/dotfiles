@@ -15,5 +15,7 @@ declare -A repo_paths2default_branch_names=(
     ["${HOME}/Dev/_Protofiles"]='master,master,master'
     ["${HOME}/Dev/scripts"]='master,master,master'
     ["${HOME}/Dev/setup-ubuntu-18"]='master,master,master'
+    ["${HOME}/Dev/Web/Expertises-Gantt"]='master,master,master'
+    ["${HOME}/Dev/Web/langenhagen.github.io"]='master,master,master'
     ["${HOME}/dotfiles"]='master,master,master'
 )

@@ -199,6 +199,6 @@ case  "*celeraone*"
     abbr -a oj 'xdg-open "https://jira.celeraone.com/secure/Dashboard.jspa?selectPageId=11405"'  # open jira
     abbr -a rl 'xdg-open "var/log/testreports/log.html"'  # robot log
 
-    abbr -a myfas 'apply-to-all-repos.sh -f ~/.gitprojectsrc-my -q -- \'printf "$PWD"; printf "%0.s~" $(seq ${#PWD} 45); git status -sbu\''
+    abbr -a myfas 'apply-to-all-repos.sh -f my -q -- \'printf "$PWD"; printf "%0.s~" $(seq ${#PWD} 45); git status -sbu\''
 
 end

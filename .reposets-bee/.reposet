@@ -10,7 +10,7 @@
 # This is the mapping of repo paths to branch names.
 declare -A repo_paths2default_branch_names=(
     ["${HOME}/dotfiles"]='master,master,master'
+    ["${HOME}/nextcloud-server-playground"]='master,master,master'
     ["${HOME}/scripts"]='master,master,master'
     ["${HOME}/scripts/generic-scripts"]='master,master,master'
-    ["${HOME}/nextcloud-server-playground"]='master,master,master'
 )

@@ -14,6 +14,7 @@ declare -A repo_paths2default_branch_names=(
     ["${HOME}/Administrative/computer/bee/nextcloud-server"]='master,master,master'
     ["${HOME}/Dev/_Protofiles"]='master,master,master'
     ["${HOME}/Dev/_playgrounds"]='master,master,master'
+    ["${HOME}/Dev/celeraone/c1-gerrit-hooks"]='master,master,master'
     ["${HOME}/Dev/celeraone/notebooks"]='master,master,master'
     ["${HOME}/Dev/celeraone/scripts"]='master,master,master'
     ["${HOME}/Dev/scripts"]='master,master,master'

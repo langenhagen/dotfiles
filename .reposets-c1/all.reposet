@@ -9,6 +9,15 @@
 
 # This is the mapping of repo paths to branch names.
 declare -A repo_paths2default_branch_names=(
+    ["${HOME}/Administrative/computer/bee/bee-scripts"]='master,master,master'
+    ["${HOME}/Administrative/computer/bee/bee-scripts/generic-scripts"]='master,master,master'
+    ["${HOME}/Administrative/computer/bee/nextcloud-server"]='master,master,master'
+    ["${HOME}/Dev/_Protofiles"]='master,master,master'
+    ["${HOME}/Dev/_playgrounds"]='master,master,master'
+    ["${HOME}/Dev/celeraone/notebooks"]='master,master,master'
+    ["${HOME}/Dev/celeraone/scripts"]='master,master,master'
+    ["${HOME}/Dev/scripts"]='master,master,master'
+    ["${HOME}/Dev/setup-ubuntu-18"]='master,master,master'
     ["${HOME}/c1/ansible-playbooks"]='master,master,master'
     ["${HOME}/c1/c1-authproxy"]='master,master,refs/for/master'
     ["${HOME}/c1/c1-authservice"]='master,master,refs/for/master'
@@ -53,4 +62,5 @@ declare -A repo_paths2default_branch_names=(
     ["${HOME}/c1/dockerfiles"]='master,master,master'
     ["${HOME}/c1/jenkins-packaging-buildscripts"]='master,master,master'
     ["${HOME}/c1/presentations"]='master,master,master'
+    ["${HOME}/dotfiles"]='master,master,master'
 )

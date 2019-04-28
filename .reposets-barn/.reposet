@@ -15,3 +15,7 @@ declare -A repo_paths2default_branch_names=(
     ["${HOME}/Dev/scripts"]='master,master,master'
     ["${HOME}/Dev/setup-ubuntu-18"]='master,master,master'
 )
+
+repos=(
+    "${HOME}/dotfiles:master:origin:master:origin:master"
+)

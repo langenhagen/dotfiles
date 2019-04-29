@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# Contains a list of git repository information for repos that may be worked with together.
+#
+# Contains a bash-array of git repo paths and their local default branches, their default remotes
+# and remote default branches for fetching and pushing, resepctively.
+# Each field is divided by the delimiter ':'.
+#
+# The format is as follows:
+# <path>:<local-branch>:<remote-pull-repo>:<remote-pull-branch>:<remote-push-repo>:<remote-push-branch>
+#
+# author: andreasl
+
+repos=(
+    "${HOME}/dotfiles:master:origin:master:origin:master"
+)

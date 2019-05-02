@@ -1,0 +1,9 @@
+#!/bin/bash
+#
+# TODO proper doc
+#
+# author: andreasl
+
+repos=(
+    "${HOME}/dotfiles:master:origin:master:origin:master"
+)

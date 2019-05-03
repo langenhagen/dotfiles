@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# My default c1 reposet.
+#
+# author: andreasl
+
+repos=(
+    "${HOME}/c1/c1-authproxy:master:origin:master:origin:refs/for/master"
+    "${HOME}/c1/c1-authservice:master:origin:master:origin:refs/for/master"
+    "${HOME}/c1/c1-cds:master:origin:master:origin:refs/for/master"
+    "${HOME}/c1/c1-cip:master:origin:master:origin:refs/for/master"
+    "${HOME}/c1/c1-cockpitserver:master:origin:master:origin:refs/for/master"
+    "${HOME}/c1/c1-cre-api:master:origin:master:origin:refs/for/master"
+    "${HOME}/c1/c1-cre-xapi:develop:origin:develop:origin:develop"
+    "${HOME}/c1/c1-engine:develop:origin:develop:origin:refs/for/develop"
+    "${HOME}/c1/c1-entitlement:master:origin:master:origin:refs/for/master"
+    "${HOME}/c1/c1-exceptions:master:origin:master:origin:refs/for/master"
+    "${HOME}/c1/c1-frontend:develop:origin:develop:origin:develop"
+    "${HOME}/c1/c1-lua:master:origin:master:origin:refs/for/master"
+    "${HOME}/c1/c1-metrics:master:origin:master:origin:refs/for/master"
+    "${HOME}/c1/c1-metrics-aggregator:master:origin:master:origin:refs/for/master"
+    "${HOME}/c1/c1-openid:master:origin:master:origin:refs/for/master"
+    "${HOME}/c1/c1-pueblo:master:origin:master:origin:refs/for/master"
+    "${HOME}/c1/c1-robotframework:master:origin:master:origin:refs/for/master"
+    "${HOME}/c1/c1-scheduler:celery:origin:celery:origin:refs/for/celery"
+    "${HOME}/c1/c1-scheduler:master:origin:master:origin:refs/for/master"
+    "${HOME}/c1/presentations:master:origin:master:origin:master"
+)

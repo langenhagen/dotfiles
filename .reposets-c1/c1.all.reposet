@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+# A combination of c1.reposet and c1.my.reposet.
+#
+# author: andreasl
+
+source "${HOME}/.reposets/c1.reposet"
+array+=(${repos[@]})
+source "${HOME}/.reposets/c1.my.reposet"
+array+=(${repos[@]})
+
+repos=(${array[@]})

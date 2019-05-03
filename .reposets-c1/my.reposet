@@ -1,12 +1,27 @@
 #!/bin/bash
 #
-# Contains a mapping of a git repo paths to a comma-separated list of the according local
-# branch name and remote branch names to pull from and push to.
-#
-# The mapping contains repos that may be worked with together.
+# My private reposet.
 #
 # author: andreasl
 
+repos=(
+    "${HOME}/Administrative/computer/bee/bee-scripts:master:origin:master:origin:master"
+    "${HOME}/Administrative/computer/bee/nextcloud-server:master:origin:master:origin:master"
+    "${HOME}/Dev/_playgrounds:master:origin:master:origin:master"
+    "${HOME}/Dev/_Protofiles:master:origin:master:origin:master"
+    "${HOME}/Dev/Expertises-Gantt:master:origin:master:origin:master"
+    "${HOME}/Dev/explore-with-dmenu:master:origin:master:origin:master"
+    "${HOME}/Dev/langenhagen.github.io:master:origin:master:origin:master"
+    "${HOME}/Dev/scripts:master:origin:master:origin:master"
+    "${HOME}/Dev/setup-ubuntu-18:master:origin:master:origin:master"
+    "${HOME}/dotfiles:master:origin:master:origin:master"
+)
+    # "${HOME}/Dev/barn-bits,master,origin,master,origin,master"
+    # "${HOME}/Dev/reposet,master,origin,master,origin,master"
+
+
+
+# TODO remove
 # This is the mapping of repo paths to branch names.
 declare -A repo_paths2default_branch_names=(
     ["${HOME}/Administrative/computer/bee/bee-scripts"]='master,master,master'
@@ -21,3 +36,5 @@ declare -A repo_paths2default_branch_names=(
     ["${HOME}/Dev/setup-ubuntu-18"]='master,master,master'
     ["${HOME}/dotfiles"]='master,master,master'
 )
+
+

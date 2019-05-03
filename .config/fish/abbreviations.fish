@@ -157,13 +157,10 @@ abbr -a grh9 'git reset --hard HEAD~9'
 abbr -a grhh 'git reset --hard HEAD'
 abbr -a grsh 'git reset --soft HEAD~1'
 
-abbr -a fa 'apply-to-all-repos.sh --'
-abbr -a fap 'pull-rebase-all-repos.sh'
-abbr -a faps 'push-all-repos.sh'
-abbr -a fas 'apply-to-all-repos.sh -q -- \'printf "$PWD"; printf "%0.s~" $(seq ${#PWD} 45); git status -sbu\''
-
-#abbr -a rps 'repo sync -c -j8'  # commented out before Tuesday, 26 March 2019
-#abbr -a rpc 'repo status ; repo diff ; repo forall -c "printf \"\e[1;36m`git rev-parse --show-toplevel`\e[0m\t`git log -n1 --pretty=format:\"%an\t%s\"`\" | grep \"Langenhagen\""'  # commented out on Tuesday, 26 March 2019
+abbr -a rpa 'reposet apply'
+abbr -a rpd 'reposet pull'
+abbr -a rpu 'reposet up'
+abbr -a rps 'reposet status'
 
 # abbr -a gr 'git review -d'  # commented out before Tuesday, 26 March 2019
 #abbr -a sfr "git review master --reviewers (git log -n40 --pretty=format:'%ae' | sort | uniq -c | sort -nr | awk '{print \$2}' | head -8)"  # commented out before Tuesday, 26 March 2019

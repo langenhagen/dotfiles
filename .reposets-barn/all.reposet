@@ -1,22 +1,14 @@
 #!/bin/bash
 #
-# Contains a mapping of a git repo paths to a comma-separated list of the according local
-# branch name and remote branch names to pull from and push to.
-#
-# The mapping contains repos that may be worked with together.
+# A sane combination of all reposets.
 #
 # author: andreasl
 
-# This is the mapping of repo paths to branch names.
-declare -A repo_paths2default_branch_names=(
-    ["${HOME}/Administrative/computer/bee/bee-scripts"]='master,master,master'
-    ["${HOME}/Administrative/computer/bee/nextcloud-server"]='master,master,master'
-    ["${HOME}/Dev/_playgrounds"]='master,master,master'
-    ["${HOME}/Dev/_Protofiles"]='master,master,master'
-    ["${HOME}/Dev/explore-with-dmenu"]='master,master,master'
-    ["${HOME}/Dev/scripts"]='master,master,master'
-    ["${HOME}/Dev/setup-ubuntu-18"]='master,master,master'
-    ["${HOME}/Dev/Expertises-Gantt"]='master,master,master'
-    ["${HOME}/Dev/langenhagen.github.io"]='master,master,master'
-    ["${HOME}/dotfiles"]='master,master,master'
-)
+source "${HOME}/.reposets/admin.reposet"
+array+=(${repos[@]})
+source "${HOME}/.reposets/dev.reposet"
+array+=(${repos[@]})
+source "${HOME}/.reposets/extra.reposet"
+array+=(${repos[@]})
+
+repos=(${array[@]})

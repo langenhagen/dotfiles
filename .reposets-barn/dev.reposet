@@ -1,0 +1,25 @@
+#!/bin/bash
+#
+# All my projects under dev.
+#
+# author: andreasl
+
+repos=(
+    "${HOME}/Dev/_playgrounds:master:origin:master:origin:master"
+    "${HOME}/Dev/_Protofiles:master:origin:master:origin:master"
+    "${HOME}/Dev/barn-bar:master:origin:master:origin:master"
+    "${HOME}/Dev/barn-bits:master:origin:master:origin:master"
+    "${HOME}/Dev/barn-keylogger:master:origin:master:origin:master"
+    "${HOME}/Dev/barn-sleeptimer:master:origin:master:origin:master"
+    "${HOME}/Dev/barn-test:master:origin:master:origin:master"
+    "${HOME}/Dev/bWake:master:origin:master:origin:master"
+    "${HOME}/Dev/DBSCAN:master:origin:master:origin:master"
+    "${HOME}/Dev/Expertises-Gantt:master:origin:master:origin:master"
+    "${HOME}/Dev/explore-with-dmenu:master:origin:master:origin:master"
+    "${HOME}/Dev/langenhagen.github.io:master:origin:master:origin:master"
+    "${HOME}/Dev/Master-Thesis:master:origin:master:origin:master"
+    "${HOME}/Dev/OPTICS:master:origin:master:origin:master"
+    "${HOME}/Dev/reposet:master:origin:master:origin:master"
+    "${HOME}/Dev/scripts:master:origin:master:origin:master"
+    "${HOME}/Dev/setup-ubuntu-18:master:origin:master:origin:master"
+)

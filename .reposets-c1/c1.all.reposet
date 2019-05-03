@@ -4,9 +4,9 @@
 #
 # author: andreasl
 
-source "${HOME}/.reposets/c1.reposet"
-array+=(${repos[@]})
 source "${HOME}/.reposets/c1.my.reposet"
+array+=(${repos[@]})
+source "${HOME}/.reposets/c1.reposet"
 array+=(${repos[@]})
 
 repos=(${array[@]})

@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# Extra stuff that is maintained rather rarely reposet.
+#
+# author: andreasl
+
+repos=(
+    "${HOME}/Dev/_Lib/__archive/tin-terrain:master:origin:master:origin:master"
+    "${HOME}/Dev/_Lib/__archive/db4o+Wrapper/db4o-wrappers:master:origin:master:origin:master"
+    "${HOME}/Administrative/computer/Linux-Magic-Trackpad-2-Driver:master:origin:master:origin:master"
+)

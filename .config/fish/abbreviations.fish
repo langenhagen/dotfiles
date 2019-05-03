@@ -160,7 +160,7 @@ abbr -a grsh 'git reset --soft HEAD~1'
 abbr -a rpa 'reposet apply'
 abbr -a rpd 'reposet pull'
 abbr -a rpu 'reposet up'
-abbr -a rps 'reposet status'
+abbr -a rps 'reposet'
 
 # abbr -a gr 'git review -d'  # commented out before Tuesday, 26 March 2019
 #abbr -a sfr "git review master --reviewers (git log -n40 --pretty=format:'%ae' | sort | uniq -c | sort -nr | awk '{print \$2}' | head -8)"  # commented out before Tuesday, 26 March 2019

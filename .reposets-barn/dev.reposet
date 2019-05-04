@@ -7,6 +7,7 @@
 repos=(
     "${HOME}/Dev/_playgrounds:master:origin:master:origin:master"
     "${HOME}/Dev/_Protofiles:master:origin:master:origin:master"
+    "${HOME}/Dev/Bachelor-Thesis:master:origin:master:origin:master"
     "${HOME}/Dev/barn-bar:master:origin:master:origin:master"
     "${HOME}/Dev/barn-bits:master:origin:master:origin:master"
     "${HOME}/Dev/barn-keylogger:master:origin:master:origin:master"

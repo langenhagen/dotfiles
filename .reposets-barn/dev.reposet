@@ -11,6 +11,7 @@ repos=(
     "${HOME}/Dev/barn-bar:master:origin:master:origin:master"
     "${HOME}/Dev/barn-bits:master:origin:master:origin:master"
     "${HOME}/Dev/barn-keylogger:master:origin:master:origin:master"
+    "${HOME}/Dev/barn-sidebar:master:origin:master:origin:master"
     "${HOME}/Dev/barn-sleeptimer:master:origin:master:origin:master"
     "${HOME}/Dev/barn-test:master:origin:master:origin:master"
     "${HOME}/Dev/bWake:master:origin:master:origin:master"
@@ -23,5 +24,7 @@ repos=(
     "${HOME}/Dev/OPTICS:master:origin:master:origin:master"
     "${HOME}/Dev/reposet:master:origin:master:origin:master"
     "${HOME}/Dev/scripts:master:origin:master:origin:master"
+    "${HOME}/Dev/Trip:master:origin:master:origin:master"
     "${HOME}/Dev/setup-ubuntu-18:master:origin:master:origin:master"
+    "${HOME}/Dev/station-clock:master:origin:master:origin:master"
 )

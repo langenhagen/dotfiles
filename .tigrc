@@ -12,7 +12,7 @@ set mouse = false
 
 #---------------------------------------------------------------------------------------------------
 
-bind generic B !git rebase -i %(commit)
+bind generic B !git rebase -i %(commit)~1
 bind generic P @sh -c "xdg-open \"$(dirname $(realpath %(file)))\""  # open path in standard program, linux only
 bind generic Z @?git checkout HEAD %(file)  # checkout latest committed version of a file in status view
 bind generic U @git add -A
@@ -43,10 +43,7 @@ bind generic 2 ?@git reset --hard HEAD~2
 bind generic 3 ?@git reset --hard HEAD~3
 bind generic 4 ?@git reset --hard HEAD~4
 bind generic 5 ?@git reset --hard HEAD~5
-bind generic 6 ?@git reset --hard HEAD~6
-bind generic 7 ?@git reset --hard HEAD~7
-bind generic 8 ?@git reset --hard HEAD~8
-bind generic 9 ?@git reset --hard HEAD~9
+bind generic 9 ?@git reset --hard %(commit)~1
 bind generic 0 ?@git reset --hard HEAD
 bind generic ) ?@git reset --soft HEAD~1
 

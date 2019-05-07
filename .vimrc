@@ -18,8 +18,6 @@ set history=100          " set ex command history to given number
 set hlsearch  " highlight search
 set ignorecase  " search ignores case
 set incsearch            " highlight the next match while typing
-set iskeyword+=-  " treat minus as part of a word, esp for autocompletion
-set iskeyword+=.  " treat dot as part of a word, esp for autocompleution
 set laststatus=2   " shows the current filename in the status bar
 set linebreak " break long lines between words, not in the middle of a word
 " set list    " shows tabs and newline characters
@@ -102,18 +100,40 @@ endfunction
 " found here:
 " https://news.ycombinator.com/item?id=13960147
 " TODO: would also be nice with shift + TAB
-function! InsertTabWrapper()
+function! InsertTabWrapper(is_shift)
     let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
+    if a:is_shift
+        if !col || getline('.')[col - 1] !~ '\k'
+            return "\<tab>"
+        else
+            return "\<c-p>"
+        endif
     else
-        return "\<c-p>"
+        if !col || getline('.')[col - 1] !~ '\k'
+            return "\<S-tab>"
+        else
+            return "\<c-n>"
+        endif
     endif
 endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <tab> <c-r>=InsertTabWrapper(0)<cr>
+inoremap <S-tab> <c-r>=InsertTabWrapper(1)<cr>
+
+function AddKeywordsForAutoCompletion()
+    set iskeyword+=-  " treat minus as part of a word, esp for autocompletion
+    set iskeyword+=.  " treat dot as part of a word, esp for autocompleution
+endfunction
+
+function RemoveKeywordsForAutoCompletion()
+    set iskeyword-=-
+    set iskeyword-=.
+endfunction
+
+autocmd InsertEnter * call AddKeywordsForAutoCompletion()
+autocmd InsertLeave * call RemoveKeywordsForAutoCompletion()
 
 " open autocompletion as you type
-" this simple solution might bring some caveats and may crash things
+" this simple solution might bring some caveats and can crash things
 "function! OpenCompletion()
 "    if !pumvisible() && ((v:char >= 'a' && v:char <= 'z') || (v:char >= 'A' && v:char <= 'Z'))
 "        "call feedkeys("\<C-x>\<C-o>", "n")

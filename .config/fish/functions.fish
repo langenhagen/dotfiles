@@ -121,23 +121,6 @@ function replace
     end
 end
 
-function gitfileschanged
-    # given two commit numbers lists all the files that have been changed in the given commits
-    # in the manner from HEAD~n to HEAD~m
-
-    if test (count $argv) -lt 2
-        echo "Usage: gitfileschanged <firstcommitnumber> <secondcommitnumber>"
-        return
-    end
-
-    for n in (seq $argv[1] $argv[2])
-        set get_files_from_commit_n "git diff-tree --no-commit-id --name-only -r HEAD~$n"
-        set get_files_from_all_commits "$get_files_from_all_commits ; $get_files_from_commit_n"
-    end
-    eval "$get_files_from_all_commits" | sort -u
-
-end
-
 function pushover
     # echoes the given input and
     # sends the input as a string as push notification via pushover.

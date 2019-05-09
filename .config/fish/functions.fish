@@ -9,7 +9,7 @@ function read_confirm_prompt
 end
 
 function read_confirm
-  # performs a Yes/No confirmation check by the user via the keyboard.
+  # Performs a Yes/No confirmation check by the user via the keyboard.
 
   while true
     read -l -p read_confirm_prompt confirm
@@ -24,7 +24,7 @@ function read_confirm
 end
 
 function tricks
-    # shows the tricks file and enables grepping on it
+    # Shows the tricks file and enables grepping on it.
 
     if test (count $argv) -eq 0
         # -R readonly
@@ -35,8 +35,8 @@ function tricks
 end
 
 function journal
-    # shows the journal file or appends given input to it
-    # there must be a trailing newline at the end of the file
+    # Shows the journal file or appends given input to it.
+    # There must be a trailing newline at the end of the file or else output might be fucked up.
 
     if test (count $argv) -eq 0
         tail -n20 "$JOURNAL_FILE_PATH"
@@ -46,8 +46,8 @@ function journal
 end
 
 function minimerk
-    # stores a simple text string into the minimerk.txt file with a timestamp
-    # can be used for minimal reminders that are stored into persistent memory
+    # Stores a simple text string into the minimerk.txt file with a timestamp.
+    # Can be used for minimal reminders that are stored into persistent memory.
 
     if test (count $argv) -eq 0
         tail -n20 "$HOME/.minimerk.txt"
@@ -57,8 +57,8 @@ function minimerk
 end
 
 function bucket
-    # shows the bucket list file or appends given lines to it
-    # there must be a trailing newline at the end of the file
+    # Shows the bucket list file or appends given lines to it.
+    # There must be a trailing newline at the end of the file.
 
     if test (count $argv) -eq 0
         # -R readonly
@@ -78,7 +78,7 @@ function one-line-help
 end
 
 function add-to-one-line-help
-    # adds a line to the one-line-help.txt file
+    # Adds a line to the one-line-help.txt file.
     echo $argv >> "$ONE_LINE_HELP_FILE_PATH"
 
     set tmp_olh_bak_path (mktemp /tmp/one-line-help-backup.XXXXXXXX)
@@ -88,7 +88,7 @@ function add-to-one-line-help
 end
 
 function addabr
-    # adds a line to the abbreviations file and activates the abbreviation
+    # Adds a line to the abbreviations file and activates the abbreviation.
     echo "abbr -a $argv" >> ~/.config/fish/abbreviations.fish
     abbr -a $argv
 end
@@ -122,7 +122,7 @@ function replace
 end
 
 function pushover
-    # echoes the given input and
+    # Echoes the given input and
     # sends the input as a string as push notification via pushover.
     set pushover_app_token agna4fob6wu7e7t2ofhz1drt7ptngq       # change according to app/platform
     set pushover_user_token ucw67xi5r5mqgqo8arh3p64xkj39wu
@@ -179,7 +179,6 @@ function fd
 end
 
 if [ (uname) = 'Darwin' ]
-
     function pbc
         # Copy a given argument to system clipboard.
         echo $argv | pbcopy

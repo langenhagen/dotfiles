@@ -93,34 +93,6 @@ function addabr
     abbr -a $argv
 end
 
-function replace
-    if test (count $argv) -lt 3
-        echo "Usage:  replace '*.cpp' [...] '<lookforthis>' '<replacewiththis>' "
-        return
-    end
-
-    set n_files (math (count $argv) - 2)
-    set to_look_for $argv[(math (count $argv) - 1)]
-    set to_replace_with $argv[(count $argv)]
-
-    for file in $argv[1..$n_files]
-        # show potential changes before actual replacement
-        grep -Hrn --color --include $file $to_look_for .
-    end
-
-    if not read_confirm
-        return
-    end
-
-    for file in $argv[1..$n_files]
-        # find will execute -exec and substitute {} with what it found
-        # whereas with + as many files as possible are given as parameters to sed at once.
-        #find . -name "$file" -exec sed -i '' "s@$to_look_for@$to_replace_with@g" '{}' \;  # Mac sed version
-        # It cannot be on *.* bc then it gives me an error like 'sed cannot be applied on . '
-        find . -name "$file" -exec sed -i "s@$to_look_for@$to_replace_with@g" '{}' \;  # Gnu sed version
-    end
-end
-
 function pushover
     # Echoes the given input and
     # sends the input as a string as push notification via pushover.

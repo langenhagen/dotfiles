@@ -3,7 +3,6 @@
 let g:rainbow_active = 1 " or 0 ; essential for :RainbowToggle of rainbow.vim
 
 " settings  =======================================================================================
-
 filetype plugin indent on
 syntax on  " syntax highlighting. turn off if vim is too slow with :syntax off
 
@@ -11,21 +10,24 @@ let &showbreak="\u2026 "  " shows this symbol at the beginning of a broken line
 
 "set autochdir           " set the pwd to the current file automatically, might conflict with ctags
 set expandtab            " On pressing tab, insert spaces
+set formatoptions+=j " delete comment characters when joining lines
 set formatoptions-=a " make text not autoformat initially
 set formatoptions-=t " make text not wrap at textwidth initially
-set formatprg=par " use the given program to process selected text and put the output back when pressing gq<SELECTION>, e.g. gqip. If the programm is not available, gwip still does work with vim's internal formatter
-set history=100          " set ex command history to given number
+set formatprg=par " use the given program to process selected text and put the output back when pressing gq<SELECTION>, e.g. gqip. If the program is not available, gwip still does work with vim's internal formatter
+set history=1000         " set ex command history to given number; might also affect undo operations
 set hlsearch  " highlight search
 set ignorecase  " search ignores case
 set incsearch            " highlight the next match while typing
 set laststatus=2   " shows the current filename in the status bar
-set linebreak " break long lines between words, not in the middle of a word
+set linebreak " avoid wrapping a line in the middle of a word
 " set list    " shows tabs and newline characters
 set mouse=a             " enable mouse support
 set nocursorline  " underline current line, slows vim down, use `set nocursorline` then
+set noerrorbells         " Disable beep on errors
 set number               " show line numbers
 set ruler                " shows line and column numbers in the status bar
 set shiftwidth=4         " when indenting with '>', use 4 spaces width
+set smartcase            " sutomatically switch search to case-sensitive when search query contains an uppercase letter
 set tabstop=4            " show existing tab with 4 spaces width
 set textwidth=100
 autocmd bufreadpre COMMIT_EDITMSG setlocal textwidth=72  " set the textwidth to 72 when working with git commit messages
@@ -97,9 +99,8 @@ endfunction
 " autocompletion ==================================================================================
 
 " remap autocompletion to TAB unless the cursor is after a whitespace
-" found here:
+" inspired by:
 " https://news.ycombinator.com/item?id=13960147
-" TODO: would also be nice with shift + TAB
 function! InsertTabWrapper(is_shift)
     let col = col('.') - 1
     if a:is_shift
@@ -210,3 +211,8 @@ let g:netrw_liststyle=1  " show file size and time stamp (toggle manually with i
 if &diff
     colorscheme apprentice " apprentice must be in ~/.vim/colors/ folder (https://github.com/romainl/Apprentice)
 endif
+
+" vim tips & tricks ===============================================================================
+
+" set spell! " disable/enable spellchecking
+

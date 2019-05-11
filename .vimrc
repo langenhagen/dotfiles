@@ -42,7 +42,7 @@ autocmd VimLeave * call system("xsel -ib", getreg('+'))  " keep the clipboard po
 highlight statusline ctermfg=0 ctermbg=255
 
 function ChangeStatusLineColor()
-    if &formatoptions =~ 'a'
+    if &formatoptions =~ 't'
         hi statusline ctermfg=25 ctermbg=255
     else
         hi statusline ctermfg=52 ctermbg=255
@@ -143,17 +143,15 @@ autocmd InsertLeave * call RemoveKeywordsForAutoCompletion()
 "autocmd InsertCharPre * call OpenCompletion()
 
 " functions =======================================================================================
-
 function AutoformatToggle()
-    if &formatoptions =~ 'a'
-        set formatoptions-=a
-        set formatoptions-=t
-        set formatoptions?
+    if &formatoptions =~ 't'
+        "set formatoptions-=a  " make text not autoformat initially
+        set formatoptions-=t  " make text not wrap at textwidth initially
         echo "Autoformat deactivated"
     else
-        set formatoptions+=a
+        "set formatoptions+=a
         set formatoptions+=t
-        set formatoptions?
+        normal! gwgw
         echo "Autoformat activated"
     endif
 endfunction
@@ -186,7 +184,7 @@ map <F10> :q!<CR>       " force quit file
 map <S-F10> :wq!<CR>    " force write quit file
 map <expr> <F12> ToggleHighlightOverlength()         " <expr> necessary on functions
 map <expr> <S-F12> HighlightMultipleSpaces()
-map <expr> = AutoformatToggle()
+map = :call AutoformatToggle()<CR>
 nmap Ô kJ
 nmap Ø O<ESC>  " create new line above, set cursor there and go back to normal mode
 nmap ø o<ESC>  " create new line below, set cursor there and go back to normal mode

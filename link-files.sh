@@ -71,6 +71,7 @@ ln -sf "$dotfiles_path/.config/fish/vimlike-bookmarks.fish" "$HOME/.config/fish/
 
 mkdir -p "$HOME/.config/ranger";
 ln -sf "$dotfiles_path/.config/ranger/rc.conf" "$HOME/.config/ranger/rc.conf";
+ln -sf "$dotfiles_path/.config/ranger/scope.sh" "$HOME/.config/ranger/scope.sh";
 mkdir -p "$HOME/.config/ranger/colorschemes";
 ln -sf "$dotfiles_path/.config/ranger/colorschemes/mydefault.py" "$HOME/.config/ranger/colorschemes/mydefault.py";
 

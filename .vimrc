@@ -144,22 +144,22 @@ autocmd InsertLeave * call RemoveKeywordsForAutoCompletion()
 "autocmd InsertCharPre * call OpenCompletion()
 
 " functions =======================================================================================
-function AutoformatToggle()
+function AutoLinebreakToggle()
     if &formatoptions =~ 't'
         "set formatoptions-=a  " make text not autoformat initially
         set formatoptions-=t  " make text not wrap at textwidth initially
-        echo "Autoformat deactivated"
+        echo "Auto linebreak deactivated"
     else
         "set formatoptions+=a
         set formatoptions+=t
         normal! gwgw
-        echo "Autoformat activated"
+        echo "Auto linebreak activated"
     endif
 endfunction
 
 " commands ========================================================================================
 
-command AutoformatToggle call AutoformatToggle()
+command AutoLinebreakToggle call AutoLinebreakToggle()
 command Deltrail %s/\s\+$//e  " delete trailing spaces and tabs -- command for ex-mode. Must begin with uppercase letter if user-defined
 " Python-style delimeter line
 command Pytrenn norm o#<ESC>99a-<ESC>o
@@ -185,7 +185,7 @@ map <F10> :q!<CR>       " force quit file
 map <S-F10> :wq!<CR>    " force write quit file
 map <expr> <F12> ToggleHighlightOverlength()         " <expr> necessary on functions
 map <expr> <S-F12> HighlightMultipleSpaces()
-map = :call AutoformatToggle()<CR>
+map = :call AutoLinebreakToggle()<CR>
 nmap Ô kJ
 nmap Ø O<ESC>  " create new line above, set cursor there and go back to normal mode
 nmap ø o<ESC>  " create new line below, set cursor there and go back to normal mode

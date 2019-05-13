@@ -12,6 +12,8 @@ let &showbreak="\u2026 "  " shows this symbol at the beginning of a broken line
 set expandtab            " On pressing tab, insert spaces
 set formatoptions+=j " delete comment characters when joining lines
 set formatoptions-=a " make text not autoformat initially
+set formatoptions-=o  " disable auto insert the current comment leader after hitting 'o' or 'O' in Normal mode
+set formatoptions-=r  " disable auto insert the current comment leader after hitting <Enter> in Insert mode
 set formatoptions-=t " make text not wrap at textwidth initially
 set formatprg=par " use the given program to process selected text and put the output back when pressing gq<SELECTION>, e.g. gqip. If the program is not available, gwip still does work with vim's internal formatter
 set history=1000         " set ex command history to given number; might also affect undo operations
@@ -147,10 +149,12 @@ autocmd InsertLeave * call RemoveKeywordsForAutoCompletion()
 function AutoLinebreakToggle()
     if &formatoptions =~ 't'
         "set formatoptions-=a  " make text not autoformat initially
+        set formatoptions-=c  " auto-wrap comments using textwidth, inserting the current comment leader automatically
         set formatoptions-=t  " make text not wrap at textwidth initially
         echo "Auto linebreak deactivated"
     else
         "set formatoptions+=a
+        set formatoptions+=c
         set formatoptions+=t
         normal! gwgw
         echo "Auto linebreak activated"

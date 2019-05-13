@@ -10,11 +10,12 @@ let &showbreak="\u2026 "  " shows this symbol at the beginning of a broken line
 
 "set autochdir           " set the pwd to the current file automatically, might conflict with ctags
 set expandtab            " On pressing tab, insert spaces
-set formatoptions+=j " delete comment characters when joining lines
-set formatoptions-=a " make text not autoformat initially
+set formatoptions+=j  " delete comment characters when joining lines
+set formatoptions-=a  " make text not autoformat initially
+set formatoptions-=c  " disable auto-wrap comments using textwidth, inserting the current comment leader automatically
 set formatoptions-=o  " disable auto insert the current comment leader after hitting 'o' or 'O' in Normal mode
 set formatoptions-=r  " disable auto insert the current comment leader after hitting <Enter> in Insert mode
-set formatoptions-=t " make text not wrap at textwidth initially
+set formatoptions-=t  " make text not wrap at textwidth initially
 set formatprg=par " use the given program to process selected text and put the output back when pressing gq<SELECTION>, e.g. gqip. If the program is not available, gwip still does work with vim's internal formatter
 set history=1000         " set ex command history to given number; might also affect undo operations
 set hlsearch  " highlight search
@@ -222,3 +223,18 @@ endif
 
 " set spell!  " disable/enable spellchecking
 " set spell?  " read a setting
+
+"set formatoptions+=l  " long lines are not broken in insert mode: When a line was longer than 'textwidth'
+                       " when the insert command started, Vim does not automatically format it.
+
+"set formatoptions+=n  " when formatting text, recognize numbered lists.  This actually uses
+                       " the 'formatlistpat' option, thus any kind of list can be used.  The
+                       " indent of the text after the number is used for the next line.  The
+                       " default is to find a number, optionally followed by '.', ':', ')',
+                       " ']' or '}'.  Note that 'autoindent' must be set too.  Doesn't work
+                       " well together with "2".
+                       " Example:
+                       " 1. the first item
+                       "   wraps
+                       " 2. the second item
+

@@ -35,6 +35,8 @@ set textwidth=100
 autocmd bufreadpre COMMIT_EDITMSG setlocal textwidth=72  " set the textwidth to 72 when working with git commit messages
 set visualbell           " disable beep sound when a motion fails
 set whichwrap+=<,>,h,l,[,] " causes left, right arrow keys and h, l to wrap when used at beginning or end of lines. < > means cursor keys in normal and visual mode, [ ] means  cursor keys in insert mode
+set wildmenu  " a visual menu to bubble through for completion in the command line
+set wildmode=longest,full  " longest: autocomplete to longest common word on first tab; full: bubble through the wildnenu on pressing tab again and on following tabs
 
 autocmd CursorHoldI * stopinsert  " automatically leave insert mode after 'updatetime' milliseconds of inaction
 autocmd VimLeave * call system("xsel -ib", getreg('+'))  " keep the clipboard populated after closing vim

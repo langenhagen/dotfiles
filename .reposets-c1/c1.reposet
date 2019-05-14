@@ -38,6 +38,7 @@ repos=(
     "${HOME}/c1/c1-fixtures:master:origin:master:origin:refs/for/master"
     "${HOME}/c1/c1-frontend:develop:origin:develop:origin:develop"
     "${HOME}/c1/c1-lua:master:origin:master:origin:refs/for/master"
+    "${HOME}/c1/c1-meta:master:origin:master:origin:master"
     "${HOME}/c1/c1-metrics:master:origin:master:origin:refs/for/master"
     "${HOME}/c1/c1-metrics-aggregator:master:origin:master:origin:refs/for/master"
     "${HOME}/c1/c1-mock:master:origin:master:origin:master"

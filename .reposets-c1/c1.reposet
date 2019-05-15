@@ -51,6 +51,7 @@ repos=(
     "${HOME}/c1/c1-scheduler:master:origin:master:origin:refs/for/master"
     "${HOME}/c1/c1-templates-bundle:master:origin:master:origin:refs/for/master"
     "${HOME}/c1/docker-bulidscripts:master:origin:master::"
+    "${HOME}/c1/docker-testrunner:master:origin:master:origin:master"
     "${HOME}/c1/dockerfiles:master:origin:master:origin:master"
     "${HOME}/c1/jenkins-packaging-buildscripts:master:origin:master::"
     "${HOME}/c1/presentations:master:origin:master:origin:master"

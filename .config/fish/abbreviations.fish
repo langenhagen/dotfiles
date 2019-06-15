@@ -76,6 +76,7 @@ abbr -a hi 'cat ~/.histout'
 abbr -a 'trenn' 'for i in (seq (tput cols)); printf \'\\e[31m=\'; end; printf \'\\e[m\n\''
 abbr -a mnm 'minimerk \''
 
+abbr -a p 'python'
 abbr -a bp 'bpython'
 abbr -a cct 'vim --cmd \'set t_ti= t_te=\' +redraw +q'
 abbr -a gitp  'pwd ; cd (git rev-parse --show-toplevel)'  # abbreviation for GituP

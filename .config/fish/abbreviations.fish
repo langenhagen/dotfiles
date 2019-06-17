@@ -18,7 +18,6 @@ case "barn-ultra" "*celeraone*"
     abbr -a proto 'cd "$PROTOFILES_DIR_PATH" ; find "$PROTOFILES_DIR_PATH" -name "*_proto.*"'
     abbr -a prt 'cd "$PROTOFILES_DIR_PATH" ; find "$PROTOFILES_DIR_PATH" -name "*_proto.*"'
     abbr -a play 'cd "$PLAYGROUND_DIR_PATH" ; find "$PLAYGROUND_DIR_PATH" -maxdepth 1 -type d -not -path "*/\.*" -name "*"'
-    abbr -a ply 'cd "$PLAYGROUND_DIR_PATH" ; find "$PLAYGROUND_DIR_PATH" -maxdepth 1 -type d -not -path "*/\.*" -name "*"'
 
     abbr -a j 'journal \''
     abbr -a jrn 'journal \''

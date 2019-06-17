@@ -6,7 +6,6 @@
 
 source "${HOME}/.reposets/admin.reposet"
 repos+=(
-    "${HOME}/Dev/_playgrounds:master:origin:master:origin:master"
     "${HOME}/Dev/_Protofiles:master:origin:master:origin:master"
     "${HOME}/Dev/scripts:master:origin:master:origin:master"
     "${HOME}/Dev/setup-ubuntu-18:master:origin:master:origin:master"

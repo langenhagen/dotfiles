@@ -179,6 +179,7 @@ case  "*celeraone*"
     abbr -a qap 'cd-into-c1-project authproxy'
     abbr -a qc 'cd-into-c1-project cre-api'
     abbr -a qcd 'cd-into-c1-project custom-dumont'
+    abbr -a qco 'cd-into-c1-project cockpitserver'
     abbr -a qe 'cd-into-c1-project entitlement'
     abbr -a qen 'cd-into-c1-project engine'
     abbr -a qex 'cd-into-c1-project exceptions'

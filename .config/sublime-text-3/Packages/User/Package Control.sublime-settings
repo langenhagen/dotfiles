@@ -2,6 +2,8 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
+		"MarkdownHighlighting",
+		"PlantUmlDiagrams"
 	],
 	"installed_packages":
 	[
@@ -27,7 +29,6 @@
 		"PlantUmlDiagrams",
 		"Pretty JSON",
 		"RobotFrameworkAssistant",
-		"SublimeLinter",
 		"Super Calculator",
 		"Swift",
 		"Tmux Syntax Highlight",

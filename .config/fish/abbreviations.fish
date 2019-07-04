@@ -9,55 +9,12 @@
 #
 # author: andreasl
 
-switch (uname -n)
-case "barn-ultra" "*celeraone*"
-    # Desktop machine related abbrs
-
-    abbr -a now 'date \'+%s\' | xclip -fi -selection clipboard'  # the current timestamp since epoch in seconds
-
-    abbr -a prt 'cd "$PROTOFILES_DIR_PATH" ; find "$PROTOFILES_DIR_PATH" -name "*_proto.*"'
-
-    abbr -a j 'journal \''
-    abbr -a jrn 'journal \''
-    abbr -a editjrn "vim -R '+normal G\$' -p $JOURNAL_FILE_PATH"
-    abbr -a b 'bucket \''
-    abbr -a bkt 'bucket \''
-    abbr -a tks 'tricks'
-    abbr -a alh 'add-to-one-line-help \''
-    abbr -a olh 'one-line-help'
-
-    abbr -a s 'subl'
-    abbr -a xs 'xargs subl'
-    abbr -a sh "subl (eval \$history[1])"
-
-    switch (uname)
-    # OS dependent abbrs
-    case  'Darwin'
-        abbr -a xc 'open -a Xcode'
-        abbr -a xcode 'open -a Xcode'
-        abbr -a o 'open .'
-        abbr -a xo 'xargs xdg-open'
-        abbr -a oh "open (eval \$history[1])"
-
-    case  'Linux'
-        abbr -a open 'xdg-open'
-        abbr -a o 'xdg-open .'
-        abbr -a xo 'xargs xdg-open'
-        abbr -a oh "for f in (eval \$history[1]); xdg-open \"\$f\"; end"
-        abbr -a ho "eval \$history[1] | xclip -fi -selection clipboard > ~/.histout"
-        abbr -a xh "eval \$history[1] | xclip -fi -selection clipboard > ~/.histout"
-        abbr -a go "eval \$history[1] | sed 's|\(.+*\):[0-9]*:.*|\1|' | sed '/^Binary file.*matches\$/d' | sort -u | xclip -fi -selection clipboard | tee ~/.histout"
-
-        abbr -a pbcopy 'xclip -selection clipboard'
-        abbr -a pbpaste 'xclip -selection clipboard -o'
-    end
-end
-
 abbr -a fconf 'cd ~/.config/fish/ ; ls'
 abbr -a sourcefish '. ~/.config/fish/config.fish'
 abbr -a editabbr 'vim -p ~/.config/fish/abbreviations.fish; source ~/.config/fish/abbreviations.fish'
 abbr -a fn 'functions'
 abbr -a fns 'functions'
+abbr -a history 'history --show-time=\'%h-%d - %H:%M:%S \' | less'
 
 abbr -a tmls 'tmux ls'
 abbr -a tmk 'tmux kill-session -t'
@@ -161,14 +118,51 @@ abbr -a rpd 'reposet pull'
 abbr -a rpu 'reposet up'
 abbr -a rps 'reposet'
 
-# abbr -a gr 'git review -d'  # commented out before Tuesday, 26 March 2019
-#abbr -a sfr "git review master --reviewers (git log -n40 --pretty=format:'%ae' | sort | uniq -c | sort -nr | awk '{print \$2}' | head -8)"  # commented out before Tuesday, 26 March 2019
-#abbr -a gitgrep 'git log -p --color-words -S'  # commented out on Tuesday, 26 March 2019
+# abbr -a w 'workon'  # commented out on 19-07-04
 
-#abbr -a ccr 'conda create --name tmp python=3.7 pip'  # commented out before Tuesday, 26 March 2019
-#abbr -a cr 'conda remove -y --all --name'  # commented out before Tuesday, 26 March 2019
+switch (uname -n)
+case "barn-ultra" "*celeraone*"
+    # Desktop machine related abbrs
 
-abbr -a w 'workon'
+    abbr -a now 'date \'+%s\' | xclip -fi -selection clipboard'  # the current timestamp since epoch in seconds
+
+    abbr -a prt 'cd "$PROTOFILES_DIR_PATH" ; find "$PROTOFILES_DIR_PATH" -name "*_proto.*"'
+
+    abbr -a j 'journal \''
+    abbr -a jrn 'journal \''
+    abbr -a editjrn "vim -R '+normal G\$' -p $JOURNAL_FILE_PATH"
+    abbr -a b 'bucket \''
+    abbr -a bkt 'bucket \''
+    abbr -a tks 'tricks'
+    abbr -a alh 'add-to-one-line-help \''
+    abbr -a olh 'one-line-help'
+
+    abbr -a s 'subl'
+    abbr -a xs 'xargs subl'
+    abbr -a sh "subl (eval \$history[1])"
+
+    switch (uname)
+    # OS dependent abbrs
+    case  'Darwin'
+        abbr -a xc 'open -a Xcode'
+        abbr -a xcode 'open -a Xcode'
+        abbr -a o 'open .'
+        abbr -a xo 'xargs xdg-open'
+        abbr -a oh "open (eval \$history[1])"
+
+    case  'Linux'
+        abbr -a open 'xdg-open'
+        abbr -a o 'xdg-open .'
+        abbr -a xo 'xargs xdg-open'
+        abbr -a oh "for f in (eval \$history[1]); xdg-open \"\$f\"; end"
+        abbr -a ho "eval \$history[1] | xclip -fi -selection clipboard > ~/.histout"
+        abbr -a xh "eval \$history[1] | xclip -fi -selection clipboard > ~/.histout"
+        abbr -a go "eval \$history[1] | sed 's|\(.+*\):[0-9]*:.*|\1|' | sed '/^Binary file.*matches\$/d' | sort -u | xclip -fi -selection clipboard | tee ~/.histout"
+
+        abbr -a pbcopy 'xclip -selection clipboard'
+        abbr -a pbpaste 'xclip -selection clipboard -o'
+    end
+end
 
 switch (uname -n)
 case  "*celeraone*"
@@ -197,7 +191,4 @@ case  "*celeraone*"
     abbr -a og 'xdg-open "https://codereview.celeraone.com/dashboard/self"' # open gerrit
     abbr -a oj 'xdg-open "https://jira.celeraone.com/secure/Dashboard.jspa?selectPageId=11405"'  # open jira
     abbr -a rl 'xdg-open "var/log/testreports/log.html"'  # robot log
-
-    abbr -a myfas 'apply-to-all-repos.sh -f my -q -- \'printf "$PWD"; printf "%0.s~" $(seq ${#PWD} 45); git status -sbu\''
-
 end

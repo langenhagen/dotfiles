@@ -53,7 +53,9 @@ switch (uname -n)
         set -gx PATH $PATH "$HOME/Dev/celeraone/scripts"
 end
 
-set -gx PATH $PATH /usr/local/sbin
+set -gx PATH $PATH '/usr/local/sbin'
+setenv N_PREFIX "$HOME/n"
+set -gx PATH "$HOME/n/bin" $PATH
 set -gx PATH $PATH "$SCRIPTS_DIR_PATH"
 
 setenv LANG "en_US.UTF-8"

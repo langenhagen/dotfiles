@@ -153,6 +153,7 @@ case "barn-ultra" "*celeraone*"
     case  'Linux'
         abbr -a open 'xdg-open'
         abbr -a o 'xdg-open .'
+        abbr -a x 'xdg-open'
         abbr -a xo 'xargs xdg-open'
         abbr -a oh "for f in (eval \$history[1]); xdg-open \"\$f\"; end"
         abbr -a ho "eval \$history[1] | xclip -fi -selection clipboard > ~/.histout"

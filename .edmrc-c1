@@ -3,7 +3,7 @@
 choices=(
     'Desktop/Dropbox'
     'Administrative'
-    'Administrative/user-names.txt'
+    'Administrative/my-user-names.txt'
     'Barn'
     'Barn/Ideas'
     'Barn/Kaufen-Verkaufen'

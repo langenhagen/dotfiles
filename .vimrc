@@ -201,6 +201,20 @@ vmap <ENTER> "+y  " yanks the contents of the visual selection to the system cli
 vmap 2 y/<C-R>"<CR>   " search for selected text (characters . and * can cause problems!)
 vmap <S-F5> :sort<CR>  " sort in visual selection
 
+" keep the cursor on its screen-line when scrolling a full page
+nnoremap <PageUp> <C-U><C-U>
+vnoremap <PageUp> <C-U><C-U>
+inoremap <PageUp> <C-\><C-O><C-U><C-\><C-O><C-U>
+nnoremap <PageDown> <C-D><C-D>
+vnoremap <PageDown> <C-D><C-D>
+inoremap <PageDown> <C-\><C-O><C-D><C-\><C-O><C-D>
+nnoremap <S-Up> <C-U><C-U>
+vnoremap <S-Up> <C-U><C-U>
+inoremap <S-Up> <C-\><C-O><C-U><C-\><C-O><C-U>
+nnoremap <S-Down> <C-D><C-D>
+vnoremap <S-Down> <C-D><C-D>
+inoremap <S-Down> <C-\><C-O><C-D><C-\><C-O><C-D>
+
 " disable arrow keys in insert mode to force using normal mode as a habit
 "imap <up> <nop>
 "imap <down> <nop>

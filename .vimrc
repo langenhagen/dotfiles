@@ -66,7 +66,11 @@ au BufNewFile,BufRead *.plantuml set filetype=dot  " syntax for *.plantuml files
 
 " highlighting rules  =============================================================================
 
-" HIGHLIGHT OVERLENGTH STRINGS AND TRAILING SPACES IN A RED BG COLOR
+" autocompletion coloring
+highlight Pmenu ctermbg=237 ctermfg=255
+highlight PmenuSel ctermbg=45 ctermfg=0
+
+" highlight overlength strings and trailing spaces with a red bg color
 highlight Overlength ctermbg=darkred ctermfg=white guibg=#101010
 let g:is_highlight_overlength = 1
 function ToggleHighlightOverlength()
@@ -86,7 +90,7 @@ function ToggleHighlightOverlength()
 endfunction
 autocmd BufWinEnter * match Overlength /\s\+$/ " initial setting  autocmd BufWinEnter * calls  the command when a window is being entered
 
-" HIGHLIGHT MULTIPLE SPACES AND TABS
+" highlight multiple spaces and tabs
 highlight MultipleSpaces ctermbg=darkred guibg=darkred
 let g:is_highlight_multiple_spaces = 0
 function HighlightMultipleSpaces()

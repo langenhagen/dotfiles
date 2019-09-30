@@ -9,5 +9,6 @@ repos+=(
     "${HOME}/nextcloud-server-playground:master:origin:master:origin:master"
     "${HOME}/scripts:master:origin:master:origin:master"
     "${HOME}/scripts/generic-scripts:master:origin:master:origin:master"
+    "${HOME}/scripts/ping-out:master:origin:master:origin:master"
     "${HOME}/scripts/reposet:master:origin:master:origin:master"
 )

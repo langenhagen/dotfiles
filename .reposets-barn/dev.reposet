@@ -23,6 +23,7 @@ repos=(
     "${HOME}/Dev/langenhagen.github.io:master:origin:master:origin:master"
     "${HOME}/Dev/Master-Thesis:master:origin:master:origin:master"
     "${HOME}/Dev/OPTICS:master:origin:master:origin:master"
+    "${HOME}/Dev/ping-out:master:origin:master:origin:master"
     "${HOME}/Dev/Processing:master:origin:master:origin:master"
     "${HOME}/Dev/reposet:master:origin:master:origin:master"
     "${HOME}/Dev/scripts:master:origin:master:origin:master"

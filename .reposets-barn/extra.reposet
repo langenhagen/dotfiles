@@ -6,5 +6,7 @@
 
 repos=(
     "${HOME}/Administrative/computer/bee/bee-scripts/generic-scripts:master:origin:master::"
+    "${HOME}/Administrative/computer/bee/bee-scripts/ping-out:master:origin:master::"
+    "${HOME}/Administrative/computer/bee/bee-scripts/reposet:master:origin:master::"
     "${HOME}/Dev/_Lib/__archive/db4o+Wrapper/db4o-wrappers:master:origin:master:origin:master"
 )

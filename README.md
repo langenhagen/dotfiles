@@ -1,7 +1,7 @@
 # Dotfiles
 author: andreasl
 
-This project contains a bunch of .dotfiles and /.dotfolders to configure your UNIX environment.
+A bunch of .dotfiles and /.dotfolders to configure your UNIX environment.
 It may also contain exported settings from other programs.
 
 The project is structured as follows:
@@ -35,6 +35,11 @@ You can configure the dotfiles simply via the paths symlinked into your home dir
 When you add new files or want to remove dotfiles, please don't add them directly into
 your system, but into the `dotfiles` folder, change the `link-files.sh` accordingly and
 then run `link-files.sh`. Start a terminal session to see the changes taking effect.
+
+### Opt-In Philosophy
+The dotfiles generally link files rather than folders into the system. This happens in order to
+allow for custom machine-specific configurations that may not land in the dotfiles.
+One notable exception is the folder `sublime-text-3/Packages`.
 
 
 ## Checking out other versions

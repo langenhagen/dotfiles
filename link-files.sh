@@ -81,7 +81,7 @@ ln -sf "$dotfiles_path/.config/ranger/colorschemes/mydefault.py" "$HOME/.config/
 mkdir -p "$HOME/.config/xpad";
 ln -sf "$dotfiles_path/.config/xpad/default-style" "$HOME/.config/xpad/default-style";
 mkdir -p "$HOME/.config/xpad/trigger";
-ln -sf "$dotfiles_path/.config/xpad/trigger/trigger-GEORGIAN" "$HOME/.config/xpad/trigger/trigger-GEORGIAN";
+ln -sf "$dotfiles_path/.config/xpad/trigger/GEORGIAN-trigger.sh" "$HOME/.config/xpad/trigger/GEORGIAN-trigger.sh";
 
 mkdir -p "$HOME/.urserver/remotes";
 ln -sf "$dotfiles_path/.urserver/remotes/custom" "$HOME/.urserver/remotes/";

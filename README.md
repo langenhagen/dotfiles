@@ -39,7 +39,8 @@ then run `link-files.sh`. Start a terminal session to see the changes taking eff
 ### Opt-In Philosophy
 The dotfiles generally link files rather than folders into the system. This happens in order to
 allow for custom machine-specific configurations that may not land in the dotfiles.
-One notable exception is the folder `sublime-text-3/Packages`.
+One exceptions are the folder `sublime-text-3/Packages` and the folder
+`.config/autokey/data/My-Global-Phrases`.
 
 
 ## Checking out other versions

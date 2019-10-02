@@ -48,6 +48,9 @@ ln -sf "$dotfiles_path/.config/konsolerc" "$HOME/.config/konsolerc";
 mkdir -p "$HOME/.local/share/konsole";
 ln -sf "$dotfiles_path/.local/share/konsole/My-Konsole-Profile.profile" "$HOME/.local/share/konsole/My-Konsole-Profile.profile";
 
+mkdir -p "$HOME/.config/autokey/data/"
+ln -sf "$dotfiles_path/.config/autokey/data/My-Global-Phrases" "$HOME/.config/autokey/data/";
+
 mkdir -p "$HOME/.config/autostart";
 ln -sf "$dotfiles_path/.config/autostart/caffeine-indicator.desktop" "$HOME/.config/autostart/caffeine-indicator.desktop";
 ln -sf "$dotfiles_path/.config/autostart/dropbox.desktop" "$HOME/.config/autostart/dropbox.desktop";

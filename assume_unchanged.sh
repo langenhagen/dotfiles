@@ -6,11 +6,11 @@
 # Change the array to your likings.
 #
 # author: andreasl
-# version: 18-12-23
 
 files=(
-    ".config/sublime-text-3/Packages/User/Preferences.sublime-settings"
-    ".config/konsolerc"
+    '.config/autokey/data/My-Global-Phrases'
+    '.config/sublime-text-3/Packages/User/Preferences.sublime-settings'
+    '.config/konsolerc'
     )
 
 if [ "$1" == '-no' ]; then

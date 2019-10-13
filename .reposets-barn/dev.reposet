@@ -32,4 +32,5 @@ repos=(
     "${HOME}/Dev/tmStreamer:master:origin:master:origin:master"
     "${HOME}/Dev/Trip:master:origin:master:origin:master"
     "${HOME}/Dev/xLayer:master:origin:master:origin:master"
+    "${HOME}/Dev/xpad-trigger:master:origin:master:origin:master"
 )

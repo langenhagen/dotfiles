@@ -180,7 +180,7 @@ class StdErrUnitTests(testing_utilities.MultipleAssertionFailures):
             ) ), output )
 
     def test_no_function_name_and_level(self):
-        getLogger( 127, "testing.main_unit_tests", date=True, function=False, level=True )
+        getLogger( 127, "testing.main_unit_tests", date=True, function=False, levels=True )
 
         log( 1, "Bitwise" )
         log( 8, "Bitwise" )
@@ -291,7 +291,7 @@ class StdErrUnitTests(testing_utilities.MultipleAssertionFailures):
 
         log.basic( 1, "Debug" )
 
-        output = _stderr.contents( r"\d{2}:\d{2}:\d{2}:\d{3}\.\d{6} \d\.\d{2}e.\d{2} \- " )
+        output = _stderr.contents( r"\d{2}:\d{2}:\d{2}:\d{3}\.\d{6} \d\.\d{2}e.\d{2} " )
         self.assertEqual( "testing.main_unit_tests.test_basic_formatter:{} Debug".format( line + 3 ), output )
 
     def test_exception_throwing(self):
@@ -539,10 +539,133 @@ class LogRecordUnitTests(testing_utilities.MultipleAssertionFailures):
             utilities.wrap_text( output, trim_spaces='+' ) )
 
 
+class SetupFormattingSpacingUnitTests(testing_utilities.MultipleAssertionFailures):
+
+    def setUp(self):
+        self.maxDiff = None
+        sys.stderr.write("\n")
+        sys.stderr.write("\n")
+
+    def tearDown(self):
+        log.clear( True )
+        log.reset()
+
+    def test_default_logger_creation(self):
+        getLogger( 1 )
+        log( 'Something...' )
+
+        output = _stderr.contents()
+        self.assertRegexpMatches( output,
+                r"\d\d:\d\d:\d\d:\d\d\d.\d\d\d\d\d\d \d.\d\de(\+|\-)\d\d - logger.test_default_logger_creation:\d\d\d - Something..." )
+
+    def test_not_time(self):
+        getLogger( 1, time=0 )
+        log( 'Something...' )
+
+        output = _stderr.contents()
+        self.assertRegexpMatches( output,
+                r"\d\d\d.\d\d\d\d\d\d \d.\d\de(\+|\-)\d\d - logger.test_not_time:\d\d\d - Something..." )
+
+    def test_not_time_msecs(self):
+        getLogger( 1, time=0, msecs=0 )
+        log( 'Something...' )
+
+        output = _stderr.contents()
+        self.assertRegexpMatches( output,
+                r"\d.\d\de(\+|\-)\d\d - logger.test_not_time_msecs:\d\d\d - Something..." )
+
+    def test_not_time_msecs_tick(self):
+        getLogger( 1, time=0, msecs=0, tick=0 )
+        log( 'Something...' )
+
+        output = _stderr.contents()
+        self.assertRegexpMatches( output,
+                r"logger.test_not_time_msecs_tick:\d\d\d - Something..." )
+
+    def test_not_time_msecs_tick_name(self):
+        getLogger( 1, time=0, msecs=0, tick=0, name=0 )
+        log( 'Something...' )
+
+        output = _stderr.contents()
+        self.assertRegexpMatches( output,
+                r"test_not_time_msecs_tick_name:\d\d\d - Something..." )
+
+    def test_not_time_msecs_tick_name_function(self):
+        getLogger( 1, time=0, msecs=0, tick=0, name=0, function=0 )
+        log( 'Something...' )
+
+        output = _stderr.contents()
+        self.assertRegexpMatches( output,
+                r"Something..." )
+
+    def test_not_time_msecs_tick_name_function_but_level(self):
+        getLogger( 1, time=0, msecs=0, tick=0, name=0, function=0, levels=1 )
+        log( 'Something...' )
+
+        output = _stderr.contents()
+        self.assertRegexpMatches( output,
+                r"DEBUG\(\d+\) - Something..." )
+
+    def test_not_time_msecs_tick_name_function_level_separator(self):
+        getLogger( 1, time=0, msecs=1, tick=0, name=0, function=0, levels=1, separator=0 )
+        log( 'Something...' )
+
+        output = _stderr.contents()
+        self.assertRegexpMatches( output,
+                r"\d\d\d.\d\d\d\d\d\dDEBUG\(\d+\)Something..." )
+
+    def test_not_time_msecs_tick_name_function_level_but_separator(self):
+        getLogger( 1, time=0, msecs=1, tick=0, name=0, function=0, levels=1, separator=" " )
+        log( 'Something...' )
+
+        output = _stderr.contents()
+        self.assertRegexpMatches( output,
+                r"\d\d\d.\d\d\d\d\d\d DEBUG\(\d+\) Something..." )
+
+
+class DynamicSetupFormattingUnitTests(testing_utilities.MultipleAssertionFailures):
+
+    def setUp(self):
+        self.maxDiff = None
+        sys.stderr.write("\n")
+        sys.stderr.write("\n")
+
+    def tearDown(self):
+        log.clear( True )
+        log.reset()
+
+    def test_not_msecs(self):
+        getLogger( 1 )
+        log( 'Something...', msecs=0 )
+
+        output = _stderr.contents()
+        self.assertRegexpMatches( output,
+                r"\d\d:\d\d:\d\d \d.\d\de(\+|\-)\d\d - logger.test_not_msecs:\d\d\d - Something..." )
+
+    def test_not_msecs_tick(self):
+        getLogger( 1 )
+        log( 'Something...', msecs=0, tick=0 )
+
+        output = _stderr.contents()
+        self.assertRegexpMatches( output,
+                r"\d\d:\d\d:\d\d - logger.test_not_msecs_tick:\d\d\d - Something..." )
+
+    def test_not_msecs_tick_time(self):
+        getLogger( 1 )
+        log( 'Something...', msecs=0, tick=0, time=0 )
+
+        output = _stderr.contents()
+        self.assertRegexpMatches( output,
+                r"logger.test_not_msecs_tick_time:\d\d\d - Something..." )
+
+
 def load_tests(loader, standard_tests, pattern):
     suite = unittest.TestSuite()
-    suite.addTest( LogRecordUnitTests( 'test_dictionaryBasicLogging' ) )
+    # suite.addTest( LogRecordUnitTests( 'test_dictionaryBasicLogging' ) )
+    # suite.addTest( SetupFormattingSpacingUnitTests( 'test_time' ) )
+    suite.addTests( unittest.TestLoader().loadTestsFromTestCase( SetupFormattingSpacingUnitTests ) )
     return suite
+
 
 # Comment this to run individual Unit Tests
 load_tests = None

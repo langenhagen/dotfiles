@@ -53,9 +53,7 @@ import traceback
 import logging
 import logging.handlers
 
-from collections import MutableMapping
 from logging import getLevelName
-
 from logging import Logger
 from logging import Manager
 from logging import PlaceHolder
@@ -94,6 +92,16 @@ except( ImportError, ValueError ):
 from .stderr_replacement import stderr_replacement
 from .stdout_replacement import stdout_replacement
 
+changeable_setup_arguments = (
+    "date",
+    "levels",
+    "function",
+    "name",
+    "time",
+    "tick",
+    "separator",
+    "msecs",
+)
 
 is_python2 = False
 EMPTY_KWARG = -sys.maxsize
@@ -301,7 +309,7 @@ class Debugger(Logger):
             "mode": 'a',
             "delete": True,
             "date": False,
-            "level": False,
+            "levels": False,
             "function": True,
             "name": True,
             "time": True,
@@ -366,26 +374,23 @@ class Debugger(Logger):
     def _fast_clean(self, debug_level=1, msg=EMPTY_KWARG, *args, **kwargs):
 
         if self._debugger_level & debug_level != 0:
-            self = self.active or self
-            _file = self._file
-            _stream = self._stream
+            other = self.active or self
 
-            if _stream:
-                stream_formatter = _stream.formatter
-                _stream.formatter = self.clean_formatter
+            old_formatters = {}
+            _acquireLock()
+            try:
+                for handler in other.handlers:
+                    old_formatters[handler] = handler.formatter
+                    handler.formatter = self.clean_formatter
 
-            if _file:
-                file_formatter = _file.formatter
-                _file.formatter = self.clean_formatter
+            finally:
+                _releaseLock()
 
             kwargs['debug_level'] = debug_level
             self._log_clean( msg, args, kwargs )
 
-            if self._stream:
-                _stream.formatter = stream_formatter
-
-            if self._file:
-                _file.formatter = file_formatter
+            for handler, formatter in old_formatters.items():
+                handler.formatter = formatter
 
     def clean(self, debug_level=1, msg=EMPTY_KWARG, *args, **kwargs):
         """
@@ -400,120 +405,105 @@ class Debugger(Logger):
             if msg is EMPTY_KWARG:
 
                 if self._debugger_level & 1 != 0:
-                    self = self.active or self
-                    _file = self._file
-                    _stream = self._stream
+                    other = self.active or self
 
-                    if _stream:
-                        stream_formatter = _stream.formatter
-                        _stream.formatter = self.clean_formatter
+                    old_formatters = {}
+                    _acquireLock()
+                    try:
+                        for handler in other.handlers:
+                            old_formatters[handler] = handler.formatter
+                            handler.formatter = self.clean_formatter
 
-                    if _file:
-                        file_formatter = _file.formatter
-                        _file.formatter = self.clean_formatter
+                    finally:
+                        _releaseLock()
 
                     kwargs['debug_level'] = 1
                     self._log_clean( debug_level, args, kwargs )
 
-                    if self._stream:
-                        _stream.formatter = stream_formatter
-
-                    if self._file:
-                        _file.formatter = file_formatter
+                    for handler, formatter in old_formatters.items():
+                        handler.formatter = formatter
 
             elif self._debugger_level & debug_level != 0:
-                self = self.active or self
-                _file = self._file
-                _stream = self._stream
+                other = self.active or self
 
-                if _stream:
-                    stream_formatter = _stream.formatter
-                    _stream.formatter = self.clean_formatter
+                old_formatters = {}
+                _acquireLock()
+                try:
+                    for handler in other.handlers:
+                        old_formatters[handler] = handler.formatter
+                        handler.formatter = self.clean_formatter
 
-                if _file:
-                    file_formatter = _file.formatter
-                    _file.formatter = self.clean_formatter
+                finally:
+                    _releaseLock()
 
                 kwargs['debug_level'] = debug_level
                 self._log_clean( msg, args, kwargs )
 
-                if self._stream:
-                    _stream.formatter = stream_formatter
-
-                if self._file:
-                    _file.formatter = file_formatter
+                for handler, formatter in old_formatters.items():
+                    handler.formatter = formatter
 
         else:
 
             if self._debugger_level & 1 != 0:
 
                 if msg is EMPTY_KWARG:
-                    self = self.active or self
-                    _file = self._file
-                    _stream = self._stream
+                    other = self.active or self
 
-                    if _stream:
-                        stream_formatter = _stream.formatter
-                        _stream.formatter = self.clean_formatter
+                    old_formatters = {}
+                    _acquireLock()
+                    try:
+                        for handler in other.handlers:
+                            old_formatters[handler] = handler.formatter
+                            handler.formatter = self.clean_formatter
 
-                    if _file:
-                        file_formatter = _file.formatter
-                        _file.formatter = self.clean_formatter
+                    finally:
+                        _releaseLock()
 
                     kwargs['debug_level'] = 1
                     self._log_clean( debug_level, args, kwargs )
 
-                    if self._stream:
-                        _stream.formatter = stream_formatter
-
-                    if self._file:
-                        _file.formatter = file_formatter
+                    for handler, formatter in old_formatters.items():
+                        handler.formatter = formatter
 
                 else:
-                    self = self.active or self
-                    _file = self._file
-                    _stream = self._stream
+                    other = self.active or self
 
-                    if _stream:
-                        stream_formatter = _stream.formatter
-                        _stream.formatter = self.clean_formatter
+                    old_formatters = {}
+                    _acquireLock()
+                    try:
+                        for handler in other.handlers:
+                            old_formatters[handler] = handler.formatter
+                            handler.formatter = self.clean_formatter
 
-                    if _file:
-                        file_formatter = _file.formatter
-                        _file.formatter = self.clean_formatter
+                    finally:
+                        _releaseLock()
 
                     kwargs['debug_level'] = 1
                     self._log_clean( debug_level, (msg,) + args, kwargs )
 
-                    if self._stream:
-                        _stream.formatter = stream_formatter
-
-                    if self._file:
-                        _file.formatter = file_formatter
+                    for handler, formatter in old_formatters.items():
+                        handler.formatter = formatter
 
     def _fast_basic(self, debug_level=1, msg=EMPTY_KWARG, *args, **kwargs):
 
         if self._debugger_level & debug_level != 0:
-            self = self.active or self
-            _file = self._file
-            _stream = self._stream
+            other = self.active or self
 
-            if _stream:
-                stream_formatter = _stream.formatter
-                _stream.formatter = self.basic_formatter
+            old_formatters = {}
+            _acquireLock()
+            try:
+                for handler in other.handlers:
+                    old_formatters[handler] = handler.formatter
+                    handler.formatter = self.basic_formatter
 
-            if _file:
-                file_formatter = _file.formatter
-                _file.formatter = self.basic_formatter
+            finally:
+                _releaseLock()
 
             kwargs['debug_level'] = debug_level
             self._log( DEBUG, msg, args, **kwargs )
 
-            if _stream:
-                _stream.formatter = stream_formatter
-
-            if _file:
-                _file.formatter = file_formatter
+            for handler, formatter in old_formatters.items():
+                handler.formatter = formatter
 
     def basic(self, debug_level=1, msg=EMPTY_KWARG, *args, **kwargs):
         """
@@ -530,97 +520,84 @@ class Debugger(Logger):
             if msg is EMPTY_KWARG:
 
                 if self._debugger_level & 1 != 0:
+                    other = self.active or self
 
-                    self = self.active or self
-                    _file = self._file
-                    _stream = self._stream
+                    old_formatters = {}
+                    _acquireLock()
+                    try:
+                        for handler in other.handlers:
+                            old_formatters[handler] = handler.formatter
+                            handler.formatter = self.basic_formatter
 
-                    if _stream:
-                        stream_formatter = _stream.formatter
-                        _stream.formatter = self.basic_formatter
-
-                    if _file:
-                        file_formatter = _file.formatter
-                        _file.formatter = self.basic_formatter
+                    finally:
+                        _releaseLock()
 
                     kwargs['debug_level'] = 1
                     self._log( DEBUG, debug_level, args, **kwargs )
 
-                    if _stream:
-                        _stream.formatter = stream_formatter
-
-                    if _file:
-                        _file.formatter = file_formatter
+                    for handler, formatter in old_formatters.items():
+                        handler.formatter = formatter
 
             elif self._debugger_level & debug_level != 0:
-                self = self.active or self
-                _file = self._file
-                _stream = self._stream
+                other = self.active or self
 
-                if _stream:
-                    stream_formatter = _stream.formatter
-                    _stream.formatter = self.basic_formatter
+                old_formatters = {}
+                _acquireLock()
+                try:
+                    for handler in other.handlers:
+                        old_formatters[handler] = handler.formatter
+                        handler.formatter = self.basic_formatter
 
-                if _file:
-                    file_formatter = _file.formatter
-                    _file.formatter = self.basic_formatter
+                finally:
+                    _releaseLock()
 
                 kwargs['debug_level'] = debug_level
                 self._log( DEBUG, msg, args, **kwargs )
 
-                if _stream:
-                    _stream.formatter = stream_formatter
-
-                if _file:
-                    _file.formatter = file_formatter
+                for handler, formatter in old_formatters.items():
+                    handler.formatter = formatter
 
         else:
 
             if self._debugger_level & 1 != 0:
 
                 if msg is EMPTY_KWARG:
-                    self = self.active or self
-                    _file = self._file
-                    _stream = self._stream
+                    other = self.active or self
 
-                    if _stream:
-                        stream_formatter = _stream.formatter
-                        _stream.formatter = self.basic_formatter
+                    old_formatters = {}
+                    _acquireLock()
+                    try:
+                        for handler in other.handlers:
+                            old_formatters[handler] = handler.formatter
+                            handler.formatter = self.basic_formatter
 
-                    if _file:
-                        file_formatter = _file.formatter
-                        _file.formatter = self.basic_formatter
+                    finally:
+                        _releaseLock()
 
                     kwargs['debug_level'] = 1
                     self._log( DEBUG, debug_level, args, **kwargs )
 
-                    if _stream:
-                        _stream.formatter = stream_formatter
-
-                    if _file:
-                        _file.formatter = file_formatter
+                    for handler, formatter in old_formatters.items():
+                        handler.formatter = formatter
 
                 else:
-                    self = self.active or self
-                    _file = self._file
-                    _stream = self._stream
+                    other = self.active or self
 
-                    if _stream:
-                        stream_formatter = _stream.formatter
-                        _stream.formatter = self.basic_formatter
+                    old_formatters = {}
+                    _acquireLock()
+                    try:
+                        for handler in other.handlers:
+                            old_formatters[handler] = handler.formatter
+                            handler.formatter = self.basic_formatter
 
-                    if _file:
-                        file_formatter = _file.formatter
-                        _file.formatter = self.basic_formatter
+                    finally:
+                        _releaseLock()
 
                     kwargs['debug_level'] = 1
                     self._log( DEBUG, debug_level, (msg,) + args, **kwargs )
 
-                    if _stream:
-                        _stream.formatter = stream_formatter
-
-                    if _file:
-                        _file.formatter = file_formatter
+                    for handler, formatter in old_formatters.items():
+                        handler.formatter = formatter
 
     _old_clean = clean
     _old_basic = basic
@@ -719,7 +696,7 @@ class Debugger(Logger):
         # print('active._force_debug %s' % active._force_debug)
         # print('logger.debug_level %s' % logger.debug_level)
 
-    def setup(self, file=EMPTY_KWARG, mode=EMPTY_KWARG, delete=EMPTY_KWARG, date=EMPTY_KWARG, level=EMPTY_KWARG,
+    def setup(self, file=EMPTY_KWARG, mode=EMPTY_KWARG, delete=EMPTY_KWARG, date=EMPTY_KWARG, levels=EMPTY_KWARG,
             function=EMPTY_KWARG, name=EMPTY_KWARG, time=EMPTY_KWARG, msecs=EMPTY_KWARG, tick=EMPTY_KWARG,
             separator=EMPTY_KWARG, formatter=EMPTY_KWARG, rotation=EMPTY_KWARG, **kwargs):
         """
@@ -731,7 +708,7 @@ class Debugger(Logger):
             system output after setting up it to log to a file. See the function Debugger::reset()
             for the default parameters values used on this setup utility.
 
-            If the parameters `date`, `level`, `function`, `name`, `time`, `tick` and `msecs` are
+            If the parameters `date`, `levels`, `function`, `name`, `time`, `tick` and `msecs` are
             nonempty strings, their value will be used to defining their configuration formatting.
             For example, if you pass name="%(name)s: " the function name will be displayed as
             `name: `, instead of the default `[name] `.
@@ -761,7 +738,7 @@ class Debugger(Logger):
                                 simultaneously.
 
             @param `date`       if True, add to the `full_formatter` the date on the format `%Y-%m-%d`.
-            @param `level`      if True, add to the `full_formatter` the log levels.
+            @param `levels`      if True, add to the `full_formatter` the log levels.
             @param `function`   if True, add to the `full_formatter` the function name.
             @param `name`       if True, add to the `full_formatter` the logger name.
             @param `time`       if True, add to the `full_formatter` the time on the format `%H:%M:%S:milliseconds.microseconds`.
@@ -808,7 +785,7 @@ class Debugger(Logger):
                                 while creating the log record to print on the screen. Useful to keep
                                 several loggers grouped together but hide their parent.
         """
-        self._setup( file=file, mode=mode, delete=delete, date=date, level=level,
+        self._setup( file=file, mode=mode, delete=delete, date=date, levels=levels,
                 function=function, name=name, time=time, msecs=msecs, tick=tick,
                 separator=separator, formatter=formatter, rotation=rotation, **kwargs )
 
@@ -877,7 +854,6 @@ class Debugger(Logger):
             _acquireLock()
 
             try:
-
                 self._stream = logging.StreamHandler( arguments['stream'] )
                 self._stream.formatter = self.full_formatter
 
@@ -951,25 +927,77 @@ class Debugger(Logger):
 
     if is_python2:
 
-        def _log(self, level, msg, args, exc_info=None, extra={}, stack_info=False, debug_level=0):
+        def _log(self, level, msg, args, exc_info=None, extra={}, stack_info=False, debug_level=0, **kwargs):
             self._current_tick = timeit.default_timer()
 
             debug_level = "(%d)" % debug_level if debug_level else ""
             extra.update( {"debugLevel": debug_level, "tickDifference": self._current_tick - self._last_tick} )
 
-            super( Debugger, self )._log( level, msg, args, exc_info, extra )
-            self._last_tick = self._current_tick
+            if any( setup_arg in kwargs for setup_arg in changeable_setup_arguments ):
+                other = self.active or self
+                new_arguments = dict( self._arguments )
+
+                for setup_arg in changeable_setup_arguments:
+                    new_arguments[setup_arg] = kwargs.pop( setup_arg, new_arguments.get( setup_arg ) )
+
+                new_formatter = self._create_formatter( new_arguments )
+
+                old_formatters = {}
+                _acquireLock()
+                try:
+                    for handler in other.handlers:
+                        old_formatters[handler] = handler.formatter
+                        handler.formatter = new_formatter
+
+                finally:
+                    _releaseLock()
+
+                super( Debugger, self )._log( level, msg, args, exc_info, extra )
+                self._last_tick = self._current_tick
+
+                for handler, formatter in old_formatters.items():
+                    handler.formatter = formatter
+
+            else:
+                super( Debugger, self )._log( level, msg, args, exc_info, extra )
+                self._last_tick = self._current_tick
 
     else:
 
-        def _log(self, level, msg, args, exc_info=None, extra={}, stack_info=False, debug_level=0):
+        def _log(self, level, msg, args, exc_info=None, extra={}, stack_info=False, debug_level=0, **kwargs):
             self._current_tick = timeit.default_timer()
 
             debug_level = "(%d)" % debug_level if debug_level else ""
             extra.update( {"debugLevel": debug_level, "tickDifference": self._current_tick - self._last_tick} )
 
-            super()._log( level, msg, args, exc_info, extra, stack_info )
-            self._last_tick = self._current_tick
+            if any( setup_arg in kwargs for setup_arg in changeable_setup_arguments ):
+                other = self.active or self
+                new_arguments = dict( self._arguments )
+
+                for setup_arg in changeable_setup_arguments:
+                    new_arguments[setup_arg] = kwargs.pop( setup_arg, new_arguments.get( setup_arg ) )
+
+                new_formatter = self._create_formatter( new_arguments )
+
+                old_formatters = {}
+                _acquireLock()
+                try:
+                    for handler in other.handlers:
+                        old_formatters[handler] = handler.formatter
+                        handler.formatter = new_formatter
+
+                finally:
+                    _releaseLock()
+
+                super()._log( level, msg, args, exc_info, extra, stack_info )
+                self._last_tick = self._current_tick
+
+                for handler, formatter in old_formatters.items():
+                    handler.formatter = formatter
+
+            else:
+                super()._log( level, msg, args, exc_info, extra, stack_info )
+                self._last_tick = self._current_tick
 
     def _log_clean(self, msg, args, kwargs):
         record = CleanLogRecord( self.level, self.name, msg, args, kwargs )
@@ -977,6 +1005,7 @@ class Debugger(Logger):
 
     @classmethod
     def _setup_formatter(cls, arguments):
+        # print('arguments', arguments)
 
         if arguments['formatter']:
 
@@ -987,29 +1016,33 @@ class Debugger(Logger):
                 raise ValueError( "Error: The formatter %s must be an instance of logging.Formatter" % arguments['formatter'] )
 
         else:
-            # These 2 do not need extra spacing because they are the last of their chain
-            tick  = cls.getFormat( arguments, 'tick', "%(tickDifference).2e" )
-            level = cls.getFormat( arguments, 'level', "%(levelname)s%(debugLevel)s" )
+            return cls._create_formatter( arguments )
 
-            separator = cls.getFormat( arguments, 'separator', " - " )
-            msecs = cls.getFormat( arguments, 'msecs', ":%(msecs)010.6f", tick )
+    @classmethod
+    def _create_formatter(cls, arguments):
+        tick  = cls.getFormat( arguments, 'tick', "%(tickDifference).2e" )
+        msecs = cls.getFormat( arguments, 'msecs', "%(msecs)010.6f", tick )
+        levels = cls.getFormat( arguments, 'levels', "%(levelname)s%(debugLevel)s" )
 
-            time_format = cls.getFormat( arguments, 'time', "%H:%M:%S", not msecs )
-            date_format = cls.getFormat( arguments, 'date', "%Y-%m-%d", time_format )
+        time_format = cls.getFormat( arguments, 'time', "%H:%M:%S", not msecs and tick )
+        msecs = ":" + msecs if msecs and arguments['time'] else msecs
 
-            date_format += time_format
+        date_format = cls.getFormat( arguments, 'date', "%Y-%m-%d", time_format )
+        date_format += time_format
+        time = "%(asctime)s" if date_format else ""
 
-            time  = "%(asctime)s" if len( date_format ) else ""
-            time += "" if msecs else " " if arguments['time'] else ""
+        separator_format = cls.getFormat( arguments, 'separator', " - " )
+        function = cls.getFormat( arguments, 'function', "%(funcName)s:%(lineno)d", levels )
+        name     = cls.getFormat( arguments, 'name', "%(name)s", levels and not function )
 
-            function = cls.getFormat( arguments, 'function', "%(funcName)s:%(lineno)d", level )
-            name     = cls.getFormat( arguments, 'name', "%(name)s", level and not function )
+        name += "." if name and function else ""
+        extra_spacing = separator_format if ( name or function or levels ) and ( time or msecs or tick ) else ""
+        separator = separator_format if time or msecs or tick or name or function or levels else ""
 
-            name += "." if name and function else ""
-            extra_spacing = " - " if name or level or function else ""
+        # print("time '%s', msecs '%s', tick '%s', extra_spacing '%s', name '%s', function '%s', levels '%s', separator '%s' date_format '%s'" % ( time, msecs, tick, extra_spacing, name, function, levels, separator, date_format ) )
 
-            return logging.Formatter( "{}{}{}{}{}{}{}{}%(message)s".format(
-                    time, msecs, tick, extra_spacing, name, function, level, separator ), date_format )
+        return logging.Formatter( "{}{}{}{}{}{}{}{}%(message)s".format(
+                time, msecs, tick, extra_spacing, name, function, levels, separator ), date_format )
 
     @staticmethod
     def getFormat(arguments, setting, default, next_parameter=""):
@@ -1047,10 +1080,16 @@ class Debugger(Logger):
 
             if self._file and self._stream:
                 handler.addFilter( self._file_context_filter )
-                self._has_file_context_filter = True
 
-                for other_handler in self.handlers:
-                    other_handler.addFilter( self._file_context_filter )
+                self._has_file_context_filter = True
+                _acquireLock()
+
+                try:
+                    for other_handler in self.handlers:
+                        other_handler.addFilter( self._file_context_filter )
+
+                finally:
+                    _releaseLock()
 
                 self.handle_stderr( self._stderr, self._stdout )
 
@@ -1069,12 +1108,17 @@ class Debugger(Logger):
         if self._has_file_context_filter:
 
             if not self._stderr and not self._stdout or not self._file or not self._stream:
-
                 handler.removeFilter( self._file_context_filter )
-                self._has_file_context_filter = False
 
-                for other_handler in self.handlers:
-                    other_handler.removeFilter( self._file_context_filter )
+                self._has_file_context_filter = False
+                _acquireLock()
+
+                try:
+                    for other_handler in self.handlers:
+                        other_handler.removeFilter( self._file_context_filter )
+
+                finally:
+                    _releaseLock()
 
                 self.handle_stderr( self._stderr, self._stdout )
 
@@ -1481,9 +1525,9 @@ Debugger.manager.setLoggerClass( Debugger )
 
 
 def getLogger(debug_level=127, logger_name=None,
-            file=EMPTY_KWARG, mode=EMPTY_KWARG, delete=EMPTY_KWARG, date=EMPTY_KWARG, level=EMPTY_KWARG,
+            file=EMPTY_KWARG, mode=EMPTY_KWARG, delete=EMPTY_KWARG, date=EMPTY_KWARG, levels=EMPTY_KWARG,
             function=EMPTY_KWARG, name=EMPTY_KWARG, time=EMPTY_KWARG, msecs=EMPTY_KWARG, tick=EMPTY_KWARG,
-            separator=EMPTY_KWARG, formatter=EMPTY_KWARG, rotation=EMPTY_KWARG, **kwargs):
+            separator=EMPTY_KWARG, formatter=EMPTY_KWARG, rotation=EMPTY_KWARG, level=EMPTY_KWARG, **kwargs):
     """
     Return a logger with the specified name, creating it if necessary.
 
@@ -1494,10 +1538,9 @@ def getLogger(debug_level=127, logger_name=None,
     @param `logger_name` the name of this logger accordingly with the standard logging.Logger()
             documentation.
 
-    @param `logger_level` an integer/string with the enabled log level from logging module
+    @param `level` an integer/string with the enabled log level from logging module
 
-    @param `level` if True, add to the `full_formatter` the log levels. If not a boolean,
-            it should be the initial logging level accordingly to logging::Logger::setLevel(level)
+    @param `levels` if True, add to the `full_formatter` the log levels.
 
     @param from `file` until `**kwargs` there are the named parameters passed to the Debugger.setup()
             member function.
@@ -1510,9 +1553,9 @@ def getLogger(debug_level=127, logger_name=None,
     @seealso Debugger::setup()
     """
     return _getLogger( debug_level, logger_name,
-            file=file, mode=mode, delete=delete, date=date, level=level,
+            file=file, mode=mode, delete=delete, date=date, levels=levels,
             function=function, name=name, time=time, msecs=msecs, tick=tick,
-            separator=separator, formatter=formatter, rotation=rotation, **kwargs )
+            separator=separator, formatter=formatter, rotation=rotation, level=level, **kwargs )
 
 
 def _getLogger(debug_level=127, logger_name=None, **kwargs):
@@ -1532,9 +1575,7 @@ def _getLogger(debug_level=127, logger_name=None, **kwargs):
     logger = Debugger.manager.getLogger( logger_name )
     logger.debug_level = debug_level
 
-    if level != EMPTY_KWARG \
-            and not isinstance( level, bool ):
-
+    if level != EMPTY_KWARG:
         kwargs.pop( "level" )
         logger.setLevel( level )
 
@@ -1557,7 +1598,12 @@ def _get_debug_level(debug_level, logger_name):
         else:
 
             if not isinstance( debug_level, int ):
-                raise ValueError( "The variable `debug_level` must be an instance of int, instead of `%s`." % debug_level )
+
+                try:
+                    debug_level = int( debug_level )
+
+                except Exception as error:
+                    raise ValueError( "The variable `debug_level` must be an instance of int, instead of `%s` (%s)." % ( debug_level, error ) )
 
     else:
 

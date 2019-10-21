@@ -27,8 +27,9 @@ abbr -a cd.. 'cd ..'
 abbr -a !! 'eval \$history[1]'
 abbr -a hi 'cat ~/.histout'
 
-abbr -a 'trenn' 'for i in (seq (tput cols)); printf \'\\e[31m=\'; end; printf \'\\e[m\n\''
+abbr -a cls 'clear'
 abbr -a mnm 'minimerk \''
+abbr -a trenn 'for i in (seq (tput cols)); printf \'\\e[31m=\'; end; printf \'\\e[m\n\''
 
 abbr -a p 'python'
 abbr -a bp 'bpython'

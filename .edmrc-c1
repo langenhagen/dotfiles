@@ -21,6 +21,7 @@ choices=(
     'Media/Audio'
     'Work'
     'Work/2018-CeleraOne'
+    'Work/2018-CeleraOne/CeleraOne-101.md'
     'Work/2018-CeleraOne/current-todos.md'
     'Work/2018-CeleraOne/day-notes.md'
     )

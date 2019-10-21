@@ -69,12 +69,13 @@ abbr -a lh 'grep -HiRns --include=\*.lua'
 abbr -a rh 'grep -HiRns --include=\*.robot'
 abbr -a cfh 'grep -HiRns --include={\*.cfg,setup.py,requirements.txt,Makefile}'
 
+#abbr -a gca 'git commit --amend' Commented out on Sunday, April 7, 2019
 abbr -a gb 'git branch'
 abbr -a gbl 'git blame -n'
 abbr -a gbr 'git branch -r'
-abbr -a grv 'git remote -v'
-#abbr -a gca 'git commit --amend' Commented out on Sunday, April 7, 2019
+abbr -a gcl 'git clean -dxf'
 abbr -a gl 'git log --stat'
+abbr -a grv 'git remote -v'
 abbr -a gs 'git status --short --branch --untracked-files'
 abbr -a gsp 'git stash pop'
 abbr -a gss 'git stash'

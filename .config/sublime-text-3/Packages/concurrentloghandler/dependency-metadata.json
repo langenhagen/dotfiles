@@ -1,1 +1,1 @@
-{"sublime_text": ">=3114", "description": "An additional concurrent file log handler for Python's standard logging package", "version": "0.9.13", "platforms": ["*"], "url": "https://github.com/evandroforks/concurrentloghandler/issues"}
+{"url": "https://github.com/evandroforks/concurrentloghandler/issues", "platforms": ["*"], "sublime_text": ">=3114", "description": "An additional concurrent file log handler for Python's standard logging package", "version": "0.9.13"}

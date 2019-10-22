@@ -184,6 +184,8 @@ imap <F10> <ESC>:q!<CR>       " force quit file
 imap <S-F10> <ESC>:wq!<CR>    " force write quit file
 map <S-F11> :set number!<CR>                           " toggle show line numbers
 map <F2> :set hlsearch!<CR>
+map <F3> n
+map <S-F3> N
 map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>   " from: http://vim.wikia.com/wiki/Easily_switch_between_source_and_header_file
 map <F5> :edit<CR>  " refresh file
 map <S-F5> vip:sort<CR>  " sort paragraph on which the cursor hovers

@@ -31,6 +31,7 @@ abbr -a cls 'clear'
 abbr -a mnm 'minimerk \''
 abbr -a trenn 'for i in (seq (tput cols)); printf \'\\e[31m=\'; end; printf \'\\e[m\n\''
 
+abbr -a b 'bash'
 abbr -a p 'python'
 abbr -a bp 'bpython'
 abbr -a cct 'vim --cmd \'set t_ti= t_te=\' +redraw +q'

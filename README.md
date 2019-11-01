@@ -34,12 +34,12 @@ This is fine however.
 You can configure the dotfiles simply via the paths symlinked into your home directory.
 When you add new files or want to remove dotfiles, please don't add them directly into
 your system, but into the `dotfiles` folder, change the `link-files.sh` accordingly and
-then run `link-files.sh`. Start a terminal session to see the changes taking effect.
+then run `link-files.sh`. Restart the concerning programs to see the changes take effect.
 
 ### Opt-In Philosophy
 The dotfiles generally link files rather than folders into the system. This happens in order to
 allow for custom machine-specific configurations that may not land in the dotfiles.
-One exceptions are the folder `sublime-text-3/Packages` and the folder
+Exceptions are the folder `sublime-text-3/Packages` and the folder
 `.config/autokey/data/My-Global-Phrases`.
 
 

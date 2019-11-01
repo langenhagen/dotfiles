@@ -14,6 +14,7 @@ ln -sf "$dotfiles_path/.gitignore_global" "$HOME/.gitignore_global";
 ln -sf "$dotfiles_path/.multitailrc" "$HOME/.multitailrc";
 ln -sf "$dotfiles_path/.tigrc" "$HOME/.tigrc";
 ln -sf "$dotfiles_path/.tmux.conf" "$HOME/.tmux.conf";
+ln -sf "$dotfiles_path/.zshrc" "$HOME/.zshrc";
 
 if [[ "$(uname -n)" =~ 'barn-ultra' ]]; then
     ln -sf "$dotfiles_path/.gitconfig-barn" "$HOME/.gitconfig";

@@ -2,10 +2,10 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
+		"MarkdownHighlighting"
 	],
 	"installed_packages":
 	[
-		"Anaconda",
 		"ApplySyntax",
 		"Clickable URLs",
 		"CMake",

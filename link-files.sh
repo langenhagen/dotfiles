@@ -19,19 +19,19 @@ ln -sf "$dotfiles_path/.zshrc" "$HOME/.zshrc";
 if [[ "$(uname -n)" =~ 'barn-ultra' ]]; then
     ln -sf "$dotfiles_path/.gitconfig-barn" "$HOME/.gitconfig";
     ln -sf "$dotfiles_path/.edmrc-barn" "$HOME/.edmrc";
-    rm "$HOME/.reposets"
-    ln -sf "$dotfiles_path/.reposets-barn" "$HOME/.reposets";
+    rm "$HOME/.config/reposets"
+    ln -sf "$dotfiles_path/.config/reposets-barn" "$HOME/.config/reposets";
 
 elif [[ "$(uname -n)" =~ 'bee' ]]; then
     ln -sf "$dotfiles_path/.gitconfig-barn" "$HOME/.gitconfig";
-    rm "$HOME/.reposets"
-    ln -sf "$dotfiles_path/.reposets-bee" "$HOME/.reposets";
+    rm "$HOME/.config/reposets"
+    ln -sf "$dotfiles_path/.config/reposets-bee" "$HOME/.config/reposets";
 
 elif [[ "$(uname -n)" =~ 'celeraone' ]]; then
     ln -sf "$dotfiles_path/.edmrc-c1" "$HOME/.edmrc";
     ln -sf "$dotfiles_path/.gitconfig-c1" "$HOME/.gitconfig";
-    rm "$HOME/.reposets"
-    ln -sf "$dotfiles_path/.reposets-c1" "$HOME/.reposets";
+    rm "$HOME/.config/reposets"
+    ln -sf "$dotfiles_path/.config/reposets-c1" "$HOME/.config/reposets";
 
     ln -sf "$dotfiles_path/.config/autostart/open-TODOs-file.desktop" "$HOME/.config/autostart/open-TODOs-file.desktop";
     ln -sf "$dotfiles_path/.config/autostart/open-day-notes-file.desktop" "$HOME/.config/autostart/open-day-notes-file.desktop";

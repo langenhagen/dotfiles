@@ -3,11 +3,11 @@
 #
 # author: andreasl
 
-source "${HOME}/.reposets/admin.reposet"
+source "${HOME}/.config/reposets/admin.reposet"
 array+=(${repos[@]})
-source "${HOME}/.reposets/dev.reposet"
+source "${HOME}/.config/reposets/dev.reposet"
 array+=(${repos[@]})
-source "${HOME}/.reposets/extra.reposet"
+source "${HOME}/.config/reposets/extra.reposet"
 array+=(${repos[@]})
 
 repos=(${array[@]})

@@ -3,7 +3,7 @@
 #
 # author: andreasl
 
-source "${HOME}/.reposets/admin.reposet"
+source "${HOME}/.config/reposets/admin.reposet"
 repos+=(
     "${HOME}/Dev/_Protofiles:master:origin:master:origin:master"
     "${HOME}/Dev/scripts:master:origin:master:origin:master"

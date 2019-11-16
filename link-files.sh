@@ -1,5 +1,4 @@
 #!/bin/bash
-#
 # Forcefully links dotfiles into the system.
 #
 # author: andreasl

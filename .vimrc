@@ -164,7 +164,6 @@ function AutoLinebreakToggle()
 endfunction
 
 " commands ========================================================================================
-command AutoLinebreakToggle call AutoLinebreakToggle()
 command Deltrail %s/\s\+$//e  " delete trailing spaces and tabs -- command for ex-mode. Must begin with uppercase letter if user-defined
 " Python-style delimeter line
 command Pytrenn norm o#<ESC>99a-<ESC>o
@@ -195,9 +194,8 @@ map = :call AutoLinebreakToggle()<CR>
 nmap Ô kJ
 nmap Ø O<ESC>  " create new line above, set cursor there and go back to normal mode
 nmap ø o<ESC>  " create new line below, set cursor there and go back to normal mode
-vmap 1 "+y  " yanks the contents of the visual selection to the system clipboard
-vmap <ENTER> "+y  " yanks the contents of the visual selection to the system clipboard
-vmap 2 y/<C-R>"<CR>   " search for selected text (characters . and * can cause problems!)
+vmap <ENTER> "+y  " yank the contents of the visual selection to the system clipboard
+vmap @ y/<C-R>"<CR>   " search for selected text (characters . and * can cause problems!)
 vmap <S-F5> :sort<CR>  " sort in visual selection
 
 " keep the cursor on its screen-line when scrolling a full page
@@ -247,4 +245,3 @@ endif
                        " 1. the first item
                        "   wraps
                        " 2. the second item
-

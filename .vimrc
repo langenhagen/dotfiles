@@ -1,5 +1,4 @@
 " plugins =========================================================================================
-
 let g:rainbow_active = 1 " or 0 ; essential for :RainbowToggle of rainbow.vim
 
 " settings  =======================================================================================
@@ -44,7 +43,6 @@ autocmd VimLeave * call system("xsel -ib", getreg('+'))  " keep the clipboard po
 " autocmd BufWritePost .vimrc source $MYVIMRC  " automatically source my vimrc after writing it to disk -- causes errors bc of duplicate sourcing
 
 " status line =====================================================================================
-
 " color the status line when in Insert Mode
 highlight statusline ctermfg=0 ctermbg=255
 
@@ -59,13 +57,11 @@ autocmd InsertEnter * call ChangeStatusLineColor()
 autocmd InsertLeave * hi statusline ctermfg=0 ctermbg=255
 
 " file types  =====================================================================================
-
 au BufNewFile,BufRead *.m set filetype=cpp         " syntax for *.m  files like cpp files
 au BufNewFile,BufRead *.mm set filetype=cpp        " syntax for *.mm files like cpp files
 au BufNewFile,BufRead *.plantuml set filetype=dot  " syntax for *.plantuml files like .dot files
 
 " highlighting rules  =============================================================================
-
 " autocompletion coloring
 highlight Pmenu ctermbg=237 ctermfg=255
 highlight PmenuSel ctermbg=45 ctermfg=0
@@ -106,7 +102,6 @@ function HighlightMultipleSpaces()
 endfunction
 
 " autocompletion ==================================================================================
-
 " remap autocompletion to TAB unless the cursor is after a whitespace
 " inspired by:
 " https://news.ycombinator.com/item?id=13960147
@@ -169,7 +164,6 @@ function AutoLinebreakToggle()
 endfunction
 
 " commands ========================================================================================
-
 command AutoLinebreakToggle call AutoLinebreakToggle()
 command Deltrail %s/\s\+$//e  " delete trailing spaces and tabs -- command for ex-mode. Must begin with uppercase letter if user-defined
 " Python-style delimeter line
@@ -178,7 +172,6 @@ command Pytrenn norm o#<ESC>99a-<ESC>o
 command Trenn norm o//<ESC>98a-<ESC>o
 
 " key bindings =====================================================================================
-
 imap <F9> <ESC>:w!<CR>    " force write file
 imap <F10> <ESC>:q!<CR>       " force quit file
 imap <S-F10> <ESC>:wq!<CR>    " force write quit file
@@ -228,12 +221,10 @@ inoremap <S-Down> <C-\><C-O><C-D><C-\><C-O><C-D>
 "imap <right> <nop>
 
 " netrw settings ==================================================================================
-
 let g:netrw_banner = 0   " disable netrw banner (toglle manually with I inside netrw)
 let g:netrw_liststyle=1  " show file size and time stamp (toggle manually with i inside netrw)
 
 " vimdiff settings ================================================================================
-
 if &diff
     colorscheme apprentice " apprentice must be in ~/.vim/colors/ folder (https://github.com/romainl/Apprentice)
 endif

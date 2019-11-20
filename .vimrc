@@ -147,6 +147,25 @@ autocmd InsertLeave * call RemoveKeywordsForAutoCompletion()
 "endfunction
 "autocmd InsertCharPre * call OpenCompletion()
 
+" toggle commenting ================================================================================
+let b:comment_prefix = "# "
+au BufRead,BufNewFile *.{c,cpp,h,hpp,cs,java,js} let b:comment_prefix = "// "
+au BufRead,BufNewFile *.lua let b:comment_prefix = "-- "
+au BufRead,BufNewFile *.{py,sh} let b:comment_prefix = "# "
+au BufRead,BufNewFile .vimrc let b:comment_prefix = "\" "
+
+function ToggleComment()
+    " Toggle a comment.
+    let l:current_line = getline('.')
+    if l:current_line == ''
+        return
+    elseif l:current_line =~ '^\s*' . b:comment_prefix
+        execute "normal! ^" . strlen(b:comment_prefix) . "x"
+    else
+        execute "normal! I" . b:comment_prefix
+    endif
+endfunction
+
 " functions =======================================================================================
 function AutoLinebreakToggle()
     if &formatoptions =~ 't'
@@ -174,6 +193,7 @@ command Trenn norm o//<ESC>98a-<ESC>o
 imap <F9> <ESC>:w!<CR>    " force write file
 imap <F10> <ESC>:q!<CR>       " force quit file
 imap <S-F10> <ESC>:wq!<CR>    " force write quit file
+map <C-_> :call ToggleComment()<CR>  " <C-_> maps to ctrl + / in vim
 map <S-F11> :set number!<CR>                           " toggle show line numbers
 map <F2> :set hlsearch!<CR>
 map <F3> n

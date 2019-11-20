@@ -224,7 +224,6 @@ if &diff
 endif
 
 " vim tips & tricks ===============================================================================
-
 " set spell!  " disable/enable spellchecking
 " set spell?  " read a setting
 

@@ -148,21 +148,21 @@ autocmd InsertLeave * call RemoveKeywordsForAutoCompletion()
 "autocmd InsertCharPre * call OpenCompletion()
 
 " toggle commenting ================================================================================
-let b:comment_prefix = "# "
-au BufRead,BufNewFile *.{c,cpp,h,hpp,cs,java,js} let b:comment_prefix = "// "
-au BufRead,BufNewFile *.lua let b:comment_prefix = "-- "
-au BufRead,BufNewFile *.{py,sh} let b:comment_prefix = "# "
-au BufRead,BufNewFile .vimrc let b:comment_prefix = "\" "
+let b:comment_prefix = "#"
+au BufRead,BufNewFile *.{c,cpp,h,hpp,cs,java,js} let b:comment_prefix = "//"
+au BufRead,BufNewFile *.lua let b:comment_prefix = "--"
+au BufRead,BufNewFile *.{py,sh} let b:comment_prefix = "#"
+au BufRead,BufNewFile .vimrc let b:comment_prefix = "\""
 
 function ToggleComment()
     " Toggle a comment.
-    let l:current_line = getline('.')
-    if l:current_line == ''
-        return
+    let l:current_line = getline(".")
+    if l:current_line =~ '^\s*' . b:comment_prefix . " "
+        execute "normal! ^" . strlen(b:comment_prefix) . "xx"
     elseif l:current_line =~ '^\s*' . b:comment_prefix
         execute "normal! ^" . strlen(b:comment_prefix) . "x"
     else
-        execute "normal! I" . b:comment_prefix
+        execute "normal! I" . b:comment_prefix . " "
     endif
 endfunction
 

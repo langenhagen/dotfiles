@@ -1,12 +1,12 @@
 {
 	"extensions":
 	[
-		"pyw",
-		"py3"
+		"py3",
+		"pyw"
 	],
 	"rulers":
 	[
 		80,
 		100
-	],
+	]
 }

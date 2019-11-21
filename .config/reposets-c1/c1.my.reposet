@@ -4,6 +4,7 @@
 # author: andreasl
 
 repos=(
+    "${HOME}/Dev/celeraone/apicall-lab:master:origin:master:origin:master"
     "${HOME}/Dev/celeraone/c1-dev-gerrit-hooks:master:origin:master:origin:master"
     "${HOME}/Dev/celeraone/graphs:master:origin:master:origin:master"
     "${HOME}/Dev/celeraone/notebooks:master:origin:master:origin:master"

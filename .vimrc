@@ -190,6 +190,7 @@ command Pytrenn norm o#<ESC>99a-<ESC>o
 command Trenn norm o//<ESC>98a-<ESC>o
 
 " key bindings =====================================================================================
+imap <C-_> <ESC>:call ToggleComment()<CR>  " <C-_> maps to ctrl + / in vim
 imap <F9> <ESC>:w!<CR>    " force write file
 imap <F10> <ESC>:q!<CR>       " force quit file
 imap <S-F10> <ESC>:wq!<CR>    " force write quit file

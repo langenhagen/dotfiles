@@ -3,9 +3,4 @@
 #
 # author: andreasl
 
-source "${HOME}/.config/reposets/admin.reposet"
-repos+=(
-    "${HOME}/Dev/_Protofiles:master:origin:master:origin:master"
-    "${HOME}/Dev/scripts:master:origin:master:origin:master"
-    "${HOME}/Dev/setup-ubuntu-18:master:origin:master:origin:master"
-)
+source "${HOME}/.config/reposets/all.reposet"

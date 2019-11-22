@@ -8,6 +8,7 @@ choices=(
     'Barn/Ideas'
     'Barn/Kaufen-Verkaufen'
     'Barn/Notes'
+    'Barn/Notes/Rezepte.docx'
     'Dev'
     'Dev/_Protofiles/bash_proto.sh'
     'Dev/Jupyter/My-Finance-Analysis'

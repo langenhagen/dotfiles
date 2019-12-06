@@ -5,7 +5,7 @@
 # author: andreasl
 
 function fish_user_key_bindings
-    # PRedefined fish <v3.0 function to override personal key bindings.
+    # Predefined fish <v3.0 function to override personal key bindings.
 
     # as a safety feature, press ctrl+d quickly 2 times exit fish
     bind \cd delete-char

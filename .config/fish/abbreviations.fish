@@ -30,6 +30,7 @@ abbr -a hi 'cat ~/.histout'
 abbr -a cls 'clear'
 abbr -a mnm 'minimerk \''
 abbr -a trenn 'for i in (seq (tput cols)); printf \'\\e[31m=\'; end; printf \'\\e[m\n\''
+abbr -a gsl 'fish $SCRIPTS_DIR_PATH/grepselect.fish'
 
 abbr -a b 'bash'
 abbr -a p 'python'
@@ -120,8 +121,6 @@ abbr -a rpa 'reposet apply'
 abbr -a rpd 'reposet pull'
 abbr -a rpu 'reposet up'
 abbr -a rps 'reposet'
-
-# abbr -a w 'workon'  # commented out on 19-07-04
 
 switch (uname -n)
 case "barn-ultra" "*celeraone*"

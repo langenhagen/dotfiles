@@ -15,6 +15,7 @@ abbr -a editabbr 'vim -p ~/.config/fish/abbreviations.fish; source ~/.config/fis
 abbr -a fn 'functions'
 abbr -a fns 'functions'
 abbr -a history 'history --show-time=\'%h-%d - %H:%M:%S \' | less'
+abbr -a he 'eval (history | fzf)'
 
 abbr -a tmls 'tmux ls'
 abbr -a tmk 'tmux kill-session -t'

@@ -10,6 +10,6 @@ repos=(
     "${HOME}/Dev/celeraone/notebooks:master:origin:master:origin:master"
     "${HOME}/Dev/celeraone/scripts:master:origin:master:c1:master"
     "${HOME}/Dev/celeraone/scripts:master:origin:master:origin:master"
-    "${HOME}/Dev/setup-ubuntu-18:master:origin:master:c1:master"
-    "${HOME}/Dev/setup-ubuntu-18:master:origin:master:origin:master"
+    "${HOME}/Dev/setup-ubuntu:master:origin:master:c1:master"
+    "${HOME}/Dev/setup-ubuntu:master:origin:master:origin:master"
 )

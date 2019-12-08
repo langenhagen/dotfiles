@@ -32,7 +32,6 @@ elif [[ "$(uname -n)" =~ 'celeraone' ]]; then
     rm "$HOME/.config/reposets"
     ln -sf "$dotfiles_path/.config/reposets-c1" "$HOME/.config/reposets";
 
-    ln -sf "$dotfiles_path/.config/autostart/open-TODOs-file.desktop" "$HOME/.config/autostart/open-TODOs-file.desktop";
     ln -sf "$dotfiles_path/.config/autostart/open-day-notes-file.desktop" "$HOME/.config/autostart/open-day-notes-file.desktop";
     ln -sf "$dotfiles_path/.config/autostart/slack.desktop" "$HOME/.config/autostart/slack.desktop";
 fi

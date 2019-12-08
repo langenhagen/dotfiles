@@ -40,13 +40,13 @@ set wildmode=longest,full  " longest: autocomplete to longest common word on fir
 
 autocmd CursorHoldI * stopinsert  " automatically leave insert mode after 'updatetime' milliseconds of inaction
 autocmd VimLeave * call system("xsel -ib", getreg('+'))  " keep the clipboard populated after closing vim
-" autocmd BufWritePost .vimrc source $MYVIMRC  " automatically source my vimrc after writing it to disk -- causes errors bc of duplicate sourcing
+autocmd BufWritePost .vimrc source $MYVIMRC  " automatically source my vimrc after writing it to disk
 
 " status line =====================================================================================
 " color the status line when in Insert Mode
 highlight statusline ctermfg=0 ctermbg=255
 
-function ChangeStatusLineColor()
+function! ChangeStatusLineColor()
     if &formatoptions =~ 't'
         hi statusline ctermfg=25 ctermbg=255
     else
@@ -69,7 +69,7 @@ highlight PmenuSel ctermbg=45 ctermfg=0
 " highlight overlength strings and trailing spaces with a red bg color
 highlight Overlength ctermbg=darkred ctermfg=white guibg=#101010
 let g:is_highlight_overlength = 1
-function ToggleHighlightOverlength()
+function! ToggleHighlightOverlength()
     if g:is_highlight_overlength == 0
         let g:is_highlight_overlength = 2
         match Overlength /\%101v.\+\|\s\+$/                 " find overlength or aka ( Backslash Pipe )  trailing spaces
@@ -89,7 +89,7 @@ autocmd BufWinEnter * match Overlength /\s\+$/ " initial setting  autocmd BufWin
 " highlight multiple spaces and tabs
 highlight MultipleSpaces ctermbg=darkred guibg=darkred
 let g:is_highlight_multiple_spaces = 0
-function HighlightMultipleSpaces()
+function! HighlightMultipleSpaces()
     if g:is_highlight_multiple_spaces == 0
         let g:is_highlight_multiple_spaces = 1
         match MultipleSpaces /\s\{2,}/
@@ -124,12 +124,12 @@ endfunction
 inoremap <tab> <c-r>=InsertTabWrapper(0)<cr>
 inoremap <S-tab> <c-r>=InsertTabWrapper(1)<cr>
 
-function AddKeywordsForAutoCompletion()
+function! AddKeywordsForAutoCompletion()
     set iskeyword+=-  " treat minus as part of a word, esp for autocompletion
     set iskeyword+=.  " treat dot as part of a word, esp for autocompleution
 endfunction
 
-function RemoveKeywordsForAutoCompletion()
+function! RemoveKeywordsForAutoCompletion()
     set iskeyword-=-
     set iskeyword-=.
 endfunction
@@ -154,7 +154,7 @@ au BufRead,BufNewFile *.lua let b:comment_prefix = "--"
 au BufRead,BufNewFile *.{py,sh} let b:comment_prefix = "#"
 au BufRead,BufNewFile .vimrc let b:comment_prefix = "\""
 
-function ToggleComment()
+function! ToggleComment()
     " Toggle a comment.
     let l:current_line = getline(".")
     if l:current_line =~ '^\s*' . b:comment_prefix . " "
@@ -167,7 +167,7 @@ function ToggleComment()
 endfunction
 
 " functions =======================================================================================
-function AutoLinebreakToggle()
+function! AutoLinebreakToggle()
     if &formatoptions =~ 't'
         "set formatoptions-=a  " make text not autoformat initially
         set formatoptions-=c  " auto-wrap comments using textwidth, inserting the current comment leader automatically
@@ -183,11 +183,11 @@ function AutoLinebreakToggle()
 endfunction
 
 " commands ========================================================================================
-command Deltrail %s/\s\+$//e  " delete trailing spaces and tabs -- command for ex-mode. Must begin with uppercase letter if user-defined
+command! Deltrail %s/\s\+$//e  " delete trailing spaces and tabs -- command for ex-mode. Must begin with uppercase letter if user-defined
 " Python-style delimeter line
-command Pytrenn norm o#<ESC>99a-<ESC>o
+command! Pytrenn norm o#<ESC>99a-<ESC>o
 " C-style delimeter line
-command Trenn norm o//<ESC>98a-<ESC>o
+command! Trenn norm o//<ESC>98a-<ESC>o
 
 " key bindings =====================================================================================
 imap <C-_> <ESC>:call ToggleComment()<CR>|  " <C-_> maps to ctrl + / in vim

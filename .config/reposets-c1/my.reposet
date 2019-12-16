@@ -13,7 +13,7 @@ repos=(
     "${HOME}/Dev/langenhagen.github.io:master:origin:master:origin:master"
     "${HOME}/Dev/reposet:master:origin:master:origin:master"
     "${HOME}/Dev/scripts:master:origin:master:origin:master"
-    "${HOME}/Dev/setup-ubuntu-18:master:origin:master:origin:master"
+    "${HOME}/Dev/setup-ubuntu:master:origin:master:origin:master"
     "${HOME}/dotfiles:master:origin:master:origin:master"
 )
     # "${HOME}/Dev/barn-bits,master,origin,master,origin,master"

@@ -29,7 +29,7 @@ set noerrorbells         " Disable beep on errors
 set number               " show line numbers
 set ruler                " shows line and column numbers in the status bar
 set shiftwidth=4         " when indenting with '>', use 4 spaces width
-set smartcase            " sutomatically switch search to case-sensitive when search query contains an uppercase letter
+set smartcase            " sutomatically switch search to case-sensitive when search query contains an uppercase letter; needs also ignorecase
 set tabstop=4            " show existing tab with 4 spaces width
 set textwidth=100
 autocmd bufreadpre COMMIT_EDITMSG setlocal textwidth=72  " set the textwidth to 72 when working with git commit messages

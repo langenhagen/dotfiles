@@ -49,6 +49,7 @@ ln -sf "$dotfiles_path/.local/share/konsole/My-Konsole-Profile.profile" "$HOME/.
 
 mkdir -p "$HOME/.config/autokey/data/"
 ln -sf "$dotfiles_path/.config/autokey/data/My-Global-Phrases" "$HOME/.config/autokey/data/";
+ln -sf "$dotfiles_path/.config/autokey/data/My-Global-Scripts" "$HOME/.config/autokey/data/";
 
 mkdir -p "$HOME/.config/autostart";
 ln -sf "$dotfiles_path/.config/autostart/caffeine-indicator.desktop" "$HOME/.config/autostart/caffeine-indicator.desktop";

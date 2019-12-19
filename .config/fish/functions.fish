@@ -110,7 +110,7 @@ end
 function cd-into-c1-project
     # Given a c1 repository name (without leading 'c1-',
     # changes the directory to the repository,
-    cd "$HOME/c1/c1-$argv[1]"
+    cd "$HOME/c1/gerrit/c1-$argv[1]"
 end
 
 function workon

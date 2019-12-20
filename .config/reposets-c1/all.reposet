@@ -3,9 +3,7 @@
 #
 # author: andreasl
 
-source "${HOME}/.config/reposets/c1.my.reposet"
-array+=(${repos[@]})
-source "${HOME}/.config/reposets/c1.reposet"
+source "${HOME}/.config/reposets/c1.all.reposet"
 array+=(${repos[@]})
 source "${HOME}/.config/reposets/my.reposet"
 array+=(${repos[@]})

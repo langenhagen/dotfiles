@@ -7,6 +7,7 @@ repos=(
     "${HOME}/Administrative/computer/bee/bee-scripts:master:origin:master:origin:master"
     "${HOME}/Administrative/computer/bee/nextcloud-server:master:origin:master:origin:master"
     "${HOME}/Dev/_Protofiles:master:origin:master:origin:master"
+    "${HOME}/Dev/barn-bits:master:origin:master:origin:master"
     "${HOME}/Dev/experiments-and-tutorials:master:origin:master:origin:master"
     "${HOME}/Dev/Expertises-Gantt:master:origin:master:origin:master"
     "${HOME}/Dev/explore-with-dmenu:master:origin:master:origin:master"
@@ -16,4 +17,3 @@ repos=(
     "${HOME}/Dev/setup-ubuntu:master:origin:master:origin:master"
     "${HOME}/dotfiles:master:origin:master:origin:master"
 )
-    # "${HOME}/Dev/barn-bits,master,origin,master,origin,master"

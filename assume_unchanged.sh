@@ -8,7 +8,6 @@
 # author: andreasl
 
 files=(
-    '.config/autokey/data/My-Global-Phrases'
     '.config/sublime-text-3/Packages/User/Preferences.sublime-settings'
     '.config/konsolerc'
     )

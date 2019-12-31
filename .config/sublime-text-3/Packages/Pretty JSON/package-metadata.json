@@ -1,1 +1,1 @@
-{"version": "2016.09.01.14.51.10", "sublime_text": "*", "dependencies": [], "url": "https://github.com/dzhibas/SublimePrettyJson", "platforms": ["*"], "description": "Prettify/Minify/Query/Goto/Validate/Lint JSON plugin for Sublime Text 2 & 3"}
+{"version": "2019.12.23.09.45.14", "sublime_text": "*", "dependencies": [], "url": "https://github.com/dzhibas/SublimePrettyJson", "platforms": ["*"], "description": "Prettify/Minify/Query/Goto/Validate/Lint JSON plugin for Sublime Text 2 & 3"}

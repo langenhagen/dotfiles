@@ -16,27 +16,6 @@ ln -sf "$dotfiles_path/.tigrc" "$HOME/.tigrc";
 ln -sf "$dotfiles_path/.tmux.conf" "$HOME/.tmux.conf";
 ln -sf "$dotfiles_path/.zshrc" "$HOME/.zshrc";
 
-if [[ "$(uname -n)" =~ 'barn-ultra' ]]; then
-    ln -sf "$dotfiles_path/.gitconfig-barn" "$HOME/.gitconfig";
-    ln -sf "$dotfiles_path/.edmrc-barn" "$HOME/.edmrc";
-    rm "$HOME/.config/reposets"
-    ln -sf "$dotfiles_path/.config/reposets-barn" "$HOME/.config/reposets";
-
-elif [[ "$(uname -n)" =~ 'bee' ]]; then
-    ln -sf "$dotfiles_path/.gitconfig-barn" "$HOME/.gitconfig";
-    rm "$HOME/.config/reposets"
-    ln -sf "$dotfiles_path/.config/reposets-bee" "$HOME/.config/reposets";
-
-elif [[ "$(uname -n)" =~ 'celeraone' ]]; then
-    ln -sf "$dotfiles_path/.edmrc-c1" "$HOME/.edmrc";
-    ln -sf "$dotfiles_path/.gitconfig-c1" "$HOME/.gitconfig";
-    rm "$HOME/.config/reposets"
-    ln -sf "$dotfiles_path/.config/reposets-c1" "$HOME/.config/reposets";
-
-    ln -sf "$dotfiles_path/.config/autostart/open-day-notes-file.desktop" "$HOME/.config/autostart/open-day-notes-file.desktop";
-    ln -sf "$dotfiles_path/.config/autostart/slack.desktop" "$HOME/.config/autostart/slack.desktop";
-fi
-
 mkdir -p "$HOME/.buildout";
 ln -sf "$dotfiles_path/.buildout/default.cfg" "$HOME/.buildout/default.cfg";
 
@@ -86,6 +65,27 @@ ln -sf "$dotfiles_path/.config/xpad/trigger/GEORGIAN-trigger.sh" "$HOME/.config/
 
 mkdir -p "$HOME/.urserver/remotes";
 ln -sf "$dotfiles_path/.urserver/remotes/custom" "$HOME/.urserver/remotes/";
+
+if [[ "$(uname -n)" =~ 'barn-ultra' ]]; then
+    ln -sf "$dotfiles_path/.gitconfig-barn" "$HOME/.gitconfig";
+    ln -sf "$dotfiles_path/.edmrc-barn" "$HOME/.edmrc";
+    rm "$HOME/.config/reposets"
+    ln -sf "$dotfiles_path/.config/reposets-barn" "$HOME/.config/reposets";
+
+elif [[ "$(uname -n)" =~ 'bee' ]]; then
+    ln -sf "$dotfiles_path/.gitconfig-barn" "$HOME/.gitconfig";
+    rm "$HOME/.config/reposets"
+    ln -sf "$dotfiles_path/.config/reposets-bee" "$HOME/.config/reposets";
+
+elif [[ "$(uname -n)" =~ 'celeraone' ]]; then
+    ln -sf "$dotfiles_path/.edmrc-c1" "$HOME/.edmrc";
+    ln -sf "$dotfiles_path/.gitconfig-c1" "$HOME/.gitconfig";
+    rm "$HOME/.config/reposets"
+    ln -sf "$dotfiles_path/.config/reposets-c1" "$HOME/.config/reposets";
+
+    ln -sf "$dotfiles_path/.config/autostart/open-day-notes-file.desktop" "$HOME/.config/autostart/open-day-notes-file.desktop";
+    ln -sf "$dotfiles_path/.config/autostart/slack.desktop" "$HOME/.config/autostart/slack.desktop";
+fi
 
 if [ "$(uname)" == 'Linux' ]; then
     mkdir -p "$HOME/.config/sublime-text-3";

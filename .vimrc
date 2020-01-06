@@ -1,7 +1,7 @@
-" plugins =========================================================================================
+" plugins ==========================================================================================
 let g:rainbow_active = 1 " or 0 ; essential for :RainbowToggle of rainbow.vim
 
-" settings  =======================================================================================
+" settings  ========================================================================================
 filetype plugin indent on
 syntax on  " syntax highlighting. turn off if vim is too slow with :syntax off
 
@@ -42,7 +42,7 @@ autocmd CursorHoldI * stopinsert  " automatically leave insert mode after 'updat
 autocmd VimLeave * call system("xsel -ib", getreg('+'))  " keep the clipboard populated after closing vim
 autocmd BufWritePost .vimrc source $MYVIMRC  " automatically source my vimrc after writing it to disk
 
-" status line =====================================================================================
+" status line ======================================================================================
 " color the status line when in Insert Mode
 highlight statusline ctermfg=0 ctermbg=255
 
@@ -56,12 +56,12 @@ endfunction
 autocmd InsertEnter * call ChangeStatusLineColor()
 autocmd InsertLeave * hi statusline ctermfg=0 ctermbg=255
 
-" file types  =====================================================================================
+" file types  ======================================================================================
 au BufNewFile,BufRead *.m set filetype=cpp         " syntax for *.m  files like cpp files
 au BufNewFile,BufRead *.mm set filetype=cpp        " syntax for *.mm files like cpp files
 au BufNewFile,BufRead *.plantuml set filetype=dot  " syntax for *.plantuml files like .dot files
 
-" highlighting rules  =============================================================================
+" highlighting rules  ==============================================================================
 " autocompletion coloring
 highlight Pmenu ctermbg=237 ctermfg=255
 highlight PmenuSel ctermbg=45 ctermfg=0
@@ -101,7 +101,7 @@ function! HighlightMultipleSpaces()
     endif
 endfunction
 
-" autocompletion ==================================================================================
+" autocompletion ===================================================================================
 " remap autocompletion to TAB unless the cursor is after a whitespace
 " inspired by:
 " https://news.ycombinator.com/item?id=13960147
@@ -166,7 +166,7 @@ function! ToggleComment()
     endif
 endfunction
 
-" functions =======================================================================================
+" functions ========================================================================================
 function! AutoLinebreakToggle()
     if &formatoptions =~ 't'
         "set formatoptions-=a  " make text not autoformat initially
@@ -182,7 +182,7 @@ function! AutoLinebreakToggle()
     endif
 endfunction
 
-" commands ========================================================================================
+" commands =========================================================================================
 command! Deltrail %s/\s\+$//e  " delete trailing spaces and tabs -- command for ex-mode. Must begin with uppercase letter if user-defined
 " Python-style delimeter line
 command! Pytrenn norm o#<ESC>99a-<ESC>o
@@ -235,16 +235,16 @@ inoremap <S-Down> <C-\><C-O><C-D><C-\><C-O><C-D>
 "imap <left> <nop>
 "imap <right> <nop>
 
-" netrw settings ==================================================================================
+" netrw settings ===================================================================================
 let g:netrw_banner = 0   " disable netrw banner (toglle manually with I inside netrw)
 let g:netrw_liststyle=1  " show file size and time stamp (toggle manually with i inside netrw)
 
-" vimdiff settings ================================================================================
+" vimdiff settings =================================================================================
 if &diff
     colorscheme apprentice " apprentice must be in ~/.vim/colors/ folder (https://github.com/romainl/Apprentice)
 endif
 
-" vim tips & tricks ===============================================================================
+" vim tips & tricks ================================================================================
 " set spell!  " disable/enable spellchecking
 " set spell?  " read a setting
 

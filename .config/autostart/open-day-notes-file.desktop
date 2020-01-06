@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=sh -c "xdg-open \$HOME/Work/2018-CeleraOne/day-notes.md"
+Exec=sh -c "gvim -O \$HOME/Work/2019-CeleraOne/day-notes.md \$HOME/Barn/Notes/blog/README.md"
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true

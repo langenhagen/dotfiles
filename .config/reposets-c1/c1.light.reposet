@@ -5,6 +5,8 @@
 # author: andreasl
 
 repos=(
+    # "${HOME}/c1/gerrit/All-Projects:master:origin:master::"
+    # "${HOME}/c1/gerrit/All-Users:master:origin:master::"
     # "${HOME}/c1/gerrit/c1-as-headless-browser:master:origin:master:origin:refs/for/master"
     "${HOME}/c1/gerrit/c1-authproxy:master:origin:master:origin:refs/for/master"
     "${HOME}/c1/gerrit/c1-authservice:master:origin:master:origin:refs/for/master"

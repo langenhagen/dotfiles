@@ -184,10 +184,12 @@ endfunction
 
 " commands =========================================================================================
 command! Deltrail %s/\s\+$//e  " delete trailing spaces and tabs -- command for ex-mode. Must begin with uppercase letter if user-defined
-" Python-style delimeter line
+" Python-style delimiter line
 command! Pytrenn norm o#<ESC>99a-<ESC>o
-" C-style delimeter line
+" C-style delimiter line
 command! Trenn norm o//<ESC>98a-<ESC>o
+" Lua atyle delimiter line
+command! Luatrenn norm o<ESC>100a-<ESC>o
 
 " key bindings =====================================================================================
 imap <C-_> <ESC>:call ToggleComment()<CR>|  " <C-_> maps to ctrl + / in vim

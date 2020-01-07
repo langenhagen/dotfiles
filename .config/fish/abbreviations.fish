@@ -196,4 +196,7 @@ case  "*celeraone*"
     abbr -a og 'xdg-open "https://codereview.celeraone.com/dashboard/self"' # open gerrit
     abbr -a oj 'xdg-open "https://jira.celeraone.com/secure/Dashboard.jspa?selectPageId=11405"'  # open jira
     abbr -a rl 'xdg-open "var/log/testreports/log.html"'  # robot log
+
+    abbr -a cm 'c1-mount-remote-fe.sh'
+    abbr -a cu 'c1-unmount-remote-fe.sh'
 end

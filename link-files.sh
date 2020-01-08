@@ -15,6 +15,8 @@ ln -sf "$dotfiles_path/.multitailrc" "$HOME/.multitailrc";
 ln -sf "$dotfiles_path/.tigrc" "$HOME/.tigrc";
 ln -sf "$dotfiles_path/.tmux.conf" "$HOME/.tmux.conf";
 ln -sf "$dotfiles_path/.zshrc" "$HOME/.zshrc";
+ln -sf "$dotfiles_path/.config/user-dirs.dirs" "$HOME/.config/user-dirs.dirs"
+ln -sf "$dotfiles_path/.config/user-dirs.locale" "$HOME/.config/user-dirs.locale"
 
 mkdir -p "$HOME/.buildout";
 ln -sf "$dotfiles_path/.buildout/default.cfg" "$HOME/.buildout/default.cfg";

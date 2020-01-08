@@ -3,7 +3,6 @@ set ignore-case = yes  # Enum consisting of the values: no, yes, smart-case
 set mouse = false
 set refresh-mode = after-command  # Enum: manual, auto, after-command, periodic
 
-
 # key binding -------------------------------------------------------------------------------------
 # !  Run the command in the foreground with output shown.
 # @  Run the command in the background with no output.

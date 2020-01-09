@@ -7,6 +7,7 @@
 switch (uname -n)
     case "*barn-ultra*" "*celeraone*"
         setenv BUCKET_LIST_FILE_PATH "$HOME/Barn/Notes/bucket-list.txt"
+        setenv CHECK_DIR_PATH "$HOME/Dev/check"
         setenv JOURNAL_FILE_PATH "$HOME/Barn/Notes/Journal.txt"
         setenv ONE_LINE_HELP_FILE_PATH "$HOME/Dev/Zeugs/one-line-help.txt"
         setenv PLAYGROUND_DIR_PATH "$HOME/Dev/_playgrounds"
@@ -57,6 +58,7 @@ switch (uname -n)
 end
 
 set -gx PATH $PATH '/usr/local/sbin'
+set -gx PATH $PATH "$CHECK_DIR_PATH"
 set -gx PATH $PATH "$SCRIPTS_DIR_PATH"
 
 setenv LANG "en_US.UTF-8"

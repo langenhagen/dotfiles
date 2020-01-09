@@ -15,6 +15,7 @@ repos=(
     "${HOME}/Dev/barn-test:master:origin:master:origin:master"
     "${HOME}/Dev/bWake:master:origin:master:origin:master"
     "${HOME}/Dev/celeraone/scripts:master:origin:master:origin:master"
+    "${HOME}/Dev/check:master:origin:master:origin:master"
     "${HOME}/Dev/DBSCAN:master:origin:master:origin:master"
     "${HOME}/Dev/experiments-and-tutorials:master:origin:master:origin:master"
     "${HOME}/Dev/expertises-gantt:master:origin:master:origin:master"

@@ -1,17 +1,20 @@
 #!/bin/bash
 # My own c1 projects.
+# Remotes are both internal c1 remotes as well as managed by me.
 #
 # author: andreasl
 
 repos=(
-    "${HOME}/Dev/setup-ubuntu:master:origin:master:c1:master"
-    "${HOME}/Dev/setup-ubuntu:master:origin:master:origin:master"
-    "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/apicall-lab:master:origin:master:origin:master"
+    "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/apicall-lab:master:c1:master:c1:master"
     "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/celeraone-howtos:master:origin:master:c1:master"
     "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/celeraone-howtos:master:origin:master:origin:master"
     "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/celeraone-scripts:master:origin:master:c1:master"
     "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/celeraone-scripts:master:origin:master:origin:master"
-    "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/graphs:master:origin:master:origin:master"
-    "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/notebooks:master:origin:master:origin:master"
-    "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/talks:master:origin:master:origin:master"
+    "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/evaluate-locs:master:origin:master:c1:master"
+    "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/evaluate-locs:master:origin:master:origin:master"
+    "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/graphs:master:c1:master:c1:master"
+    "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/notebooks:master:c1:master:c1:master"
+    "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/setup-ubuntu:master:origin:master:c1:master"
+    "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/setup-ubuntu:master:origin:master:origin:master"
+    "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/talks:master:c1:master:c1:master"
 )

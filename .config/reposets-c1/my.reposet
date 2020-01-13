@@ -1,5 +1,7 @@
 #!/bin/bash
 # My private reposet.
+# My own c1 projects.
+# Remotes are managed by me, some of them are also set up to push to c1-internal remotes.
 #
 # author: andreasl
 
@@ -16,6 +18,6 @@ repos=(
     "${HOME}/Dev/langenhagen.github.io:master:origin:master:origin:master"
     "${HOME}/Dev/reposet:master:origin:master:origin:master"
     "${HOME}/Dev/scripts:master:origin:master:origin:master"
-    "${HOME}/Dev/setup-ubuntu:master:origin:master:origin:master"
+    "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/setup-ubuntu:master:origin:master:origin:master"
     "${HOME}/dotfiles:master:origin:master:origin:master"
 )

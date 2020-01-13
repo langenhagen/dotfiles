@@ -51,7 +51,7 @@ switch (uname -n)
         setenv SERVERLAYERS false
         setenv ENGINE_MOCK true
 
-        set -gx PATH $PATH "$HOME/Dev/celeraone/scripts"
+        set -gx PATH $PATH "$HOME/c1/gitlab.celeraone.com/andreas.langenhagen/celeraone-scripts"
 
         setenv N_PREFIX "$HOME/n"
         set -gx PATH "$HOME/n/bin" $PATH

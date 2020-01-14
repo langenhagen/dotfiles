@@ -58,6 +58,7 @@ switch (uname -n)
 end
 
 set -gx PATH $PATH '/usr/local/sbin'
+set -gx PATH $PATH "$HOME/.rbenv/bin"
 set -gx PATH $PATH "$CHECK_DIR_PATH"
 set -gx PATH $PATH "$SCRIPTS_DIR_PATH"
 

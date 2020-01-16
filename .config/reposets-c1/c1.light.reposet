@@ -45,7 +45,7 @@ repos=(
     # "${HOME}/c1/gerrit/c1-engine-toolstack-zmqpp:master:origin:master:origin:refs/for/master"
     # "${HOME}/c1/gerrit/c1-engine-toolstack:master:origin:master:origin:refs/for/master"
     "${HOME}/c1/gerrit/c1-engine:develop:origin:develop:origin:refs/for/develop"
-    "${HOME}/c1/gerrit/c1-engine:master:origin:master:origin:refs/for/master"
+    # "${HOME}/c1/gerrit/c1-engine:master:origin:master:origin:refs/for/master"
     "${HOME}/c1/gerrit/c1-entitlement:master:origin:master:origin:refs/for/master"
     "${HOME}/c1/gerrit/c1-exceptions:master:origin:master:origin:refs/for/master"
     "${HOME}/c1/gerrit/c1-fixtures:master:origin:master:origin:refs/for/master"

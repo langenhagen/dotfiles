@@ -19,6 +19,7 @@ choices=(
     'Media'
     'Media/Cam'
     'Media/Audio'
+    'Media/WhatsApp-Media'
     'Work'
     'Work/2018-CeleraOne'
     'Work/2018-CeleraOne/CeleraOne-101.md'

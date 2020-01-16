@@ -71,7 +71,7 @@ ln -sf "$dotfiles_path/.urserver/remotes/custom" "$HOME/.urserver/remotes/";
 
 if [[ "$(uname -n)" =~ 'barn-ultra' ]]; then
     ln -sf "$dotfiles_path/.gitconfig-barn" "$HOME/.gitconfig";
-    ln -sf "$dotfiles_path/.edmrc-barn" "$HOME/.edmrc";
+    ln -sf "$dotfiles_path/.config/.edmrc-barn" "$HOME/.config/.edmrc";
     rm "$HOME/.config/reposets"
     ln -sf "$dotfiles_path/.config/reposets-barn" "$HOME/.config/reposets";
 
@@ -81,7 +81,7 @@ elif [[ "$(uname -n)" =~ 'bee' ]]; then
     ln -sf "$dotfiles_path/.config/reposets-bee" "$HOME/.config/reposets";
 
 elif [[ "$(uname -n)" =~ 'celeraone' ]]; then
-    ln -sf "$dotfiles_path/.edmrc-c1" "$HOME/.edmrc";
+    ln -sf "$dotfiles_path/.config/.edmrc-c1" "$HOME/.config/.edmrc";
     ln -sf "$dotfiles_path/.gitconfig-c1" "$HOME/.gitconfig";
     rm "$HOME/.config/reposets"
     ln -sf "$dotfiles_path/.config/reposets-c1" "$HOME/.config/reposets";

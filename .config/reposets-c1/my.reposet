@@ -10,6 +10,7 @@ repos=(
     "${HOME}/Administrative/computer/bee/nextcloud-server:master:origin:master:origin:master"
     "${HOME}/Barn/Notes/blog:master:origin:master:origin:master"
     "${HOME}/Dev/_Protofiles:master:origin:master:origin:master"
+    "${HOME}/Dev/awesome-linters:master:origin:master:origin:master"
     "${HOME}/Dev/barn-bits:master:origin:master:origin:master"
     "${HOME}/Dev/check:master:origin:master:origin:master"
     "${HOME}/Dev/experiments-and-tutorials:master:origin:master:origin:master"

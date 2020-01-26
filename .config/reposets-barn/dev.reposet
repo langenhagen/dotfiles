@@ -5,7 +5,6 @@
 
 repos=(
     "${HOME}/Dev/_Protofiles:master:origin:master:origin:master"
-    "${HOME}/Dev/awesome-linters:master:origin:master:origin:master"
     "${HOME}/Dev/Bachelor-Thesis:master:origin:master:origin:master"
     "${HOME}/Dev/barn-bar:master:origin:master:origin:master"
     "${HOME}/Dev/barn-bits:master:origin:master:origin:master"

@@ -61,7 +61,6 @@ repos=(
     "${HOME}/c1/gerrit/c1-ocb-integrator-egg:master:origin:master:origin:refs/for/master"
     "${HOME}/c1/gerrit/c1-ocb-integrator:master:origin:master:origin:refs/for/master"
     "${HOME}/c1/gerrit/c1-openid:master:origin:master:origin:refs/for/master"
-    "${HOME}/c1/gerrit/c1-openidtemplates:master:origin:master:origin:refs/for/master"
     "${HOME}/c1/gerrit/c1-pueblo:master:origin:master:origin:refs/for/master"
     "${HOME}/c1/gerrit/c1-pyngine:master:origin:master:origin:refs/for/master"
     "${HOME}/c1/gerrit/c1-robotframework:master:origin:master:origin:refs/for/master"

@@ -36,8 +36,8 @@ abbr -a gsl 'fish $SCRIPTS_DIR_PATH/grepselect.fish'
 abbr -a b 'bash'
 abbr -a p 'python'
 abbr -a bp 'bpython'
-abbr -a cct 'vim --cmd \'set t_ti= t_te=\' +redraw +q'
-abbr -a gitp  'pwd ; cd (git rev-parse --show-toplevel)'  # abbreviation for GituP
+abbr -a cct 'vim --cmd \'set t_ti= t_te=\' +redraw +q'  # similar to cat, but via vim
+abbr -a gitp  'pwd; cd (git rev-parse --show-toplevel)'  # abbreviation for GituP
 abbr -a json 'json_pp'  # pretty-print json output
 abbr -a r 'ranger'
 abbr -a shch 'shellcheck --exclude SC2059'
@@ -45,8 +45,9 @@ abbr -a vd 'vimdiff'
 abbr -a wcl 'wc -l'
 
 abbr -a f 'find -L . -iname'
-#abbr -a f1 'find -L . -maxdepth 1 -iname'    # commented out before Tuesday, 26 March 2019
-#abbr -a fr 'find -L -E . -iregex'    # commented out before Tuesday, 26 March 2019
+
+abbr -a ca 'conda activate'
+abbr -a cda 'conda deactivate'
 
 abbr -a t 'tig'
 abbr -a tb 'tig blame'

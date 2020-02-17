@@ -15,6 +15,7 @@ choices=(
     'Media'
     'Media/Audio'
     'Media/Cam'
+    'Media/Fotos'
     'Media/WhatsApp-Media'
     'Work'
     )

@@ -18,6 +18,7 @@ choices=(
     'Media/Fotos'
     'Media/WhatsApp-Media'
     'Work'
-    )
+    "$(cat "$history_file")"
+)
 
 open_terminal_command='konsole --workdir'

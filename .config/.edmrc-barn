@@ -1,5 +1,7 @@
 # rc file for explore-with-dmenu.sh
 
+max_history_entries=7
+
 choices=(
     'Dropbox'
     'Administrative'

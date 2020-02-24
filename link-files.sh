@@ -46,6 +46,9 @@ mkdir -p "$HOME/.config/bpython";
 ln  -sf "$dotfiles_path/.config/bpython/config" "$HOME/.config/bpython/config";
 ln  -sf "$dotfiles_path/.config/bpython/my.theme" "$HOME/.config/bpython/my.theme";
 
+mkdir -p "$HOME/.config/feh/";
+ln -sf "$dotfiles_path/.config/feh/keys" "$HOME/.config/feh/keys";
+
 mkdir -p "$HOME/.config/fish/";
 ln -sf "$dotfiles_path/.config/fish/config.fish" "$HOME/.config/fish/config.fish";
 ln -sf "$dotfiles_path/.config/fish/abbreviations.fish" "$HOME/.config/fish/abbreviations.fish";

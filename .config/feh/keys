@@ -1,0 +1,77 @@
+# leave certain nice actions
+# action_0 .. action_9   0 .. 9
+# delete   ⟨Ctrl+Delete⟩
+# jump_first   ⟨Home⟩
+# jump_last   ⟨End⟩
+# quit   q, ⟨Escape⟩
+# remove   ⟨Delete⟩
+# toggle_pause   h
+# zoom_fit   /, ⟨keypad /⟩
+
+# unset unused and disturbing actions
+flip
+mirror
+orient_3
+reload_image
+reload_minus
+reload_plus
+render
+save_filelist
+save_image
+size_to_image
+toggle_aliasing
+toggle_caption
+toggle_exif
+toggle_fixed_geometry
+toggle_fullscreen
+toggle_info
+toggle_keep_vp
+toggle_menu
+toggle_pointer
+
+# unset actions that occupy buttons which will be redefined
+action_0
+close
+jump_back
+jump_fwd
+jump_random
+next_img
+prev_img
+scroll_down
+scroll_down_page
+scroll_left
+scroll_left_page
+scroll_right
+scroll_right_page
+scroll_up
+scroll_up_page
+toggle_filenames
+zoom_default
+zoom_fill
+zoom_in
+zoom_out
+
+# redefine nice actions
+action_0 0
+close x m
+jump_back apostrophe
+jump_fwd backslash
+jump_random p semicolon
+next_img bracketright
+prev_img bracketleft
+scroll_down Down
+scroll_down_page C-Down
+scroll_left Left
+scroll_left_page C-Left
+scroll_right Right
+scroll_right_page C-Right
+scroll_up Up
+scroll_up_page C-Up
+toggle_filenames o l
+zoom_default comma
+zoom_fill period
+zoom_in S-Up
+zoom_out S-Down
+
+# redefine action on Return
+action_1 1 Return

@@ -8,6 +8,7 @@ repos=(
     "${HOME}/Dev/Bachelor-Thesis:master:origin:master:origin:master"
     "${HOME}/Dev/barn-bar:master:origin:master:origin:master"
     "${HOME}/Dev/barn-bits:master:origin:master:origin:master"
+    "${HOME}/Dev/barn-bookmark-manager:master:origin:master:origin:master"
     "${HOME}/Dev/barn-keylogger:master:origin:master:origin:master"
     "${HOME}/Dev/barn-scrape:master:origin:master:origin:master"
     "${HOME}/Dev/barn-sidebar:master:origin:master:origin:master"

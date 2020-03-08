@@ -69,16 +69,20 @@ function bucket
 end
 
 function one-line-help
+    # Grep for the given arguments on the one-line-help.txt file.
     if test (count $argv) -eq 0
         vim -R "$ONE_LINE_HELP_FILE_PATH"  # -R readonly
-    else if test (count $argv) -gt 0
-        # greps for the given arguments on the one-line-help.txt file
-        grep -i --color=never "$argv" "$ONE_LINE_HELP_FILE_PATH"
+    else
+        set results (grep -i --color=never "$argv[1]" "$ONE_LINE_HELP_FILE_PATH")
+        for arg in $argv
+            set results (printf -- '%s\n' $results | grep -i --color=never "$arg")
+        end
+        printf -- '%s\n' $results
     end
 end
 
 function add-to-one-line-help
-    # Adds a line to the one-line-help.txt file.
+    # Add a line to the one-line-help.txt file.
     echo $argv >> "$ONE_LINE_HELP_FILE_PATH"
 
     set tmp_olh_bak_path (mktemp /tmp/one-line-help-backup.XXXXXXXX)

@@ -9,7 +9,7 @@ function read_confirm_prompt
 end
 
 function read_confirm
-  # Performs a Yes/No confirmation check by the user via the keyboard.
+  # Perform a Yes/No confirmation check by the user via the keyboard.
 
   while true
     read -l -p read_confirm_prompt confirm
@@ -24,7 +24,7 @@ function read_confirm
 end
 
 function tricks
-    # Shows the tricks file and enables grepping on it.
+    # Show the tricks file and enable grepping on it.
 
     if test (count $argv) -eq 0
         # -R readonly
@@ -35,7 +35,7 @@ function tricks
 end
 
 function journal
-    # Shows the journal file or appends given input to it.
+    # Show the journal file or append given input to it.
     # There must be a trailing newline at the end of the file or else output might be fucked up.
 
     if test (count $argv) -eq 0
@@ -46,7 +46,7 @@ function journal
 end
 
 function minimerk
-    # Stores a simple text string into the minimerk.txt file with a timestamp.
+    # Store a simple text string into the minimerk.txt file with a timestamp.
     # Can be used for minimal reminders that are stored into persistent memory.
 
     if test (count $argv) -eq 0
@@ -57,7 +57,7 @@ function minimerk
 end
 
 function bucket
-    # Shows the bucket list file or appends given lines to it.
+    # Show the bucket list file or append given lines to it.
     # There must be a trailing newline at the end of the file.
 
     if test (count $argv) -eq 0
@@ -88,15 +88,15 @@ function add-to-one-line-help
 end
 
 function addabr
-    # Adds a line to the abbreviations file and activates the abbreviation.
+    # Add a line to the abbreviations file and activate the abbreviation.
     echo "abbr -a $argv" >> ~/.config/fish/abbreviations.fish
     abbr -a $argv
 end
 
 function pushover
     # Echoes the given input and
-    # sends the input as a string as push notification via pushover.
-    set pushover_app_token agna4fob6wu7e7t2ofhz1drt7ptngq       # change according to app/platform
+    # send the input as a string as push notification via pushover.
+    set pushover_app_token agna4fob6wu7e7t2ofhz1drt7ptngq  # change according to app/platform
     set pushover_user_token ucw67xi5r5mqgqo8arh3p64xkj39wu
 
     echo "pushover: $argv"
@@ -109,15 +109,15 @@ end
 
 function cd-into-c1-project
     # Given a c1 repository name (without leading 'c1-',
-    # changes the directory to the repository,
+    # change the directory to the repository,
     cd "$HOME/c1/gerrit/c1-$argv[1]"
 end
 
 function workon
     # Given a c1 repository name (without leading 'c1-',
-    # changes the directory to the repository,
-    # deactivates all conda environments and
-    # activates the according conda environment.
+    # change the directory to the repository,
+    # deactivate all conda environments and
+    # activate the according conda environment.
     cd "$HOME/c1/c1-$argv[1]"
     if test $status != 0
         return
@@ -139,11 +139,10 @@ function rem
 end
 
 function printn
-    # Prints a given string a given number of times.
+    # Print a given string a given number of times.
     for i in (seq $argv[2])
         printf $argv[1]
     end
-    printf $argv[3]
 end
 
 function fd
@@ -157,7 +156,7 @@ if [ (uname) = 'Darwin' ]
     end
 
     function pbce
-        # copies the output of the given statement into the clipboard.
+        # Copy the output of the given statement into the clipboard.
         # Better stick to the common way.
         eval $argv | pbcopy
     end
@@ -170,7 +169,7 @@ else
     end
 
     function pbce
-        # copies the output of the given statement into the clipboard.
+        # Copy the output of the given statement into the clipboard.
         # Better stick to the common way.
         eval $argv | xclip -selection clipboard
     end

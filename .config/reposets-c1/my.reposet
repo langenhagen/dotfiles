@@ -1,13 +1,14 @@
 #!/bin/bash
 # My private reposet.
 # My own c1 projects.
-# Remotes are managed by me, some of them are also set up to push to c1-internal remotes.
+# Remotes are all managed by me.
 #
 # author: andreasl
 
 repos=(
     "${HOME}/Administrative/computer/bee/bee-scripts:master:origin:master:origin:master"
     "${HOME}/Administrative/computer/bee/nextcloud-server:master:origin:master:origin:master"
+    "${HOME}/Administrative/computer/setup-c1-ubuntu:master:origin:master:origin:master"
     "${HOME}/Administrative/computer/setup-my-ubuntu:master:origin:master:origin:master"
     "${HOME}/Barn/Notes/blog:master:origin:master:origin:master"
     "${HOME}/Dev/_Protofiles:master:origin:master:origin:master"

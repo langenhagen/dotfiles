@@ -72,7 +72,7 @@ abbr -a cmh 'grep -HiRns --include={CMakeCache.txt,CMakeLists.txt,\*.cmake}'
 abbr -a ph 'grep -HiRns --include=\*.py --exclude-dir={.venv\*,custom-eggs,site-packages}'
 abbr -a lh 'grep -HiRns --include=\*.lua'
 abbr -a rh 'grep -HiRns --include=\*.robot'
-abbr -a cfh 'grep -HiRns --include={\*.cfg,\*.conf,setup.py,requirements.txt,Makefile}'
+abbr -a cfh 'grep -HiRns --include={\*.cfg,\*.conf,\*.conf.in,setup.py,requirements.txt,Makefile}'
 
 #abbr -a gca 'git commit --amend' Commented out on Sunday, April 7, 2019
 abbr -a gb 'git branch'

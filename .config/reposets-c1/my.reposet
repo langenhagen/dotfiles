@@ -22,6 +22,5 @@ repos=(
     "${HOME}/Dev/reposet:master:origin:master:origin:master"
     "${HOME}/Dev/scripts:master:origin:master:origin:master"
     "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/notes:master:origin:master:origin:master"
-    "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/setup-ubuntu:master:origin:master:origin:master"
     "${HOME}/dotfiles:master:origin:master:origin:master"
 )

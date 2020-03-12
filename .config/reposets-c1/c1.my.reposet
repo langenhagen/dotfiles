@@ -1,6 +1,6 @@
 #!/bin/bash
-# My own c1 projects.
-# Remotes are both internal c1 remotes as well as managed by me.
+# My own projects decicated to c1.
+# Remotes are both internal c1 remotes as well as my private remotes.
 #
 # author: andreasl
 
@@ -16,7 +16,5 @@ repos=(
     "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/notebooks:master:c1:master:c1:master"
     "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/notes:master:origin:master:c1:master"
     "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/notes:master:origin:master:origin:master"
-    "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/setup-ubuntu:master:origin:master:c1:master"
-    "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/setup-ubuntu:master:origin:master:origin:master"
     "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/talks:master:c1:master:c1:master"
 )

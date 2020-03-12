@@ -30,7 +30,6 @@ repos=(
     "${HOME}/Dev/Processing:master:origin:master:origin:master"
     "${HOME}/Dev/reposet:master:origin:master:origin:master"
     "${HOME}/Dev/scripts:master:origin:master:origin:master"
-    "${HOME}/Dev/setup-ubuntu:master:origin:master:origin:master"
     "${HOME}/Dev/station-clock:master:origin:master:origin:master"
     "${HOME}/Dev/tmStreamer:master:origin:master:origin:master"
     "${HOME}/Dev/Trip:master:origin:master:origin:master"

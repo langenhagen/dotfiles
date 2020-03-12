@@ -78,7 +78,6 @@ repos=(
     "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/graphs:master:c1:master:c1:master"
     "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/notebooks:master:c1:master:c1:master"
     "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/notes:master:origin:master:c1:master"
-    "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/setup-ubuntu:master:origin:master:c1:master"
     "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/talks:master:c1:master:c1:master"
     # "${HOME}/c1/gitlab.celeraone.com/celeraone/c1-documentation:master:origin:master:origin:master"
     # "${HOME}/c1/gitlab.celeraone.com/celeraone/c1-meta:master:origin:master:origin:master"

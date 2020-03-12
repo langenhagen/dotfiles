@@ -10,4 +10,5 @@ repos+=(
     "${HOME}/scripts/generic-scripts:master:origin:master:origin:master"
     "${HOME}/scripts/ping-out:master:origin:master:origin:master"
     "${HOME}/scripts/reposet:master:origin:master:origin:master"
+    "${HOME}/setup-my-ubuntu:master:origin:master:origin:master"
 )

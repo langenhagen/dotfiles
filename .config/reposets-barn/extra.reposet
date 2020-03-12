@@ -1,5 +1,5 @@
 #!/bin/bash
-# Extra stuff that is maintained rather rarely reposet.
+# Extra stuff that is maintained rather rarely.
 #
 # author: andreasl
 
@@ -7,5 +7,6 @@ repos=(
     "${HOME}/Administrative/computer/bee/bee-scripts/generic-scripts:master:origin:master::"
     "${HOME}/Administrative/computer/bee/bee-scripts/ping-out:master:origin:master::"
     "${HOME}/Administrative/computer/bee/bee-scripts/reposet:master:origin:master::"
+    "${HOME}/Administrative/computer/Linux-Magic-Trackpad-2-Driver:master:origin:master::"
     "${HOME}/Dev/_Lib/__archive/db4o+Wrapper/db4o-wrappers:master:origin:master:origin:master"
 )

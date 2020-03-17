@@ -96,20 +96,6 @@ function addabr
     abbr -a $argv
 end
 
-function pushover
-    # Echoes the given input and
-    # send the input as a string as push notification via pushover.
-    set pushover_app_token agna4fob6wu7e7t2ofhz1drt7ptngq  # change according to app/platform
-    set pushover_user_token ucw67xi5r5mqgqo8arh3p64xkj39wu
-
-    echo "pushover: $argv"
-    curl --silent \
-         --form-string "token=$pushover_app_token" \
-         --form-string "user=$pushover_user_token" \
-         --form-string "message=$argv" \
-         https://api.pushover.net/1/messages.json
-end
-
 function cd-into-c1-project
     # Given a c1 repository name (without leading 'c1-',
     # change the directory to the repository,

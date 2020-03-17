@@ -102,26 +102,6 @@ function cd-into-c1-project
     cd "$HOME/c1/gerrit/c1-$argv[1]"
 end
 
-function workon
-    # Given a c1 repository name (without leading 'c1-',
-    # change the directory to the repository,
-    # deactivate all conda environments and
-    # activate the according conda environment.
-    cd "$HOME/c1/c1-$argv[1]"
-    if test $status != 0
-        return
-    end
-
-    if test (conda info --envs | grep '*' | awk '{print $1}') = "$argv[1]"
-        return
-    end
-
-    while test (conda info --envs | grep '*' | awk '{print $1}') != 'base'
-        conda deactivate
-    end
-    conda activate $argv[1]
-end
-
 function rem
     # print a string in bold on the console in order to remember things.
     printf "\n\e[1m$argv\e[0m\n"\n

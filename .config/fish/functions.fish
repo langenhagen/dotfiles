@@ -10,7 +10,6 @@ end
 
 function read_confirm
   # Perform a Yes/No confirmation check by the user via the keyboard.
-
   while true
     read -l -p read_confirm_prompt confirm
 
@@ -164,9 +163,7 @@ if [ (uname) = 'Darwin' ]
         # Better stick to the common way.
         eval $argv | pbcopy
     end
-
 else
-
     function pbc
         # Copy a given argument to system clipboard.
         echo $argv | xclip -selection clipboard
@@ -177,5 +174,4 @@ else
         # Better stick to the common way.
         eval $argv | xclip -selection clipboard
     end
-
 end

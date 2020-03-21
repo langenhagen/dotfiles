@@ -1,6 +1,7 @@
 # My personal fish environment variables.
 #
 # Source this file into the config.fish.
+# Use the tool fish_key_reader to evaluate key names.
 #
 # author: andreasl
 

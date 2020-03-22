@@ -121,8 +121,8 @@ abbr -a grhh 'git reset --hard HEAD'
 abbr -a grsh 'git reset --soft HEAD~1'
 
 abbr -a rpa 'reposet apply'
-abbr -a rpd 'reposet pull'
-abbr -a rpu 'reposet up'
+# abbr -a rpd 'reposet pull'  # disabled on 2020-03-22
+# abbr -a rpu 'reposet up'  # disabled on 2020-03-22
 abbr -a rps 'reposet'
 
 switch (uname -n)
@@ -157,10 +157,10 @@ case "barn-ultra" "*celeraone*"
         abbr -a oh "open (eval \$history[1])"
 
     case  'Linux'
-        abbr -a open 'xdg-open'
+        # abbr -a open 'xdg-open'  # disabled on 2020-03-22
         abbr -a o 'xdg-open .'
         abbr -a oc 'xdg-open .; exit'
-        abbr -a x 'xdg-open'
+        # abbr -a x 'xdg-open'  # disabled on 2020-03-22
         abbr -a xo 'xargs xdg-open'
         abbr -a oh "for f in (eval \$history[1]); xdg-open \"\$f\"; end"
         abbr -a ho "eval \$history[1] | xclip -fi -selection clipboard > ~/.histout"

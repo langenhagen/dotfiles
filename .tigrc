@@ -9,20 +9,18 @@ set refresh-mode = after-command  # Enum: manual, auto, after-command, periodic
 # ?  Prompt the user before executing the command.
 # <  Exit Tig after executing the command.
 
-bind generic B !git rebase -i %(commit)~1
+bind generic ` !git rebase --interactive HEAD~7
+bind generic B !git rebase --interactive %(commit)~1
 bind generic P @sh -c "xdg-open \"$(dirname $(realpath %(file)))\""  # open path in standard program, linux only
-bind generic Z @?git checkout HEAD %(file)  # checkout latest committed version of a file in status view
+bind generic π !git add --patch %(file)  # π is alt + p on Mac
 bind generic U @git add -A
+bind generic Z @?git checkout HEAD %(file)  # checkout latest committed version of a file in status view
 
 bind stage  D @?rm %(file)  # remove a file
 bind status D @?rm %(file)  # remove a file
 
 bind generic + !git commit --amend
 bind generic = !git commit
-
-bind generic π !git add --patch %(file)  # π is alt + p on Mac
-
-bind generic ` !git rebase --interactive HEAD~7
 
 bind generic <F1> !git pull --rebase
 bind generic <F2> !git pull --rebase origin master

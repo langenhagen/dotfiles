@@ -101,12 +101,13 @@ abbr -a gbt 'git checkout -b tmp; or git checkout tmp; git branch'  # git branch
 abbr -a gct 'git checkout -b tmp; or git checkout tmp; git branch'  # git checkout tmp
 abbr -a gdt 'git checkout master; git branch -D tmp; git branch'  # git delete tmp
 
-abbr -a gpm 'git push origin HEAD:master'
-abbr -a gprm 'git push origin HEAD:refs/for/master'
-
 abbr -a gp 'git pull --rebase'
 abbr -a gpl 'git pull --rebase'
 abbr -a gplm 'git pull --rebase origin master'
+
+abbr -a gps 'git push'
+abbr -a gpsg 'git push origin HEAD:refs/for/master'
+abbr -a gpsm 'git push origin HEAD:master'
 
 abbr -a gra 'git rebase --abort'
 abbr -a grc 'git rebase --continue'

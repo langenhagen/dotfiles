@@ -26,7 +26,7 @@ bind generic <F1> !git pull --rebase
 bind generic <F2> !git pull --rebase origin master
 bind generic <F3> !git pull --rebase c1 master
 
-bind generic <F6> !git push
+bind generic <F6> !bash -c "push_to_remotes.sh"
 bind generic <F7> !git push origin HEAD:master
 bind generic <F8> !sh -c "git push origin HEAD:refs/for/master 2>&1 | tee /dev/stderr | grep -m1 -o 'https://.*' | awk '{print $1}' | xargs xdg-open"
 bind generic <F9> !sh -c "git push origin HEAD:master; git push c1 HEAD:master"

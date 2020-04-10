@@ -1,6 +1,0 @@
-#!/bin/bash
-# My default reposet.
-#
-# author: andreasl
-
-source "${HOME}/.config/reposets/all.reposet"

@@ -65,3 +65,5 @@ set -gx PATH $PATH "$SCRIPTS_DIR_PATH"
 setenv LANG "en_US.UTF-8"
 setenv EDITOR vim
 setenv VISUAL vim
+
+setenv PIP_REQUIRE_VIRTUALENV true

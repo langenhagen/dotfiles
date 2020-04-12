@@ -100,3 +100,9 @@ else
         eval $argv | xclip -selection clipboard
     end
 end
+
+function pip
+    # Allow using pip if a conda environment is active, even if PIP_REQUIRE_VIRTUALENV is set.
+    [ -n "$CONDA_PREFIX" ]; and set -lx PIP_REQUIRE_VIRTUALENV false;
+    eval (which pip) "$argv";
+end

@@ -106,3 +106,14 @@ function pip
     [ -n "$CONDA_PREFIX" ]; and set -lx PIP_REQUIRE_VIRTUALENV false;
     eval (which pip) "$argv";
 end
+
+switch (uname -n)
+case "*celeraone*"
+    # C1 related functions
+
+    function rt
+        # Conveniently run robot tests.
+        printf "bin/pybot -L TRACE --test \"*$argv*\" test/\n\n"
+        command -v bin/pybot; and bin/pybot -L TRACE --test "*$argv*" test/
+    end
+end

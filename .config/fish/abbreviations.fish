@@ -38,7 +38,7 @@ abbr -a b 'bash'
 abbr -a p 'python'
 abbr -a bp 'bpython'
 abbr -a cct 'vim --cmd \'set t_ti= t_te=\' +redraw +q'  # similar to cat, but via vim
-abbr -a cdr  'pwd; cd (git rev-parse --show-toplevel)'  # abbreviation for cd to project root
+abbr -a cdr  'cd (git rev-parse --show-toplevel)'  # abbreviation for cd to project root
 abbr -a json 'json_pp'  # pretty-print json output
 abbr -a psg 'ps aux | grep -i'
 abbr -a r 'ranger'

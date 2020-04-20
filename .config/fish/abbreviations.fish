@@ -120,8 +120,8 @@ abbr -a gr3 'git reset --hard HEAD~3'
 abbr -a gr4 'git reset --hard HEAD~4'
 abbr -a gr5 'git reset --hard HEAD~5'
 abbr -a gr9 'git reset --hard HEAD~9'
-abbr -a grhh 'git reset --hard HEAD'
-abbr -a grsh 'git reset --soft HEAD~1'
+abbr -a grh 'git reset --hard HEAD'
+abbr -a grs 'git reset --soft HEAD~1'
 
 abbr -a rpa 'reposet apply'
 # abbr -a rpd 'reposet pull'  # disabled on 2020-03-22

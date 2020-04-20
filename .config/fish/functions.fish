@@ -73,10 +73,6 @@ function rem
     printf "\n\e[1m$argv\e[0m\n"\n
 end
 
-function fd
-    find -L . -iname "*$argv*"
-end
-
 if [ (uname) = 'Darwin' ]
     function pbc
         # Copy a given argument to system clipboard.

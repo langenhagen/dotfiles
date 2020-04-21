@@ -198,7 +198,7 @@ case  "*celeraone*"
     abbr -a qx 'cd-into-c1-project cre-xapi'
 
     abbr -a cj 'xdg-open "https://jira.celeraone.com/secure/CreateIssue!default.jspa"'  # create jira ticket
-    abbr -a cre 'http --auth-type c1-auth -a'
+    abbr -a cre 'http -F --auth-type c1-auth -a'
     abbr -a og 'xdg-open "https://codereview.celeraone.com/dashboard/self"' # open gerrit
     abbr -a oj 'xdg-open "https://jira.celeraone.com/secure/Dashboard.jspa?selectPageId=11405"'  # open jira
     abbr -a rl 'xdg-open "var/log/testreports/log.html"'  # robot log

@@ -62,12 +62,6 @@ function addabr
     abbr -a $argv
 end
 
-function cd-into-c1-project
-    # Given a c1 repository name (without leading 'c1-',
-    # change the directory to the repository,
-    cd "$HOME/c1/gerrit/c1-$argv[1]"
-end
-
 function rem
     # print a string in bold on the console in order to remember things.
     printf "\n\e[1m$argv\e[0m\n"\n
@@ -106,6 +100,12 @@ end
 switch (uname -n)
 case "*celeraone*"
     # C1 related functions
+
+    function cd-into-c1-project
+        # Given a c1 repository name (without leading 'c1-',
+        # change the directory to the repository,
+        cd "$HOME/c1/gerrit/c1-$argv[1]"
+    end
 
     function rt
         # Conveniently run robot tests.

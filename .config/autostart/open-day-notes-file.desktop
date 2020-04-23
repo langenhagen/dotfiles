@@ -1,5 +1,0 @@
-[Desktop Entry]
-Type=Application
-Exec=sh -c "subl \"\$HOME/Work/2018-CeleraOne/day-notes.md\" \"\$HOME/Barn/Notes/blog/README.md\""
-X-GNOME-Autostart-enabled=true
-Name=Open Day-Notes

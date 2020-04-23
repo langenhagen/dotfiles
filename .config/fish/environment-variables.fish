@@ -28,7 +28,7 @@ switch (uname -n)
         setenv CCACHE_PREFIX distcc
 
         # Remote servers used for compilation.
-        setenv DISTCC_HOSTS "192.168.30.70/16,lzo --localslots/4"
+        setenv DISTCC_HOSTS '192.168.30.70/16,lzo 192.168.30.72/16,lzo'
 
         # Enable debug mode.
         # Useful when Distcc cannot connect to remote servers.

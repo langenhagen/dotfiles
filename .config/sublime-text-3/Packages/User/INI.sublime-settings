@@ -1,9 +1,7 @@
 {
 	"extensions":
 	[
-		"ini",
-		"ini.dist",
-		".npmrc",
-		"cfg"
+		"cfg",
+		"ini"
 	]
 }

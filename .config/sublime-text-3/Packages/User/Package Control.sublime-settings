@@ -5,7 +5,6 @@
 	],
 	"installed_packages":
 	[
-		"ApplySyntax",
 		"Clang Format",
 		"Clickable URLs",
 		"CMake",

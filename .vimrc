@@ -90,7 +90,7 @@ autocmd BufWinEnter * match Overlength /\s\+$/ " initial setting  autocmd BufWin
 " highlight multiple spaces and tabs
 highlight MultipleSpaces ctermbg=darkred guibg=darkred
 let g:is_highlight_multiple_spaces = 0
-function! HighlightMultipleSpaces()
+function! ToggleHighlightMultipleSpaces()
     if g:is_highlight_multiple_spaces == 0
         let g:is_highlight_multiple_spaces = 1
         match MultipleSpaces /\s\{2,}/
@@ -168,7 +168,7 @@ function! ToggleComment()
 endfunction
 
 " functions ========================================================================================
-function! AutoLinebreakToggle()
+function! ToggleAutoLinebreak()
     if &formatoptions =~ 't'
         "set formatoptions-=a  " make text not autoformat initially
         set formatoptions-=c  " auto-wrap comments using textwidth, inserting the current comment leader automatically
@@ -193,13 +193,10 @@ command! Trenn norm o//<ESC>98a-<ESC>o
 command! Luatrenn norm o<ESC>100a-<ESC>o
 
 " key bindings =====================================================================================
-imap <C-_> <ESC>:call ToggleComment()<CR>|  " <C-_> maps to ctrl + / in vim
-imap <F9> <ESC>:w!<CR>|    " force write file
-imap <F10> <ESC>:q!<CR>|       " force quit file
-imap <S-F10> <ESC>:wq!<CR>|    " force write quit file
 map <C-_> :call ToggleComment()<CR>|  " <C-_> maps to ctrl + / in vim
-map <S-F11> :set number!<CR>|                           " toggle show line numbers
-map <F2> :set hlsearch!<CR>
+imap <C-_> <ESC>:call ToggleComment()<CR>|  " <C-_> maps to ctrl + / in vim
+map <F2> :call ToggleAutoLinebreak()<CR>
+imap <F2> <ESC>:call ToggleAutoLinebreak()<CR>a|
 map <F3> n
 map <S-F3> N
 map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>|   " from: http://vim.wikia.com/wiki/Easily_switch_between_source_and_header_file
@@ -210,11 +207,17 @@ map <F7> gT|        " toggle tab to the left
 map <F8> gt|         " toggle tab to the right
 map <S-F8> gT|       " toggle tab to the left
 map <F9> :w!<CR>|    " force write file
+imap <F9> <ESC>:w!<CR>|    " force write file
 map <F10> :q!<CR>|       " force quit file
+imap <F10> <ESC>:q!<CR>|       " force quit file
 map <S-F10> :wq!<CR>|    " force write quit file
-map <expr> <F12> ToggleHighlightOverlength()|         " <expr> necessary on functions
-map <expr> <S-F12> HighlightMultipleSpaces()
-map = :call AutoLinebreakToggle()<CR>
+imap <S-F10> <ESC>:wq!<CR>|    " force write quit file
+map <S-F11> :set number!<CR>|                           " toggle show line numbers
+imap <S-F11> <ESC>:set number!<CR>a|                    " toggle show line numbers
+map <expr> <F12> ToggleHighlightOverlength()|         " <expr> or :call ... <CR> necessary on functions
+imap <F12> <ESC>:call ToggleHighlightOverlength()<CR>a|
+map <expr> <S-F12> ToggleHighlightMultipleSpaces()
+imap <S-F12> <ESC>:call ToggleHighlightMultipleSpaces()<CR>a
 nmap Ô kJ
 nmap Ø O<ESC>|  " create new line above, set cursor there and go back to normal mode
 nmap ø o<ESC>|  " create new line below, set cursor there and go back to normal mode

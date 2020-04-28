@@ -99,6 +99,9 @@ if [ "$(uname)" == 'Linux' ]; then
     mkdir -p "$HOME/.config/sublime-text-3/Installed Packages";
     ln -sf "$dotfiles_path/.config/sublime-text-3/Installed Packages/Theme - Asphalt.sublime-package" \
         "$HOME/.config/sublime-text-3/Installed Packages/Theme - Asphalt.sublime-package";
+    mkdir -p "$HOME/.vscode/"
+    ln -sf "$dotfiles_path/.vscode/extensions" "$HOME/.vscode/";
+
 elif [ "$(uname)" == 'Darwin' ]; then
     mkdir -p "$HOME/.config/sublime-text-3";
     ln -sf "$dotfiles_path/.config/sublime-text-3/Packages" "$HOME/Library/Application Support/Sublime Text 3/";

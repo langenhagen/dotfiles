@@ -90,8 +90,8 @@ abbr -a gsp 'git stash pop'
 
 abbr -a gco 'git checkout'
 abbr -a gcm 'git checkout master'
-abbr -a gcom 'git checkout master'
-abbr -a gm 'git checkout master'
+# abbr -a gcom 'git checkout master'  # Commented out on Thursday, 30 April 2020
+# abbr -a gm 'git checkout master'  # Commented out on Thursday, 30 April 2020
 
 abbr -a gbn 'git checkout -b'
 abbr -a gnb 'git checkout -b'
@@ -178,6 +178,9 @@ end
 switch (uname -n)
 case  "*celeraone*"
     # C1 related abbrs
+
+    abbr -a gcp 'git checkout py3'
+
     abbr -a qq 'cd ~/c1'
     abbr -a q 'cd-into-c1-project'
     abbr -a qa 'cd-into-c1-project authservice'

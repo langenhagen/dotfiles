@@ -208,6 +208,8 @@ map <F8> gt|         " toggle tab to the right
 map <S-F8> gT|       " toggle tab to the left
 map <F9> :w!<CR>|    " force write file
 imap <F9> <ESC>:w!<CR>|    " force write file
+map <S-F9> :wq!<CR>|    " force write quit file
+imap <S-F9> <ESC>:wq!<CR>|    " force write quit file
 map <F10> :q!<CR>|       " force quit file
 imap <F10> <ESC>:q!<CR>|       " force quit file
 map <S-F10> :wq!<CR>|    " force write quit file

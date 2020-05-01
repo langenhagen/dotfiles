@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Language="en-US" Id="cpptools" Version="0.27.0" Publisher="ms-vscode"/>
+    <Identity Language="en-US" Id="cpptools" Version="0.27.1" Publisher="ms-vscode"/>
     <DisplayName>C/C++</DisplayName>
     <Description xml:space="preserve">C/C++ IntelliSense, debugging, and code browsing.</Description>
     <Tags>C,C++,IntelliSense,Microsoft,multi-root ready,keybindings,debuggers,json,c++</Tags>

@@ -4154,11 +4154,12 @@ let ui;
 let disposables = [];
 let languageConfigurations = [];
 let intervalTimer;
+let insiderUpdateEnabled = false;
 let insiderUpdateTimer;
+const insiderUpdateTimerInterval = 1000 * 60 * 60;
 let realActivationOccurred = false;
 let tempCommands = [];
 let activatedPreviously;
-const insiderUpdateTimerInterval = 1000 * 60 * 60;
 let buildInfoCache;
 const taskSourceStr = "C/C++";
 const cppInstallVsixStr = 'C/C++: Install vsix -- ';
@@ -4482,13 +4483,22 @@ function realActivation() {
     reportMacCrashes();
     const settings = new settings_1.CppSettings();
     vcpkgDbPromise = initVcpkgDatabase();
-    if (settings.updateChannel === 'Default') {
-        suggestInsidersChannel();
-    }
-    else if (settings.updateChannel === 'Insiders') {
-        insiderUpdateTimer = global.setInterval(checkAndApplyUpdate, insiderUpdateTimerInterval, settings.updateChannel);
-        checkAndApplyUpdate(settings.updateChannel);
-    }
+    platform_1.PlatformInformation.GetPlatformInformation().then(info => {
+        if (info.platform !== "linux" || info.architecture === "x86_64") {
+            let vscodeVersion = new packageVersion_1.PackageVersion(vscode.version);
+            let minimumSupportedVersionForInsidersUpgrades = new packageVersion_1.PackageVersion("1.42.1");
+            if (vscodeVersion.isGreaterThan(minimumSupportedVersionForInsidersUpgrades, "insider")) {
+                insiderUpdateEnabled = true;
+                if (settings.updateChannel === 'Default') {
+                    suggestInsidersChannel();
+                }
+                else if (settings.updateChannel === 'Insiders') {
+                    insiderUpdateTimer = global.setInterval(checkAndApplyUpdate, insiderUpdateTimerInterval, settings.updateChannel);
+                    checkAndApplyUpdate(settings.updateChannel);
+                }
+            }
+        }
+    });
     class SchemaProvider {
         provideTextDocumentContent(uri) {
             return __awaiter(this, void 0, void 0, function* () {
@@ -4524,15 +4534,17 @@ function onDidChangeSettings(event) {
             client.onDidChangeSettings(event, false);
         }
     });
-    const newUpdateChannel = changedActiveClientSettings['updateChannel'];
-    if (newUpdateChannel) {
-        if (newUpdateChannel === 'Default') {
-            clearInterval(insiderUpdateTimer);
+    if (insiderUpdateEnabled) {
+        const newUpdateChannel = changedActiveClientSettings['updateChannel'];
+        if (newUpdateChannel) {
+            if (newUpdateChannel === 'Default') {
+                clearInterval(insiderUpdateTimer);
+            }
+            else if (newUpdateChannel === 'Insiders') {
+                insiderUpdateTimer = global.setInterval(checkAndApplyUpdate, insiderUpdateTimerInterval);
+            }
+            checkAndApplyUpdate(newUpdateChannel);
         }
-        else if (newUpdateChannel === 'Insiders') {
-            insiderUpdateTimer = global.setInterval(checkAndApplyUpdate, insiderUpdateTimerInterval);
-        }
-        checkAndApplyUpdate(newUpdateChannel);
     }
 }
 function onDidChangeActiveTextEditor(editor) {

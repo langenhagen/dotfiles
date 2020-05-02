@@ -1,0 +1,24 @@
+{
+    "window.zoomLevel": -1,
+    "editor.rulers": [100],
+    "editor.renderControlCharacters": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "cSpell.userWords": [
+        "andreasl",
+        "browseable",
+        "cmake",
+        "minimum",
+        "nextcloud",
+        "required",
+        "suckless",
+        "syncthing",
+        "ungrab",
+        "xclip"
+    ],
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "cmake.configureOnOpen": true
+},
+"[python]": {
+    "editor.rulers": [80, 100]
+}

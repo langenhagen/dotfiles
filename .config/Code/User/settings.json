@@ -24,4 +24,5 @@
     "python.languageServer": "Jedi",
     "terminal.integrated.inheritEnv": false,
     "python.jediEnabled": false,
+    "C_Cpp.default.compilerPath": "/usr/bin/gcc",
 }

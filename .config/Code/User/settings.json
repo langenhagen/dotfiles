@@ -17,11 +17,11 @@
         "xclip"
     ],
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
-    "cmake.configureOnOpen": true,
+    "cmake.configureOnOpen": false,
     "[python]": {
         "editor.rulers": [80, 100]
     },
     "python.languageServer": "Jedi",
     "terminal.integrated.inheritEnv": false,
-    "python.jediEnabled": false
+    "python.jediEnabled": false,
 }

@@ -20,5 +20,8 @@
     "cmake.configureOnOpen": true,
     "[python]": {
         "editor.rulers": [80, 100]
-    }
+    },
+    "python.languageServer": "Jedi",
+    "terminal.integrated.inheritEnv": false,
+    "python.jediEnabled": false
 }

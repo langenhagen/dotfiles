@@ -1,4 +1,7 @@
 # Change Log
+## [1.2.7]
+- Update Experimentation service library for Visual Studio Codespaces compatibility.
+
 ## [1.2.6]
 - Fixes missing Java completion items. [#164](https://github.com/MicrosoftDocs/intellicode/issues/164)
 

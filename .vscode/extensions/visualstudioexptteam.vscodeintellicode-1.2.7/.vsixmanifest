@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Language="en-US" Id="vscodeintellicode" Version="1.2.6" Publisher="VisualStudioExptTeam"/>
+    <Identity Language="en-US" Id="vscodeintellicode" Version="1.2.7" Publisher="VisualStudioExptTeam"/>
     <DisplayName>Visual Studio IntelliCode</DisplayName>
     <Description xml:space="preserve">AI-assisted development</Description>
     <Tags>python,sql,typescript,typescriptreact,javascript,javascriptreact,java</Tags>

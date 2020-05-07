@@ -2,7 +2,7 @@
 	"name": "vscodeintellicode",
 	"displayName": "Visual Studio IntelliCode",
 	"description": "%extension.description%",
-	"version": "1.2.6",
+	"version": "1.2.7",
 	"publisher": "VisualStudioExptTeam",
 	"author": {
 		"name": "Microsoft"
@@ -166,7 +166,7 @@
 		"request": "2.87.0",
 		"request-progress": "3.0.0",
 		"semver": "5.5.0",
-		"tas-client": "0.0.23",
+		"tas-client": "0.0.668",
 		"vscode-extension-telemetry": "0.1.0",
 		"vscode-nls": "4.1.1"
 	},

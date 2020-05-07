@@ -26,4 +26,5 @@
     "python.jediEnabled": false,
     "C_Cpp.default.compilerPath": "/usr/bin/gcc",
     "cSpell.diagnosticLevel": "Hint",
+    "bookmarks.navigateThroughAllFiles": true,
 }

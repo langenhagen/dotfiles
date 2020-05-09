@@ -27,4 +27,6 @@
     "C_Cpp.default.compilerPath": "/usr/bin/gcc",
     "cSpell.diagnosticLevel": "Hint",
     "bookmarks.navigateThroughAllFiles": true,
+    "gitlens.codeLens.recentChange.enabled": false,
+    "gitlens.codeLens.authors.enabled": false,
 }

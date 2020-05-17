@@ -24,10 +24,12 @@ git pull origin master
 ./link-files.sh
 ```
 
-Beware that executing `link-files.sh` eventually deletes existing files before it symlinks the
-dotfiles. Also, you might see some error messages like `rm: $HOME/ranger/rc.conf: No such file or
-directory` at first installation because the script will attempt to delete files may not exist.
+Beware that executing `link-files.sh` may delete existing files before it symlinks the dotfiles.
+Also, you might see some error messages like `rm: $HOME/ranger/rc.conf: No such file or directory`
+at first installation because the script will attempt to delete files may not exist.
 This is fine however.
+
+There are other scripts in the root folder of the repository. Consider running them, too.
 
 
 ## Making changes

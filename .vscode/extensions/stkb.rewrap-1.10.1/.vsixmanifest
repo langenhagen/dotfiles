@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Language="en-US" Id="rewrap" Version="1.10.0" Publisher="stkb"/>
+    <Identity Language="en-US" Id="rewrap" Version="1.10.1" Publisher="stkb"/>
     <DisplayName>Rewrap</DisplayName>
     <Description xml:space="preserve">Re-wraps comments and other text to a given line length.</Description>
     <Tags>wraps,comments,column,length,fill,multi-root ready,keybindings</Tags>

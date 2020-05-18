@@ -71,17 +71,17 @@ const LanguageModule = function (__exports) {
   };
 
   const matchesFilePath = __exports.matchesFilePath = function (path, _arg1) {
-    let extOrName;
-    const matchValue = (0, _String.split)((0, _Seq.last)((0, _String.split)(path.toLocaleLowerCase(), "\\", "/")), ["."], null, 0);
+    const fileName = (0, _Seq.last)((0, _String.split)(path.toLocaleLowerCase(), "\\", "/"));
 
-    if (matchValue != null ? matchValue.length === 1 : false) {
-      const noExt = matchValue[0];
-      extOrName = noExt;
-    } else {
-      extOrName = "." + (0, _Seq.last)(matchValue);
-    }
+    const tryMatch = function (_arg2) {
+      if (_arg2.indexOf(".") === 0) {
+        return (0, _String.endsWith)(fileName, _arg2);
+      } else {
+        return fileName === _arg2;
+      }
+    };
 
-    return (0, _Seq.exists)($var2 => (0, _Util.equals)(extOrName, $var2), _arg1.data[2]);
+    return (0, _Seq.exists)(tryMatch, _arg1.data[2]);
   };
 
   return __exports;

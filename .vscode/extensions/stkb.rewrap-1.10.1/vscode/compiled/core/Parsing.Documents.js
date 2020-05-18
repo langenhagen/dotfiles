@@ -90,7 +90,7 @@ let languages = (0, _Util.createAtom)((0, _List.ofArray)([lang("AutoHotkey", "ah
   return (0, _CurriedLambda.default)(function (settings_4) {
     return (0, _Parsing2.sourceCode)(commentParsers_3, settings_4);
   });
-})()), lang("CoffeeScript", "", ".coffee", (() => {
+})()), lang("CMake", "", "CMakeLists.txt", configFile), lang("CoffeeScript", "", ".coffee", (() => {
   const commentParsers_4 = (0, _List.ofArray)([(0, _CurriedLambda.default)(_Parsing2.customBlock)(_Parsing5.javadoc, ["[*#]", " * "], ["###\\*", "###"]), (0, _Parsing2.block)(["###", "###"]), (0, _Parsing2.line)("#")]);
   return (0, _CurriedLambda.default)(function (settings_5) {
     return (0, _Parsing2.sourceCode)(commentParsers_4, settings_5);
@@ -100,7 +100,7 @@ let languages = (0, _Util.createAtom)((0, _List.ofArray)([lang("AutoHotkey", "ah
   return (0, _CurriedLambda.default)(function (settings_6) {
     return (0, _Parsing2.sourceCode)(commentParsers_5, settings_6);
   });
-})()), lang("CSS", "", ".css", _Parsing2.css), lang("D", "", ".d", (() => {
+})()), lang("CSS", "postcss", ".css|.pcss|.postcss", _Parsing2.css), lang("D", "", ".d", (() => {
   const commentParsers_6 = (0, _List.ofArray)([(0, _Parsing2.customLine)(_Parsing5.ddoc, "///"), _Parsing2.cLine, (0, _CurriedLambda.default)(_Parsing2.customBlock)(_Parsing5.ddoc, ["\\*", " * "], _Parsing2.javadocMarkers), (0, _CurriedLambda.default)(_Parsing2.customBlock)(_Parsing5.ddoc, ["\\+", " + "], ["/\\+\\+", "\\+/"]), _Parsing2.cBlock, (0, _Parsing2.block)(["/\\+", "\\+/"])]);
   return (0, _CurriedLambda.default)(function (settings_7) {
     return (0, _Parsing2.sourceCode)(commentParsers_6, settings_7);
@@ -145,13 +145,13 @@ let languages = (0, _Util.createAtom)((0, _List.ofArray)([lang("AutoHotkey", "ah
   return (0, _CurriedLambda.default)(function (settings_18) {
     return (0, _Parsing2.sourceCode)(commentParsers_14, settings_18);
   });
-})()), lang("Java", "", ".java", _Parsing2.java), lang("JavaScript", "javascriptreact|js", ".js|.jsx", _Parsing2.java), lang("JSON", "json5", ".json|.json5", _Parsing2.java), lang("LaTeX", "tex", ".bbx|.cbx|.cls|.sty|.tex", (0, _CurriedLambda.default)(_Parsing6.latex)), lang("Lean", "", ".lean", (() => {
+})()), lang("Java", "", ".java", _Parsing2.java), lang("JavaScript", "javascriptreact|js", ".js|.jsx", _Parsing2.java), lang("JSON", "json5|jsonc", ".json|.json5|.jsonc", _Parsing2.java), lang("LaTeX", "tex", ".bbx|.cbx|.cls|.sty|.tex", (0, _CurriedLambda.default)(_Parsing6.latex)), lang("Lean", "", ".lean", (() => {
   const commentParsers_15 = (0, _List.ofArray)([(0, _Parsing2.line)("--"), (0, _Parsing2.block)(["/-[-!]?", "-/"])]);
   return (0, _CurriedLambda.default)(function (settings_20) {
     return (0, _Parsing2.sourceCode)(commentParsers_15, settings_20);
   });
 })()), lang("Less", "", ".less", _Parsing2.java), lang("Lua", "", ".lua", (() => {
-  const commentParsers_16 = (0, _List.ofArray)([(0, _Parsing2.line)("--"), (0, _Parsing2.block)(["--\\[\\[", "\\]\\]"])]);
+  const commentParsers_16 = (0, _List.ofArray)([(0, _Parsing2.block)(["--\\[\\[", "\\]\\]"]), (0, _Parsing2.line)("--")]);
   return (0, _CurriedLambda.default)(function (settings_21) {
     return (0, _Parsing2.sourceCode)(commentParsers_16, settings_21);
   });
@@ -195,24 +195,24 @@ let languages = (0, _Util.createAtom)((0, _List.ofArray)([lang("AutoHotkey", "ah
   return (0, _CurriedLambda.default)(function (settings_30) {
     return (0, _Parsing2.sourceCode)(commentParsers_24, settings_30);
   });
-})()), lang("R", "", ".r", configFile), lang("Ruby", "", ".rb", (() => {
+})()), lang("R", "", ".r", configFile), lang("reStructuredText", "", ".rst|.rest", (0, _CurriedLambda.default)(plainText)), lang("Ruby", "", ".rb", (() => {
   const commentParsers_25 = (0, _List.ofArray)([(0, _Parsing2.line)("#"), (0, _Parsing2.block)(["=begin", "=end"])]);
-  return (0, _CurriedLambda.default)(function (settings_31) {
-    return (0, _Parsing2.sourceCode)(commentParsers_25, settings_31);
+  return (0, _CurriedLambda.default)(function (settings_32) {
+    return (0, _Parsing2.sourceCode)(commentParsers_25, settings_32);
   });
 })()), lang("Rust", "", ".rs", (() => {
   const commentParsers_26 = (0, _List.ofArray)([(0, _Parsing2.line)("\\/\\/(?:\\/|\\!)?")]);
-  return (0, _CurriedLambda.default)(function (settings_32) {
-    return (0, _Parsing2.sourceCode)(commentParsers_26, settings_32);
+  return (0, _CurriedLambda.default)(function (settings_33) {
+    return (0, _Parsing2.sourceCode)(commentParsers_26, settings_33);
   });
 })()), lang("SCSS", "", ".scss", _Parsing2.java), lang("Scala", "", ".scala", _Parsing2.java), lang("Shaderlab", "", ".shader", _Parsing2.java), lang("Shell script", "shellscript", ".sh", configFile), lang("SQL", "", ".sql", (() => {
   const commentParsers_27 = (0, _List.ofArray)([(0, _Parsing2.line)("--"), _Parsing2.cBlock]);
-  return (0, _CurriedLambda.default)(function (settings_33) {
-    return (0, _Parsing2.sourceCode)(commentParsers_27, settings_33);
+  return (0, _CurriedLambda.default)(function (settings_34) {
+    return (0, _Parsing2.sourceCode)(commentParsers_27, settings_34);
   });
-})()), lang("Swift", "", ".swift", _Parsing2.java), lang("Tcl", "", ".tcl", configFile), lang("TOML", "", ".toml", configFile), lang("TypeScript", "typescriptreact", ".ts|.tsx", _Parsing2.java), lang("Verilog/SystemVerilog", "systemverilog|verilog", ".sv|.svh|.v|.vh|.vl", _Parsing2.java), lang("XML", "xsl", ".xml|.xsl", _Parsing2.html), lang("YAML", "", ".yaml|.yml", (0, _CurriedLambda.default)(function (settings_34) {
-  const comments = (0, _Parsing2.line)("#{1,3}", settings_34);
-  return (0, _Parsing.repeatToEnd)((0, _Parsing.takeUntil)(comments, plainText(settings_34)));
+})()), lang("Swift", "", ".swift", _Parsing2.java), lang("Tcl", "", ".tcl", configFile), lang("TOML", "", ".toml", configFile), lang("TypeScript", "typescriptreact", ".ts|.tsx", _Parsing2.java), lang("Verilog/SystemVerilog", "systemverilog|verilog", ".sv|.svh|.v|.vh|.vl", _Parsing2.java), lang("XML", "xsl", ".xml|.xsl", _Parsing2.html), lang("YAML", "", ".yaml|.yml", (0, _CurriedLambda.default)(function (settings_35) {
+  const comments = (0, _Parsing2.line)("#{1,3}", settings_35);
+  return (0, _Parsing.repeatToEnd)((0, _Parsing.takeUntil)(comments, plainText(settings_35)));
 }))]));
 exports.languages = languages;
 

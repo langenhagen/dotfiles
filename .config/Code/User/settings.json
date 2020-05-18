@@ -29,4 +29,15 @@
     "bookmarks.navigateThroughAllFiles": true,
     "gitlens.codeLens.recentChange.enabled": false,
     "gitlens.codeLens.authors.enabled": false,
+    "workbench.colorCustomizations": {
+    "[Default Dark+]": {
+        "editor.background": "#101010",
+        "sideBar.background": "#000000",
+        "tab.inactiveBackground": "#151515",
+        "tab.activeBackground": "#303030",
+        "tab.border": "#151515",
+        "activityBar.background": "#000000",
+        "editorGroupHeader.tabsBackground": "#000000"
+    }
+    },
 }

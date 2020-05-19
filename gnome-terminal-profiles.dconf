@@ -1,12 +1,15 @@
 [:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
 foreground-color='rgb(170,170,170)'
 visible-name='My-andreasls-profile'
-palette=['rgb(0,0,0)', 'rgb(170,0,0)', 'rgb(0,170,0)', 'rgb(170,85,0)', 'rgb(0,0,170)', 'rgb(170,0,170)', 'rgb(0,170,170)', 'rgb(170,170,170)', 'rgb(85,85,85)', 'rgb(255,85,85)', 'rgb(85,255,85)', 'rgb(255,255,85)', 'rgb(85,85,255)', 'rgb(255,85,255)', 'rgb(85,255,255)', 'rgb(255,255,255)']
+palette=['rgb(0,0,0)', 'rgb(204,17,17)', 'rgb(0,170,0)', 'rgb(170,85,0)', 'rgb(41,188,210)', 'rgb(170,0,170)', 'rgb(0,170,170)', 'rgb(170,170,170)', 'rgb(52,56,156)', 'rgb(255,85,85)', 'rgb(85,255,85)', 'rgb(255,255,85)', 'rgb(85,85,255)', 'rgb(255,85,255)', 'rgb(85,255,255)', 'rgb(255,255,255)']
+bold-is-bright=true
 use-system-font=false
 use-theme-colors=false
 font='Courier 10 Pitch 11'
 use-theme-transparency=false
+bold-color-same-as-fg=false
+bold-color='rgb(204,204,204)'
 background-color='rgb(0,0,0)'
-scrollbar-policy='never'
-scrollback-lines=50000
 audible-bell=false
+scrollback-lines=50000
+scrollbar-policy='never'

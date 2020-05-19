@@ -7,7 +7,7 @@ import sys
 class CmdCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         ''' Gets the directory path of the current text file and, depending on the platform,
-            either, if on Linux, opens the KDE's Konsole
+            either, if on Linux, opens Gnome's Terminal
             or, if on Mac, calls an applescript that opens the given directory in a new iTerm2 tab.
         '''
         file_name = self.view.file_name()
@@ -16,7 +16,7 @@ class CmdCommand(sublime_plugin.TextCommand):
         current_directory = os.sep.join(path)
 
         if sys.platform == 'linux':
-            subprocess.call('konsole --workdir ' + current_directory + '&', shell=True)
+            subprocess.call('gnome-terminal --working-directory ' + current_directory + '&', shell=True)
         elif sys.platform == 'darwin':
             subprocess.call('open -a "$SCRIPTS_DIR_PATH/OpenIterm2.app" ' + current_directory, shell=True)
         else:

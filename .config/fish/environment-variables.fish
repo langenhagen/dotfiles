@@ -24,9 +24,6 @@ switch (uname -n)
         # Distcc Configuration
         # ====================
 
-        # Enable local cache to use Distcc.
-        setenv CCACHE_PREFIX distcc
-
         # Remote servers used for compilation.
         setenv DISTCC_HOSTS '192.168.30.70/16,lzo 192.168.30.72/16,lzo'
 

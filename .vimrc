@@ -43,6 +43,13 @@ autocmd CursorHoldI * stopinsert  " automatically leave insert mode after 'updat
 autocmd VimLeave * call system("xsel -ib", getreg('+'))  " keep the clipboard populated after closing vim
 autocmd BufWritePost .vimrc source $MYVIMRC  " automatically source my vimrc after writing it to disk
 
+" colorscheme ======================================================================================
+if &diff
+    colorscheme apprentice " apprentice must be in ~/.vim/colors/ folder (https://github.com/romainl/Apprentice)
+else
+    colorscheme ron
+endif
+
 " status line ======================================================================================
 " color the status line when in Insert Mode
 highlight statusline ctermfg=0 ctermbg=255
@@ -247,11 +254,6 @@ inoremap <S-Down> <C-\><C-O><C-D><C-\><C-O><C-D>
 " netrw settings ===================================================================================
 let g:netrw_banner = 0   " disable netrw banner (toglle manually with I inside netrw)
 let g:netrw_liststyle=1  " show file size and time stamp (toggle manually with i inside netrw)
-
-" vimdiff settings =================================================================================
-if &diff
-    colorscheme apprentice " apprentice must be in ~/.vim/colors/ folder (https://github.com/romainl/Apprentice)
-endif
 
 " vim tips & tricks ================================================================================
 " set spell!  " disable/enable spellchecking

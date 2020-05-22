@@ -182,7 +182,6 @@ case  "*celeraone*"
 
     abbr -a gcp 'git checkout py3'
 
-    abbr -a qq 'cd ~/c1'
     abbr -a q 'cd-into-c1-project'
     abbr -a qa 'cd-into-c1-project authservice'
     abbr -a qap 'cd-into-c1-project authproxy'

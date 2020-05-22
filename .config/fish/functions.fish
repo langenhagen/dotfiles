@@ -104,7 +104,11 @@ case "*celeraone*"
     function cd-into-c1-project
         # Given a c1 repository name (without leading 'c1-',
         # change the directory to the repository,
-        cd "$HOME/c1/gerrit/c1-$argv[1]"
+        if test (count $argv) -eq 0
+            cd "$HOME/c1"
+        else
+            cd "$HOME/c1/gerrit/c1-$argv[1]"
+        end
     end
 
     function rt

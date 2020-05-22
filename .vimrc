@@ -198,6 +198,7 @@ imap <C-_> <ESC>:call ToggleComment()<CR>|  " <C-_> maps to ctrl + / in vim
 map <F2> :call ToggleAutoLinebreak()<CR>
 imap <F2> <ESC>:call ToggleAutoLinebreak()<CR>a|
 map <F3> n
+set <S-F3>=[1;2R
 map <S-F3> N
 map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>|   " from: http://vim.wikia.com/wiki/Easily_switch_between_source_and_header_file
 map <F5> :edit<CR>|  " refresh file

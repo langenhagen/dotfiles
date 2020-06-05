@@ -12,8 +12,6 @@ repos=(
     "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/celeraone-howtos:master:origin:master:origin:master"
     "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/celeraone-scripts:master:origin:master:c1:master"
     "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/celeraone-scripts:master:origin:master:origin:master"
-    "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/evaluate-locs:master:origin:master:c1:master"
-    "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/evaluate-locs:master:origin:master:origin:master"
     "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/graphs:master:c1:master:c1:master"
     "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/notebooks:master:c1:master:c1:master"
     "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/notes:master:origin:master:c1:master"

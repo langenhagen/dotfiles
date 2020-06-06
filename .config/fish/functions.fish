@@ -1,10 +1,10 @@
-# My personal fish functions file
+# My personal fish functions file.
 #
 # Source this file into the config.fish.
 #
 # author: andreasl
 
-function __fish_prompt_my --description "Write out my, andreasl's,  prompt"
+function __fish_prompt_my # --description "Write out my, andreasl's,  prompt"
     set -l last_pipestatus $pipestatus
     set -l normal (set_color normal)
 
@@ -18,10 +18,13 @@ function __fish_prompt_my --description "Write out my, andreasl's,  prompt"
         set suffix '#'
     end
 
-    # Write pipestatus
-    set -l prompt_status (__fish_print_pipestatus " [" "]" "|" (set_color $fish_color_status) (set_color --bold $fish_color_status) $last_pipestatus)
-
-    printf '%s%s%s%s%s%s%s' (set_color $color_cwd) (prompt_pwd) $normal (fish_vcs_prompt) $normal $prompt_status $suffix " "
+     if test (fish --version | cut -d' ' -f3 | cut -d. -f1) -ge 3
+        # Write pipestatus
+        set -l prompt_status (__fish_print_pipestatus " [" "]" "|" (set_color $fish_color_status) (set_color --bold $fish_color_status) $last_pipestatus)
+        printf '%s%s%s%s%s%s%s' (set_color $color_cwd) (prompt_pwd) $normal (fish_vcs_prompt) $normal $prompt_status $suffix ' '
+    else
+        printf '%s%s%s%s%s' (set_color $color_cwd) (prompt_pwd) $normal $suffix ' '
+    end
 end
 
 function fish_prompt

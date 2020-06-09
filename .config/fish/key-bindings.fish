@@ -14,7 +14,4 @@ function fish_user_key_bindings
 
     bind \e\[1\;3D backward-bigword
     bind \e\[1\;3C forward-bigword
-
-    # ALT + x to copy nicely from the command line, bc. fish's own ctrl+x appears to be buggy
-    bind \ex fish_clipboard_copy
 end

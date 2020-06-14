@@ -85,6 +85,7 @@ repos=(
     "${HOME}/c1/gitlab.celeraone.com/celeraone/presentations:master:origin:master:origin:master"
     "${HOME}/c1/gitlab.celeraone.com/cockpit/sso-login:master:origin:master:origin:master"
     "${HOME}/c1/gitlab.celeraone.com/frontend/c1-frontend:develop:origin:develop:origin:develop"
+    "${HOME}/c1/gitlab.celeraone.com/middleware/as-ecrm-export:master:origin:master:origin:master"
     "${HOME}/c1/gitlab.celeraone.com/middleware/c1-cre-xapi:develop:origin:develop:origin:develop"
     "${HOME}/c1/gitlab.celeraone.com/middleware/c1-dev-gerrit-hooks:master:origin:master:origin:master"
     "${HOME}/c1/gitlab.celeraone.com/middleware/c1-mock:master:origin:master:origin:master"

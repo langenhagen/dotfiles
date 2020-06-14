@@ -201,6 +201,8 @@ command! Luatrenn norm o<ESC>100a-<ESC>o
 
 " abbreviations ====================================================================================
 
+abbreviate Rfctr Refactor
+abbreviate rfctr refactor
 abbreviate rq require
 abbreviate rqd required
 

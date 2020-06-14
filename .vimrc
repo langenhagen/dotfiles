@@ -199,6 +199,11 @@ command! Trenn norm o//<ESC>98a-<ESC>o
 " Lua atyle delimiter line
 command! Luatrenn norm o<ESC>100a-<ESC>o
 
+" abbreviations ====================================================================================
+
+abbreviate rq require
+abbreviate rqd required
+
 " key bindings =====================================================================================
 map <C-_> :call ToggleComment()<CR>|  " <C-_> maps to ctrl + / in vim
 imap <C-_> <ESC>:call ToggleComment()<CR>|  " <C-_> maps to ctrl + / in vim

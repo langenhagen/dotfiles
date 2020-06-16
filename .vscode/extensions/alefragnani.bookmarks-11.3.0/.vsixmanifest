@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Language="en-US" Id="Bookmarks" Version="11.2.0" Publisher="alefragnani"/>
+    <Identity Language="en-US" Id="Bookmarks" Version="11.3.0" Publisher="alefragnani"/>
     <DisplayName>Bookmarks</DisplayName>
     <Description xml:space="preserve">Mark lines and jump to them</Description>
     <Tags>bookmark,sticky,jump,mark,selection,navigation,multi-root ready,keybindings</Tags>

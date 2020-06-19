@@ -61,6 +61,7 @@ abbr -a t3 'tree -C -a -L 3'
 abbr -a t3d 'tree -C -a -L 3 -d'
 
 abbr -a v 'vim -p'
+abbr -a vg "vim -p (cat ~/.histout)"
 abbr -a vh "vim -p (eval \$history[1])"
 abbr -a e 'vim -R "+normal :Explore\$" .'
 

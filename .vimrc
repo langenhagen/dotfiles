@@ -111,8 +111,7 @@ endfunction
 
 " autocompletion ===================================================================================
 " remap autocompletion to TAB unless the cursor is after a whitespace
-" inspired by:
-" https://news.ycombinator.com/item?id=13960147
+" inspired by: https://news.ycombinator.com/item?id=13960147
 function! InsertTabWrapper(is_shift)
     let col = col('.') - 1
     if a:is_shift
@@ -133,8 +132,8 @@ inoremap <tab> <c-r>=InsertTabWrapper(0)<cr>
 inoremap <S-tab> <c-r>=InsertTabWrapper(1)<cr>
 
 function! AddKeywordsForAutoCompletion()
-    set iskeyword+=-  " treat minus as part of a word, esp for autocompletion
-    set iskeyword+=.  " treat dot as part of a word, esp for autocompleution
+    set iskeyword+=-  " treat minus `-` as part of a word, esp for autocompletion
+    set iskeyword+=.  " treat dot `.` as part of a word, esp for autocompletion
 endfunction
 
 function! RemoveKeywordsForAutoCompletion()

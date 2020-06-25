@@ -197,6 +197,8 @@ command! Pytrenn norm o#<ESC>99a-<ESC>o
 command! Trenn norm o//<ESC>98a-<ESC>o
 " Lua atyle delimiter line
 command! Luatrenn norm o<ESC>100a-<ESC>o
+" Write buffer via sudo tee to current file %
+command! SudoWrite w !sudo tee %
 
 " abbreviations ====================================================================================
 

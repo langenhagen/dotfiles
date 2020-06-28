@@ -138,9 +138,6 @@ case "barn-ultra" "*celeraone*"
 
     abbr -a prt 'cd "$PROTOFILES_DIR_PATH" ; find "$PROTOFILES_DIR_PATH" -name "*_proto.*"'
 
-    abbr -a j 'journal \''
-    abbr -a jrn 'journal \''
-    abbr -a editjrn "vim -R '+normal G\$' -p $JOURNAL_FILE_PATH"
     abbr -a bkt 'bucket \''
     abbr -a tks 'tricks'
     abbr -a alh 'add-to-one-line-help \''

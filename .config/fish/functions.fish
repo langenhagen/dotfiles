@@ -55,17 +55,6 @@ function read_confirm
   end
 end
 
-function journal
-    # Show the journal file or append given input to it.
-    # There must be a trailing newline at the end of the file or else output might be fucked up.
-
-    if test (count $argv) -eq 0
-        tail -n20 "$JOURNAL_FILE_PATH"
-    else if test (count $argv) -gt 0
-        echo (date +%a' '%Y'-'%m'-'%d' '%H:%M) $argv >> "$JOURNAL_FILE_PATH"
-    end
-end
-
 function minimerk
     # Store a simple text string into the minimerk.txt file with a timestamp.
     # Can be used for minimal reminders that are stored into persistent memory.

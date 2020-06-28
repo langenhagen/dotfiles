@@ -1,5 +1,5 @@
 [Desktop Entry]
 Type=Application
-Exec=sh -c "subl \"\$HOME/Work/2018-CeleraOne/journal.md\""
+Exec=fish -c 'subl "$JOURNAL_PATH"'
 X-GNOME-Autostart-enabled=true
 Name=Open Journal

@@ -8,7 +8,6 @@ switch (uname -n)
     case "*barn-ultra*" "*celeraone*"
         setenv BUCKET_LIST_FILE_PATH "$HOME/Barn/Notes/bucket-list.txt"
         setenv CHECK_DIR_PATH "$HOME/Dev/check"
-        setenv JOURNAL_FILE_PATH "$HOME/Barn/Notes/Journal.txt"
         setenv ONE_LINE_HELP_FILE_PATH "$HOME/Dev/Zeugs/one-line-help.txt"
         setenv PLAYGROUND_DIR_PATH "$HOME/Dev/_playgrounds"
         setenv PROTOFILES_DIR_PATH "$HOME/Dev/_Protofiles"
@@ -21,6 +20,9 @@ end
 
 switch (uname -n)
     case  "*celeraone*"
+
+        set -gx JOURNAL_PATH "$HOME/Work/2018-2020-CeleraOne/journal.md"
+
         # Distcc Configuration
         # ====================
 

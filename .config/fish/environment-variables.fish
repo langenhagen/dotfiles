@@ -53,7 +53,7 @@ switch (uname -n)
         set -gx PATH $PATH "$HOME/c1/gitlab.celeraone.com/andreas.langenhagen/celeraone-scripts"
 
         setenv N_PREFIX "$HOME/n"
-        set -gx PATH "$HOME/n/bin" $PATH
+        set -gx PATH $PATH "$HOME/n/bin"
 end
 
 set -gx PATH $PATH '/usr/local/sbin'

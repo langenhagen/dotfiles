@@ -20,4 +20,7 @@ test -e $HOME/.iterm2_shell_integration.fish; and source $HOME/.iterm2_shell_int
 test -e $HOME/miniconda3/etc/fish/conf.d/conda.fish; and source $HOME/miniconda3/etc/fish/conf.d/conda.fish
 test -e $HOME/.rbenv/bin/rbenv; and status --is-interactive; and source (~/.rbenv/bin/rbenv init - | psub)
 
+command -v pyenv 1>/dev/null 2>&1; and pyenv init - | source
+
 ### the initial commands ###########################################################################
+

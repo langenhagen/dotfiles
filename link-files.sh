@@ -58,11 +58,8 @@ ln -sf "$dotfiles_path/.config/fish/functions.fish" "$HOME/.config/fish/function
 ln -sf "$dotfiles_path/.config/fish/key-bindings.fish" "$HOME/.config/fish/key-bindings.fish";
 ln -sf "$dotfiles_path/.config/fish/vimlike-bookmarks.fish" "$HOME/.config/fish/vimlike-bookmarks.fish";
 
-mkdir -p "$HOME/.config/ranger";
-ln -sf "$dotfiles_path/.config/ranger/rc.conf" "$HOME/.config/ranger/rc.conf";
-ln -sf "$dotfiles_path/.config/ranger/scope.sh" "$HOME/.config/ranger/scope.sh";
-mkdir -p "$HOME/.config/ranger/colorschemes";
-ln -sf "$dotfiles_path/.config/ranger/colorschemes/mydefault.py" "$HOME/.config/ranger/colorschemes/mydefault.py";
+mkdir -p "$HOME/.config/lf";
+ln -sf "$dotfiles_path/.config/lf/lfrc" "$HOME/.config/lf/lfrc";
 
 mkdir -p "$HOME/.config/xpad";
 ln -sf "$dotfiles_path/.config/xpad/default-style" "$HOME/.config/xpad/default-style";

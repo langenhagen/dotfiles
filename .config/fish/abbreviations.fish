@@ -41,7 +41,6 @@ abbr -a cct 'vim --cmd \'set t_ti= t_te=\' +redraw +q'  # similar to cat, but vi
 abbr -a cdr  'cd (git rev-parse --show-toplevel)'  # abbreviation for cd to project root
 abbr -a json 'json_pp'  # pretty-print json output
 abbr -a psg 'ps aux | grep -i'
-abbr -a r 'ranger'
 abbr -a shch 'shellcheck -x --exclude SC2059'
 abbr -a vd 'vimdiff'
 abbr -a wcl 'wc -l'

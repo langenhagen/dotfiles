@@ -57,6 +57,7 @@ switch (uname -n)
 end
 
 set -gx PATH $PATH '/usr/local/sbin'
+set -gx PATH $PATH "$HOME/go/bin"
 set -gx PATH $PATH "$HOME/.pyenv/bin"
 set -gx PATH $PATH "$HOME/.poetry/bin"
 set -gx PATH $PATH "$HOME/.rbenv/bin"

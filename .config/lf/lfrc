@@ -5,6 +5,7 @@
 
 # settings
 set hidden
+set previewer ~/.config/lf/previewer.sh
 
 # key mappings
 map <enter> shell

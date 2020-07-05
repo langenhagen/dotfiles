@@ -23,6 +23,7 @@ repos=(
     "${HOME}/Dev/experiments-and-tutorials:master:origin:master:origin:master"
     "${HOME}/Dev/expertises-gantt:master:origin:master:origin:master"
     "${HOME}/Dev/explore-with-dmenu:master:origin:master:origin:master"
+    "${HOME}/Dev/fve:master:origin:master:origin:master"
     "${HOME}/Dev/langenhagen.github.io:master:origin:master:origin:master"
     "${HOME}/Dev/Master-Thesis:master:origin:master:origin:master"
     "${HOME}/Dev/OPTICS:master:origin:master:origin:master"

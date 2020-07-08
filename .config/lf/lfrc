@@ -11,6 +11,7 @@ set previewer ~/.config/lf/previewer.sh
 map <enter> shell
 map <delete> delete
 map D delete
+map S $$SHELL
 
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to

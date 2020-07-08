@@ -1,3 +1,5 @@
+# my, andreasl's, tig rc file.
+
 # settings ----------------------------------------------------------------------------------------
 set ignore-case = yes  # Enum consisting of the values: no, yes, smart-case
 set mouse = false
@@ -14,6 +16,8 @@ color diff-stat         cyan    default
 # <  Exit Tig after executing the command.
 
 bind generic ` !git rebase --interactive HEAD~7
+bind generic A @git add -A
+bind generic a @git reset
 bind generic B !git rebase --interactive %(commit)~1
 bind generic P @sh -c "xdg-open \"$(dirname $(realpath %(file)))\""  # open path in standard program, linux only
 bind generic π !git add --patch %(file)  # π is alt + p on Mac

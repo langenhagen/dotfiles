@@ -160,7 +160,7 @@ case "barn-ultra" "*celeraone*"
 
     case  'Linux'
         # abbr -a open 'xdg-open'  # disabled on 2020-03-22
-        abbr -a o 'xdg-open .'
+        abbr -a o 'xdg-open'
         abbr -a oc 'xdg-open .; exit'
         # abbr -a x 'xdg-open'  # disabled on 2020-03-22
         abbr -a xo 'xargs xdg-open'

@@ -77,7 +77,6 @@ abbr -a lh 'grep -HiRns --include=\*.lua'
 abbr -a rh 'grep -HiRns --include=\*.robot'
 abbr -a cfh 'grep -HiRns --include={\*.cfg,\*.conf,\*.conf.in,\*.ini,setup.py,requirements.txt,Makefile,\*.yaml}'
 
-#abbr -a gca 'git commit --amend' Commented out on Sunday, April 7, 2019
 abbr -a gb 'git branch'
 abbr -a gbl 'git blame -n'
 abbr -a gbr 'git branch -r'
@@ -92,8 +91,6 @@ abbr -a gsp 'git stash pop'
 
 abbr -a gco 'git checkout'
 abbr -a gcm 'git checkout master'
-# abbr -a gcom 'git checkout master'  # Commented out on Thursday, 30 April 2020
-# abbr -a gm 'git checkout master'  # Commented out on Thursday, 30 April 2020
 
 abbr -a gbn 'git checkout -b'
 abbr -a gnb 'git checkout -b'
@@ -126,8 +123,6 @@ abbr -a grh 'git reset --hard HEAD'
 abbr -a grs 'git reset --soft HEAD~1'
 
 abbr -a rpa 'reposet apply'
-# abbr -a rpd 'reposet pull'  # disabled on 2020-03-22
-# abbr -a rpu 'reposet up'  # disabled on 2020-03-22
 abbr -a rps 'reposet'
 
 switch (uname -n)
@@ -159,10 +154,9 @@ case "barn-ultra" "*celeraone*"
         abbr -a oh "open (eval \$history[1])"
 
     case  'Linux'
-        # abbr -a open 'xdg-open'  # disabled on 2020-03-22
         abbr -a o 'xdg-open'
         abbr -a oc 'xdg-open .; exit'
-        # abbr -a x 'xdg-open'  # disabled on 2020-03-22
+        abbr -a of 'xdg-open .'
         abbr -a xo 'xargs xdg-open'
         abbr -a oh "for f in (eval \$history[1]); xdg-open \"\$f\"; end"
         abbr -a ho "eval \$history[1] | xclip -fi -selection clipboard > ~/.histout"

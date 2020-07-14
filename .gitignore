@@ -15,3 +15,5 @@ iterm2-config/com.googlecode.iterm2.plist
 
 .vscode/extensions/**/cache/
 
+__pycache__/
+*.py[cod]

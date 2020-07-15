@@ -1,7 +1,7 @@
 # Dotfiles
 author: andreasl
 
-A bunch of .dotfiles and /.dotfolders to configure your UNIX environment.
+A bunch of .dotfiles and .dotfolders to configure your UNIX environment.
 It may also contain exported settings from other programs.
 
 The project is structured as follows:
@@ -26,7 +26,7 @@ git pull origin master
 
 Beware that executing `link-files.sh` may delete existing files before it symlinks the dotfiles.
 Also, you might see some error messages like `rm: $HOME/ranger/rc.conf: No such file or directory`
-at first installation because the script will attempt to delete files may not exist.
+at first installation because the script will attempt to delete files that may not exist.
 This is fine however.
 
 There are other scripts in the root folder of the repository. Consider running them, too.

@@ -1,0 +1,15 @@
+alefragnani.Bookmarks
+eamodio.gitlens
+hangxingliu.vscode-nginx-conf-hint
+lextudio.restructuredtext
+mechatroner.rainbow-csv
+ms-python.python
+ms-vscode.cmake-tools
+ms-vscode.cpptools
+shardulm94.trailing-spaces
+stkb.rewrap
+streetsidesoftware.code-spell-checker
+TomiTurtiainen.rf-intellisense
+twxs.cmake
+Tyriar.sort-lines
+VisualStudioExptTeam.vscodeintellicode

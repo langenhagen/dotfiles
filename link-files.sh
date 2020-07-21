@@ -97,8 +97,6 @@ if [ "$(uname)" == 'Linux' ]; then
     mkdir -p "$HOME/.config/sublime-text-3/Installed Packages";
     ln -sf "$dotfiles_path/.config/sublime-text-3/Installed Packages/Theme - Asphalt.sublime-package" \
         "$HOME/.config/sublime-text-3/Installed Packages/Theme - Asphalt.sublime-package";
-    mkdir -p "$HOME/.vscode/"
-    ln -sf "$dotfiles_path/.vscode/extensions" "$HOME/.vscode/";
     mkdir -p "$HOME/.config/Code/User"
     ln -sf "$dotfiles_path/.config/Code/User/keybindings.json" "$HOME/.config/Code/User/keybindings.json";
     ln -sf "$dotfiles_path/.config/Code/User/settings.json" "$HOME/.config/Code/User/settings.json";

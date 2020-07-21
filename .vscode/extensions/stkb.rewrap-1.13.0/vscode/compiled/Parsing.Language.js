@@ -19,8 +19,6 @@ var _Types2 = require("./Types");
 
 var _Prelude = require("./Prelude");
 
-var _Block = require("./Block");
-
 var _String = require("./fable-library.2.10.1/String");
 
 var _Array = require("./fable-library.2.10.1/Array");
@@ -37,7 +35,7 @@ const Language = (0, _Types.declare)(function Parsing_Language_Language(tag, nam
 exports.Language = Language;
 
 function Language$reflection() {
-  return (0, _Reflection.union_type)("Parsing.Language.Language", [], Language, () => [["Language", [["Item1", _Reflection.string_type], ["Item2", (0, _Reflection.array_type)(_Reflection.string_type)], ["Item3", (0, _Reflection.array_type)(_Reflection.string_type)], ["Item4", (0, _Reflection.lambda_type)((0, _Types2.Settings$reflection)(), (0, _Reflection.lambda_type)((0, _Prelude.Nonempty$00601$reflection)(_Reflection.string_type), (0, _Prelude.Nonempty$00601$reflection)((0, _Block.Block$reflection)())))]]]]);
+  return (0, _Reflection.union_type)("Parsing.Language.Language", [], Language, () => [["Language", [["Item1", _Reflection.string_type], ["Item2", (0, _Reflection.array_type)(_Reflection.string_type)], ["Item3", (0, _Reflection.array_type)(_Reflection.string_type)], ["Item4", (0, _Reflection.lambda_type)((0, _Types2.Settings$reflection)(), (0, _Reflection.lambda_type)((0, _Prelude.Nonempty$00601$reflection)(_Reflection.string_type), (0, _Prelude.Nonempty$00601$reflection)((0, _Prelude.Block$reflection)())))]]]]);
 }
 
 function LanguageModule$$$create(name, aliases, exts, parser) {

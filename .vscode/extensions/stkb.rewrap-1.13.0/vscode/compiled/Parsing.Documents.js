@@ -16,6 +16,10 @@ var _Nonempty = require("./Nonempty");
 
 var _Block = require("./Block");
 
+var _Prelude = require("./Prelude");
+
+var _List = require("./fable-library.2.10.1/List");
+
 var _Parsing2 = require("./Parsing.SourceCode");
 
 var _Types = require("./fable-library.2.10.1/Types");
@@ -23,8 +27,6 @@ var _Types = require("./fable-library.2.10.1/Types");
 var _Parsing3 = require("./Parsing.Language");
 
 var _Util = require("./fable-library.2.10.1/Util");
-
-var _List = require("./fable-library.2.10.1/List");
 
 var _Parsing4 = require("./Parsing.DocComments");
 
@@ -36,25 +38,30 @@ var _Types2 = require("./Types");
 
 var _Option = require("./fable-library.2.10.1/Option");
 
-var _Prelude = require("./Prelude");
-
 var _String = require("./fable-library.2.10.1/String");
 
 var _Seq = require("./fable-library.2.10.1/Seq");
 
 function plainText(settings) {
   const partialParser = (0, _Parsing.takeUntil)(_Parsing.blankLines, function paragraphs($arg$$2) {
-    let arg10$0040$$1;
+    var _arg2;
+
+    let x;
     const neList = (0, _Parsing.splitIntoChunks)(function (arg10$0040) {
       return (0, _Parsing.onIndent)(settings.tabWidth, arg10$0040);
     })($arg$$2);
     const fn = (0, _Parsing.splitIntoChunks)((0, _Parsing.afterRegex)((0, _RegExp.create)("  $")));
-    arg10$0040$$1 = (0, _Nonempty.collect)(fn, neList);
-    return (0, _Nonempty.map)(function fn$$1(lines) {
+    x = (0, _Nonempty.concatMap)(fn, neList);
+
+    const f = function f(lines) {
       return (0, _Parsing.indentSeparatedParagraphBlock)(function (tupledArg) {
-        return (0, _Block.text)(tupledArg[0], tupledArg[1]);
+        return (0, _Block.textBlock)(tupledArg[0], tupledArg[1]);
       }, lines);
-    }, arg10$0040$$1);
+    };
+
+    const _arg3 = new _Prelude.Functor(0, "Functor");
+
+    return new _Prelude.Nonempty$00601(0, "Nonempty", f(x.fields[0]), (_arg2 = new _Prelude.Functor(0, "Functor"), (0, _List.map)(f, x.fields[1])));
   });
   return (0, _Parsing.repeatToEnd)(partialParser);
 }
@@ -86,17 +93,17 @@ const languages = (0, _Util.createAtom)((0, _List.ofArray)([lang("AsciiDoc", "",
     return (0, _Parsing2.sourceCode)(commentParsers$$3, settings$$5);
   };
 })())), lang("Bikeshed", "", ".bs", (0, _Util.uncurry)(2, _Parsing5.markdown)), lang("C/C++", "c|c++|cpp", ".c|.cpp|.h", (0, _Util.uncurry)(2, (() => {
-  const commentParsers$$4 = (0, _List.ofArray)([(0, _Parsing2.customBlock)((0, _Util.uncurry)(2, _Parsing4.javadoc))(["\\*?", " * "])(_Parsing2.javadocMarkers), _Parsing2.cBlock, (0, _Parsing2.customLine)((0, _Util.uncurry)(2, _Parsing4.xmldoc))("///"), (0, _Parsing2.customLine)((0, _Util.uncurry)(2, _Parsing4.javadoc))("//!?"), _Parsing2.cLine]);
+  const commentParsers$$4 = (0, _List.ofArray)([(0, _Parsing2.customBlock)((0, _Util.uncurry)(2, _Parsing4.javadoc))(["*", " * "])(_Parsing2.javadocMarkers), _Parsing2.cBlock, (0, _Parsing2.customLine)((0, _Util.uncurry)(2, _Parsing4.xmldoc))("///"), (0, _Parsing2.customLine)((0, _Util.uncurry)(2, _Parsing4.javadoc))("//!?"), _Parsing2.cLine]);
   return function (settings$$7) {
     return (0, _Parsing2.sourceCode)(commentParsers$$4, settings$$7);
   };
 })())), lang("C#", "csharp", ".cs", (0, _Util.uncurry)(2, (() => {
-  const commentParsers$$5 = (0, _List.ofArray)([(0, _Parsing2.customLine)((0, _Util.uncurry)(2, _Parsing4.xmldoc))("///"), _Parsing2.cLine, (0, _Parsing2.customBlock)((0, _Util.uncurry)(2, _Parsing4.javadoc))(["\\*?", " * "])(_Parsing2.javadocMarkers), _Parsing2.cBlock]);
+  const commentParsers$$5 = (0, _List.ofArray)([(0, _Parsing2.customLine)((0, _Util.uncurry)(2, _Parsing4.xmldoc))("///"), _Parsing2.cLine, (0, _Parsing2.customBlock)((0, _Util.uncurry)(2, _Parsing4.javadoc))(["*", " * "])(_Parsing2.javadocMarkers), _Parsing2.cBlock]);
   return function (settings$$8) {
     return (0, _Parsing2.sourceCode)(commentParsers$$5, settings$$8);
   };
 })())), lang("CMake", "", "CMakeLists.txt", (0, _Util.uncurry)(2, configFile)), lang("CoffeeScript", "", ".coffee", (0, _Util.uncurry)(2, (() => {
-  const commentParsers$$6 = (0, _List.ofArray)([(0, _Parsing2.customBlock)((0, _Util.uncurry)(2, _Parsing4.javadoc))(["[*#]", " * "])(["###\\*", "###"]), (0, _Parsing2.block)(["###", "###"]), (0, _Parsing2.line)("#")]);
+  const commentParsers$$6 = (0, _List.ofArray)([(0, _Parsing2.customBlock)((0, _Util.uncurry)(2, _Parsing4.javadoc))(["*#", " * "])(["###\\*", "###"]), (0, _Parsing2.block)(["###", "###"]), (0, _Parsing2.line)("#")]);
   return function (settings$$9) {
     return (0, _Parsing2.sourceCode)(commentParsers$$6, settings$$9);
   };
@@ -106,12 +113,12 @@ const languages = (0, _Util.createAtom)((0, _List.ofArray)([lang("AsciiDoc", "",
     return (0, _Parsing2.sourceCode)(commentParsers$$7, settings$$10);
   };
 })())), lang("CSS", "postcss", ".css|.pcss|.postcss", (0, _Util.uncurry)(2, _Parsing2.css)), lang("D", "", ".d", (0, _Util.uncurry)(2, (() => {
-  const commentParsers$$8 = (0, _List.ofArray)([(0, _Parsing2.customLine)((0, _Util.uncurry)(2, _Parsing4.ddoc))("///"), _Parsing2.cLine, (0, _Parsing2.customBlock)((0, _Util.uncurry)(2, _Parsing4.ddoc))(["\\*", " * "])(_Parsing2.javadocMarkers), (0, _Parsing2.customBlock)((0, _Util.uncurry)(2, _Parsing4.ddoc))(["\\+", " + "])(["/\\+\\+", "\\+/"]), _Parsing2.cBlock, (0, _Parsing2.block)(["/\\+", "\\+/"])]);
+  const commentParsers$$8 = (0, _List.ofArray)([(0, _Parsing2.customLine)((0, _Util.uncurry)(2, _Parsing4.ddoc))("///"), _Parsing2.cLine, (0, _Parsing2.customBlock)((0, _Util.uncurry)(2, _Parsing4.ddoc))(["*", " * "])(_Parsing2.javadocMarkers), (0, _Parsing2.customBlock)((0, _Util.uncurry)(2, _Parsing4.ddoc))(["+", " + "])(["/\\+\\+", "\\+/"]), _Parsing2.cBlock, (0, _Parsing2.block)(["/\\+", "\\+/"])]);
   return function (settings$$11) {
     return (0, _Parsing2.sourceCode)(commentParsers$$8, settings$$11);
   };
 })())), lang("Dart", "", ".dart", (0, _Util.uncurry)(2, (() => {
-  const commentParsers$$9 = (0, _List.ofArray)([(0, _Parsing2.customLine)((0, _Util.uncurry)(2, _Parsing4.dartdoc))("///"), _Parsing2.cLine, (0, _Parsing2.customBlock)((0, _Util.uncurry)(2, _Parsing4.dartdoc))(["\\*", " * "])(_Parsing2.javadocMarkers), _Parsing2.cBlock]);
+  const commentParsers$$9 = (0, _List.ofArray)([(0, _Parsing2.customLine)((0, _Util.uncurry)(2, _Parsing4.dartdoc))("///"), _Parsing2.cLine, (0, _Parsing2.customBlock)((0, _Util.uncurry)(2, _Parsing4.dartdoc))(["*", " * "])(_Parsing2.javadocMarkers), _Parsing2.cBlock]);
   return function (settings$$12) {
     return (0, _Parsing2.sourceCode)(commentParsers$$9, settings$$12);
   };
@@ -146,11 +153,11 @@ const languages = (0, _Util.createAtom)((0, _List.ofArray)([lang("AsciiDoc", "",
     return (0, _Parsing2.sourceCode)(commentParsers$$15, settings$$21);
   };
 })())), lang("HCL", "terraform", ".hcl|.tf", (0, _Util.uncurry)(2, (() => {
-  const commentParsers$$16 = (0, _List.ofArray)([(0, _Parsing2.customBlock)((0, _Util.uncurry)(2, _Parsing4.javadoc))(["\\*?", " * "])(_Parsing2.javadocMarkers), _Parsing2.cBlock, (0, _Parsing2.customLine)((0, _Util.uncurry)(2, _Parsing4.javadoc))("//[/!]"), _Parsing2.cLine, (0, _Parsing2.line)("#")]);
+  const commentParsers$$16 = (0, _List.ofArray)([(0, _Parsing2.customBlock)((0, _Util.uncurry)(2, _Parsing4.javadoc))(["*", " * "])(_Parsing2.javadocMarkers), _Parsing2.cBlock, (0, _Parsing2.customLine)((0, _Util.uncurry)(2, _Parsing4.javadoc))("//[/!]"), _Parsing2.cLine, (0, _Parsing2.line)("#")]);
   return function (settings$$22) {
     return (0, _Parsing2.sourceCode)(commentParsers$$16, settings$$22);
   };
-})())), lang("HTML", "vue", ".htm|.html|.vue", (0, _Util.uncurry)(2, _Parsing2.html)), lang("INI", "", ".ini", (0, _Util.uncurry)(2, (() => {
+})())), lang("HTML", "htmlx|vue", ".htm|.html|.vue", (0, _Util.uncurry)(2, _Parsing2.html)), lang("INI", "", ".ini", (0, _Util.uncurry)(2, (() => {
   const commentParsers$$17 = new _Types.List((0, _Parsing2.line)("[#;]"), new _Types.List());
   return function (settings$$23) {
     return (0, _Parsing2.sourceCode)(commentParsers$$17, settings$$23);
@@ -181,7 +188,7 @@ const languages = (0, _Util.createAtom)((0, _List.ofArray)([lang("AsciiDoc", "",
     return (0, _Parsing2.sourceCode)(commentParsers$$22, settings$$30);
   };
 })())), lang("Perl", "perl6", ".p6|.pl|.pl6|.pm|.pm6", (0, _Util.uncurry)(2, configFile)), lang("PHP", "", ".php", (0, _Util.uncurry)(2, (() => {
-  const commentParsers$$23 = (0, _List.ofArray)([(0, _Parsing2.customBlock)((0, _Util.uncurry)(2, _Parsing4.javadoc))(["\\*", " * "])(_Parsing2.javadocMarkers), _Parsing2.cBlock, (0, _Parsing2.line)("(?://|#)")]);
+  const commentParsers$$23 = (0, _List.ofArray)([(0, _Parsing2.customBlock)((0, _Util.uncurry)(2, _Parsing4.javadoc))(["*", " * "])(_Parsing2.javadocMarkers), _Parsing2.cBlock, (0, _Parsing2.line)("(?://|#)")]);
   return function (settings$$31) {
     return (0, _Parsing2.sourceCode)(commentParsers$$23, settings$$31);
   };
@@ -191,7 +198,7 @@ const languages = (0, _Util.createAtom)((0, _List.ofArray)([lang("AsciiDoc", "",
     return (0, _Parsing2.sourceCode)(commentParsers$$24, settings$$32);
   };
 })())), lang("Prolog", "", "", (0, _Util.uncurry)(2, (() => {
-  const commentParsers$$25 = (0, _List.ofArray)([(0, _Parsing2.customBlock)((0, _Util.uncurry)(2, _Parsing4.javadoc))(["\\*?", " * "])(_Parsing2.javadocMarkers), _Parsing2.cBlock, (0, _Parsing2.line)("%[%!]?")]);
+  const commentParsers$$25 = (0, _List.ofArray)([(0, _Parsing2.customBlock)((0, _Util.uncurry)(2, _Parsing4.javadoc))(["*", " * "])(_Parsing2.javadocMarkers), _Parsing2.cBlock, (0, _Parsing2.line)("%[%!]?")]);
   return function (settings$$33) {
     return (0, _Parsing2.sourceCode)(commentParsers$$25, settings$$33);
   };
@@ -243,16 +250,32 @@ const languages = (0, _Util.createAtom)((0, _List.ofArray)([lang("AsciiDoc", "",
 exports.languages = languages;
 
 function addCustomLanguage(name$$1, markers) {
+  var b, x$$14, _arg1$$2, b$$2, x$$18, _arg1$$3;
+
   const escape = _RegExp.escape;
-  const maybeLine = (0, _Option.map)(function ($arg$$3) {
+  let maybeLine;
+  const x$$4 = (0, _Types2.CustomMarkers$$get_line)(markers);
+
+  const _arg1 = new _Prelude.Functor(0, "Functor");
+
+  maybeLine = (0, _Option.map)(function f$$5($arg$$3) {
     return (0, _Parsing2.line)(escape($arg$$3));
-  }, (0, _Types2.CustomMarkers$$get_line)(markers));
-  const maybeBlock = (0, _Option.map)(function ($arg$$4) {
-    return (0, _Parsing2.block)(((0, _Prelude.Tuple$$$map)(escape, $arg$$4[0], $arg$$4[1])));
-  }, (0, _Types2.CustomMarkers$$get_block)(markers));
-  const list = (0, _List.choose)(function (x) {
-    return (0, _Util.curry)(2, x);
-  }, (0, _List.ofArray)([maybeLine, maybeBlock]));
+  }, x$$4);
+  let maybeBlock;
+  const x$$9 = (0, _Types2.CustomMarkers$$get_block)(markers);
+
+  const _arg1$$1 = new _Prelude.Functor(0, "Functor");
+
+  maybeBlock = (0, _Option.map)(function f$$9($arg$$4) {
+    var _arg3$$1;
+
+    return (0, _Parsing2.block)((_arg3$$1 = new _Prelude.Functor(0, "Functor"), [escape($arg$$4[0]), escape($arg$$4[1])]));
+  }, x$$9);
+  const list = (0, _List.append)((b = new _Types.List(), (x$$14 = (_arg1$$2 = new _Prelude.Functor(0, "Functor"), (0, _Option.map)((0, _Util.mapCurriedArgs)(function f$$11(value) {
+    return new _Types.List((0, _Util.curry)(2, value), new _Types.List());
+  }, [[0, 2]]), maybeBlock)), (0, _Option.defaultArg)(x$$14, b))), (b$$2 = new _Types.List(), (x$$18 = (_arg1$$3 = new _Prelude.Functor(0, "Functor"), (0, _Option.map)((0, _Util.mapCurriedArgs)(function f$$14(value$$1) {
+    return new _Types.List((0, _Util.curry)(2, value$$1), new _Types.List());
+  }, [[0, 2]]), maybeLine)), (0, _Option.defaultArg)(x$$18, b$$2))));
   const cl = lang(name$$1, "", "", (0, _Util.uncurry)(2, function (settings$$44) {
     return (0, _Parsing2.sourceCode)(list, settings$$44);
   }));
@@ -264,20 +287,20 @@ function languageForFile(file) {
   const l = file.language.toLocaleLowerCase();
 
   if (!((0, _String.isNullOrWhiteSpace)(l) ? true : l === "plaintext")) {
-    return (0, _Seq.tryFind)(function (arg10$0040$$2) {
-      return (0, _Parsing3.LanguageModule$$$matchesFileLanguage)(l, arg10$0040$$2);
+    return (0, _Seq.tryFind)(function (arg10$0040$$1) {
+      return (0, _Parsing3.LanguageModule$$$matchesFileLanguage)(l, arg10$0040$$1);
     }, languages());
   } else {
-    return (0, _Seq.tryFind)(function (arg10$0040$$3) {
-      return (0, _Parsing3.LanguageModule$$$matchesFilePath)(file.path, arg10$0040$$3);
+    return (0, _Seq.tryFind)(function (arg10$0040$$2) {
+      return (0, _Parsing3.LanguageModule$$$matchesFilePath)(file.path, arg10$0040$$2);
     }, languages());
   }
 }
 
 function select(file$$1) {
-  let x$$2;
+  let x$$20;
   const option = languageForFile(file$$1);
-  x$$2 = (0, _Option.defaultArgWith)(option, function ifNoneThunk() {
+  x$$20 = (0, _Option.defaultArgWith)(option, function ifNoneThunk() {
     const matchValue = file$$1.getMarkers();
 
     if ((0, _Util.equals)(matchValue, null)) {
@@ -286,5 +309,10 @@ function select(file$$1) {
       return addCustomLanguage(file$$1.language, matchValue);
     }
   });
-  return (0, _Prelude.maybe)(plainText, _Parsing3.LanguageModule$$$parser, x$$2);
+  let x$$24;
+
+  const _arg1$$4 = new _Prelude.Functor(0, "Functor");
+
+  x$$24 = (0, _Option.map)(_Parsing3.LanguageModule$$$parser, x$$20);
+  return (0, _Option.defaultArg)(x$$24, plainText);
 }

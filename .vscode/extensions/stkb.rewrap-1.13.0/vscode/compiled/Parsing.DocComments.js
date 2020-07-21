@@ -7,6 +7,10 @@ exports.ddoc = ddoc;
 exports.godoc = godoc;
 exports.xmldoc = exports.psdoc = exports.dartdoc = exports.javadoc = void 0;
 
+var _Types = require("./fable-library.2.10.1/Types");
+
+var _Prelude = require("./Prelude");
+
 var _Nonempty = require("./Nonempty");
 
 var _Util = require("./fable-library.2.10.1/Util");
@@ -28,6 +32,8 @@ var _List = require("./fable-library.2.10.1/List");
 var _Parsing4 = require("./Parsing.Sgml");
 
 function splitBeforeTags(regex, sectionParser, settings, _arg1) {
+  var xs$$2;
+
   const prependRev = function prependRev($_arg2$$10, $maybeRest$$11) {
     prependRev: while (true) {
       const _arg2 = $_arg2$$10,
@@ -35,7 +41,8 @@ function splitBeforeTags(regex, sectionParser, settings, _arg1) {
       let nextRest;
 
       if (maybeRest == null) {
-        nextRest = (0, _Nonempty.singleton)(_arg2.fields[0]);
+        const xs = new _Types.List();
+        nextRest = new _Prelude.Nonempty$00601(0, "Nonempty", _arg2.fields[0], xs);
       } else {
         const rest = maybeRest;
         nextRest = (0, _Nonempty.cons)(_arg2.fields[0], rest);
@@ -57,6 +64,8 @@ function splitBeforeTags(regex, sectionParser, settings, _arg1) {
   };
 
   const loop = function loop($tagMatch$$12, $buffer$$13, $maybeOutput$$14, $lines$$15) {
+    var xs$$1;
+
     loop: while (true) {
       const tagMatch = $tagMatch$$12,
             buffer = $buffer$$13,
@@ -65,14 +74,15 @@ function splitBeforeTags(regex, sectionParser, settings, _arg1) {
       const parser = tagMatch != null ? (0, _Util.partialApply)(2, sectionParser, [tagMatch]) : _Parsing.markdown;
 
       const addBufferToOutput = function addBufferToOutput() {
-        return prependRev(parser(settings)((0, _Nonempty.rev)()(buffer)), maybeOutput);
+        return prependRev(parser(settings)((0, _Nonempty.rev)(buffer)), maybeOutput);
       };
 
       if (lines.tail == null) {
-        return (0, _Nonempty.rev)()(addBufferToOutput());
+        const list = addBufferToOutput();
+        return (0, _Nonempty.rev)(list);
       } else {
         const m = (0, _RegExp.match)(regex, lines.head);
-        const patternInput = m != null ? [m, (0, _Nonempty.singleton)(lines.head), addBufferToOutput()] : [tagMatch, (0, _Nonempty.cons)(lines.head, buffer), maybeOutput];
+        const patternInput = m != null ? [m, (xs$$1 = new _Types.List(), new _Prelude.Nonempty$00601(0, "Nonempty", lines.head, xs$$1)), addBufferToOutput()] : [tagMatch, (0, _Nonempty.cons)(lines.head, buffer), maybeOutput];
         $tagMatch$$12 = patternInput[0];
         $buffer$$13 = patternInput[1];
         $maybeOutput$$14 = patternInput[2];
@@ -84,7 +94,7 @@ function splitBeforeTags(regex, sectionParser, settings, _arg1) {
     }
   };
 
-  return loop((0, _RegExp.match)(regex, _arg1.fields[0]), (0, _Nonempty.singleton)(_arg1.fields[0]), undefined, _arg1.fields[1]);
+  return loop((0, _RegExp.match)(regex, _arg1.fields[0]), (xs$$2 = new _Types.List(), new _Prelude.Nonempty$00601(0, "Nonempty", _arg1.fields[0], xs$$2)), undefined, _arg1.fields[1]);
 }
 
 const javadoc = (() => {
@@ -96,9 +106,10 @@ const javadoc = (() => {
           if ((m$$1[1] || "").toLocaleLowerCase() === "example") {
             return function (_arg1$$1) {
               return function ($arg$$1) {
-                let head$$1;
-                head$$1 = (0, _Block.ignore)($arg$$1);
-                return (0, _Nonempty.singleton)(head$$1);
+                let x$$6;
+                x$$6 = (0, _Block.ignoreBlock)($arg$$1);
+                const xs$$3 = new _Types.List();
+                return new _Prelude.Nonempty$00601(0, "Nonempty", x$$6, xs$$3);
               };
             };
           } else {
@@ -140,7 +151,7 @@ const psdoc = (() => {
         if ((m$$2[1] || "") === "EXAMPLE") {
           return function (settings$$14) {
             return function (arg20$0040$$4) {
-              return (0, _Parsing2.ignoreFirstLine)(function exampleSection(settings$$9, lines$$2) {
+              return (0, _Parsing2.ignoreFirstLine)(function exampleSection(settings$$9, lines$$1) {
                 const trimmedExampleSection = function trimmedExampleSection(settings$$13, arg20$0040$$3) {
                   return (0, _Parsing2.ignoreFirstLine)(function otherParser(settings$$12, arg30$0040$$2) {
                     return splitBeforeTags(codeLineRegex, function sectionParser$$3(_arg1$$3, settings$$10, arg20$0040$$2) {
@@ -149,17 +160,19 @@ const psdoc = (() => {
                   }, settings$$13, arg20$0040$$3);
                 };
 
-                const matchValue$$1 = (0, _Nonempty.span)(_Line.isBlank)(lines$$2);
+                const matchValue$$1 = (0, _Nonempty.span)(_Line.isBlank)(lines$$1);
 
                 if (matchValue$$1 == null) {
-                  return trimmedExampleSection(settings$$9, lines$$2);
+                  return trimmedExampleSection(settings$$9, lines$$1);
                 } else if (matchValue$$1[1] != null) {
                   const blankLines$$1 = matchValue$$1[0];
                   const remaining = matchValue$$1[1];
-                  return (0, _Nonempty.cons)((0, _Block.ignore)(blankLines$$1), trimmedExampleSection(settings$$9, remaining));
+                  return (0, _Nonempty.cons)((0, _Block.ignoreBlock)(blankLines$$1), trimmedExampleSection(settings$$9, remaining));
                 } else {
                   const blankLines = matchValue$$1[0];
-                  return (0, _Nonempty.singleton)((0, _Block.ignore)(blankLines));
+                  const x$$9 = (0, _Block.ignoreBlock)(blankLines);
+                  const xs$$4 = new _Types.List();
+                  return new _Prelude.Nonempty$00601(0, "Nonempty", x$$9, xs$$4);
                 }
               }, settings$$14, arg20$0040$$4);
             };
@@ -173,7 +186,7 @@ const psdoc = (() => {
                   return "  ";
                 }, settings$$15, $arg$$2);
                 const parser$$1 = (0, _Parsing.markdown)(settings$$15);
-                return (0, _Block.splitUp)(parser$$1, tupledArg[0], tupledArg[1]);
+                return (0, _Block.oldSplitUp)(parser$$1, tupledArg[0], tupledArg[1]);
               }, settings$$16, arg20$0040$$5);
             };
           };
@@ -202,21 +215,29 @@ function godoc(settings$$19) {
   };
 
   partialParser = (0, _Parsing2.takeUntil)(otherParser$$2, function textLines($arg$$4) {
-    const arg10$0040$$1 = (0, _Parsing2.splitIntoChunks)((0, _Parsing2.afterRegex)((0, _RegExp.create)("  $")))($arg$$4);
-    return (0, _Nonempty.map)(function fn($arg$$3) {
-      let arg0;
-      arg0 = (0, _Block.WrappableModule$$$fromLines)(["", ""], $arg$$3);
-      return new _Block.Block(1, "Wrap", arg0);
-    }, arg10$0040$$1);
+    var _arg2$$2;
+
+    const x$$11 = (0, _Parsing2.splitIntoChunks)((0, _Parsing2.afterRegex)((0, _RegExp.create)("  $")))($arg$$4);
+
+    const f = function f($arg$$3) {
+      let arg0$$1;
+      arg0$$1 = [["", ""], $arg$$3];
+      return new _Prelude.Block(1, "Wrap", arg0$$1);
+    };
+
+    const _arg3 = new _Prelude.Functor(0, "Functor");
+
+    return new _Prelude.Nonempty$00601(0, "Nonempty", f(x$$11.fields[0]), (_arg2$$2 = new _Prelude.Functor(0, "Functor"), (0, _List.map)(f, x$$11.fields[1])));
   });
   return (0, _Parsing2.repeatToEnd)(partialParser);
 }
 
 const xmldoc = (() => {
   const blank = function blank(_arg1$$4, $arg$$5) {
-    let head$$2;
-    head$$2 = (0, _Block.ignore)($arg$$5);
-    return (0, _Nonempty.singleton)(head$$2);
+    let x$$15;
+    x$$15 = (0, _Block.ignoreBlock)($arg$$5);
+    const xs$$5 = new _Types.List();
+    return new _Prelude.Nonempty$00601(0, "Nonempty", x$$15, xs$$5);
   };
 
   const blockTags = ["code", "description", "example", "exception", "include", "inheritdoc", "list", "listheader", "item", "para", "param", "permission", "remarks", "seealso", "summary", "term", "typeparam", "typeparamref", "returns", "value"];

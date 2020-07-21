@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Language="en-US" Id="rewrap" Version="1.12.0" Publisher="stkb"/>
+    <Identity Language="en-US" Id="rewrap" Version="1.13.0" Publisher="stkb"/>
     <DisplayName>Rewrap</DisplayName>
     <Description xml:space="preserve">Re-wraps comments and other text to a given line length.</Description>
     <Tags>wraps,comments,column,length,fill,multi-root ready,keybindings</Tags>
@@ -9,7 +9,7 @@
     <GalleryFlags>Public</GalleryFlags>
     <Badges></Badges>
     <Properties>
-      <Property Id="Microsoft.VisualStudio.Code.Engine" Value="^1.30.0" />
+      <Property Id="Microsoft.VisualStudio.Code.Engine" Value="^1.36.0" />
       <Property Id="Microsoft.VisualStudio.Code.ExtensionDependencies" Value="" />
       <Property Id="Microsoft.VisualStudio.Code.ExtensionPack" Value="" />
       <Property Id="Microsoft.VisualStudio.Code.LocalizedLanguages" Value="" />

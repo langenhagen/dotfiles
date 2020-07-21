@@ -14,27 +14,23 @@ exports.languages = void 0;
 
 var _Columns = require("./Columns");
 
-var _Parsing = require("./Parsing.Language");
-
-var _Parsing2 = require("./Parsing.Documents");
+var _Parsing = require("./Parsing.Documents");
 
 var _Prelude = require("./Prelude");
+
+var _Parsing2 = require("./Parsing.Language");
+
+var _Option = require("./fable-library.2.10.1/Option");
 
 var _Seq = require("./fable-library.2.10.1/Seq");
 
 var _Array = require("./fable-library.2.10.1/Array");
 
-var _Option = require("./fable-library.2.10.1/Option");
-
-var _List = require("./fable-library.2.10.1/List");
-
 var _Nonempty = require("./Nonempty");
 
 var _Selections = require("./Selections");
 
-var _Util = require("./fable-library.2.10.1/Util");
-
-var _Wrapping = require("./Wrapping");
+var _Line = require("./Line");
 
 var _Types = require("./Types");
 
@@ -53,53 +49,38 @@ function saveDocState(docState$$1) {
 }
 
 function languageNameForFile(file) {
-  return (0, _Prelude.maybe)(null, _Parsing.LanguageModule$$$name, (0, _Parsing2.languageForFile)(file));
+  const x = (0, _Parsing.languageForFile)(file);
+  let x$$3;
+
+  const _arg1 = new _Prelude.Functor(0, "Functor");
+
+  x$$3 = (0, _Option.map)(_Parsing2.LanguageModule$$$name, x);
+  return (0, _Option.defaultArg)(x$$3, null);
 }
 
 const languages = (() => {
-  const source = (0, _Seq.map)(_Parsing.LanguageModule$$$name, (0, _Parsing2.languages)());
+  const source = (0, _Seq.map)(_Parsing2.LanguageModule$$$name, (0, _Parsing.languages)());
   return (0, _Array.ofSeq)(source, Array);
 })();
 
 exports.languages = languages;
 
 function rewrap(file$$1, settings, selections, getLine) {
-  const parser = (0, _Parsing2.select)(file$$1);
+  const parser = (0, _Parsing.select)(file$$1);
   let linesList;
-  let list;
-  const source$$1 = (0, _Seq.unfold)(function (i) {
+  const xs = (0, _Seq.unfold)(function (i) {
     const option = getLine(i);
     return (0, _Option.map)(function mapping(l) {
       return [l, i + 1];
     }, option);
   }, 0);
-  list = (0, _List.ofSeq)(source$$1);
-  linesList = (0, _Nonempty.fromListUnsafe)(list);
+  linesList = (0, _Nonempty.fromSeqUnsafe)(xs);
   const blocks = parser(settings)(linesList);
   return (0, _Selections.wrapSelected)(linesList, selections, settings, blocks);
 }
 
-function strWidth(usTabSize, str) {
-  const tabSize = (0, _Util.max)(_Util.comparePrimitives, usTabSize, 1) | 0;
-
-  const loop = function loop($acc$$16, $i$$1$$17) {
-    loop: while (true) {
-      const acc = $acc$$16,
-            i$$1 = $i$$1$$17;
-
-      if (i$$1 >= str.length) {
-        return acc | 0;
-      } else {
-        $acc$$16 = acc + (0, _Wrapping.charWidthEx)(tabSize, i$$1, str[i$$1].charCodeAt(0));
-        $i$$1$$17 = i$$1 + 1;
-        continue loop;
-      }
-
-      break;
-    }
-  };
-
-  return loop(0, 0) | 0;
+function strWidth(tabSize, str) {
+  return (0, _Line.strWidth)(tabSize)(str);
 }
 
 function maybeAutoWrap(file$$2, settings$$1, newText, pos, getLine$$1) {
@@ -145,11 +126,11 @@ function maybeAutoWrap(file$$2, settings$$1, newText, pos, getLine$$1) {
         return noEdit;
       } else {
         const fakeSelection = new _Types.Selection(new _Types.Position(patternInput$$1[0], 0), new _Types.Position(patternInput$$1[0], lineText.length));
-        const edit = rewrap(file$$2, settings$$1, [fakeSelection], function wrappedGetLine(i$$2) {
-          if (i$$2 > patternInput$$1[0]) {
+        const edit = rewrap(file$$2, settings$$1, [fakeSelection], function wrappedGetLine(i$$1) {
+          if (i$$1 > patternInput$$1[0]) {
             return null;
           } else {
-            return getLine$$1(i$$2);
+            return getLine$$1(i$$1);
           }
         });
         const afterPos = patternInput[0] ? new _Types.Position(patternInput$$1[0] + 1, patternInput[1].length) : new _Types.Position(patternInput$$1[0], patternInput$$1[1]);

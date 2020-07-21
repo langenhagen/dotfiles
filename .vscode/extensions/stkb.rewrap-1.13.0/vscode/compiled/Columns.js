@@ -49,13 +49,18 @@ function maybeChangeWrappingColumn(docState, rulers$$1) {
     const x$$2 = (0, _Array.tryFindIndex)((x$$1 = (0, _Util.getItemFromDict)(docWrappingColumns, docState.filePath) | 0, function (y$$1) {
       return x$$1 === y$$1;
     }), rulers$$1);
-    rulerIndex = (0, _Prelude.maybe)(0, function shiftRulerIfDocStateUnchanged(i) {
+    let x$$6;
+
+    const _arg1 = new _Prelude.Functor(0, "Functor");
+
+    x$$6 = (0, _Option.map)(function shiftRulerIfDocStateUnchanged(i) {
       if ((0, _Util.equals)(docState, lastDocState)) {
         return (i + 1) % rulers$$1.length | 0;
       } else {
         return i | 0;
       }
     }, x$$2);
+    rulerIndex = (0, _Option.defaultArg)(x$$6, 0);
     docWrappingColumns.set(docState.filePath, rulers$$1[rulerIndex]);
     return (0, _Util.getItemFromDict)(docWrappingColumns, docState.filePath) | 0;
   }

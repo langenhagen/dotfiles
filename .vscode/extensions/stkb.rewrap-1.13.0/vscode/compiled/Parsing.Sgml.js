@@ -13,6 +13,10 @@ var _Nonempty = require("./Nonempty");
 
 var _List = require("./fable-library.2.10.1/List");
 
+var _Types = require("./fable-library.2.10.1/Types");
+
+var _Prelude = require("./Prelude");
+
 var _Block = require("./Block");
 
 var _Parsing2 = require("./Parsing.Markdown");
@@ -35,17 +39,19 @@ function sgml(scriptParser, cssParser, blockTags, settings) {
         return (0, _Parsing.takeLinesBetweenMarkers)(markers[0], markers[1], arg10$0040);
       }, function (arg20$0040) {
         return (0, _Parsing.ignoreFirstLine)(function afterFirstLine(_arg1, lines) {
-          const patternInput = (0, _Nonempty.rev)()(lines);
+          var x$$5, xs$$2, x, xs;
+          const patternInput = (0, _Nonempty.rev)(lines);
 
           if ((0, _RegExp.isMatch)(markers[1], patternInput.fields[0])) {
             const matchValue = (0, _Nonempty.fromList)((0, _List.reverse)(patternInput.fields[1]));
 
             if (matchValue == null) {
-              const head = (0, _Block.ignore)((0, _Nonempty.singleton)((0, _Nonempty.last)(lines)));
-              return (0, _Nonempty.singleton)(head);
+              const x$$2 = (0, _Block.ignoreBlock)((x$$5 = (0, _Nonempty.last)(lines), (xs$$2 = new _Types.List(), new _Prelude.Nonempty$00601(0, "Nonempty", x$$5, xs$$2))));
+              const xs$$1 = new _Types.List();
+              return new _Prelude.Nonempty$00601(0, "Nonempty", x$$2, xs$$1);
             } else {
               const middleLines = matchValue;
-              return (0, _Nonempty.snoc)((0, _Block.ignore)((0, _Nonempty.singleton)((0, _Nonempty.last)(lines))), contentParser(settings, middleLines));
+              return (0, _Nonempty.snoc)((0, _Block.ignoreBlock)((x = (0, _Nonempty.last)(lines), (xs = new _Types.List(), new _Prelude.Nonempty$00601(0, "Nonempty", x, xs)))), contentParser(settings, middleLines));
             }
           } else {
             return contentParser(settings, lines);
@@ -80,7 +86,9 @@ function sgml(scriptParser, cssParser, blockTags, settings) {
   const justBlockEndTag = (0, _Util.partialApply)(1, isBlockTag, ["^\\s*</([\\w.-]+)\\s*>"]);
   const endsWithBlockTag = (0, _Util.partialApply)(1, isBlockTag, ["([\\w.-]+)>\\s*$"]);
   const partialParser = (0, _Parsing.takeUntil)(otherParsers, function paragraphBlocks($arg$$2) {
-    let arg10$0040$$2;
+    var _arg2;
+
+    let x$$7;
     const neList = (0, _Parsing.splitIntoChunks)(function (arg10$0040$$1) {
       return (0, _Parsing.splitBefore)(function breakBefore(line$$1) {
         if (justBlockEndTag(line$$1)) {
@@ -97,12 +105,17 @@ function sgml(scriptParser, cssParser, blockTags, settings) {
         return endsWithBlockTag(line$$2);
       }
     }));
-    arg10$0040$$2 = (0, _Nonempty.collect)(fn, neList);
-    return (0, _Nonempty.map)(function fn$$1(lines$$2) {
+    x$$7 = (0, _Nonempty.concatMap)(fn, neList);
+
+    const f = function f(lines$$2) {
       return (0, _Parsing.indentSeparatedParagraphBlock)(function (tupledArg) {
-        return (0, _Block.text)(tupledArg[0], tupledArg[1]);
+        return (0, _Block.textBlock)(tupledArg[0], tupledArg[1]);
       }, lines$$2);
-    }, arg10$0040$$2);
+    };
+
+    const _arg3 = new _Prelude.Functor(0, "Functor");
+
+    return new _Prelude.Nonempty$00601(0, "Nonempty", f(x$$7.fields[0]), (_arg2 = new _Prelude.Functor(0, "Functor"), (0, _List.map)(f, x$$7.fields[1])));
   });
   return (0, _Parsing.repeatToEnd)(partialParser);
 }

@@ -17,8 +17,6 @@ var _List = require("./fable-library.2.10.1/List");
 
 var _Prelude = require("./Prelude");
 
-var _Block = require("./Block");
-
 var _Nonempty = require("./Nonempty");
 
 var _Wrapping = require("./Wrapping");
@@ -200,7 +198,7 @@ const ParseResult = (0, _Types.declare)(function Selections_ParseResult(startLin
 exports.ParseResult = ParseResult;
 
 function ParseResult$reflection() {
-  return (0, _Reflection.record_type)("Selections.ParseResult", [], ParseResult, () => [["startLine", _Reflection.int32_type], ["originalLines", (0, _Prelude.Nonempty$00601$reflection)(_Reflection.string_type)], ["blocks", (0, _Prelude.Nonempty$00601$reflection)((0, _Block.Block$reflection)())]]);
+  return (0, _Reflection.record_type)("Selections.ParseResult", [], ParseResult, () => [["startLine", _Reflection.int32_type], ["originalLines", (0, _Prelude.Nonempty$00601$reflection)(_Reflection.string_type)], ["blocks", (0, _Prelude.Nonempty$00601$reflection)((0, _Prelude.Block$reflection)())]]);
 }
 
 function processBlocks(settings, selections, parseResult) {
@@ -213,7 +211,7 @@ function processBlocks(settings, selections, parseResult) {
 
       case 0:
         {
-          return (0, _Nonempty.collect)(processWholeBlock, block$$1.fields[0]);
+          return (0, _Nonempty.concatMap)(processWholeBlock, block$$1.fields[0]);
         }
 
       default:
@@ -230,7 +228,7 @@ function processBlocks(settings, selections, parseResult) {
             start = $start$$36,
             _arg1 = $_arg1$$37,
             origLines = $origLines$$38;
-      const blockLength = (0, _Block.length)(_arg1.fields[0]) | 0;
+      const blockLength = (0, _Prelude.Block$$$size$$60E56076)(new _Prelude.HasSize(0, "HasSize"), _arg1.fields[0]) | 0;
       let selsTouching;
       selsTouching = (0, _List.filter)(function predicate(s$$2) {
         return LineRange$$get_startLine(s$$2) < start + blockLength;
@@ -271,30 +269,22 @@ function processBlocks(settings, selections, parseResult) {
                 if (_arg1.fields[0].tag === 2) {
                   let tupledArg$$3;
                   const tupledArg$$2 = (0, _Nonempty.splitAt)(patternInput[0], _arg1.fields[0].fields[0]);
-                  tupledArg$$3 = (0, _Prelude.Tuple$$$mapFirst)(function f$$2(arg0) {
-                    return new _Block.Block(2, "NoWrap", arg0);
-                  }, tupledArg$$2[0], tupledArg$$2[1]);
-                  tupledArg$$4 = (0, _Prelude.Tuple$$$mapSecond)(function f$$3(option$$1) {
-                    return (0, _Option.map)(function mapping$$1(arg0$$1) {
-                      return new _Block.Block(2, "NoWrap", arg0$$1);
-                    }, option$$1);
-                  }, tupledArg$$3[0], tupledArg$$3[1]);
+                  tupledArg$$3 = [(new _Prelude.Block(2, "NoWrap", tupledArg$$2[0])), tupledArg$$2[1]];
+                  tupledArg$$4 = [tupledArg$$3[0], ((0, _Option.map)(function mapping$$1(arg0$$1) {
+                    return new _Prelude.Block(2, "NoWrap", arg0$$1);
+                  }, tupledArg$$3[1]))];
                 } else if (_arg1.fields[0].tag === 0) {
                   throw new Error("Not going to split a comment");
                 } else {
                   let tupledArg$$1;
                   const tupledArg = (0, _Nonempty.splitAt)(patternInput[0], _arg1.fields[0].fields[0][1]);
-                  tupledArg$$1 = (0, _Prelude.Tuple$$$mapFirst)(function f(ls) {
-                    return new _Block.Block(1, "Wrap", [[_arg1.fields[0].fields[0][0][0], _arg1.fields[0].fields[0][0][1]], ls]);
-                  }, tupledArg[0], tupledArg[1]);
-                  tupledArg$$4 = (0, _Prelude.Tuple$$$mapSecond)(function f$$1(option) {
-                    return (0, _Option.map)(function mapping(ls$$1) {
-                      return new _Block.Block(1, "Wrap", [[_arg1.fields[0].fields[0][0][1], _arg1.fields[0].fields[0][0][1]], ls$$1]);
-                    }, option);
-                  }, tupledArg$$1[0], tupledArg$$1[1]);
+                  tupledArg$$1 = [(new _Prelude.Block(1, "Wrap", [[_arg1.fields[0].fields[0][0][0], _arg1.fields[0].fields[0][0][1]], tupledArg[0]])), tupledArg[1]];
+                  tupledArg$$4 = [tupledArg$$1[0], ((0, _Option.map)(function mapping(ls$$1) {
+                    return new _Prelude.Block(1, "Wrap", [[_arg1.fields[0].fields[0][0][1], _arg1.fields[0].fields[0][0][1]], ls$$1]);
+                  }, tupledArg$$1[1]))];
                 }
 
-                patternInput$$1 = (0, _Prelude.Tuple$$$mapFirst)(patternInput[1], tupledArg$$4[0], tupledArg$$4[1]);
+                patternInput$$1 = [patternInput[1](tupledArg$$4[0]), tupledArg$$4[1]];
               }
 
               break;
@@ -316,23 +306,21 @@ function processBlocks(settings, selections, parseResult) {
         patternInput$$2 = [blockLength, _arg1.fields[1]];
       } else {
         const partialBlock = patternInput$$1[1];
-        patternInput$$2 = [blockLength - (0, _Block.length)(partialBlock), new _Types.List(partialBlock, _arg1.fields[1])];
+        patternInput$$2 = [blockLength - (0, _Prelude.Block$$$size$$60E56076)(new _Prelude.HasSize(0, "HasSize"), partialBlock), new _Types.List(partialBlock, _arg1.fields[1])];
       }
 
       let patternInput$$3;
       const tupledArg$$5 = (0, _Nonempty.splitAt)(patternInput$$2[0], origLines);
-      patternInput$$3 = (0, _Prelude.Tuple$$$mapFirst)(function f$$4(oL) {
-        return (0, _Option.defaultArg)(patternInput$$1[0], oL);
-      }, tupledArg$$5[0], tupledArg$$5[1]);
+      patternInput$$3 = [((0, _Option.defaultArg)(patternInput$$1[0], tupledArg$$5[0])), tupledArg$$5[1]];
       let nextOutput;
 
-      const _arg2 = (0, _Nonempty.rev)()(patternInput$$3[0]);
+      const _arg2 = (0, _Nonempty.rev)(patternInput$$3[0]);
 
       nextOutput = new _Prelude.Nonempty$00601(0, "Nonempty", _arg2.fields[0], (0, _List.append)(_arg2.fields[1], output$$1));
       const matchValue$$3 = (0, _Nonempty.fromList)(patternInput$$2[1]);
 
       if (matchValue$$3 == null) {
-        return (0, _Nonempty.rev)()(nextOutput);
+        return (0, _Nonempty.rev)(nextOutput);
       } else {
         const neNextBlocks = matchValue$$3;
         const nextStart = start + patternInput$$2[0] | 0;
@@ -362,9 +350,9 @@ function processBlocks(settings, selections, parseResult) {
 function trimEdit(originalLines, edit) {
   var array$$1, count;
 
-  const editNotZeroLength = function editNotZeroLength(x$$6) {
-    if (edit.endLine - edit.startLine > x$$6) {
-      return edit.lines.length > x$$6;
+  const editNotZeroLength = function editNotZeroLength(x$$8) {
+    if (edit.endLine - edit.startLine > x$$8) {
+      return edit.lines.length > x$$8;
     } else {
       return false;
     }
@@ -399,6 +387,6 @@ function wrapSelected(originalLines$$1, selections$$1, settings$$1, blocks) {
   const arg00$0040$$1 = processBlocks(settings$$1, selectionRanges, parseResult$$1);
   list$$5 = (0, _Nonempty.toList)(arg00$0040$$1);
   newLines$$1 = (0, _Array.ofList)(list$$5, Array);
-  const edit$$1 = new _Types2.Edit(0, (0, _Nonempty.length)()(originalLines$$1) - 1, newLines$$1, selections$$1);
+  const edit$$1 = new _Types2.Edit(0, (0, _Prelude.Nonempty$00601$$$size$$1F9B86C2)(new _Prelude.HasSize(0, "HasSize"), originalLines$$1) - 1, newLines$$1, selections$$1);
   return trimEdit(originalLines$$1, edit$$1);
 }

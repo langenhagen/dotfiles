@@ -16,7 +16,9 @@ var _Parsing = require("./Parsing.Core");
 
 var _Block = require("./Block");
 
-var _Nonempty = require("./Nonempty");
+var _Types = require("./fable-library.2.10.1/Types");
+
+var _Prelude = require("./Prelude");
 
 var _Parsing2 = require("./Parsing.Comments");
 
@@ -37,9 +39,10 @@ function sourceCode(commentParsers, settings) {
   };
 
   const partialParser = (0, _Parsing.takeUntil)(commentParsers$$1, function codeParser($arg$$1) {
-    let head;
-    head = (0, _Block.ignore)($arg$$1);
-    return (0, _Nonempty.singleton)(head);
+    let x;
+    x = (0, _Block.ignoreBlock)($arg$$1);
+    const xs = new _Types.List();
+    return new _Prelude.Nonempty$00601(0, "Nonempty", x, xs);
   });
   return (0, _Parsing.repeatToEnd)(partialParser);
 }
@@ -69,13 +72,13 @@ const block = customBlock((0, _Util.uncurry)(2, _Parsing3.markdown))(["", ""]);
 exports.block = block;
 const cLine = line("//");
 exports.cLine = cLine;
-const cBlock = customBlock((0, _Util.uncurry)(2, _Parsing3.markdown))(["\\*?", ""])(["/\\*", "\\*/"]);
+const cBlock = customBlock((0, _Util.uncurry)(2, _Parsing3.markdown))(["*", ""])(["/\\*", "\\*/"]);
 exports.cBlock = cBlock;
 const javadocMarkers = ["/\\*[*!]", "\\*/"];
 exports.javadocMarkers = javadocMarkers;
 
 const java = (() => {
-  const commentParsers$$2 = (0, _List.ofArray)([customBlock((0, _Util.uncurry)(2, _Parsing4.javadoc))(["\\*?", " * "])(javadocMarkers), cBlock, customLine((0, _Util.uncurry)(2, _Parsing4.javadoc))("//[/!]"), cLine]);
+  const commentParsers$$2 = (0, _List.ofArray)([customBlock((0, _Util.uncurry)(2, _Parsing4.javadoc))(["*", " * "])(javadocMarkers), cBlock, customLine((0, _Util.uncurry)(2, _Parsing4.javadoc))("//[/!]"), cLine]);
   return function (settings$$6) {
     return sourceCode(commentParsers$$2, settings$$6);
   };
@@ -84,7 +87,7 @@ const java = (() => {
 exports.java = java;
 
 const css = (() => {
-  const commentParsers$$3 = (0, _List.ofArray)([customBlock((0, _Util.uncurry)(2, _Parsing4.javadoc))(["\\*?", " * "])(javadocMarkers), cBlock]);
+  const commentParsers$$3 = (0, _List.ofArray)([customBlock((0, _Util.uncurry)(2, _Parsing4.javadoc))(["*", " * "])(javadocMarkers), cBlock]);
   return function (settings$$7) {
     return sourceCode(commentParsers$$3, settings$$7);
   };

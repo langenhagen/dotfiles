@@ -11,15 +11,13 @@ var _Array = require("./fable-library.2.10.1/Array");
 
 var _Nonempty = require("./Nonempty");
 
+var _Types = require("./fable-library.2.10.1/Types");
+
 var _Prelude = require("./Prelude");
 
 var _String = require("./fable-library.2.10.1/String");
 
-var _Types = require("./fable-library.2.10.1/Types");
-
 var _List = require("./fable-library.2.10.1/List");
-
-var _Block = require("./Block");
 
 var _Util = require("./fable-library.2.10.1/Util");
 
@@ -42,8 +40,10 @@ const preserveEnvironments = (() => {
 const preserveShortcuts = ["\\(", "\\[", "$", "$$"];
 
 function takeFrom2ndLineUntil(otherParser, parser, _arg1) {
+  var xs;
+
   const bufferToBlocks = function bufferToBlocks($arg$$1) {
-    return parser((0, _Nonempty.rev)()($arg$$1));
+    return parser(((0, _Nonempty.rev)($arg$$1)));
   };
 
   const loopFrom2ndLine = function loopFrom2ndLine($buffer$$15, $lines$$16) {
@@ -67,7 +67,7 @@ function takeFrom2ndLineUntil(otherParser, parser, _arg1) {
             return (0, _Nonempty.append)(arg00$0040, b);
           };
 
-          return (0, _Prelude.Tuple$$$mapFirst)(f, result[0], result[1]);
+          return [f(result[0]), result[1]];
         } else {
           $buffer$$15 = (0, _Nonempty.cons)(head, buffer);
           $lines$$16 = tail;
@@ -81,7 +81,7 @@ function takeFrom2ndLineUntil(otherParser, parser, _arg1) {
     }
   };
 
-  return loopFrom2ndLine((0, _Nonempty.singleton)(_arg1.fields[0]), _arg1.fields[1]);
+  return loopFrom2ndLine((xs = new _Types.List(), new _Prelude.Nonempty$00601(0, "Nonempty", _arg1.fields[0], xs)), _arg1.fields[1]);
 }
 
 const commandRegex = (0, _RegExp.create)("^\\\\(\\[|[a-z]+)\\*?\\s*(?:(?:\\[.*?\\]|\\{(.*?)\\})\\s*)*");
@@ -131,15 +131,17 @@ function findPreserveSection(beginMarker) {
   };
 
   return function (_arg1$$1) {
+    var x$$3, xs$$1;
     const patternInput = loop(new _Types.List(), _arg1$$1.fields[1]);
-    return [(0, _Nonempty.singleton)(new _Block.Block(2, "NoWrap", new _Prelude.Nonempty$00601(0, "Nonempty", _arg1$$1.fields[0], patternInput[0]))), (0, _Nonempty.fromList)(patternInput[1])];
+    return [(x$$3 = new _Prelude.Block(2, "NoWrap", new _Prelude.Nonempty$00601(0, "Nonempty", _arg1$$1.fields[0], patternInput[0])), (xs$$1 = new _Types.List(), new _Prelude.Nonempty$00601(0, "Nonempty", x$$3, xs$$1))), (0, _Nonempty.fromList)(patternInput[1])];
   };
 }
 
 function latex(settings) {
   const command = function command(_arg1$$2) {
+    var x$$5, xs$$2;
     let trimmedLine;
-    trimmedLine = (0, _Prelude.String$$$trim)(_arg1$$2.fields[0]);
+    trimmedLine = _arg1$$2.fields[0].trim();
     const cmdMatch = (0, _RegExp.match)(commandRegex, trimmedLine);
     const patternInput$$1 = cmdMatch != null ? [cmdMatch[1] || "", cmdMatch[2] || "", cmdMatch[0].length === trimmedLine.length] : ["", "", false];
 
@@ -160,7 +162,7 @@ function latex(settings) {
     }) : false) {
       return findPreserveSection(patternInput$$1[1])(_arg1$$2);
     } else if (patternInput$$1[2]) {
-      return [(0, _Nonempty.singleton)(new _Block.Block(2, "NoWrap", new _Prelude.Nonempty$00601(0, "Nonempty", _arg1$$2.fields[0], new _Types.List()))), (0, _Nonempty.fromList)(_arg1$$2.fields[1])];
+      return [(x$$5 = new _Prelude.Block(2, "NoWrap", new _Prelude.Nonempty$00601(0, "Nonempty", _arg1$$2.fields[0], new _Types.List())), (xs$$2 = new _Types.List(), new _Prelude.Nonempty$00601(0, "Nonempty", x$$5, xs$$2))), (0, _Nonempty.fromList)(_arg1$$2.fields[1])];
     } else if (trimmedLine.indexOf("$$") === 0 ? true : (0, _Array.contains)(patternInput$$1[0], blockCommands, {
       Equals($x$$6, $y$$7) {
         return $x$$6 === $y$$7;
@@ -174,22 +176,31 @@ function latex(settings) {
     }
   };
 
-  const plainText = function plainText($arg$$9) {
-    const arg10$0040$$2 = (0, _Parsing.splitIntoChunks)((0, _Parsing.afterRegex)(newlineRegex))($arg$$9);
-    return (0, _Nonempty.map)(function processChunk($arg$$8) {
-      let arg10$0040$$1;
-      arg10$0040$$1 = (0, _Nonempty.mapTail)(function freezeAnyEOLComment(str$$1) {
-        const m = (0, _RegExp.match)((0, _RegExp.create)("[^\\\\]%"), str$$1);
+  let plainText;
 
-        if (!(m != null)) {
-          return str$$1;
-        } else {
-          const p$$1 = m.index + 2 | 0;
-          return (0, _String.substring)(str$$1, 0, p$$1) + (0, _String.replace)((0, _String.substring)(str$$1, p$$1), " ", "\u0000");
-        }
-      }, $arg$$8);
-      return (0, _Parsing.firstLineIndentParagraphBlock)(settings.reformat, arg10$0040$$1);
-    }, arg10$0040$$2);
+  const processChunk = function processChunk($arg$$8) {
+    let arg10$0040$$1;
+    arg10$0040$$1 = (0, _Nonempty.mapTail)(function freezeAnyEOLComment(str$$2) {
+      const m = (0, _RegExp.match)((0, _RegExp.create)("[^\\\\]%"), str$$2);
+
+      if (!(m != null)) {
+        return str$$2;
+      } else {
+        const p$$1 = m.index + 2 | 0;
+        return (0, _String.substring)(str$$2, 0, p$$1) + (0, _String.replace)((0, _String.substring)(str$$2, p$$1), " ", "\u0000");
+      }
+    }, $arg$$8);
+    return (0, _Parsing.firstLineIndentParagraphBlock)(settings.reformat, arg10$0040$$1);
+  };
+
+  plainText = function ($arg$$9) {
+    var _arg2;
+
+    const x$$7 = (0, _Parsing.splitIntoChunks)((0, _Parsing.afterRegex)(newlineRegex))($arg$$9);
+
+    const _arg3 = new _Prelude.Functor(0, "Functor");
+
+    return new _Prelude.Nonempty$00601(0, "Nonempty", processChunk(x$$7.fields[0]), (_arg2 = new _Prelude.Functor(0, "Functor"), (0, _List.map)(processChunk, x$$7.fields[1])));
   };
 
   let otherParsers;

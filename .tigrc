@@ -28,17 +28,17 @@ bind generic Z @?git checkout HEAD %(file)  # checkout latest committed version 
 bind stage  D @?rm %(file)  # remove a file
 bind status D @?rm %(file)  # remove a file
 
-bind diff S !bash -c 'cd "$(dirname "%(file)")"; exec ${SHELL:-bash}'  # drop to shell at selected file in diff view
-bind status S !bash -c 'cd "$(dirname "%(file)")"; exec ${SHELL:-bash}'  # drop to shell at selected file in status view
+bind diff S >!bash -c 'cd "$(dirname "%(file)")"; exec ${SHELL:-bash}'  # drop to shell at selected file in diff view
+bind status S >!bash -c 'cd "$(dirname "%(file)")"; exec ${SHELL:-bash}'  # drop to shell at selected file in status view
 
-bind generic + !git commit --amend
-bind generic = !git commit
+bind generic + >!git commit --amend
+bind generic = >!git commit
 
 bind generic <F1> >!git pull --rebase
 bind generic <F2> >!git pull --rebase origin master
 
-bind generic <F6> !push_to_remotes.sh
-bind generic <F7> !git push
+bind generic <F6> >!push_to_remotes.sh
+bind generic <F7> >!git push
 
 bind generic <F10> quit
 

@@ -14,6 +14,7 @@ color diff-stat         cyan    default
 # @  Run the command in the background with no output.
 # ?  Prompt the user before executing the command.
 # <  Exit Tig after executing the command.
+# >  Re-open Tig instantly in the last displayed view after executing the command.
 
 bind generic ` !git rebase --interactive HEAD~7
 bind generic A @git add -A
@@ -33,8 +34,8 @@ bind status S !bash -c 'cd "$(dirname "%(file)")"; exec ${SHELL:-bash}'  # drop 
 bind generic + !git commit --amend
 bind generic = !git commit
 
-bind generic <F1> !git pull --rebase
-bind generic <F2> !git pull --rebase origin master
+bind generic <F1> >!git pull --rebase
+bind generic <F2> >!git pull --rebase origin master
 
 bind generic <F6> !push_to_remotes.sh
 bind generic <F7> !git push

@@ -35,7 +35,6 @@ bind generic = !git commit
 
 bind generic <F1> !git pull --rebase
 bind generic <F2> !git pull --rebase origin master
-bind generic <F3> !git pull --rebase c1 master
 
 bind generic <F6> !push_to_remotes.sh
 bind generic <F7> !git push

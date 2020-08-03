@@ -62,7 +62,6 @@ end
 function minimerk
     # Store a simple text string into the minimerk.txt file with a timestamp.
     # Can be used for minimal reminders that are stored into persistent memory.
-
     if test (count $argv) -eq 0
         tail -n20 "$HOME/.minimerk.txt"
     else if test (count $argv) -gt 0
@@ -73,7 +72,6 @@ end
 function bucket
     # Show the bucket list file or append given lines to it.
     # There must be a trailing newline at the end of the file.
-
     if test (count $argv) -eq 0
         # -R readonly
         vim -R '+normal G\$' "$BUCKET_LIST_FILE_PATH"

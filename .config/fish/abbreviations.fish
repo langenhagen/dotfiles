@@ -169,5 +169,4 @@ end
 switch (uname -n)
 case  "*momox*"
     # Work related abbrs
-
 end

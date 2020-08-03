@@ -19,8 +19,9 @@ map S $$SHELL
 # text files and a file opener for the rest.
 cmd open ${{
     case $(file --mime-type -Lb $f) in
-        text/*) $EDITOR $fx;;
-        application/json) $EDITOR $fx;;
+        text/*)                     $EDITOR $fx;;
+        application/json)           $EDITOR $fx;;
+        application/x-shellscript)  $EDITOR $fx;;
         *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
 }}

@@ -36,3 +36,6 @@ setenv EDITOR vim
 setenv VISUAL vim
 
 setenv PIP_REQUIRE_VIRTUALENV true
+
+setenv N_PREFIX "$HOME/n"
+set -gx PATH $PATH "$HOME/n/bin"

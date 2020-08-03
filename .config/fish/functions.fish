@@ -122,24 +122,3 @@ function pip
     [ -n "$CONDA_PREFIX" ]; and set -lx PIP_REQUIRE_VIRTUALENV false;
     eval (which pip) "$argv";
 end
-
-switch (uname -n)
-case "*celeraone*"
-    # C1 related functions
-
-    function cd-into-c1-project
-        # Given a c1 repository name (without leading 'c1-',
-        # change the directory to the repository,
-        if test (count $argv) -eq 0
-            cd "$HOME/c1"
-        else
-            cd "$HOME/c1/gerrit/c1-$argv[1]"
-        end
-    end
-
-    function rt
-        # Conveniently run robot tests.
-        printf "bin/pybot -L TRACE --test \"*$argv*\" test/\n\n"
-        command -v bin/pybot; and bin/pybot -L TRACE --test "*$argv*" test/
-    end
-end

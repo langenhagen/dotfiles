@@ -1,0 +1,8 @@
+#!/bin/bash
+# All company-owned projects.
+# All remotes are internal company remotes.
+#
+# author: andreasl
+
+repos=(
+)

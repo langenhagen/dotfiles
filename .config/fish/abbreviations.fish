@@ -126,7 +126,7 @@ abbr -a rpa 'reposet apply'
 abbr -a rps 'reposet'
 
 switch (uname -n)
-case "barn-ultra" "*celeraone*"
+case "barn-ultra" "*momox*"
     # Desktop machine related abbrs
 
     abbr -a now 'date \'+%s\' | xclip -fi -selection clipboard'  # the current timestamp since epoch in seconds
@@ -137,8 +137,6 @@ case "barn-ultra" "*celeraone*"
     abbr -a tks 'tricks'
     abbr -a alh 'add-to-one-line-help \''
     abbr -a olh 'one-line-help'
-
-    abbr -a gk 'c1-opengrok-search.py'
 
     abbr -a s 'subl'
     abbr -a xs 'xargs subl'
@@ -169,35 +167,7 @@ case "barn-ultra" "*celeraone*"
 end
 
 switch (uname -n)
-case  "*celeraone*"
-    # C1 related abbrs
+case  "*momox*"
+    # Work related abbrs
 
-    abbr -a gcp 'git checkout py3'
-
-    abbr -a q 'cd-into-c1-project'
-    abbr -a qa 'cd-into-c1-project authservice'
-    abbr -a qap 'cd-into-c1-project authproxy'
-    abbr -a qc 'cd-into-c1-project cre-api'
-    abbr -a qcd 'cd-into-c1-project custom-dumont'
-    abbr -a qco 'cd-into-c1-project cockpitserver'
-    abbr -a qe 'cd-into-c1-project entitlement'
-    abbr -a qen 'cd-into-c1-project engine'
-    abbr -a qex 'cd-into-c1-project exceptions'
-    abbr -a qf 'cd-into-c1-project frontend'
-    abbr -a ql 'cd-into-c1-project lua'
-    abbr -a qm 'cd-into-c1-project metrics'
-    abbr -a qo 'cd-into-c1-project openid'
-    abbr -a qp 'cd-into-c1-project pueblo'
-    abbr -a qr 'cd-into-c1-project robotframework'
-    abbr -a qs 'cd-into-c1-project scheduler'
-    abbr -a qx 'cd-into-c1-project cre-xapi'
-
-    abbr -a cj 'xdg-open "https://jira.celeraone.com/secure/CreateIssue!default.jspa"'  # create jira ticket
-    abbr -a cre 'http -F --auth-type c1-auth -a'
-    abbr -a og 'xdg-open "https://codereview.celeraone.com/dashboard/self"' # open gerrit
-    abbr -a oj 'xdg-open "https://jira.celeraone.com/secure/Dashboard.jspa?selectPageId=11405"'  # open jira
-    abbr -a rl 'xdg-open "var/log/testreports/log.html"'  # robot log
-
-    abbr -a cm 'c1-mount-remote-fe.sh'
-    abbr -a cu 'c1-unmount-remote-fe.sh'
 end

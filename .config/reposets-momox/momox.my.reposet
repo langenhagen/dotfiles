@@ -1,0 +1,14 @@
+#!/bin/bash
+# My own projects decicated to my job.
+# Remotes are both internal job remotes as well as my private remotes.
+#
+# author: andreasl
+
+repos=(
+    "${HOME}/Administrative/computer/setup-momox-ubuntu:master:origin:master:momox:master"
+    "${HOME}/Administrative/computer/setup-momox-ubuntu:master:origin:master:origin:master"
+    # "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/momox-scripts:master:origin:master:momox:master"
+    # "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/momox-scripts:master:origin:master:origin:master"
+    # "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/notes:master:origin:master:c1:master"
+    # "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/notes:master:origin:master:origin:master"
+)

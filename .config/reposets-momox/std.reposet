@@ -1,0 +1,9 @@
+#!/bin/bash
+# My default job-related reposet.
+# A subset of the job repos that I work with regularly.
+# All remotes are internal company-remotes.
+#
+# author: andreasl
+
+repos=(
+)

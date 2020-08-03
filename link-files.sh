@@ -18,9 +18,6 @@ ln -sf "$dotfiles_path/.zshrc" "$HOME/.zshrc";
 ln -sf "$dotfiles_path/.config/user-dirs.dirs" "$HOME/.config/user-dirs.dirs"
 ln -sf "$dotfiles_path/.config/user-dirs.locale" "$HOME/.config/user-dirs.locale"
 
-mkdir -p "$HOME/.buildout";
-ln -sf "$dotfiles_path/.buildout/default.cfg" "$HOME/.buildout/default.cfg";
-
 mkdir -p "$HOME/.ccache";
 ln -sf "$dotfiles_path/.ccache/ccache.conf" "$HOME/.ccache/ccache.conf";
 
@@ -78,11 +75,11 @@ elif [[ "$(uname -n)" =~ 'bee' ]]; then
     rm "$HOME/.config/reposets"
     ln -sf "$dotfiles_path/.config/reposets-bee" "$HOME/.config/reposets";
 
-elif [[ "$(uname -n)" =~ 'celeraone' ]]; then
-    ln -sf "$dotfiles_path/.config/.edmrc-c1" "$HOME/.config/.edmrc";
-    ln -sf "$dotfiles_path/.gitconfig-c1" "$HOME/.gitconfig";
+elif [[ "$(uname -n)" =~ 'momox' ]]; then
+    ln -sf "$dotfiles_path/.config/.edmrc-momox" "$HOME/.config/.edmrc";
+    ln -sf "$dotfiles_path/.gitconfig-momox" "$HOME/.gitconfig";
     rm "$HOME/.config/reposets"
-    ln -sf "$dotfiles_path/.config/reposets-c1" "$HOME/.config/reposets";
+    ln -sf "$dotfiles_path/.config/reposets-momox" "$HOME/.config/reposets";
 
     ln -sf "$dotfiles_path/.config/autostart/open-journal.desktop" "$HOME/.config/autostart/open-journal.desktop";
     ln -sf "$dotfiles_path/.config/autostart/slack.desktop" "$HOME/.config/autostart/slack.desktop";

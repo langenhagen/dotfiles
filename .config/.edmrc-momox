@@ -25,8 +25,8 @@ choices=(
     'Media/WhatsApp-Media'
     'Work'
     'Work/2020-Momox'
-    'Work/2012-Momox/Momox-101.md'
-    'Work/2012-Momox/journal.md'
+    'Work/2020-Momox/Momox-101.md'
+    'Work/2020-Momox/journal.md'
     "$(cat "$history_file")"
 )
 

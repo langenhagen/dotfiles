@@ -7,9 +7,4 @@
 repos=(
     "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/setup-ubuntu:master:origin:master:origin:master"
     "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/setup-ubuntu:master:momox:master:momox:master"
-
-    # "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/momox-scripts:master:origin:master:momox:master"
-    # "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/momox-scripts:master:origin:master:origin:master"
-    # "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/notes:master:origin:master:c1:master"
-    # "${HOME}/c1/gitlab.celeraone.com/andreas.langenhagen/notes:master:origin:master:origin:master"
 )

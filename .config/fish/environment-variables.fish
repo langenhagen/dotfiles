@@ -10,7 +10,7 @@ switch (uname -n)
         setenv CHECK_DIR_PATH "$HOME/Dev/check"
         setenv ONE_LINE_HELP_FILE_PATH "$HOME/Dev/Zeugs/one-line-help.txt"
         setenv PLAYGROUND_DIR_PATH "$HOME/Dev/_playgrounds"
-        setenv PROTOFILES_DIR_PATH "$HOME/Dev/_Protofiles"
+        setenv PROTOFILES_DIR_PATH "$HOME/Dev/_protofiles"
         setenv SCRIPTS_DIR_PATH "$HOME/Dev/scripts"
         setenv TRICKS_FILE_PATH "$HOME/Dev/Zeugs/tricks.sh"
 

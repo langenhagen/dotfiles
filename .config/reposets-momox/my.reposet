@@ -10,7 +10,7 @@ repos=(
     "${HOME}/Administrative/computer/bee/nextcloud-server:master:origin:master:origin:master"
     "${HOME}/Administrative/computer/setup-momox-ubuntu:master:origin:master:origin:master"
     "${HOME}/Administrative/computer/setup-my-ubuntu:master:origin:master:origin:master"
-    "${HOME}/Dev/_Protofiles:master:origin:master:origin:master"
+    "${HOME}/Dev/_protofiles:master:origin:master:origin:master"
     "${HOME}/Dev/barn-bits:master:origin:master:origin:master"
     "${HOME}/Dev/barn-bookmark-manager:master:origin:master:origin:master"
     "${HOME}/Dev/check:master:origin:master:origin:master"

@@ -68,7 +68,7 @@ abbr -a e 'vim -R "+normal :Explore\$" .'
 abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
 abbr -a xx 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
 
-abbr -a g 'grep'
+abbr -a g 'grep -i'
 abbr -a h 'grep -HiRns'
 abbr -a ch 'grep -HiRns --include={\*.h,\*.hpp,\*.c,\*.cpp,\*.cc,\*.m,\*.mm,\*.pch,\*.java,\*.swift,\*.kt}'
 abbr -a cmh 'grep -HiRns --include={CMakeCache.txt,CMakeLists.txt,\*.cmake}'

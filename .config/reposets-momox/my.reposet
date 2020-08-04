@@ -1,5 +1,5 @@
 #!/bin/bash
-# My private reposet.
+# My private reposet
 # and my own job-related projects.
 # Remoter are all mine.
 #
@@ -21,4 +21,5 @@ repos=(
     "${HOME}/Dev/reposet:master:origin:master:origin:master"
     "${HOME}/Dev/scripts:master:origin:master:origin:master"
     "${HOME}/dotfiles:master:origin:master:origin:master"
+    "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/setup-ubuntu:master:origin:master:origin:master"
 )

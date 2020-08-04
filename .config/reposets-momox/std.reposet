@@ -6,4 +6,5 @@
 # author: andreasl
 
 repos=(
+    "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/setup-ubuntu:master:momox:master:momox:master"
 )

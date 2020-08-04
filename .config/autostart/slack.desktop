@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/snap/bin/slack
+Exec=sh -c '/snap/slack/27/usr/lib/slack/slack --no-sandbox --executed-from=/home/andreasl --pid=10497'
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true

@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=sh -c "\$HOME/thunderbird/thunderbird"
+Exec=thunderbird
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true

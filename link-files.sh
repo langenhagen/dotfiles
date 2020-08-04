@@ -79,7 +79,6 @@ elif [[ "$(uname -n)" =~ 'momox' ]]; then
     ln -sf "$dotfiles_path/.config/reposets-momox" "$HOME/.config/reposets";
 
     ln -sf "$dotfiles_path/.config/autostart/open-journal.desktop" "$HOME/.config/autostart/open-journal.desktop";
-    ln -sf "$dotfiles_path/.config/autostart/slack.desktop" "$HOME/.config/autostart/slack.desktop";
 fi
 
 if [ "$(uname)" == 'Linux' ]; then

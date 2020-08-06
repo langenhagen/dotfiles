@@ -18,6 +18,7 @@ repos=(
     "${HOME}/Dev/expertises-gantt:master:origin:master:origin:master"
     "${HOME}/Dev/explore-with-dmenu:master:origin:master:origin:master"
     "${HOME}/Dev/langenhagen.github.io:master:origin:master:origin:master"
+    "${HOME}/Dev/moneybee:master:origin:master:origin:master"
     "${HOME}/Dev/reposet:master:origin:master:origin:master"
     "${HOME}/Dev/scripts:master:origin:master:origin:master"
     "${HOME}/dotfiles:master:origin:master:origin:master"

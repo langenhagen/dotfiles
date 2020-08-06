@@ -169,4 +169,7 @@ end
 switch (uname -n)
 case  "*momox*"
     # Work related abbrs
+    abbr -a dcu 'docker-compose up'
+    abbr -a dcd 'docker-compose down'
+    abbr -a dps 'docker ps'
 end

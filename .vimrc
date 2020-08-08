@@ -202,6 +202,7 @@ command! SudoWrite w !sudo tee %
 
 " abbreviations ====================================================================================
 
+abbreviate AS Autosave
 abbreviate Rfctr Refactor
 abbreviate rfctr refactor
 abbreviate rq require

@@ -22,7 +22,7 @@ switch (uname -n)
     case  "*momox*"
         set -gx JOURNAL_PATH "$HOME/Work/2020-Momox/journal.md"
 
-        set -gx PATH $PATH "$$HOME/momox/gitlab.bof.mm.local/alangenhagen/momox-scripts"
+        set -gx PATH $PATH "$HOME/momox/gitlab.bof.mm.local/alangenhagen/momox-scripts"
 end
 
 set -gx PATH $PATH '/usr/local/sbin'

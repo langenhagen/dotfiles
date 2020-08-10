@@ -15,6 +15,7 @@ repos=(
     "${HOME}/Dev/_protofiles:master:origin:master:origin:master"
     "${HOME}/Dev/barn-bits:master:origin:master:origin:master"
     "${HOME}/Dev/barn-bookmark-manager:master:origin:master:origin:master"
+    "${HOME}/Dev/barn-scrape:master:origin:master:origin:master"
     "${HOME}/Dev/check:master:origin:master:origin:master"
     "${HOME}/Dev/experiments-and-tutorials:master:origin:master:origin:master"
     "${HOME}/Dev/expertises-gantt:master:origin:master:origin:master"

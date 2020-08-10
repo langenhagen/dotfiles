@@ -6,6 +6,7 @@ mechatroner.rainbow-csv
 ms-python.python
 ms-vscode.cmake-tools
 ms-vscode.cpptools
+octref.vetur
 shardulm94.trailing-spaces
 stkb.rewrap
 streetsidesoftware.code-spell-checker

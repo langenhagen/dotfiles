@@ -174,5 +174,4 @@ case  "*momox*"
     abbr -a dps 'docker ps'
 
     abbr -a gcd 'git checkout develop'
-
 end

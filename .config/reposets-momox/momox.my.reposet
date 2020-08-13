@@ -9,4 +9,6 @@ repos=(
     "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/momox-scripts:master:momox:master:momox:master"
     "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/setup-ubuntu:master:origin:master:origin:master"
     "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/setup-ubuntu:master:momox:master:momox:master"
+    "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/work:master:origin:master:origin:master"
+    "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/work:master:momox:master:momox:master"
 )

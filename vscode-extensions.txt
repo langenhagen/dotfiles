@@ -1,6 +1,7 @@
 alefragnani.Bookmarks
 eamodio.gitlens
 hangxingliu.vscode-nginx-conf-hint
+jebbs.plantuml
 lextudio.restructuredtext
 mechatroner.rainbow-csv
 ms-python.python

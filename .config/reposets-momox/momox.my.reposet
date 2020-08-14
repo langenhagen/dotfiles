@@ -5,6 +5,8 @@
 # author: andreasl
 
 repos=(
+    "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/momox-graphs:master:origin:master:origin:master"
+    "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/momox-graphs:master:origin:master:momox:master"
     "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/momox-scripts:master:origin:master:origin:master"
     "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/momox-scripts:master:origin:master:momox:master"
     "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/setup-ubuntu:master:origin:master:origin:master"

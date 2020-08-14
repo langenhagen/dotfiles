@@ -25,6 +25,7 @@ repos=(
     "${HOME}/Dev/reposet:master:origin:master:origin:master"
     "${HOME}/Dev/scripts:master:origin:master:origin:master"
     "${HOME}/dotfiles:master:origin:master:origin:master"
+    "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/momox-graphs:master:origin:master:origin:master"
     "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/momox-scripts:master:origin:master:origin:master"
     "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/setup-ubuntu:master:origin:master:origin:master"
     "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/work:master:origin:master:origin:master"

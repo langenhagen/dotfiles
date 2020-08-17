@@ -138,6 +138,7 @@ case "barn-ultra" "*momox*"
     abbr -a alh 'add-to-one-line-help \''
     abbr -a olh 'one-line-help'
 
+    abbr -a c 'code'
     abbr -a s 'subl'
     abbr -a xs 'xargs subl'
     abbr -a sh "subl (eval \$history[1])"

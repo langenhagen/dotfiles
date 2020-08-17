@@ -4,6 +4,7 @@ hangxingliu.vscode-nginx-conf-hint
 jebbs.plantuml
 lextudio.restructuredtext
 mechatroner.rainbow-csv
+ms-azuretools.vscode-docker
 ms-python.python
 ms-vscode.cmake-tools
 ms-vscode.cpptools

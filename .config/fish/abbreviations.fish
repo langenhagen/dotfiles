@@ -154,7 +154,7 @@ case "barn-ultra" "*momox*"
 
     case  'Linux'
         abbr -a o 'xdg-open'
-        abbr -a of 'xdg-open .'
+        abbr -a o. 'xdg-open .'
         abbr -a ox 'xdg-open .; exit'
         abbr -a xo 'xargs xdg-open'
         abbr -a oh "for f in (eval \$history[1]); xdg-open \"\$f\"; end"

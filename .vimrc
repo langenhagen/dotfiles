@@ -160,6 +160,7 @@ au BufRead,BufNewFile *.{c,cpp,h,hpp,cs,java,js} let b:comment_prefix = "//"
 au BufRead,BufNewFile *.lua let b:comment_prefix = "--"
 au BufRead,BufNewFile *.{py,sh} let b:comment_prefix = "#"
 au BufRead,BufNewFile .vimrc let b:comment_prefix = "\""
+au BufRead,BufNewFile *.plantuml let b:comment_prefix = "'"
 
 function! ToggleComment()
     " Toggle a comment.

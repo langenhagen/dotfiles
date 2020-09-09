@@ -4,6 +4,7 @@
 set ignore-case = yes  # Enum consisting of the values: no, yes, smart-case
 set mouse = false
 set refresh-mode = after-command  # Enum: manual, auto, after-command, periodic
+set main-view-id-display = yes  # show commit hashes in main view
 
 color date cyan default
 color diff.diff-index cyan default

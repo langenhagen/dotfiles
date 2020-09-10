@@ -3,6 +3,7 @@ eamodio.gitlens
 hangxingliu.vscode-nginx-conf-hint
 jebbs.plantuml
 lextudio.restructuredtext
+mads-hartmann.bash-ide-vscode
 mechatroner.rainbow-csv
 ms-azuretools.vscode-docker
 ms-python.python

@@ -20,6 +20,7 @@ map S $$SHELL
 cmd open ${{
     case $(file --mime-type -Lb $f) in
         text/*)                     $EDITOR $fx;;
+        application/csv)            $EDITOR $fx;;
         application/json)           $EDITOR $fx;;
         application/x-shellscript)  $EDITOR $fx;;
         *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;

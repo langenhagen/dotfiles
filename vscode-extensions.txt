@@ -1,4 +1,5 @@
 alefragnani.Bookmarks
+christian-kohler.path-intellisense
 eamodio.gitlens
 hangxingliu.vscode-nginx-conf-hint
 jebbs.plantuml

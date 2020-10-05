@@ -234,6 +234,7 @@ map <S-F10> :wq!<CR>|    " force write quit file
 imap <S-F10> <ESC>:wq!<CR>|    " force write quit file
 map <S-F11> :set number!<CR>|                           " toggle show line numbers
 imap <S-F11> <ESC>:set number!<CR>a|                    " toggle show line numbers
+map <leader><BS> :q!<CR>|   " force quit file
 map <expr> <F12> ToggleHighlightOverlength()|         " <expr> or :call ... <CR> necessary on functions
 imap <F12> <ESC>:call ToggleHighlightOverlength()<CR>a|
 map <expr> <S-F12> ToggleHighlightMultipleSpaces()

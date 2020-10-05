@@ -42,4 +42,4 @@ setenv PIP_REQUIRE_VIRTUALENV true
 setenv N_PREFIX "$HOME/n"
 set -gx PATH $PATH "$HOME/n/bin"
 
-setenv FZF_DEFAULT_COMMAND "find -L . -path '*/.git' -prune -o -print"
+setenv FZF_DEFAULT_COMMAND "find -L . \( -path '*/.git' -o -path '*/.venv' \) -prune -o -print"

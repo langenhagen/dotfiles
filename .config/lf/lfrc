@@ -4,7 +4,10 @@
 # see: https://godoc.org/github.com/gokcehan/lf
 
 # settings
+set color256 on
 set hidden
+set incsearch on
+set number on
 set previewer ~/.config/lf/previewer.sh
 
 # key mappings
@@ -26,3 +29,14 @@ cmd open ${{
         *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
 }}
+
+cmd fzf_jump ${{
+    res="$(fzf --header='Jump to location')"
+    if [ -f "$res" ]; then
+        cmd='select'
+    elif [ -d "$res" ]; then
+        cmd='cd'
+    fi
+    lf -remote "send $id $cmd '$res'"
+}}
+map <c-e> :fzf_jump

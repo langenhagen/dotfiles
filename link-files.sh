@@ -54,6 +54,9 @@ mkdir -p "$HOME/.config/lf";
 ln -sf "$dotfiles_path/.config/lf/lfrc" "$HOME/.config/lf/lfrc";
 ln -sf "$dotfiles_path/.config/lf/previewer.sh" "$HOME/.config/lf/previewer.sh";
 
+mkdir -p "$HOME/.config/nvim";
+ln -sf "$dotfiles_path/.config/nvim/init.vim" "$HOME/.config/nvim/init.vim";
+
 mkdir -p "$HOME/.config/xpad";
 ln -sf "$dotfiles_path/.config/xpad/default-style" "$HOME/.config/xpad/default-style";
 mkdir -p "$HOME/.config/xpad/trigger";

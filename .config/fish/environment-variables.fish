@@ -42,15 +42,9 @@ setenv VISUAL vim
 
 setenv PIP_REQUIRE_VIRTUALENV true
 
-
-
-
-
 setenv FZF_DEFAULT_COMMAND "find -L . \( -path '*/.git' -o -path '*/.venv' \) -prune -o -print"
 if command -v batcat >/dev/null
-    set fzf_previewer "batcat --color=always"
-    set fzf_previewer "batcat --color=always --style=header,numbers"
+    setenv FZF_DEFAULT_OPTS "--preview 'batcat --color=always --style=header,numbers {} 2>/dev/null'"
 else
-    set fzf_previewer "cat"
+    setenv FZF_DEFAULT_OPTS "--preview 'cat {}'"
 end
-setenv FZF_DEFAULT_OPTS "--preview '$fzf_previewer {}'"

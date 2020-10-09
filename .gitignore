@@ -12,6 +12,7 @@
 iterm2-config/com.googlecode.iterm2.plist
 
 .vim/.netrwhist
+.vim/plugged/
 
 .vscode/extensions/**/cache/
 

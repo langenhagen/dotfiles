@@ -1,6 +1,13 @@
 " plugins ==========================================================================================
 let g:rainbow_active = 1 " or 0 ; essential for :RainbowToggle of rainbow.vim
 
+call plug#begin('~/.vim/plugged')
+
+Plug 'junegunn/fzf'
+Plug 'mechatroner/rainbow_csv'
+
+call plug#end()
+
 " settings  ========================================================================================
 filetype plugin indent on
 syntax on  " syntax highlighting. turn off if vim is too slow with :syntax off
@@ -212,6 +219,7 @@ abbreviate rqd required
 " key bindings =====================================================================================
 map <C-_> :call ToggleComment()<CR>|  " <C-_> maps to ctrl + / in vim
 imap <C-_> <ESC>:call ToggleComment()<CR>|  " <C-_> maps to ctrl + / in vim
+map <C-e> :FZF!<CR>|  " open fzf in full screen
 map <F2> :call ToggleAutoLinebreak()<CR>
 imap <F2> <ESC>:call ToggleAutoLinebreak()<CR>a|
 map <F3> n

@@ -5,7 +5,4 @@
 #
 # author: andreasl
 
-unset COLORTERM
-
-command -v batcat && batcat --color=auto --style='numbers,changes,header' "$1" && exit 0
-cat "$1"
+command -v batcat && { batcat --color=always --style=numbers,changes,header "$1"; } || cat "$1"

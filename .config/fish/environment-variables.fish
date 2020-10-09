@@ -27,9 +27,12 @@ end
 
 set -gx PATH $PATH '/usr/local/sbin'
 set -gx PATH $PATH "$HOME/go/bin"
-set -gx PATH $PATH "$HOME/.pyenv/bin"
+set -gx PATH $PATH "$HOME/.cargo/bin"
 set -gx PATH $PATH "$HOME/.poetry/bin"
 set -gx PATH $PATH "$HOME/.rbenv/bin"
+set -gx PATH $PATH "$HOME/.pyenv/bin"
+setenv N_PREFIX "$HOME/n"
+set -gx PATH $PATH "$HOME/n/bin"
 set -gx PATH $PATH "$CHECK_DIR_PATH"
 set -gx PATH $PATH "$SCRIPTS_DIR_PATH"
 
@@ -39,8 +42,9 @@ setenv VISUAL vim
 
 setenv PIP_REQUIRE_VIRTUALENV true
 
-setenv N_PREFIX "$HOME/n"
-set -gx PATH $PATH "$HOME/n/bin"
+
+
+
 
 setenv FZF_DEFAULT_COMMAND "find -L . \( -path '*/.git' -o -path '*/.venv' \) -prune -o -print"
 if command -v batcat >/dev/null

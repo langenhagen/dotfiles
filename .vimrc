@@ -217,34 +217,47 @@ imap <F2> <ESC>:call ToggleAutoLinebreak()<CR>a|
 map <F3> n
 set <S-F3>=[1;2R
 map <S-F3> N
+map <F15> NF15> NF15> NF15> NF15> N  " shift+F3 in neovim
 map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>|   " from: http://vim.wikia.com/wiki/Easily_switch_between_source_and_header_file
 map <F5> :edit<CR>|  " refresh file
-map <S-F5> vip:sort<CR>|  " sort paragraph on which the cursor hovers
-map <S-F6> gwip|          " reformat current paragraph
+map <S-F5> vip:sort<CR>|    " sort paragraph on which the cursor hovers
+map <F17> vip:sort<CR>|     " shift-F5 in neovim
+vmap <S-F5> :sort<CR>|  " sort in visual selection
+vmap <F17> :sort<CR>|   " shift-F5 in neovim
+map <S-F6> gwip|    " reformat current paragraph
+map <F18> gwip|     " shift-F6 in neovim
 map <F7> gT|        " toggle tab to the left
 map <F8> gt|         " toggle tab to the right
-map <S-F8> gT|       " toggle tab to the left
+map <S-F8> gT|    " toggle tab to the left
+map <F20> gT|     " shift-F8 in neovim
 map <F9> :w!<CR>|    " force write file
 imap <F9> <ESC>:w!<CR>|    " force write file
 map <S-F9> :wq!<CR>|    " force write quit file
+map <F21> :wq!<CR>|     " shift-F9 in neovim
 imap <S-F9> <ESC>:wq!<CR>|    " force write quit file
+imap <F21> <ESC>:wq!<CR>|     " shift-F9 in neovim
 map <F10> :q!<CR>|       " force quit file
 imap <F10> <ESC>:q!<CR>|       " force quit file
 map <S-F10> :wq!<CR>|    " force write quit file
+map <F22> :wq!<CR>|      " shift-F10 in neovim
 imap <S-F10> <ESC>:wq!<CR>|    " force write quit file
-map <S-F11> :set number!<CR>|                           " toggle show line numbers
-imap <S-F11> <ESC>:set number!<CR>a|                    " toggle show line numbers
+imap <F22> <ESC>:wq!<CR>|      " shift-F10 in neovim
+map <S-F11> :set number!<CR>|    " toggle show line numbers
+map <F23> :set number!<CR>|      " shift-F11 in neovim
+imap <S-F11> <ESC>:set number!<CR>a|    " toggle show line numbers
+imap <F23> <ESC>:set number!<CR>a|      " shift-F11 in neovim
 map <leader><BS> :q!<CR>|   " force quit file
 map <expr> <F12> ToggleHighlightOverlength()|         " <expr> or :call ... <CR> necessary on functions
 imap <F12> <ESC>:call ToggleHighlightOverlength()<CR>a|
 map <expr> <S-F12> ToggleHighlightMultipleSpaces()
+map <expr> <F24> ToggleHighlightMultipleSpaces()    " shift-F12 in neovim
 imap <S-F12> <ESC>:call ToggleHighlightMultipleSpaces()<CR>a
+imap <F24> <ESC>:call ToggleHighlightMultipleSpaces()<CR>a    " shift-F12 in neovim
 nmap Ô kJ
 nmap Ø O<ESC>|  " create new line above, set cursor there and go back to normal mode
 nmap ø o<ESC>|  " create new line below, set cursor there and go back to normal mode
 vmap <ENTER> "+y|  " yank the contents of the visual selection to the system clipboard
 vmap @ y/<C-R>"<CR>|   " search for selected text (characters . and * can cause problems!)
-vmap <S-F5> :sort<CR>|  " sort in visual selection
 
 " keep the cursor on its screen-line when scrolling a full page
 noremap <PageUp> <C-U><C-U>

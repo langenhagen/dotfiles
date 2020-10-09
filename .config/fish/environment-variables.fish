@@ -43,5 +43,10 @@ setenv N_PREFIX "$HOME/n"
 set -gx PATH $PATH "$HOME/n/bin"
 
 setenv FZF_DEFAULT_COMMAND "find -L . \( -path '*/.git' -o -path '*/.venv' \) -prune -o -print"
-set fzf_previewer (command -v batcat and batcat or command -v fcat and fcat or cat)
+if command -v batcat >/dev/null
+    set fzf_previewer "batcat --color=always"
+    set fzf_previewer "batcat --color=always --style=header,numbers"
+else
+    set fzf_previewer "cat"
+end
 setenv FZF_DEFAULT_OPTS "--preview '$fzf_previewer {}'"

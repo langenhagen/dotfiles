@@ -32,7 +32,6 @@ abbr -a hi 'cat ~/.histout'
 abbr -a cls 'clear'
 abbr -a mnm 'minimerk \''
 abbr -a trenn 'for i in (seq (tput cols)); printf \'\\e[31m=\'; end; printf \'\\e[m\n\''
-abbr -a gsl 'fish $SCRIPTS_DIR_PATH/grepselect.fish'
 
 abbr -a b 'bash'
 abbr -a p 'python'
@@ -68,13 +67,11 @@ abbr -a e 'vim -R "+normal :Explore\$" .'
 abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
 abbr -a xx 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
 
+abbr -a r 'rg -LSn --hidden --no-heading --no-ignore'
 abbr -a g 'grep -i'
-abbr -a h 'grep -HiRns'
 abbr -a ch 'grep -HiRns --include={\*.h,\*.hpp,\*.c,\*.cpp,\*.cc,\*.m,\*.mm,\*.pch,\*.java,\*.swift,\*.kt}'
 abbr -a cmh 'grep -HiRns --include={CMakeCache.txt,CMakeLists.txt,\*.cmake}'
 abbr -a ph 'grep -HiRns --include=\*.py --exclude-dir={.venv\*,custom-eggs,site-packages}'
-abbr -a lh 'grep -HiRns --include=\*.lua'
-abbr -a rh 'grep -HiRns --include=\*.robot'
 abbr -a cfh 'grep -HiRns --include={\*.cfg,\*.conf,\*.conf.in,\*.ini,setup.py,requirements.txt,Makefile,\*.yaml}'
 
 abbr -a gb 'git branch'

@@ -43,8 +43,9 @@ setenv VISUAL vim
 setenv PIP_REQUIRE_VIRTUALENV true
 
 setenv FZF_DEFAULT_COMMAND "find -L . \( -path '*/.git' -o -path '*/.venv' \) -prune -o -print"
+setenv FZF_DEFAULT_OPTS '--bind ctrl-d:page-down,ctrl-u:page-up'
 if command -v batcat >/dev/null
-    setenv FZF_DEFAULT_OPTS "--preview 'batcat --color=always --style=header,numbers {} 2>/dev/null || tree -Ca {} 2>/dev/null'"
+    setenv FZF_DEFAULT_OPTS "$FZF_DEFAULT_OPTS --preview 'batcat --color=always --style=header,numbers {} 2>/dev/null || tree -Ca {} 2>/dev/null'"
 else
-    setenv FZF_DEFAULT_OPTS "--preview 'cat {}'"
+    setenv FZF_DEFAULT_OPTS "$FZF_DEFAULT_OPTS --preview 'cat {}'"
 end

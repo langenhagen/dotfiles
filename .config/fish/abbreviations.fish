@@ -55,7 +55,6 @@ abbr -a tb 'tig blame'
 abbr -a ts 'tig show'
 
 abbr -a tree 'tree -C -a'
-abbr -a tre 'tree -C -a'
 abbr -a t3 'tree -C -a -L 3'
 abbr -a t3d 'tree -C -a -L 3 -d'
 

@@ -6,4 +6,3 @@
 # author: andreasl
 
 alias grep 'grep --color --exclude-dir=".git" --exclude-dir=".ipynb_checkpoints" --exclude-dir="__pycache__"'
-alias vim 'nvim'

@@ -9,12 +9,14 @@ set hidden
 set incsearch on
 set number on
 set previewer ~/.config/lf/previewer.sh
+set scrolloff 7  # leave some space at the top and the bottom of the screen when scrolling
 
 # key mappings
 map <enter> shell
 map <delete> delete
 map D delete
 map S $$SHELL
+map i $~/.config/lf/previewer.sh $f | less -R  # use a nice previewer when paging files
 
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to

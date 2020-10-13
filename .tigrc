@@ -8,7 +8,7 @@ set main-view-id-display = yes  # show commit hashes in main view
 
 color date cyan default
 color diff.diff-index cyan default
-color diff-stat         cyan    default
+color diff-stat cyan default
 
 # key binding -------------------------------------------------------------------------------------
 # !  Run the command in the foreground with output shown.

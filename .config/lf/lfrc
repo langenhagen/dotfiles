@@ -1,7 +1,4 @@
 # My, Andreas Langenhagen's, lf rc file.
-#
-# see: https://github.com/gokcehan/lf/blob/master/etc/lfrc.example
-# see: https://godoc.org/github.com/gokcehan/lf
 
 # settings
 set color256 on
@@ -15,8 +12,9 @@ set scrolloff 7  # leave some space at the top and the bottom of the screen when
 map <enter> shell
 map <delete> delete
 map D delete
+map R $~/.config/lf/bulkrename.sh "$fs"
 map S $$SHELL
-map i $~/.config/lf/previewer.sh $f | less -R  # use a nice previewer when paging files
+map i $~/.config/lf/previewer.sh "$f" | less -R  # use a nice previewer when paging files
 
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
@@ -43,3 +41,11 @@ cmd fzf_jump ${{
     lf -remote "send $id $cmd '$res'"
 }}
 map <c-e> :fzf_jump
+
+# lfrc tips & tricks ##############################################################################
+#
+# see: https://github.com/gokcehan/lf/blob/master/etc/lfrc.example
+# see: https://godoc.org/github.com/gokcehan/lf
+#
+# `$f`  stands for 1 currently selected file
+# `$fs` stands for several currently selected files

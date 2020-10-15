@@ -52,6 +52,7 @@ ln -sf "$dotfiles_path/.config/fish/vimlike-bookmarks.fish" "$HOME/.config/fish/
 
 mkdir -p "$HOME/.config/lf";
 ln -sf "$dotfiles_path/.config/lf/lfrc" "$HOME/.config/lf/lfrc";
+ln -sf "$dotfiles_path/.config/lf/bulkrename.sh" "$HOME/.config/lf/bulkrename.sh";
 ln -sf "$dotfiles_path/.config/lf/previewer.sh" "$HOME/.config/lf/previewer.sh";
 
 mkdir -p "$HOME/.config/nvim";

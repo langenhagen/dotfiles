@@ -68,7 +68,7 @@ ln -sf "$dotfiles_path/.urserver/remotes/custom" "$HOME/.urserver/remotes/";
 
 if [[ "$(uname -n)" =~ 'barn-ultra' ]]; then
     ln -sf "$dotfiles_path/.gitconfig-barn" "$HOME/.gitconfig";
-    ln -sf "$dotfiles_path/.config/.edmrc-barn" "$HOME/.config/.edmrc";
+    ln -sf "$dotfiles_path/.config/edm/edmrc-barn" "$HOME/.config/edm/edmrc";
     rm "$HOME/.config/reposets"
     ln -sf "$dotfiles_path/.config/reposets-barn" "$HOME/.config/reposets";
 
@@ -78,7 +78,7 @@ elif [[ "$(uname -n)" =~ 'bee' ]]; then
     ln -sf "$dotfiles_path/.config/reposets-bee" "$HOME/.config/reposets";
 
 elif [[ "$(uname -n)" =~ 'momox' ]]; then
-    ln -sf "$dotfiles_path/.config/.edmrc-momox" "$HOME/.config/.edmrc";
+    ln -sf "$dotfiles_path/.config/edm/edmrc-momox" "$HOME/.config/edm/edmrc";
     ln -sf "$dotfiles_path/.gitconfig-momox" "$HOME/.gitconfig";
     rm "$HOME/.config/reposets"
     ln -sf "$dotfiles_path/.config/reposets-momox" "$HOME/.config/reposets";

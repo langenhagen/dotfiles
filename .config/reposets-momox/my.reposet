@@ -27,6 +27,7 @@ repos=(
     "${HOME}/Dev/scripts:master:origin:master:origin:master"
     "${HOME}/dotfiles:master:origin:master:origin:master"
     "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/investigate:master:origin:master:origin:master"
+    "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/local-environment:master:origin:master:origin:master"
     "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/momox-graphs:master:origin:master:origin:master"
     "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/momox-scripts:master:origin:master:origin:master"
     "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/pyinvestigate:master:origin:master:origin:master"

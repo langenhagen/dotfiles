@@ -12,7 +12,6 @@
 abbr -a fconf 'cd ~/.config/fish/ ; ls'
 abbr -a sourcefish '. ~/.config/fish/config.fish'
 abbr -a editabbr 'vim -p ~/.config/fish/abbreviations.fish; source ~/.config/fish/abbreviations.fish'
-abbr -a fk 'find-and-kill-process.sh'
 abbr -a fn 'functions'
 abbr -a fns 'functions'
 abbr -a history 'history --show-time=\'%h-%d - %H:%M:%S \' | less'

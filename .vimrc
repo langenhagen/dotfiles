@@ -1,13 +1,6 @@
 " plugins ==========================================================================================
 let g:rainbow_active = 1 " or 0 ; essential for :RainbowToggle of rainbow.vim
 
-call plug#begin('~/.vim/plugged')
-
-Plug 'junegunn/fzf'
-Plug 'mechatroner/rainbow_csv'
-
-call plug#end()
-
 " settings  ========================================================================================
 filetype plugin indent on
 syntax on  " syntax highlighting. turn off if vim is too slow with :syntax off

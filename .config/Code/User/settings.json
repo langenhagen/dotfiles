@@ -1,6 +1,7 @@
 {
-    "window.zoomLevel": 0,
-    "editor.rulers": [100],
+    "editor.rulers": [
+        100
+    ],
     "editor.renderControlCharacters": false,
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -40,6 +41,15 @@
         "editorGroupHeader.tabsBackground": "#000000"
     }
     },
-    "python.dataScience.sendSelectionToInteractiveWindow": false,
-    "python.pythonPath": "/home/andreasl/Desktop/mng/PyMongo-hello/.venv/bin/python",
+    "python.defaultInterpreterPath": "/home/andreasl/.pyenv/versions/3.8.3/bin/python",
+    "window.zoomLevel": 0,
+    "terminal.integrated.scrollback": 100000,
+    "explorer.confirmDelete": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "explorer.confirmDragAndDrop": false,
+    "editor.largeFileOptimizations": false,
+    "jupyter.sendSelectionToInteractiveWindow": false,
+    "jupyter.alwaysTrustNotebooks": true,
+    "jupyter.askForKernelRestart": false,
+    "search.smartCase": true,
 }

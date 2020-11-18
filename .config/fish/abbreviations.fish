@@ -170,7 +170,10 @@ case  "*momox*"
     # Work related abbrs
     abbr -a dcu 'docker-compose up'
     abbr -a dcd 'docker-compose down'
+    abbr -a dcs 'docker-compose stop'
     abbr -a dps 'docker ps'
 
     abbr -a gcd 'git checkout develop'
+
+    abbr -a ocl 'oc login https://osm.core.mm.local:8443'
 end

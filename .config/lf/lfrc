@@ -21,14 +21,14 @@ map i $~/.config/lf/previewer.sh "$f" | less -R  # use a nice previewer when pag
 # use either file extensions and/or mime types here. Below uses an editor for
 # text files and a file opener for the rest.
 cmd open ${{
-    case $(file --mime-type -Lb $f) in
-        application/csv)            $EDITOR $fx;;
-        application/json)           $EDITOR $fx;;
-        application/x-shellscript)  $EDITOR $fx;;
-        image/*)                    feh $fx;;
-        inode/x-empty)              $EDITOR $fx;;
-        text/*)                     $EDITOR $fx;;
-        *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
+    case $(file --mime-type -Lb "$f") in
+        application/json)           $EDITOR "$fx";;
+        application/csv)            $EDITOR "$fx";;
+        application/x-shellscript)  $EDITOR "$fx";;
+        image/*)                    feh "$fx";;
+        inode/x-empty)              $EDITOR "$fx";;
+        text/*)                     $EDITOR "$fx";;
+        *) for f in $fx; do setsid $OPENER "$f" > /dev/null 2> /dev/null & done ;;
     esac
 }}
 

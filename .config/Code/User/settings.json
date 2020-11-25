@@ -52,4 +52,5 @@
     "jupyter.alwaysTrustNotebooks": true,
     "jupyter.askForKernelRestart": false,
     "search.smartCase": true,
+    "python.showStartPage": false,
 }

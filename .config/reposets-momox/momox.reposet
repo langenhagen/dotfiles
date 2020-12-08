@@ -7,4 +7,5 @@
 repos=(
     "${HOME}/momox/gitlab.bof.mm.local/fashion/prototype-adapter:develop:origin:develop::"
     "${HOME}/momox/gitlab.bof.mm.local/fashion/warehouse:develop:origin:develop::"
+    "${HOME}/momox/gitlab.bof.mm.local/fashion/pyinvestigate:master:origin:master:origin:master"
 )

@@ -4,7 +4,7 @@
 max_history_entries=11
 
 choices=(
-    'Desktop/Dropbox'
+    'Dropbox'
     'Administrative'
     'Administrative/my-user-names.txt'
     'Barn'

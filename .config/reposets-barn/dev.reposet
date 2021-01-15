@@ -17,6 +17,7 @@ repos=(
     "${HOME}/Dev/bWake:master:origin:master:origin:master"
     "${HOME}/Dev/check:master:origin:master:origin:master"
     "${HOME}/Dev/DBSCAN:master:origin:master:origin:master"
+    "${HOME}/Dev/entwicklereld:main:origin:main:origin:main"
     "${HOME}/Dev/experiments-and-tutorials:master:origin:master:origin:master"
     "${HOME}/Dev/expertises-gantt:master:origin:master:origin:master"
     "${HOME}/Dev/explore-with-dmenu:master:origin:master:origin:master"

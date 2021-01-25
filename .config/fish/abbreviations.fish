@@ -15,7 +15,7 @@ abbr -a editabbr 'vim -p ~/.config/fish/abbreviations.fish; source ~/.config/fis
 abbr -a fn 'functions'
 abbr -a fns 'functions'
 abbr -a history 'history --show-time=\'%h-%d - %H:%M:%S \' | less'
-abbr -a he 'eval (history | fzf)'
+# abbr -a he 'eval (history | fzf)'  # disabled on 2021-01-25
 abbr -a ht 'hashtag'
 abbr -a pk 'ps aux | fzf --preview "" | tr -s [:blank:] | cut -d" " -f2 | xargs -r kill'
 
@@ -32,6 +32,7 @@ abbr -a hi 'cat ~/.histout'
 
 abbr -a cls 'clear'
 abbr -a mnm 'minimerk \''
+abbr -a mbm 'money-by-minute.py'
 abbr -a trenn 'for i in (seq (tput cols)); printf \'\\e[31m=\'; end; printf \'\\e[m\n\''
 
 abbr -a b 'bash'

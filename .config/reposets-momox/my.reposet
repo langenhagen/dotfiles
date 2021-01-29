@@ -13,6 +13,7 @@ repos=(
     "${HOME}/Barn/Notes/blog:master:origin:master:origin:master"
     "${HOME}/Barn/Notes/recipes:master:origin:master:origin:master"
     "${HOME}/Dev/_protofiles:master:origin:master:origin:master"
+    "${HOME}/Dev/awesome-lists:main:origin:main:origin:main"
     "${HOME}/Dev/barn-bits:master:origin:master:origin:master"
     "${HOME}/Dev/barn-bookmark-manager:master:origin:master:origin:master"
     "${HOME}/Dev/barn-scrape:master:origin:master:origin:master"

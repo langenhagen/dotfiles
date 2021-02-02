@@ -105,8 +105,9 @@ abbr -a gpl 'git pull --rebase'
 abbr -a gplm 'git pull --rebase origin master'
 
 abbr -a gps 'git push'
-abbr -a gpsg 'git push origin HEAD:refs/for/master'
-abbr -a gpsm 'git push origin HEAD:master'
+abbr -a gpf 'git push -f'
+# abbr -a gpsg 'git push origin HEAD:refs/for/master' # disabled on 2021-02-02
+# abbr -a gpsm 'git push origin HEAD:master'  # disabled on 2021-02-02
 
 abbr -a gra 'git rebase --abort'
 abbr -a grc 'git rebase --continue'

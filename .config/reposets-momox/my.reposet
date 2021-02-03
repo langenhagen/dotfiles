@@ -18,7 +18,7 @@ repos=(
     "${HOME}/Dev/barn-bookmark-manager:master:origin:master:origin:master"
     "${HOME}/Dev/barn-scrape:master:origin:master:origin:master"
     "${HOME}/Dev/check:master:origin:master:origin:master"
-    "${HOME}/Dev/entwicklerheld:main:origin:main:origin:main"
+    "${HOME}/Dev/coding-challenges:main:origin:main:origin:main"
     "${HOME}/Dev/experiments-and-tutorials:master:origin:master:origin:master"
     "${HOME}/Dev/expertises-gantt:master:origin:master:origin:master"
     "${HOME}/Dev/explore-with-dmenu:master:origin:master:origin:master"

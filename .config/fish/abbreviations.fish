@@ -16,8 +16,6 @@ abbr -a fn 'functions'
 abbr -a fns 'functions'
 abbr -a history 'history --show-time=\'%h-%d - %H:%M:%S \' | less'
 # abbr -a he 'eval (history | fzf)'  # disabled on 2021-01-25
-abbr -a ht 'hashtag'
-abbr -a pk 'ps aux | fzf --preview "" | tr -s [:blank:] | cut -d" " -f2 | xargs -r kill'
 
 abbr -a tmls 'tmux ls'
 abbr -a tmk 'tmux kill-session -t'
@@ -26,6 +24,7 @@ abbr -a tmw 'tmux kill-window -t'
 abbr -a c. 'cd ..'
 abbr -a cd. 'cd ..'
 abbr -a cd.. 'cd ..'
+abbr -a cdr  'cd (git rev-parse --show-toplevel)'  # cd to git project root
 
 abbr -a !! 'eval \$history[1]'
 abbr -a hi 'cat ~/.histout'
@@ -35,19 +34,19 @@ abbr -a mnm 'minimerk \''
 abbr -a mbm 'money-by-minute.py'
 abbr -a trenn 'for i in (seq (tput cols)); printf \'\\e[31m=\'; end; printf \'\\e[m\n\''
 
+abbr -a psg 'ps aux | grep -i'
+abbr -a pk 'ps aux | fzf --preview "" | tr -s [:blank:] | cut -d" " -f2 | xargs -r kill'
+
 abbr -a b 'bash'
 abbr -a p 'python'
 abbr -a bp 'bpython'
 abbr -a cct 'vim --cmd \'set t_ti= t_te=\' +redraw +q'  # similar to cat, but via vim
-abbr -a cdr  'cd (git rev-parse --show-toplevel)'  # abbreviation for cd to project root
-abbr -a json 'json_pp'  # pretty-print json output
+abbr -a f 'find -L . -iname'
+abbr -a ht 'hashtag'
 abbr -a l 'lf'
-abbr -a psg 'ps aux | grep -i'
 abbr -a shch 'shellcheck -x --exclude SC2059'
 abbr -a vd 'vimdiff'
 abbr -a wcl 'wc -l'
-
-abbr -a f 'find -L . -iname'
 
 abbr -a ca 'conda activate'
 abbr -a cda 'conda deactivate'
@@ -125,10 +124,14 @@ abbr -a grs 'git reset --soft HEAD~1'
 abbr -a rpa 'reposet apply'
 abbr -a rps 'reposet'
 
+abbr -a dcu 'docker-compose up'
+abbr -a dcd 'docker-compose down'
+abbr -a dcs 'docker-compose stop'
+abbr -a dps 'docker ps'
+
 switch (uname -n)
 case "barn-ultra" "*momox*"
     # Desktop machine related abbrs
-
     abbr -a now 'date \'+%s\' | xclip -fi -selection clipboard'  # the current timestamp since epoch in seconds
 
     abbr -a prt 'cd "$PROTOFILES_DIR_PATH" ; find "$PROTOFILES_DIR_PATH" -name "*_proto.*"'
@@ -170,11 +173,6 @@ end
 switch (uname -n)
 case  "*momox*"
     # Work related abbrs
-    abbr -a dcu 'docker-compose up'
-    abbr -a dcd 'docker-compose down'
-    abbr -a dcs 'docker-compose stop'
-    abbr -a dps 'docker ps'
-
     abbr -a gcd 'git checkout develop'
 
     abbr -a ocl 'oc login https://osm.core.mm.local:8443'

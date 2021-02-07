@@ -32,6 +32,7 @@ abbr -a hi 'cat ~/.histout'
 abbr -a cls 'clear'
 abbr -a mnm 'minimerk \''
 abbr -a mbm 'money-by-minute.py'
+abbr -a pc 'playground-cpp-compile.sh'
 abbr -a trenn 'for i in (seq (tput cols)); printf \'\\e[31m=\'; end; printf \'\\e[m\n\''
 
 abbr -a psg 'ps aux | grep -i'

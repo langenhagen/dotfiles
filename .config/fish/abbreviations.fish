@@ -48,6 +48,7 @@ abbr -a l 'lf'
 abbr -a shch 'shellcheck -x --exclude SC2059'
 abbr -a vd 'vimdiff'
 abbr -a wcl 'wc -l'
+abbr -a pi 'xclip -selection clipboard -t image/png -o > "$HOME/Desktop/"(date +%Y-%m-%d-%H-%M-%S)"-clipboard.png"'  # paste an image from clipboard to file
 
 abbr -a ca 'conda activate'
 abbr -a cda 'conda deactivate'

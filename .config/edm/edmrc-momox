@@ -21,7 +21,7 @@ choices=(
     'Media'
     'Media/Cam'
     'Media/Audio'
-    'Media/WhatsApp-Media'
+    'Media/WhatsApp'
     'Work'
     'Work/2020-Momox'
     'Work/2020-Momox/Momox-101.md'

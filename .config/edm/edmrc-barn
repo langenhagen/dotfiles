@@ -14,12 +14,11 @@ choices=(
     'Barn/Notes/Rezepte.docx'
     'Dev'
     'Dev/_protofiles/bash_proto.sh'
-    'Dev/Jupyter/My-Finance-Analysis'
     'Media'
     'Media/Audio'
     'Media/Cam'
     'Media/Fotos'
-    'Media/WhatsApp-Media'
+    'Media/WhatsApp'
     'Work'
     "$(cat "$history_file")"
 )

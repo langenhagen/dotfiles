@@ -69,6 +69,7 @@ abbr -a e 'vim -R "+normal :Explore\$" .'
 abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
 abbr -a xx 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
 
+abbr -a h 'grep -HiRns'
 abbr -a r 'rg -LSn --hidden --no-heading'
 abbr -a g 'grep -i'
 abbr -a ch 'grep -HiRns --include={\*.h,\*.hpp,\*.c,\*.cpp,\*.cc,\*.m,\*.mm,\*.pch,\*.java,\*.swift,\*.kt}'

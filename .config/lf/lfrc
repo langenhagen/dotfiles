@@ -1,7 +1,6 @@
 # My, Andreas Langenhagen's, lf rc file.
 
 # settings
-set color256 on
 set hidden
 set incsearch on
 set number on

@@ -15,6 +15,7 @@ switch (uname -n)
         setenv TRICKS_FILE_PATH "$HOME/Dev/Zeugs/tricks.sh"
 
     case "bee"
+        setenv CHECK_DIR_PATH "$HOME/scripts/check"
         setenv SCRIPTS_DIR_PATH "$HOME/scripts/generic-scripts"
 end
 
@@ -26,6 +27,7 @@ switch (uname -n)
 end
 
 set -gx PATH $PATH '/usr/local/sbin'
+set -gx PATH $PATH '.local/bin'
 set -gx PATH $PATH "$HOME/go/bin"
 set -gx PATH $PATH "$HOME/.cargo/bin"
 set -gx PATH $PATH "$HOME/.poetry/bin"

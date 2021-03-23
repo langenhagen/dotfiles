@@ -156,7 +156,7 @@ autocmd InsertLeave * call RemoveKeywordsForAutoCompletion()
 
 " toggle commenting ================================================================================
 let b:comment_prefix = "#"
-au BufRead,BufNewFile *.{c,cpp,h,hpp,cs,java,js} let b:comment_prefix = "//"
+au BufRead,BufNewFile *.{c,cpp,h,hpp,cs,go,java,js} let b:comment_prefix = "//"
 au BufRead,BufNewFile *.lua let b:comment_prefix = "--"
 au BufRead,BufNewFile *.{py,sh} let b:comment_prefix = "#"
 au BufRead,BufNewFile .vimrc let b:comment_prefix = "\""

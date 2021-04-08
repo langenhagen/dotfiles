@@ -36,7 +36,7 @@ abbr -a pc 'playground-cpp-compile.sh'
 abbr -a trenn 'for i in (seq (tput cols)); printf \'\\e[31m=\'; end; printf \'\\e[m\n\''
 
 abbr -a psg 'ps aux | grep -i'
-abbr -a pk 'ps aux | fzf --preview "" | tr -s [:blank:] | cut -d" " -f2 | xargs -r kill'
+abbr -a pk 'ps aux | fzf --preview "" | tr -s "[:blank:]" | cut -d" " -f2 | xargs -r kill'
 
 abbr -a b 'bash'
 abbr -a p 'python'

@@ -26,3 +26,6 @@ command -v direnv 1>/dev/null 2>&1; and eval (direnv hook fish)
 
 
 ### the initial commands ###########################################################################
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/andreasl/google-cloud-sdk/path.fish.inc' ]; . '/home/andreasl/google-cloud-sdk/path.fish.inc'; end

@@ -180,5 +180,5 @@ case  "*momox*"
 
     abbr -a ocl 'oc login https://osm.core.mm.local:8443'
 
-    abbr -a bp2 'cd $HOME/py2; bpython; cd -'
+    abbr -a b2 'cd $HOME/py2; bpython; cd -'
 end

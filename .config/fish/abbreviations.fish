@@ -179,4 +179,6 @@ case  "*momox*"
     abbr -a gcd 'git checkout develop'
 
     abbr -a ocl 'oc login https://osm.core.mm.local:8443'
+
+    abbr -a bp2 'cd $HOME/py2; bpython; cd -'
 end

@@ -26,6 +26,7 @@ repos=(
     "${HOME}/Dev/langenhagen.github.io:master:origin:master:origin:master"
     "${HOME}/Dev/reposet:master:origin:master:origin:master"
     "${HOME}/Dev/scripts:master:origin:master:origin:master"
+    "${HOME}/Dev/stock-notifier:main:origin:main:origin:main"
     "${HOME}/Dev/wealth:main:origin:main:origin:main"
     "${HOME}/dotfiles:master:origin:master:origin:master"
     "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/investigate:master:origin:master:origin:master"

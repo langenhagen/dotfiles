@@ -45,6 +45,7 @@ abbr -a cct 'vim --cmd \'set t_ti= t_te=\' +redraw +q'  # similar to cat, but vi
 abbr -a f 'find -L . -iname'
 abbr -a ht 'hashtag'
 abbr -a l 'lf'
+abbr -a mkd 'mkdir -p'
 abbr -a shch 'shellcheck -x --exclude SC2059'
 abbr -a vd 'vimdiff'
 abbr -a wcl 'wc -l'

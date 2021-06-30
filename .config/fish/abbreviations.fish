@@ -24,7 +24,7 @@ abbr -a tmw 'tmux kill-window -t'
 abbr -a c. 'cd ..'
 abbr -a cd. 'cd ..'
 abbr -a cd.. 'cd ..'
-abbr -a cdr  'cd (git rev-parse --show-toplevel)'  # cd to git project root
+abbr -a cr  'cd (git rev-parse --show-toplevel)'  # cd to git project root
 
 abbr -a !! 'eval \$history[1]'
 abbr -a hi 'cat ~/.histout'

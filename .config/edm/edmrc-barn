@@ -5,8 +5,8 @@ max_history_entries=11
 
 choices=(
     'Dropbox'
-    'Administrative'
-    'Administrative/usernames.txt'
+    'Admin'
+    'Admin/usernames.txt'
     'Barn'
     'Barn/Ideas'
     'Barn/Kaufen-Verkaufen'

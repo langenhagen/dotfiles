@@ -148,9 +148,10 @@ case "barn-ultra" "*momox*"
     abbr -a olh 'one-line-help'
 
     abbr -a c 'code'
+    abbr -a pv 'python --version'
     abbr -a s 'subl'
-    abbr -a xs 'xargs subl'
     abbr -a sh "subl (eval \$history[1])"
+    abbr -a xs 'xargs subl'
 
     switch (uname)
     # OS dependent abbrs
@@ -174,16 +175,4 @@ case "barn-ultra" "*momox*"
         abbr -a pbcopy 'xclip -selection clipboard'
         abbr -a pbpaste 'xclip -selection clipboard -o'
     end
-end
-
-switch (uname -n)
-case  "*momox*"
-    # Work related abbrs
-    abbr -a gcd 'git checkout develop'
-
-    abbr -a ocl 'oc login https://osm.core.mm.local:8443'
-
-    abbr -a b2 'cd $HOME/py2; bpython; cd -'
-
-    abbr -a pv 'python --version'
 end

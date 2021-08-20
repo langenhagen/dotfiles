@@ -148,6 +148,7 @@ case "barn-ultra" "*momox*"
     abbr -a olh 'one-line-help'
 
     abbr -a c 'code'
+    abbr -a pe 'python -m venv .venv; source .venv/bin/activate.fish'
     abbr -a pv 'python --version'
     abbr -a s 'subl'
     abbr -a sh "subl (eval \$history[1])"

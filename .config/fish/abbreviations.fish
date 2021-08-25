@@ -19,6 +19,7 @@ abbr -a history 'history --show-time=\'%h-%d - %H:%M:%S \' | less'
 
 abbr -a tmls 'tmux ls'
 abbr -a tmk 'tmux kill-session -t'
+abbr -a tmp 'tmux kill-pane -t'
 abbr -a tmw 'tmux kill-window -t'
 
 abbr -a c. 'cd ..'

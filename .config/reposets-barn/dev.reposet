@@ -4,7 +4,7 @@
 # author: andreasl
 
 repos=(
-    "${HOME}/Dev/_protofiles:master:origin:master:origin:master"
+    "${HOME}/Dev/protofiles:master:origin:master:origin:master"
     "${HOME}/Dev/awesome-lists:main:origin:main:origin:main"
     "${HOME}/Dev/barn-bar:master:origin:master:origin:master"
     "${HOME}/Dev/barn-bits:master:origin:master:origin:master"

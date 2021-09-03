@@ -13,7 +13,7 @@ choices=(
     'Barn/Notes'
     'Barn/Notes/Rezepte.docx'
     'Dev'
-    'Dev/_protofiles/bash_proto.sh'
+    'Dev/protofiles/bash_proto.sh'
     'Media'
     'Media/Audio'
     'Media/Cam'

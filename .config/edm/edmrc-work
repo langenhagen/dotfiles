@@ -11,9 +11,9 @@ choices=(
     'Barn/Ideas'
     'Barn/Kaufen-Verkaufen'
     'Barn/Notes'
-    'momox'
-    'momox/stuff'
-    'momox/stuff/scribbles'
+    'tier'
+    'tier/stuff'
+    'tier/stuff/scribbles'
     'Dev'
     'Dev/protofiles'
     'Dev/protofiles/bash_proto.sh'
@@ -23,9 +23,9 @@ choices=(
     'Media/Audio'
     'Media/WhatsApp'
     'Work'
-    'Work/2020-Momox'
-    'Work/2020-Momox/Momox-101.md'
-    'Work/2020-Momox/journal.md'
+    'Work/2021-Tier'
+    'Work/2021-Tier/101.md'
+    'Work/2021-Tier/journal.md'
     "$(cat "$history_file")"
 )
 

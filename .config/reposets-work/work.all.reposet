@@ -1,0 +1,12 @@
+#!/bin/bash
+# A sane combination of my job's reposets, containing all personal and company repos.
+# Remotes are both company remotes and my own remotes.
+#
+# author: andreasl
+
+source "${HOME}/.config/reposets/work.my.reposet"
+array+=(${repos[@]})
+source "${HOME}/.config/reposets/work.reposet"
+array+=(${repos[@]})
+
+repos=(${array[@]})

@@ -1,6 +1,7 @@
 #!/bin/bash
-# My own projects decicated to my job.
-# Remotes are both internal job remotes as well as my private remotes.
+# My default job-related reposet.
+# A subset of the job repos that I work with regularly.
+# Remotes are a mix of company-remotes and my own remotes.
 #
 # author: andreasl
 
@@ -17,4 +18,5 @@ repos=(
     "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/pyinvestigate:master:origin:master:momox:master"
     "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/setup-ubuntu:master:origin:master:origin:master"
     "${HOME}/momox/gitlab.bof.mm.local/alangenhagen/setup-ubuntu:master:origin:master:momox:master"
+    "${HOME}/momox/gitlab.bof.mm.local/fashion/warehouse:develop:origin:develop::"
 )

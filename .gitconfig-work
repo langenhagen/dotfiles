@@ -1,7 +1,7 @@
 [color]
     ui = auto
 [user]
-    email = andreas.langenhagen@momox.biz
+    email = andreas.langenhagen@tier.app
     name = Andreas Langenhagen
 [rebase]
     autostash = true

@@ -5,7 +5,7 @@
 # author: andreasl
 
 switch (uname -n)
-    case "*barn-ultra*" "*momox*"
+    case "*barn-ultra*" "*work*"
         setenv BUCKET_LIST_FILE_PATH "$HOME/Barn/Notes/bucket-list.txt"
         setenv CHECK_DIR_PATH "$HOME/Dev/check"
         setenv ONE_LINE_HELP_FILE_PATH "$HOME/Dev/Zeugs/one-line-help.txt"
@@ -19,8 +19,8 @@ switch (uname -n)
 end
 
 switch (uname -n)
-    case  "*momox*"
-        set -gx JOURNAL_PATH "$HOME/Work/2020-Momox/journal.md"
+    case  "*work*"
+        set -gx JOURNAL_PATH "$HOME/Work/2021-Tier/journal.md"
 end
 
 set -gx PATH $PATH '/usr/local/sbin'
@@ -35,7 +35,7 @@ set -gx PATH $PATH "$HOME/n/bin"
 set -gx PATH $PATH "$CHECK_DIR_PATH"
 set -gx PATH $PATH "$SCRIPTS_DIR_PATH"
 
-setenv LANG "en_US.UTF-8"
+setenv LANG 'en_US.UTF-8'
 setenv EDITOR vim
 setenv VISUAL vim
 

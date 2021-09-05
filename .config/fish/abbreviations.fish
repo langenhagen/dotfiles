@@ -137,7 +137,7 @@ abbr -a dcs 'docker-compose stop'
 abbr -a dps 'docker ps'
 
 switch (uname -n)
-case "barn-ultra" "*momox*"
+case "barn-ultra" "*work*"
     # Desktop machine related abbrs
     abbr -a now 'date \'+%s\' | xclip -fi -selection clipboard'  # the current timestamp since epoch in seconds
 

@@ -74,11 +74,11 @@ elif [[ "$(uname -n)" =~ 'bee' ]]; then
     rm "$HOME/.config/reposets"
     ln -sf "$dotfiles_path/.config/reposets-bee" "$HOME/.config/reposets";
 
-elif [[ "$(uname -n)" =~ 'momox' ]]; then
-    ln -sf "$dotfiles_path/.config/edm/edmrc-momox" "$HOME/.config/edm/edmrc";
-    ln -sf "$dotfiles_path/.gitconfig-momox" "$HOME/.gitconfig";
+elif [[ "$(uname -n)" =~ 'work' ]]; then
+    ln -sf "$dotfiles_path/.config/edm/edmrc-work" "$HOME/.config/edm/edmrc";
+    ln -sf "$dotfiles_path/.gitconfig-work" "$HOME/.gitconfig";
     rm "$HOME/.config/reposets"
-    ln -sf "$dotfiles_path/.config/reposets-momox" "$HOME/.config/reposets";
+    ln -sf "$dotfiles_path/.config/reposets-work" "$HOME/.config/reposets";
 
     ln -sf "$dotfiles_path/.config/autostart/open-journal.desktop" "$HOME/.config/autostart/open-journal.desktop";
 fi

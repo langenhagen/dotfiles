@@ -42,7 +42,7 @@ abbr -a pk 'ps aux | fzf --preview "" | tr -s "[:blank:]" | cut -d" " -f2 | xarg
 abbr -a b 'bash'
 abbr -a p 'python'
 abbr -a bp 'bpython'
-abbr -a cct 'vim --cmd \'set t_ti= t_te=\' +redraw +q'  # similar to cat, but via vim
+abbr -a cct 'vim --cmd "set t_ti= t_te=" +redraw +q'  # similar to cat, but via vim
 abbr -a f 'find -L . -iname'
 abbr -a ht 'hashtag'
 abbr -a l 'lf'
@@ -65,8 +65,8 @@ abbr -a t3 'tree -C -a -L 3'
 abbr -a t3d 'tree -C -a -L 3 -d'
 
 abbr -a v 'vim -p'
-abbr -a vg "vim -p (cat ~/.histout)"
-abbr -a vh "vim -p (eval \$history[1])"
+abbr -a vg 'vim -p (cat ~/.histout)'
+abbr -a vh 'vim -p (eval $history[1])'
 abbr -a e 'vim -R "+normal :Explore\$" .'
 
 abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
@@ -75,7 +75,7 @@ abbr -a xx 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child 
 abbr -a h 'grep -HiRns'
 abbr -a r 'rg -LSn --hidden --no-heading'
 abbr -a g 'grep -i'
-abbr -a ch 'grep -HiRns --include={\*.h,\*.hpp,\*.c,\*.cpp,\*.cc,\*.m,\*.mm,\*.pch,\*.java,\*.swift,\*.kt}'
+abbr -a ch 'grep -HiRns --include=\*.{h,hpp,c,cpp,cc,m,mm,pch,java,swift,kt}'
 abbr -a cmh 'grep -HiRns --include={CMakeCache.txt,CMakeLists.txt,\*.cmake}'
 abbr -a ph 'grep -HiRns --include=\*.py --exclude-dir={.venv\*,custom-eggs,site-packages}'
 abbr -a cfh 'grep -HiRns --include={\*.cfg,\*.conf,\*.conf.in,\*.ini,setup.py,requirements.txt,Makefile,\*.yaml}'
@@ -152,7 +152,7 @@ case "barn-ultra" "*momox*"
     abbr -a pe 'python -m venv .venv; source .venv/bin/activate.fish'
     abbr -a pv 'python --version'
     abbr -a s 'subl'
-    abbr -a sh "subl (eval \$history[1])"
+    abbr -a sh 'subl (eval $history[1])'
     abbr -a xs 'xargs subl'
 
     switch (uname)
@@ -162,16 +162,16 @@ case "barn-ultra" "*momox*"
         abbr -a xcode 'open -a Xcode'
         abbr -a o 'open .'
         abbr -a xo 'xargs xdg-open'
-        abbr -a oh "open (eval \$history[1])"
+        abbr -a oh 'open (eval $history[1])'
 
     case  'Linux'
         abbr -a o 'xdg-open'
         abbr -a o. 'xdg-open .'
         abbr -a ox 'xdg-open .; exit'
         abbr -a xo 'xargs xdg-open'
-        abbr -a oh "for f in (eval \$history[1]); xdg-open \"\$f\"; end"
-        abbr -a ho "eval \$history[1] | xclip -fi -selection clipboard > ~/.histout"
-        abbr -a xh "eval \$history[1] | xclip -fi -selection clipboard > ~/.histout"
+        abbr -a oh 'for f in (eval $history[1]); xdg-open "$f"; end'
+        abbr -a ho 'eval \$history[1] | xclip -fi -selection clipboard > ~/.histout'
+        abbr -a xh 'eval \$history[1] | xclip -fi -selection clipboard > ~/.histout'
         abbr -a goo "eval \$history[1] | sed 's|\(.+*\):[0-9]*:.*|\1|' | sed '/^Binary file.*matches\$/d' | sort -u | xclip -fi -selection clipboard | tee ~/.histout"
 
         abbr -a pbcopy 'xclip -selection clipboard'

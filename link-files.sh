@@ -68,6 +68,8 @@ if [[ "$(uname -n)" =~ 'barn-ultra' ]]; then
     ln -sf "$dotfiles_path/.config/edm/edmrc-barn" "$HOME/.config/edm/edmrc";
     rm "$HOME/.config/reposets"
     ln -sf "$dotfiles_path/.config/reposets-barn" "$HOME/.config/reposets";
+    mkdir -p "$HOME/.config/Nextcloud";
+    ln -sf "$dotfiles_path/.config/Nextcloud/sync-exclude.lst" "$HOME/.config/Nextcloud/sync-exclude.lst"
 
 elif [[ "$(uname -n)" =~ 'bee' ]]; then
     ln -sf "$dotfiles_path/.gitconfig-barn" "$HOME/.gitconfig";
@@ -79,8 +81,10 @@ elif [[ "$(uname -n)" =~ 'work' ]]; then
     ln -sf "$dotfiles_path/.gitconfig-work" "$HOME/.gitconfig";
     rm "$HOME/.config/reposets"
     ln -sf "$dotfiles_path/.config/reposets-work" "$HOME/.config/reposets";
-
     ln -sf "$dotfiles_path/.config/autostart/open-journal.desktop" "$HOME/.config/autostart/open-journal.desktop";
+    mkdir -p "$HOME/.config/Nextcloud";
+    ln -sf "$dotfiles_path/.config/Nextcloud/sync-exclude.lst" "$HOME/.config/Nextcloud/sync-exclude.lst"
+
 fi
 
 if [ "$(uname)" == 'Linux' ]; then

@@ -24,5 +24,7 @@
     conflictstyle = diff3
 [mergetool]
     prompt = false
+[init]
+	defaultBranch = main
 [push]
 	default = simple

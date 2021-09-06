@@ -21,11 +21,6 @@ test -e ~/miniconda3/etc/fish/conf.d/conda.fish; and source ~/miniconda3/etc/fis
 test -e ~/.rbenv/bin/rbenv; and status --is-interactive; and source (~/.rbenv/bin/rbenv init - | psub)
 
 command -v pyenv 1>/dev/null 2>&1; and pyenv init - | source
-
 command -v direnv 1>/dev/null 2>&1; and eval (direnv hook fish)
 
-
 ### the initial commands ###########################################################################
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/andreasl/google-cloud-sdk/path.fish.inc' ]; . '/home/andreasl/google-cloud-sdk/path.fish.inc'; end

@@ -84,20 +84,20 @@ elif [[ "$(uname -n)" =~ 'work' ]]; then
 fi
 
 if [ "$(uname)" == 'Linux' ]; then
-    mkdir -p "$HOME/.config/sublime-text-3";
-    ln -sf "$dotfiles_path/.config/sublime-text-3/Packages" "$HOME/.config/sublime-text-3/";
-    mkdir -p "$HOME/.config/sublime-text-3/Installed Packages";
-    ln -sf "$dotfiles_path/.config/sublime-text-3/Installed Packages/Theme - Asphalt.sublime-package" \
-        "$HOME/.config/sublime-text-3/Installed Packages/Theme - Asphalt.sublime-package";
+    mkdir -p "$HOME/.config/sublime-text";
+    ln -sf "$dotfiles_path/.config/sublime-text/Packages" "$HOME/.config/sublime-text/";
+    mkdir -p "$HOME/.config/sublime-text/Installed Packages";
+    ln -sf "$dotfiles_path/.config/sublime-text/Installed Packages/Theme - Asphalt.sublime-package" \
+        "$HOME/.config/sublime-text/Installed Packages/Theme - Asphalt.sublime-package";
     mkdir -p "$HOME/.config/Code/User"
     ln -sf "$dotfiles_path/.config/Code/User/keybindings.json" "$HOME/.config/Code/User/keybindings.json";
     ln -sf "$dotfiles_path/.config/Code/User/settings.json" "$HOME/.config/Code/User/settings.json";
 
 elif [ "$(uname)" == 'Darwin' ]; then
-    mkdir -p "$HOME/.config/sublime-text-3";
-    ln -sf "$dotfiles_path/.config/sublime-text-3/Packages" "$HOME/Library/Application Support/Sublime Text 3/";
-    mkdir -p "$HOME/.config/sublime-text-3/Installed Packages";
-    ln -sf "$dotfiles_path/.config/sublime-text-3/Installed Packages/Theme - Asphalt.sublime-package" \
+    mkdir -p "$HOME/.config/sublime-text";
+    ln -sf "$dotfiles_path/.config/sublime-text/Packages" "$HOME/Library/Application Support/Sublime Text 3/";
+    mkdir -p "$HOME/.config/sublime-text/Installed Packages";
+    ln -sf "$dotfiles_path/.config/sublime-text/Installed Packages/Theme - Asphalt.sublime-package" \
         "$HOME/Library/Application Support/Sublime Text 3/Installed Packages/Theme - Asphalt.sublime-package";
 
     # set iterm2 config settings

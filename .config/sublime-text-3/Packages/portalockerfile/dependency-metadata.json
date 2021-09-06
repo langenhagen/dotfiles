@@ -1,1 +1,0 @@
-{"url": "https://github.com/evandroforks/portalockerfile/issues", "platforms": ["*"], "sublime_text": ">=3114", "description": "An extended version of portalocker to lock files in Python using the with statement", "version": "2.0.3"}

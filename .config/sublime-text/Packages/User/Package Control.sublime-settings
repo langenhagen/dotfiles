@@ -6,6 +6,7 @@
 	],
 	"installed_packages":
 	[
+		"Calculate",
 		"Clang Format",
 		"Clickable URLs",
 		"CMake",
@@ -29,6 +30,6 @@
 		"Theme - Asphalt",
 		"Tmux Syntax Highlight",
 		"TrailingSpaces",
-		"Wrap Plus"
+		"Wrap Plus",
 	],
 }

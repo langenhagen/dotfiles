@@ -170,8 +170,8 @@ case "barn-ultra" "*work*"
         abbr -a ox 'xdg-open .; exit'
         abbr -a xo 'xargs xdg-open'
         abbr -a oh 'for f in (eval $history[1]); xdg-open "$f"; end'
-        abbr -a ho 'eval \$history[1] | xclip -fi -selection clipboard > ~/.histout'
-        abbr -a xh 'eval \$history[1] | xclip -fi -selection clipboard > ~/.histout'
+        abbr -a ho 'eval $history[1] | xclip -fi -selection clipboard > ~/.histout'
+        abbr -a xh 'eval $history[1] | xclip -fi -selection clipboard > ~/.histout'
         abbr -a goo "eval \$history[1] | sed 's|\(.+*\):[0-9]*:.*|\1|' | sed '/^Binary file.*matches\$/d' | sort -u | xclip -fi -selection clipboard | tee ~/.histout"
 
         abbr -a pbcopy 'xclip -selection clipboard'

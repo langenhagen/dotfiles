@@ -1,11 +1,8 @@
 #!/bin/bash
 # All company-owned projects.
-# All remotes are internal company remotes.
+# All remotes are company remotes.
 #
 # author: andreasl
 
 repos=(
-    "${HOME}/momox/gitlab.bof.mm.local/fashion/prototype-adapter:develop:origin:develop::"
-    "${HOME}/momox/gitlab.bof.mm.local/fashion/warehouse:develop:origin:develop::"
-    "${HOME}/momox/gitlab.bof.mm.local/fashion/pyinvestigate:master:origin:master:origin:master"
 )

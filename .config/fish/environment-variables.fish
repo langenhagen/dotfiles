@@ -21,24 +21,22 @@ end
 switch (uname -n)
     case  "*work*"
         set -gx JOURNAL_PATH "$HOME/Work/2021-Tier/journal.md"
+
+        set -gx PATH "$HOME/.poetry/bin" $PATH
 end
 
-set -gx PATH $PATH '/usr/local/sbin'
-set -gx PATH $PATH "$HOME/.local/bin"
-set -gx PATH $PATH "$HOME/go/bin"
-set -gx PATH $PATH "$HOME/.cargo/bin"
-set -gx PATH $PATH "$HOME/.poetry/bin"
-set -gx PATH $PATH "$HOME/.rbenv/bin"
-set -gx PATH $PATH "$HOME/.pyenv/bin"
-set -gx PATH $PATH "$HOME/.pyenv/shims"
-setenv N_PREFIX "$HOME/n"
-set -gx PATH $PATH "$HOME/n/bin"
-set -gx PATH $PATH "$CHECK_DIR_PATH"
-set -gx PATH $PATH "$SCRIPTS_DIR_PATH"
+set -gx PATH "$HOME/go/bin" $PATH
+set -gx PATH "$HOME/.rbenv/bin" $PATH
+set -gx PATH "$HOME/.pyenv/bin" $PATH
+set -gx PATH "$HOME/.pyenv/shims" $PATH
+set -gx PATH "$CHECK_DIR_PATH" $PATH
+set -gx PATH "$SCRIPTS_DIR_PATH" $PATH
 
 setenv LANG 'en_US.UTF-8'
 setenv EDITOR vim
 setenv VISUAL vim
+
+setenv N_PREFIX "$HOME/n"
 
 setenv PIP_REQUIRE_VIRTUALENV true
 

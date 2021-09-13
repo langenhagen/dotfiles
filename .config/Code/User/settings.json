@@ -41,7 +41,6 @@
         "editorGroupHeader.tabsBackground": "#000000"
     }
     },
-    "python.defaultInterpreterPath": "/home/andreasl/.pyenv/versions/3.8.3/bin/python",
     "window.zoomLevel": 0,
     "terminal.integrated.scrollback": 100000,
     "explorer.confirmDelete": false,

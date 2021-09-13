@@ -1,10 +1,10 @@
 # My personal fish config file.
 #
-# Should work on all platforms, including Mac OS with iterm2.
+# Should work on Linux and Mac OS with iterm2.
 #
 # author: andreasl
 
-set fish_greeting ""  # deactivates the fish welcome message
+set fish_greeting ""  # deactivate the fish welcome message
 
 ### sourcing #######################################################################################
 

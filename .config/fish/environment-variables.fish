@@ -36,7 +36,7 @@ setenv LANG 'en_US.UTF-8'
 setenv EDITOR vim
 setenv VISUAL vim
 
-setenv N_PREFIX "$HOME/n"
+setenv N_PREFIX "$HOME/n"  # remove after you run only Ubuntu >=20
 
 setenv PIP_REQUIRE_VIRTUALENV true
 

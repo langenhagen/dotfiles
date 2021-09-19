@@ -17,7 +17,7 @@ choices=(
     'Dev'
     'Dev/protofiles'
     'Dev/protofiles/bash_proto.sh'
-    'Dev/setup-ubuntu-18'
+    'Dev/setup-my-ubuntu'
     'Media'
     'Media/Cam'
     'Media/Audio'

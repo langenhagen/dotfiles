@@ -41,7 +41,6 @@
         "editorGroupHeader.tabsBackground": "#000000"
     }
     },
-    "window.zoomLevel": 0,
     "terminal.integrated.scrollback": 100000,
     "explorer.confirmDelete": false,
     "workbench.startupEditor": "newUntitledFile",
@@ -52,4 +51,5 @@
     "jupyter.askForKernelRestart": false,
     "search.smartCase": true,
     "python.showStartPage": false,
+    "security.workspace.trust.untrustedFiles": "open",
 }

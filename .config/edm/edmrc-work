@@ -11,9 +11,9 @@ choices=(
     'Barn/Ideas'
     'Barn/Kaufen-Verkaufen'
     'Barn/Notes'
-    'tier'
-    'tier/stuff'
-    'tier/stuff/scribbles'
+    'micropsi'
+    'micropsi/stuff'
+    'micropsi/stuff/scribbles'
     'Dev'
     'Dev/protofiles'
     'Dev/protofiles/bash_proto.sh'
@@ -23,9 +23,9 @@ choices=(
     'Media/Audio'
     'Media/WhatsApp'
     'Work'
-    'Work/2021-Tier'
-    'Work/2021-Tier/101.md'
-    'Work/2021-Tier/journal.md'
+    'Work/2021-Micropsi'
+    'Work/2021-Micropsi/101.md'
+    'Work/2021-Micropsi/journal.md'
     "$(cat "$history_file")"
 )
 

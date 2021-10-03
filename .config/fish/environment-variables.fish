@@ -20,7 +20,7 @@ end
 
 switch (uname -n)
     case  "*work*"
-        set -gx JOURNAL_PATH "$HOME/Work/2021-Tier/journal.md"
+        set -gx JOURNAL_PATH "$HOME/Work/2021-Micropsi/journal.md"
 
         set -gx PATH "$HOME/.poetry/bin" $PATH
 end

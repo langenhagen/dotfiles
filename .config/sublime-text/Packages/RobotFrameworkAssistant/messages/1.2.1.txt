@@ -1,4 +1,0 @@
-Fixed #6
-Edit build config with 'pybot' settings.
-https://github.com/andriyko/sublime-robot-framework-assistant/issues/6
-------------------------------------------------------

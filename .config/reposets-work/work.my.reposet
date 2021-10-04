@@ -5,4 +5,5 @@
 # author: andreasl
 
 repos=(
+    "${HOME}/Admin/computer/setup-micropsi-ubuntu:main:origin:main:origin:main"
 )

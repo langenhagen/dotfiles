@@ -1,5 +1,5 @@
 #!/bin/bash
-# My private private and my private, job-related projects.
+# My private private and my private job-related projects.
 # Remotes are all mine.
 #
 # author: andreasl
@@ -8,7 +8,7 @@ repos=(
     "${HOME}/Admin/computer/bee/bee-scripts:master:origin:master:origin:master"
     "${HOME}/Admin/computer/bee/nextcloud-server:master:origin:master:origin:master"
     "${HOME}/Admin/computer/setup-my-ubuntu:master:origin:master:origin:master"
-    "${HOME}/Admin/computer/setup-tier-ubuntu:main:origin:main:origin:main"
+    "${HOME}/Admin/computer/setup-micropsi-ubuntu:main:origin:main:origin:main"
     "${HOME}/Barn/Notes/blog:master:origin:master:origin:master"
     "${HOME}/Barn/Notes/recipes:master:origin:master:origin:master"
     "${HOME}/Dev/protofiles:master:origin:master:origin:master"

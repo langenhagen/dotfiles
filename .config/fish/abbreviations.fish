@@ -13,9 +13,8 @@ abbr -a fconf 'cd ~/.config/fish/ ; ls'
 abbr -a sourcefish '. ~/.config/fish/config.fish'
 abbr -a editabbr 'vim -p ~/.config/fish/abbreviations.fish; source ~/.config/fish/abbreviations.fish'
 abbr -a fn 'functions'
-abbr -a fns 'functions'
+# abbr -a fns 'functions'  # disabled 2021-10-05
 abbr -a history 'history --show-time=\'%h-%d - %H:%M:%S \' | less'
-# abbr -a he 'eval (history | fzf)'  # disabled on 2021-01-25
 
 abbr -a tmls 'tmux ls'
 abbr -a tmk 'tmux kill-session -t'
@@ -31,10 +30,10 @@ abbr -a !! 'eval \$history[1]'
 abbr -a hi 'cat ~/.histout'
 
 abbr -a cls 'clear'
+abbr -a ht 'hashtag'
 abbr -a mnm 'minimerk \''
 abbr -a mbm 'money-by-minute.py'
 abbr -a pc 'playground-cpp-compile.sh'
-abbr -a trenn 'for i in (seq (tput cols)); printf \'\\e[31m=\'; end; printf \'\\e[m\n\''
 
 abbr -a psg 'ps aux | grep -i'
 abbr -a pk 'ps aux | fzf --preview "" | tr -s "[:blank:]" | cut -d" " -f2 | xargs -r kill'
@@ -42,19 +41,19 @@ abbr -a pk 'ps aux | fzf --preview "" | tr -s "[:blank:]" | cut -d" " -f2 | xarg
 abbr -a b 'bash'
 abbr -a p 'python'
 abbr -a bp 'bpython'
+abbr -a pv 'python --version'
+abbr -a pe 'python -m venv .venv; source .venv/bin/activate.fish'
 abbr -a cct 'vim --cmd "set t_ti= t_te=" +redraw +q'  # similar to cat, but via vim
 abbr -a f 'find -L . -iname'
-abbr -a ht 'hashtag'
 abbr -a l 'lf'
 abbr -a mkd 'mkdir -p'
 abbr -a tch 'touch'
 abbr -a shch 'shellcheck -x --exclude SC2059'
 abbr -a vd 'vimdiff'
 abbr -a wcl 'wc -l'
-abbr -a pi 'xclip -selection clipboard -t image/png -o > "$HOME/Desktop/"(date +%Y-%m-%d-%H-%M-%S)"-clipboard.png"'  # paste an image from clipboard to file
 
-abbr -a ca 'conda activate'
-abbr -a cda 'conda deactivate'
+# abbr -a ca 'conda activate'  # deactivated 2021-10-05
+# abbr -a cda 'conda deactivate'  # deactivated 2021-10-05
 
 abbr -a t 'tig'
 abbr -a tb 'tig blame'
@@ -149,8 +148,6 @@ case "barn-ultra" "*work*"
     abbr -a olh 'one-line-help'
 
     abbr -a c 'code'
-    abbr -a pe 'python -m venv .venv; source .venv/bin/activate.fish'
-    abbr -a pv 'python --version'
     abbr -a s 'subl'
     abbr -a sh 'subl (eval $history[1])'
     abbr -a xs 'xargs subl'
@@ -172,7 +169,10 @@ case "barn-ultra" "*work*"
         abbr -a oh 'for f in (eval $history[1]); xdg-open "$f"; end'
         abbr -a ho 'eval $history[1] | xclip -fi -selection clipboard > ~/.histout'
         abbr -a xh 'eval $history[1] | xclip -fi -selection clipboard > ~/.histout'
+
         abbr -a goo "eval \$history[1] | sed 's|\(.+*\):[0-9]*:.*|\1|' | sed '/^Binary file.*matches\$/d' | sort -u | xclip -fi -selection clipboard | tee ~/.histout"
+
+        abbr -a pi 'xclip -selection clipboard -t image/png -o > "$HOME/Desktop/"(date +%Y-%m-%d-%H-%M-%S)"-clipboard.png"'  # paste an image from clipboard to file
 
         abbr -a pbcopy 'xclip -selection clipboard'
         abbr -a pbpaste 'xclip -selection clipboard -o'

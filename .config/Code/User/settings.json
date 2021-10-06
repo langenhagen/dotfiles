@@ -22,7 +22,6 @@
     "[python]": {
         "editor.rulers": [80, 100]
     },
-    "python.languageServer": "Microsoft",
     "terminal.integrated.inheritEnv": false,
     "python.jediEnabled": false,
     "C_Cpp.default.compilerPath": "/usr/bin/gcc",
@@ -52,4 +51,5 @@
     "search.smartCase": true,
     "python.showStartPage": false,
     "security.workspace.trust.untrustedFiles": "open",
+    "python.languageServer": "Microsoft",
 }

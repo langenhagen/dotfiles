@@ -1,5 +1,5 @@
 [Desktop Entry]
 Type=Application
-Exec=fish -c 'subl "$JOURNAL_PATH"'
+Exec=fish -c 'subl "$JOURNAL_PATH":9999999'
 X-GNOME-Autostart-enabled=true
 Name=Open Journal

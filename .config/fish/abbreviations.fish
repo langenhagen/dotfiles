@@ -47,7 +47,7 @@ abbr -a ppg 'mkdir foo && cd foo && python -m venv .venv && source .venv/bin/act
 abbr -a cct 'vim --cmd "set t_ti= t_te=" +redraw +q'  # similar to cat, but via vim
 abbr -a f 'find -L . -iname'
 abbr -a l 'lf'
-abbr -a mkd 'mkdir -p'
+abbr -a md 'mkdir -p'
 abbr -a tch 'touch'
 abbr -a shch 'shellcheck -x --exclude SC2059'
 abbr -a vd 'vimdiff'

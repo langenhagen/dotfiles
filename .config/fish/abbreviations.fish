@@ -94,7 +94,7 @@ abbr -a gsh 'git stash'
 abbr -a gsp 'git stash pop'
 
 abbr -a gco 'git checkout'
-abbr -a gcm 'git checkout master || git checkout main'
+abbr -a gcm 'git checkout master 2>/dev/null 2>/dev/null || git checkout main'
 
 abbr -a gbn 'git checkout -b'
 abbr -a gnb 'git checkout -b'

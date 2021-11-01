@@ -51,5 +51,9 @@
     "search.smartCase": true,
     "python.showStartPage": false,
     "security.workspace.trust.untrustedFiles": "open",
+    "git.autofetch": true,
+    "python.formatting.provider": "black",
+    "go.toolsManagement.autoUpdate": true,
     "python.languageServer": "Microsoft",
+    "window.zoomLevel": 1,
 }

@@ -7,6 +7,8 @@
 
 repos=(
     "${HOME}/micropsi/crunch:master:origin:master:origin:master"
+    "${HOME}/micropsi/deployment:master:origin:master:origin:master"
+    "${HOME}/micropsi/jobapi:master:origin:master:origin:master"
     "${HOME}/micropsi/micropsi2:master:origin:master:origin:master"
     "${HOME}/micropsi/micropsi-nodenets:master:origin:master:origin:master"
     "${HOME}/micropsi/micropsi-worlds:master:origin:master:origin:master"

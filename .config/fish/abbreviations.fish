@@ -149,7 +149,7 @@ case "barn-ultra" "*work*"
     abbr -a alh 'add-to-one-line-help \''
     abbr -a olh 'one-line-help'
 
-    abbr -a c 'code'
+    abbr -a c 'code .'
     abbr -a s 'subl'
     abbr -a sh 'subl (eval $history[1])'
     abbr -a xs 'xargs subl'

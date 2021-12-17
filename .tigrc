@@ -1,6 +1,6 @@
 # my, andreasl's, tig rc file.
 
-# settings ----------------------------------------------------------------------------------------
+# settings -----------------------------------------------------------------------------------------
 set ignore-case = yes  # Enum consisting of the values: no, yes, smart-case
 set mouse = false
 set refresh-mode = after-command  # Enum: manual, auto, after-command, periodic
@@ -10,27 +10,32 @@ color date cyan default
 color diff.diff-index cyan default
 color diff-stat cyan default
 
-# key binding -------------------------------------------------------------------------------------
+# key bindings -------------------------------------------------------------------------------------
+# in tig, press `h` for quick overview of existing key bindings
 # !  Run the command in the foreground with output shown.
 # @  Run the command in the background with no output.
 # ?  Prompt the user before executing the command.
 # <  Exit Tig after executing the command.
 # >  Re-open Tig instantly in the last displayed view after executing the command.
 
-bind generic ` !git rebase --interactive HEAD~7
 bind generic A @git add -A
 bind generic a @git reset
-bind generic B !git rebase --interactive %(commit)~1
-bind generic P @sh -c "xdg-open \"$(dirname $(realpath %(file)))\""  # open path in standard program, linux only
-bind generic π !git add --patch %(file)  # π is alt + p on Mac
+
+bind generic B !bash -c '[[ "%(commit)" =~ ^0*$ ]] && git rebase --interactive HEAD~3 || git rebase --interactive "$(get-deeper-commit.sh %(commit)~1 HEAD~3)"'  # rebase interactively until the selected commit or the last 5 commits
+bind main E ?rebase edit %(commit)
+bind diff E ?rebase edit %(commit)
+bind main F ?rebase fixup %(commit) HEAD
+bind diff F ?rebase fixup %(commit) HEAD
+bind generic P @sh -c "xdg-open \"$(dirname $(realpath %(file)))\""  # open path in standard program on linux
+bind main S ?rebase squash %(commit) HEAD
+bind diff S ?rebase squash %(commit) HEAD
 bind generic U @git add -A
-bind generic Z @?git checkout HEAD %(file)  # checkout latest committed version of a file in status view
+bind generic Z @?git checkout HEAD %(file)  # in status view, check out the HEAD version of a file
 
-bind stage  D @?rm %(file)  # remove a file
-bind status D @?rm %(file)  # remove a file
+bind stage  D @?rm %(file)
+bind status D @?rm %(file)
 
-bind diff S >!bash -c 'cd "$(dirname "%(file)")"; exec ${SHELL:-bash}'  # drop to shell at selected file in diff view
-bind status S >!bash -c 'cd "$(dirname "%(file)")"; exec ${SHELL:-bash}'  # drop to shell at selected file in status view
+bind status S >!bash -c 'cd "$(dirname "%(file)")"; exec ${SHELL:-bash}'  # in status view, drop to shell at selected file
 
 bind generic + >!git commit --amend
 bind generic = >!git commit
@@ -53,22 +58,13 @@ bind generic 9 ?@git reset --hard %(commit)~1
 bind generic 0 ?@git reset --hard HEAD
 bind generic ) ?@git reset --soft HEAD~1
 
-# info --------------------------------------------------------------------------------------------
+# info ---------------------------------------------------------------------------------------------
 # see: https://jonas.github.io/tig/doc/manual.html
 # see: https://github.com/jonas/tig/blob/master/tigrc
 # see: https://github.com/jonas/tig/blob/master/doc/tigrc.5.adoc#color-command
 #
 # nice tigrc variables:
+# %(blob)       Manual says: "The currently selected blob ID.", I think it is the currently selected patch
+# %(commit)
 # %(file)
 # %(lineno)
-# %(blob)       Manual says: "The currently selected blob ID.", I think it is the currently selected patch
-#
-# Think of making these available via shortcuts, too
-# git stash --include-untracked --quiet
-# git stash pop
-# git stash list
-# git stash drop
-#
-# 2019-02-18: leftover that looks wrong and may be deleted, maybe for merging?
-# bind generic T !git checkout --theirs %(file)       # what is this?
-# bind generic T !git checkout --ours %(file)         # what is this?

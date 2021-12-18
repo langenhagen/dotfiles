@@ -151,6 +151,7 @@ case "barn-ultra" "*work*"
 
     abbr -a c 'code .'
     abbr -a s 'subl'
+    abbr -a vc 'code'
     abbr -a sh 'subl (eval $history[1])'
     abbr -a xs 'xargs subl'
 

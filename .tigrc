@@ -21,7 +21,7 @@ color diff-stat cyan default
 bind generic A @git add -A
 bind generic a @git reset
 
-bind generic B !bash -c '[[ "%(commit)" =~ ^0*$ ]] && git rebase --interactive HEAD~3 || git rebase --interactive "$(get-deeper-commit.sh %(commit)~1 HEAD~3)"'  # rebase interactively until the selected commit or the last 5 commits
+bind generic B !bash -c '[[ "%(commit)" =~ ^0*$ ]] && git rebase --interactive HEAD~5 || git rebase --interactive %(commit)~1'  # if no commit is selected, rebase until HEAD~5, otherwise rebase until selected commit~1
 bind main E ?rebase edit %(commit)
 bind diff E ?rebase edit %(commit)
 bind main F ?rebase fixup %(commit) HEAD

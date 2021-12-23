@@ -6,4 +6,5 @@
 
 repos=(
     "${HOME}/Admin/computer/setup-micropsi-ubuntu:main:origin:main:origin:main"
+    "${HOME}/Dev/micropsi-scripts:main:origin:main:origin:main"
 )

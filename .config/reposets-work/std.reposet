@@ -6,6 +6,7 @@
 # author: andreasl
 
 repos=(
+    "${HOME}/Dev/micropsi-scripts:main:origin:main:origin:main"
     "${HOME}/micropsi/crunch:master:origin:master:origin:master"
     "${HOME}/micropsi/deployment:master:origin:master:origin:master"
     "${HOME}/micropsi/jobapi:master:origin:master:origin:master"

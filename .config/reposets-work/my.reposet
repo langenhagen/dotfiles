@@ -20,6 +20,7 @@ repos=(
     "${HOME}/Dev/expertises-gantt:master:origin:master:origin:master"
     "${HOME}/Dev/explore-with-dmenu:master:origin:master:origin:master"
     "${HOME}/Dev/langenhagen.github.io:master:origin:master:origin:master"
+    "${HOME}/Dev/micropsi-scripts:main:origin:main:origin:main"
     "${HOME}/Dev/reposet:master:origin:master:origin:master"
     "${HOME}/Dev/scripts:master:origin:master:origin:master"
     "${HOME}/Dev/wealth:main:origin:main:origin:main"

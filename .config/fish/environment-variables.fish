@@ -1,4 +1,4 @@
-# My personal fish environment variables
+# My, Andreas Langenhagen's, fish environment variables.
 #
 # Source this file into the config.fish.
 #
@@ -21,6 +21,7 @@ end
 switch (uname -n)
     case  "*work*"
         set -gx JOURNAL_PATH "$HOME/Work/2021-Micropsi/journal.md"
+        set -gx PATH "$HOME/Dev/micropsi-scripts" $PATH
 end
 
 set -gx PATH "$HOME/go/bin" $PATH

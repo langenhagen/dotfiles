@@ -48,8 +48,9 @@ abbr -a cct 'vim --cmd "set t_ti= t_te=" +redraw +q'  # similar to cat, but via 
 abbr -a f 'find -L . -iname'
 abbr -a l 'lf'
 abbr -a md 'mkdir -p'
-abbr -a tch 'touch'
+abbr -a s. 'source .venv/bin/activate.fish'
 abbr -a shch 'shellcheck -x --exclude SC2059'
+abbr -a tch 'touch'
 abbr -a vd 'vimdiff'
 abbr -a wcl 'wc -l'
 

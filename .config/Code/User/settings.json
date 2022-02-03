@@ -54,6 +54,11 @@
     "git.autofetch": true,
     "python.formatting.provider": "black",
     "go.toolsManagement.autoUpdate": true,
-    "python.languageServer": "Microsoft",
+    "python.languageServer": "Default",
+    "notebook.lineNumbers": "on",
+    "jupyter.widgetScriptSources": [
+        "jsdelivr.com",
+        "unpkg.com"
+    ],
     "window.zoomLevel": 1,
 }

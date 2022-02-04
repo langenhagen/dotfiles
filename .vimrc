@@ -270,12 +270,6 @@ inoremap <S-Up> <C-\><C-O><C-U><C-\><C-O><C-U>
 noremap <S-Down> <C-D><C-D>
 inoremap <S-Down> <C-\><C-O><C-D><C-\><C-O><C-D>
 
-" disable arrow keys in insert mode to force using normal mode as a habit
-"imap <up> <nop>
-"imap <down> <nop>
-"imap <left> <nop>
-"imap <right> <nop>
-
 " netrw settings ===================================================================================
 let g:netrw_banner = 0   " disable netrw banner (toglle manually with I inside netrw)
 let g:netrw_liststyle=1  " show file size and time stamp (toggle manually with i inside netrw)

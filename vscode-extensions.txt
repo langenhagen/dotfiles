@@ -1,4 +1,5 @@
 alefragnani.Bookmarks
+bierner.markdown-mermaid
 christian-kohler.path-intellisense
 eamodio.gitlens
 golang.go

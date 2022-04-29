@@ -1,0 +1,12 @@
+[Default Applications]
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+text/plain=sublime-text_subl.desktop
+application/x-shellscript=sublime-text_subl.desktop
+
+[Added Associations]
+text/plain=sublime-text_subl.desktop;
+application/x-shellscript=sublime-text_subl.desktop;

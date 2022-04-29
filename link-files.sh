@@ -33,6 +33,7 @@ ln -sf "$dotfiles_path/.config/autostart/caffeine-indicator.desktop" "$HOME/.con
 ln -sf "$dotfiles_path/.config/autostart/dropbox.desktop" "$HOME/.config/autostart/dropbox.desktop";
 ln -sf "$dotfiles_path/.config/autostart/thunderbird.desktop" "$HOME/.config/autostart/thunderbird.desktop";
 ln -sf "$dotfiles_path/.config/autostart/urserver.desktop" "$HOME/.config/autostart/urserver.desktop";
+ln -sf "$dotfiles_path/.config/autostart/xpad.desktop" "$HOME/.config/autostart/xpad.desktop";
 
 mkdir -p "$HOME/.config/bpython";
 ln  -sf "$dotfiles_path/.config/bpython/config" "$HOME/.config/bpython/config";

@@ -28,6 +28,7 @@ set -gx PATH "$HOME/go/bin" $PATH
 set -gx PATH "$HOME/.rbenv/bin" $PATH
 set -gx PATH "$HOME/.pyenv/bin" $PATH
 set -gx PATH "$HOME/.pyenv/shims" $PATH
+set -gx PATH '/usr/libexec/docker/cli-plugins/' $PATH
 set -gx PATH "$CHECK_DIR_PATH" $PATH
 set -gx PATH "$SCRIPTS_DIR_PATH" $PATH
 

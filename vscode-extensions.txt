@@ -24,6 +24,7 @@ ms-vscode.cpptools-themes
 ms-vsliveshare.vsliveshare
 ms-vsliveshare.vsliveshare-audio
 ms-vsliveshare.vsliveshare-pack
+s3anmorrow.color-stamp
 shardulm94.trailing-spaces
 stkb.rewrap
 streetsidesoftware.code-spell-checker

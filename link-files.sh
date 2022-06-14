@@ -12,6 +12,7 @@ ln -sf "$dotfiles_path/.vim" "$HOME";
 ln -sf "$dotfiles_path/.gitignore_global" "$HOME/.gitignore_global";
 ln -sf "$dotfiles_path/.gvimrc" "$HOME/.gvimrc";
 ln -sf "$dotfiles_path/.multitailrc" "$HOME/.multitailrc";
+ln -sf "$dotfiles_path/.sqliterc" "$HOME/.sqliterc";
 ln -sf "$dotfiles_path/.tigrc" "$HOME/.tigrc";
 ln -sf "$dotfiles_path/.tmux.conf" "$HOME/.tmux.conf";
 ln -sf "$dotfiles_path/.zshrc" "$HOME/.zshrc";

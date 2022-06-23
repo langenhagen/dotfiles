@@ -1,0 +1,53 @@
+{
+	"history":
+	[
+		{
+			"data":
+			{
+				"args":
+				{
+					"text": "1 1 0",
+				},
+				"command": "text_pastry_step",
+				"text": "1 1 0",
+			},
+			"key": "df5947fb78700bdd567c5ebf0d912085",
+			"label": "1 1 0",
+		},
+		{
+			"data":
+			{
+				"args":
+				{
+					"text": "1 1 2",
+				},
+				"command": "text_pastry_step",
+				"text": "1 1 2",
+			},
+			"key": "bed4ce69bb178ee0474acea7c3188868",
+			"label": "1 1 2",
+		},
+		{
+			"data":
+			{
+				"args":
+				{
+					"text": "1 1 1",
+				},
+				"command": "text_pastry_step",
+				"text": "1 1 1",
+			},
+			"key": "f4093d4303a6804a1cf378c28e59581a",
+			"label": "1 1 1",
+		},
+	],
+	"last_command":
+	{
+		"args":
+		{
+			"text": "1 1 1",
+		},
+		"command": "text_pastry_step",
+		"text": "1 1 1",
+	},
+}

@@ -1,7 +1,7 @@
 # my, andreasl's, tig rc file.
 
 # settings -----------------------------------------------------------------------------------------
-set ignore-case = yes  # Enum consisting of the values: no, yes, smart-case
+set ignore-case = yes  # Enum consisting of the values: no, yes, smart-case; smart-case doesn't seem to work with regexes
 set mouse = false
 set refresh-mode = after-command  # Enum: manual, auto, after-command, periodic
 set main-view-id-display = yes  # show commit hashes in main view

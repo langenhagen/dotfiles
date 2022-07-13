@@ -109,6 +109,8 @@ abbr -a gbt 'git checkout -b tmp; or git checkout tmp; git branch'  # git branch
 abbr -a gct 'git checkout -b tmp; or git checkout tmp; git branch'  # git checkout tmp
 abbr -a gdt 'if [ (git rev-parse --abbrev-ref HEAD) = "tmp" ]; git checkout master || git checkout master; end; git branch -D tmp; git branch'  # git delete tmp
 
+abbr -a gqs 'git branch quicksave'
+
 abbr -a gp 'git pull --rebase'
 abbr -a gpl 'git pull --rebase'
 abbr -a gplm 'git pull --rebase origin master'

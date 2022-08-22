@@ -100,6 +100,8 @@ if [ "$(uname)" == 'Linux' ]; then
     mkdir -p "$HOME/.config/Code/User"
     ln -sf "$dotfiles_path/.config/Code/User/keybindings.json" "$HOME/.config/Code/User/keybindings.json";
     ln -sf "$dotfiles_path/.config/Code/User/settings.json" "$HOME/.config/Code/User/settings.json";
+    mkdir -p "$HOME/.config/Code/User/snippets";
+    ln -sf "$dotfiles_path/.config/Code/User/snippets/barns-snippets.code-snippets" "$HOME/.config/Code/User/snippets/barns-snippets.code-snippets";
 
 elif [ "$(uname)" == 'Darwin' ]; then
     mkdir -p "$HOME/.config/sublime-text";

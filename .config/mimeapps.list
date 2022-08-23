@@ -6,7 +6,13 @@ x-scheme-handler/about=google-chrome.desktop
 x-scheme-handler/unknown=google-chrome.desktop
 text/plain=sublime-text_subl.desktop
 application/x-shellscript=sublime-text_subl.desktop
+text/csv=sublime-text_subl.desktop
+video/mp4=vlc.desktop
+text/x-python=sublime-text_subl.desktop
 
 [Added Associations]
 text/plain=sublime-text_subl.desktop;
 application/x-shellscript=sublime-text_subl.desktop;
+text/csv=sublime-text_subl.desktop;
+video/mp4=vlc.desktop;
+text/x-python=sublime-text_subl.desktop;

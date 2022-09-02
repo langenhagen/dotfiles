@@ -11,6 +11,12 @@ video/mp4=vlc.desktop
 text/x-python=sublime-text_subl.desktop
 video/quicktime=vlc.desktop
 video/x-matroska=vlc.desktop
+text/x-java=sublime-text_subl.desktop
+text/x-c++src=sublime-text_subl.desktop
+application/javascript=sublime-text_subl.desktop
+text/x-objcsrc=sublime-text_subl.desktop
+application/sql=sublime-text_subl.desktop
+text/x-csrc=sublime-text_subl.desktop
 
 [Added Associations]
 text/plain=sublime-text_subl.desktop;
@@ -20,3 +26,9 @@ video/mp4=vlc.desktop;
 text/x-python=sublime-text_subl.desktop;
 video/quicktime=vlc.desktop;
 video/x-matroska=vlc.desktop;
+text/x-java=sublime-text_subl.desktop;
+text/x-c++src=sublime-text_subl.desktop;
+application/javascript=sublime-text_subl.desktop;
+text/x-objcsrc=sublime-text_subl.desktop;
+application/sql=sublime-text_subl.desktop;
+text/x-csrc=sublime-text_subl.desktop;

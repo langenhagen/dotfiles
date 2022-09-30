@@ -12,6 +12,7 @@ repos=(
     "${HOME}/micropsi/docs:master:origin:master:origin:master"
     "${HOME}/micropsi/drivers:master:origin:master:origin:master"
     "${HOME}/micropsi/gripper-segmentation:master:origin:master:origin:master"
+    "${HOME}/micropsi/fancy-profile-viewer:master:origin:master:origin:master"
     "${HOME}/micropsi/jobapi:master:origin:master:origin:master"
     "${HOME}/micropsi/library:master:origin:master:origin:master"
     "${HOME}/micropsi/light_gan:master:origin:master:origin:master"

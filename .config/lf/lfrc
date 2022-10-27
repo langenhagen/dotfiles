@@ -26,6 +26,7 @@ cmd open ${{
         application/x-shellscript)  $EDITOR "$fx";;
         image/*)                    feh "$fx";;
         inode/x-empty)              $EDITOR "$fx";;
+        text/html)                  setsid $OPENER "$fx" >/dev/null 2>/dev/null & ;;
         text/*)                     $EDITOR "$fx";;
         *) setsid $OPENER "$fx" >/dev/null 2>/dev/null & ;;
     esac

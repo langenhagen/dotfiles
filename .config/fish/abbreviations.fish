@@ -143,7 +143,7 @@ abbr -a dcd 'docker-compose down'
 abbr -a dcs 'docker-compose stop'
 abbr -a dps 'docker ps'
 
-switch (uname -n)
+switch (uname --nodename)
 case "barn-ultra" "*work*"
     # Desktop machine related abbrs
     abbr -a now 'date \'+%s\' | xclip -fi -selection clipboard'  # the current timestamp since epoch in seconds
@@ -160,6 +160,11 @@ case "barn-ultra" "*work*"
     abbr -a vc 'code'
     abbr -a sh 'subl (eval $history[1])'
     abbr -a xs 'xargs subl'
+
+    switch (uname --nodename)
+        case "*work*"
+            abbr -a 2 'cd ~/micropsi/micropsi2'
+    end
 
     switch (uname)
     # OS dependent abbrs

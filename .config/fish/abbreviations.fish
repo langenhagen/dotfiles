@@ -16,10 +16,10 @@ abbr -a fn 'functions'
 # abbr -a fns 'functions'  # disabled 2021-10-05
 abbr -a history 'history --show-time=\'%h-%d - %H:%M:%S \' | less'
 
-abbr -a tmls 'tmux ls'
-abbr -a tmk 'tmux kill-session -t'
-abbr -a tmp 'tmux kill-pane -t'
-abbr -a tmw 'tmux kill-window -t'
+abbr -a tls 'tmux ls'
+abbr -a tk 'tmux kill-session -t'
+abbr -a tp 'tmux kill-pane -t'
+abbr -a tw 'tmux kill-window -t'
 
 abbr -a c. 'cd ..'
 abbr -a cd. 'cd ..'

@@ -54,7 +54,7 @@ abbr -a d. 'deactivate'
 abbr -a shch 'shellcheck -x --exclude SC2059'
 abbr -a tch 'touch'
 abbr -a vd 'vimdiff'
-abbr -a wcl 'wc -l'
+abbr -a wl 'wc -l'
 
 # abbr -a ca 'conda activate'  # deactivated 2021-10-05
 # abbr -a cda 'conda deactivate'  # deactivated 2021-10-05

@@ -74,7 +74,7 @@ zoom_in S-Up
 zoom_out S-Down
 
 # redefine action 6 to both `6` and `p`
-action_6 6 p
+action_6 6 o
 
 # redefine action on Return
 action_1 1 Return

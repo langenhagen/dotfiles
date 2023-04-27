@@ -19,6 +19,6 @@ test -e ~/.rbenv/bin/rbenv; and status --is-interactive; and source (~/.rbenv/bi
 
 command -v pyenv 1>/dev/null 2>&1; and pyenv init - | source
 command -v direnv 1>/dev/null 2>&1; and eval (direnv hook fish)
-nvm --version 1>/dev/null 2>&1; and nvm use lts 1>/dev/null
+command -v nvm 1>/dev/null 2>&1; and nvm use lts 1>/dev/null
 
 ### the initial commands ###########################################################################

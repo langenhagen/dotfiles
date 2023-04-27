@@ -31,8 +31,8 @@ abbr -a hi 'cat ~/.histout'
 
 abbr -a cls 'clear'
 abbr -a ht 'hashtag'
-abbr -a mnm 'minimerk \''
-abbr -a mbm 'money-by-minute.py'
+abbr -a mnm 'minimerk \''  # marked as basically unused on 2023-04-27
+abbr -a mbm 'money-by-minute.py'  # last used in 2021
 abbr -a pc 'playground-cpp-compile.sh'
 
 abbr -a psg 'ps aux | grep -i'
@@ -43,7 +43,7 @@ abbr -a p 'python'
 abbr -a bp 'bpython'
 abbr -a pv 'python --version'
 abbr -a pe 'python -m venv .venv; source .venv/bin/activate.fish'
-abbr -a pt 'pytest'
+abbr -a pt 'pytest'  # marked as unused on 2023-04-27
 abbr -a ppg 'mkdir foo && cd foo && python -m venv .venv && source .venv/bin/activate.fish && pip install -U pip bpython'
 abbr -a cct 'vim --cmd "set t_ti= t_te=" +redraw +q'  # similar to cat, but via vim
 abbr -a ct 'cat'
@@ -66,7 +66,7 @@ abbr -a ts 'tig show'
 
 abbr -a tree 'tree -C -a'
 abbr -a t3 'tree -C -a -L 3'
-abbr -a t3d 'tree -C -a -L 3 -d'
+abbr -a t3d 'tree -C -a -L 3 -d'  # marked as unused on 2023-04-27
 
 abbr -a v 'vim -p'
 abbr -a vg 'vim -p (cat ~/.histout)'

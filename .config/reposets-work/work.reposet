@@ -40,4 +40,6 @@ repos=(
     "${HOME}/micropsi/training_wizard:master:origin:master:origin:master"
     "${HOME}/micropsi/warmstart-data:master:origin:master:origin:master"
     "${HOME}/micropsi/WebSocket-for-Python:master:origin:master:origin:master"
+    "${HOME}/micropsi/AWS-Organization-Setup:master:origin:master:origin:master"
+    "${HOME}/micropsi/Users-Access-Management:master:origin:master:origin:master"
 )

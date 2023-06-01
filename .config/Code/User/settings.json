@@ -20,7 +20,18 @@
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
     "cmake.configureOnOpen": false,
     "[python]": {
-        "editor.rulers": [80, 100]
+        "editor.rulers": [
+            80,
+            100
+        ],
+        "editor.formatOnType": true
+    },
+    "[proto3]": {
+        "editor.rulers": [
+            80,
+            100
+        ],
+        "editor.formatOnType": true
     },
     "terminal.integrated.inheritEnv": false,
     "python.jediEnabled": false,

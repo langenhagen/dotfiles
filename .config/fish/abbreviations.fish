@@ -83,6 +83,7 @@ abbr -a ch 'grep -HiRns --include=\*.{h,hpp,c,cpp,cc,m,mm,pch,java,swift,kt}'
 abbr -a cmh 'grep -HiRns --include={CMakeCache.txt,CMakeLists.txt,\*.cmake}'
 abbr -a ph 'grep -HiRns --include=\*.py --exclude-dir={.venv\*,custom-eggs,site-packages}'
 abbr -a cfh 'grep -HiRns --include={\*.cfg,\*.conf,\*.conf.in,\*.ini,setup.py,requirements.txt,Makefile,\*.yaml}'
+abbr -a mk 'make'
 
 abbr -a gb 'git branch'
 abbr -a gbl 'git blame -n'

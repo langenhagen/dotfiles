@@ -170,6 +170,7 @@ case "barn-ultra" "*work*"
     switch (uname --nodename)
         case "*work*"
             abbr -a 2 'cd ~/micropsi/micropsi2'
+            abbr -a z2 'cd ~/micropsi/micropsi2'
     end
 
     switch (uname)

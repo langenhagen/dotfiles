@@ -97,6 +97,7 @@ abbr -a grl 'git reflog --date=iso'
 abbr -a grv 'git remote -v'
 abbr -a gs 'git status --short --branch --untracked-files'
 abbr -a gsb 'git submodule update --init --recursive'
+abbr -a gss 'git submodule status'
 abbr -a gsh 'git stash'
 abbr -a gsp 'git stash pop'
 

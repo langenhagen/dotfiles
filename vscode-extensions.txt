@@ -27,9 +27,12 @@ ms-vscode.cmake-tools
 ms-vscode.cpptools
 ms-vscode.cpptools-extension-pack
 ms-vscode.cpptools-themes
+ms-vscode.makefile-tools
 ms-vscode.remote-explorer
 ms-vsliveshare.vsliveshare
 ms-vsliveshare.vsliveshare-pack
+oderwat.indent-rainbow
+plex.vscode-protolint
 redhat.java
 s3anmorrow.color-stamp
 shardulm94.trailing-spaces
@@ -43,3 +46,4 @@ vscjava.vscode-java-dependency
 vscjava.vscode-java-pack
 vscjava.vscode-java-test
 vscjava.vscode-maven
+zxh404.vscode-proto3

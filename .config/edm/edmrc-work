@@ -1,7 +1,7 @@
 # rc file for explore-with-dmenu.sh
 # author: andreasl
 
-max_history_entries=17
+max_history_entries=21
 
 choices=(
     'Dropbox'

@@ -150,6 +150,7 @@ abbr -a dcs 'docker-compose stop'
 abbr -a dps 'docker ps'
 
 abbr -a dm3u8 'download-m3u8'
+abbr -a d3 'download-m3u8'
 abbr -a dim3u8 'download-index-m3u8'
 
 switch (uname --nodename)

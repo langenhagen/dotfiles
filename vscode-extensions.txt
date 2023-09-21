@@ -1,4 +1,6 @@
+acarreiro.calculate
 alefragnani.Bookmarks
+Asuka.insertnumbers
 bierner.markdown-mermaid
 christian-kohler.path-intellisense
 eamodio.gitlens

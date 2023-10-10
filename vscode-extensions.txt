@@ -3,6 +3,7 @@ alefragnani.Bookmarks
 Asuka.insertnumbers
 bierner.markdown-mermaid
 christian-kohler.path-intellisense
+ClemensPeters.format-json
 eamodio.gitlens
 golang.go
 jebbs.plantuml

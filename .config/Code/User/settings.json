@@ -73,9 +73,9 @@
     ],
     "git.openRepositoryInParentFolders": "always",
     "jupyter.interactiveWindow.textEditor.executeSelection": false,
-    "workbench.colorTheme": "Default Dark+",
     "files.autoSave": "afterDelay",
     "indentRainbow.ignoreErrorLanguages": [
         "*"
     ],
+    "workbench.colorTheme": "Default Dark+",
 }

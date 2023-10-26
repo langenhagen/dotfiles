@@ -23,6 +23,7 @@ repos=(
     "${HOME}/micropsi/micropsi-worlds:master:origin:master:origin:master"
     "${HOME}/micropsi/mint:master:origin:master:origin:master"
     "${HOME}/micropsi/mirai-android:master:origin:master:origin:master"
+    "${HOME}/micropsi/mirai-fanuc:master:origin:master:origin:master"
     "${HOME}/micropsi/mirai-rapid:master:origin:master:origin:master"
     "${HOME}/micropsi/mirai-setup:master:origin:master:origin:master"
     "${HOME}/micropsi/mirai-urcaps:master:origin:master:origin:master"

@@ -120,3 +120,8 @@ function pip
     [ -n "$CONDA_PREFIX" ]; and set -lx PIP_REQUIRE_VIRTUALENV false;
     eval (which pip) "$argv";
 end
+
+function mdc
+    # Create a directory and cd into it.
+    mkdir -p "$argv[1]" && cd "$argv[1]"
+end

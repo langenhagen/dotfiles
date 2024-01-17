@@ -120,6 +120,7 @@ abbr -a gqs 'git branch quicksave'
 
 abbr -a gp 'git pull --rebase'
 abbr -a gpl 'git pull --rebase'
+abbr -a gpm 'git pull --rebase origin master'
 abbr -a gplm 'git pull --rebase origin master'
 
 abbr -a gps 'git push'

@@ -4,11 +4,10 @@
 	"color_scheme": "Packages/Color Scheme - Default/My Monokai.tmTheme",
 	"find_selected_text": true,
 	"font_face": "My Courier 10 Pitch",
-	"font_size": 12,
+	"font_size": 11,
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"MarkdownHighlighting",
 		"Vintage",
 	],
 	"open_files_in_new_window": false,
@@ -20,4 +19,5 @@
 	"show_full_path": true,
 	"theme": "Asphalt-My.sublime-theme",
 	"translate_tabs_to_spaces": true,
+	"index_files": true,
 }

@@ -2,7 +2,6 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
-		"MarkdownHighlighting",
 	],
 	"installed_packages":
 	[
@@ -16,7 +15,6 @@
 		"Git",
 		"GitGutter",
 		"INI",
-		"MarkdownHighlighting",
 		"Package Control",
 		"PackageResourceViewer",
 		"Path Tools",

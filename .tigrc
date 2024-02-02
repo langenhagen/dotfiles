@@ -44,7 +44,7 @@ bind generic <F1> >!git pull --rebase
 bind generic <F2> >!git pull --rebase origin master
 
 bind generic <F6> >!push_to_remotes.sh
-bind generic <F18> >!push_to_remotes.sh -f  # F18 equals <Shift + F6> on my keyboards
+bind generic <F18> >!push_to_remotes.sh --force-with-lease  # F18 equals <Shift + F6> on my keyboards
 bind generic <F7> >!git push
 
 bind generic <F10> quit

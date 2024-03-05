@@ -126,4 +126,7 @@ else
     end
 end
 
-
+function bigfind
+    # find across the entire system
+    sudo find / -iname "$argv[1]" 2>/dev/null
+end

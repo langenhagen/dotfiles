@@ -101,3 +101,4 @@ source $ZSH/oh-my-zsh.sh
 # additions to PATH
 path=("$HOME/.rbenv/bin" $path)
 
+[[ -s "/home/andreasl/.gvm/scripts/gvm" ]] && source "/home/andreasl/.gvm/scripts/gvm"

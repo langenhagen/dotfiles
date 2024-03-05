@@ -91,6 +91,17 @@ function rem
     printf "\n\e[1m$argv\e[0m\n"\n
 end
 
+function pip
+    # Allow using pip if a conda environment is active, even if PIP_REQUIRE_VIRTUALENV is set.
+    [ -n "$CONDA_PREFIX" ]; and set -lx PIP_REQUIRE_VIRTUALENV false;
+    eval (which pip) "$argv";
+end
+
+function mdc
+    # Create a directory and cd into it.
+    mkdir -p "$argv[1]" && cd "$argv[1]"
+end
+
 if [ (uname) = 'Darwin' ]
     function pbc
         # Copy a given argument to system clipboard.
@@ -115,13 +126,4 @@ else
     end
 end
 
-function pip
-    # Allow using pip if a conda environment is active, even if PIP_REQUIRE_VIRTUALENV is set.
-    [ -n "$CONDA_PREFIX" ]; and set -lx PIP_REQUIRE_VIRTUALENV false;
-    eval (which pip) "$argv";
-end
 
-function mdc
-    # Create a directory and cd into it.
-    mkdir -p "$argv[1]" && cd "$argv[1]"
-end

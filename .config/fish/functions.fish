@@ -130,3 +130,8 @@ function bigfind
     # find across the entire system
     sudo find / -iname "$argv[1]" 2>/dev/null
 end
+
+function fv
+    # Fuzzy find a file and display in vim.
+    find . -type f | pick -X -q "$argv[1]" | xargs -o vim
+end

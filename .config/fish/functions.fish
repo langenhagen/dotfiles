@@ -133,5 +133,5 @@ end
 
 function fv
     # Fuzzy find a file and display in vim.
-    find . -type f | fzf --multi --no-preview --query "$argv[1]" | xargs -o vim -p
+    find . -type f | fzf --multi --no-preview --select-1 --query "$argv[1]" | xargs -o vim -p
 end

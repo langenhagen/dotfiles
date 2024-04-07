@@ -107,15 +107,30 @@
 			"key": "feb22362d114451f00fd53b401277bd1",
 			"label": "1:1:1",
 		},
+		{
+			"data":
+			{
+				"args":
+				{
+					"text": "n:n:n",
+					"threshold": 3
+				},
+				"command": "text_pastry_insert_text",
+				"text": "n:n:n"
+			},
+			"key": "f2d2eaa2086938794f3da23cd8106130",
+			"label": "n:n:n"
+		},
 	],
 	"last_command":
 	{
 		"args":
 		{
-			"text": "1:1:1",
+			"text": "n:n:n",
 			/*"threshold": 3,*/
+			"threshold": 3,
 		},
-		"command": "text_pastry_step",
-		"text": "1:1:1",
+		"command": "text_pastry_insert_text",
+		"text": "n:n:n",
 	},
 }

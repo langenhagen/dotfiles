@@ -4,10 +4,12 @@
 	"color_scheme": "Packages/Color Scheme - Default/My Monokai.tmTheme",
 	"find_selected_text": true,
 	"font_face": "My Courier 10 Pitch",
-	"font_size": 11,
+	"font_size": 10,
 	"highlight_line": true,
 	"ignored_packages":
 	[
+		"Package Control",
+		"Text Pastry",
 		"Vintage",
 	],
 	"open_files_in_new_window": false,

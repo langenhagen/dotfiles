@@ -78,7 +78,7 @@ action_2 2 i
 # redefine action 3 to both `3` and `k`
 action_3 3 k
 # redefine action 4 to both `4` and `j`
-action_4 4 j
+action_4 4 p
 # redefine action 6 to both `6` and `o`
 action_6 6 o
 

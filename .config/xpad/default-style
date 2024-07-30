@@ -11,7 +11,7 @@ use_back 1
 text rgb(0,0,0)
 use_text 1
 fontname FreeMono 11
-toolbar 0
+toolbar 1
 auto_hide_toolbar 1
 scrollbar 1
 buttons New, Delete, Separator, Cut, Copy, Paste, Separator, Undo, Redo

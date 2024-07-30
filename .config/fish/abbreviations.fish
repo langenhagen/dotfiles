@@ -88,7 +88,8 @@ abbr -a mk 'make'
 
 abbr -a gb 'git branch'
 abbr -a gbl 'git blame -n'
-abbr -a gbr 'git branch -r'
+abbr -a gbr 'git branch -r'  # commented out on 2024-05-21
+abbr -a gr 'git branch -r'
 abbr -a gcl 'git clean -dxf'
 abbr -a gcp 'git cherry-pick'
 abbr -a gd 'git diff'
@@ -153,9 +154,10 @@ abbr -a dcd 'docker-compose down'
 abbr -a dcs 'docker-compose stop'
 abbr -a dps 'docker ps'
 
-abbr -a dm3u8 'download-m3u8'
-abbr -a d3 'download-m3u8'
-abbr -a dim3u8 'download-index-m3u8'
+abbr -a d3 "download-m3u8 '"
+abbr -a di3 'download-index-m3u8'
+
+abbr -a ytaudio 'yt-dlp --audio-format mp3 --audio-quality 0 --continue --extract-audio --format "bestaudio" --ignore-errors --no-overwrites --output "%(title)s.%(ext)s" \''
 
 switch (uname --nodename)
 case "barn-ultra" "*work*"

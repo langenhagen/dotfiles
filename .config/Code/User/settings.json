@@ -78,4 +78,5 @@
         "*"
     ],
     "workbench.colorTheme": "Default Dark+",
+    "cmake.showOptionsMovedNotification": false,
 }

@@ -19,7 +19,11 @@
 	],
 	"scroll_past_end": true,
 	"show_full_path": true,
-	"theme": "Asphalt-My.sublime-theme",
+	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"index_files": true,
+	"dark_color_scheme": "Packages/Theme - Asphalt/Asphalt-My.tmTheme",
+	"light_color_scheme": "Breakers.sublime-color-scheme",
+	"dark_theme": "Default.sublime-theme",
+	"light_theme": "Default.sublime-theme",
 }

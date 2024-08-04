@@ -20,8 +20,7 @@ end
 
 switch (uname -n)
     case  "*work*"
-        set -gx JOURNAL_PATH "$HOME/Work/2021-Micropsi/journal.md"
-        set -gx PATH "$HOME/Dev/micropsi-scripts" $PATH
+        set -gx JOURNAL_PATH "$HOME/Work/2024-Wandelbots/journal.md"
 end
 
 set -gx PATH "$HOME/go/bin" $PATH
@@ -31,6 +30,7 @@ set -gx PATH "$HOME/.pyenv/shims" $PATH
 set -gx PATH '/usr/libexec/docker/cli-plugins/' $PATH
 set -gx PATH "$CHECK_DIR_PATH" $PATH
 set -gx PATH "$SCRIPTS_DIR_PATH" $PATH
+set -gx PATH "$HOME/.local/bin" $PATH
 
 setenv LANG 'en_US.UTF-8'
 setenv EDITOR vim

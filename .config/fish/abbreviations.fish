@@ -48,6 +48,7 @@ abbr -a ppg 'mkdir foo && cd foo && python -m venv .venv && source .venv/bin/act
 abbr -a cct 'vim --cmd "set t_ti= t_te=" +redraw +q'  # similar to cat, but via vim
 abbr -a ct 'cat'
 abbr -a f 'find -L . -iname'
+abbr -a fd 'fdfind'
 abbr -a l 'lf'
 abbr -a md 'mkdir -p'
 abbr -a s. 'source .venv/bin/activate.fish'
@@ -176,12 +177,6 @@ case "barn-ultra" "*work*"
     abbr -a vc 'code'
     abbr -a sh 'subl (eval $history[1])'
     abbr -a xs 'xargs subl'
-
-    switch (uname --nodename)
-        case "*work*"
-            abbr -a 2 'cd ~/micropsi/micropsi2'
-            abbr -a z2 'cd ~/micropsi/micropsi2'
-    end
 
     switch (uname)
     # OS dependent abbrs

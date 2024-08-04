@@ -79,4 +79,5 @@
     ],
     "workbench.colorTheme": "Default Dark+",
     "cmake.showOptionsMovedNotification": false,
+    "application.shellEnvironmentResolutionTimeout": 99,
 }

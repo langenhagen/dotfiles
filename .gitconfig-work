@@ -1,7 +1,7 @@
 [color]
     ui = auto
 [user]
-    email = andreas.langenhagen@micropsi-industries.com
+    email = andreas.langenhagen@wandelbots.com
     name = Andreas Langenhagen
 [rebase]
     autostash = true

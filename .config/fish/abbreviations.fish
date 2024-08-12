@@ -15,6 +15,7 @@ abbr -a editabbr 'vim -p ~/.config/fish/abbreviations.fish; source ~/.config/fis
 abbr -a fn 'functions'
 # abbr -a fns 'functions'  # disabled 2021-10-05
 abbr -a history 'history --show-time=\'%h-%d - %H:%M:%S \' | less'
+abbr -a sus 'systemctl suspend'
 
 abbr -a tls 'tmux ls'
 abbr -a tk 'tmux kill-session -t'
@@ -118,7 +119,7 @@ abbr -a gbt 'git checkout -b tmp; or git checkout tmp; git branch'  # git branch
 abbr -a gct 'git checkout -b tmp; or git checkout tmp; git branch'  # git checkout tmp
 abbr -a gdt 'if [ (git rev-parse --abbrev-ref HEAD) = "tmp" ]; git checkout master || git checkout master; end; git branch -D tmp; git branch'  # git delete tmp
 
-abbr -a gqs 'git branch quicksave'
+abbr -a gqs 'git branch quicksave'  # marked for deletion on 2024-08-12
 
 abbr -a gp 'git pull --rebase'
 abbr -a gpl 'git pull --rebase'

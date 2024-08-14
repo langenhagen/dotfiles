@@ -49,7 +49,6 @@ abbr -a ppg 'mkdir foo && cd foo && python -m venv .venv && source .venv/bin/act
 abbr -a cct 'vim --cmd "set t_ti= t_te=" +redraw +q'  # similar to cat, but via vim
 abbr -a ct 'cat'
 abbr -a f 'find -L . -iname'
-abbr -a fd 'fdfind'
 abbr -a l 'lf'
 abbr -a md 'mkdir -p'
 abbr -a s. 'source .venv/bin/activate.fish'

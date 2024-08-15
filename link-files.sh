@@ -25,7 +25,10 @@ ln -sf "$dotfiles_path/.ccache/ccache.conf" "$HOME/.ccache/ccache.conf";
 
 mkdir -p "$HOME/.config";
 
-mkdir -p "$HOME/.config/autokey/data/"
+mkdir -p "$HOME/.config/alacritty";
+ln -sf "$dotfiles_path/.config/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml";
+
+mkdir -p "$HOME/.config/autokey/data/";
 ln -sf "$dotfiles_path/.config/autokey/data/My-Global-Phrases" "$HOME/.config/autokey/data/";
 ln -sf "$dotfiles_path/.config/autokey/data/My-Global-Scripts" "$HOME/.config/autokey/data/";
 

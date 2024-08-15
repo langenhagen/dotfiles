@@ -1,0 +1,11 @@
+[colors.primary]
+background = "#000000"
+
+[shell]
+program = "/usr/bin/tmux"
+
+[window]
+startup_mode =  "Maximized"
+
+[keyboard]
+bindings = [{ key = "F11", action = "ToggleFullscreen" }]

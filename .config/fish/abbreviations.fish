@@ -125,7 +125,7 @@ abbr -a gpl 'git pull --rebase'
 abbr -a gpm 'git pull --rebase origin master'
 abbr -a gplm 'git pull --rebase origin master'
 abbr -a gpc 'git pull --rebase origin master && git fetch --prune --tags && git submodule update --init --recursive --progress -v'
-abbr -a bigpull 'git pull --rebase origin master && git fetch --prune --tags && git submodule update --init --recursive --progress -v'
+abbr -a bigpull 'git pull --rebase origin main && git fetch --prune --tags && git submodule update --init --recursive --progress -v'
 
 abbr -a gps 'git push'
 abbr -a gpf 'git push -f'

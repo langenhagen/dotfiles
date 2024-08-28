@@ -21,6 +21,7 @@ end
 switch (uname -n)
     case  "*work*"
         set -gx JOURNAL_PATH "$HOME/Work/2024-Wandelbots/journal.md"
+        set -gx PATH "$HOME/Dev/wandelbots-scripts/" $PATH
 end
 
 set -gx PATH "$HOME/go/bin" $PATH

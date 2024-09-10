@@ -88,7 +88,6 @@ abbr -a mk 'make'
 
 abbr -a gb 'git branch'
 abbr -a gbl 'git blame -n'
-abbr -a gbr 'git branch -r'  # commented out on 2024-05-21
 abbr -a gr 'git branch -r'
 abbr -a gcl 'git clean -dxf'
 abbr -a gcp 'git cherry-pick'

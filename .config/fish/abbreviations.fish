@@ -106,7 +106,6 @@ abbr -a gco 'git checkout'
 abbr -a gcm 'git checkout master || git checkout main'
 abbr -a gm 'git checkout master || git checkout main'
 
-abbr -a gbn 'git checkout -b'
 abbr -a gn 'git checkout -b'
 abbr -a gnb 'git checkout -b'
 

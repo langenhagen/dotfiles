@@ -153,6 +153,7 @@ abbr -a dcs 'docker-compose stop'
 abbr -a dps 'docker ps'
 
 abbr -a tl 'telepresence'
+abbr -a tq 'telepresence quit'
 
 abbr -a d3 "download-m3u8 '"
 abbr -a di3 'download-index-m3u8'

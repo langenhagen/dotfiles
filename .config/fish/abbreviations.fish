@@ -19,6 +19,9 @@ abbr -a sus 'systemctl suspend'
 
 abbr -a tls 'tmux ls'
 abbr -a tk 'tmux kill-session -t'
+abbr -a t1 'tmux kill-session -t 1'
+abbr -a t2 'tmux kill-session -t 2'
+abbr -a t3 'tmux kill-session -t 3'
 abbr -a tp 'tmux kill-pane -t'
 abbr -a tw 'tmux kill-window -t'
 

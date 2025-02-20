@@ -163,7 +163,8 @@ abbr -a d3 "download-m3u8 '"
 abbr -a di3 'download-index-m3u8'
 
 abbr -a ytaudio 'yt-dlp --audio-format mp3 --audio-quality 0 --continue --extract-audio --format "bestaudio" --ignore-errors --no-overwrites --output "%(title)s.%(ext)s" \''
-abbr -a yd 'yt-dlp -f "bv*[vcodec^=avc1][height<=1080]+ba[acodec^=mp4a]/b[ext=mp4]" --merge-output-format mp4 "'  # downlaod the video in a Chromecast-compatible format
+abbr -a yd "yt-dlp -f 'bv*[vcodec^=avc1][height<=1080]+ba[acodec^=mp4a]/b[ext=mp4]' --merge-output-format mp4 '"  # download the video in a Chromecast-compatible format
+abbr -a yds "yt-dlp -f 'bv*[vcodec^=avc1][height<=786]+ba[acodec^=mp4a]/b[ext=mp4]' --merge-output-format mp4 '"  # download the video in a Chromecast-compatible format in a smaller resolution
 
 switch (uname --nodename)
 case "barn-ultra" "*work*"

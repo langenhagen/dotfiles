@@ -80,5 +80,6 @@
     "workbench.colorTheme": "Default Dark+",
     "cmake.showOptionsMovedNotification": false,
     "application.shellEnvironmentResolutionTimeout": 99,
-    "python.defaultInterpreterPath": "/home/andreasl/Dev/experiments-and-tutorials/Python/pychromecast-hello/.venv",
+    "notebook.output.textLineLimit": 100,
+    "notebook.output.scrolling": true,
 }

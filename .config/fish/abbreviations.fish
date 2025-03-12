@@ -91,6 +91,7 @@ abbr -a bh 'grep -HiRns --include=\*.sh'
 abbr -a ph 'grep -HiRns --include=\*.py --exclude-dir={.venv\*,custom-eggs,site-packages}'
 abbr -a cfh 'grep -HiRns --include={\*.cfg,\*.conf,\*.conf.in,\*.ini,setup.py,requirements.txt,Makefile,\*.yaml}'
 abbr -a mk 'make'
+abbr -a cw 'batcat --number --paging never (which'   # cw: cat (which - now using batcat though
 
 abbr -a gb 'git branch'
 abbr -a gbl 'git blame -n'

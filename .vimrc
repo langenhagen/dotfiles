@@ -1,6 +1,12 @@
 " plugins ==========================================================================================
 let g:rainbow_active = 1 " or 0 ; essential for :RainbowToggle of rainbow.vim
 
+call plug#begin('~/.vim/plugged')
+Plug 'vim-python/python-syntax'  " Improved Python syntax highlighting
+let g:python_highlight_all = 1
+call plug#end()
+
+
 " settings  ========================================================================================
 filetype plugin indent on
 syntax on  " syntax highlighting. turn off if vim is too slow with :syntax off

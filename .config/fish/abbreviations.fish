@@ -126,8 +126,8 @@ abbr -a gqs 'git branch quicksave'  # marked for deletion on 2024-08-12
 
 abbr -a gp 'git pull --rebase'
 abbr -a gpl 'git pull --rebase'
-abbr -a gpm 'git pull --rebase origin master'
-abbr -a gplm 'git pull --rebase origin master'
+abbr -a gpm 'git pull --rebase origin master || git pull --rebase origin main'
+# abbr -a gplm 'git pull --rebase origin master || git pull --rebase origin main'  # disabled on 2025-03-12
 abbr -a gpc 'git pull --rebase origin master && git fetch --prune --tags && git submodule update --init --recursive --progress -v'
 abbr -a bigpull 'git pull --rebase origin main && git fetch --prune --tags && git submodule update --init --recursive --progress -v'
 

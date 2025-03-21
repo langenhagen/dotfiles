@@ -92,7 +92,7 @@ abbr -a ph 'grep -HiRns --include=\*.py --exclude-dir={.venv\*,custom-eggs,site-
 abbr -a cfh 'grep -HiRns --include={\*.cfg,\*.conf,\*.conf.in,\*.ini,setup.py,requirements.txt,Makefile,\*.yaml}'
 abbr -a mk 'make'
 abbr -a cw 'batcat --number --paging never (which'   # cw: cat (which - now using batcat though
-abbr -a shfmt 'shfmt --indent 4'
+abbr -a shfmt 'shfmt --indent 4 --write'
 
 abbr -a gb 'git branch'
 abbr -a gbl 'git blame -n'

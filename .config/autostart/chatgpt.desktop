@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app-id=cadlkienfkclaiaibeoongdcgmdikeeg
+X-GNOME-Autostart-enabled=true
+Name=Open ChatGPT

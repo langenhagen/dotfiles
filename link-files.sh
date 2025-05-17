@@ -35,6 +35,7 @@ ln -sf "$dotfiles_path/.config/autokey/data/My-Global-Scripts" "$HOME/.config/au
 mkdir -p "$HOME/.config/autostart";
 ln -sf "$dotfiles_path/.config/autostart/autokey-gtk.desktop" "$HOME/.config/autostart/autokey-gtk.desktop";
 ln -sf "$dotfiles_path/.config/autostart/caffeine-indicator.desktop" "$HOME/.config/autostart/caffeine-indicator.desktop";
+ln -sf "$dotfiles_path/.config/autostart/chatgpt.desktop" "$HOME/.config/autostart/chatgpt.desktop";
 ln -sf "$dotfiles_path/.config/autostart/dropbox.desktop" "$HOME/.config/autostart/dropbox.desktop";
 ln -sf "$dotfiles_path/.config/autostart/thunderbird.desktop" "$HOME/.config/autostart/thunderbird.desktop";
 ln -sf "$dotfiles_path/.config/autostart/urserver.desktop" "$HOME/.config/autostart/urserver.desktop";

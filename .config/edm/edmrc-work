@@ -26,6 +26,7 @@ choices=(
     'Work/2024-Wandelbots'
     'Work/2024-Wandelbots/101.md'
     'Work/2024-Wandelbots/journal.md'
+    'Work/2024-Wandelbots/aktuelle-tickets'
     "$(cat "$history_file")"
 )
 

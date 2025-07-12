@@ -4,6 +4,7 @@
 max_history_entries=21
 
 choices=(
+    "Desktop"
     'Downloads'
     'Admin'
     'Admin/usernames.txt'

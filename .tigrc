@@ -40,6 +40,7 @@ bind status S >!bash -c 'cd "$(dirname "%(file)")"; exec ${SHELL:-bash}'  # in s
 bind generic + >!git commit --amend
 bind generic = >!git commit
 bind generic } >!git commit --no-verify
+bind generic { >!git commit --amend --no-verify
 
 bind generic <F1> >!git pull --rebase
 bind generic <F2> >!git pull --rebase origin master

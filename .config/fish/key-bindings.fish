@@ -14,7 +14,4 @@ function fish_user_key_bindings
 
     bind \e\[1\;3D backward-bigword
     bind \e\[1\;3C forward-bigword
-
-    # cd to directories or open files with vim with ctrl + e
-    bind \ce 'set fzf_sel (fzf); printf "%s" "$fzf_sel" | xclip -fi -selection clipboard; [ -d "$fzf_sel" ]; and cd "$fzf_sel"; [ -f "$fzf_sel" ]; and $EDITOR -p "$fzf_sel"; commandline -f repaint;'
 end

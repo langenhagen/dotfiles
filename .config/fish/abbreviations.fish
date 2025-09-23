@@ -16,7 +16,7 @@ abbr -a fn 'functions'
 # abbr -a fns 'functions'  # disabled 2021-10-05
 abbr -a history 'history --show-time=\'%h-%d - %H:%M:%S \' | less'
 abbr -a sus 'systemctl suspend'
-abbr -a sss 'systemctl suspend'  # its just easier to type
+abbr -a sa 'systemctl suspend'  # its just easier to type
 abbr -a le 'less'
 
 abbr -a tls 'tmux ls'

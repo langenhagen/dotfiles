@@ -23,3 +23,10 @@ command -v rye 1>/dev/null 2>&1; and set -Ua fish_user_paths "$HOME/.rye/shims"
 nvm --version 1>/dev/null 2>&1; and nvm use lts 1>/dev/null
 
 ### the initial commands ###########################################################################
+
+# pnpm
+set -gx PNPM_HOME "/home/andreasl/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end

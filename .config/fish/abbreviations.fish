@@ -153,6 +153,7 @@ abbr -a dcu 'docker-compose up'
 abbr -a dcd 'docker-compose down'
 abbr -a dcs 'docker-compose stop'
 abbr -a dps 'docker ps'
+abbr -a dka 'docker kill (docker ps --quiet)'
 
 abbr -a tl 'telepresence'
 abbr -a tq 'telepresence quit'

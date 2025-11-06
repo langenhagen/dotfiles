@@ -16,7 +16,6 @@ abbr -a editabbr 'vim -p ~/.config/fish/abbreviations.fish; source ~/.config/fis
 abbr -a fn 'functions'
 # abbr -a fns 'functions'  # disabled 2021-10-05
 abbr -a history 'history --show-time=\'%h-%d - %H:%M:%S \' | less'
-abbr -a sus 'systemctl suspend'
 abbr -a sa 'systemctl suspend -i'  # its just easier to type
 abbr -a le 'less'
 
@@ -38,8 +37,6 @@ abbr -a hi 'cat ~/.histout'
 
 abbr -a cls 'clear'
 abbr -a ht 'hashtag'
-abbr -a mnm 'minimerk \''  # marked as basically unused on 2023-04-27
-abbr -a mbm 'money-by-minute.py'  # last used in 2021
 abbr -a pc 'playground-cpp-compile.sh'
 
 abbr -a psg 'ps aux | grep -i'
@@ -50,7 +47,6 @@ abbr -a p 'python'
 abbr -a bp 'bpython'
 abbr -a pv 'python --version'
 abbr -a pe 'python -m venv .venv; source .venv/bin/activate.fish'
-abbr -a pt 'pytest'  # marked as unused on 2023-04-27
 abbr -a ppg 'mkdir foo && cd foo && python -m venv .venv && source .venv/bin/activate.fish && pip install -U pip bpython'
 # abbr -a cct 'vim --cmd "set t_ti= t_te=" +redraw +q'  # similar to cat, but via vim; put on pause on 2025-03-10
 abbr -a cct 'batcat --number --paging never'  # similar to cat, but via batcat
@@ -64,10 +60,7 @@ abbr -a shch 'shellcheck -x --exclude SC2059'
 abbr -a tch 'touch'
 abbr -a vd 'vimdiff'
 abbr -a wl 'wc -l'
-abbr -a psh 'poetry shell'
-
-# abbr -a ca 'conda activate'  # deactivated 2021-10-05
-# abbr -a cda 'conda deactivate'  # deactivated 2021-10-05
+# abbr -a psh 'poetry shell'  # deactivated 2025-11-05
 
 abbr -a t 'tig'
 abbr -a tb 'tig blame'
@@ -75,7 +68,6 @@ abbr -a ts 'tig show'
 
 abbr -a tree 'tree -C -a'
 abbr -a t3 'tree -C -a -L 3'
-abbr -a t3d 'tree -C -a -L 3 -d'  # marked as unused on 2023-04-27
 
 abbr -a v 'vim -p'
 abbr -a vg 'vim -p (cat ~/.histout)'

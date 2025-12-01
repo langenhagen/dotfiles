@@ -11,7 +11,7 @@
 
 abbr -a fconf 'cd ~/.config/fish/ ; ls'
 abbr -a sourcefish '. ~/.config/fish/config.fish'
-abbr -a upsys 'cd ~/Admin/computer/setup-my-ubuntu; bash 10-my/900-update-system.sh'
+abbr -a upsys 'cd ~/Admin/computer/setup-my-ubuntu; time bash 10-my/900-update-system.sh'
 abbr -a editabbr 'vim -p ~/.config/fish/abbreviations.fish; source ~/.config/fish/abbreviations.fish'
 abbr -a fn 'functions'
 # abbr -a fns 'functions'  # disabled 2021-10-05

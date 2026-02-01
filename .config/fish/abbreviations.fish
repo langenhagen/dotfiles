@@ -38,6 +38,7 @@ abbr -a hi 'cat ~/.histout'
 abbr -a cls 'clear'
 abbr -a ht 'hashtag'
 abbr -a pc 'playground-cpp-compile.sh'
+abbr -a sn 'sanchar'
 
 abbr -a psg 'ps aux | grep -i'
 abbr -a pk 'ps aux | fzf --preview "" | tr -s "[:blank:]" | cut -d" " -f2 | xargs -r kill'

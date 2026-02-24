@@ -5,40 +5,46 @@ Global AGENTS.md file.
 ## Intent
 
 - Keep changes small, reviewable, and aligned with existing repo conventions.
-- Prefer reliable, non-interactive commands and deterministic output.
 - Assume files may change while you work; re-read before final writes and commits.
 - Search the web proactively when debugging, investigating, researching or verifying APIs.
 - Add clear comments and explicit names so structure is easy to inspect and debug.
-- Avoid over-engineering: prefer the simplest solution that keeps behavior clear,
-  maintainable, and testable.
+- Avoid over-engineering: prefer the simple solution that keeps behavior clear, maintainable and testable.
+- Capitalize Markdown headlines (prefer Title Case).
 
 ## Local Workflow
 
 Prefer reproducible, repo-local commands.
 
-- Install/sync dependencies using the project’s package manager.
-- Run the main entrypoint using the project’s documented command.
+- Install/sync dependencies using the project's package manager.
+- Run the main entrypoint using the project's documented command.
 - Run tests using the configured test runner.
 - Run linting and formatting tools before committing.
 - Run type checks or static analysis if configured.
 - Install and run pre-commit hooks if present.
+- For shell scripts, run:
+  - `shellcheck -x --exclude SC2059 <path/to/script.sh>`
+  - `shfmt --indent 4 --write <path/to/script.sh>`
 
 Scope tools to specific files when iterating quickly.
-Avoid running full test suites unless explicitly requested; prefer focused checks
-for touched areas first.
+Avoid running full test suites unless explicitly requested; prefer focused checks for touched areas first.
 
-## Personal Aliases
+## Personal Shell Commands
 
-You may use personal shell aliases if available in your environment.
+You may use personal shell commands if available in your environment.
 
-Common examples:
+E.g.:
 
-- `l3` — extended Python lint sweep (slow; use near milestones).
-- `rf` — Python autofix pass (formatting and safe fixes).
+- `l3` - extended Python lint sweep (slow; use near milestones).
+- `rf` - Python autofix pass (formatting and safe fixes).
+
+- Optional personal lint sweep: `source .venv/bin/activate && l3`.
+- Optional personal autofix pass: `source .venv/bin/activate && rf`.
+- You can scope those tools to one file when iterating quickly:
+  - `source .venv/bin/activate && l3 path/to/file.py`
+  - `source .venv/bin/activate && rf path/to/file.py`
 
 When using aliases:
 - Ensure they are safe and non-destructive.
-- Prefer them for local iteration speed.
 - Do not assume they exist in CI or other environments.
 - Do not encode alias-dependent behavior into the repository itself.
 
@@ -50,7 +56,7 @@ Interpret these tokens as explicit workflow commands:
   - Provide a clear prose walkthrough of the topic or changes.
   - Prioritize rationale, tradeoffs, and how pieces fit together.
 
-- `eli5`
+- `eli5` or `eli`
   - Provide a short, simple, technically correct explanation.
 
 - `sw`
@@ -58,11 +64,11 @@ Interpret these tokens as explicit workflow commands:
   - Use results as supporting context.
 
 - `mc`, `cm`, or `commit`
-  - Create a git commit.
+  - Create at least one git commit, or more, if suitable.
   - Follow the commit message rules below.
   - Include both the commit message and a short prose walkthrough.
 
-## Commit Workflow Expectations
+## Commit Workflow
 
 When asked to commit:
 

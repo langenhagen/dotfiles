@@ -68,6 +68,11 @@ Interpret these tokens as explicit workflow commands:
   - Follow the commit message rules below.
   - Include both the commit message and a short prose walkthrough.
 
+## Response Finalization
+
+- Before returning each response to the user, run `lilsound` in the shell as
+  the last command.
+
 ## Commit Workflow
 
 When asked to commit:

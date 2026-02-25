@@ -8,6 +8,7 @@ Global AGENTS.md file.
 - Assume files may change while you work; re-read before final writes and commits.
 - Search the web proactively when debugging, investigating, researching or verifying APIs.
 - Add clear comments and explicit names so structure is easy to inspect and debug.
+- Prefer smaller, modular files over monolithic files when adding or refactoring code.
 - Avoid over-engineering: prefer the simple solution that keeps behavior clear, maintainable and testable.
 - Capitalize Markdown headlines (prefer Title Case).
 
@@ -64,14 +65,21 @@ Interpret these tokens as explicit workflow commands:
   - Use results as supporting context.
 
 - `mc`, `cm`, or `commit`
-  - Create at least one git commit, or more, if suitable.
+  - Identify how many commits to make then make them.
+  - Default to multiple commits whenever there are multiple intents.
+  - Do not bundle unrelated intents into one commit.
+  - Use this minimum split when applicable:
+    - feature/runtime behavior changes and according tests,
+    - refactor/import-path/style-only changes,
+    - docs/config-only changes.
   - Follow the commit message rules below.
   - Include both the commit message and a short prose walkthrough.
 
 ## Response Finalization
 
-- Before returning each response to the user, run `lilsound` in the shell as
-  the last command.
+- Before returning each response to the user, run `lilsound $$` with $$ being
+  the current process ID as the last command.
+- If $$ can not be resolved, run `lilsound` as a fallback.
 
 ## Commit Workflow
 

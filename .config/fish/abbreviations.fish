@@ -210,6 +210,7 @@ case "barn-ultra" "*work*"
         abbr -a pi 'xclip -selection clipboard -t image/png -o > "$HOME/Desktop/"(date +%Y-%m-%d-%H-%M-%S)"-clipboard.png"'  # paste an image from clipboard to file
 
         abbr -a pbcopy 'xclip -selection clipboard'
+        abbr -a pbc 'xclip -selection clipboard'
         abbr -a pbpaste 'xclip -selection clipboard -o'
     end
 end

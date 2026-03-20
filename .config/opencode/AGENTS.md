@@ -17,6 +17,10 @@ Prefer reproducible, repo-local commands.
 - Install/run pre-commit hooks if present.
 - For shell scripts, run `shellcheck -x --exclude SC2059 <path/to/script.sh>` and
   `shfmt --indent 4 --write <path/to/script.sh>`.
+- In shell scripts, use lowercase names for non-environment variables; reserve
+  uppercase names for environment variables and other exported shell names.
+- In shell scripts, prefer long-form CLI arguments over short flags when practical
+  (for example `curl --silent --fail --get` instead of `curl -sfG`).
 - Scope tools to specific files when iterating quickly.
 - Avoid full test suites unless requested; prefer focused checks for touched areas.
 
@@ -45,6 +49,10 @@ Interpret these tokens as explicit workflow commands:
   pieces fit together.
 - `eli5` or `eli`: Provide a short, simple, technically correct explanation.
 - `sw`: Explicitly search the web before answering; use results as supporting context.
+- `shellcheck`, `shch` or `shfmt`: Run `shellcheck -x --exclude SC2059` and
+  `shfmt --indent 4 --write` on the currently discussed shell file; if the target
+  file is unclear from context, run them on all relevant shell files in scope and
+  act on any `shellcheck` findings, then format.
 - `groom`: Review README and other docs (including docstrings, comments, symbol names),
   identify outdated content, and rephrase or update for consistency.
 - `mc`, `cm`, or `commit`:

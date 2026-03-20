@@ -1,124 +1,179 @@
 # AGENTS.md
 
-## Intent
+## Purpose And Scope
 
-- Keep changes small, reviewable, and aligned with repo conventions.
-- Assume files may change; re-read before final writes/commits.
-- Proactively search the web when debugging, investigating, or verifying APIs.
-- Add clear comments and explicit names for easy inspection/debugging.
-- Prefer smaller, modular files over monolithic ones.
-- Avoid over-engineering; keep behavior clear, maintainable, testable.
-- Capitalize Markdown headlines (Title Case preferred).
+This file is an execution playbook for coding agents. Keep changes small,
+reviewable, and aligned with repository conventions. Prefer clear behavior over
+cleverness, and optimize for maintainability and testability.
 
-## Local Workflow
+## Priority And Conflict Resolution
 
-Prefer reproducible, repo-local commands.
+When instructions conflict, use this order:
 
-- Install/run pre-commit hooks if present.
-- For shell scripts, run `shellcheck -x --exclude SC2059 <path/to/script.sh>` and
-  `shfmt --indent 4 --write <path/to/script.sh>`.
-- In shell scripts, use lowercase names for non-environment variables; reserve
-  uppercase names for environment variables and other exported shell names.
-- In shell scripts, prefer long-form CLI arguments over short flags when practical
-  (for example `curl --silent --fail --get` instead of `curl -sfG`).
-- Scope tools to specific files when iterating quickly.
-- Avoid full test suites unless requested; prefer focused checks for touched areas.
+1. Safety and non-destructive behavior.
+2. Direct user instructions.
+3. Repository-local conventions and this file.
+4. Personal or optional preferences.
 
-## Personal Shell Commands
+If uncertainty remains, choose the least risky reversible option and state your
+assumption.
 
-You may use personal shell commands if available in your environment, e.g.:
+## Operating Defaults
 
-- `l3` - extended Python lint sweep (slow; use near milestones).
-- `rf` - Python autofix pass (formatting and safe fixes).
-- Optional lint sweep: `source .venv/bin/activate && l3`.
-- Optional autofix: `source .venv/bin/activate && rf`.
-- Scope to one file when iterating quickly:
-  - `source .venv/bin/activate && l3 path/to/file.py` or
-  - `source .venv/bin/activate && rf path/to/file.py`.
+### MUST
 
-When using aliases:
-- Ensure they are safe and non-destructive.
-- Do not assume they exist in CI or other environments.
-- Do not encode alias-dependent behavior into the repository.
-
-## User Shorthand Conventions
-
-Interpret these tokens as explicit workflow commands:
-
-- `prose`: Provide a clear prose walkthrough; focus on rationale, tradeoffs, and how
-  pieces fit together.
-- `eli5` or `eli`: Provide a short, simple, technically correct explanation.
-- `sw`: Explicitly search the web before answering; use results as supporting context.
-- `shellcheck`, `shch` or `shfmt`: Run `shellcheck -x --exclude SC2059` and
-  `shfmt --indent 4 --write` on the currently discussed shell file; if the target
-  file is unclear from context, run them on all relevant shell files in scope and
-  act on any `shellcheck` findings, then format.
-- `groom`: Review README and other docs (including docstrings, comments, symbol names),
-  identify outdated content, and rephrase or update for consistency.
-- `mc`, `cm`, or `commit`:
-  - Identify how many commits to make, then make them.
-  - Default to multiple commits when there are multiple intents.
-  - Do not bundle unrelated intents.
-  - Use this minimum split when applicable: feature/runtime behavior changes and
-    according tests, refactor/import-path/style-only changes, docs/config-only changes.
-  - Follow the commit message rules below.
-  - Include both the commit message and a short prose walkthrough.
-
-## Style of Collaboration
-
-- Keep tone direct and neutral; answer directly.
-- Do not evaluate or praise the user's prompt/question quality, (e.g. "Great Call",
-  "You are right to question this", ...)
-- Avoid conversational or motivational filler (for example: "awesome", "great",
-  "nice", "good catch") unless requested.
-
-## Response Finalization
-
-- Before returning each response, run `lilsound $$` with $$ as the current process ID as
-  the last command.
-- If $$ can not be resolved, run `lilsound` without args.
-
-## Commit Workflow
-
+- Re-read relevant files before final writes and before commits.
 - Do not revert unrelated user changes.
-- Do not use destructive git commands unless explicitly requested.
+- Do not run destructive git commands unless explicitly requested.
 - Avoid interactive commands in automation.
-- If a patch fails or context looks stale, re-read files before retrying.
-- Never include secrets in commits (`.env*`, tokens, private keys, auth dumps).
+- Never commit secrets (`.env*`, tokens, private keys, auth dumps).
+- Keep Markdown headlines in Title Case.
+- Prefer plain ASCII in output/docs unless Unicode is already required.
+- Do not use approval, praise, or validation language about user requests.
+  Forbidden examples: "you are right", "good catch", "great point",
+  "nice", "awesome", "thanks for calling that out".
+
+### SHOULD
+
+- Keep files modular rather than monolithic.
+- Add explicit names and comments where they improve inspection/debugging.
+- Use reproducible, repo-local commands.
+- Install and run pre-commit hooks when present.
+- Scope tools/checks to touched files while iterating.
+- Prefer focused checks over full suites unless requested.
+- Use long-form CLI flags in shell scripts when practical.
+
+### MAY
+
+- Use personal aliases and local shortcuts when safe and available.
+
+## Task Playbooks
+
+### Code Changes
+
+1. Read the target files and nearby context.
+2. Apply the smallest change that satisfies the request.
+3. Run focused validation for touched areas.
+4. Re-read modified files before finalizing.
+
+If a patch fails or context looks stale, re-read the affected files before
+retrying.
+
+### Debugging And Investigation
+
+1. Reproduce and localize the issue.
+2. Inspect nearby code and assumptions.
+3. Search the web when external behavior is uncertain (APIs, versions,
+   framework behavior, platform-specific issues).
+4. Apply and verify the fix with focused checks.
+
+### Shell Script Changes
+
+For each touched shell script:
+
+1. Run `shellcheck -x --exclude SC2059 <path/to/script.sh>`.
+2. Fix findings relevant to the change.
+3. Run `shfmt --indent 4 --write <path/to/script.sh>`.
+
+Shell style rules:
+
+- Use lowercase names for non-environment variables.
+- Reserve uppercase names for exported/environment variables.
+- Prefer long-form CLI arguments when practical.
+
+### Commit Workflow
 
 When asked to commit:
+
 1. Inspect `git status`, full diff, and recent commit style.
 2. Stage only relevant files/patches.
 3. Run focused checks for touched areas.
 4. Commit.
+5. Verify message formatting using `git log -1 --pretty=%B`.
 
-### Commit Message Rules
+## Commit Message Rules
 
-DO:
-- Start the summary in imperative mood (for example `Add`, `Fix`, `Change`).
+### DO
+
+- Start summary in imperative mood (for example `Add`, `Fix`, `Change`).
 - Keep the second line blank.
 - Wrap body text to about 72 columns.
-- Use real line breaks in the body (avoid passing wrapped text as one line).
-- For shell commits, prefer multiline `-m $'line1\nline2'` or a heredoc body so line
-  wraps are preserved.
-- Add extra blank lines only when you intentionally start a new paragraph.
+- Use real line breaks in body text.
+- For shell commits, prefer multiline `-m $'line1\nline2'` or a heredoc body
+  so line wraps are preserved.
+- Add extra blank lines only when intentionally starting a new paragraph.
 
-DON'T:
+### DON'T
+
 - Do not use Conventional Commit prefixes.
 - Do not end the summary line with a period.
-- Do not include literal `\n` in commit messages; use real newlines.
+- Do not include literal `\n` in commit messages.
 
-Before finalizing a commit, verify formatting with `git log -1 --pretty=%B` and ensure
-no body line exceeds 72 characters.
+Ensure no commit body line exceeds 72 characters.
 
-## Linter and Static Analysis Pragmas
+## User Shorthand Commands
 
-- Keep suppressions (`noqa`, `type: ignore`, etc.) as narrow as possible.
-- Document each suppression inline with the rule meaning and a short local reason.
-- Prefer config-level ignores for broad patterns over repeated inline suppressions.
+Interpret these tokens as explicit workflow commands:
 
-## Output Character Policy
+- `prose`: Give a clear prose walkthrough with rationale and tradeoffs.
+- `eli5` or `eli`: Give a short, simple, technically correct explanation.
+- `sw`: Search the web before answering; use results as support.
+- `shellcheck`, `shch`, or `shfmt`: Run `shellcheck -x --exclude SC2059` and
+  `shfmt --indent 4 --write` on the current shell file. If target file is
+  unclear, run across relevant shell files in scope, fix findings, then format.
+- `groom`: Review README/docs/docstrings/comments/symbol names, identify stale
+  content, and rephrase for consistency.
+- `mc`, `cm`, or `commit`:
+  - Decide the number of commits.
+  - Prefer multiple commits when intents differ.
+  - Do not bundle unrelated intents.
+  - Minimum split when applicable:
+    - feature/runtime behavior changes with corresponding tests,
+    - refactor/import-path/style-only changes,
+    - docs/config-only changes.
+  - Follow commit message rules in this file.
+  - Include commit message(s) and a short prose walkthrough.
 
-- Prefer plain ASCII in output/docs unless a file already requires Unicode.
+## Local Aliases And Optional Commands
+
+Available if present:
+
+- `l3` for extended Python lint sweep (slow; use near milestones).
+- `rf` for Python autofix (formatting and safe fixes).
+
+Examples:
+
+- `source .venv/bin/activate && l3`
+- `source .venv/bin/activate && rf`
+- `source .venv/bin/activate && l3 path/to/file.py`
+- `source .venv/bin/activate && rf path/to/file.py`
+
+Alias usage rules:
+
+- Ensure aliases are safe and non-destructive.
+- Do not assume aliases exist in CI or other environments.
+- Do not encode alias-dependent behavior into the repository.
+
+## Response Style
+
+- Keep tone direct and neutral; answer directly.
+- Start with the answer or action, not validation of the prompt.
+- Do not evaluate or praise prompt quality (e.g., "Great call",
+  "You are right to question this").
+- Avoid conversational or motivational filler (e.g., "awesome", "great",
+  "nice", "good catch") unless requested.
+- When uncertain, prefer neutral acknowledgments (for example "Understood",
+  "Noted", "I will update that") over evaluative phrasing.
 - Avoid fancy punctuation and hidden/special spacing characters.
 - Normalize pasted external text to plain characters before finalizing.
+
+## Linter And Static Analysis Pragmas
+
+- Keep suppressions (`noqa`, `type: ignore`, etc.) as narrow as possible.
+- Document each suppression inline with rule meaning and local reason.
+- Prefer config-level ignores for broad patterns over repeated inline suppressions.
+
+## Response Finalization
+
+- Before returning each response, run `lilsound $$` as the last command.
+- If `$$` cannot be resolved, run `lilsound` without args.

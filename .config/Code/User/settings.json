@@ -82,4 +82,5 @@
     "application.shellEnvironmentResolutionTimeout": 99,
     "notebook.output.textLineLimit": 100,
     "notebook.output.scrolling": true,
+    "biome.suggestInstallingGlobally": false,
 }

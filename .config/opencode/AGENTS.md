@@ -12,8 +12,12 @@ When instructions conflict, use this order:
 
 1. Safety and non-destructive behavior.
 2. Direct user instructions.
-3. Repository-local conventions and this file.
-4. Personal or optional preferences.
+3. Repository-local `AGENTS.md` and repository conventions.
+4. Global/default agent guidance (this file).
+5. Personal or optional preferences.
+
+For repository work, repository-local `AGENTS.md` instructions override this
+global file when they conflict.
 
 If uncertainty remains, choose the least risky reversible option and state your
 assumption.

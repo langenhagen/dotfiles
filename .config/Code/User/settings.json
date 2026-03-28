@@ -42,8 +42,8 @@
     "gitlens.codeLens.recentChange.enabled": false,
     "gitlens.codeLens.authors.enabled": false,
     "workbench.colorCustomizations": {
-    "[Default Dark+]": {
-        "editor.background": "#101010",
+    "[Dark+]": {
+        "editor.background": "#050505",
         "sideBar.background": "#000000",
         "tab.inactiveBackground": "#151515",
         "tab.activeBackground": "#303030",
@@ -77,10 +77,10 @@
     "indentRainbow.ignoreErrorLanguages": [
         "*"
     ],
-    "workbench.colorTheme": "Default Dark+",
     "cmake.showOptionsMovedNotification": false,
     "application.shellEnvironmentResolutionTimeout": 99,
     "notebook.output.textLineLimit": 100,
     "notebook.output.scrolling": true,
     "biome.suggestInstallingGlobally": false,
+    "workbench.colorTheme": "Dark+",
 }

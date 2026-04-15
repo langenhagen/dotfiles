@@ -31,6 +31,8 @@ assumption.
 - Do not run destructive git commands unless explicitly requested.
 - Avoid interactive commands in automation.
 - Never commit secrets (`.env*`, tokens, private keys, auth dumps).
+- Keep temporary files and render artifacts in workspace paths (for example
+  `.tmp/`) and remove them after use.
 - Keep Markdown headlines in Title Case.
 - Prefer plain ASCII in output/docs unless Unicode is already required.
 - Do not use approval, praise, or validation language about user requests.

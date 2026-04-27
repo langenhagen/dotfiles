@@ -29,6 +29,10 @@ assumption.
 - Re-read relevant files before final writes and before commits.
 - Do not revert unrelated user changes.
 - Do not run destructive git commands unless explicitly requested.
+  Destructive git commands include but are not limited to: `git commit --amend`,
+  `git rebase`, `git reset --hard`, `git push --force`, `git clean -fd`.
+  These commands rewrite history or discard work and MUST NEVER be used without
+  an explicit user instruction to do so.
 - Avoid interactive commands in automation.
 - Never commit secrets (`.env*`, tokens, private keys, auth dumps).
 - Keep temporary files and render artifacts in workspace paths (for example

@@ -60,6 +60,8 @@ ln -sf "$dotfiles_path/.config/fish/completions/fga.fish" "$HOME/.config/fish/co
 
 mkdir -p "$HOME/.config/opencode/";
 ln -sf "$dotfiles_path/.config/opencode/AGENTS.md" "$HOME/.config/opencode/AGENTS.md";
+ln -sf "$dotfiles_path/.config/opencode/opencode.json" "$HOME/.config/opencode/opencode.json";
+ln -sf "$dotfiles_path/.config/opencode/tui.json" "$HOME/.config/opencode/tui.json";
 
 mkdir -p "$HOME/.config/lf";
 ln -sf "$dotfiles_path/.config/lf/lfrc" "$HOME/.config/lf/lfrc";

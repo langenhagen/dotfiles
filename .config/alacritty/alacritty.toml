@@ -1,4 +1,4 @@
-[shell]
+[terminal.shell]
 program = "/usr/bin/tmux"
 
 [window]
@@ -30,3 +30,5 @@ blue    = '#5c5cff'
 magenta = '#ff00ff'
 cyan    = '#00ffff'
 white   = '#ffffff'
+
+[terminal]

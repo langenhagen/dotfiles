@@ -31,4 +31,4 @@ choices=(
     "$(cat "$history_file")"
 )
 
-open_terminal_command='gnome-terminal --working-directory'
+open_terminal_command='alacritty --working-directory'

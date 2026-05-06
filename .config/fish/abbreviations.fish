@@ -49,8 +49,8 @@ abbr -a bp 'bpython'
 abbr -a pv 'python --version'
 abbr -a pe 'python -m venv .venv; source .venv/bin/activate.fish'
 abbr -a ppg 'mkdir foo && cd foo && python -m venv .venv && source .venv/bin/activate.fish && pip install -U pip bpython'
-# abbr -a cct 'vim --cmd "set t_ti= t_te=" +redraw +q'  # similar to cat, but via vim; put on pause on 2025-03-10
 abbr -a cct 'batcat --number --paging never'  # similar to cat, but via batcat
+abbr -a vv 'batcat --number --paging never'  # similar to cat, but via batcat
 abbr -a ct 'cat'
 abbr -a f 'find -L . -iname'
 abbr -a l 'lf'

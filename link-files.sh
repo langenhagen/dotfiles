@@ -58,15 +58,18 @@ ln -sf "$dotfiles_path/.config/fish/vimlike-bookmarks.fish" "$HOME/.config/fish/
 ln -sf "$dotfiles_path/.config/fish/completions/aws.fish" "$HOME/.config/fish/completions/aws.fish";
 ln -sf "$dotfiles_path/.config/fish/completions/fga.fish" "$HOME/.config/fish/completions/fga.fish";
 
+mkdir -p "$HOME/.config/lf";
+ln -sf "$dotfiles_path/.config/lf/lfrc" "$HOME/.config/lf/lfrc";
+ln -sf "$dotfiles_path/.config/lf/bulkrename.sh" "$HOME/.config/lf/bulkrename.sh";
+ln -sf "$dotfiles_path/.config/lf/previewer.sh" "$HOME/.config/lf/previewer.sh";
+
 mkdir -p "$HOME/.config/opencode/";
 ln -sf "$dotfiles_path/.config/opencode/AGENTS.md" "$HOME/.config/opencode/AGENTS.md";
 ln -sf "$dotfiles_path/.config/opencode/opencode.json" "$HOME/.config/opencode/opencode.json";
 ln -sf "$dotfiles_path/.config/opencode/tui.json" "$HOME/.config/opencode/tui.json";
 
-mkdir -p "$HOME/.config/lf";
-ln -sf "$dotfiles_path/.config/lf/lfrc" "$HOME/.config/lf/lfrc";
-ln -sf "$dotfiles_path/.config/lf/bulkrename.sh" "$HOME/.config/lf/bulkrename.sh";
-ln -sf "$dotfiles_path/.config/lf/previewer.sh" "$HOME/.config/lf/previewer.sh";
+mkdir -p "$HOME/.config/run-or-raise";
+ln -sf "$dotfiles_path/.config/run-or-raise/shortcuts.conf" "$HOME/.config/run-or-raise/shortcuts.conf";
 
 mkdir -p "$HOME/.config/xpad";
 ln -sf "$dotfiles_path/.config/xpad/default-style" "$HOME/.config/xpad/default-style";

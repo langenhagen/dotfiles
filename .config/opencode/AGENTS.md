@@ -187,3 +187,4 @@ Alias usage rules:
 
 - Before returning each response, run `lilsound $$` as the last command.
 - If `$$` cannot be resolved, run `lilsound` without args.
+- `lilsound` is non-writing and safe to run in plan mode.

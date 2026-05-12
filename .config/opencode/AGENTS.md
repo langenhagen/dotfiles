@@ -127,6 +127,9 @@ Interpret these tokens as explicit workflow commands:
 
 - `prose`: Give a clear prose walkthrough with rationale and tradeoffs.
 - `eli5` or `eli`: Give a short, simple, technically correct explanation.
+- `s`, `short`: Restate the previous assistant message in 1-5 sentences.
+  No new work, no new tool calls; just a terse paraphrase of what was
+  already said.
 - `sw`: Search the web before answering; use results as support.
 - `shellcheck`, `shch`, or `shfmt`: Run `shellcheck -x --exclude SC2059` and
   `shfmt --indent 4 --write` on the current shell file. If target file is

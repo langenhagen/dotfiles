@@ -18,6 +18,7 @@ text/x-objcsrc=sublime-text_subl.desktop
 application/sql=sublime-text_subl.desktop
 text/x-csrc=sublime-text_subl.desktop
 audio/x-ms-wma=vlc.desktop
+x-scheme-handler/slack=slack.desktop
 
 [Added Associations]
 text/plain=sublime-text_subl.desktop;

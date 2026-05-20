@@ -2,13 +2,11 @@ acarreiro.calculate
 alefragnani.bookmarks
 astral-sh.ty
 asuka.insertnumbers
-bets.bets
 bierner.markdown-mermaid
-biomejs.biome
 charliermarsh.ruff
 christian-kohler.path-intellisense
 clemenspeters.format-json
-dawhite.mustache
+dnut.rewrap-revived
 docker.docker
 eamodio.gitlens
 fabiospampinato.vscode-diff
@@ -16,7 +14,6 @@ golang.go
 jebbs.plantuml
 jeff-hykin.better-cpp-syntax
 josetr.cmake-language-support-vscode
-lokalise.i18n-ally
 mads-hartmann.bash-ide-vscode
 mechatroner.rainbow-csv
 ms-azuretools.vscode-containers
@@ -41,12 +38,9 @@ ms-vscode.cpptools
 ms-vscode.cpptools-extension-pack
 ms-vscode.cpptools-themes
 ms-vscode.remote-explorer
-ms-vsliveshare.vsliveshare
 oderwat.indent-rainbow
-openfga.openfga-vscode
 s3anmorrow.color-stamp
 shardulm94.trailing-spaces
-stkb.rewrap
 streetsidesoftware.code-spell-checker
 tamasfe.even-better-toml
 twxs.cmake

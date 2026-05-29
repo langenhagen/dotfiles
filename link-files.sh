@@ -79,7 +79,7 @@ ln -sf "$dotfiles_path/.config/xpad/trigger/GEORGIAN-trigger.sh" "$HOME/.config/
 mkdir -p "$HOME/.urserver/remotes";
 ln -sf "$dotfiles_path/.urserver/remotes/custom" "$HOME/.urserver/remotes/";
 
-if [[ "$(uname -n)" =~ 'barn-ultra' ]]; then
+if [[ "$(uname -n)" =~ 'barn-ultra' || "$(uname -n)" =~ 'andreasl-yoga' ]]; then
     ln -sf "$dotfiles_path/.gitconfig-barn" "$HOME/.gitconfig";
     ln -sf "$dotfiles_path/.config/edm/edmrc-barn" "$HOME/.config/edm/edmrc";
     rm "$HOME/.config/reposets"

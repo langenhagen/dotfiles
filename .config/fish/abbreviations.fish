@@ -170,7 +170,7 @@ abbr -a y "yt-dlp -f 'bv*[vcodec^=avc1][height<=1080]+ba[acodec^=mp4a]/b[ext=mp4
 abbr -a ys "yt-dlp -f 'bv*[vcodec^=avc1][height<=786]+ba[acodec^=mp4a]/b[ext=mp4]' --merge-output-format mp4 '"  # download the video in a Chromecast-compatible format in a smaller resolution
 
 switch (uname --nodename)
-case "barn-ultra" "*work*"
+case "barn-ultra" "andreasl-yoga" "*work*"
     # Desktop machine related abbrs
     abbr -a now 'date \'+%s\' | xclip -fi -selection clipboard'  # the current timestamp since epoch in seconds
 

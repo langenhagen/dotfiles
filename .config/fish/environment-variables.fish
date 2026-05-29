@@ -5,7 +5,7 @@
 # author: andreasl
 
 switch (uname -n)
-    case "*barn-ultra*" "*work*"
+    case "*barn-ultra*" "andreasl-yoga" "*work*"
         set -x BUCKET_LIST_FILE_PATH "$HOME/Barn/Notes/bucket-list.txt"
         set -x CHECK_DIR_PATH "$HOME/Dev/check"
         set -x ONE_LINE_HELP_FILE_PATH "$HOME/Dev/Zeugs/one-line-help.txt"

@@ -8,6 +8,7 @@ set previewer ~/.config/lf/previewer.sh
 set scrolloff 7  # leave some space at the top and the bottom of the screen when scrolling
 
 # key mappings
+nmap <esc> quit  # nmap instead of map so it only works in normal mode and not in visual mode (keypress V for visual mode)
 map <enter> shell
 map <delete> delete
 map D delete

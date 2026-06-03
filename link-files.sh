@@ -6,11 +6,11 @@
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 dotfiles_dir="${script_dir}"
 
-ln -sf "$dotfiles_dir/.vimrc" "$HOME/.vimrc"
 ln -sf "$dotfiles_dir/.vim" "$HOME"
+ln -sf "$dotfiles_dir/.vimrc" "$HOME/.vimrc"
 
-ln -sf "$dotfiles_dir/.gitignore_global" "$HOME/.gitignore_global"
 ln -sf "$dotfiles_dir/.gitconfig" "$HOME/.gitconfig"
+ln -sf "$dotfiles_dir/.gitignore_global" "$HOME/.gitignore_global"
 ln -sf "$dotfiles_dir/.gvimrc" "$HOME/.gvimrc"
 ln -sf "$dotfiles_dir/.multitailrc" "$HOME/.multitailrc"
 ln -sf "$dotfiles_dir/.sqliterc" "$HOME/.sqliterc"

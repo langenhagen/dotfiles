@@ -7,8 +7,8 @@
 # author: andreasl
 
 files=(
-    '.config/sublime-text-3/Packages/User/Preferences.sublime-settings'
-    '.config/konsolerc')
+    '.config/sublime-text/Packages/User/Preferences.sublime-settings'
+)
 
 if [ "$1" == '-no' ]; then
     for file in ${files[@]} ; do

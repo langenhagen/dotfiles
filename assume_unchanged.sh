@@ -11,11 +11,11 @@ files=(
 )
 
 if [ "$1" == '-no' ]; then
-    for file in ${files[@]} ; do
+    for file in ${files[@]}; do
         git update-index --no-assume-unchanged ${file}
     done
 else
-    for file in ${files[@]} ; do
-        git update-index --assume-unchanged ${file}  # ignore further changes to a file
+    for file in ${files[@]}; do
+        git update-index --assume-unchanged ${file} # ignore further changes to a file
     done
 fi

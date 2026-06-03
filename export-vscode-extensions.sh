@@ -3,4 +3,4 @@
 #
 # author: andreasl
 
-code --list-extensions > 'vscode-extensions.txt'
+code --list-extensions >'vscode-extensions.txt'

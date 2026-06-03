@@ -3,4 +3,4 @@
 #
 # author: andreasl
 
-dconf dump /org/gnome/terminal/legacy/profiles:/ > 'gnome-terminal-profiles.dconf'
+dconf dump /org/gnome/terminal/legacy/profiles:/ >'gnome-terminal-profiles.dconf'

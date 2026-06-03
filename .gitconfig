@@ -8,12 +8,12 @@
 [rerere]
     enabled = true
 [core]
-    excludesfile = /home/barn/.gitignore_global
+    excludesfile = ~/.gitignore_global
     editor = vim
-[commit]
+    pager = diff-so-fancy | less --tabs=1,5 -R
 [gitreview]
     remote = origin
-    username = barn
+    username = andreasl
 [filter "lfs"]
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
@@ -26,5 +26,6 @@
     prompt = false
 [init]
 	defaultBranch = main
-[push]
-	default = simple
+
+[includeIf "gitdir:~/wandel/"]
+    path = ~/dotfiles/.gitconfig-work

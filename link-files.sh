@@ -10,6 +10,7 @@ ln -sf "$dotfiles_path/.vimrc" "$HOME/.vimrc";
 ln -sf "$dotfiles_path/.vim" "$HOME";
 
 ln -sf "$dotfiles_path/.gitignore_global" "$HOME/.gitignore_global";
+ln -sf "$dotfiles_path/.gitconfig" "$HOME/.gitconfig";
 ln -sf "$dotfiles_path/.gvimrc" "$HOME/.gvimrc";
 ln -sf "$dotfiles_path/.multitailrc" "$HOME/.multitailrc";
 ln -sf "$dotfiles_path/.sqliterc" "$HOME/.sqliterc";
@@ -80,7 +81,7 @@ mkdir -p "$HOME/.urserver/remotes";
 ln -sf "$dotfiles_path/.urserver/remotes/custom" "$HOME/.urserver/remotes/";
 
 if [[ "$(uname -n)" =~ 'barn-ultra' || "$(uname -n)" =~ 'andreasl-yoga' ]]; then
-    ln -sf "$dotfiles_path/.gitconfig-barn" "$HOME/.gitconfig";
+
     ln -sf "$dotfiles_path/.config/edm/edmrc-barn" "$HOME/.config/edm/edmrc";
     rm "$HOME/.config/reposets"
     ln -sf "$dotfiles_path/.config/reposets-barn" "$HOME/.config/reposets";
@@ -88,13 +89,13 @@ if [[ "$(uname -n)" =~ 'barn-ultra' || "$(uname -n)" =~ 'andreasl-yoga' ]]; then
     ln -sf "$dotfiles_path/.config/Nextcloud/sync-exclude.lst" "$HOME/.config/Nextcloud/sync-exclude.lst"
 
 elif [[ "$(uname -n)" =~ 'bee' ]]; then
-    ln -sf "$dotfiles_path/.gitconfig-barn" "$HOME/.gitconfig";
+
     rm "$HOME/.config/reposets"
     ln -sf "$dotfiles_path/.config/reposets-bee" "$HOME/.config/reposets";
 
 elif [[ "$(uname -n)" =~ 'work' ]]; then
     ln -sf "$dotfiles_path/.config/edm/edmrc-work" "$HOME/.config/edm/edmrc";
-    ln -sf "$dotfiles_path/.gitconfig-work" "$HOME/.gitconfig";
+
     rm "$HOME/.config/reposets"
     ln -sf "$dotfiles_path/.config/reposets-work" "$HOME/.config/reposets";
     ln -sf "$dotfiles_path/.config/autostart/open-journal.desktop" "$HOME/.config/autostart/open-journal.desktop";

@@ -46,10 +46,10 @@ ln -sf "$dotfiles_dir/.config/Code/User/settings.json" "$HOME/.config/Code/User/
 mkdir -p "$HOME/.config/Code/User/snippets"
 ln -sf "$dotfiles_dir/.config/Code/User/snippets/barns-snippets.code-snippets" "$HOME/.config/Code/User/snippets/barns-snippets.code-snippets"
 
-mkdir -p "$HOME/.config/feh/"
+mkdir -p "$HOME/.config/feh"
 ln -sf "$dotfiles_dir/.config/feh/keys" "$HOME/.config/feh/keys"
 
-mkdir -p "$HOME/.config/fish/"
+mkdir -p "$HOME/.config/fish"
 ln -sf "$dotfiles_dir/.config/fish/config.fish" "$HOME/.config/fish/config.fish"
 ln -sf "$dotfiles_dir/.config/fish/abbreviations.fish" "$HOME/.config/fish/abbreviations.fish"
 ln -sf "$dotfiles_dir/.config/fish/aliases.fish" "$HOME/.config/fish/aliases.fish"
@@ -65,7 +65,7 @@ ln -sf "$dotfiles_dir/.config/lf/lfrc" "$HOME/.config/lf/lfrc"
 ln -sf "$dotfiles_dir/.config/lf/bulkrename.sh" "$HOME/.config/lf/bulkrename.sh"
 ln -sf "$dotfiles_dir/.config/lf/previewer.sh" "$HOME/.config/lf/previewer.sh"
 
-mkdir -p "$HOME/.config/opencode/"
+mkdir -p "$HOME/.config/opencode"
 ln -sf "$dotfiles_dir/.config/opencode/AGENTS.md" "$HOME/.config/opencode/AGENTS.md"
 ln -sf "$dotfiles_dir/.config/opencode/opencode.json" "$HOME/.config/opencode/opencode.json"
 ln -sf "$dotfiles_dir/.config/opencode/tui.json" "$HOME/.config/opencode/tui.json"

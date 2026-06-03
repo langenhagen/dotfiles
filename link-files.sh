@@ -40,6 +40,12 @@ mkdir -p "$HOME/.config/bpython";
 ln  -sf "$dotfiles_path/.config/bpython/config" "$HOME/.config/bpython/config";
 ln  -sf "$dotfiles_path/.config/bpython/my.theme" "$HOME/.config/bpython/my.theme";
 
+mkdir -p "$HOME/.config/Code/User"
+ln -sf "$dotfiles_path/.config/Code/User/keybindings.json" "$HOME/.config/Code/User/keybindings.json";
+ln -sf "$dotfiles_path/.config/Code/User/settings.json" "$HOME/.config/Code/User/settings.json";
+mkdir -p "$HOME/.config/Code/User/snippets";
+ln -sf "$dotfiles_path/.config/Code/User/snippets/barns-snippets.code-snippets" "$HOME/.config/Code/User/snippets/barns-snippets.code-snippets";
+
 mkdir -p "$HOME/.config/feh/";
 ln -sf "$dotfiles_path/.config/feh/keys" "$HOME/.config/feh/keys";
 
@@ -67,6 +73,12 @@ ln -sf "$dotfiles_path/.config/opencode/tui.json" "$HOME/.config/opencode/tui.js
 mkdir -p "$HOME/.config/run-or-raise";
 ln -sf "$dotfiles_path/.config/run-or-raise/shortcuts.conf" "$HOME/.config/run-or-raise/shortcuts.conf";
 
+mkdir -p "$HOME/.config/sublime-text";
+ln -sf "$dotfiles_path/.config/sublime-text/Packages" "$HOME/.config/sublime-text/";
+mkdir -p "$HOME/.config/sublime-text/Installed Packages";
+ln -sf "$dotfiles_path/.config/sublime-text/Installed Packages/Theme - Asphalt.sublime-package" \
+    "$HOME/.config/sublime-text/Installed Packages/Theme - Asphalt.sublime-package";
+
 mkdir -p "$HOME/.config/xpad";
 ln -sf "$dotfiles_path/.config/xpad/default-style" "$HOME/.config/xpad/default-style";
 mkdir -p "$HOME/.config/xpad/trigger";
@@ -76,6 +88,7 @@ mkdir -p "$HOME/.urserver/remotes";
 ln -sf "$dotfiles_path/.urserver/remotes/custom" "$HOME/.urserver/remotes/";
 
 if [[ "$(uname -n)" =~ 'barn-ultra' || "$(uname -n)" =~ 'andreasl-yoga' ]]; then
+    # home laptops
 
     ln -sf "$dotfiles_path/.config/edm/edmrc-barn" "$HOME/.config/edm/edmrc";
     rm "$HOME/.config/reposets"
@@ -84,11 +97,14 @@ if [[ "$(uname -n)" =~ 'barn-ultra' || "$(uname -n)" =~ 'andreasl-yoga' ]]; then
     ln -sf "$dotfiles_path/.config/Nextcloud/sync-exclude.lst" "$HOME/.config/Nextcloud/sync-exclude.lst"
 
 elif [[ "$(uname -n)" =~ 'bee' ]]; then
+    # bee
 
     rm "$HOME/.config/reposets"
     ln -sf "$dotfiles_path/.config/reposets-bee" "$HOME/.config/reposets";
 
 elif [[ "$(uname -n)" =~ 'work' ]]; then
+    # work horse
+
     ln -sf "$dotfiles_path/.config/edm/edmrc-work" "$HOME/.config/edm/edmrc";
 
     rm "$HOME/.config/reposets"
@@ -96,31 +112,4 @@ elif [[ "$(uname -n)" =~ 'work' ]]; then
     ln -sf "$dotfiles_path/.config/autostart/open-journal.desktop" "$HOME/.config/autostart/open-journal.desktop";
     mkdir -p "$HOME/.config/Nextcloud";
     ln -sf "$dotfiles_path/.config/Nextcloud/sync-exclude.lst" "$HOME/.config/Nextcloud/sync-exclude.lst"
-
-fi
-
-if [ "$(uname)" == 'Linux' ]; then
-    mkdir -p "$HOME/.config/sublime-text";
-    ln -sf "$dotfiles_path/.config/sublime-text/Packages" "$HOME/.config/sublime-text/";
-    mkdir -p "$HOME/.config/sublime-text/Installed Packages";
-    ln -sf "$dotfiles_path/.config/sublime-text/Installed Packages/Theme - Asphalt.sublime-package" \
-        "$HOME/.config/sublime-text/Installed Packages/Theme - Asphalt.sublime-package";
-    mkdir -p "$HOME/.config/Code/User"
-    ln -sf "$dotfiles_path/.config/Code/User/keybindings.json" "$HOME/.config/Code/User/keybindings.json";
-    ln -sf "$dotfiles_path/.config/Code/User/settings.json" "$HOME/.config/Code/User/settings.json";
-    mkdir -p "$HOME/.config/Code/User/snippets";
-    ln -sf "$dotfiles_path/.config/Code/User/snippets/barns-snippets.code-snippets" "$HOME/.config/Code/User/snippets/barns-snippets.code-snippets";
-
-elif [ "$(uname)" == 'Darwin' ]; then
-    mkdir -p "$HOME/.config/sublime-text";
-    ln -sf "$dotfiles_path/.config/sublime-text/Packages" "$HOME/Library/Application Support/Sublime Text 3/";
-    mkdir -p "$HOME/.config/sublime-text/Installed Packages";
-    ln -sf "$dotfiles_path/.config/sublime-text/Installed Packages/Theme - Asphalt.sublime-package" \
-        "$HOME/Library/Application Support/Sublime Text 3/Installed Packages/Theme - Asphalt.sublime-package";
-
-    # set iterm2 config settings
-    # specify the preferences directory
-    defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$dotfiles_path/iterm2-config";
-    # tell iTerm2 to use the custom preferences in the directory
-    defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true;
 fi

@@ -87,29 +87,27 @@ ln -sf "$dotfiles_dir/.config/xpad/trigger/GEORGIAN-trigger.sh" "$HOME/.config/x
 mkdir -p "$HOME/.urserver/remotes";
 ln -sf "$dotfiles_dir/.urserver/remotes/custom" "$HOME/.urserver/remotes/";
 
-if [[ "$(uname -n)" =~ 'barn-ultra' || "$(uname -n)" =~ 'andreasl-yoga' ]]; then
-    # home machines
+case "$(uname -n)" in
+    barn-ultra|andreasl-yoga)
 
-    ln -sf "$dotfiles_dir/.config/edm/edmrc-barn" "$HOME/.config/edm/edmrc";
-    rm "$HOME/.config/reposets"
-    ln -sf "$dotfiles_dir/.config/reposets-barn" "$HOME/.config/reposets";
-    mkdir -p "$HOME/.config/Nextcloud";
-    ln -sf "$dotfiles_dir/.config/Nextcloud/sync-exclude.lst" "$HOME/.config/Nextcloud/sync-exclude.lst"
+        ln -sf "$dotfiles_dir/.config/edm/edmrc-barn" "$HOME/.config/edm/edmrc";
+        rm "$HOME/.config/reposets"
+        ln -sf "$dotfiles_dir/.config/reposets-barn" "$HOME/.config/reposets";
+        mkdir -p "$HOME/.config/Nextcloud";
+        ln -sf "$dotfiles_dir/.config/Nextcloud/sync-exclude.lst" "$HOME/.config/Nextcloud/sync-exclude.lst"
+        ;;
+    bee)
 
-elif [[ "$(uname -n)" =~ 'bee' ]]; then
-    # bee
+        rm "$HOME/.config/reposets"
+        ln -sf "$dotfiles_dir/.config/reposets-bee" "$HOME/.config/reposets";
+        ;;
+    *work*)
 
-    rm "$HOME/.config/reposets"
-    ln -sf "$dotfiles_dir/.config/reposets-bee" "$HOME/.config/reposets";
-
-elif [[ "$(uname -n)" =~ 'work' ]]; then
-    # work horse
-
-    ln -sf "$dotfiles_dir/.config/edm/edmrc-work" "$HOME/.config/edm/edmrc";
-
-    rm "$HOME/.config/reposets"
-    ln -sf "$dotfiles_dir/.config/reposets-work" "$HOME/.config/reposets";
-    ln -sf "$dotfiles_dir/.config/autostart/open-journal.desktop" "$HOME/.config/autostart/open-journal.desktop";
-    mkdir -p "$HOME/.config/Nextcloud";
-    ln -sf "$dotfiles_dir/.config/Nextcloud/sync-exclude.lst" "$HOME/.config/Nextcloud/sync-exclude.lst"
-fi
+        ln -sf "$dotfiles_dir/.config/edm/edmrc-work" "$HOME/.config/edm/edmrc";
+        rm "$HOME/.config/reposets"
+        ln -sf "$dotfiles_dir/.config/reposets-work" "$HOME/.config/reposets";
+        ln -sf "$dotfiles_dir/.config/autostart/open-journal.desktop" "$HOME/.config/autostart/open-journal.desktop";
+        mkdir -p "$HOME/.config/Nextcloud";
+        ln -sf "$dotfiles_dir/.config/Nextcloud/sync-exclude.lst" "$HOME/.config/Nextcloud/sync-exclude.lst"
+        ;;
+esac

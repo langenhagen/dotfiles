@@ -1,7 +1,7 @@
 " settings =========================================================================================
 colorscheme slate
-set guioptions -=m  "  hide menu bar
-set guioptions -=T  "  hide toolbar
+set guioptions -=m  " hide menu bar
+set guioptions -=T  " hide toolbar
 set guioptions -=l  " hide left scrollbar
 set guioptions -=L  " hide left scrollbar when there is a vertical split window
 set guioptions -=r  " hide right scrollbar

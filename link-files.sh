@@ -31,7 +31,6 @@ ln -sf "$dotfiles_dir/.config/alacritty/alacritty.toml" "$HOME/.config/alacritty
 mkdir -p "$HOME/.config/autostart"
 ln -sf "$dotfiles_dir/.config/autostart/caffeine-indicator.desktop" "$HOME/.config/autostart/caffeine-indicator.desktop"
 ln -sf "$dotfiles_dir/.config/autostart/chatgpt.desktop" "$HOME/.config/autostart/chatgpt.desktop"
-ln -sf "$dotfiles_dir/.config/autostart/dropbox.desktop" "$HOME/.config/autostart/dropbox.desktop"
 ln -sf "$dotfiles_dir/.config/autostart/thunderbird.desktop" "$HOME/.config/autostart/thunderbird.desktop"
 ln -sf "$dotfiles_dir/.config/autostart/urserver.desktop" "$HOME/.config/autostart/urserver.desktop"
 ln -sf "$dotfiles_dir/.config/autostart/xpad.desktop" "$HOME/.config/autostart/xpad.desktop"

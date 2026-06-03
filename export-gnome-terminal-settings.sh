@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Export gnome terminal settings to a dconf dump.
 #
 # author: andreasl

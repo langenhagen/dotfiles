@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Import gnome terminal settings from a dconf dump.
 #
 # author: andreasl

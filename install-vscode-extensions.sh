@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Install the vscode extensions.
 #
 # author: andreasl

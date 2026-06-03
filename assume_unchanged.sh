@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Set git to assume files in an array to be unchanged,
 # or, if the flag `-no` is passed, set git not to assume that files in an array are unchanged.
 #

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Export the vscode extensions and write them to a file.
 #
 # author: andreasl

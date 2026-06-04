@@ -57,7 +57,7 @@ abbr -a md 'mkdir -p'
 abbr -a s. 'source .venv/bin/activate.fish'
 abbr -a d. 'deactivate'
 abbr -a shch 'shellcheck -x --exclude SC2059'
-abbr -a tch 'touch'
+abbr -a th 'touch'
 abbr -a vd 'vimdiff'
 abbr -a wl 'wc -l'
 # abbr -a psh 'poetry shell'  # deactivated 2025-11-05

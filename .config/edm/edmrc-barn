@@ -11,12 +11,14 @@ choices=(
     'Barn/Kaufen-Verkaufen'
     'Barn/Notes'
     'Dev'
+    'Dev/protofiles'
     'Dev/protofiles/bash_proto.sh'
     'Media'
     'Media/Audio'
     'Media/Cam'
     'Media/WhatsApp'
     'Work'
+    'Work/Applications'
     "$(cat "$history_file")"
 )
 

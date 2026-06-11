@@ -13,6 +13,7 @@ map <enter> shell
 map <delete> delete
 map D delete
 map R $~/.config/lf/bulkrename.sh "$fs"
+map <f-5> reload
 map S $$SHELL
 map i $~/.config/lf/previewer.sh "$f" | less -R  # use a nice previewer when paging files
 

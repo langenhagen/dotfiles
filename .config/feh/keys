@@ -73,6 +73,9 @@ zoom_fill period
 zoom_in S-Up
 zoom_out S-Down
 
+
+# redefine action on Return
+action_1 1 Return
 # redefine action 2 to both `2` and `i`
 action_2 2 i
 # redefine action 3 to both `3` and `k`
@@ -81,6 +84,3 @@ action_3 3 k
 action_4 4 p
 # redefine action 6 to both `6` and `o`
 action_6 6 o
-
-# redefine action on Return
-action_1 1 Return

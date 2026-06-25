@@ -13,13 +13,10 @@ source ~/.config/fish/abbreviations.fish
 
 source ~/.config/fish/vimlike-bookmarks.fish
 
-test -e ~/.iterm2_shell_integration.fish; and source ~/.iterm2_shell_integration.fish
-test -e ~/miniconda3/etc/fish/conf.d/conda.fish; and source ~/miniconda3/etc/fish/conf.d/conda.fish
 test -e ~/.rbenv/bin/rbenv; and status --is-interactive; and source (~/.rbenv/bin/rbenv init - | psub)
 
-command -v pyenv 1>/dev/null 2>&1; and pyenv init - | source
+command -v pyenv 1>/dev/null 2>&1; and status is-interactive; and pyenv init --no-rehash - 2>/dev/null | source
 command -v direnv 1>/dev/null 2>&1; and eval (direnv hook fish)
-command -v rye 1>/dev/null 2>&1; and set -Ua fish_user_paths "$HOME/.rye/shims"
 nvm --version 1>/dev/null 2>&1; and nvm use lts 1>/dev/null
 
 ### the initial commands ###########################################################################
@@ -32,4 +29,4 @@ end
 # pnpm end
 
 # opencode
-fish_add_path /home/andreasl/.opencode/bin
+fish_add_path $HOME/.opencode/bin

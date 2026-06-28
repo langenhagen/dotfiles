@@ -19,8 +19,6 @@ command -v pyenv 1>/dev/null 2>&1; and status is-interactive; and pyenv init --n
 command -v direnv 1>/dev/null 2>&1; and eval (direnv hook fish)
 nvm --version 1>/dev/null 2>&1; and nvm use lts 1>/dev/null
 
-### the initial commands ###########################################################################
-
 # pnpm
 set -gx PNPM_HOME "/home/andreasl/.local/share/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
@@ -30,3 +28,5 @@ end
 
 # opencode
 fish_add_path $HOME/.opencode/bin
+
+command -v fortune 1>/dev/null 2>&1 && fortune -s

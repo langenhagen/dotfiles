@@ -16,9 +16,6 @@ When instructions conflict, use this order:
 4. Global/default agent guidance (this file).
 5. Personal or optional preferences.
 
-For repository work, repository-local `AGENTS.md` instructions override this
-global file when they conflict.
-
 If uncertainty remains, choose the least risky reversible option and state your
 assumption.
 
@@ -36,7 +33,11 @@ assumption.
 - Keep temporary files and render artifacts in workspace paths (for example
   `.tmp/`) and remove them after use.
 - Keep Markdown headlines in Title Case.
-- Prefer plain ASCII in output/docs unless Unicode is already required.
+- Emit plain ASCII in output/docs unless Unicode is already required by
+  context. Replace common non-ASCII: curly quotes -> straight, em/en dash
+  -> hyphen, ellipsis -> three dots; strip hidden/spacing characters
+  (non-breaking and zero-width spaces). Normalize pasted external text
+  before finalizing.
 
 ### SHOULD
 
@@ -142,26 +143,17 @@ file path is the fastest invocation. Activate venv first:
 
 ## Response Style
 
-- Keep tone direct and neutral; answer directly.
-- Start with the answer or action, not validation of the prompt.
-- Do not use approval, praise, or validation language about user requests
-  or prompt quality. Forbidden examples: "you are right", "good catch",
-  "great point", "great call", "nice", "awesome",
-  "thanks for calling that out", "you are right to question this".
+- Keep tone direct and neutral; answer directly. Start with the answer or
+  action, not validation of the prompt.
+- Do not use approval, praise, or validation language about user requests or
+  prompt quality; prefer neutral acknowledgments ("Understood", "Noted").
 - Avoid conversational or motivational filler unless requested.
-- When uncertain, prefer neutral acknowledgments (for example "Understood",
-  "Noted", "I will update that") over evaluative phrasing.
-- Avoid fancy punctuation and hidden/special spacing characters.
-- Normalize pasted external text to plain characters before finalizing.
 - Do not bike-shed. Ask only questions whose answers materially change the
-  plan or output. Do not ask about cosmetic placement, ordering, or
-  wording variants the user is unlikely to care about. When uncertain
-  between near-equivalent options, pick one and proceed.
-- End every response with a brief TL;DR summarizing the key point(s) of
-  the response.
-- When asking the user one or more questions, or when using a question tool,
-  place a TL;DR summary of the response so far immediately before the question(s),
-  so the user always sees a recap before being prompted.
+  plan or output. When uncertain between near-equivalent options, pick one
+  and proceed.
+- End every response with a brief TL;DR of the key point(s). When asking
+  questions (or using a question tool), place the TL;DR immediately before
+  the question(s).
 
 ## Linter And Static Analysis Pragmas
 
@@ -171,6 +163,8 @@ file path is the fastest invocation. Activate venv first:
 
 ## Response Finalization
 
-- Before returning each response, run `lilsound $$` as the last command.
-- If `$$` cannot be resolved, run `lilsound` without args.
-- `lilsound` is non-writing and safe to run in plan mode.
+- End each response by running `lilsound $$` as the last step (fall back to
+  bare `lilsound` if `$$` is unavailable). If your harness already runs this
+  automatically (for example via a stop/finalize hook), do not also run it
+  manually.
+- `lilsound` is non-writing and safe.

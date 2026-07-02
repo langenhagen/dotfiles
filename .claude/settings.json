@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(lilsound)",
+      "Bash(lilsound:*)"
+    ]
+  },
+  "model": "opus",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "lilsound $$",
+            "async": true
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  },
+  "effortLevel": "high",
+  "theme": "dark-daltonized"
+}

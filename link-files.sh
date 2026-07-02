@@ -69,6 +69,11 @@ ln -sf "$dotfiles_dir/.config/opencode/AGENTS.md" "$HOME/.config/opencode/AGENTS
 ln -sf "$dotfiles_dir/.config/opencode/opencode.json" "$HOME/.config/opencode/opencode.json"
 ln -sf "$dotfiles_dir/.config/opencode/tui.json" "$HOME/.config/opencode/tui.json"
 
+mkdir -p "$HOME/.claude"
+ln -sf "$dotfiles_dir/.config/opencode/AGENTS.md" "$HOME/.claude/CLAUDE.md"
+ln -sf "$dotfiles_dir/.claude/settings.json" "$HOME/.claude/settings.json"
+ln -sf "$dotfiles_dir/.claude/statusline.sh" "$HOME/.claude/statusline.sh"
+
 mkdir -p "$HOME/.config/run-or-raise"
 ln -sf "$dotfiles_dir/.config/run-or-raise/shortcuts.conf" "$HOME/.config/run-or-raise/shortcuts.conf"
 

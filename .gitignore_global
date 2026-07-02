@@ -10,3 +10,5 @@ Thumbs.db
 plantuml_output.txt
 patch.diff
 *.swp
+
+**/.claude/settings.local.json

@@ -128,8 +128,6 @@ abbr -a bigpull 'git pull --rebase origin main && git fetch --prune --tags && gi
 
 abbr -a gps 'git push'
 abbr -a gpf 'git push -f'
-# abbr -a gpsg 'git push origin HEAD:refs/for/master' # disabled on 2021-02-02
-# abbr -a gpsm 'git push origin HEAD:master'  # disabled on 2021-02-02
 
 abbr -a gra 'git rebase --abort'
 abbr -a grc 'git rebase --continue'
@@ -143,6 +141,8 @@ abbr -a g4 'git reset --hard HEAD~4'
 abbr -a g5 'git reset --hard HEAD~5'
 abbr -a g9 'git reset --hard HEAD~9'
 abbr -a grs 'git reset --soft HEAD~1'
+
+abbr -a cm "git add -A; git commit -m (date +%T)-quicksave"
 
 abbr -a rpa 'reposet apply'
 abbr -a rps 'reposet'

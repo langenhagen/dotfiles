@@ -1,4 +1,4 @@
-# rc file for explore-with-dmenu.sh
+# file for explore-with-dmenu.sh
 # author: andreasl
 
 max_history_entries=21
@@ -7,18 +7,17 @@ choices=(
     'Admin'
     'Admin/usernames.txt'
     'Barn'
-    'Barn/Ideas'
     'Barn/Kaufen-Verkaufen'
     'Barn/Notes'
     'Dev'
     'Dev/protofiles'
     'Dev/protofiles/bash_proto.sh'
+    'Desktop'
     'Media'
     'Media/Audio'
     'Media/Cam'
     'Media/WhatsApp'
     'Work'
-    'Work/Applications'
     "$(cat "$history_file")"
 )
 

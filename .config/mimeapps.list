@@ -20,6 +20,8 @@ text/x-csrc=sublime-text_subl.desktop
 audio/x-ms-wma=vlc.desktop
 x-scheme-handler/slack=slack.desktop
 audio/x-opus+ogg=vlc.desktop
+x-scheme-handler/claude=claude-desktop.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
 
 [Added Associations]
 text/plain=sublime-text_subl.desktop;
@@ -37,3 +39,4 @@ application/sql=sublime-text_subl.desktop;
 text/x-csrc=sublime-text_subl.desktop;
 audio/x-ms-wma=vlc.desktop;
 audio/x-opus+ogg=vlc.desktop;
+image/jpeg=org.gnome.gThumb.desktop;

@@ -59,27 +59,6 @@ function read_confirm
   end
 end
 
-function minimerk
-    # Store a simple text string into the minimerk.txt file with a timestamp.
-    # Can be used for minimal reminders that are stored into persistent memory.
-    if test (count $argv) -eq 0
-        tail -n20 "$HOME/.minimerk.txt"
-    else if test (count $argv) -gt 0
-        echo (date +%a' '%Y'-'%m'-'%d' '%H:%M) $argv >> "$HOME/.minimerk.txt"
-    end
-end
-
-function bucket
-    # Show the bucket list file or append given lines to it.
-    # There must be a trailing newline at the end of the file.
-    if test (count $argv) -eq 0
-        # -R readonly
-        vim -R '+normal G\$' "$BUCKET_LIST_FILE_PATH"
-    else if test (count $argv) -gt 0
-        echo (date +%a' '%Y'-'%m'-'%d' '%H:%M) $argv >> "$BUCKET_LIST_FILE_PATH"
-    end
-end
-
 function addabr
     # Add a line to the abbreviations file and activate the abbreviation.
     echo "abbr -a $argv" >> ~/.config/fish/abbreviations.fish

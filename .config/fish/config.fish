@@ -20,7 +20,7 @@ command -v direnv 1>/dev/null 2>&1; and eval (direnv hook fish)
 nvm --version 1>/dev/null 2>&1; and nvm use lts 1>/dev/null
 
 # pnpm
-set -gx PNPM_HOME "/home/andreasl/.local/share/pnpm"
+set -gx PNPM_HOME "$HOME/.local/share/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
 end

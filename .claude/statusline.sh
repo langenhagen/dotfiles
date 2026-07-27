@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Claude Code status line: "~/dir  branch *  model · effort  N tokens"
+# Claude Code status line: "~/dir  branch *  model · effort  N tokens (P%)"
 # Reads session JSON on stdin (see code.claude.com/docs/en/statusline).
 # Dirty marker is ASCII "*" to match the AGENTS.md plain-ASCII preference;
 # swap for a glyph like the star if you want.
@@ -11,6 +11,8 @@ model=$(printf '%s' "$input" | jq -r '.model.display_name // "?"' |
 effort=$(printf '%s' "$input" | jq -r '.effort.level // empty')
 realdir=$(printf '%s' "$input" | jq -r '.workspace.current_dir // .cwd // ""')
 in_tokens=$(printf '%s' "$input" | jq -r '.context_window.total_input_tokens // 0')
+# Pre-calculated share of the context window in use; null early in a session
+pct=$(printf '%s' "$input" | jq -r '.context_window.used_percentage // empty')
 
 # Abbreviate the home directory to "~" for display only; git uses realdir
 dir="$realdir"
@@ -36,4 +38,9 @@ model_part="$model"
 tokens=$(awk -v t="$in_tokens" \
     'BEGIN { if (t >= 1000) printf "%.1fk", t/1000; else printf "%d", t }')
 
-printf '%s%s   %s   %s tokens\n' "$dir" "$git_part" "$model_part" "$tokens"
+# Context window usage, e.g. "(42%)"; drop any decimals from used_percentage
+pct_part=""
+[ -n "$pct" ] && pct_part=" ($(awk -v p="$pct" 'BEGIN { printf "%d", p }')%)"
+
+printf '%s%s   %s   %s tokens%s\n' \
+    "$dir" "$git_part" "$model_part" "$tokens" "$pct_part"

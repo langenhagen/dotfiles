@@ -175,7 +175,6 @@ case "barn-ultra" "andreasl-yoga" "*work*"
 
     abbr -a prt 'cd "$PROTOFILES_DIR_PATH" ; find "$PROTOFILES_DIR_PATH" -name "*_proto.*"'
 
-    abbr -a bkt 'bucket \''
     abbr -a tks 'tricks'
     abbr -a alh 'add-to-one-line-help \''
     abbr -a olh 'one-line-help'

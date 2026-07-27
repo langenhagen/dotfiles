@@ -27,7 +27,6 @@ bind main E ?rebase edit %(commit)
 bind diff E ?rebase edit %(commit)
 bind main F ?rebase fixup %(commit) HEAD
 bind diff F ?rebase fixup %(commit) HEAD
-bind generic P @sh -c "xdg-open \"$(dirname $(realpath %(file)))\""  # open path in standard program on linux
 bind main S ?rebase squash %(commit) HEAD
 bind diff S ?rebase squash %(commit) HEAD
 bind generic U @git add -A

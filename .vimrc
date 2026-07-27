@@ -47,7 +47,10 @@ set wildmenu  " a visual menu to bubble through for completion in the command li
 set wildmode=longest,full  " longest: autocomplete to longest common word on first tab; full: bubble through the wildnenu on pressing tab again and on following tabs
 
 autocmd CursorHoldI * stopinsert  " automatically leave insert mode after 'updatetime' milliseconds of inaction
-autocmd VimLeave * call system("xsel -ib", getreg('+'))  " keep the clipboard populated after closing vim
+" X11 drops the selection when its owner exits; the macOS pasteboard daemon
+if !has('mac')
+    autocmd VimLeave * call system("xsel -ib", getreg('+'))
+endif
 autocmd BufWritePost .vimrc source $MYVIMRC  " automatically source my vimrc after writing it to disk
 
 " colorscheme ======================================================================================

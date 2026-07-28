@@ -3,8 +3,8 @@
 #
 # author: andreasl
 
-mapfile -t extensions <<<"$(cat 'vscode-extensions.txt')"
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-for extension in "${extensions[@]}"; do
+while IFS= read -r extension; do
     code --install-extension "$extension"
-done
+done <"${script_dir}/vscode-extensions.txt"

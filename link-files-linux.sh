@@ -30,11 +30,7 @@ ln -sf "$dotfiles_dir/.config/alacritty/alacritty-colors.toml" "$HOME/.config/al
 ln -sf "$dotfiles_dir/.config/alacritty/alacritty-linux.toml" "$HOME/.config/alacritty/alacritty.toml"
 
 mkdir -p "$HOME/.config/autostart"
-ln -sf "$dotfiles_dir/.config/autostart/caffeine-indicator.desktop" "$HOME/.config/autostart/caffeine-indicator.desktop"
-ln -sf "$dotfiles_dir/.config/autostart/chatgpt.desktop" "$HOME/.config/autostart/chatgpt.desktop"
-ln -sf "$dotfiles_dir/.config/autostart/thunderbird.desktop" "$HOME/.config/autostart/thunderbird.desktop"
 ln -sf "$dotfiles_dir/.config/autostart/urserver.desktop" "$HOME/.config/autostart/urserver.desktop"
-ln -sf "$dotfiles_dir/.config/autostart/xpad.desktop" "$HOME/.config/autostart/xpad.desktop"
 
 mkdir -p "$HOME/.config/bpython"
 ln -sf "$dotfiles_dir/.config/bpython/config" "$HOME/.config/bpython/config"
@@ -111,7 +107,6 @@ bee)
     ln -sf "$dotfiles_dir/.config/edm/edmrc-work" "$HOME/.config/edm/edmrc"
     rm "$HOME/.config/reposets"
     ln -sf "$dotfiles_dir/.config/reposets-work" "$HOME/.config/reposets"
-    ln -sf "$dotfiles_dir/.config/autostart/open-journal.desktop" "$HOME/.config/autostart/open-journal.desktop"
     mkdir -p "$HOME/.config/Nextcloud"
     ln -sf "$dotfiles_dir/.config/Nextcloud/sync-exclude.lst" "$HOME/.config/Nextcloud/sync-exclude.lst"
     ;;

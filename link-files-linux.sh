@@ -54,7 +54,6 @@ ln -sf "$dotfiles_dir/.config/fish/functions.fish" "$HOME/.config/fish/functions
 ln -sf "$dotfiles_dir/.config/fish/key-bindings.fish" "$HOME/.config/fish/key-bindings.fish"
 ln -sf "$dotfiles_dir/.config/fish/vimlike-bookmarks.fish" "$HOME/.config/fish/vimlike-bookmarks.fish"
 ln -sf "$dotfiles_dir/.config/fish/completions/aws.fish" "$HOME/.config/fish/completions/aws.fish"
-ln -sf "$dotfiles_dir/.config/fish/completions/fga.fish" "$HOME/.config/fish/completions/fga.fish"
 
 mkdir -p "$HOME/.config/lf"
 ln -sf "$dotfiles_dir/.config/lf/lfrc" "$HOME/.config/lf/lfrc"

@@ -26,7 +26,8 @@ ln -sf "$dotfiles_dir/.config/user-dirs.dirs" "$HOME/.config/user-dirs.dirs"
 ln -sf "$dotfiles_dir/.config/user-dirs.locale" "$HOME/.config/user-dirs.locale"
 
 mkdir -p "$HOME/.config/alacritty"
-ln -sf "$dotfiles_dir/.config/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
+ln -sf "$dotfiles_dir/.config/alacritty/alacritty-colors.toml" "$HOME/.config/alacritty/alacritty-colors.toml"
+ln -sf "$dotfiles_dir/.config/alacritty/alacritty-linux.toml" "$HOME/.config/alacritty/alacritty.toml"
 
 mkdir -p "$HOME/.config/autostart"
 ln -sf "$dotfiles_dir/.config/autostart/caffeine-indicator.desktop" "$HOME/.config/autostart/caffeine-indicator.desktop"

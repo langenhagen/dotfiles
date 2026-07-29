@@ -1,8 +1,11 @@
-[terminal.shell]
-program = "/usr/bin/tmux"
+# Colors and settings shared by all platforms.
+#
+# Imported by alacritty-linux.toml and alacritty-macos.toml. Not meant to be
+# linked as ~/.config/alacritty/alacritty.toml directly, since it does not set
+# a shell program.
 
 [window]
-startup_mode =  "Maximized"
+startup_mode = "Maximized"
 
 [keyboard]
 bindings = [{ key = "F11", action = "ToggleFullscreen" }]
@@ -30,5 +33,3 @@ blue    = '#5c5cff'
 magenta = '#ff00ff'
 cyan    = '#00ffff'
 white   = '#ffffff'
-
-[terminal]

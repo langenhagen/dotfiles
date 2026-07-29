@@ -1,0 +1,16 @@
+# Alacritty config for macOS.
+#
+# Linked to ~/.config/alacritty/alacritty.toml by link-files-macos.sh.
+# A TOML file cannot branch on the OS, hence the per-platform split; everything
+# platform-agnostic lives in alacritty-colors.toml.
+
+general.import = ["~/.config/alacritty/alacritty-colors.toml"]
+
+[terminal.shell]
+program = "/opt/homebrew/bin/tmux"
+
+[window]
+# Make the left Option send Alt escape sequences, so the alt+arrow word-motion
+# bindings from key-bindings.fish fire. The right Option keeps composing
+# characters, which a German layout needs for @ | ~ \ { } [ ].
+option_as_alt = "OnlyLeft"

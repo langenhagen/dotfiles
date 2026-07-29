@@ -1,0 +1,10 @@
+# Alacritty config for Linux.
+#
+# Linked to ~/.config/alacritty/alacritty.toml by link-files-linux.sh.
+# A TOML file cannot branch on the OS, hence the per-platform split; everything
+# platform-agnostic lives in alacritty-colors.toml.
+
+general.import = ["~/.config/alacritty/alacritty-colors.toml"]
+
+[terminal.shell]
+program = "/usr/bin/tmux"

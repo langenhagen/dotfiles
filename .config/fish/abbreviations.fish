@@ -11,19 +11,15 @@
 
 abbr -a fconf 'cd ~/.config/fish/ ; ls'
 abbr -a sourcefish '. ~/.config/fish/config.fish'
-abbr -a upsys 'cd ~/Admin/computer/setup-my-ubuntu; time bash 10-my/900-update-system.sh; cd -;'
 abbr -a editabbr 'vim -p ~/.config/fish/abbreviations.fish; source ~/.config/fish/abbreviations.fish'
 abbr -a fn 'functions'
-# abbr -a fns 'functions'  # disabled 2021-10-05
 abbr -a history 'history --show-time=\'%h-%d - %H:%M:%S \' | less'
-abbr -a sa 'systemctl suspend -i'  # its just easier to type
 abbr -a le 'less'
 
 abbr -a tls 'tmux ls'
 abbr -a tk 'tmux kill-session -t'
 abbr -a t1 'tmux kill-session -t 1'
 abbr -a t2 'tmux kill-session -t 2'
-abbr -a t3 'tmux kill-session -t 3'
 abbr -a tp 'tmux kill-pane -t'
 abbr -a tw 'tmux kill-window -t'
 
@@ -40,17 +36,15 @@ abbr -a ht 'hashtag'
 abbr -a pc 'playground-cpp-compile.sh'
 abbr -a sn 'sanchar'
 
-abbr -a psg 'ps aux | grep -i'
+abbr -a pg 'ps aux | grep -i'
 abbr -a pk 'ps aux | fzf --preview "" | tr -s "[:blank:]" | cut -d" " -f2 | xargs -r kill'
 
 abbr -a b 'bash'
 abbr -a p 'python'
 abbr -a bp 'bpython'
 abbr -a pv 'python --version'
-abbr -a pe 'python -m venv .venv; source .venv/bin/activate.fish'
 abbr -a ppg 'mkdir foo && cd foo && python -m venv .venv && source .venv/bin/activate.fish && pip install -U pip bpython'
-abbr -a ct 'batcat --number --paging never'  # similar to cat, but via batcat
-abbr -a vv 'batcat --number --paging never'  # similar to cat, but via batcat
+abbr -a ct "$bat_cmd --number --paging never"  # similar to cat, but via bat; $bat_cmd is set in environment-variables.fish
 abbr -a f 'find -L . -iname'
 abbr -a l 'lf'
 abbr -a md 'mkdir -p'
@@ -67,7 +61,6 @@ abbr -a tb 'tig blame'
 abbr -a ts 'tig show'
 
 abbr -a tree 'tree -C -a'
-abbr -a t3 'tree -C -a -L 3'
 
 abbr -a v 'vim -p'
 abbr -a vg 'vim -p (cat ~/.histout)'
@@ -85,7 +78,7 @@ abbr -a bh 'grep -HiRns --include=\*.sh'
 abbr -a ph 'grep -HiRns --include=\*.py --exclude-dir={.venv\*,custom-eggs,site-packages}'
 abbr -a cfh 'grep -HiRns --include={\*.cfg,\*.conf,\*.conf.in,\*.ini,setup.py,requirements.txt,Makefile,\*.yaml}'
 abbr -a mk 'make'
-abbr -a cw 'batcat --number --paging never (which'   # cw: cat (which - now using batcat though
+abbr -a cw "$bat_cmd --number --paging never (which"   # cw: cat (which - now using bat though
 abbr -a shfmt 'shfmt --indent 4 --write'
 
 abbr -a gb 'git branch'
@@ -117,12 +110,9 @@ abbr -a gt 'git checkout -b tmp; or git checkout tmp; git branch'  # git branch 
 abbr -a gct 'git checkout -b tmp; or git checkout tmp; git branch'  # git checkout tmp
 abbr -a gdt 'if [ (git rev-parse --abbrev-ref HEAD) = "tmp" ]; git checkout master || git checkout master; end; git branch -D tmp; git branch'  # git delete tmp
 
-abbr -a gqs 'git branch quicksave'  # marked for deletion on 2024-08-12
-
 abbr -a gp 'git pull --rebase'
 abbr -a gpl 'git pull --rebase'
 abbr -a gpm 'git pull --rebase origin master || git pull --rebase origin main'
-# abbr -a gplm 'git pull --rebase origin master || git pull --rebase origin main'  # disabled on 2025-03-12
 abbr -a gpc 'git pull --rebase origin master && git fetch --prune --tags && git submodule update --init --recursive --progress -v'
 abbr -a bigpull 'git pull --rebase origin main && git fetch --prune --tags && git submodule update --init --recursive --progress -v'
 
@@ -168,11 +158,20 @@ abbr -a yla "yt-dlp --audio-format mp3 --audio-quality 0 --continue --extract-au
 abbr -a y "yt-dlp -f 'bv*[vcodec^=avc1][height<=1080]+ba[acodec^=mp4a]/b[ext=mp4]' --merge-output-format mp4 '"  # download the video in a Chromecast-compatible format
 abbr -a ys "yt-dlp -f 'bv*[vcodec^=avc1][height<=786]+ba[acodec^=mp4a]/b[ext=mp4]' --merge-output-format mp4 '"  # download the video in a Chromecast-compatible format in a smaller resolution
 
-switch (uname --nodename)
+# OS dependent abbrs
+switch (uname)
+case 'Darwin'
+    abbr -a sa 'pmset sleepnow'
+    abbr -a upsys 'cd ~/Admin/computer/setup-work-macos; time bash 10-my/900-update-system.sh; cd -;'
+
+case 'Linux'
+    abbr -a sa 'systemctl suspend -i'
+    abbr -a upsys 'cd ~/Admin/computer/setup-my-ubuntu; time bash 10-my/900-update-system.sh; cd -;'
+end
+
+switch (uname -n)
 case "barn-ultra" "andreasl-yoga" "*work*"
     # Desktop machine related abbrs
-    abbr -a now 'date \'+%s\' | xclip -fi -selection clipboard'  # the current timestamp since epoch in seconds
-
     abbr -a prt 'cd "$PROTOFILES_DIR_PATH" ; find "$PROTOFILES_DIR_PATH" -name "*_proto.*"'
 
     abbr -a tks 'tricks'
@@ -186,15 +185,27 @@ case "barn-ultra" "andreasl-yoga" "*work*"
     abbr -a xs 'xargs subl'
 
     switch (uname)
-    # OS dependent abbrs
+    # Desktop OS-dependent abbrs
     case  'Darwin'
+        abbr -a now 'date \'+%s\' | pbcopy'  # the current timestamp since epoch in seconds
+
         abbr -a xc 'open -a Xcode'
         abbr -a xcode 'open -a Xcode'
-        abbr -a o 'open .'
-        abbr -a xo 'xargs xdg-open'
-        abbr -a oh 'open (eval $history[1])'
+        abbr -a o 'open'
+        abbr -a o. 'open .'
+        abbr -a ox 'open .; exit'
+        abbr -a xo 'xargs open'
+        abbr -a oh 'for f in (eval $history[1]); open "$f"; end'
+        abbr -a ho 'eval $history[1] | pbcopy > ~/.histout'
+        abbr -a xh 'eval $history[1] | pbcopy > ~/.histout'
+
+        abbr -a goo "eval \$history[1] | sed 's|\(.+*\):[0-9]*:.*|\1|' | sed '/^Binary file.*matches\$/d' | sort -u | pbcopy | tee ~/.histout"
+
+        abbr -a pi 'pngpaste "$HOME/Desktop/"(date +%Y-%m-%d-%H-%M-%S)"-clipboard.png"'  # paste an image from clipboard to file
 
     case  'Linux'
+        abbr -a now 'date \'+%s\' | xclip -fi -selection clipboard'  # the current timestamp since epoch in seconds
+
         abbr -a o 'xdg-open'
         abbr -a o. 'xdg-open .'
         abbr -a ox 'xdg-open .; exit'

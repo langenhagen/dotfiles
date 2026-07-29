@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # As simple previewer I use in the cli file explorer `lf`.
 #
 # TODO: make coloring work correctly in lf.

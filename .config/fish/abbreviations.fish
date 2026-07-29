@@ -37,7 +37,6 @@ abbr -a pc 'playground-cpp-compile.sh'
 abbr -a sn 'sanchar'
 
 abbr -a pg 'ps aux | grep -i'
-abbr -a pk 'ps aux | fzf --preview "" | tr -s "[:blank:]" | cut -d" " -f2 | xargs -r kill'
 
 abbr -a b 'bash'
 abbr -a p 'python'
@@ -163,10 +162,13 @@ switch (uname)
 case 'Darwin'
     abbr -a sa 'pmset sleepnow'
     abbr -a upsys 'cd ~/Admin/computer/setup-work-macos; time bash 10-my/900-update-system.sh; cd -;'
+    # BSD xargs has no -r; it already skips the command when input is empty
+    abbr -a pk 'ps aux | fzf --preview "" | tr -s "[:blank:]" | cut -d" " -f2 | xargs kill'
 
 case 'Linux'
     abbr -a sa 'systemctl suspend -i'
     abbr -a upsys 'cd ~/Admin/computer/setup-my-ubuntu; time bash 10-my/900-update-system.sh; cd -;'
+    abbr -a pk 'ps aux | fzf --preview "" | tr -s "[:blank:]" | cut -d" " -f2 | xargs -r kill'
 end
 
 switch (uname -n)

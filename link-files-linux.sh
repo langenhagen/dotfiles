@@ -53,6 +53,8 @@ ln -sf "$dotfiles_dir/.config/fish/environment-variables.fish" "$HOME/.config/fi
 ln -sf "$dotfiles_dir/.config/fish/functions.fish" "$HOME/.config/fish/functions.fish"
 ln -sf "$dotfiles_dir/.config/fish/key-bindings.fish" "$HOME/.config/fish/key-bindings.fish"
 ln -sf "$dotfiles_dir/.config/fish/vimlike-bookmarks.fish" "$HOME/.config/fish/vimlike-bookmarks.fish"
+
+mkdir -p "$HOME/.config/fish/completions"
 ln -sf "$dotfiles_dir/.config/fish/completions/aws.fish" "$HOME/.config/fish/completions/aws.fish"
 
 mkdir -p "$HOME/.config/lf"

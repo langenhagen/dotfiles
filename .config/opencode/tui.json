@@ -1,4 +1,10 @@
 {
   "$schema": "https://opencode.ai/tui.json",
-  "theme": "vercel"
+  "theme": "vercel",
+  "plugin": [
+    [
+      "/home/andreasl/Dev/opencode-kokotolk/plugins/talk.ts",
+      { "hotkey": "f7" }
+    ]
+  ]
 }

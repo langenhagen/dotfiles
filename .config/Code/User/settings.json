@@ -84,4 +84,11 @@
     "biome.suggestInstallingGlobally": false,
     "workbench.colorTheme": "Dark+",
     "editor.inlayHints.enabled": "offUnlessPressed",
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "python": false
+    },
 }

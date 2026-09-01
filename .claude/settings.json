@@ -5,7 +5,7 @@
       "Bash(lilsound:*)"
     ]
   },
-  "model": "opus",
+  "model": "sonnet",
   "hooks": {
     "Stop": [
       {

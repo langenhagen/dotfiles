@@ -27,5 +27,5 @@
 [init]
 	defaultBranch = main
 
-[includeIf "gitdir:~/wandel/"]
+[includeIf "gitdir:~/mb/"]
     path = ~/dotfiles/.gitconfig-work

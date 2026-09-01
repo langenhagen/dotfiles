@@ -20,10 +20,10 @@ choices=(
     'Media/WhatsApp'
     'Work'
     'Work/Applications'
-    'Work/2024-Wandelbots'
-    'Work/2024-Wandelbots/101.md'
-    'Work/2024-Wandelbots/journal.md'
-    'Work/2024-Wandelbots/aktuelle-tickets'
+    'Work/2026-Mapbox'
+    'Work/2026-Mapbox/101.md'
+    'Work/2026-Mapbox/journal.md'
+    'Work/2026-Mapbox/aktuelle-tickets'
     "$(cat "$history_file")"
 )
 

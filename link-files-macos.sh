@@ -59,8 +59,11 @@ ln -sf "$dotfiles_dir/.config/lf/lfrc" "$HOME/.config/lf/lfrc"
 ln -sf "$dotfiles_dir/.config/lf/bulkrename.sh" "$HOME/.config/lf/bulkrename.sh"
 ln -sf "$dotfiles_dir/.config/lf/previewer.sh" "$HOME/.config/lf/previewer.sh"
 
-mkdir -p "$HOME/Library/Preferences/Nextcloud"
-ln -sf "$dotfiles_dir/.config/Nextcloud/sync-exclude.lst" "$HOME/Library/Preferences/Nextcloud/sync-exclude.lst"
+# Nextcloud writes this file atomically, which fails when it is a symlink; copy
+# it so the client can write through it. dotfiles stays the source of truth.
+nextcloud_prefs_dir="$HOME/Library/Containers/com.nextcloud.desktopclient/Data/Library/Preferences/Nextcloud"
+mkdir -p "$nextcloud_prefs_dir"
+cp "$dotfiles_dir/.config/Nextcloud/sync-exclude.lst" "$nextcloud_prefs_dir/sync-exclude.lst"
 
 mkdir -p "$HOME/.config/opencode"
 ln -sf "$dotfiles_dir/.config/opencode/AGENTS.md" "$HOME/.config/opencode/AGENTS.md"

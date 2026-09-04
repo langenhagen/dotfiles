@@ -29,4 +29,5 @@ end
 # opencode
 fish_add_path $HOME/.opencode/bin
 
-command -v fortune 1>/dev/null 2>&1 && fortune -s
+# mbxcli
+test -f (npm root -g)/@mapbox/mbxcli/bin/mbx.fish; and source (npm root -g)/@mapbox/mbxcli/bin/mbx.fish

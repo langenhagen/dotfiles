@@ -68,6 +68,15 @@ nextcloud_prefs_dir="$HOME/Library/Containers/com.nextcloud.desktopclient/Data/L
 mkdir -p "$nextcloud_prefs_dir"
 cp "$dotfiles_dir/.config/Nextcloud/sync-exclude.lst" "$nextcloud_prefs_dir/sync-exclude.lst"
 
+# Karabiner-Elements overwrites symlinked karabiner.json; copy it so the
+# GUI can write through it. dotfiles stays the source of truth.
+mkdir -p "$HOME/.config/karabiner/assets/complex_modifications"
+cp "$dotfiles_dir/.config/karabiner/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
+ln -sf "$dotfiles_dir/.config/karabiner/assets/complex_modifications/caps_lock_esc_ctrl.json" \
+    "$HOME/.config/karabiner/assets/complex_modifications/caps_lock_esc_ctrl.json"
+ln -sf "$dotfiles_dir/.config/karabiner/assets/complex_modifications/app_launch_shortcuts.json" \
+    "$HOME/.config/karabiner/assets/complex_modifications/app_launch_shortcuts.json"
+
 mkdir -p "$HOME/.config/opencode"
 ln -sf "$dotfiles_dir/.config/opencode/AGENTS.md" "$HOME/.config/opencode/AGENTS.md"
 ln -sf "$dotfiles_dir/.config/opencode/opencode.json" "$HOME/.config/opencode/opencode.json"

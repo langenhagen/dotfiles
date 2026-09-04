@@ -1,0 +1,196 @@
+{
+    "profiles": [
+        {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "Caps Lock to Escape if tapped alone, Control if held",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "left_control" }],
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Work app shortcuts",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": { "mandatory": ["option", "shift"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'Slack'" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": { "mandatory": ["control", "option"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'Claude'" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Personal app and browser shortcuts",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": { "mandatory": ["option", "shift"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'Sublime Text'" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": { "mandatory": ["option", "shift"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'Alacritty'" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": { "mandatory": ["option", "shift"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'Visual Studio Code'" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": { "mandatory": ["option", "shift"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'FreeTube'" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": { "mandatory": ["option", "shift"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'Thunderbird'" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "1",
+                                    "modifiers": { "mandatory": ["control", "option"] }
+                                },
+                                "to": [{ "shell_command": "open -na 'Google Chrome' --args --profile-directory=Default" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "2",
+                                    "modifiers": { "mandatory": ["control", "option"] }
+                                },
+                                "to": [{ "shell_command": "open -na 'Google Chrome' --args --profile-directory='Profile 1'" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "3",
+                                    "modifiers": { "mandatory": ["control", "option"] }
+                                },
+                                "to": [{ "shell_command": "open -na 'Google Chrome' --args --profile-directory='Profile 2' --incognito" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "4",
+                                    "modifiers": { "mandatory": ["control", "option"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'Firefox'" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "1",
+                                    "modifiers": { "mandatory": ["option", "shift"] }
+                                },
+                                "to": [{ "shell_command": "open -na 'Google Chrome' --args --profile-directory=Default" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "2",
+                                    "modifiers": { "mandatory": ["option", "shift"] }
+                                },
+                                "to": [{ "shell_command": "open -na 'Google Chrome' --args --profile-directory='Profile 1'" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "3",
+                                    "modifiers": { "mandatory": ["option", "shift"] }
+                                },
+                                "to": [{ "shell_command": "open -na 'Google Chrome' --args --profile-directory='Profile 2' --incognito" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "4",
+                                    "modifiers": { "mandatory": ["option", "shift"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'Firefox'" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": { "mandatory": ["control", "option"] }
+                                },
+                                "to": [{ "shell_command": "/opt/homebrew/bin/fish -lc 'date-to-clipboard.sh'" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": { "mandatory": ["control", "option"] }
+                                },
+                                "to": [{ "shell_command": "/opt/homebrew/bin/fish -lc 'date-to-clipboard.sh weekday'" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "q",
+                                    "modifiers": { "mandatory": ["control", "option"] }
+                                },
+                                "to": [{ "shell_command": "/opt/homebrew/bin/fish -lc 'open -na Alacritty --args --option window.dimensions.columns=300 --option window.dimensions.lines=99 --command vim \"+call feedkeys(\\\"/\\\")\" \"$TRICKS_FILE_PATH\"'" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "w",
+                                    "modifiers": { "mandatory": ["control", "option"] }
+                                },
+                                "to": [{ "shell_command": "/opt/homebrew/bin/fish -lc 'open -na Alacritty --args --option window.dimensions.columns=300 --option window.dimensions.lines=99 --command vim \"+call feedkeys(\\\"/\\\")\" \"$ONELINEHELP_FILE_PATH\"'" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f7"
+                                },
+                                "to": [{ "shell_command": "say -f ~/.claude/last-message.txt" }],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "name": "Default profile",
+            "selected": true,
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+        }
+    ]
+}

@@ -57,6 +57,9 @@ ln -sf "$dotfiles_dir/.config/fish/vimlike-bookmarks.fish" "$HOME/.config/fish/v
 mkdir -p "$HOME/.config/fish/completions"
 ln -sf "$dotfiles_dir/.config/fish/completions/aws.fish" "$HOME/.config/fish/completions/aws.fish"
 
+mkdir -p "$HOME/.config/ghostty"
+ln -sf "$dotfiles_dir/.config/ghostty/config.ghostty" "$HOME/.config/ghostty/config.ghostty"
+
 mkdir -p "$HOME/.config/lf"
 ln -sf "$dotfiles_dir/.config/lf/lfrc" "$HOME/.config/lf/lfrc"
 ln -sf "$dotfiles_dir/.config/lf/bulkrename.sh" "$HOME/.config/lf/bulkrename.sh"

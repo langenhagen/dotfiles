@@ -20,9 +20,6 @@ ln -sf "$dotfiles_dir/.sqliterc" "$HOME/.sqliterc"
 ln -sf "$dotfiles_dir/.tigrc" "$HOME/.tigrc"
 ln -sf "$dotfiles_dir/.tmux.conf" "$HOME/.tmux.conf"
 
-mkdir -p "$HOME/.ccache"
-ln -sf "$dotfiles_dir/.ccache/ccache.conf" "$HOME/.ccache/ccache.conf"
-
 mkdir -p "$HOME/.config"
 
 mkdir -p "$HOME/.config/alacritty"
@@ -81,6 +78,9 @@ mkdir -p "$HOME/.config/opencode"
 ln -sf "$dotfiles_dir/.config/opencode/AGENTS.md" "$HOME/.config/opencode/AGENTS.md"
 ln -sf "$dotfiles_dir/.config/opencode/opencode.json" "$HOME/.config/opencode/opencode.json"
 ln -sf "$dotfiles_dir/.config/opencode/tui.json" "$HOME/.config/opencode/tui.json"
+
+mkdir -p "$HOME/Library/Application Support/Mozilla.sccache"
+ln -sf "$dotfiles_dir/.config/sccache/config" "$HOME/Library/Application Support/Mozilla.sccache/config"
 
 mkdir -p "$HOME/.claude"
 ln -sf "$dotfiles_dir/.config/opencode/AGENTS.md" "$HOME/.claude/CLAUDE.md"

@@ -17,9 +17,6 @@ ln -sf "$dotfiles_dir/.sqliterc" "$HOME/.sqliterc"
 ln -sf "$dotfiles_dir/.tigrc" "$HOME/.tigrc"
 ln -sf "$dotfiles_dir/.tmux.conf" "$HOME/.tmux.conf"
 
-mkdir -p "$HOME/.ccache"
-ln -sf "$dotfiles_dir/.ccache/ccache.conf" "$HOME/.ccache/ccache.conf"
-
 mkdir -p "$HOME/.config"
 ln -sf "$dotfiles_dir/.config/mimeapps.list" "$HOME/.config/mimeapps.list"
 ln -sf "$dotfiles_dir/.config/user-dirs.dirs" "$HOME/.config/user-dirs.dirs"
@@ -77,6 +74,9 @@ ln -sf "$dotfiles_dir/.claude/statusline.sh" "$HOME/.claude/statusline.sh"
 
 mkdir -p "$HOME/.config/run-or-raise"
 ln -sf "$dotfiles_dir/.config/run-or-raise/shortcuts.conf" "$HOME/.config/run-or-raise/shortcuts.conf"
+
+mkdir -p "$HOME/.config/sccache"
+ln -sf "$dotfiles_dir/.config/sccache/config" "$HOME/.config/sccache/config"
 
 mkdir -p "$HOME/.config/sublime-text"
 ln -sf "$dotfiles_dir/.config/sublime-text/Packages" "$HOME/.config/sublime-text/"

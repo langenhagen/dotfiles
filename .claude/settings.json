@@ -5,11 +5,14 @@
       "Bash(lilsound:*)"
     ]
   },
-  "model": "sonnet",
   "hooks": {
     "Stop": [
       {
         "hooks": [
+          {
+            "type": "command",
+            "command": "~/Dev/scripts/write-last-claude-message.sh"
+          },
           {
             "type": "command",
             "command": "lilsound $$",

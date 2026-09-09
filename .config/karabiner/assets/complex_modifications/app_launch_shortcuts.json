@@ -26,11 +26,6 @@
                 },
                 {
                     "type": "basic",
-                    "from": { "key_code": "m", "modifiers": { "mandatory": ["option", "shift"] } },
-                    "to": [{ "shell_command": "open -a 'Thunderbird'" }]
-                },
-                {
-                    "type": "basic",
                     "from": { "key_code": "1", "modifiers": { "mandatory": ["control", "option"] } },
                     "to": [{ "shell_command": "open -na 'Google Chrome' --args --profile-directory=Default" }]
                 },
@@ -71,12 +66,12 @@
                 },
                 {
                     "type": "basic",
-                    "from": { "key_code": "n", "modifiers": { "mandatory": ["control", "option"] } },
+                    "from": { "key_code": "n", "modifiers": { "mandatory": ["option", "shift"] } },
                     "to": [{ "shell_command": "/opt/homebrew/bin/fish -lc 'date-to-clipboard.sh'" }]
                 },
                 {
                     "type": "basic",
-                    "from": { "key_code": "m", "modifiers": { "mandatory": ["control", "option"] } },
+                    "from": { "key_code": "m", "modifiers": { "mandatory": ["option", "shift"] } },
                     "to": [{ "shell_command": "/opt/homebrew/bin/fish -lc 'date-to-clipboard.sh weekday'" }]
                 },
                 {

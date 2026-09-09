@@ -11,7 +11,7 @@ if test (uname) = 'Darwin'; and test -x /opt/homebrew/bin/brew
 end
 
 switch (uname -n)
-    case "*barn-ultra*" "andreasl-yoga" "*work*"
+    case "*barn-ultra*" "andreasl-yoga" "*KTHKH*"
         set -x CHECK_DIR_PATH "$HOME/Dev/check"
         set -x ONE_LINE_HELP_FILE_PATH "$HOME/Dev/Zeugs/one-line-help.txt"
         set -x PROTOFILES_DIR_PATH "$HOME/Dev/protofiles"

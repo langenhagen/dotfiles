@@ -172,7 +172,7 @@ case 'Linux'
 end
 
 switch (uname -n)
-case "barn-ultra" "andreasl-yoga" "*work*"
+case "barn-ultra" "andreasl-yoga" "*KTHKH*"
     # Desktop machine related abbrs
     abbr -a prt 'cd "$PROTOFILES_DIR_PATH" ; find "$PROTOFILES_DIR_PATH" -name "*_proto.*"'
 

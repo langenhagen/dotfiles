@@ -191,6 +191,14 @@
                                 },
                                 "to": [{ "shell_command": "say -f ~/.claude/last-message.txt" }],
                                 "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": { "mandatory": ["option", "shift"] }
+                                },
+                                "to": [{ "shell_command": "/opt/homebrew/bin/fish -c 'subl $JOURNAL_PATH:999999'" }],
+                                "type": "basic"
                             }
                         ]
                     }

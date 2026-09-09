@@ -88,6 +88,11 @@
                     "type": "basic",
                     "from": { "key_code": "w", "modifiers": { "mandatory": ["control", "option"] } },
                     "to": [{ "shell_command": "/opt/homebrew/bin/fish -lc 'open -na Alacritty --args --option window.dimensions.columns=300 --option window.dimensions.lines=99 --command vim \"+call feedkeys(\\\"/\\\")\" \"$ONELINEHELP_FILE_PATH\"'" }]
+                },
+                {
+                    "type": "basic",
+                    "from": { "key_code": "j", "modifiers": { "mandatory": ["option", "shift"] } },
+                    "to": [{ "shell_command": "/opt/homebrew/bin/fish -c 'subl $JOURNAL_PATH:999999'" }]
                 }
             ]
         },

@@ -1,2 +1,2 @@
 background = #000000
-command = tmux
+command = /opt/homebrew/bin/tmux

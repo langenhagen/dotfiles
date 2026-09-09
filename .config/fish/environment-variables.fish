@@ -12,23 +12,18 @@ end
 
 switch (uname -n)
     case "*barn-ultra*" "andreasl-yoga" "*KTHKH*"
-        set -x CHECK_DIR_PATH "$HOME/Dev/check"
-        set -x ONE_LINE_HELP_FILE_PATH "$HOME/Dev/Zeugs/one-line-help.txt"
-        set -x PROTOFILES_DIR_PATH "$HOME/Dev/protofiles"
-        set -x SCRIPTS_DIR_PATH "$HOME/Dev/scripts"
-        set -x TRICKS_FILE_PATH "$HOME/Dev/Zeugs/tricks.sh"
+        set -gx CHECK_DIR_PATH "$HOME/Dev/check"
+        set -gx ONE_LINE_HELP_FILE_PATH "$HOME/Dev/Zeugs/one-line-help.txt"
+        set -gx PROTOFILES_DIR_PATH "$HOME/Dev/protofiles"
+        set -gx SCRIPTS_DIR_PATH "$HOME/Dev/scripts"
+        set -gx TRICKS_FILE_PATH "$HOME/Dev/Zeugs/tricks.sh"
+
+        set -gx JOURNAL_PATH "$HOME/Work/2026-Mapbox/journal.md"
 
     case "bee"
         set -x CHECK_DIR_PATH "$HOME/scripts/check"
         set -x SCRIPTS_DIR_PATH "$HOME/scripts/generic-scripts"
 end
-
-switch (uname -n)
-    case  "*work*"
-        set -gx PATH "$HOME/Dev/wandelbots-scripts/" $PATH
-end
-
-set -gx JOURNAL_PATH "$HOME/Work/2026-Mapbox/journal.md"
 
 set -gx PATH "$HOME/go/bin" $PATH
 set -gx PATH "$HOME/.rbenv/bin" $PATH

@@ -30,4 +30,4 @@ end
 fish_add_path $HOME/.opencode/bin
 
 # mbxcli
-test -f (npm root -g)/@mapbox/mbxcli/bin/mbx.fish; and source (npm root -g)/@mapbox/mbxcli/bin/mbx.fish
+test -f $HOME/.local/share/nvm/v22.23.2/lib/node_modules/@mapbox/mbxcli/bin/mbx.fish; and source $HOME/.local/share/nvm/v22.23.2/lib/node_modules/@mapbox/mbxcli/bin/mbx.fish

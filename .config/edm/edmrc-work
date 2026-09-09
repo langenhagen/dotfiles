@@ -27,4 +27,7 @@ choices=(
     "$(cat "$history_file")"
 )
 
-open_terminal_command='alacritty --working-directory'
+open_terminal_command() {
+    open -na Ghostty.app --args --working-directory="$1"
+}
+open_terminal_command='open_terminal_command'

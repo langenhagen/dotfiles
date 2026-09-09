@@ -36,6 +36,9 @@ ln -sf "$dotfiles_dir/.config/Code/User/settings.json" "$app_support_dir/Code/Us
 mkdir -p "$app_support_dir/Code/User/snippets"
 ln -sf "$dotfiles_dir/.config/Code/User/snippets/barns-snippets.code-snippets" "$app_support_dir/Code/User/snippets/barns-snippets.code-snippets"
 
+mkdir -p "$HOME/.config/ewc"
+ln -sf "$dotfiles_dir/.config/edm/edmrc-work" "$HOME/.config/ewc/ewcrc"
+
 mkdir -p "$HOME/.config/feh"
 ln -sf "$dotfiles_dir/.config/feh/keys" "$HOME/.config/feh/keys"
 

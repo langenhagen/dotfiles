@@ -29,3 +29,5 @@
 
 [includeIf "gitdir:~/mb/"]
     path = ~/dotfiles/.gitconfig-work
+[push]
+	autoSetupRemote = true

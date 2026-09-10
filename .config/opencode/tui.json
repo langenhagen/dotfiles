@@ -3,8 +3,8 @@
   "theme": "vercel",
   "plugin": [
     [
-      "/home/andreasl/Dev/opencode-kokotolk/plugins/talk.ts",
-      { "hotkey": "f7" }
+      "{env:HOME}/Dev/opencode-kokotolk/plugins/talk.ts",
+      { "hotkey": "f8" }
     ]
   ]
 }

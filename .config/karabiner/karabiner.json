@@ -166,7 +166,7 @@
                                     "key_code": "q",
                                     "modifiers": { "mandatory": ["control", "option"] }
                                 },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/fish -lc 'open -na Alacritty --args --option window.dimensions.columns=300 --option window.dimensions.lines=99 --command vim \"+call feedkeys(\\\"/\\\")\" \"$TRICKS_FILE_PATH\"'" }],
+                                "to": [{ "shell_command": "/opt/homebrew/bin/fish -lc 'open-in-terminal-vim.sh \"$TRICKS_FILE_PATH\"'" }],
                                 "type": "basic"
                             },
                             {

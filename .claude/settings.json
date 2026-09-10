@@ -26,6 +26,22 @@
     "type": "command",
     "command": "~/.claude/statusline.sh"
   },
+  "enabledPlugins": {
+    "slack@claude-plugins-official": true,
+    "atlassian-twg-cli@claude-plugins-official": true,
+    "grug@mapbox-claude-plugins": true,
+    "mbx-dev@mapbox-claude-plugins": true,
+    "prep@mapbox-claude-plugins": true,
+    "simplified-spec-kit@mapbox-claude-plugins": true
+  },
+  "extraKnownMarketplaces": {
+    "mapbox-claude-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "mapbox/claude-plugins"
+      }
+    }
+  },
   "effortLevel": "high",
   "theme": "dark-daltonized"
 }

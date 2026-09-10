@@ -166,7 +166,7 @@
                                     "key_code": "q",
                                     "modifiers": { "mandatory": ["control", "option"] }
                                 },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/fish -lc 'open-in-terminal-vim.sh \"$TRICKS_FILE_PATH\"'" }],
+                                "to": [{ "shell_command": "/opt/homebrew/bin/fish -c 'subl $TRICKS_FILE_PATH'" }],
                                 "type": "basic"
                             },
                             {

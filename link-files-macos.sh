@@ -77,6 +77,9 @@ ln -sf "$dotfiles_dir/.config/karabiner/assets/complex_modifications/caps_lock_e
 ln -sf "$dotfiles_dir/.config/karabiner/assets/complex_modifications/app_launch_shortcuts.json" \
     "$HOME/.config/karabiner/assets/complex_modifications/app_launch_shortcuts.json"
 
+mkdir -p "$HOME/.homebrew/services"
+ln -sf "$dotfiles_dir/.homebrew/services/ollama.env" "$HOME/.homebrew/services/ollama.env"
+
 mkdir -p "$HOME/.config/opencode"
 ln -sf "$dotfiles_dir/.config/opencode/AGENTS.md" "$HOME/.config/opencode/AGENTS.md"
 ln -sf "$dotfiles_dir/.config/opencode/opencode.json" "$HOME/.config/opencode/opencode.json"

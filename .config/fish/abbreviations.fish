@@ -160,7 +160,7 @@ abbr -a ys "yt-dlp -f 'bv*[vcodec^=avc1][height<=786]+ba[acodec^=mp4a]/b[ext=mp4
 # OS dependent abbrs
 switch (uname)
 case 'Darwin'
-    abbr -a sa 'pmset sleepnow'
+    abbr -a sa "osascript -e 'tell application \"System Events\" to sleep'"
     abbr -a upsys 'cd ~/Admin/computer/setup-my-macos; time bash 900-update-system.sh; cd -;'
     # BSD xargs has no -r; it already skips the command when input is empty
     abbr -a pk 'ps aux | fzf --preview "" | tr -s "[:blank:]" | cut -d" " -f2 | xargs kill'

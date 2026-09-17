@@ -42,7 +42,7 @@
                 {
                     "type": "basic",
                     "from": { "key_code": "4", "modifiers": { "mandatory": ["control", "option"] } },
-                    "to": [{ "shell_command": "open -a 'Firefox'" }]
+                    "to": [{ "shell_command": "osascript -e 'tell application \"Firefox\" to activate'" }]
                 },
                 {
                     "type": "basic",
@@ -62,7 +62,7 @@
                 {
                     "type": "basic",
                     "from": { "key_code": "4", "modifiers": { "mandatory": ["option", "shift"] } },
-                    "to": [{ "shell_command": "open -a 'Firefox'" }]
+                    "to": [{ "shell_command": "osascript -e 'tell application \"Firefox\" to activate'" }]
                 },
                 {
                     "type": "basic",

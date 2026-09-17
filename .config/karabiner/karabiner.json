@@ -54,7 +54,7 @@
                                     "key_code": "grave_accent_and_tilde",
                                     "modifiers": { "mandatory": ["option", "shift"] }
                                 },
-                                "to": [{ "shell_command": "open -a 'Google Chrome'" }],
+                                "to": [{ "shell_command": "osascript -e 'if application \"Google Chrome\" is running then' -e 'tell application \"System Events\" to tell process \"Google Chrome\" to set frontmost to true' -e 'else' -e 'tell application \"Google Chrome\" to activate' -e 'end if'" }],
                                 "type": "basic"
                             },
                             {
@@ -110,7 +110,7 @@
                                     "key_code": "4",
                                     "modifiers": { "mandatory": ["control", "option"] }
                                 },
-                                "to": [{ "shell_command": "open -a 'Firefox'" }],
+                                "to": [{ "shell_command": "osascript -e 'tell application \"Firefox\" to activate'" }],
                                 "type": "basic"
                             },
                             {
@@ -142,7 +142,7 @@
                                     "key_code": "4",
                                     "modifiers": { "mandatory": ["option", "shift"] }
                                 },
-                                "to": [{ "shell_command": "open -a 'Firefox'" }],
+                                "to": [{ "shell_command": "osascript -e 'tell application \"Firefox\" to activate'" }],
                                 "type": "basic"
                             },
                             {

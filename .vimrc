@@ -200,6 +200,25 @@ function! ToggleAutoLinebreak()
     endif
 endfunction
 
+" reformat the paragraph under the cursor. Pressing again without moving the cursor toggles the
+" line width between 100 and 80 characters
+let g:format_paragraph_last = []  " [buffer, cursor line, textwidth] of the previous run
+function! FormatParagraph()
+    let l:last = g:format_paragraph_last
+    let l:width = &l:textwidth
+    if len(l:last) == 3 && l:last[0] == bufnr('%') && l:last[1] == line('.')
+        let l:width = l:last[2] == 80 ? 100 : 80
+    endif
+
+    let l:textwidth_before = &l:textwidth
+    let &l:textwidth = l:width
+    normal! gwip
+    let &l:textwidth = l:textwidth_before
+
+    let g:format_paragraph_last = [bufnr('%'), line('.'), l:width]
+    echo "Reformatted paragraph at " . l:width . " characters"
+endfunction
+
 " commands =========================================================================================
 command! Deltrail %s/\s\+$//e  " delete trailing spaces and tabs -- command for ex-mode. Must begin with uppercase letter if user-defined
 " Python-style delimiter line
@@ -235,8 +254,8 @@ map <S-F5> vip:sort<CR>|    " sort paragraph on which the cursor hovers
 map <F17> vip:sort<CR>|     " shift-F5 in neovim
 vmap <S-F5> :sort<CR>|  " sort in visual selection
 vmap <F17> :sort<CR>|   " shift-F5 in neovim
-map <S-F6> gwip|    " reformat current paragraph
-map <F18> gwip|     " shift-F6 in neovim
+map <S-F6> :<C-u>call FormatParagraph()<CR>|    " reformat current paragraph; press again to toggle 100/80 characters
+map <F18> :<C-u>call FormatParagraph()<CR>|     " shift-F6 in neovim
 map <F7> gT|        " toggle tab to the left
 map <F8> gt|         " toggle tab to the right
 map <S-F8> gT|    " toggle tab to the left

@@ -201,7 +201,7 @@ case "barn-ultra" "andreasl-yoga" "*KTHKH*"
         abbr -a ho 'eval $history[1] | pbcopy > ~/.histout'
         abbr -a xh 'eval $history[1] | pbcopy > ~/.histout'
 
-        abbr -a goo "eval \$history[1] | sed 's|\(.+*\):[0-9]*:.*|\1|' | sed '/^Binary file.*matches\$/d' | sort -u | pbcopy | tee ~/.histout"
+        abbr -a goo "eval \$history[1] | sed 's|\(.+*\):[0-9]*:.*|\1|' | sed '/^Binary file.*matches\$/d' | sort -u | tee ~/.histout; pbcopy < ~/.histout"
 
         abbr -a pi 'pngpaste "$HOME/Desktop/"(date +%Y-%m-%d-%H-%M-%S)"-clipboard.png"'  # paste an image from clipboard to file
 

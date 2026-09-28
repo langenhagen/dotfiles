@@ -69,13 +69,28 @@ abbr -a e 'vim -R "+normal :Explore\$" .'
 abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
 abbr -a xx 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
 
-abbr -a h 'grep -HiRns'
-abbr -a g 'grep -i'
-abbr -a ch 'grep -HiRns --include=\*.{h,hpp,c,cpp,cc,m,mm,pch,java,swift,kt}'
-abbr -a cmh 'grep -HiRns --include={CMakeCache.txt,CMakeLists.txt,\*.cmake}'
-abbr -a bh 'grep -HiRns --include=\*.sh'
-abbr -a ph 'grep -HiRns --include=\*.py --exclude-dir={.venv\*,custom-eggs,site-packages}'
-abbr -a cfh 'grep -HiRns --include={\*.cfg,\*.conf,\*.conf.in,\*.ini,setup.py,requirements.txt,Makefile,\*.yaml}'
+# macOS bsdgrep ignores symlinks even with -R, so these use GNU grep there.
+# The ggrep alias in aliases.fish gives it the same colour and excluded dirs.
+switch (uname)
+case 'Darwin'
+    abbr -a h 'ggrep -HiRns'
+    abbr -a g 'ggrep -i'
+    abbr -a ch 'ggrep -HiRns --include=\*.{h,hpp,c,cpp,cc,m,mm,pch,java,swift,kt}'
+    abbr -a cmh 'ggrep -HiRns --include={CMakeCache.txt,CMakeLists.txt,\*.cmake}'
+    abbr -a bh 'ggrep -HiRns --include=\*.sh'
+    abbr -a ph 'ggrep -HiRns --include=\*.py --exclude-dir={.venv\*,custom-eggs,site-packages}'
+    abbr -a cfh 'ggrep -HiRns --include={\*.cfg,\*.conf,\*.conf.in,\*.ini,setup.py,requirements.txt,Makefile,\*.yaml}'
+
+case '*'
+    abbr -a h 'grep -HiRns'
+    abbr -a g 'grep -i'
+    abbr -a ch 'grep -HiRns --include=\*.{h,hpp,c,cpp,cc,m,mm,pch,java,swift,kt}'
+    abbr -a cmh 'grep -HiRns --include={CMakeCache.txt,CMakeLists.txt,\*.cmake}'
+    abbr -a bh 'grep -HiRns --include=\*.sh'
+    abbr -a ph 'grep -HiRns --include=\*.py --exclude-dir={.venv\*,custom-eggs,site-packages}'
+    abbr -a cfh 'grep -HiRns --include={\*.cfg,\*.conf,\*.conf.in,\*.ini,setup.py,requirements.txt,Makefile,\*.yaml}'
+end
+
 abbr -a mk 'make'
 abbr -a cw "$bat_cmd --number --paging never (which"   # cw: cat (which - now using bat though
 abbr -a shfmt 'shfmt --indent 4 --write'

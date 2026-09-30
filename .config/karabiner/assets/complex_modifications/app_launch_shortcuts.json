@@ -11,8 +11,13 @@
                 },
                 {
                     "type": "basic",
+                    "from": { "key_code": "grave_accent_and_tilde", "modifiers": { "mandatory": ["option", "shift"] } },
+                    "to": [{ "shell_command": "osascript -e 'if application \"Google Chrome\" is running then' -e 'tell application \"System Events\" to tell process \"Google Chrome\" to set frontmost to true' -e 'else' -e 'tell application \"Google Chrome\" to activate' -e 'end if'" }]
+                },
+                {
+                    "type": "basic",
                     "from": { "key_code": "t", "modifiers": { "mandatory": ["option", "shift"] } },
-                    "to": [{ "shell_command": "open -a 'Alacritty'" }]
+                    "to": [{ "shell_command": "open -a 'Ghostty'" }]
                 },
                 {
                     "type": "basic",
@@ -83,6 +88,11 @@
                     "type": "basic",
                     "from": { "key_code": "w", "modifiers": { "mandatory": ["control", "option"] } },
                     "to": [{ "shell_command": "/opt/homebrew/bin/fish -lc 'open -na Alacritty --args --option window.dimensions.columns=300 --option window.dimensions.lines=99 --command vim \"+call feedkeys(\\\"/\\\")\" \"$ONELINEHELP_FILE_PATH\"'" }]
+                },
+                {
+                    "type": "basic",
+                    "from": { "key_code": "f7" },
+                    "to": [{ "shell_command": "say -f ~/.claude/last-message.txt" }]
                 },
                 {
                     "type": "basic",

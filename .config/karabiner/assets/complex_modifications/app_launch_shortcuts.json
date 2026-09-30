@@ -47,12 +47,12 @@
                 {
                     "type": "basic",
                     "from": { "key_code": "1", "modifiers": { "mandatory": ["option", "shift"] } },
-                    "to": [{ "shell_command": "open -na 'Google Chrome' --args --profile-directory=Default" }]
+                    "to": [{ "shell_command": "osascript -e 'if application \"Google Chrome\" is running then' -e 'tell application \"System Events\" to tell process \"Google Chrome\" to set frontmost to true' -e 'else' -e 'tell application \"Google Chrome\" to activate' -e 'end if'" }]
                 },
                 {
                     "type": "basic",
                     "from": { "key_code": "2", "modifiers": { "mandatory": ["option", "shift"] } },
-                    "to": [{ "shell_command": "open -na 'Google Chrome' --args --profile-directory='Profile 1'" }]
+                    "to": [{ "shell_command": "osascript -e 'if application \"Google Chrome\" is running then' -e 'tell application \"System Events\" to tell process \"Google Chrome\" to set frontmost to true' -e 'else' -e 'tell application \"Google Chrome\" to activate' -e 'end if'" }]
                 },
                 {
                     "type": "basic",

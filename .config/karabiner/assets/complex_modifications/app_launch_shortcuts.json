@@ -92,7 +92,7 @@
                 {
                     "type": "basic",
                     "from": { "key_code": "f7" },
-                    "to": [{ "shell_command": "say -f ~/.claude/last-message.txt" }]
+                    "to": [{ "shell_command": "pkill -f kokoro-speak.py || /usr/local/bin/kokoro ~/.claude/last-message.txt" }]
                 },
                 {
                     "type": "basic",

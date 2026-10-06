@@ -33,7 +33,7 @@ abbr -a hi 'cat ~/.histout'
 
 abbr -a cls 'clear'
 abbr -a ht 'hashtag'
-abbr -a pc 'playground-cpp-compile.sh'
+# abbr -a pc 'playground-cpp-compile.sh'  # commented out on 2026-10-06
 abbr -a sn 'sanchar'
 
 abbr -a pg 'ps aux | grep -i'
@@ -66,8 +66,8 @@ abbr -a vg 'vim -p (cat ~/.histout)'
 abbr -a vh 'vim -p (eval $history[1])'
 abbr -a e 'vim -R "+normal :Explore\$" .'
 
-abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
-abbr -a xx 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command
+# abbr -a xv 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command  # commented out on 2026-10-06
+# abbr -a xx 'xargs -o vim -p'  # xargs -o: Reopen stdin as /dev/tty in the child process before executing the command  # commented out on 2026-10-06
 
 # macOS bsdgrep ignores symlinks even with -R, so these use GNU grep there.
 # The ggrep alias in aliases.fish gives it the same colour and excluded dirs.
@@ -102,21 +102,19 @@ abbr -a gcl 'git clean -dxf'
 abbr -a gcp 'git cherry-pick'
 abbr -a gd 'git diff'
 abbr -a gf 'git fetch --prune --tags'
-abbr -a gl 'fuzzy-git-log.sh'
-abbr -a grl 'git reflog --date=iso'
+# abbr -a gl 'fuzzy-git-log.sh'  # commented out on 2026-10-06
+# abbr -a grl 'git reflog --date=iso'  # commented out on 2026-10-06
 abbr -a gv 'git remote -v'
 abbr -a gs 'git status --short --branch --untracked-files'
-abbr -a gsb 'git submodule update --init --recursive'
-abbr -a gss 'git submodule status'
+# abbr -a gsb 'git submodule update --init --recursive'  # commented out on 2026-10-06
+# abbr -a gss 'git submodule status'  # commented out on 2026-10-06
 abbr -a gsh 'git stash'
 abbr -a gsp 'git stash pop'
 
 abbr -a gco 'git checkout'
-abbr -a gcm 'git checkout master || git checkout main'
 abbr -a gm 'git checkout master || git checkout main'
 
 abbr -a gn 'git checkout -b'
-abbr -a gnb 'git checkout -b'
 
 abbr -a gbd 'git branch -D'
 
@@ -125,13 +123,13 @@ abbr -a gct 'git checkout -b tmp; or git checkout tmp; git branch'  # git checko
 abbr -a gdt 'if [ (git rev-parse --abbrev-ref HEAD) = "tmp" ]; git checkout master || git checkout master; end; git branch -D tmp; git branch'  # git delete tmp
 
 abbr -a gp 'git pull --rebase'
-abbr -a gpl 'git pull --rebase'
+# abbr -a gpl 'git pull --rebase'  # commented out on 2026-10-06
 abbr -a gpm 'git pull --rebase origin master || git pull --rebase origin main'
-abbr -a gpc 'git pull --rebase origin master && git fetch --prune --tags && git submodule update --init --recursive --progress -v'
-abbr -a bigpull 'git pull --rebase origin main && git fetch --prune --tags && git submodule update --init --recursive --progress -v'
+# abbr -a gpc 'git pull --rebase origin master && git fetch --prune --tags && git submodule update --init --recursive --progress -v'  # commented out on 2026-10-06
+# abbr -a bigpull 'git pull --rebase origin main && git fetch --prune --tags && git submodule update --init --recursive --progress -v'  # commented out on 2026-10-06
 
 abbr -a gps 'git push'
-abbr -a gpf 'git push -f'
+# abbr -a gpf 'git push -f'  # commented out on 2026-10-06
 
 abbr -a gra 'git rebase --abort'
 abbr -a grc 'git rebase --continue'
@@ -148,8 +146,8 @@ abbr -a grs 'git reset --soft HEAD~1'
 
 abbr -a cm "git add -A; git commit -m (date +%T)-quicksave"
 
-abbr -a rpa 'reposet apply'
-abbr -a rps 'reposet'
+# abbr -a rpa 'reposet apply'  # commented out on 2026-10-06
+# abbr -a rps 'reposet'  # commented out on 2026-10-06
 
 abbr -a dc 'docker-compose'
 abbr -a dcb 'docker-compose build'
@@ -161,13 +159,13 @@ abbr -a dka 'docker kill (docker ps --quiet)'
 
 abbr -a k 'kokoro'
 
-abbr -a tl 'telepresence'
-abbr -a tq 'telepresence quit'
+# abbr -a tl 'telepresence'  # commented out on 2026-10-06
+# abbr -a tq 'telepresence quit'  # commented out on 2026-10-06
 
 abbr -a d3 "download-m3u8 '"
 abbr -a di3 'download-index-m3u8'
 
-abbr -a ya "yt-dlp --audio-format mp3 --audio-quality 0 --continue --extract-audio --format bestaudio --ignore-errors --no-overwrites --output '%(title)s.%(ext)s' '"
+abbr -a ya "yt-dlp --audio-format mp3 --audio-quality 0 --continue --extract-audio --format bestaudio --ignore-errors --no-overwrites --output '%(title)s.%(ext)s' '"  # download a single youtube video as audio
 abbr -a yl "yt-dlp -f 'bv*[vcodec^=avc1][height<=1080]+ba[acodec^=mp4a]/b[ext=mp4]' --merge-output-format mp4 --ignore-errors --no-overwrites --output '%(autonumber)s-%(title)s.%(ext)s' '"  # download a youtube playlist nicely
 abbr -a yls "yt-dlp -f 'bv*[vcodec^=avc1][height<=786]+ba[acodec^=mp4a]/b[ext=mp4]' --merge-output-format mp4 --ignore-errors --no-overwrites --output '%(autonumber)s-%(title)s.%(ext)s' '"  # download a youtube playlist nicely in a smaller resolution
 abbr -a yla "yt-dlp --audio-format mp3 --audio-quality 0 --continue --extract-audio --format bestaudio --ignore-errors --no-overwrites  --output '%(autonumber)s-%(title)s.%(ext)s' '"  # download an audio youtube playlist nicely
@@ -201,22 +199,22 @@ case "barn-ultra" "andreasl-yoga" "*KTHKH*"
     abbr -a s 'subl'
     abbr -a vc 'code'
     abbr -a sh 'subl (eval $history[1])'
-    abbr -a xs 'xargs subl'
+    # abbr -a xs 'xargs subl'  # commented out on 2026-10-06
 
     switch (uname)
     # Desktop OS-dependent abbrs
     case  'Darwin'
         abbr -a now 'date \'+%s\' | pbcopy'  # the current timestamp since epoch in seconds
 
-        abbr -a xc 'open -a Xcode'
-        abbr -a xcode 'open -a Xcode'
+        # abbr -a xc 'open -a Xcode'  # commented out on 2026-10-06
+        # abbr -a xcode 'open -a Xcode'  # commented out on 2026-10-06
         abbr -a o 'open'
         abbr -a o. 'open .'
-        abbr -a ox 'open .; exit'
-        abbr -a xo 'xargs open'
-        abbr -a oh 'for f in (eval $history[1]); open "$f"; end'
+        # abbr -a ox 'open .; exit'  # commented out on 2026-10-06
+        # abbr -a xo 'xargs open'  # commented out on 2026-10-06
+        # abbr -a oh 'for f in (eval $history[1]); open "$f"; end'  # commented out on 2026-10-06
         abbr -a ho 'eval $history[1] | pbcopy > ~/.histout'
-        abbr -a xh 'eval $history[1] | pbcopy > ~/.histout'
+        # abbr -a xh 'eval $history[1] | pbcopy > ~/.histout'  # commented out on 2026-10-06
 
         abbr -a goo "eval \$history[1] | sed 's|\(.+*\):[0-9]*:.*|\1|' | sed '/^Binary file.*matches\$/d' | sort -u | tee ~/.histout; pbcopy < ~/.histout"
 
@@ -227,11 +225,11 @@ case "barn-ultra" "andreasl-yoga" "*KTHKH*"
 
         abbr -a o 'xdg-open'
         abbr -a o. 'xdg-open .'
-        abbr -a ox 'xdg-open .; exit'
-        abbr -a xo 'xargs xdg-open'
-        abbr -a oh 'for f in (eval $history[1]); xdg-open "$f"; end'
+        # abbr -a ox 'xdg-open .; exit'  # commented out on 2026-10-06
+        # abbr -a xo 'xargs xdg-open'  # commented out on 2026-10-06
+        # abbr -a oh 'for f in (eval $history[1]); xdg-open "$f"; end'  # commented out on 2026-10-06
         abbr -a ho 'eval $history[1] | xclip -fi -selection clipboard > ~/.histout'
-        abbr -a xh 'eval $history[1] | xclip -fi -selection clipboard > ~/.histout'
+        # abbr -a xh 'eval $history[1] | xclip -fi -selection clipboard > ~/.histout'  # commented out on 2026-10-06
 
         abbr -a goo "eval \$history[1] | sed 's|\(.+*\):[0-9]*:.*|\1|' | sed '/^Binary file.*matches\$/d' | sort -u | xclip -fi -selection clipboard | tee ~/.histout"
 

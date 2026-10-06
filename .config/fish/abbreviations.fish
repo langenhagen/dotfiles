@@ -157,6 +157,9 @@ abbr -a dcs 'docker-compose stop'
 abbr -a dps 'docker ps'
 abbr -a dka 'docker kill (docker ps --quiet)'
 
+abbr -a cl 'claude'
+abbr -a clr 'claude --resume'
+
 abbr -a k 'kokoro'
 
 # abbr -a tl 'telepresence'  # commented out on 2026-10-06

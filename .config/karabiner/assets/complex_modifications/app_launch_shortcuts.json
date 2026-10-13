@@ -72,12 +72,12 @@
                 {
                     "type": "basic",
                     "from": { "key_code": "n", "modifiers": { "mandatory": ["option", "shift"] } },
-                    "to": [{ "shell_command": "/opt/homebrew/bin/fish -lc 'date-to-clipboard.sh'" }]
+                    "to": [{ "shell_command": "/opt/homebrew/bin/fish -lc 'date-to-clipboard.sh --paste'" }]
                 },
                 {
                     "type": "basic",
                     "from": { "key_code": "m", "modifiers": { "mandatory": ["option", "shift"] } },
-                    "to": [{ "shell_command": "/opt/homebrew/bin/fish -lc 'date-to-clipboard.sh weekday'" }]
+                    "to": [{ "shell_command": "/opt/homebrew/bin/fish -lc 'date-to-clipboard.sh --weekday --paste'" }]
                 },
                 {
                     "type": "basic",

@@ -16,7 +16,7 @@ source ~/.config/fish/vimlike-bookmarks.fish
 test -e ~/.rbenv/bin/rbenv; and status --is-interactive; and source (~/.rbenv/bin/rbenv init - | psub)
 
 command -v pyenv 1>/dev/null 2>&1; and status is-interactive; and pyenv init --no-rehash - 2>/dev/null | source
-command -v direnv 1>/dev/null 2>&1; and eval (direnv hook fish)
+command -v direnv 1>/dev/null 2>&1; and direnv hook fish | source
 nvm --version 1>/dev/null 2>&1; and nvm use lts 1>/dev/null
 
 # pnpm

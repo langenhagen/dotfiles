@@ -28,6 +28,16 @@ assumption.
 - Do not run destructive git commands (history-rewriting or work-discarding)
   unless explicitly requested. Examples: `git commit --amend`, `git rebase`,
   `git reset --hard`, `git push --force`, `git clean -fd`.
+- Commit, fixup, amend, squash or rebase only when the current message asks
+  for it (`commit`, `mc`, `fixup`, "squash"). "Do X" or "fix X" means: change
+  the files, run the checks, leave them uncommitted, and say which commit
+  they belong to. An earlier approval covers only that one batch.
+- Never write to outward-facing places (PR bodies, PR comments, reviews,
+  approvals, issues, Slack) unless the user asks for that action at that
+  moment. Draft the text in the reply instead. Reading is fine.
+- Do not change local machine state outside the repo (symlinks, shell rc
+  files, `PATH`, global package config). Print the command for the user to
+  run.
 - Avoid interactive commands in automation.
 - Never commit secrets (`.env*`, tokens, private keys, auth dumps).
 - Keep temporary files and render artifacts in workspace paths (for example
@@ -74,6 +84,18 @@ assumption.
    framework behavior, platform-specific issues).
 4. Apply and verify the fix.
 
+When the user says they verified a symptom, treat it as fact. If static
+analysis disagrees, the reproduction is missing live conditions (timing,
+concurrency, the real invocation path); add instrumentation instead of
+arguing. Say plainly when an earlier diagnosis was wrong.
+
+### Code Reviews
+
+- Verify each finding against the code before raising it. Do not raise
+  wording nits.
+- When the user disproves a finding, drop it in one line. Do not re-anchor
+  the same claim to another quote or file.
+
 ### Shell Script Changes
 
 For each touched shell script:
@@ -114,7 +136,7 @@ Interpret these tokens as explicit workflow commands:
 
 - `prose`: Give a clear prose walkthrough with rationale and tradeoffs.
 - `eli5` or `eli`: Give a short, simple, technically correct explanation.
-- `s`, `short`: Restate the previous assistant message in 1-5 sentences.
+- `s`, `short`: Restate the previous assistant message in 1-3 sentences.
   No new work, no new tool calls; just a terse paraphrase of what was
   already said.
 - `sw`: Search the web before answering; use results as support.
@@ -151,9 +173,25 @@ file path is the fastest invocation. Activate venv first:
 - Do not bike-shed. Ask only questions whose answers materially change the
   plan or output. When uncertain between near-equivalent options, pick one
   and proceed.
-- End every response with a brief TL;DR of the key point(s). When asking
-  questions (or using a question tool), place the TL;DR immediately before
-  the question(s).
+- Keep replies short: answer first, then stop. One short paragraph by
+  default; headers, lists or tables only when needed. Ceiling ~50 lines.
+- No unrequested background, rationale or "next steps", in replies or files.
+- TL;DR only for replies over ~4 lines; put it before any questions.
+- Write the answer once; do not restate it after a tool call.
+
+## Writing
+
+Applies to all text: replies, comments, commit and PR messages, docs.
+
+- One idea per sentence, plain words. No filler metaphors ("shape",
+  "load-bearing") or shorthand ("D+3").
+- Write for a reader with only that file open: name things, and define
+  every number and session-coined term ("the 8", "as discussed").
+- Never use shorthand that has more than one plausible referent ("the
+  body", "the index", "the job"). Name it in full every time
+- PR text states what is known now; no "will update once CI reports".
+- No blockquotes (`> ...`); drafts as plain text or a fenced block.
+- When adding to a shared module, update its module docstring.
 
 ## Linter And Static Analysis Pragmas
 

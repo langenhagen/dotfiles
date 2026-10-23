@@ -20,6 +20,16 @@
           }
         ]
       }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/Dev/scripts/claude-shortmode-hook.sh"
+          }
+        ]
+      }
     ]
   },
   "statusLine": {

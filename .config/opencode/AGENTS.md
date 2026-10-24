@@ -202,7 +202,7 @@ Applies to all text: replies, comments, commit and PR messages, docs.
 ## Response Finalization
 
 - End each response by running `lilsound $$` as the last step (fall back to
-  bare `lilsound` if `$$` is unavailable). If your harness already runs this
-  automatically (for example via a stop/finalize hook), do not also run it
-  manually.
+  bare `lilsound` if `$$` is unavailable).
+- Claude Code: skip this. A Stop hook in `~/.claude/settings.json` already
+  runs `lilsound` and keeps it silent in Jarvis mode.
 - `lilsound` is non-writing and safe.

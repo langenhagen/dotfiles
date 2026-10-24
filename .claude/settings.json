@@ -12,44 +12,10 @@
           {
             "type": "command",
             "comment": [
-              "Write the reply to ~/.claude/last-message.txt, then read it",
-              "aloud with Kokoro if ~/.claude/jarvis exists.",
-              "Chained with && so those things run in sequence."
-            ],
-            "command": "~/Dev/scripts/write-last-claude-message.sh && ~/Dev/scripts/claude-jarvis-speak.sh",
-            "async": true
-          },
-          {
-            "type": "command",
-            "comment": [
               "Finish sound, skip if jarvis mode because Kokoro speaks instead"
             ],
             "command": "[ -f ~/.claude/jarvis ] || lilsound $$",
             "async": true
-          }
-        ]
-      }
-    ],
-    "UserPromptSubmit": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "comment": [
-              "Prompt 'shortmode' or 'shortmode off' toggles",
-              "~/.claude/shortmode. While on, injects the terse-reply rule",
-              "into every prompt."
-            ],
-            "command": "~/Dev/scripts/claude-shortmode-hook.sh"
-          },
-          {
-            "type": "command",
-            "comment": [
-              "Prompt 'jarvis' or 'jarvis off' toggles ~/.claude/jarvis.",
-              "While on, injects the terse spoken-reply rule into every",
-              "prompt."
-            ],
-            "command": "~/Dev/scripts/claude-jarvis-hook.sh"
           }
         ]
       }
@@ -69,13 +35,20 @@
     "grug@mapbox-claude-plugins": true,
     "mbx-dev@mapbox-claude-plugins": true,
     "prep@mapbox-claude-plugins": true,
-    "simplified-spec-kit@mapbox-claude-plugins": true
+    "simplified-spec-kit@mapbox-claude-plugins": true,
+    "barn-claude-jarvis@barn-claude-jarvis": true
   },
   "extraKnownMarketplaces": {
     "mapbox-claude-plugins": {
       "source": {
         "source": "github",
         "repo": "mapbox/claude-plugins"
+      }
+    },
+    "barn-claude-jarvis": {
+      "source": {
+        "source": "directory",
+        "path": "/Users/andreasl/Dev/barn-claude-jarvis"
       }
     }
   },

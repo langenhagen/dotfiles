@@ -11,7 +11,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/Dev/scripts/write-last-claude-message.sh"
+            "command": "~/Dev/scripts/write-last-claude-message.sh",
+            "async": true
           },
           {
             "type": "command",

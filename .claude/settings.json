@@ -11,12 +11,20 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/Dev/scripts/write-last-claude-message.sh",
+            "comment": [
+              "Write the reply to ~/.claude/last-message.txt, then read it",
+              "aloud with Kokoro if ~/.claude/jarvis exists.",
+              "Chained with && so those things run in sequence."
+            ],
+            "command": "~/Dev/scripts/write-last-claude-message.sh && ~/Dev/scripts/claude-jarvis-speak.sh",
             "async": true
           },
           {
             "type": "command",
-            "command": "lilsound $$",
+            "comment": [
+              "Finish sound, skip if jarvis mode because Kokoro speaks instead"
+            ],
+            "command": "[ -f ~/.claude/jarvis ] || lilsound $$",
             "async": true
           }
         ]
@@ -27,7 +35,21 @@
         "hooks": [
           {
             "type": "command",
+            "comment": [
+              "Prompt 'shortmode' or 'shortmode off' toggles",
+              "~/.claude/shortmode. While on, injects the terse-reply rule",
+              "into every prompt."
+            ],
             "command": "~/Dev/scripts/claude-shortmode-hook.sh"
+          },
+          {
+            "type": "command",
+            "comment": [
+              "Prompt 'jarvis' or 'jarvis off' toggles ~/.claude/jarvis.",
+              "While on, injects the terse spoken-reply rule into every",
+              "prompt."
+            ],
+            "command": "~/Dev/scripts/claude-jarvis-hook.sh"
           }
         ]
       }
@@ -35,6 +57,10 @@
   },
   "statusLine": {
     "type": "command",
+    "comment": [
+      "Prints directory, git branch, model, effort and context usage",
+      "below the prompt."
+    ],
     "command": "~/.claude/statusline.sh"
   },
   "enabledPlugins": {

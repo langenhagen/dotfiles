@@ -10,6 +10,8 @@ set main-view-id-display = yes  # show commit hashes in main view
 color date cyan default
 color diff.diff-index cyan default
 color diff-stat cyan default
+color cursor white color23 bold  # default bright green is unreadable in Ghostty; color23 is a dark teal blue
+color cursor-blur white color23  # same for the cursor in the unfocused split view
 
 # key bindings -------------------------------------------------------------------------------------
 # in tig, press `h` for quick overview of existing key bindings

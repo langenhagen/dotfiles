@@ -14,7 +14,7 @@
             "comment": [
               "Finish sound, skip while a barn-claude-jarvis mode is on"
             ],
-            "command": "[ -f ~/.claude/barn-claude-jarvis-mode ] || lilsound $$",
+            "command": "[ -f ~/.cache/barn-claude-jarvis/mode ] || lilsound $$",
             "async": true
           }
         ]

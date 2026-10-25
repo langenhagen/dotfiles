@@ -12,9 +12,9 @@
           {
             "type": "command",
             "comment": [
-              "Finish sound, skip if jarvis mode because Kokoro speaks instead"
+              "Finish sound, skip while a barn-claude-jarvis mode is on"
             ],
-            "command": "[ -f ~/.claude/jarvis ] || lilsound $$",
+            "command": "[ -f ~/.claude/barn-claude-jarvis-mode ] || lilsound $$",
             "async": true
           }
         ]

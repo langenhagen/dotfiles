@@ -74,6 +74,8 @@ ln -sf "$dotfiles_dir/.claude/statusline.sh" "$HOME/.claude/statusline.sh"
 mkdir -p "$HOME/.claude/skills"
 rm "$HOME/.claude/skills/tts"
 ln -sf "$dotfiles_dir/.claude/skills/tts" "$HOME/.claude/skills/tts"
+rm "$HOME/.claude/skills/email-inbox"
+ln -sf "$dotfiles_dir/.claude/skills/email-inbox" "$HOME/.claude/skills/email-inbox"
 
 mkdir -p "$HOME/.config/run-or-raise"
 ln -sf "$dotfiles_dir/.config/run-or-raise/shortcuts.conf" "$HOME/.config/run-or-raise/shortcuts.conf"

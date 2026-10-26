@@ -97,6 +97,8 @@ rm "$HOME/.claude/skills/tts"
 ln -sf "$dotfiles_dir/.claude/skills/tts" "$HOME/.claude/skills/tts"
 rm "$HOME/.claude/skills/email-inbox"
 ln -sf "$dotfiles_dir/.claude/skills/email-inbox" "$HOME/.claude/skills/email-inbox"
+rm "$HOME/.claude/skills/todo"
+ln -sf "$dotfiles_dir/.claude/skills/todo" "$HOME/.claude/skills/todo"
 
 mkdir -p "$app_support_dir/Sublime Text"
 ln -sf "$dotfiles_dir/.config/sublime-text/Packages" "$app_support_dir/Sublime Text/"

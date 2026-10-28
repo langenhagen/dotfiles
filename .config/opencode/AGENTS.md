@@ -43,6 +43,7 @@ assumption.
 - Keep temporary files and render artifacts in workspace paths (for example
   `.tmp/`) and remove them after use.
 - Keep Markdown headlines in Title Case.
+- Width-align Markdown tables in files: pad cells so the pipes line up.
 - Emit plain ASCII in output/docs unless Unicode is already required by
   context. Replace common non-ASCII: curly quotes -> straight, em/en dash
   -> hyphen, ellipsis -> three dots; strip hidden/spacing characters

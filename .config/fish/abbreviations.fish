@@ -159,6 +159,8 @@ abbr -a dka 'docker kill (docker ps --quiet)'
 
 abbr -a cl 'claude'
 abbr -a clr 'claude --resume'
+abbr -a pc 'pclaude --permission-mode auto'
+abbr -a pcr 'pclaude --permission-mode auto --resume'
 
 abbr -a k 'kokoro'
 

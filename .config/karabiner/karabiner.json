@@ -181,7 +181,7 @@
                                 "from": {
                                     "key_code": "f7"
                                 },
-                                "to": [{ "shell_command": "pkill -f kokoro_client.py || PATH=/opt/homebrew/bin:$PATH ~/Dev/scripts/claude-last-reply.sh | /usr/local/bin/kokoro --speed 1.2" }],
+                                "to": [{ "shell_command": "/usr/local/bin/qtts --stop-playback; pkill -f kokoro_client.py || PATH=/opt/homebrew/bin:$PATH ~/Dev/scripts/claude-last-reply.sh | /usr/local/bin/kokoro --speed 1.2" }],
                                 "type": "basic"
                             },
                             {

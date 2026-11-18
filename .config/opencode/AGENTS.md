@@ -45,10 +45,11 @@ assumption.
 - Keep Markdown headlines in Title Case.
 - Width-align Markdown tables in files: pad cells so the pipes line up.
 - Emit plain ASCII in output/docs unless Unicode is already required by
-  context. Replace common non-ASCII: curly quotes -> straight, em/en dash
-  -> hyphen, ellipsis -> three dots; strip hidden/spacing characters
-  (non-breaking and zero-width spaces). Normalize pasted external text
-  before finalizing.
+  context (German umlauts and the sz-ligature -- ä, ö, ü and ß -- are
+  always allowed). Replace common non-ASCII: curly quotes ->
+  straight, em/en dash -> hyphen, ellipsis -> three dots; strip hidden/
+  spacing characters (non-breaking and zero-width spaces). Normalize pasted
+  external text before finalizing.
 
 ### SHOULD
 

@@ -54,6 +54,8 @@ abbr -a th 'touch'
 abbr -a vd 'vimdiff'
 abbr -a wl 'wc -l'
 # abbr -a psh 'poetry shell'  # deactivated 2025-11-05
+abbr -a stop 'kill -STOP'
+abbr -a cont 'kill -CONT'
 
 abbr -a t 'tig'
 abbr -a tb 'tig blame'

@@ -159,6 +159,8 @@ abbr -a dcs 'docker-compose stop'
 abbr -a dps 'docker ps'
 abbr -a dka 'docker kill (docker ps --quiet)'
 
+abbr -a oc 'opencode'
+abbr -a ocr 'opencode --continue'
 abbr -a cl 'claude'
 abbr -a clr 'claude --resume'
 abbr -a pc 'pclaude --permission-mode auto'

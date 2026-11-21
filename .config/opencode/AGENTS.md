@@ -203,8 +203,7 @@ Applies to all text: replies, comments, commit and PR messages, docs.
 
 ## Response Finalization
 
-- End each response by running `lilsound $$` as the last step (fall back to
-  bare `lilsound` if `$$` is unavailable).
-- Claude Code: skip this. A Stop hook in `~/.claude/settings.json` already
-  runs `lilsound` and keeps it silent in Jarvis mode.
-- `lilsound` is non-writing and safe.
+- Do not run `lilsound` manually in OpenCode. Completion sounds are handled
+  outside the agent; manual calls after tool results caused a loop.
+- Claude Code: a Stop hook in `~/.claude/settings.json` already plays the
+  sound and keeps it silent in Jarvis mode.
